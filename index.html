@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Sun Standard | Pascal Ranaora</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --text-main: #f0f0f0;
+            --text-muted: #888888;
+            --sun-yellow: #ffcc00;
+            --sun-orange: #ff6600;
+            --sun-glow: rgba(255, 170, 0, 0.8);
+            --bg-dark: #050505;
+            --border-glow: rgba(255, 170, 0, 0.2);
+            --card-bg: rgba(8, 8, 8, 0.75);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.7;
+        }
+
+        /* ── i18n Language Toggle Logic ── */
+        body.lang-en [lang="fr"] { display: none !important; }
+        body.lang-fr [lang="en"] { display: none !important; }
+
+        /* ── NAV ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.2rem 3rem;
+            background: rgba(5,5,5,0.75);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-glow);
+        }
+        nav .logo {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sun-yellow);
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover { color: var(--sun-yellow); }
+
+        /* Language Toggle Buttons */
+        .lang-toggle {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-left: 2rem;
+            border-left: 1px solid rgba(255,255,255,0.1);
+            padding-left: 1.5rem;
+        }
+        .lang-toggle button {
+            background: transparent;
+            border: none;
+            font-size: 1.4rem;
+            cursor: pointer;
+            opacity: 0.3;
+            transition: all 0.3s ease;
+            filter: grayscale(100%);
+        }
+        .lang-toggle button:hover {
+            opacity: 0.8;
+            transform: scale(1.1);
+        }
+        body.lang-en #btn-en,
+        body.lang-fr #btn-fr {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(255,200,0,0.4));
+        }
+
+        /* ── SECTIONS ── */
+        section {
+            position: relative;
+            z-index: 2;
+            padding: 7rem 4rem 5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ── HERO ── */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+        }
+        .badge {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--sun-orange);
+            border: 1px solid rgba(255,100,0,0.4);
+            padding: 0.35rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            background: rgba(255,80,0,0.08);
+        }
+        h1.title {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 800;
+            letter-spacing: -2px;
+            line-height: 1;
+            color: #fff;
+            animation: pulseGlow 3s ease-in-out infinite alternate;
+            margin-bottom: 0.5rem;
+            z-index: 11;
+        }
+
+        /* ── 3D SUN CANVAS ── */
+        #canvas-container {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: 1.5rem auto;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        h2.subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.5rem);
+            font-weight: 300;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            max-width: 600px;
+            margin-bottom: 1.8rem;
+            z-index: 11;
+        }
+        p.description {
+            font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+            max-width: 680px;
+            color: #ccc;
+            margin-bottom: 3rem;
+            line-height: 1.9;
+        }
+        .highlight { font-weight: 700; color: var(--sun-yellow); }
+        .cta-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-bottom: 3rem; }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--sun-orange), var(--sun-yellow));
+            color: #000;
+            border: none;
+        }
+        .btn-primary:hover { opacity: 0.85; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,150,0,0.35); }
+        .btn-outline {
+            background: transparent;
+            color: var(--sun-yellow);
+            border: 1px solid rgba(255,200,0,0.4);
+        }
+        .btn-outline:hover { border-color: var(--sun-yellow); background: rgba(255,200,0,0.07); transform: translateY(-2px); }
+
+        .scroll-indicator {
+            display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+            color: var(--text-muted); font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase;
+        }
+        .scroll-indicator svg { width: 18px; height: 18px; animation: bounce 2s infinite; }
+
+        /* ── STATS ROW ── */
+        .stats-row {
+            display: flex; gap: 0; flex-wrap: wrap;
+            border: 1px solid var(--border-glow); border-radius: 12px;
+            overflow: hidden; margin-top: 3rem;
+            background: var(--card-bg); backdrop-filter: blur(10px);
+        }
+        .stat-item {
+            flex: 1; min-width: 180px; padding: 2rem;
+            border-right: 1px solid var(--border-glow); text-align: center;
+        }
+        .stat-item:last-child { border-right: none; }
+        .stat-number {
+            font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 800;
+            color: var(--sun-yellow); display: block; line-height: 1; margin-bottom: 0.5rem;
+        }
+        /* MathJax adjustments inside stat-number */
+        .stat-number .MathJax { font-size: 1.1em !important; }
+        
+        .stat-label { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+
+        /* ── DIVIDER ── */
+        .divider {
+            border: none; border-top: 1px solid var(--border-glow);
+            margin: 0 4rem; opacity: 0.5;
+        }
+
+        /* ── SECTION LABELS / TITLES ── */
+        .section-label {
+            font-size: 0.68rem; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--sun-orange); margin-bottom: 0.8rem;
+        }
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+            line-height: 1.1; margin-bottom: 2rem; color: #fff;
+        }
+        .section-body {
+            font-size: 1rem; color: #bbb; max-width: 720px; margin-bottom: 1.5rem; line-height: 1.9;
+        }
+
+        /* ── CARDS ── */
+        .cards-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem;
+        }
+        .card {
+            background: var(--card-bg); border: 1px solid var(--border-glow);
+            border-radius: 12px; padding: 2rem;
+            transition: border-color 0.3s, transform 0.3s;
+            backdrop-filter: blur(8px);
+        }
+        .card:hover { border-color: rgba(255,170,0,0.5); transform: translateY(-4px); }
+        .card-icon { font-size: 2rem; margin-bottom: 1rem; }
+        .card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; color: var(--sun-yellow); }
+        .card p { font-size: 0.88rem; color: #999; line-height: 1.7; }
+
+        /* ── METHODOLOGY ── */
+        .methodology-container {
+            background: rgba(10,10,10,0.7); backdrop-filter: blur(10px);
+            border: 1px solid var(--border-glow); border-radius: 12px;
+            padding: 2rem; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+        }
+        .methodology-container h3 {
+            font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--text-muted); margin-bottom: 1.5rem;
+        }
+
+        /* ── FORMULA BLOCK ── */
+        .formula-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.2rem; margin-top: 2.5rem;
+        }
+        .formula-card {
+            background: rgba(5,5,5,0.8); border: 1px solid rgba(255,170,0,0.12);
+            border-radius: 10px; padding: 1.5rem;
+            display: flex; flex-direction: column; justify-content: center;
+        }
+        .formula-card .formula-label {
+            font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--sun-orange); margin-bottom: 0.8rem; text-align: center;
+        }
+        .formula-card .formula-eq {
+            color: var(--sun-yellow); margin-bottom: 0.6rem; text-align: center;
+            overflow-x: auto; overflow-y: hidden; padding: 0.5rem 0;
+        }
+        .formula-card .formula-result {
+            font-size: 0.85rem; color: #aaa; line-height: 1.5; text-align: center;
+        }
+
+        /* ── TIMELINE ── */
+        .timeline { position: relative; padding-left: 2rem; margin-top: 2rem; }
+        .timeline::before {
+            content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+            width: 1px; background: linear-gradient(to bottom, var(--sun-orange), transparent);
+        }
+        .timeline-item {
+            position: relative; margin-bottom: 3rem; padding-left: 1.5rem;
+        }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -2.4rem; top: 0.4rem;
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--sun-yellow); box-shadow: 0 0 10px rgba(255,200,0,0.6);
+        }
+        .timeline-date { font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--sun-orange); margin-bottom: 0.4rem; }
+        .timeline-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; }
+        .timeline-text { font-size: 0.88rem; color: #999; line-height: 1.7; }
+
+        /* ── QUOTE ── */
+        .quote-block {
+            border-left: 3px solid var(--sun-orange); padding: 1.5rem 2rem;
+            background: rgba(255,100,0,0.05); border-radius: 0 8px 8px 0; margin: 2rem 0;
+        }
+        .quote-text { font-size: 1.05rem; font-style: italic; color: #ddd; line-height: 1.8; margin-bottom: 0.6rem; }
+        .quote-author { font-size: 0.75rem; letter-spacing: 2px; color: var(--sun-orange); text-transform: uppercase; }
+
+        /* ── FOOTER ── */
+        footer {
+            position: relative; z-index: 2;
+            text-align: center; padding: 4rem 2rem 2rem;
+            border-top: 1px solid var(--border-glow);
+            color: var(--text-muted); font-size: 0.82rem; line-height: 2;
+        }
+        .footer-logo { font-size: 1.1rem; font-weight: 700; letter-spacing: 4px; color: var(--sun-yellow); margin-bottom: 1rem; }
+        .footer-links { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+        .footer-links a { color: var(--text-muted); text-decoration: none; font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+        .footer-links a:hover { color: var(--sun-yellow); }
+
+        /* ── ANIMATIONS ── */
+        @keyframes pulseGlow {
+            0% { text-shadow: 0 0 30px rgba(255,170,0,0.6), 0 0 60px rgba(255,68,0,0.3); }
+            100% { text-shadow: 0 0 50px rgba(255,234,0,0.9), 0 0 100px rgba(255,102,0,0.5); }
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(6px); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in          { animation: fadeInUp 1s ease both; }
+        .fade-in-delay-1  { animation: fadeInUp 1s 0.2s ease both; }
+        .fade-in-delay-2  { animation: fadeInUp 1s 0.4s ease both; }
+        .fade-in-delay-3  { animation: fadeInUp 1s 0.6s ease both; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            nav .logo { padding-left: 0;}
+            nav ul { display: none; }
+            .lang-toggle { margin-left: auto; border-left: none; padding-left: 0; }
+            section { padding: 5rem 1.5rem; }
+            .stat-item { min-width: 140px; }
+            #canvas-container { width: 220px; height: 220px; }
+            .divider { margin: 0 1.5rem; }
+        }
+    </style>
+</head>
+
+<body class="lang-en">
+
+<nav>
+    <div class="logo">
+        <span lang="en">☀ The Sun Standard</span>
+        <span lang="fr">☀ L'Étalon Solaire</span>
+    </div>
+    <ul>
+        <li><a href="#thesis"><span lang="en">Thesis</span><span lang="fr">Thèse</span></a></li>
+        <li><a href="#methodology"><span lang="en">Methodology</span><span lang="fr">Méthodologie</span></a></li>
+        <li><a href="#emergy"><span lang="en">Emergy</span><span lang="fr">Émergie</span></a></li>
+        <li><a href="#updates"><span lang="en">Updates</span><span lang="fr">Mises à jour</span></a></li>
+        <li><a href="#about"><span lang="en">About</span><span lang="fr">À propos</span></a></li>
+    </ul>
+    
+    <div class="lang-toggle">
+        <button onclick="setLang('en')" id="btn-en" aria-label="English" style="color: #fff;"> EN 🇬🇧</button>
+        <button onclick="setLang('fr')" id="btn-fr" aria-label="Français" style="color: #fff;">FR 🇫🇷</button>
+    </div>
+</nav>
+
+<section id="hero">
+    <div class="badge fade-in">
+        <span lang="en">Biophysical Monetary Theory · Pascal Ranaora · 2026</span>
+        <span lang="fr">Théorie Monétaire Biophysique · Pascal Ranaora · 2026</span>
+    </div>
+    
+    <h1 class="title fade-in-delay-1">
+        <span lang="en">The Sun Standard</span>
+        <span lang="fr">L'Étalon Solaire</span>
+    </h1>
+
+    <div id="canvas-container" class="fade-in-delay-1"></div>
+
+    <h2 class="subtitle fade-in-delay-2">
+        <span lang="en">What is a Satoshi measuring exactly?</span>
+        <span lang="fr">Que mesure exactement un Satoshi ?</span>
+    </h2>
+    <p class="description fade-in-delay-3">
+        <span lang="en">A Satoshi is backed by <span class="highlight">Energy</span>. It is a natural way to measure the objective thermodynamic cost of Goods and Services using the <span class="highlight">Emergy Framework</span>. Bitcoin is the first monetary system anchored to the ultimate energy source of all life on Earth: the Sun.</span>
+        <span lang="fr">Un Satoshi est adossé à l'<span class="highlight">Énergie</span>. C'est un moyen naturel de mesurer le coût thermodynamique objectif des Biens et Services en utilisant le <span class="highlight">Cadre de l'Émergie</span>. Bitcoin est le premier système monétaire ancré à la source d'énergie ultime de toute vie sur Terre : le Soleil.</span>
+    </p>
+    <div class="cta-group fade-in-delay-3">
+        <a href="https://doi.org/10.5281/zenodo.19840383" target="_blank" class="btn btn-primary">
+            <span lang="en">Read the Paper</span>
+            <span lang="fr">Lire l'Article</span>
+        </a>
+        <a href="#methodology" class="btn btn-outline">
+            <span lang="en">Explore Methodology</span>
+            <span lang="fr">Explorer la Méthodologie</span>
+        </a>
+    </div>
+
+    <div class="stats-row fade-in-delay-3" style="max-width:900px;width:100%;">
+        <div class="stat-item">
+            <span class="stat-number">\(6.49 \times 10^9\)</span>
+            <span class="stat-label">sej / Satoshi</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">\(10^{13} \text{ J}\)</span>
+            <span class="stat-label">
+                <span lang="en">Energy per Block</span>
+                <span lang="fr">Énergie par Bloc</span>
+            </span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">\(\rho \approx 0.9776\)</span>
+            <span class="stat-label">
+                <span lang="en">Spearman Correlation</span>
+                <span lang="fr">Corrélation de Spearman</span>
+            </span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-number">\(h \to \kappa_N\)</span>
+            <span class="stat-label">
+                <span lang="en">Planck Constant \(\to\) Nakamoto Action</span>
+                <span lang="fr">Constante de Planck \(\to\) Action de Nakamoto</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="scroll-indicator" style="margin-top:3rem;">
+        <span lang="en">Scroll</span>
+        <span lang="fr">Défiler</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="thesis">
+    <p class="section-label">
+        <span lang="en">Core Thesis</span>
+        <span lang="fr">Thèse Principale</span>
+    </p>
+    <h2 class="section-title">
+        <span lang="en">Nash Ideal Money<br>meets Proof-of-Work</span>
+        <span lang="fr">Quand la monnaie idéale de John Nash<br>rencontre la Preuve de Travail</span>
+    </h2>
+    <p class="section-body">
+        <span lang="en">John F. Nash Jr. argued that money should function like a physical unit of measure — immutable, objective, independent of political will. The Sun Standard demonstrates that Bitcoin's Proof-of-Work mechanism is precisely that anchor: a thermodynamic proof linking every Satoshi to a measurable quantity of solar work embedded in the biosphere.</span>
+        <span lang="fr">John F. Nash Jr. soutenait que la monnaie devait fonctionner comme une unité de mesure physique — immuable, objective, indépendante de la volonté politique. L'Étalon Solaire démontre que le mécanisme de Preuve de Travail de Bitcoin est précisément cet ancrage : une preuve thermodynamique liant chaque Satoshi à une quantité mesurable de travail solaire intégrée dans la biosphère.</span>
+    </p>
+    <div class="quote-block">
+        <p class="quote-text">
+            <span lang="en">"Just as scientific communities rely on immutable definitions of the metre, kilogram, and second, the global economy needs an immutable measure of value to optimise long-term cooperative games across borders and generations."</span>
+            <span lang="fr">"Tout comme les communautés scientifiques s'appuient sur des définitions immuables du mètre, du kilogramme et de la seconde, l'économie mondiale a besoin d'une mesure immuable de la valeur pour optimiser les jeux coopératifs à long terme à travers les frontières et les générations."</span>
+        </p>
+        <p class="quote-author">
+            <span lang="en">— Inspired by Nash, Ideal Money (2002)</span>
+            <span lang="fr">— Inspiré de Nash, Monnaie Idéale (2002)</span>
+        </p>
+    </div>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">⚛️</div>
+            <h4>
+                <span lang="en">Biophysical Anchor</span>
+                <span lang="fr">Ancrage Biophysique</span>
+            </h4>
+            <p>
+                <span lang="en">Unlike fiat currencies whose supply is politically discretionary, each Satoshi encodes a fixed quantity of solar emergy — a physically grounded, non-manipulable unit of economic value. The Nakamoto Protocol allows to send Emergetic Value at the speed of Information making it compatible to exchange value with other potential civilisations.</span>
+                <span lang="fr">Contrairement aux monnaies fiduciaires dont l'offre est politiquement discrétionnaire, chaque Satoshi encode une quantité fixe d'émergie solaire — une unité de valeur économique ancrée physiquement et non manipulable. Le protocole de Nakamoto permet d'envoyer la valeur de l'émergie à la vitesse de l'information, le rendant compatible pour l'échange de valeur avec d'autres civilisations potentielles.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🔗</div>
+            <h4>
+                <span lang="en">Emergy Framework</span>
+                <span lang="fr">Cadre de l'Émergie</span>
+            </h4>
+            <p>
+                <span lang="en">Building on H.T. Odum's systems ecology, the Emergy Framework converts all energy flows into Solar Emjoules (sej), enabling cross-domain comparison of thermodynamic work.</span>
+                <span lang="fr">S'appuyant sur l'écologie des systèmes de H.T. Odum, le cadre de l'Émergie convertit tous les flux énergétiques en Emjoules Solaires (sej), permettant une comparaison croisée du travail thermodynamique.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📐</div>
+            <h4>
+                <span lang="en">Nash ICI Hypothesis</span>
+                <span lang="fr">Hypothèse de l'ICI de Nash</span>
+            </h4>
+            <p>
+                <span lang="en">Network Difficulty acts as a decentralised proxy for Nash's Industrial Consumption Index (ICI), validated empirically through Spearman correlation (\(\rho \approx 0.9776\)) and cointegration testing.</span>
+                <span lang="fr">La Difficulté du réseau agit comme un proxy décentralisé pour l'Indice de Consommation Industrielle (ICI) de Nash, validé empiriquement par la corrélation de Spearman (\(\rho \approx 0.9776\)) et les tests de cointégration.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌌</div>
+            <h4>
+                <span lang="en">Nakamoto Action</span>
+                <span lang="fr">Action de Nakamoto</span>
+            </h4>
+            <p>
+                <span lang="en">The microscopic Nakamoto Action (\(\kappa_N = \eta \times \tau_{local}\)) converges toward Planck's constant \(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}\) as ASIC efficiency approaches its physical limits.</span>
+                <span lang="fr">L'Action de Nakamoto microscopique (\(\kappa_N = \eta \times \tau_{local}\)) converge vers la constante de Planck \(h \approx 6.626 \times 10^{-34} \text{ J}\cdot\text{s}\) à mesure que l'efficacité des ASIC approche ses limites physiques.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="methodology">
+    <p class="section-label">
+        <span lang="en">Methodology</span>
+        <span lang="fr">Méthodologie</span>
+    </p>
+    <h2 class="section-title">
+        <span lang="en">From Sunlight<br>to Satoshi</span>
+        <span lang="fr">De la Lumière du Soleil<br>au Satoshi</span>
+    </h2>
+    <p class="section-body">
+        <span lang="en">The thermodynamic chain linking solar energy to a Satoshi's biophysical value involves sequential transformations — each grounded in measurable physical and macroeconomic quantities.</span>
+        <span lang="fr">La chaîne thermodynamique reliant l'énergie solaire à la valeur biophysique d'un Satoshi implique des transformations séquentielles — chacune ancrée dans des grandeurs physiques et macroéconomiques mesurables.</span>
+    </p>
+
+    <div class="formula-grid" style="margin-top: 1rem;">
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">① Network Power</span>
+                <span lang="fr">① Puissance du Réseau</span>
+            </div>
+            <div class="formula-eq">
+                $$P_t = H_t \times E_t$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(H_t\): Hash Rate (TH/s)<br>\(E_t\): Efficiency (J/TH)</span>
+                <span lang="fr">\(H_t\): Taux de Hachage (TH/s)<br>\(E_t\): Efficacité (J/TH)</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">② Network Emergy Flux</span>
+                <span lang="fr">② Flux d'Émergie du Réseau</span>
+            </div>
+            <div class="formula-eq">
+                $$Em_t = P_t \times Tr_e$$
+            </div>
+            <div class="formula-result">
+                \(Tr_e \approx 2 \times 10^5 \text{ sej/J}\)<br>
+                <span lang="en">(Global Transformity)</span>
+                <span lang="fr">(Transformité Globale)</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">③ Satoshi Emission Rate</span>
+                <span lang="fr">③ Taux d'Émission de Satoshis</span>
+            </div>
+            <div class="formula-eq">
+                $$S_t = \frac{B_t \times 10^8}{600}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(B_t\): Block Subsidy<br>Post-halving: 3.125 BTC</span>
+                <span lang="fr">\(B_t\): Subvention de Bloc<br>Post-halving: 3.125 BTC</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">④ Thermodynamic Cost</span>
+                <span lang="fr">④ Coût Thermodynamique</span>
+            </div>
+            <div class="formula-eq">
+                $$C_{sej} = \frac{Em_t}{S_t}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(C_{sej} \approx 6.49 \times 10^9 \text{ sej/satoshi}\)<br>Biophysical floor</span>
+                <span lang="fr">\(C_{sej} \approx 6.49 \times 10^9 \text{ sej/satoshi}\)<br>Plancher biophysique</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">⑤ Global Emergy Budget</span>
+                <span lang="fr">⑤ Budget Émergétique Mondial</span>
+            </div>
+            <div class="formula-eq">
+                $$Em_{global}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(\approx 1.52 \times 10^{25} \text{ sej/yr}\)<br>Total Earth solar work</span>
+                <span lang="fr">\(\approx 1.52 \times 10^{25} \text{ sej/yr}\)<br>Travail solaire terrestre</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">⑥ Global GDP</span>
+                <span lang="fr">⑥ PIB Mondial</span>
+            </div>
+            <div class="formula-eq">
+                $$GDP_{global}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(\approx 1.05 \times 10^{14} \text{ USD/yr}\)<br>Nominal economic output</span>
+                <span lang="fr">\(\approx 1.05 \times 10^{14} \text{ USD/yr}\)<br>Production nominale</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">⑦ Emergy-to-Money Ratio</span>
+                <span lang="fr">⑦ Ratio Émergie-Monnaie</span>
+            </div>
+            <div class="formula-eq">
+                $$EMR_{usd} = \frac{Em_{global}}{GDP_{global}}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(\approx 1.45 \times 10^{11} \text{ sej/USD}\)<br>Inflation = thermo. dilution</span>
+                <span lang="fr">\(\approx 1.45 \times 10^{11} \text{ sej/USD}\)<br>Inflation = dilution thermo.</span>
+            </div>
+        </div>
+        <div class="formula-card">
+            <div class="formula-label">
+                <span lang="en">⑧ Satoshi USD Value</span>
+                <span lang="fr">⑧ Valeur du Satoshi en USD</span>
+            </div>
+            <div class="formula-eq">
+                $$V_{usd} = \frac{C_{sej}}{EMR_{usd}}$$
+            </div>
+            <div class="formula-result">
+                <span lang="en">\(\approx \$0.04475 \text{ /satoshi}\)<br><strong>\(1 \text{ BTC} \approx \$4,475,000\)</strong></span>
+                <span lang="fr">\(\approx 0.04475 \$ \text{ /satoshi}\)<br><strong>\(1 \text{ BTC} \approx 4 475 000 \$\)</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="methodology-container" style="margin-top: 3rem; text-align: center;">
+        <h3 lang="en">Full Infographic Flow</h3>
+        <h3 lang="fr">Flux Infographique Complet</h3>
+        
+        <img src="SunStandardMethodology.png" alt="The Sun Standard Methodology" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
+        
+        <p style="margin-top: 1rem; font-size: 0.8rem; color: #888; font-style: italic;">
+            <span lang="en">See the White Paper for the complete macroscopic derivation.</span>
+            <span lang="fr">Voir le Livre Blanc pour la dérivation macroscopique complète.</span>
+        </p>
+    </div>
+
+</section>
+
+<hr class="divider">
+
+<section id="emergy">
+    <p class="section-label">
+        <span lang="en">Emergy & Real-World Applications</span>
+        <span lang="fr">Émergie & Applications Réelles</span>
+    </p>
+    <h2 class="section-title">
+        <span lang="en">Closing the Energy<br>Economy Loop</span>
+        <span lang="fr">Fermer la Boucle de<br>l'Économie Énergétique</span>
+    </h2>
+    <p class="section-body">
+        <span lang="en">The Sun Standard is not merely academic. The biophysical anchor provides concrete policy solutions: decentralised miners absorb excess renewable energy, sovereign nations monetise stranded energy, and continuous ledger yield subsidises water infrastructure in resource-scarce regions.</span>
+        <span lang="fr">L'Étalon Solaire n'est pas purement académique. L'ancrage biophysique offre des solutions politiques concrètes : les mineurs décentralisés absorbent l'excès d'énergie renouvelable, les nations souveraines monétisent l'énergie isolée, et le rendement continu du registre subventionne les infrastructures hydrauliques.</span>
+    </p>
+    <div class="cards-grid">
+        <div class="card">
+            <div class="card-icon">🔋</div>
+            <h4>
+                <span lang="en">Virtual Battery</span>
+                <span lang="fr">Batterie Virtuelle</span>
+            </h4>
+            <p>
+                <span lang="en">Bitcoin miners act as Controllable Load Resources (CLR) — totally interruptible, absorbing excess renewable production and providing frequency regulation in milliseconds.</span>
+                <span lang="fr">Les mineurs Bitcoin agissent comme des Ressources de Charge Contrôlables (CLR) — totalement interruptibles, absorbant l'excès de production renouvelable et fournissant une régulation de fréquence en quelques millisecondes.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌊</div>
+            <h4>
+                <span lang="en">Death Valley of VRE</span>
+                <span lang="fr">Vallée de la Mort des EnR</span>
+            </h4>
+            <p>
+                <span lang="en">The main bottleneck in Variable Renewable Energy deployment is financial. Decentralised ICI hardware deployed on-site resolves both the Cannibalization Effect and grid inertia scarcity.</span>
+                <span lang="fr">Le principal goulot d'étranglement dans le déploiement des Énergies Renouvelables Variables est financier. Le matériel ICI décentralisé déployé sur site résout à la fois l'effet de cannibalisation et la rareté de l'inertie du réseau.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">💧</div>
+            <h4>
+                <span lang="en">Sovereign Energy Monetisation</span>
+                <span lang="fr">Monétisation Souveraine</span>
+            </h4>
+            <p>
+                <span lang="en">Nations with abundant but isolated renewables — Bhutan, Ethiopia — convert non-exportable kinetic energy into digital capital, funding infrastructure without restrictive multilateral conditions.</span>
+                <span lang="fr">Les nations disposant d'énergies renouvelables abondantes mais isolées — Bhoutan, Éthiopie — convertissent l'énergie cinétique non exportable en capital numérique, finançant les infrastructures sans conditions multilatérales restrictives.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">🌍</div>
+            <h4>
+                <span lang="en">Desalination Bridge</span>
+                <span lang="fr">Pont de Dessalement</span>
+            </h4>
+            <p>
+                <span lang="en">Continuous algorithmic ledger yield subsidises the extreme energy demands of thermal desalination plants, transforming isolated solar or thermal energy into water abundance.</span>
+                <span lang="fr">Le rendement continu du registre algorithmique subventionne les demandes énergétiques extrêmes des usines de dessalement thermique, transformant l'énergie solaire ou thermique isolée en abondance d'eau.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">♻️</div>
+            <h4>
+                <span lang="en">Methane Arbitrage</span>
+                <span lang="fr">Arbitrage du Méthane</span>
+            </h4>
+            <p>
+                <span lang="en">Flared methane (80× GWP vs CO₂ over 20 years) captured at landfill or agricultural sites becomes economic via on-site mining, turning greenhouse liability into sovereign digital capital.</span>
+                <span lang="fr">Le méthane torché (PRG 80× supérieur au CO₂ sur 20 ans) capturé sur les sites d'enfouissement ou agricoles devient rentable via le minage sur site, transformant un passif climatique en capital numérique souverain.</span>
+            </p>
+        </div>
+        <div class="card">
+            <div class="card-icon">📊</div>
+            <h4>
+                <span lang="en">LPPL Cycle Model</span>
+                <span lang="fr">Modèle de Cycle LPPL</span>
+            </h4>
+            <p>
+                <span lang="en">Log-Periodic Power Law modelling shows Bitcoin price orbiting its thermodynamic attractor in successive super-exponential cycles — biophysically bounded speculation.</span>
+                <span lang="fr">La modélisation par Loi de Puissance Log-Périodique montre le prix du Bitcoin orbitant autour de son attracteur thermodynamique dans des cycles super-exponentiels successifs — une spéculation biophysiquement bornée.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="updates">
+    <p class="section-label">
+        <span lang="en">Research Updates</span>
+        <span lang="fr">Mises à jour de la Recherche</span>
+    </p>
+    <h2 class="section-title">
+        <span lang="en">Publications &<br>Chronology</span>
+        <span lang="fr">Publications &<br>Chronologie</span>
+    </h2>
+    <div class="timeline">
+        <div class="timeline-item">
+            <p class="timeline-date">2026 — PRE Manuscript</p>
+            <h4 class="timeline-title">
+                <span lang="en">Nakamoto Distributed Consensus as a Non-Equilibrium Phase Transition</span>
+                <span lang="fr">Le Consensus Distribué de Nakamoto comme Transition de Phase Hors Équilibre</span>
+            </h4>
+            <p class="timeline-text">
+                <span lang="en">A Phenomenological Statistical-Physics Description bridging cryptographic mechanics with macroscopic thermodynamic irreversibility. Submitted to Physical Review E.</span>
+                <span lang="fr">Une description phénoménologique en physique statistique reliant la mécanique cryptographique à l'irréversibilité thermodynamique macroscopique. Soumis à Physical Review E.</span>
+            </p>
+        </div>
+        <div class="timeline-item">
+            <p class="timeline-date">2026 — John Nash / Howard T. Odum / Satoshi Nakamoto Synthesis</p>
+            <h4 class="timeline-title">
+                <span lang="en">The Sun Standard: Biophysical Pricing via the Emergy Framework</span>
+                <span lang="fr">L'Étalon Solaire : Tarification Biophysique via le Cadre de l'Émergie</span>
+            </h4>
+            <p class="timeline-text">
+                <span lang="en">Full paper presenting the Nash ICI hypothesis, Spearman correlation analysis (\(\rho \approx 0.9776\)), and LPPL modelling of Bitcoin price cycles around the thermodynamic attractor.</span>
+                <span lang="fr">Article complet présentant l'hypothèse ICI de Nash, l'analyse de corrélation de Spearman (\(\rho \approx 0.9776\)), et la modélisation LPPL des cycles de prix du Bitcoin autour de l'attracteur thermodynamique.</span>
+            </p>
+        </div>
+        <div class="timeline-item">
+            <p class="timeline-date">2025 — Empirical Analysis</p>
+            <h4 class="timeline-title">
+                <span lang="en">Multi-Objective Optimisation of the Nash Index</span>
+                <span lang="fr">Optimisation Multi-Objectifs de l'Indice de Nash</span>
+            </h4>
+            <p class="timeline-text">
+                <span lang="en">Open-source Python implementation of the ICI basket optimisation (NG · XLE · HG · TSM) and cointegration testing. Full source code and datasets available on GitHub.</span>
+                <span lang="fr">Implémentation Python open-source de l'optimisation du panier ICI (NG · XLE · HG · TSM) et tests de cointégration. Code source et jeux de données disponibles sur GitHub.</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+<hr class="divider">
+
+<section id="about">
+    <p class="section-label">
+        <span lang="en">About</span>
+        <span lang="fr">À propos</span>
+    </p>
+    <h2 class="section-title">
+        <span lang="en">The Sun Standard<br>Research Project</span>
+        <span lang="fr">Le Projet de Recherche<br>L'Étalon Solaire</span>
+    </h2>
+    <p class="section-body">
+        <span lang="en">The Sun Standard is an independent research initiative at the intersection of information physics, thermodynamics, and decentralised monetary theory. It removes fiat currency as an interpretive intermediary, observing Bitcoin directly through the lens of physical energy — revealing what Bitcoin <em>is</em> rather than what it is <em>worth</em>.</span>
+        <span lang="fr">L'Étalon Solaire est une initiative de recherche indépendante à l'intersection de la physique de l'information, de la thermodynamique et de la théorie monétaire décentralisée. Il supprime la monnaie fiduciaire en tant qu'intermédiaire interprétatif, observant Bitcoin directement à travers le prisme de l'énergie physique — révélant ce que Bitcoin <em>est</em> plutôt que ce qu'il <em>vaut</em>.</span>
+    </p>
+    <div class="quote-block">
+        <p class="quote-text">
+            <span lang="en">"We are but stardust calculating our own complexity. Without the Sun and without photosynthetic proof-of-work, life is not possible and the economy would not exist. We are all proof-of-work blockchains: feeding on energy, constantly exchanging blocks of information with our environment to build our memory."</span>
+            <span lang="fr">"Nous ne sommes que des poussières d'étoiles calculant leur propre complexité. Sans Soleil et sans la preuve de travail photosynthétique, la vie n'est pas possible et l'économie n'existerait pas. Nous sommes tous des blockchains à preuve de travail : nous nourrissant d'énergie, échangeant constamment des blocs d'information avec notre environnement pour construire notre mémoire."</span>
+        </p>
+        <p class="quote-author">— Ra'Naora Pascal</p>
+    </div>
+    <p class="section-body">
+        Contact: <a href="mailto:pascal.ranaora@informationphysicsinstitute.net" style="color:var(--sun-orange);">pascal.ranaora@informationphysicsinstitute.net</a><br>
+        Source code: <a href="https://github.com/pascalranaora/pnasjnici" target="_blank" style="color:var(--sun-orange);">github.com/pascalranaora/pnasjnici</a>
+    </p>
+</section>
+
+<footer>
+    <div class="footer-logo">
+        <span lang="en">☀ THE SUN STANDARD</span>
+        <span lang="fr">☀ L'ÉTALON SOLAIRE</span>
+    </div>
+    <p>
+        <span lang="en">A Biophysical Monetary Framework · Pascal Ra'Naora · 2026</span>
+        <span lang="fr">Un Cadre Monétaire Biophysique · Pascal Ra'Naora · 2026</span>
+    </p>
+    <p>
+        <span lang="en">Be the Sun you wish to see on this Earth.</span>
+        <span lang="fr">Soyez le Soleil que vous souhaitez voir sur cette Terre.</span>
+    </p>
+    <div class="footer-links">
+        <a href="#thesis"><span lang="en">Thesis</span><span lang="fr">Thèse</span></a>
+        <a href="#methodology"><span lang="en">Methodology</span><span lang="fr">Méthodologie</span></a>
+        <a href="#emergy"><span lang="en">Emergy</span><span lang="fr">Émergie</span></a>
+        <a href="#updates"><span lang="en">Updates</span><span lang="fr">Mises à jour</span></a>
+        <a href="https://github.com/pascalranaora/pnasjnici" target="_blank">GitHub</a>
+        <a href="mailto:pascal.ranaora@informationphysicsinstitute.net">Contact</a>
+    </div>
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.body.className = 'lang-' + lang;
+        try { localStorage.setItem('sun-std-lang', lang); } catch (e) {}
+    }
+    window.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('sun-std-lang') || 'en';
+        setLang(savedLang);
+    });
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+<script type="x-shader/x-vertex" id="vertexShader">
+    varying vec2 vUv;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    uniform float time;
+
+    vec3 mod289v3(vec3 x) { return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 mod289v4(vec4 x) { return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 permute4(vec4 x) { return mod289v4(((x*34.0)+1.0)*x); }
+    vec4 taylorInvSqrt4(vec4 r){ return 1.79284291400159 - 0.85373472095314*r; }
+
+    float snoise(vec3 v){
+        const vec2 C = vec2(1.0/6.0, 1.0/3.0);
+        const vec4 D = vec4(0.0, 0.5, 1.0, 2.0);
+        vec3 i  = floor(v + dot(v, C.yyy));
+        vec3 x0 = v - i + dot(i, C.xxx);
+        vec3 g = step(x0.yzx, x0.xyz);
+        vec3 l = 1.0 - g;
+        vec3 i1 = min(g.xyz, l.zxy);
+        vec3 i2 = max(g.xyz, l.zxy);
+        vec3 x1 = x0 - i1 + C.xxx;
+        vec3 x2 = x0 - i2 + C.yyy;
+        vec3 x3 = x0 - D.yyy;
+        i = mod289v3(i);
+        vec4 p = permute4(permute4(permute4(
+            i.z + vec4(0.0,i1.z,i2.z,1.0))
+          + i.y + vec4(0.0,i1.y,i2.y,1.0))
+          + i.x + vec4(0.0,i1.x,i2.x,1.0));
+        float n_ = 0.142857142857;
+        vec3 ns = n_*D.wyz - D.xzx;
+        vec4 j  = p - 49.0*floor(p*ns.z*ns.z);
+        vec4 x_ = floor(j*ns.z);
+        vec4 y_ = floor(j - 7.0*x_);
+        vec4 x  = x_*ns.x + ns.yyyy;
+        vec4 y  = y_*ns.x + ns.yyyy;
+        vec4 h  = 1.0 - abs(x) - abs(y);
+        vec4 b0 = vec4(x.xy, y.xy);
+        vec4 b1 = vec4(x.zw, y.zw);
+        vec4 s0 = floor(b0)*2.0+1.0;
+        vec4 s1 = floor(b1)*2.0+1.0;
+        vec4 sh = -step(h, vec4(0.0));
+        vec4 a0 = b0.xzyw + s0.xzyw*sh.xxyy;
+        vec4 a1 = b1.xzyw + s1.xzyw*sh.zzww;
+        vec3 p0v = vec3(a0.xy, h.x);
+        vec3 p1v = vec3(a0.zw, h.y);
+        vec3 p2v = vec3(a1.xy, h.z);
+        vec3 p3v = vec3(a1.zw, h.w);
+        vec4 norm = taylorInvSqrt4(vec4(dot(p0v,p0v),dot(p1v,p1v),dot(p2v,p2v),dot(p3v,p3v)));
+        p0v*=norm.x; p1v*=norm.y; p2v*=norm.z; p3v*=norm.w;
+        vec4 m = max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);
+        m=m*m;
+        return 42.0*dot(m*m, vec4(dot(p0v,x0),dot(p1v,x1),dot(p2v,x2),dot(p3v,x3)));
+    }
+
+    void main(){
+        vUv      = uv;
+        vNormal  = normalize(normalMatrix * normal);
+        vPosition = position;
+
+        // Multi-octave surface displacement for granulation boiling
+        float d1 = snoise(position*2.2  + time*0.18) * 0.10;
+        float d2 = snoise(position*5.5  - time*0.45) * 0.055;
+        float d3 = snoise(position*11.0 + time*0.80) * 0.028;
+        float d4 = snoise(position*22.0 - time*1.40) * 0.014;
+        float disp = d1+d2+d3+d4;
+
+        vec3 newPos = position + normal*disp;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(newPos, 1.0);
+    }
+</script>
+
+<script type="x-shader/x-fragment" id="fragmentShader">
+    varying vec2 vUv;
+    varying vec3 vNormal;
+    varying vec3 vPosition;
+    uniform float time;
+
+    vec3 mod289v3f(vec3 x){ return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 mod289v4f(vec4 x){ return x - floor(x*(1.0/289.0))*289.0; }
+    vec4 permute4f(vec4 x){ return mod289v4f(((x*34.0)+1.0)*x); }
+    vec4 taylorInvSqrt4f(vec4 r){ return 1.79284291400159 - 0.85373472095314*r; }
+
+    float snoise(vec3 v){
+        const vec2 C = vec2(1.0/6.0,1.0/3.0);
+        const vec4 D = vec4(0.0,0.5,1.0,2.0);
+        vec3 i  = floor(v+dot(v,C.yyy));
+        vec3 x0 = v-i+dot(i,C.xxx);
+        vec3 g  = step(x0.yzx,x0.xyz);
+        vec3 l  = 1.0-g;
+        vec3 i1 = min(g.xyz,l.zxy);
+        vec3 i2 = max(g.xyz,l.zxy);
+        vec3 x1 = x0-i1+C.xxx;
+        vec3 x2 = x0-i2+C.yyy;
+        vec3 x3 = x0-D.yyy;
+        i = mod289v3f(i);
+        vec4 p = permute4f(permute4f(permute4f(
+            i.z+vec4(0.0,i1.z,i2.z,1.0))
+          + i.y+vec4(0.0,i1.y,i2.y,1.0))
+          + i.x+vec4(0.0,i1.x,i2.x,1.0));
+        float n_=0.142857142857;
+        vec3 ns=n_*D.wyz-D.xzx;
+        vec4 j =p-49.0*floor(p*ns.z*ns.z);
+        vec4 x_=floor(j*ns.z);
+        vec4 y_=floor(j-7.0*x_);
+        vec4 x =x_*ns.x+ns.yyyy;
+        vec4 y =y_*ns.x+ns.yyyy;
+        vec4 h =1.0-abs(x)-abs(y);
+        vec4 b0=vec4(x.xy,y.xy);
+        vec4 b1=vec4(x.zw,y.zw);
+        vec4 s0=floor(b0)*2.0+1.0;
+        vec4 s1=floor(b1)*2.0+1.0;
+        vec4 sh=-step(h,vec4(0.0));
+        vec4 a0=b0.xzyw+s0.xzyw*sh.xxyy;
+        vec4 a1=b1.xzyw+s1.xzyw*sh.zzww;
+        vec3 p0v=vec3(a0.xy,h.x);
+        vec3 p1v=vec3(a0.zw,h.y);
+        vec3 p2v=vec3(a1.xy,h.z);
+        vec3 p3v=vec3(a1.zw,h.w);
+        vec4 norm=taylorInvSqrt4f(vec4(dot(p0v,p0v),dot(p1v,p1v),dot(p2v,p2v),dot(p3v,p3v)));
+        p0v*=norm.x; p1v*=norm.y; p2v*=norm.z; p3v*=norm.w;
+        vec4 m=max(0.6-vec4(dot(x0,x0),dot(x1,x1),dot(x2,x2),dot(x3,x3)),0.0);
+        m=m*m;
+        return 42.0*dot(m*m,vec4(dot(p0v,x0),dot(p1v,x1),dot(p2v,x2),dot(p3v,x3)));
+    }
+
+    void main(){
+        // ── 4-octave solar granulation noise ──
+        float n1 = snoise(vPosition*2.5  + time*0.22);
+        float n2 = snoise(vPosition*6.0  - time*0.55) * 0.5;
+        float n3 = snoise(vPosition*13.0 + time*0.95) * 0.25;
+        float n4 = snoise(vPosition*28.0 - time*1.70) * 0.12;
+        float combined = clamp((n1+n2+n3+n4)*0.5+0.5, 0.0, 1.0);
+
+        // ── Solar colour palette ──
+        vec3 cDeep   = vec3(0.30, 0.00, 0.00);
+        vec3 cFlare  = vec3(0.85, 0.12, 0.00);
+        vec3 cOrange = vec3(1.00, 0.42, 0.00);
+        vec3 cYellow = vec3(1.00, 0.82, 0.04);
+        vec3 cWhite  = vec3(1.00, 0.97, 0.80);
+
+        vec3 col = mix(cDeep,   cFlare,  smoothstep(0.00, 0.25, combined));
+        col      = mix(col,     cOrange, smoothstep(0.20, 0.50, combined));
+        col      = mix(col,     cYellow, smoothstep(0.45, 0.75, combined));
+        col      = mix(col,     cWhite,  smoothstep(0.72, 1.00, combined));
+
+        // ── Realistic limb darkening (Eddington law, u≈0.6) ──
+        vec3 viewDir = normalize(vec3(0.0, 0.0, 1.0));
+        float mu = clamp(dot(normalize(vNormal), viewDir), 0.0, 1.0);
+        float u  = 0.6;
+        float limbDarken = 1.0 - u*(1.0 - mu);
+        col *= limbDarken;
+
+        // ── Hot-spot flares / prominences ──
+        float flare = snoise(vPosition*4.5 + time*2.2);
+        col += vec3(0.35, 0.08, 0.0) * max(0.0, flare-0.58) * mu;
+
+        // ── Convective cell bright edges ──
+        float cellEdge = abs(snoise(vPosition*9.0 + time*0.3));
+        col += vec3(0.15, 0.08, 0.0) * smoothstep(0.38, 0.45, cellEdge) * mu;
+
+        gl_FragColor = vec4(col, 1.0);
+    }
+</script>
+
+<script>
+    let scene, camera, renderer, sunMesh, coronaMesh, innerGlowMesh;
+    let uniforms;
+    const clock = new THREE.Clock();
+
+    function init(){
+        const container = document.getElementById('canvas-container');
+        const W = container.clientWidth;
+        const H = container.clientHeight;
+
+        scene = new THREE.Scene();
+
+        camera = new THREE.PerspectiveCamera(50, W/H, 0.1, 100);
+        camera.position.z = 4.8;
+
+        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(W, H);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        renderer.setClearColor(0x000000, 0);
+        container.appendChild(renderer.domElement);
+
+        uniforms = { time: { value: 0.0 } };
+
+        const mat = new THREE.ShaderMaterial({
+            uniforms,
+            vertexShader:   document.getElementById('vertexShader').textContent,
+            fragmentShader: document.getElementById('fragmentShader').textContent,
+        });
+
+        // Sun sphere — 128 segments for smooth granulation
+        sunMesh = new THREE.Mesh(new THREE.SphereGeometry(1.6, 128, 128), mat);
+        scene.add(sunMesh);
+
+        // Inner glow
+        innerGlowMesh = new THREE.Mesh(
+            new THREE.SphereGeometry(1.65, 32, 32),
+            new THREE.MeshBasicMaterial({
+                color: 0xff8800, transparent: true, opacity: 0.08,
+                blending: THREE.AdditiveBlending, side: THREE.FrontSide, depthWrite: false
+            })
+        );
+        sunMesh.add(innerGlowMesh);
+
+        // // Corona
+        // coronaMesh = new THREE.Mesh(
+        //     new THREE.SphereGeometry(2.1, 32, 32),
+        //     new THREE.MeshBasicMaterial({
+        //         color: 0xff4400, transparent: true, opacity: 0.10,
+        //         blending: THREE.AdditiveBlending, side: THREE.BackSide, depthWrite: false
+        //     })
+        // );
+        // sunMesh.add(coronaMesh);
+
+        // Far halo
+        sunMesh.add(new THREE.Mesh(
+            new THREE.SphereGeometry(2.7, 16, 16),
+            new THREE.MeshBasicMaterial({
+                color: 0xff2200, transparent: true, opacity: 0.04,
+                blending: THREE.AdditiveBlending, side: THREE.BackSide, depthWrite: false
+            })
+        ));
+
+        window.addEventListener('resize', onResize);
+        animate();
+    }
+
+    function onResize(){
+        const container = document.getElementById('canvas-container');
+        const W = container.clientWidth;
+        const H = container.clientHeight;
+        camera.aspect = W/H;
+        camera.updateProjectionMatrix();
+        renderer.setSize(W, H);
+    }
+
+    function animate(){
+        requestAnimationFrame(animate);
+        const elapsed = clock.getElapsedTime();
+        uniforms.time.value = elapsed;
+
+        sunMesh.rotation.y += 0.0012;
+        sunMesh.rotation.z += 0.0004;
+
+        // Pulsating corona
+        // coronaMesh.material.opacity    = 0.09 + Math.sin(elapsed*1.3)*0.04;
+        // innerGlowMesh.material.opacity = 0.06 + Math.sin(elapsed*2.1)*0.03;
+
+        renderer.render(scene, camera);
+    }
+
+    window.addEventListener('load', init);
+</script>
+</body>
+</html>
