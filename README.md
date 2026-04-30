@@ -8,7 +8,7 @@
 
 This repository contains research, methodology, and supporting materials for the **Sun Standard framework**, which proposes:
 
-- Aligning Bitcoin mining with **solar energy production**
+- Aligning Bitcoin mining with **solar emergy production**
 - Reducing energy waste through **load balancing**
 - Extending hardware lifecycle via **circular economy principles**
 - Rethinking mining as an **energy coordination tool**, not just computation
@@ -36,7 +36,7 @@ This repository contains research, methodology, and supporting materials for the
 
 The Sun Standard introduces a model where:
 
-1. **Solar energy production** defines mining activity  
+1. **Solar emergy availability** defines mining activity  
 2. Mining acts as a **flexible energy sink**  
 3. Hardware is reused, repurposed, or recycled  
 4. Systems are designed for **local energy optimization**
@@ -60,7 +60,7 @@ The Sun Standard introduces a model where:
 ## 🔬 Research Focus
 
 - Bitcoin mining & renewable energy  
-- Solar-based mining models  
+- Solar emergy accounting models  
 - Circular economy for ASIC hardware  
 - Energy grid optimization  
 
@@ -72,23 +72,29 @@ Modern economies measure value almost exclusively through **human utility**—wh
 
 But this ignores a deeper layer of reality.
 
-All production, computation, and infrastructure are bound by the laws of physics. Every system carries an **irreducible thermodynamic cost**—energy transformed, entropy increased, resources consumed.
+All production, computation, and infrastructure are bound by the laws of physics. Every system carries an **irreducible thermodynamic cost**—not only in immediate energy use, but in the **total emergy embodied** across its lifecycle.
 
-**The Sun Standard asserts that value should not be defined by human preference alone, but also by the objective energy required to sustain it.**
+**The Sun Standard asserts that value should not be defined by human preference alone, but by the total solar emergy required to produce and sustain it.**
 
-Bitcoin mining, when aligned with renewable energy, reveals this connection:
+Bitcoin mining, when aligned with solar emergy flows, reveals this connection:
 
-- Energy becomes the **source of truth**
-- Computation becomes a **carrier of value**
-- Infrastructure becomes a **reflection of physical constraints**
+- Energy becomes **traceable to its origin**
+- Emergy becomes the **measure of real cost**
+- Computation becomes a **carrier of thermodynamic value**
+- A satoshi becomes a **unit anchored in physical reality**
 
 In this model, value emerges from the intersection of:
 - **Subjective demand** (what humans want)  
-- **Objective cost** (what reality requires)
+- **Objective emergy cost** (what reality has already paid)
+
+This reframes Bitcoin:
+
+Not just as digital scarcity,  
+but as a system capable of expressing **thermodynamic truth**.
 
 This is not just an optimization of energy systems.
 
-It is a shift toward an economy grounded in **thermodynamics, transparency, and physical truth**.
+It is a shift toward an economy grounded in **emergy, transparency, and physical reality**.
 
 ---
 
