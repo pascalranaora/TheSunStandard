@@ -111,7 +111,7 @@ You can:
 
 ## 📜 License
 
-(Add your license here — e.g. MIT, CC-BY, etc.)
+This project is licensed under the MIT License — see the `LICENSE` file for details.
 
 ---
 
