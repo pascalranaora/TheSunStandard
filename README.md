@@ -114,10 +114,3 @@ You can:
 This project is licensed under the MIT License — see the `LICENSE` file for details.
 
 ---
-
-## 📬 Contact
-
-Project by **@pascalranaora**  
-(Add website / Twitter / email if you want)
-
----
