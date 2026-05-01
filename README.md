@@ -15,6 +15,38 @@ This repository contains research, methodology, and supporting materials for the
 
 ---
 
+## 🌞 Manifesto
+
+Modern economies measure value almost exclusively through **human utility**—what people desire, consume, or are willing to pay for.
+
+But this ignores a deeper layer of reality.
+
+All production, computation, and infrastructure are bound by the laws of physics. Every system carries an **irreducible thermodynamic cost**—not only in immediate energy use, but in the **total emergy embodied** across its lifecycle.
+
+**The Sun Standard asserts that value should not be defined by human preference alone, but by the total solar emergy required to produce and sustain it.**
+
+Bitcoin mining, when aligned with solar emergy flows, reveals this connection:
+
+- Energy becomes **traceable to its origin**
+- Emergy becomes the **measure of real cost**
+- Computation becomes a **carrier of thermodynamic value**
+- A satoshi becomes a **unit anchored in physical reality**
+
+In this model, value emerges from the intersection of:
+- **Subjective demand** (what humans want)  
+- **Objective emergy cost** (what reality has already paid)
+
+This reframes Bitcoin:
+
+Not just as digital scarcity,  
+but as a system capable of expressing **thermodynamic truth**.
+
+This is not just an optimization of energy systems.
+
+It is a shift toward an economy grounded in **emergy, transparency, and physical reality**.
+
+---
+
 ## 📄 Contents
 
 ### 🧠 Research Papers
@@ -63,38 +95,6 @@ The Sun Standard introduces a model where:
 - Solar emergy accounting models  
 - Circular economy for ASIC hardware  
 - Energy grid optimization  
-
----
-
-## 🌞 Manifesto
-
-Modern economies measure value almost exclusively through **human utility**—what people desire, consume, or are willing to pay for.
-
-But this ignores a deeper layer of reality.
-
-All production, computation, and infrastructure are bound by the laws of physics. Every system carries an **irreducible thermodynamic cost**—not only in immediate energy use, but in the **total emergy embodied** across its lifecycle.
-
-**The Sun Standard asserts that value should not be defined by human preference alone, but by the total solar emergy required to produce and sustain it.**
-
-Bitcoin mining, when aligned with solar emergy flows, reveals this connection:
-
-- Energy becomes **traceable to its origin**
-- Emergy becomes the **measure of real cost**
-- Computation becomes a **carrier of thermodynamic value**
-- A satoshi becomes a **unit anchored in physical reality**
-
-In this model, value emerges from the intersection of:
-- **Subjective demand** (what humans want)  
-- **Objective emergy cost** (what reality has already paid)
-
-This reframes Bitcoin:
-
-Not just as digital scarcity,  
-but as a system capable of expressing **thermodynamic truth**.
-
-This is not just an optimization of energy systems.
-
-It is a shift toward an economy grounded in **emergy, transparency, and physical reality**.
 
 ---
 
