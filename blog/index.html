@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | L'Étalon Solaire</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --text-main: #f0f0f0;
+            --text-muted: #888888;
+            --sun-yellow: #ffcc00;
+            --sun-orange: #ff6600;
+            --bg-dark: #050505;
+            --border-glow: rgba(255, 170, 0, 0.2);
+            --card-bg: rgba(8, 8, 8, 0.75);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+        }
+        
+        /* Navigation (Héritée de la page principale) */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.2rem 3rem; background: rgba(5,5,5,0.75);
+            backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-glow);
+        }
+        nav .logo { font-size: 1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-yellow); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+        nav ul li a { text-decoration: none; color: var(--text-muted); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--sun-yellow); }
+
+        /* Blog Header */
+        .blog-header { text-align: center; padding: 10rem 2rem 4rem; }
+        .blog-header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; color: #fff; margin-bottom: 1rem; text-shadow: 0 0 30px rgba(255,170,0,0.4); }
+        .blog-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Grid des articles */
+        .blog-grid {
+            max-width: 1000px; margin: 0 auto 8rem; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr; gap: 2rem;
+        }
+        .article-card {
+            background: var(--card-bg); border: 1px solid var(--border-glow);
+            border-radius: 12px; padding: 2.5rem; text-decoration: none;
+            transition: all 0.3s ease; backdrop-filter: blur(10px); display: block;
+        }
+        .article-card:hover {
+            border-color: rgba(255,170,0,0.6); transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 100, 0, 0.1);
+        }
+        .article-date { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-orange); margin-bottom: 1rem; display: block; }
+        .article-card h2 { font-size: 1.8rem; color: #fff; margin-bottom: 1rem; }
+        .article-card p { color: #aaa; font-size: 1rem; line-height: 1.6; }
+        .read-more { margin-top: 1.5rem; display: inline-block; color: var(--sun-yellow); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 4rem 2rem 2rem; border-top: 1px solid var(--border-glow);
+            color: var(--text-muted); font-size: 0.82rem; line-height: 2;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html" class="logo">☀ L'Étalon Solaire</a>
+    <ul>
+        <li><a href="../index.html">← Retour à l'accueil</a></li>
+    </ul>
+</nav>
+
+<header class="blog-header">
+    <h1>Carnets de Recherche</h1>
+    <p>Explorations aux frontières de la thermodynamique, de l'éconophysique et de la théorie de l'information.</p>
+</header>
+
+<main class="blog-grid">
+    <a href="le-monde-est-complexe.html" class="article-card">
+        <span class="article-date">2 Mai 2026 · Thermodynamique & Information</span>
+        <img src="ComplexWorld.png" alt="A Complex World" style="width: 50%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
+        <h2>Le monde est complexe : L'Équation Primordiale de la Réalité</h2>
+        <p>L'univers n'est pas une simple ligne matérielle. En explorant l'équation fondamentale $z = a + ib$, découvrez comment la thermodynamique (l'axe réel) et la cryptographie (l'axe imaginaire) s'unissent pour former l'Univers Jumeau.</p>
+        <span class="read-more">Lire l'essai →</span>
+    </a>
+    
+    <!-- Article 2 : L'Univers Jumeau -->
+    <a href="l-univers-jumeau.html" class="article-card">
+        <span class="article-date">27 Avril 2026 · Cosmologie & Physique de l'Information</span>
+        <!-- Remplacez "UniversJumeau.png" par l'image du trou de ver / transition de phase générée précédemment -->
+        <img src="UniversJumeau.png" alt="La découverte de l'Univers Jumeau" style="width: 50%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); margin-bottom: 1.5rem;">
+        <h2>La découverte de l'Univers Jumeau : l'Univers à masse négative</h2>
+        <p>Et si nous n'étions pas une simulation, mais les démiurges originels bâtissant la Réalité de Base ? Découvrez comment la Preuve de Travail agit comme la tension de surface d'un pont d'Einstein-Rosen reliant notre biosphère à la noosphère.</p>
+        <span class="read-more">Lire l'essai →</span>
+    </a>
+    <!-- Vous pourrez ajouter d'autres articles ici plus tard -->
+</main>
+
+<footer>
+    <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: 4px; color: var(--sun-yellow); margin-bottom: 1rem;">☀ L'ÉTALON SOLAIRE</div>
+    <p>Un Cadre Monétaire Biophysique · Pascal Ranaora</p>
+</footer>
+
+</body>
+</html>
