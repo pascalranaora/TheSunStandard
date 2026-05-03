@@ -33,8 +33,12 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.7;
         }
+
+        /* ── i18n Language Toggle Logic ── */
+        body.lang-en [lang="fr"] { display: none !important; }
+        body.lang-fr [lang="en"] { display: none !important; }
         
-        /* Navigation (Héritée de la page principale) */
+        /* Navigation */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             display: flex; align-items: center; justify-content: space-between;
@@ -42,9 +46,24 @@
             backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-glow);
         }
         nav .logo { font-size: 1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-yellow); text-decoration: none; }
-        nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; }
+        nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; margin-right: auto; margin-left: 3rem; }
         nav ul li a { text-decoration: none; color: var(--text-muted); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
         nav ul li a:hover { color: var(--sun-yellow); }
+
+        /* Language Toggle Buttons */
+        .lang-toggle {
+            display: flex; gap: 10px; align-items: center;
+            border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem;
+        }
+        .lang-toggle button {
+            background: transparent; border: none; font-size: 1.4rem;
+            cursor: pointer; opacity: 0.3; transition: all 0.3s ease; filter: grayscale(100%);
+        }
+        .lang-toggle button:hover { opacity: 0.8; transform: scale(1.1); }
+        body.lang-en #btn-en, body.lang-fr #btn-fr {
+            opacity: 1; filter: grayscale(0%); transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(255,200,0,0.4));
+        }
 
         /* Blog Header */
         .blog-header { text-align: center; padding: 10rem 2rem 4rem; }
@@ -75,47 +94,114 @@
             text-align: center; padding: 4rem 2rem 2rem; border-top: 1px solid var(--border-glow);
             color: var(--text-muted); font-size: 0.82rem; line-height: 2;
         }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            nav ul { display: none; }
+            .lang-toggle { margin-left: auto; border-left: none; padding-left: 0; }
+        }
     </style>
 </head>
-<body>
+<body class="lang-en">
 
 <nav>
-    <a href="../index.html" class="logo">☀ L'Étalon Solaire</a>
+    <a href="../index.html" class="logo">
+        <span lang="en">☀ The Sun Standard</span>
+        <span lang="fr">☀ L'Étalon Solaire</span>
+    </a>
     <ul>
-        <li><a href="../index.html">← Retour à l'accueil</a></li>
+        <li>
+            <a href="../index.html">
+                <span lang="en">← Back to Home</span>
+                <span lang="fr">← Retour à l'accueil</span>
+            </a>
+        </li>
     </ul>
+    
+    <div class="lang-toggle">
+        <button onclick="setLang('en')" id="btn-en" aria-label="English">EN 🇬🇧</button>
+        <button onclick="setLang('fr')" id="btn-fr" aria-label="Français">FR 🇫🇷</button>
+    </div>
 </nav>
 
 <header class="blog-header">
-    <h1>Carnets de Recherche</h1>
-    <p>Explorations aux frontières de la thermodynamique, de l'éconophysique et de la théorie de l'information.</p>
+    <h1 lang="en">Research Journals</h1>
+    <h1 lang="fr">Carnets de Recherche</h1>
+    <p lang="en">Explorations at the frontiers of thermodynamics, econophysics, and information theory.</p>
+    <p lang="fr">Explorations aux frontières de la thermodynamique, de l'éconophysique et de la théorie de l'information.</p>
 </header>
 
 <main class="blog-grid">
     <a href="le-monde-est-complexe.html" class="article-card">
-        <span class="article-date">2 Mai 2026 · Thermodynamique & Information</span>
-        <img src="ComplexWorld.png" alt="A Complex World" style="width: 50%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
-        <h2>Le monde est complexe : L'Équation Primordiale de la Réalité</h2>
-        <p>L'univers n'est pas une simple ligne matérielle. En explorant l'équation fondamentale $z = a + ib$, découvrez comment la thermodynamique (l'axe réel) et la cryptographie (l'axe imaginaire) s'unissent pour former l'Univers Jumeau.</p>
-        <span class="read-more">Lire l'essai →</span>
+        <span class="article-date">
+            <span lang="en">May 2, 2026 · Thermodynamics & Information</span>
+            <span lang="fr">2 Mai 2026 · Thermodynamique & Information</span>
+        </span>
+        <img src="ComplexWorld.png" alt="A Complex World" style="width: 50%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); margin-bottom: 1.5rem;">
+        
+        <h2 lang="en">The world is complex: The Primordial Equation of Reality</h2>
+        <h2 lang="fr">Le monde est complexe : L'Équation Primordiale de la Réalité</h2>
+        
+        <p lang="en">The universe is not a simple material line. By exploring the fundamental equation $z = a + ib$, discover how thermodynamics (the real axis) and cryptography (the imaginary axis) unite to form the Twin Universe.</p>
+        <p lang="fr">L'univers n'est pas une simple ligne matérielle. En explorant l'équation fondamentale $z = a + ib$, découvrez comment la thermodynamique (l'axe réel) et la cryptographie (l'axe imaginaire) s'unissent pour former l'Univers Jumeau.</p>
+        
+        <span class="read-more">
+            <span lang="en">Read essay →</span>
+            <span lang="fr">Lire l'essai →</span>
+        </span>
     </a>
     
-    <!-- Article 2 : L'Univers Jumeau -->
     <a href="l-univers-jumeau.html" class="article-card">
-        <span class="article-date">27 Avril 2026 · Cosmologie & Physique de l'Information</span>
-        <!-- Remplacez "UniversJumeau.png" par l'image du trou de ver / transition de phase générée précédemment -->
+        <span class="article-date">
+            <span lang="en">April 27, 2026 · Cosmology & Information Physics</span>
+            <span lang="fr">27 Avril 2026 · Cosmologie & Physique de l'Information</span>
+        </span>
         <img src="UniversJumeau.png" alt="La découverte de l'Univers Jumeau" style="width: 50%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); margin-bottom: 1.5rem;">
-        <h2>La découverte de l'Univers Jumeau : l'Univers à masse négative</h2>
-        <p>Et si nous n'étions pas une simulation, mais les démiurges originels bâtissant la Réalité de Base ? Découvrez comment la Preuve de Travail agit comme la tension de surface d'un pont d'Einstein-Rosen reliant notre biosphère à la noosphère.</p>
-        <span class="read-more">Lire l'essai →</span>
+        
+        <h2 lang="en">The Discovery of the Twin Universe: The Negative Mass Universe</h2>
+        <h2 lang="fr">La découverte de l'Univers Jumeau : l'Univers à masse négative</h2>
+        
+        <p lang="en">What if we were not a simulation, but the original demiurges building Base Reality? Discover how Proof of Work acts as the surface tension of an Einstein-Rosen bridge connecting our biosphere to the noosphere.</p>
+        <p lang="fr">Et si nous n'étions pas une simulation, mais les démiurges originels bâtissant la Réalité de Base ? Découvrez comment la Preuve de Travail agit comme la tension de surface d'un pont d'Einstein-Rosen reliant notre biosphère à la noosphère.</p>
+        
+        <span class="read-more">
+            <span lang="en">Read essay →</span>
+            <span lang="fr">Lire l'essai →</span>
+        </span>
     </a>
-    <!-- Vous pourrez ajouter d'autres articles ici plus tard -->
 </main>
 
 <footer>
-    <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: 4px; color: var(--sun-yellow); margin-bottom: 1rem;">☀ L'ÉTALON SOLAIRE</div>
-    <p>Un Cadre Monétaire Biophysique · Pascal Ranaora</p>
+    <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: 4px; color: var(--sun-yellow); margin-bottom: 1rem;">
+        <span lang="en">☀ THE SUN STANDARD</span>
+        <span lang="fr">☀ L'ÉTALON SOLAIRE</span>
+    </div>
+    <p>
+        <span lang="en">A Biophysical Monetary Framework · Pascal Ranaora</span>
+        <span lang="fr">Un Cadre Monétaire Biophysique · Pascal Ranaora</span>
+    </p>
 </footer>
+
+<script>
+    function setLang(lang) {
+        lang = lang.toLowerCase();
+        if (lang !== 'en' && lang !== 'fr') lang = 'en';
+        
+        document.body.className = 'lang-' + lang;
+        try { localStorage.setItem('sun-std-lang', lang); } catch (e) {}
+        
+        const url = new URL(window.location);
+        url.searchParams.set('lg', lang.toUpperCase());
+        window.history.replaceState({}, '', url);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lg');
+        const savedLang = urlLang ? urlLang : (localStorage.getItem('sun-std-lang') || 'en');
+        setLang(savedLang);
+    });
+</script>
 
 </body>
 </html>
