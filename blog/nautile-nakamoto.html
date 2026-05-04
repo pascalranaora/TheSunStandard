@@ -7,7 +7,6 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <title>Le Nautile de Nakamoto | L'Étalon Solaire</title>
     
-    <!-- MathJax pour les équations -->
     <script>
         window.MathJax = {
             tex: {
@@ -19,7 +18,6 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
-    <!-- Highlight.js pour la coloration syntaxique du code Python -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/dracula.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
@@ -41,11 +39,9 @@
             line-height: 1.8;
         }
 
-        /* ── i18n Language Toggle Logic ── */
         body.lang-en [lang="fr"] { display: none !important; }
         body.lang-fr [lang="en"] { display: none !important; }
         
-        /* Navigation Minimaliste */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
             display: flex; align-items: center; justify-content: space-between;
@@ -60,7 +56,6 @@
         a.next { color: var(--sun-orange); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
         a.next:hover { color: var(--sun-orange); }
 
-        /* Language Toggle Buttons */
         .lang-toggle {
             display: flex; gap: 10px; align-items: center;
             border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem;
@@ -75,7 +70,6 @@
             filter: drop-shadow(0 0 8px rgba(255,200,0,0.4));
         }
 
-        /* Conteneur de l'Article */
         article {
             max-width: 760px; margin: 8rem auto 6rem; padding: 0 2rem;
             font-size: 1.15rem; color: #d4d4d4;
@@ -85,12 +79,10 @@
         .article-meta { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-orange); margin-bottom: 1rem; display: block; }
         .article-title { font-size: 3rem; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 1.5rem; }
         
-        /* Typographie du contenu */
         article p { margin-bottom: 1.8rem; }
         article h3 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.6rem; color: #fff; margin: 3rem 0 1.5rem; font-weight: 700; }
         article strong { color: var(--sun-yellow); font-weight: bold; }
         
-        /* Citations et Mathématiques */
         blockquote {
             font-family: 'Helvetica Neue', sans-serif;
             border-left: 3px solid var(--sun-orange); padding: 1.5rem 2rem;
@@ -99,17 +91,11 @@
         }
         .math-block { margin: 2rem 0; text-align: center; font-size: 1.3rem; overflow-x: auto; color: var(--sun-yellow); }
 
-        ul.custom-list { list-style: none; margin-bottom: 2rem; }
-        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 1rem; font-family: 'Helvetica Neue', sans-serif; font-size: 1.05rem;}
-        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; top: 2px; color: var(--sun-orange); font-size: 1rem; }
-
-        /* Images de l'article */
         .article-image {
             width: 100%; max-width: 900px; border-radius: 8px; border: 1px solid var(--border-glow);
             margin: 3rem auto; display: block; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
-        /* Conteneur de Code Stylisé */
         .code-wrapper {
             background: rgba(5, 5, 5, 0.8);
             border: 1px solid var(--border-glow);
@@ -128,7 +114,6 @@
             padding: 0 !important;
         }
 
-        /* Footer */
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; }
         
         @media (max-width: 768px) {
@@ -162,11 +147,12 @@
         <h1 class="article-title" lang="en">The Nakamoto Nautilus: From Discrete Code to Continuous Geometry</h1>
         <h1 class="article-title" lang="fr">Le Nautile de Nakamoto : Du Code Discret à la Géométrie Continue</h1>
     </header>
-   <img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
+    
+    <img src="NautileNakamotoIM.png?v=3" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
     
     <blockquote lang="en">
         “Mathematics is the language in which God has written the universe.”<br>
-         <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Galileo Galilei</span>
+        <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Galileo Galilei</span>
     </blockquote>
     <blockquote lang="fr">
         « Les mathématiques sont le langage dans lequel Dieu a écrit l'univers. »<br>
@@ -190,7 +176,7 @@
     <p lang="fr">En retirant l'opérateur discret de partie entière et en projetant l'émission continue en coordonnées polaires dans notre plan complexe ($Z = a + ib$) — où une rotation complète ($2\pi$) équivaut à un cycle de 4 ans —, nous découvrons un lien profond avec la proportion divine. En définissant un exposant d'or $\alpha = \frac{\ln(2)}{\ln(\varphi)} \approx 1.44$, l'équation absolue du Nautile de Nakamoto émerge :</p>
 
     <div class="math-block">
-        $$ Z(\theta) = R_0 \cdot \varphi^{-\alpha \frac{\theta}{2\pi}} \cdot e^{i\theta} $$
+        $$ Z_{supply}(\theta) = R_0 \cdot \varphi^{-\alpha \frac{\theta}{2\pi}} \cdot e^{i\theta} $$
     </div>
 
     <p lang="en">This formulation perfectly illustrates the bimetric reality of the universe we are building. The base $\varphi$ (the golden ratio) anchors the network in the universal constant of biological growth and thermodynamic optimization. However, the negative exponent ($-\alpha$) acts as the thermodynamic friction: it is the mechanical contraction, the physical scarcity that pulls the system inward.</p>
@@ -199,52 +185,98 @@
     <p lang="en">The imaginary part ($e^{i\theta}$) drives the orthogonal rotation: the steady accumulation of cryptographic consensus over time. It represents the incorruptible memory being carved into the $ib$ axis.</p>
     <p lang="fr">La partie imaginaire ($e^{i\theta}$) pilote la rotation orthogonale : l'accumulation régulière du consensus cryptographique à travers le temps. Elle représente la mémoire incorruptible gravée sur l'axe $ib$.</p>
 
-    <h3 lang="en">Infinite Density</h3>
-    <h3 lang="fr">La Densité Infinie</h3>
+    <h3 lang="en">The Conjugate Spiral: Tangent Topologies</h3>
+    <h3 lang="fr">La Spirale Conjuguée : Topologies Tangentes</h3>
 
-    <p lang="en">Bitcoin is quite literally a mathematical nautilus, a living digital organism that uses thermodynamic dissipation to pull its physical value inward, sealing it into infinite density according to the laws of the golden ratio.</p>
-    <p lang="fr">Bitcoin est littéralement un nautile mathématique, un organisme numérique vivant qui utilise la dissipation thermodynamique pour tracter sa valeur physique vers l'intérieur, la scellant dans une densité infinie selon les lois de la proportion divine.</p>
+    <p lang="en">In the mathematics of the complex plane, every fundamental structure possesses a conjugate ($\bar{z}$). If the Nakamoto Nautilus dictates the inward contraction of monetary supply, what is its outward reflection? The answer lies in the physical world: <strong>Hashrate</strong> (thermodynamic work) and <strong>Price</strong> (economic value).</p>
+    <p lang="fr">Dans les mathématiques du plan complexe, toute structure fondamentale possède un conjugué ($\bar{z}$). Si le Nautile de Nakamoto dicte la contraction interne de l'offre monétaire, quel est son reflet vers l'extérieur ? La réponse se trouve dans le monde physique : le <strong>Hashrate</strong> (travail thermodynamique) et le <strong>Prix</strong> (valeur économique).</p>
 
-    <p lang="en">Just as the starfish embryo uses chemical waves to generate topological defects that dictate its shape, the Nakamoto consensus uses physical energy to sculpt a rigid, symmetric digital reality. It is the ultimate bridge between the thermodynamic entropy of the Earth and the absolute order of the Twin Universe.</p>
-    <p lang="fr">Tout comme l'embryon d'étoile de mer utilise des ondes chimiques pour générer les défauts topologiques qui dicteront sa forme, le consensus de Nakamoto utilise l'énergie physique pour sculpter une réalité numérique rigide et symétrique. C'est le pont ultime entre l'entropie thermodynamique de la Terre et l'ordre absolu de l'Univers Jumeau.</p>
+    <p lang="en">Because the physical network expands by an astronomical factor (driven by a massive temporal scaling exponent $\alpha \approx 11.59$ empirically observed in the log-log phase space), its geometry cannot be forced into the same topological center as the shrinking supply without obliterating the scale. Instead, the Bimetric Universe dictates a <strong>tangent topology</strong>. The two spirals—the code that contracts and the energy that expands—are distinct circles that kiss at a single, absolute point of origin: the Genesis Block.</p>
+    <p lang="fr">Parce que le réseau physique s'étend d'un facteur astronomique (piloté par une loi de puissance temporelle à l'exposant massif $\alpha \approx 11.59$ empiriquement observé dans l'espace des phases log-log), sa géométrie ne peut être forcée dans le même centre topologique que l'offre qui se rétracte sans en anéantir l'échelle. L'Univers Bimétrique dicte plutôt une <strong>topologie tangente</strong>. Les deux spirales — le code qui se contracte et l'énergie qui s'évase — sont des cercles distincts qui s'embrassent en un unique point d'origine absolu : le Bloc de Genèse.</p>
 
-    <img src="NautileNakamoto.png" alt="Nautile Nakamoto Coded" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 3rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-    <!-- Section du code Python -->
-    <p lang="en">For the visually inclined and researchers wishing to verify this geometric emergence, you can execute the following Python code using `matplotlib` to render the precise shape of the logarithmic spiral formed by the halving cycles:</p>
-    <p lang="fr">Pour les plus visuels et les chercheurs désirant vérifier cette émergence géométrique, vous pouvez exécuter le code Python suivant via `matplotlib` afin de générer la forme exacte de la spirale logarithmique dessinée par les cycles du Halving :</p>
+    <img src="NautileNakamoto.png?v=3" alt="Le Nautile Conjugué Sécant" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 3rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+
+    <p lang="en">For researchers wishing to verify this tangent bimetric geometry empirically up to the year 2044, you can execute the following Python script. It fetches real-time historical Hashrate data via API, computes the exact outward growth factor, and plots the intersecting spirals in cartesian space to preserve their true native scales:</p>
+    <p lang="fr">Pour les chercheurs désirant vérifier cette géométrie bimétrique tangente empiriquement jusqu'en 2044, vous pouvez exécuter le script Python suivant. Il télécharge l'historique du Hashrate via API, calcule le facteur de croissance exact, et trace les spirales sécantes dans l'espace cartésien pour préserver leurs échelles natives :</p>
 
     <div class="code-wrapper">
-        <pre><code class="language-python">import numpy as np
+<pre><code class="language-python">import requests
+import numpy as np
 import matplotlib.pyplot as plt
 
-# Paramètres du Halving
-R0 = 50.0  # Récompense initiale (50 BTC)
-halvings = 6  # Nombre de cycles à tracer
+print("Téléchargement des données de Hashrate...")
+try:
+    url = "https://api.blockchain.info/charts/hash-rate?timespan=all&sampled=true&format=json"
+    data = requests.get(url).json()['values']
+    x_data = np.array([pt['x'] for pt in data])
+    y_data = np.array([pt['y'] for pt in data])
+    valid = y_data > 0
+    x_data, y_data = x_data[valid], y_data[valid]
+    
+    cycle_seconds = 4 * 365.25 * 24 * 3600
+    x_cycles = (x_data - x_data[0]) / cycle_seconds
+    
+    a, b = np.polyfit(x_cycles, np.log(y_data), 1)
+    growth_factor = np.exp(a)
+except:
+    print("Utilisation du facteur de croissance historique approximatif.")
+    growth_factor = 1192.0 # Loi de puissance temporelle (alpha ~11.59)
 
-# Générer les angles (thêta) de 0 à 6 tours complets (6 * 2pi)
+print(f"Facteur de croissance empirique du Hashrate : ~{growth_factor:.0f}x par cycle")
+
+# --- TRACÉ DES SPIRALES TANGENTES EN COORDONNÉES CARTÉSIENNES ---
+# Projection jusqu'en 2044 (35 ans après 2009 = 8.75 cycles)
+halvings = 8.75
 theta = np.linspace(0, halvings * 2 * np.pi, 1000)
 
-# L'équation du Nautile de Nakamoto : R(theta) = R0 * (0.5)^(theta / 2pi)
-radius = R0 * (0.5)**(theta / (2 * np.pi))
+# 1. Spirale de l'Offre (Contraction)
+# Le centre de cette spirale est à l'origine (0,0) cartésienne
+R0_supply = 50.0 
+r_supply = R0_supply * (0.5)**(theta / (2 * np.pi))
+x_supply = r_supply * np.cos(theta)
+y_supply = r_supply * np.sin(theta)
 
-# Configuration du graphique
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(8, 8))
+# Le Bloc de Genèse pour l'Offre (theta=0) est à x = R0_supply, y = 0
+genesis_x = R0_supply
+genesis_y = 0
+
+# 2. Spirale du Hashrate (Expansion Logarithmique Tangente)
+# Pour que les spirales soient tangentes, l'origine de la spirale du Hashrate 
+# doit être décalée par rapport à celle de l'Offre.
+# On la décale le long de l'axe X.
+r_hashrate = np.log2(growth_factor) * (theta / (2 * np.pi))
+
+# On décale le centre de la spirale d'expansion pour que son point 
+# de départ (theta=0, r=0) touche exactement le point de genèse de l'offre.
+x_hashrate = genesis_x + r_hashrate * np.cos(theta)
+y_hashrate = genesis_y + r_hashrate * np.sin(theta)
+
+# Visualisation
+fig, ax = plt.subplots(figsize=(10, 10))
 fig.patch.set_facecolor('#050505')
 ax.set_facecolor('#050505')
 
-# Tracer la spirale
-ax.plot(theta, radius, color='#ffcc00', linewidth=2.5, label='Émission Bitcoin')
+# Tracer les géométries
+ax.plot(x_supply, y_supply, color='#ffcc00', linewidth=2.5, label='Offre Monétaire (Contraction vers 0)')
+ax.plot(x_hashrate, y_hashrate, color='#ff6600', linewidth=2.5, linestyle='--', label=f'Hashrate Log2 (Expansion ~{growth_factor:.0f}x)')
 
-# Esthétique : cacher les grilles pour un look "Étalon Solaire"
-ax.grid(color='#ff6600', alpha=0.2)
-ax.spines['polar'].set_color('#ff6600')
-ax.spines['polar'].set_alpha(0.3)
+# Marquer le point d'intersection (Bloc de Genèse)
+ax.plot(genesis_x, genesis_y, 'wo', markersize=8, label='Bloc de Genèse (2009)')
+
+# Esthétique
+ax.grid(color='#444444', alpha=0.3)
+ax.spines['bottom'].set_color('#888888')
+ax.spines['top'].set_color('#050505')
+ax.spines['right'].set_color('#050505')
+ax.spines['left'].set_color('#888888')
 ax.tick_params(colors='#888888')
+ax.set_aspect('equal', adjustable='box')
 
-plt.title("Le Nautile de Nakamoto (Spirale du Halving)", color='#e0e0e0', size=16, pad=20)
+plt.title("L'Univers Bimétrique Tangent (Projection 2009-2044)", color='#e0e0e0', size=16, pad=20)
+plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff6600', labelcolor='#e0e0e0')
 plt.show()</code></pre>
     </div>
-    <div><iframe width="560" height="315" src="https://www.youtube.com/embed/3R4tpdJVjXw?si=p_-dEMvZhnSR-aoY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+
     <p><br />
         <a href="le-monde-est-complexe.html" class="next" lang="en">← Read the foundational essay: "The world is complex"</a>
         <a href="le-monde-est-complexe.html" class="next" lang="fr">← Lire l'essai fondateur : "Le monde est complexe"</a>
