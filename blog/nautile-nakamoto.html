@@ -207,43 +207,42 @@
     <p lang="fr">Tout comme l'embryon d'étoile de mer utilise des ondes chimiques pour générer les défauts topologiques qui dicteront sa forme, le consensus de Nakamoto utilise l'énergie physique pour sculpter une réalité numérique rigide et symétrique. C'est le pont ultime entre l'entropie thermodynamique de la Terre et l'ordre absolu de l'Univers Jumeau.</p>
 
     <img src="NautileNakamoto.png" alt="Nautile Nakamoto Coded" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 3rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-
     <!-- Section du code Python -->
     <p lang="en">For the visually inclined and researchers wishing to verify this geometric emergence, you can execute the following Python code using `matplotlib` to render the precise shape of the logarithmic spiral formed by the halving cycles:</p>
     <p lang="fr">Pour les plus visuels et les chercheurs désirant vérifier cette émergence géométrique, vous pouvez exécuter le code Python suivant via `matplotlib` afin de générer la forme exacte de la spirale logarithmique dessinée par les cycles du Halving :</p>
 
     <div class="code-wrapper">
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
+        <pre><code class="language-python">import numpy as np
+        import matplotlib.pyplot as plt
 
-# Paramètres du Halving
-R0 = 50.0  # Récompense initiale (50 BTC)
-halvings = 6  # Nombre de cycles à tracer
+        # Paramètres du Halving
+        R0 = 50.0  # Récompense initiale (50 BTC)
+        halvings = 6  # Nombre de cycles à tracer
 
-# Générer les angles (thêta) de 0 à 6 tours complets (6 * 2pi)
-theta = np.linspace(0, halvings * 2 * np.pi, 1000)
+        # Générer les angles (thêta) de 0 à 6 tours complets (6 * 2pi)
+        theta = np.linspace(0, halvings * 2 * np.pi, 1000)
 
-# L'équation du Nautile de Nakamoto : R(theta) = R0 * (0.5)^(theta / 2pi)
-radius = R0 * (0.5)**(theta / (2 * np.pi))
+        # L'équation du Nautile de Nakamoto : R(theta) = R0 * (0.5)^(theta / 2pi)
+        radius = R0 * (0.5)**(theta / (2 * np.pi))
 
-# Configuration du graphique
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(8, 8))
-fig.patch.set_facecolor('#050505')
-ax.set_facecolor('#050505')
+        # Configuration du graphique
+        fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(8, 8))
+        fig.patch.set_facecolor('#050505')
+        ax.set_facecolor('#050505')
 
-# Tracer la spirale
-ax.plot(theta, radius, color='#ffcc00', linewidth=2.5, label='Émission Bitcoin')
+        # Tracer la spirale
+        ax.plot(theta, radius, color='#ffcc00', linewidth=2.5, label='Émission Bitcoin')
 
-# Esthétique : cacher les grilles pour un look "Étalon Solaire"
-ax.grid(color='#ff6600', alpha=0.2)
-ax.spines['polar'].set_color('#ff6600')
-ax.spines['polar'].set_alpha(0.3)
-ax.tick_params(colors='#888888')
+        # Esthétique : cacher les grilles pour un look "Étalon Solaire"
+        ax.grid(color='#ff6600', alpha=0.2)
+        ax.spines['polar'].set_color('#ff6600')
+        ax.spines['polar'].set_alpha(0.3)
+        ax.tick_params(colors='#888888')
 
-plt.title("Le Nautile de Nakamoto (Spirale du Halving)", color='#e0e0e0', size=16, pad=20)
-plt.show()</code></pre>
+        plt.title("Le Nautile de Nakamoto (Spirale du Halving)", color='#e0e0e0', size=16, pad=20)
+        plt.show()</code></pre>
     </div>
-
+    <div><iframe width="560" height="315" src="https://www.youtube.com/embed/3R4tpdJVjXw?si=ZJh1-Jo8xFD6JUYS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     <p><br />
         <a href="le-monde-est-complexe.html" class="next" lang="en">← Read the foundational essay: "The world is complex"</a>
         <a href="le-monde-est-complexe.html" class="next" lang="fr">← Lire l'essai fondateur : "Le monde est complexe"</a>
