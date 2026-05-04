@@ -160,11 +160,11 @@
         <h1 class="article-title" lang="en">The Nakamoto Nautilus: From Discrete Code to Continuous Geometry</h1>
         <h1 class="article-title" lang="fr">Le Nautile de Nakamoto : Du Code Discret à la Géométrie Continue</h1>
     </header>
-    <img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
+   <img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
     
     <blockquote lang="en">
         “Mathematics is the language in which God has written the universe.”<br>
-        <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Galileo Galilei</span>
+         <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Galileo Galilei</span>
     </blockquote>
     <blockquote lang="fr">
         « Les mathématiques sont le langage dans lequel Dieu a écrit l'univers. »<br>
@@ -213,34 +213,34 @@
 
     <div class="code-wrapper">
         <pre><code class="language-python">import numpy as np
-        import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-        # Paramètres du Halving
-        R0 = 50.0  # Récompense initiale (50 BTC)
-        halvings = 6  # Nombre de cycles à tracer
+# Paramètres du Halving
+R0 = 50.0  # Récompense initiale (50 BTC)
+halvings = 6  # Nombre de cycles à tracer
 
-        # Générer les angles (thêta) de 0 à 6 tours complets (6 * 2pi)
-        theta = np.linspace(0, halvings * 2 * np.pi, 1000)
+# Générer les angles (thêta) de 0 à 6 tours complets (6 * 2pi)
+theta = np.linspace(0, halvings * 2 * np.pi, 1000)
 
-        # L'équation du Nautile de Nakamoto : R(theta) = R0 * (0.5)^(theta / 2pi)
-        radius = R0 * (0.5)**(theta / (2 * np.pi))
+# L'équation du Nautile de Nakamoto : R(theta) = R0 * (0.5)^(theta / 2pi)
+radius = R0 * (0.5)**(theta / (2 * np.pi))
 
-        # Configuration du graphique
-        fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(8, 8))
-        fig.patch.set_facecolor('#050505')
-        ax.set_facecolor('#050505')
+# Configuration du graphique
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(8, 8))
+fig.patch.set_facecolor('#050505')
+ax.set_facecolor('#050505')
 
-        # Tracer la spirale
-        ax.plot(theta, radius, color='#ffcc00', linewidth=2.5, label='Émission Bitcoin')
+# Tracer la spirale
+ax.plot(theta, radius, color='#ffcc00', linewidth=2.5, label='Émission Bitcoin')
 
-        # Esthétique : cacher les grilles pour un look "Étalon Solaire"
-        ax.grid(color='#ff6600', alpha=0.2)
-        ax.spines['polar'].set_color('#ff6600')
-        ax.spines['polar'].set_alpha(0.3)
-        ax.tick_params(colors='#888888')
+# Esthétique : cacher les grilles pour un look "Étalon Solaire"
+ax.grid(color='#ff6600', alpha=0.2)
+ax.spines['polar'].set_color('#ff6600')
+ax.spines['polar'].set_alpha(0.3)
+ax.tick_params(colors='#888888')
 
-        plt.title("Le Nautile de Nakamoto (Spirale du Halving)", color='#e0e0e0', size=16, pad=20)
-        plt.show()</code></pre>
+plt.title("Le Nautile de Nakamoto (Spirale du Halving)", color='#e0e0e0', size=16, pad=20)
+plt.show()</code></pre>
     </div>
     <div><iframe width="560" height="315" src="https://www.youtube.com/embed/GMr8iLnfr4s?si=vI_EFFBDVgtkivZl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     <p><br />
