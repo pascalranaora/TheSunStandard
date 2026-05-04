@@ -36,7 +36,16 @@
         /* ── i18n Language Toggle Logic ── */
         body.lang-en [lang="fr"] { display: none !important; }
         body.lang-fr [lang="en"] { display: none !important; }
-        
+        img:not(.cover-image):hover {
+            width:100%!important; 
+            height:100%!important; 
+            object-fit:cover!important; 
+            object-position:center!important; 
+            /* transform: scale(2);
+            z-index: 1;
+            overflow: hidden; 
+            position: relative; */
+        }
         /* Navigation Minimaliste */
         nav {
             position: fixed; top: 0; left: 0; right: 0; z-index: 100;
