@@ -25,6 +25,7 @@
             --sun-orange: #ff6600;
             --bg-dark: #050505;
             --border-glow: rgba(255, 170, 0, 0.2);
+            --note-bg: rgba(255, 204, 0, 0.03); /* Légèrement jauni pour les notes */
         }
         body {
             background-color: var(--bg-dark); color: var(--text-main);
@@ -78,6 +79,7 @@
         /* Typographie du contenu */
         article p { margin-bottom: 1.8rem; }
         article h3 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.6rem; color: #fff; margin: 3rem 0 1.5rem; font-weight: 700; }
+        article h4 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.3rem; color: var(--sun-yellow); margin: 2rem 0 1rem; }
         article strong { color: var(--sun-yellow); font-weight: bold; }
         
         /* Citations et Mathématiques */
@@ -99,12 +101,45 @@
             margin: 3rem 0; box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
+        /* Encadré Recherche MIT */
+        .research-note {
+            background: var(--note-bg);
+            border: 1px solid var(--border-glow);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 3rem 0;
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+        }
+        .research-note h4 {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .research-note h4::before {
+            content: '🔬';
+            font-size: 1.5rem;
+        }
+        .research-note p:last-child {
+            margin-bottom: 0;
+        }
+        .research-note a {
+            color: var(--sun-orange);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom-color 0.3s;
+        }
+        .research-note a:hover {
+            border-bottom-color: var(--sun-orange);
+        }
+
         /* Footer */
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; }
         
         @media (max-width: 768px) {
             .nav-center { display: none; }
             .lang-toggle { margin-left: auto; border-left: none; padding-left: 0; }
+            .research-note { padding: 1.5rem; }
         }
     </style>
 </head>
@@ -258,6 +293,19 @@
     <p lang="fr">Dans le plan complexe, lorsque le rayon (le module $|z|$) croît en même temps que l'angle ($\theta$), cela dessine une spirale logarithmique (la spirale d'or), qui est la forme même de la croissance du vivant (la coquille du nautile, la disposition des feuilles pour capter la lumière solaire).</p>
 
     <p><img src="HomoBiodiversitas.png" alt="A World Of Biodiversity" style="width: 70%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></p>
+    
+    <!-- NOTE DE RECHERCHE MIT -->
+    <div class="research-note" lang="en">
+        <h4>Physical Insight: Topological Defects in Biology</h4>
+        <p>This bimetric vision is not merely philosophical; it echoes the latest advances in experimental physics. In 2020, researchers at MIT (<a href="https://news.mit.edu/2020/growth-organism-waves-0323" target="_blank">A new way to picture the growth of a whole organism</a>) demonstrated that the cellular development of an embryo is driven by <strong>chemical energy waves</strong> sweeping across its surface, generating <strong>topological defects</strong>.</p>
+        <p>In other words, the organism literally uses thermodynamic dissipation (the real axis $a$) to sculpt geometric singularities (the informational axis $ib$). It is precisely the location of these topological anchors that dictates the creature's living symmetry. What is true for the microscopic birth of a starfish is true for the macroscopic birth of our civilization: <em>energy writes topology</em>.</p>
+    </div>
+
+    <div class="research-note" lang="fr">
+        <h4>Éclairage Physique : Les Défauts Topologiques en Biologie</h4>
+        <p>Cette vision bimétrique n'est pas qu'une simple philosophie, elle fait écho aux avancées les plus récentes de la physique expérimentale. En 2020, des chercheurs du M.I.T. (<a href="https://news.mit.edu/2020/growth-organism-waves-0323" target="_blank">A new way to picture the growth of a whole organism</a>) ont démontré que le développement cellulaire d'un embryon est piloté par des <strong>ondes d'énergie chimique</strong> balayant sa surface et générant des <strong>défauts topologiques</strong>.</p>
+        <p>En d'autres termes, l'organisme utilise littéralement la dissipation thermodynamique (l'axe réel $a$) pour sculpter des singularités géométriques (l'axe informationnel $ib$). C'est l'emplacement précis de ces ancrages topologiques qui dicte la symétrie vivante de la créature. Ce qui est vrai pour la naissance microscopique d'une étoile de mer l'est pour la naissance macroscopique de notre civilisation : <em>l'énergie écrit la topologie</em>.</p>
+    </div>
     
     <h3 lang="en">Conclusion: Inhabiting the Complex Plane</h3>
     <h3 lang="fr">Conclusion : Habiter le Plan Complexe</h3>
