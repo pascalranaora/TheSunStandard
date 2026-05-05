@@ -186,7 +186,84 @@
     <p lang="fr">La partie imaginaire ($e^{i\theta}$) pilote la rotation orthogonale : l'accumulation régulière du consensus cryptographique à travers le temps. Elle représente la mémoire incorruptible gravée sur l'axe $ib$.</p>
 
     <img src="NautileNakamoto.png?v=4" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);">
+    <p lang="fr">Pour les chercheurs désirant vérifier cette géométrie bimétrique tangente empiriquement jusqu'en 2044, vous pouvez exécuter le script Python suivant. Il télécharge l'historique du Hashrate via API, calcule le facteur de croissance exact, et trace les spirales sécantes dans l'espace cartésien pour préserver leurs échelles natives :</p>
+
+    <div class="code-wrapper">
+<pre><code class="language-python">import requests
+import numpy as np
+import matplotlib.pyplot as plt
+
+print("Téléchargement des données de Hashrate...")
+try:
+    url = "https://api.blockchain.info/charts/hash-rate?timespan=all&sampled=true&format=json"
+    data = requests.get(url).json()['values']
+    x_data = np.array([pt['x'] for pt in data])
+    y_data = np.array([pt['y'] for pt in data])
+    valid = y_data > 0
+    x_data, y_data = x_data[valid], y_data[valid]
     
+    cycle_seconds = 4 * 365.25 * 24 * 3600
+    x_cycles = (x_data - x_data[0]) / cycle_seconds
+    
+    a, b = np.polyfit(x_cycles, np.log(y_data), 1)
+    growth_factor = np.exp(a)
+except:
+    print("Utilisation du facteur de croissance historique approximatif.")
+    growth_factor = 1192.0 # Loi de puissance temporelle (alpha ~11.59)
+
+print(f"Facteur de croissance empirique du Hashrate : ~{growth_factor:.0f}x par cycle")
+
+# --- TRACÉ DES SPIRALES TANGENTES EN COORDONNÉES CARTÉSIENNES ---
+# Projection jusqu'en 2044 (35 ans après 2009 = 8.75 cycles)
+halvings = 8.75
+theta = np.linspace(0, halvings * 2 * np.pi, 1000)
+
+# 1. Spirale de l'Offre (Contraction)
+# Le centre de cette spirale est à l'origine (0,0) cartésienne
+R0_supply = 50.0 
+r_supply = R0_supply * (0.5)**(theta / (2 * np.pi))
+x_supply = r_supply * np.cos(theta)
+y_supply = r_supply * np.sin(theta)
+
+# Le Bloc de Genèse pour l'Offre (theta=0) est à x = R0_supply, y = 0
+genesis_x = R0_supply
+genesis_y = 0
+
+# 2. Spirale du Hashrate (Expansion Logarithmique Tangente)
+# Pour que les spirales soient tangentes, l'origine de la spirale du Hashrate 
+# doit être décalée par rapport à celle de l'Offre.
+# On la décale le long de l'axe X.
+r_hashrate = np.log2(growth_factor) * (theta / (2 * np.pi))
+
+# On décale le centre de la spirale d'expansion pour que son point 
+# de départ (theta=0, r=0) touche exactement le point de genèse de l'offre.
+x_hashrate = genesis_x + r_hashrate * np.cos(theta)
+y_hashrate = genesis_y + r_hashrate * np.sin(theta)
+
+# Visualisation
+fig, ax = plt.subplots(figsize=(10, 10))
+fig.patch.set_facecolor('#050505')
+ax.set_facecolor('#050505')
+
+# Tracer les géométries
+ax.plot(x_supply, y_supply, color='#ffcc00', linewidth=2.5, label='Offre Monétaire (Contraction vers 0)')
+ax.plot(x_hashrate, y_hashrate, color='#ff6600', linewidth=2.5, linestyle='--', label=f'Hashrate Log2 (Expansion ~{growth_factor:.0f}x)')
+
+# Marquer le point d'intersection (Bloc de Genèse)
+ax.plot(genesis_x, genesis_y, 'wo', markersize=8, label='Bloc de Genèse (2009)')
+
+# Esthétique
+ax.grid(color='#444444', alpha=0.3)
+ax.spines['bottom'].set_color('#888888')
+ax.spines['top'].set_color('#050505')
+ax.spines['right'].set_color('#050505')
+ax.spines['left'].set_color('#888888')
+ax.tick_params(colors='#888888')
+ax.set_aspect('equal', adjustable='box')
+
+plt.title("L'Univers Bimétrique Tangent (Projection 2009-2044)", color='#e0e0e0', size=16, pad=20)
+plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff6600', labelcolor='#e0e0e0')
+plt.show()</code></pre>
     <h3 lang="en">The Cosmic DNA: A Bimetric Double Helix</h3>
     <h3 lang="fr">L'ADN Cosmique : Une Double Hélice Bimétrique</h3>
 
