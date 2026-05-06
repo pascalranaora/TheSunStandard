@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <title>Research Papers | L'Étalon Solaire</title>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$']]
+            },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --text-main: #f0f0f0;
+            --text-muted: #888888;
+            --sun-yellow: #ffcc00;
+            --sun-orange: #ff6600;
+            --bg-dark: #050505;
+            --border-glow: rgba(255, 170, 0, 0.2);
+            --card-bg: rgba(8, 8, 8, 0.75);
+        }
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+        }
+
+        /* ── i18n Language Toggle Logic ── */
+        body.lang-en [lang="fr"] { display: none !important; }
+        body.lang-fr [lang="en"] { display: none !important; }
+        
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1.2rem 3rem; background: rgba(5,5,5,0.75);
+            backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-glow);
+        }
+        nav .logo { font-size: 1rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-yellow); text-decoration: none; }
+        nav ul { list-style: none; display: flex; gap: 2.5rem; align-items: center; margin-right: auto; margin-left: 3rem; }
+        nav ul li a { text-decoration: none; color: var(--text-muted); font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; transition: color 0.3s; }
+        nav ul li a:hover { color: var(--sun-yellow); }
+
+        /* Language Toggle Buttons */
+        .lang-toggle {
+            display: flex; gap: 10px; align-items: center;
+            border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem;
+        }
+        .lang-toggle button {
+            background: transparent; border: none; font-size: 1.4rem;
+            cursor: pointer; opacity: 0.3; transition: all 0.3s ease; filter: grayscale(100%);
+        }
+        .lang-toggle button:hover { opacity: 0.8; transform: scale(1.1); }
+        body.lang-en #btn-en, body.lang-fr #btn-fr {
+            opacity: 1; filter: grayscale(0%); transform: scale(1.1);
+            filter: drop-shadow(0 0 8px rgba(255,200,0,0.4));
+        }
+
+        /* Header */
+        .blog-header { text-align: center; padding: 10rem 2rem 4rem; }
+        .blog-header h1 { font-size: 3.5rem; font-weight: 800; letter-spacing: -1px; color: #fff; margin-bottom: 1rem; text-shadow: 0 0 30px rgba(255,170,0,0.4); }
+        .blog-header p { color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
+
+        /* Grid des PDF */
+        .blog-grid {
+            max-width: 1000px; margin: 0 auto 8rem; padding: 0 2rem;
+            display: grid; grid-template-columns: 1fr; gap: 2rem;
+        }
+        .article-card {
+            background: var(--card-bg); border: 1px solid var(--border-glow);
+            border-radius: 12px; padding: 2.5rem; text-decoration: none;
+            transition: all 0.3s ease; backdrop-filter: blur(10px); display: flex;
+            flex-direction: column; align-items: flex-start;
+        }
+        .article-card:hover {
+            border-color: rgba(255,170,0,0.6); transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(255, 100, 0, 0.1);
+        }
+        .article-card .pdf-icon {
+            font-size: 2.5rem; color: var(--sun-orange); margin-bottom: 1rem;
+        }
+        .article-date { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; display: block; }
+        .article-card h2 { font-size: 1.6rem; color: #fff; margin-bottom: 0.8rem; line-height: 1.3; }
+        .article-card p { color: #aaa; font-size: 1rem; line-height: 1.6; }
+        .read-more { margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 8px; color: var(--sun-yellow); font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; font-weight: bold; }
+        .read-more svg { width: 16px; height: 16px; fill: currentColor; }
+
+        /* Footer */
+        footer {
+            text-align: center; padding: 4rem 2rem 2rem; border-top: 1px solid var(--border-glow);
+            color: var(--text-muted); font-size: 0.82rem; line-height: 2;
+        }
+
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            nav ul { display: none; }
+            .lang-toggle { margin-left: auto; border-left: none; padding-left: 0; }
+        }
+    </style>
+</head>
+<body class="lang-en">
+
+<nav>
+    <a href="../index.html" class="logo">
+        <span lang="en">☀ The Sun Standard</span>
+        <span lang="fr">☀ L'Étalon Solaire</span>
+    </a>
+    <ul>
+        <li>
+            <a href="../index.html">
+                <span lang="en">← Back to Home</span>
+                <span lang="fr">← Retour à l'accueil</span>
+            </a>
+        </li>
+    </ul>
+    
+    <div class="lang-toggle">
+        <button onclick="setLang('en')" id="btn-en" aria-label="English">EN 🇬🇧</button>
+        <button onclick="setLang('fr')" id="btn-fr" aria-label="Français">FR 🇫🇷</button>
+    </div>
+</nav>
+
+<header class="blog-header">
+    <h1 lang="en">Research Papers</h1>
+    <h1 lang="fr">Publications Scientifiques</h1>
+    <p lang="en">Direct access to PDF manuscripts covering non-equilibrium thermodynamics, econophysics, and cosmological models.</p>
+    <p lang="fr">Accès direct aux manuscrits PDF couvrant la thermodynamique hors-équilibre, l'éconophysique et les modèles cosmologiques.</p>
+</header>
+
+<main id="pdf-container" class="blog-grid">
+    </main>
+
+<footer>
+    <div style="font-size: 1.1rem; font-weight: 700; letter-spacing: 4px; color: var(--sun-yellow); margin-bottom: 1rem;">
+        <span lang="en">☀ THE SUN STANDARD</span>
+        <span lang="fr">☀ L'ÉTALON SOLAIRE</span>
+    </div>
+    <p>
+        <span lang="en">A Biophysical Monetary Framework · Pascal Ranaora</span>
+        <span lang="fr">Un Cadre Monétaire Biophysique · Pascal Ranaora</span>
+    </p>
+</footer>
+
+<script>
+    // 1. Liste des PDF à afficher
+    const pdfFiles = [
+        {
+            filename: "cosmo.pdf",
+            title_en: "An Effective Orthogonal-Bimetric Negentropic-Sector Model",
+            title_fr: "Modèle Orthogonal-Bimétrique Effectif du Secteur Néguentropique",
+            desc_en: "A cosmological framework for Dark Matter and Cosmic Acceleration derived from distributed consensus thermodynamics.",
+            desc_fr: "Un cadre cosmologique pour la Matière Noire et l'Accélération Cosmique dérivé de la thermodynamique du consensus distribué.",
+            date: "May 2026",
+            tags_en: "Cosmology · General Relativity",
+            tags_fr: "Cosmologie · Relativité Générale"
+        }
+    ];
+
+    // 2. Fonction pour générer le HTML
+    function renderPDFs() {
+        const container = document.getElementById('pdf-container');
+        
+        pdfFiles.forEach(pdf => {
+            const card = document.createElement('a');
+            card.href = pdf.filename;
+            card.className = 'article-card';
+            card.target = '_blank'; // Ouvre le PDF dans un nouvel onglet
+            
+            card.innerHTML = `
+                <div class="pdf-icon">📄</div>
+                <span class="article-date">
+                    <span lang="en">${pdf.date} · ${pdf.tags_en}</span>
+                    <span lang="fr">${pdf.date} · ${pdf.tags_fr}</span>
+                </span>
+                <h2 lang="en">${pdf.title_en}</h2>
+                <h2 lang="fr">${pdf.title_fr}</h2>
+                <p lang="en">${pdf.desc_en}</p>
+                <p lang="fr">${pdf.desc_fr}</p>
+                <span class="read-more">
+                    <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+                    <span lang="en">Download PDF</span>
+                    <span lang="fr">Télécharger le PDF</span>
+                </span>
+            `;
+            container.appendChild(card);
+        });
+    }
+
+    // 3. Gestion de la langue
+    function setLang(lang) {
+        lang = lang.toLowerCase();
+        if (lang !== 'en' && lang !== 'fr') lang = 'en';
+        
+        document.body.className = 'lang-' + lang;
+        try { localStorage.setItem('sun-std-lang', lang); } catch (e) {}
+        
+        const url = new URL(window.location);
+        url.searchParams.set('lg', lang.toUpperCase());
+        window.history.replaceState({}, '', url);
+    }
+
+    // 4. Initialisation au chargement de la page
+    window.addEventListener('DOMContentLoaded', () => {
+        // Affiche les PDF
+        renderPDFs();
+        
+        // Applique la langue sauvegardée ou par défaut
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lg');
+        const savedLang = urlLang ? urlLang : (localStorage.getItem('sun-std-lang') || 'en');
+        setLang(savedLang);
+    });
+</script>
+
+</body>
+</html>
