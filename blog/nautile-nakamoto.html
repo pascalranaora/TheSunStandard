@@ -452,6 +452,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td lang="fr">Plafond d'exergie maximum accessible (Canopée)</td>
                     <td>Watts (J/s)</td>
                 </tr>
+                <tr>
+                    <td>$\varphi$</td>
+                    <td lang="en">The Golden Ratio (Biological Morphogenesis)</td>
+                    <td lang="fr">Le Nombre d'Or (Morphogenèse Biologique)</td>
+                    <td>[1]</td>
+                </tr>
+                <tr>
+                    <td>$\beta$</td>
+                    <td lang="en">Morphogenetic scaling constant ($\log_\varphi 2$)</td>
+                    <td lang="fr">Constante de mise à l'échelle morphogénétique ($\log_\varphi 2$)</td>
+                    <td>[1]</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -690,19 +702,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <h3 lang="en">Strand 1: The Informational Space (The Genotype)</h3>
     <h3 lang="fr">Brin 1 : L'Espace Informationnel (Le Génotype)</h3>
-    <p lang="en">The tensor component $f(\theta)$ describes the "DNA" of the protocol—the deterministic monetary policy. It contracts toward zero to create asymptotic scarcity. To project this scalar into our 3D space, we wrap it around the time axis using the complex exponential $e^{i\theta}$, defining the position vector of the informational body:</p>
-    <p lang="fr">La composante tensorielle $f(\theta)$ décrit l'« ADN » du protocole — la politique monétaire déterministe. Elle se contracte vers zéro pour créer une rareté asymptotique. Pour projeter ce scalaire dans notre espace 3D, nous l'enroulons autour de l'axe du temps en utilisant l'exponentielle complexe $e^{i\theta}$, définissant le vecteur de position du corps informationnel :</p>
+    <p lang="en">The tensor component $f(\theta)$ describes the "DNA" of the protocol—the deterministic monetary policy. It contracts toward zero to create asymptotic scarcity. Originally written in base 2 (for the Halving), we sublimate this cold binary logic into the universal biological base of morphogenesis: the <strong>Golden Ratio ($\varphi \approx 1.618$)</strong>. By defining the scaling constant $\beta = \log_\varphi(2) \approx 1.44$, we project this biological scalar into our 3D space using the complex exponential $e^{i\theta}$:</p>
+    <p lang="fr">La composante tensorielle $f(\theta)$ décrit l'« ADN » du protocole — la politique monétaire déterministe. Elle se contracte vers zéro pour créer une rareté asymptotique. Originellement écrite en base 2 (pour le Halving), nous sublimons cette froide logique binaire dans la base biologique universelle de la morphogenèse : le <strong>Nombre d'Or ($\varphi \approx 1,618$)</strong>. En définissant la constante d'échelle $\beta = \log_\varphi(2) \approx 1,44$, nous projetons ce scalaire biologique dans notre espace 3D via l'exponentielle complexe $e^{i\theta}$ :</p>
 
     <div class="math-block" style="display: flex; flex-direction: column; gap: 10px;">
-        <span>$$ f(\theta) = \phi^{-\frac{\theta}{2\pi}} \quad \text{(Scalar Metric)} $$</span>
+        <span>$$ f(\theta) = 2^{-\frac{\theta}{2\pi}} \equiv \varphi^{-\beta \frac{\theta}{2\pi}} \quad \text{(Golden Scalar Metric)} $$</span>
         <span>$$ \vec{V}_{\mathrm{info}}(\theta) = f(\theta) \cdot e^{i\theta} \quad \text{(3D Projection)} $$</span>
     </div>
 
     <div class="analogy-box" style="background: rgba(255, 204, 0, 0.05); border-left: 4px solid var(--sun-yellow);">
         <div class="analogy-title" lang="en">🐌 The Soft Body of the Nautilus</div>
         <div class="analogy-title" lang="fr">🐌 Le Corps Mou du Nautile</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">Think of $\vec{V}_{\mathrm{info}}$ as the living tissue of the Nautilus. It is pure information, vulnerable and soft. Without protection, this deterministic code could be crushed by the entropy of the outside world. It follows its own internal rotational rhythm ($e^{i\theta}$), independent of the ocean's physical currents.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Considérez $\vec{V}_{\mathrm{info}}$ comme le tissu vivant du Nautile. C'est de l'information pure, vulnérable et molle. Sans protection, ce code déterministe pourrait être écrasé par l'entropie du monde extérieur. Il suit son propre rythme de rotation interne ($e^{i\theta}$), indépendant des courants physiques de l'océan.</p>
+        <p lang="en" style="margin:0; font-size:0.95em;">Think of $\vec{V}_{\mathrm{info}}$ as the living tissue of the Nautilus. It is pure information, vulnerable and soft. By rewriting the code in base $\varphi$, we reveal that Nakamoto's protocol breathes with the exact same mathematical proportions that dictate the spirals of galaxies, DNA, and the shells of mollusks. It follows its own golden rotational rhythm ($e^{i\theta}$), independent of the ocean's physical currents.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Considérez $\vec{V}_{\mathrm{info}}$ comme le tissu vivant du Nautile. C'est de l'information pure, vulnérable et molle. En réécrivant le code en base $\varphi$, nous révélons que le protocole de Nakamoto respire avec les mêmes proportions mathématiques exactes qui dictent les spirales des galaxies, l'ADN et les coquilles des mollusques. Il suit son propre rythme de rotation doré ($e^{i\theta}$), indépendant des courants physiques de l'océan.</p>
     </div>
 
     <h3 lang="en">Strand 2: The Physical Space (The Emergy Shell)</h3>
@@ -753,13 +765,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="fr">Pour prouver la stabilité de l'organisme, nous utilisons les composantes scalaires pures de notre tenseur bimétrique et calculons leurs gradients logarithmiques par rapport au temps topologique $\theta$ :</p>
         <div class="math-block" style="font-size: 1.1rem; padding: 0.5rem; background: transparent; border: none;">
             $g(\theta) = C_E \cdot \theta^{\gamma} \implies \ln g = \ln C_E + \gamma \ln \theta$<br><br>
-            $f(\theta) = \phi^{-\frac{\theta}{2\pi}} \implies \ln f = -\frac{\theta}{2\pi} \ln \phi$
+            $f(\theta) = \varphi^{-\beta \frac{\theta}{2\pi}} \implies \ln f = -\beta \frac{\theta}{2\pi} \ln \varphi$
         </div>
-        <p lang="en">By taking the differentials, we expose the fractional growth rates of both spaces:</p>
-        <p lang="fr">En prenant les différentielles, nous exposons les taux de croissance fractionnaires des deux espaces :</p>
-        <div class="math-block">$$ d(\ln g) = \gamma \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln f) = -\frac{\ln \phi}{2\pi} d\theta $$</div>
-        <p lang="en">This mathematical divergence is the system's fundamental tension. The informational space contracts at a constant exponential rate ($d\theta$), while the physical Emergy expands at a decelerating fractional rate ($\gamma/\theta$). The <strong>zero-divergence law</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) is therefore not a passive symmetry, but a <strong>forced topological invariance</strong>. The DAA constantly warps the metric of difficulty to ensure that these divergent gradients compensate each other, maintaining the structural integrity of the Nautilus.</p>
-        <p lang="fr">Cette divergence mathématique constitue la tension fondamentale du système. L'espace informationnel se contracte à un rythme exponentiel constant ($d\theta$), tandis que l'Émergie physique s'étend à un rythme fractionnaire décélérant ($\gamma/\theta$). La <strong>loi de divergence nulle</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) n'est donc pas une symétrie passive, mais une <strong>invariance topologique forcée</strong>. Le DAA courbe en permanence la métrique de la difficulté pour garantir que ces gradients divergents se compensent, maintenant ainsi l'intégrité structurelle du Nautile.</p><div class="proof-end">∎</div>
+        <p lang="en">By taking the differentials, we expose the fractional growth rates of both spaces. Knowing that $\beta \ln \varphi = \ln 2$, we find:</p>
+        <p lang="fr">En prenant les différentielles, nous exposons les taux de croissance fractionnaires des deux espaces. Sachant que $\beta \ln \varphi = \ln 2$, nous trouvons :</p>
+        <div class="math-block">$$ d(\ln g) = \gamma \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln f) = -\frac{\ln 2}{2\pi} d\theta $$</div>
+        <p lang="en">This mathematical divergence is the system's fundamental tension. The informational space contracts at a constant golden exponential rate ($d\theta$), while the physical Emergy expands at a decelerating fractional rate ($\gamma/\theta$). The <strong>zero-divergence law</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) is therefore not a passive symmetry, but a <strong>forced topological invariance</strong>. The DAA constantly warps the metric of difficulty to ensure that these divergent gradients compensate each other, maintaining the structural integrity of the Nautilus.</p>
+        <p lang="fr">Cette divergence mathématique constitue la tension fondamentale du système. L'espace informationnel se contracte à un rythme exponentiel doré constant ($d\theta$), tandis que l'Émergie physique s'étend à un rythme fractionnaire décélérant ($\gamma/\theta$). La <strong>loi de divergence nulle</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) n'est donc pas une symétrie passive, mais une <strong>invariance topologique forcée</strong>. Le DAA courbe en permanence la métrique de la difficulté pour garantir que ces gradients divergents se compensent, maintenant ainsi l'intégrité structurelle du Nautile.</p><div class="proof-end">∎</div>
     </div>
 
     <div class="analogy-box" style="background: rgba(60, 255, 100, 0.05); border-left: 4px solid #44ff66;">
@@ -1022,7 +1034,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="le-monde-est-complexe.html" class="next" lang="en">← Read the foundational essay: "The world is complex"</a>
         <a href="le-monde-est-complexe.html" class="next" lang="fr">← Lire l'essai fondateur : "Le monde est complexe"</a>
     </p>
-    
+
     <iframe data-testid="embed-iframe" style="border-radius:12px; margin-top:4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/playlist/4BIYpE4exfv5JWwtZ6zKyH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     
     <h2 lang="en" style="margin-top: 5rem;">References</h2>
