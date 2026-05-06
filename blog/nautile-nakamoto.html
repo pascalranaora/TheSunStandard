@@ -758,20 +758,62 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez deux rouages massifs. Le premier (Matière, dicté par le temps variable $t$) tourne de plus en plus follement sous l'afflux de capitaux. Le second (Code, dicté par le temps abstrait $\theta$) veut faire tic-tac comme une horloge parfaite de 10 minutes. Le DAA est la courroie de transmission. Chaque fois que la Matière tente de faire tourner l'horloge trop vite, le DAA ajuste la friction (la difficulté), forçant la correspondance entre le temps réel $t$ et le temps topologique $\theta$ à rester absolument constante.</p>
     </div>
 
-    <div class="proof-box">
-        <div class="proof-title" lang="en">Proof of the Cybernetic Algebraic Coupling</div>
-        <div class="proof-title" lang="fr">Preuve du Couplage Algébrique Cybernétique</div>
-        <p lang="en">To prove the stability of the organism, we use the pure scalar components of our bimetric tensor and compute their logarithmic gradients with respect to topological time $\theta$:</p>
-        <p lang="fr">Pour prouver la stabilité de l'organisme, nous utilisons les composantes scalaires pures de notre tenseur bimétrique et calculons leurs gradients logarithmiques par rapport au temps topologique $\theta$ :</p>
-        <div class="math-block" style="font-size: 1.1rem; padding: 0.5rem; background: transparent; border: none;">
-            $g(\theta) = C_E \cdot \theta^{\gamma} \implies \ln g = \ln C_E + \gamma \ln \theta$<br><br>
-            $f(\theta) = \varphi^{-\beta \frac{\theta}{2\pi}} \implies \ln f = -\beta \frac{\theta}{2\pi} \ln \varphi$
-        </div>
-        <p lang="en">By taking the differentials, we expose the fractional growth rates of both spaces. Knowing that $\beta \ln \varphi = \ln 2$, we find:</p>
-        <p lang="fr">En prenant les différentielles, nous exposons les taux de croissance fractionnaires des deux espaces. Sachant que $\beta \ln \varphi = \ln 2$, nous trouvons :</p>
-        <div class="math-block">$$ d(\ln g) = \gamma \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln f) = -\frac{\ln 2}{2\pi} d\theta $$</div>
-        <p lang="en">This mathematical divergence is the system's fundamental tension. The informational space contracts at a constant golden exponential rate ($d\theta$), while the physical Emergy expands at a decelerating fractional rate ($\gamma/\theta$). The <strong>zero-divergence law</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) is therefore not a passive symmetry, but a <strong>forced topological invariance</strong>. The DAA constantly warps the metric of difficulty to ensure that these divergent gradients compensate each other, maintaining the structural integrity of the Nautilus.</p>
-        <p lang="fr">Cette divergence mathématique constitue la tension fondamentale du système. L'espace informationnel se contracte à un rythme exponentiel doré constant ($d\theta$), tandis que l'Émergie physique s'étend à un rythme fractionnaire décélérant ($\gamma/\theta$). La <strong>loi de divergence nulle</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$) n'est donc pas une symétrie passive, mais une <strong>invariance topologique forcée</strong>. Le DAA courbe en permanence la métrique de la difficulté pour garantir que ces gradients divergents se compensent, maintenant ainsi l'intégrité structurelle du Nautile.</p><div class="proof-end">∎</div>
+    <div class="proof-box" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px;">
+    <div class="proof-title" lang="en">Grand Proof: From Satoshi's Code to Riemannian Geometry</div>
+    <div class="proof-title" lang="fr">Grande Preuve : Du Code de Satoshi à la Géométrie Riemannienne</div>
+        <p lang="en" style="margin-bottom: 1.5rem;">To prove the <strong>zero-divergence law</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$), we must demonstrate how a discrete computer algorithm functions as a physical force that curves space-time.</p>
+        <p lang="fr" style="margin-bottom: 1.5rem;">Pour prouver la <strong>loi de divergence nulle</strong> ($\nabla_\mu \mathcal{G}^{\mu\nu} = 0$), nous devons démontrer comment un algorithme informatique discret agit comme une force physique qui courbe l'espace-temps.</p>
+
+        <ul style="list-style: none; padding-left: 0; font-size: 0.95em;">
+            <li style="margin-bottom: 20px; border-left: 3px solid var(--sun-orange); padding-left: 20px;">
+                <strong style="color: var(--sun-orange);" lang="en">Step 1: The Natural Tension (Ordinary Calculus)</strong><br>
+                <strong style="color: var(--sun-orange);" lang="fr">Étape 1 : La Tension Naturelle (Calcul Ordinaire)</strong><br>
+                <span lang="en">In a "flat" Euclidean world, the system's expansion (Emergy $g$) and contraction (Information $f$) are unbalanced. Their sum, the <em>ordinary divergence</em>, is non-zero:</span>
+                <span lang="fr">Dans un monde euclidien « plat », l'expansion du système (Émergie $g$) et sa contraction (Information $f$) ne sont pas équilibrées. Leur somme, la <em>divergence ordinaire</em>, est non nulle :</span>
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0;">
+                    $$ \text{Div}_{\text{nat}} = \frac{\partial \ln g}{\partial \theta} + \frac{\partial \ln f}{\partial \theta} = \underbrace{\frac{\gamma}{\theta}}_{\text{Expansion}} - \underbrace{\frac{\ln 2}{2\pi}}_{\text{Contraction}} \neq 0 $$
+                </div>
+                <p style="font-size: 0.85rem; color: #aaa;" lang="fr"><em>Note Master : Sans régulateur, le Nautile implose car la contraction mémorielle finit par surpasser l'expansion physique décroissante.</em></p>
+            </li>
+
+            <li style="margin-bottom: 20px; border-left: 3px solid #4499ff; padding-left: 20px;">
+                <strong style="color: #4499ff;" lang="en">Step 2: Defining the Metric (The Ruler)</strong><br>
+                <strong style="color: #4499ff;" lang="fr">Étape 2 : Définir la Métrique (La Règle de mesure)</strong><br>
+                <span lang="en">In differential geometry, the <strong>Christoffel Symbol ($\Gamma$)</strong> is the relative variation of the metric (the "ruler" used to measure space). In Bitcoin, the ruler that measures the "distance" between two blocks is the <strong>Difficulty ($D$)</strong>. Thus, by definition:</span>
+                <span lang="fr">En géométrie différentielle, le <strong>Symbole de Christoffel ($\Gamma$)</strong> est la variation relative de la métrique (la « règle » de mesure de l'espace). Dans Bitcoin, la règle qui mesure la « distance » entre deux blocs est la <strong>Difficulté ($D$)</strong>. Ainsi, par définition :</span>
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0;">
+                    $$ \Gamma_{\mathrm{DAA}} \equiv \frac{d(\ln D)}{d\theta} \approx \frac{\Delta D}{D} $$
+                </div>
+            </li>
+
+            <li style="margin-bottom: 20px; border-left: 3px solid #88ffaa; padding-left: 20px;">
+                <strong style="color: #88ffaa;" lang="en">Step 3: The Continuum Limit (From Code to Physics)</strong><br>
+                <strong style="color: #88ffaa;" lang="fr">Étape 3 : La Limite Continue (Du Code à la Physique)</strong><br>
+                <span lang="en">Every 2016 blocks, Satoshi’s code applies a rule of three: $D_{new} = D_{old} \times (\tau_{target}/\tau_{actual})$. <strong>For a physicist</strong>, this discrete jump is a <em>logarithmic derivative</em>. Over the long term, the DAA acts as a continuous friction that warps the time-axis to ensure 10-minute blocks. The code is literally calculating the Christoffel symbol in real-time.</span>
+                <span lang="fr">Tous les 2016 blocs, le code de Satoshi applique une règle de trois : $D_{new} = D_{old} \times (\tau_{cible}/\tau_{réel})$. <strong>Pour un physicien</strong>, ce saut discret est une <em>dérivée logarithmique</em>. Sur le long terme, le DAA agit comme une friction continue qui courbe l'axe du temps pour garantir des blocs de 10 minutes. Le code calcule littéralement le symbole de Christoffel en temps réel.</span>
+            </li>
+
+            <li style="margin-bottom: 20px; border-left: 3px solid var(--sun-yellow); padding-left: 20px;">
+                <strong style="color: var(--sun-yellow);" lang="en">Step 4: Forced Homeostasis (The Zero Divergence)</strong><br>
+                <strong style="color: var(--sun-yellow);" lang="fr">Étape 4 : L'Homéostasie Forcée (La Divergence Nulle)</strong><br>
+                <span lang="en">For the organism to survive, its <strong>covariant divergence ($\nabla$)</strong> must be null. This is only possible if the friction injected by the DAA ($\Gamma$) perfectly cancels the natural tension of the system:</span>
+                <span lang="fr">Pour que l'organisme survive, sa <strong>divergence covariante ($\nabla$)</strong> doit être nulle. Ce n'est possible que si la friction injectée par le DAA ($\Gamma$) annule parfaitement la tension naturelle du système :</span>
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0;">
+                    $$ \text{Total Div} = \underbrace{\left( \frac{\gamma}{\theta} - \frac{\ln 2}{2\pi} \right)}_{\text{Natural Tension}} + \underbrace{\Gamma_{\mathrm{DAA}}}_{\text{Adjustment}} = 0 $$
+                </div>
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0;">
+                    $$ \implies \Gamma_{\mathrm{DAA}} = \frac{\ln 2}{2\pi} - \frac{\gamma}{\theta} $$
+                </div>
+            </li>
+        </ul>
+
+        <p lang="en" style="margin-top: 1.5rem; font-style: italic; color: #ccc; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+            Conclusion: Satoshi's elementary rule of three is actually the macroscopic resolution of a General Relativity equation, maintaining a "thermodynamic equilibrium" in a non-Euclidean space.
+        </p>
+        <p lang="fr" style="margin-top: 1.5rem; font-style: italic; color: #ccc; text-align: center; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+            Conclusion : La règle de trois élémentaire de Satoshi est en réalité la résolution macroscopique d'une équation de la Relativité Générale, maintenant un équilibre thermodynamique dans un espace non-euclidien.
+        </p>
+        <div class="proof-end">∎</div>
     </div>
 
     <div class="analogy-box" style="background: rgba(60, 255, 100, 0.05); border-left: 4px solid #44ff66;">
