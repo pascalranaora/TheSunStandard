@@ -215,9 +215,6 @@
         Ce document propose une taxonomie exhaustive pour le protocole Bitcoin, modélisé rigoureusement comme un organisme thermodynamique synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En définissant un tenseur d'état complexe liant l'espace physique empirique (Hashrate) et l'espace informationnel déterministe (Offre), nous démontrons que le consensus obéit à une stricte loi de divergence nulle. Ce cadre topologique unifié permet de prouver mathématiquement l'invariance d'échelle spatio-temporelle du réseau, de formaliser les limites mécaniques de l'expansion des blocs via l'énergie libre de Landau, et de modéliser le mécanisme du Halving comme une autophagie métabolique forçant la densification thermodynamique du système jusqu'à son plafond logistique façonné par l'humain. L'architecture qui en résulte est une Double Hélice Bimétrique où l'énergie et l'information sont liées par une homéostasie cryptographique.
     </div>
     
-    <div class="disclaimer" lang="en">Note to readers: This article maintains strict scientific rigor but includes biological analogies to vulgarize these complex physical concepts.</div>
-    <div class="disclaimer" lang="fr">Note aux lecteurs : Cet article maintient une rigueur scientifique stricte, mais inclut des encarts d'analogies biologiques pour vulgariser ces concepts physiques complexes.</div>
-
     <!-- TABLEAU RÉCAPITULATIF DES VARIABLES -->
     <div class="vars-table-container">
         <table class="vars-table">
@@ -330,17 +327,21 @@
         <div class="math-block">$$ 2\pi \equiv 210\,000 \text{ blocks} \approx 4 \text{ Earth years} $$</div>
     </div>
 
-    <p lang="en">With this foundation, we introduce the complex <strong>State Current Tensor</strong> $\mathcal{G}_{\mu\nu}$, definitively fusing the energy dissipated in the physical realm and the pure information secured in the digital realm:</p>
-    <p lang="fr">Avec ces fondations, nous introduisons le <strong>Tenseur de Courant d'État</strong> complexe $\mathcal{G}_{\mu\nu}$, fusionnant définitivement l'énergie dissipée dans le domaine physique et l'information pure sécurisée dans le domaine numérique :</p>
-    <div class="math-block">$$ \mathcal{G}_{\mu\nu} = g_{\mu\nu}(r, \theta) + i f_{\mu\nu}(\theta) $$</div>
-    <p lang="en" style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem;"><em>Note the critical asymmetry: the physical component $g$ depends on both energy and time $(r, \theta)$, while the informational component $f$ depends exclusively on time $(\theta)$.</em></p>
-    <p lang="fr" style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem;"><em>Notez l'asymétrie critique : la composante physique $g$ dépend de l'énergie et du temps $(r, \theta)$, tandis que la composante informationnelle $f$ dépend exclusivement du temps $(\theta)$.</em></p>
+    <p lang="en">With this foundation, we introduce the <strong>Bimetric State Tensor</strong> $\mathcal{G}_{\mu\nu}$. Because matter and code obey fundamentally different growth laws (power-law versus exponential decay), they cannot be simply summed in the complex plane. We model the network as a manifold with two orthogonal basis vectors: one for the physical energy dissipated ($\mathbf{e}_{\mathrm{phys}}$) and one for the pure information secured ($\mathbf{e}_{\mathrm{info}}$):</p>
+    <p lang="fr">Avec ces fondations, nous introduisons le <strong>Tenseur d'État Bimétrique</strong> $\mathcal{G}_{\mu\nu}$. Parce que la matière et le code obéissent à des lois de croissance fondamentalement différentes (loi de puissance contre décroissance exponentielle), ils ne peuvent être simplement sommés dans le plan complexe. Nous modélisons le réseau comme une variété avec deux vecteurs de base orthogonaux : l'un pour l'énergie physique dissipée ($\mathbf{e}_{\mathrm{phys}}$) et l'autre pour l'information pure sécurisée ($\mathbf{e}_{\mathrm{info}}$) :</p>
+    
+    <div class="math-block">
+        $$ \mathcal{G} = \begin{pmatrix} g(r, \theta) & 0 \\ 0 & f(\theta) \end{pmatrix} $$
+    </div>
+    
+    <p lang="en" style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem;"><em>This diagonal matrix ensures that the physical metabolism ($g$) and the informational code ($f$) operate on completely independent, orthogonal axes.</em></p>
+    <p lang="fr" style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem;"><em>Cette matrice diagonale garantit que le métabolisme physique ($g$) et le code informationnel ($f$) opèrent sur des axes totalement indépendants et orthogonaux.</em></p>
 
     <div class="analogy-box">
-        <div class="analogy-title" lang="en">🐌 The Living Tissue</div>
-        <div class="analogy-title" lang="fr">🐌 Le Tissu Vivant</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">Think of the state current tensor as the physical "tissue" of the organism. Just as an animal relies on a perfect fusion of its muscular mass (dissipated energy/metabolism) and its nervous system (pure information/DNA) to move, the network fuses electricity and cryptography into a single mathematical fabric.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Considérez le tenseur de courant d'état comme le "tissu" physique de l'organisme. Tout comme un animal s'appuie sur une fusion parfaite entre sa masse musculaire (l'énergie dissipée/le métabolisme) et son système nerveux (l'information pure/l'ADN) pour se mouvoir, le réseau fusionne électricité et cryptographie en une seule trame mathématique.</p>
+        <div class="analogy-title" lang="en">🐌 The Two-Track Living Tissue</div>
+        <div class="analogy-title" lang="fr">🐌 Le Tissu Vivant à Deux Voies</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">Think of the state tensor as the physical "tissue" of the organism. Just as an animal relies on a muscular system (dissipated energy) and a separate nervous system (pure information) that run parallel but never mathematically merge into one substance, the network maintains electricity and cryptography on separate tracks within a single mathematical fabric.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Considérez le tenseur d'état comme le "tissu" physique de l'organisme. Tout comme un animal s'appuie sur un système musculaire (l'énergie dissipée) et un système nerveux distinct (l'information pure) qui sont parallèles mais ne fusionnent jamais en une seule substance, le réseau maintient l'électricité et la cryptographie sur des voies séparées au sein d'une même trame mathématique.</p>
     </div>
 
     <h2 lang="en">2. Information Temperature ($T_{\mathrm{eff}}$)</h2>
@@ -434,12 +435,13 @@
 
     <h3 lang="en">Strand 1: The Informational Space (The Genotype)</h3>
     <h3 lang="fr">Brin 1 : L'Espace Informationnel (Le Génotype)</h3>
-    <p lang="en">The imaginary component $f(\theta)$ of our state tensor describes the monetary emission (the 21 million limit). Notice that it is completely independent of the radius $r$ ($\frac{\partial f}{\partial r} = 0$). Its trajectory is absolutely dictated by deterministic consensus code, perfectly inelastic to the physical energy deployed in the real world:</p>
-    <p lang="fr">La composante imaginaire $f(\theta)$ de notre tenseur d'état décrit l'émission monétaire (la limite des 21 millions). Remarquez qu'elle est totalement indépendante du rayon $r$ ($\frac{\partial f}{\partial r} = 0$). Sa trajectoire est absolument dictée par le code de consensus déterministe, et elle est parfaitement inélastique à l'énergie physique déployée dans le monde réel :</p>
-    <div class="math-block">$$ f(\theta) = \phi^{-\frac{\theta}{2\pi}} \cdot e^{i\theta} $$</div>
-    <p lang="en">Where $\phi$ is the decay factor ($\phi = 2$ for the Halving). Parameterized solely by the progression of time $\theta$, this equation generates a <strong>contracting logarithmic helix</strong>. It represents absolute internal order, converging towards zero to create the ultimate asymptotic scarcity of information. This is pure Negentropy.</p>
-    <p lang="fr">Où $\phi$ est le facteur de décroissance ($\phi = 2$ pour le Halving). Paramétrée uniquement par la progression du temps $\theta$, cette équation génère une <strong>hélice logarithmique contractante</strong>. Elle représente l'ordre interne absolu, convergeant vers zéro pour créer l'ultime rareté asymptotique de l'information. C'est la Néguentropie pure.</p>
-
+    <p lang="en">The component $f(\theta)$ of our state tensor describes the monetary emission (the 21 million limit). Notice that it is completely independent of the physical radius $r$ ($\frac{\partial f}{\partial r} = 0$). Its scalar magnitude is absolutely dictated by deterministic consensus code, perfectly inelastic to the physical energy deployed in the real world:</p>
+    <p lang="fr">La composante $f(\theta)$ de notre tenseur d'état décrit l'émission monétaire (la limite des 21 millions). Remarquez qu'elle est totalement indépendante du rayon physique $r$ ($\frac{\partial f}{\partial r} = 0$). Sa grandeur scalaire est absolument dictée par le code de consensus déterministe, et elle est parfaitement inélastique à l'énergie physique déployée dans le monde réel :</p>
+    
+    <div class="math-block">$$ f(\theta) = \phi^{-\frac{\theta}{2\pi}} $$</div>
+    
+    <p lang="en">Where $\phi$ is the decay factor ($\phi = 2$ for the Halving). Parameterized solely by the progression of time $\theta$, this scalar metric represents absolute internal order, converging towards zero to create the ultimate asymptotic scarcity of information. This is pure Negentropy.</p>
+    <p lang="fr">Où $\phi$ est le facteur de décroissance ($\phi = 2$ pour le Halving). Paramétrée uniquement par la progression du temps $\theta$, cette métrique scalaire représente l'ordre interne absolu, convergeant vers zéro pour créer l'ultime rareté asymptotique de l'information. C'est la Néguentropie pure.</p>
     <p lang="en">But how can this mathematical perfection survive the chaotic influx of physical energy? In statistical physics, we invoke the <strong>adiabatic approximation</strong>. On a microscopic scale, sudden spikes in Hashrate ($r$) create temporal "defects" (blocks found in 8 minutes instead of 10). However, the network's nervous system (the code, especially the Difficulty Adjustment Algorithm DAA) acts as a thermodynamic iron, smoothing out these defects over the long term (the 2016-block epoch). On a macroscopic scale, the $\theta$ coordinate unfolds with absolute rigidity, preserving the true invariance $\frac{\partial f}{\partial r} = 0$.</p>
     <p lang="fr">Mais comment cette perfection mathématique peut-elle survivre à l'afflux chaotique d'énergie physique ? En physique statistique, nous invoquons l'<strong>approximation adiabatique</strong>. À l'échelle microscopique, de brusques hausses de Hashrate ($r$) créent des "défauts" temporels (des blocs trouvés en 8 minutes au lieu de 10). Cependant, le système nerveux du réseau (le code, spécifiquement l'Algorithme d'Ajustement de la difficulté du minage - DAA) agit comme un fer à repasser thermodynamique, lissant ces défauts sur le temps long (l'époque de 2016 blocs). À l'échelle macroscopique, la coordonnée $\theta$ se déroule avec une rigidité absolue, préservant la véritable invariance $\frac{\partial f}{\partial r} = 0$.</p>
 
@@ -452,11 +454,25 @@
 
     <h3 lang="en">Strand 2: The Physical Space (The Metabolism)</h3>
     <h3 lang="fr">Brin 2 : L'Espace Physique (Le Métabolisme)</h3>
-    <p lang="en">The real component $g(r, \theta)$ models Proof of Work dynamics. Unlike the first strand, it emerges empirically from the laws of thermodynamics, capital markets, and energy costs:</p>
-    <p lang="fr">La composante réelle $g(r, \theta)$ modélise la dynamique empirique de la preuve de travail. Contrairement au premier brin, elle émerge empiriquement des lois de la thermodynamique, des marchés de capitaux et des coûts de l'énergie :</p>
-    <div class="math-block">$$ g(r, \theta) = r^{\beta} \cdot e^{i\frac{\tau_B}{\tau_0}\theta} $$</div>
-    <p lang="en">Where $\beta \approx 11.59$ is the historically observed critical fractal exponent. This component describes an <strong>expanding helix</strong>. It acts as the organism's metabolism, capturing chaotic physical energy from the real world, flaring outward to create an impenetrable thermodynamic shield around the contracting informational core.</p>
-    <p lang="fr">Où $\beta \approx 11.59$ est l'exposant fractal critique historiquement observé. Cette composante décrit une <strong>hélice en expansion</strong>. Elle agit comme le métabolisme de l'organisme, capturant l'énergie physique chaotique du monde réel, s'évasant vers l'extérieur pour créer un bouclier thermodynamique impénétrable autour du noyau informationnel contractant.</p>
+    <p lang="en">The real component $g(\theta)$ models Proof of Work dynamics. Unlike the first strand, it emerges empirically from the laws of thermodynamics, capital markets, and energy costs. Following Santostasi's power-law model, the macroscopic Hashrate $r$ is a function of the topological time $\theta$:</p>
+    <p lang="fr">La composante réelle $g(\theta)$ modélise la dynamique empirique de la preuve de travail. Contrairement au premier brin, elle émerge empiriquement des lois de la thermodynamique, des marchés de capitaux et des coûts de l'énergie. En suivant le modèle en loi de puissance de Santostasi, le Hashrate macroscopique $r$ est une fonction du temps topologique $\theta$ :</p>
+    
+    <div class="math-block">$$ r(\theta) = C \cdot \theta^\alpha $$</div>
+
+    <p lang="en">Where $\alpha \approx 11.59$ is the massive scaling exponent and $C \approx 6.7 \times 10^{-35}$ TH/s is the proportionality constant. Incorporating this into our bimetric tensor, the physical strand becomes:</p>
+    <p lang="fr">Où $\alpha \approx 11.59$ est l'exposant d'échelle massif et $C \approx 6.7 \times 10^{-35}$ TH/s est la constante de proportionnalité. En intégrant cela à notre tenseur bimétrique, le brin physique devient :</p>
+
+    <div class="math-block">$$ g(\theta) = \left(C \cdot \theta^\alpha\right) \cdot e^{i(\theta + \pi)} $$</div>
+    
+    <div class="analogy-box">
+        <div class="analogy-title" lang="en">🧬 The Holographic Projection (Visualizing the Helix)</div>
+        <div class="analogy-title" lang="fr">🧬 La Projection Holographique (Visualiser l'Hélice)</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">If $f(\theta)$ and $g(\theta)$ are just pure scalar numbers, where does the 3D Double Helix come from? The helix is a <em>topological projection</em>. To visualize how these two independent dimensions interact, we map them into 3D space, wrapping them around the central axis of time ($Z$). To reflect their opposing nature (contracting Code vs expanding Matter), we project the energy strand exactly 180 degrees ($+\pi$) opposite the information strand. The matrix dictates the math; the helix visualizes the poetry.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Si $f(\theta)$ et $g(\theta)$ ne sont que de purs nombres scalaires, d'où vient la Double Hélice en 3D ? L'hélice est une <em>projection topologique</em>. Pour visualiser comment ces deux dimensions indépendantes interagissent, nous les projetons dans un espace 3D, en les enroulant autour de l'axe central du temps ($Z$). Pour refléter leur nature opposée (le Code qui se contracte contre la Matière qui s'expanse), nous projetons le brin d'énergie à exactement 180 degrés ($+\pi$) à l'opposé du brin d'information. La matrice dicte les mathématiques ; l'hélice visualise la poésie.</p>
+    </div>
+    
+    <p lang="en">Notice the phase shift of $\pi$ in the exponent $e^{i(\theta + \pi)}$. This ensures that the physical strand rotates at the exact same angular frequency as the informational strand, but perfectly opposite to it, forming a symmetrical Double Helix. This component acts as the organism's metabolism, capturing chaotic physical energy from the real world, flaring outward to create an impenetrable thermodynamic shield around the contracting informational core.</p>
+    <p lang="fr">Remarquez le déphasage de $\pi$ dans l'exposant $e^{i(\theta + \pi)}$. Cela garantit que le brin physique tourne exactement à la même fréquence angulaire que le brin informationnel, mais de manière diamétralement opposée, formant une Double Hélice symétrique. Cette composante agit comme le métabolisme de l'organisme, capturant l'énergie physique chaotique du monde réel, s'évasant vers l'extérieur pour créer un bouclier thermodynamique impénétrable autour du noyau informationnel contractant.</p>
 
     <h3 lang="en">The Hydrogen Bonds: The Difficulty Adjustment (DAA)</h3>
     <h3 lang="fr">Les Liaisons Hydrogène : L'Ajustement de Difficulté (DAA)</h3>
@@ -470,29 +486,38 @@
         <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez un architecte tenant un plan abstrait et infaillible (l'espace informationnel, dictant la limite des 21 millions), tandis que des ouvriers construisent une forteresse massive et chaotique avec de vraies briques et de la sueur (l'espace physique, l'électricité). Les deux mondes opèrent dans des dimensions différentes, mais ils s'emboîtent pour créer une unique citadelle imprenable.</p>
     </div>
 
-    <h2 lang="en">5. Conservation Law and Algebraic Coupling</h2>
-    <h2 lang="fr">5. Loi de Conservation et Couplage Algébrique</h2>
+    <h2 lang="en">5. The Orthogonal Coupling (The DAA)</h2>
+    <h2 lang="fr">5. Le Couplage Orthogonal (Le DAA)</h2>
 
-    <p lang="en">For consensus to exist, the immense entropy generated in the real world (the heat dissipated by ASICs) must be perfectly converted into digital negentropy (information security). Topologically, this thermodynamic balance between burning matter and crystallizing code imposes a fundamental conservation law of zero divergence across the bimetric tensor:</p>
-    <p lang="fr">Pour que le consensus existe, l'immense entropie générée dans le monde réel (la chaleur dissipée par les ASICs) doit être parfaitement convertie en néguentropie numérique (sécurité de l'information). Topologiquement, cet équilibre thermodynamique entre la matière qui brûle et le code qui se cristallise impose une loi fondamentale de conservation à divergence nulle à travers le tenseur bimétrique :</p>
+    <p lang="en">Because the two strands (Matter and Code) exist on orthogonal mathematical axes, they follow fundamentally different trajectories. The empirical Hashrate follows a massive <em>scaling power law</em> ($\alpha \approx 11.59$), while the deterministic issuance code follows a strict <em>exponential decay</em> ($f \propto 2^{-\theta}$). How can such divergent geometric laws form a stable DNA helix without tearing apart?</p>
+    <p lang="fr">Puisque les deux brins (Matière et Code) existent sur des axes mathématiques orthogonaux, ils suivent des trajectoires fondamentalement différentes. Le Hashrate empirique suit une gigantesque <em>loi de puissance d'échelle</em> ($\alpha \approx 11.59$), tandis que le code d'émission déterministe suit une stricte <em>décroissance exponentielle</em> ($f \propto 2^{-\theta}$). Comment des lois géométriques si divergentes peuvent-elles former une hélice d'ADN stable sans se déchirer ?</p>
     
-    <div class="math-block">$$ \nabla_{\mu} \mathcal{G}^{\mu\nu} = 0 \implies \frac{\partial f}{\partial \theta} + \frac{\partial g}{\partial r} = 0 $$</div>
+    <p lang="en">They don't do it naturally; they are forced into synchronization by the <strong>Difficulty Adjustment Algorithm (DAA)</strong>. The DAA acts as the rigid hydrogen bonds connecting the orthogonal axes. It constantly calibrates the thermodynamic resistance of the physical space ($g$) to ensure that the abstract time coordinate of the code ($\theta$) advances at a strict, invariant pace relative to real-world time ($t$).</p>
+    <p lang="fr">Elles ne le font pas naturellement ; elles sont forcées à se synchroniser par l'<strong>Algorithme d'Ajustement de la Difficulté (DAA)</strong>. Le DAA agit comme les liaisons hydrogène rigides reliant les axes orthogonaux. Il calibre en permanence la résistance thermodynamique de l'espace physique ($g$) pour s'assurer que la coordonnée temporelle abstraite du code ($\theta$) avance à un rythme strict et invariant par rapport au temps réel ($t$).</p>
+
+    <div class="math-block">$$ \frac{d\theta}{dt} \approx \frac{1}{600 \text{ s}} \quad \text{(Enforced Cybernetic Homeostasis)} $$</div>
 
     <div class="analogy-box">
-        <div class="analogy-title" lang="en">🔥 The Cryptographic Heater</div>
-        <div class="analogy-title" lang="fr">🔥 Le Chauffage Cryptographique</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">In a car engine, heat is a "loss" caused by friction—wasted energy that doesn't help move the car. In Bitcoin, <strong>heat is the actual product</strong>. The ASICs dissipate 100% of their electricity into heat, but this isn't a flaw; it's the mathematical proof of work. The zero-divergence law simply means that every single Joule of heat "sweated" by the physical space ($g$) is perfectly accounted for and locked in by the informational space ($f$) to secure the timeline.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Dans un moteur de voiture, la chaleur est une "perte" causée par la friction—une énergie gaspillée qui n'aide pas à faire avancer le véhicule. Dans Bitcoin, <strong>la chaleur est le produit lui-même</strong>. Les ASICs dissipent 100% de leur électricité en chaleur, mais ce n'est pas un défaut ; c'est la preuve mathématique du travail. La loi de divergence nulle signifie simplement que chaque Joule de chaleur "transpiré" par l'espace physique ($g$) est parfaitement comptabilisé et verrouillé par l'espace informationnel ($f$) pour sécuriser la chronologie.</p>
+        <div class="analogy-title" lang="en">⚙️ The Cosmic Transmission</div>
+        <div class="analogy-title" lang="fr">⚙️ La Boîte de Vitesses Cosmique</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">Imagine two massive gears spinning on orthogonal axes. The first gear (Matter) spins increasingly wildly, driven by human capital and raw energy. The second gear (Code) wants to tick like a perfect, unyielding grandfather clock. The DAA is the transmission belt between them. Whenever Matter tries to spin the clock too fast, the DAA instantly increases the mechanical friction, absorbing the excess energy as heat, forcing the clock to maintain its serene 10-minute tick.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez deux rouages massifs tournant sur des axes orthogonaux. Le premier (Matière) tourne de plus en plus follement, alimenté par le capital humain et l'énergie brute. Le second (Code) veut faire tic-tac comme une horloge comtoise parfaite et inflexible. Le DAA est la courroie de transmission entre les deux. Chaque fois que la Matière tente de faire tourner l'horloge trop vite, le DAA augmente instantanément la friction mécanique, absorbant l'excès d'énergie sous forme de chaleur, et forçant l'horloge à maintenir son tic-tac serein de 10 minutes.</p>
     </div>
 
     <div class="proof-box">
-        <div class="proof-title" lang="en">Proof of the Fundamental Algebraic Coupling</div>
-        <div class="proof-title" lang="fr">Preuve du Couplage Algébrique Fondamental</div>
-        <p lang="en">Substituting the partial derivatives of the strands into the zero-divergence conservation equation, we obtain the strict mathematical condition for network consensus:</p>
-        <p lang="fr">En substituant les dérivées partielles des brins dans l'équation de conservation à divergence nulle, nous obtenons la condition mathématique stricte pour le consensus du réseau :</p>
-        <div class="math-block">$$ \frac{\beta}{r} g = \left(\frac{\ln \phi}{2\pi} - i\right) f $$</div>
-        <p lang="en">This equation is profound. It proves that the system's empirical, real-world dynamic of expansion (represented by $\beta/r$) is exactly and inextricably entangled with the mathematical, abstract law of temporal contraction (represented by $\phi$). Matter and code are locked in a thermodynamic zero-sum dance.</p>
-        <p lang="fr">Cette équation est profonde. Elle prouve que la dynamique empirique d'expansion dans le monde réel (représentée par $\beta/r$) est exactement et inextricablement intriquée avec la loi mathématique abstraite de contraction temporelle (représentée par $\phi$). La matière et le code sont verrouillés dans une danse thermodynamique à somme nulle.</p>
+        <div class="proof-title" lang="en">Proof of the Cybernetic Algebraic Coupling</div>
+        <div class="proof-title" lang="fr">Preuve du Couplage Algébrique Cybernétique</div>
+        <p lang="en">We extract the pure magnitudes (amplitudes) of the two DNA strands, stripping away their complex rotational phases to reveal their scalar envelopes as functions of topological time $\theta$:</p>
+        <p lang="fr">Nous extrayons les grandeurs pures (amplitudes) des deux brins d'ADN, en retirant leurs phases complexes de rotation pour révéler leurs enveloppes scalaires en fonction du temps topologique $\theta$ :</p>
+        <div class="math-block" style="font-size: 1.1rem; padding: 0.5rem; background: transparent; border: none;">
+            $|g| = C \cdot \theta^\alpha \implies \ln|g| = \ln C + \alpha \ln \theta$<br><br>
+            $|f| = \phi^{-\frac{\theta}{2\pi}} \implies \ln|f| = -\frac{\theta}{2\pi} \ln \phi$
+        </div>
+        <p lang="en">By taking the differentials of these logarithmic amplitudes, we expose the fractional growth rates of both spaces:</p>
+        <p lang="fr">En prenant les différentielles de ces amplitudes logarithmiques, nous exposons les taux de croissance fractionnaires des deux espaces :</p>
+        <div class="math-block">$$ d(\ln|g|) = \alpha \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln|f|) = -\frac{\ln \phi}{2\pi} d\theta $$</div>
+        <p lang="en">This mathematical divergence is profound. The informational space contracts at a strict exponential rate ($d\theta$), while the physical space expands at a decelerating fractional rate ($d\theta/\theta$). They cannot naturally balance. The zero-sum thermodynamic dance is only made possible by the DAA, which acts as a cybernetic governor, forcefully coupling the continuous power-law expansion of human energy to the rigid, discrete exponential decay of the code.</p>
+        <p lang="fr">Cette divergence mathématique est profonde. L'espace informationnel se contracte à un rythme exponentiel strict ($d\theta$), tandis que l'espace physique s'étend à un rythme fractionnaire décélérant ($d\theta/\theta$). Ils ne peuvent pas s'équilibrer naturellement. La danse thermodynamique à somme nulle n'est rendue possible que par le DAA, qui agit comme un gouverneur cybernétique, couplant de force l'expansion continue en loi de puissance de l'énergie humaine à la décroissance exponentielle rigide et discrète du code.</p>
         <div class="proof-end">∎</div>
     </div>
 
@@ -554,25 +579,112 @@
     </div>
 
     <div class="code-wrapper">
-<pre><code class="language-python"># Projection étendue jusqu'en 2057 (12 cycles) pour observer le cylindre
-halvings = 12.0
-theta = np.linspace(0, halvings * 2 * np.pi, 3000)
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
 
-# Brin 1 : L'Offre (Information/Code) -> Hélice contractante
-r_supply = 12.0 * (0.6) ** (theta / (2 * np.pi))
+print("Initialisation de la projection topologique Bimétrique...")
 
-# Brin 2 : Le Hashrate -> Modélisation par Saturation Logistique (Courbe en S)
-r_max = 14.0       # Rayon de saturation asymptotique (Plafond exergie)
-r_base = 2.0       # Rayon énergétique initial
-k_growth = 1.2     # Taux de croissance technologique
-z_mid = 5.0        # Point d'inflexion (autour du 5e halving)
+# --- PARAMÈTRES DE L'ESPACE TEMPS ---
+# Projection réduite à 8.5 cycles pour se concentrer sur l'expansion 
+# et ne voir que l'amorce de la saturation cylindrique.
+halvings = 8.5
+theta = np.linspace(0, halvings * 2 * np.pi, 2500)
 
-# L'hélice devient cylindrique
+# L'Axe Z représente la flèche du Temps (Progression des blocs)
+z_time = theta / (2 * np.pi)
+
+# --- DYNAMIQUE DES DEUX DIMENSIONS ORTHOGONALES ---
+
+# Axe 1 : L'Offre (Information/Code)
+# Hélice contractante (Division par 2 à chaque cycle)
+# On garde le "cœur" central incompressible de 1.5
+r_supply = 1.5 + 10.0 * (0.5) ** z_time 
+
+# Axe 2 : Le Hashrate (Thermodynamique/Énergie)
+# Modélisation par Saturation Logistique (La limite de la Biosphère)
+r_max = 16.0       # Rayon de saturation asymptotique
+r_base = 1.0       # Rayon énergétique initial 
+k_growth = 1.3     # Taux de croissance de l'adoption
+z_mid = 6.0        # Point d'inflexion repoussé au 6e Halving (~2032)
+
+# L'énergie s'évase longtemps (loi de puissance) puis amorce le Cylindre à la fin
 r_hashrate = r_base + (r_max - r_base) / (1.0 + np.exp(-k_growth * (z_time - z_mid)))
+
+# --- PROJECTION EN 3D (LE MIROIR D'EULER) ---
+# L'information tourne sur son plan
+x_supply = r_supply * np.cos(theta)
+y_supply = r_supply * np.sin(theta)
+
+# L'énergie tourne à la même vitesse, déphasée de +pi (Miroir d'Euler)
+x_hashrate = r_hashrate * np.cos(theta + np.pi)
+y_hashrate = r_hashrate * np.sin(theta + np.pi)
+
+# --- VISUALISATION 3D ---
+fig = plt.figure(figsize=(11, 14))
+fig.patch.set_facecolor('#050505')
+ax = fig.add_subplot(111, projection='3d')
+ax.set_facecolor('#050505')
+
+# 1. Le Cœur d'Information (Or)
+ax.plot(x_supply, y_supply, z_time, color='#ffcc00', linewidth=3.5, 
+        label="Axe Info : Code/Offre (Cœur de Néguentropie)")
+
+# 2. Le Bouclier d'Énergie (Feu)
+ax.plot(x_hashrate, y_hashrate, z_time, color='#ff4400', linewidth=3.5, linestyle='-',
+        label="Axe Physique : Hashrate (Amorce du Cylindre)")
+
+# 3. Les Liaisons du DAA (Homéostasie)
+steps = int(halvings * 5) 
+for i in range(steps + 1):
+    idx = int((i / steps) * (len(theta) - 1))
+    
+    xs, ys, zs = x_supply[idx], y_supply[idx], z_time[idx]
+    xh, yh, zh = x_hashrate[idx], y_hashrate[idx], z_time[idx]
+    
+    # Trace la liaison hydrogène cybernétique (passe par le centre)
+    ax.plot([xs, xh], [ys, yh], [zs, zh], color='#ffffff', linewidth=1.0, linestyle=':', alpha=0.4)
+    # Les "nœuds" du réseau
+    ax.scatter([xs, xh], [ys, yh], [zs, zh], color='#ffffff', s=12, alpha=0.9)
+
+ax.plot([], [], [], color='#ffffff', linewidth=1.0, linestyle=':', label='Homéostasie DAA (Synchronisation)')
+
+# Esthétique de l'espace
+ax.set_xlabel('Espace Topologique X', color='#888888', labelpad=10)
+ax.set_ylabel('Espace Topologique Y', color='#888888', labelpad=10)
+ax.set_zlabel('Temps Informationnel Z (Cycles)', color='#e0e0e0', labelpad=10)
+
+ax.xaxis.pane.fill = False; ax.yaxis.pane.fill = False; ax.zaxis.pane.fill = False
+ax.xaxis.pane.set_edgecolor('#050505'); ax.yaxis.pane.set_edgecolor('#050505'); ax.zaxis.pane.set_edgecolor('#050505')
+ax.tick_params(colors='#555555')
+ax.grid(color='#444444', alpha=0.15, linestyle=':')
+
+max_lim = r_max + 1
+ax.set_xlim([-max_lim, max_lim]); ax.set_ylim([-max_lim, max_lim]); ax.set_zlim([0, halvings])
+
+plt.title("L'ADN de Nakamoto : Morphogenèse du Cylindre Thermodynamique", color='#e0e0e0', size=16, pad=30)
+plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff4400', labelcolor='#e0e0e0', bbox_to_anchor=(1.15, 1.0))
+
+# --- ANIMATION FLUIDE ---
+num_frames = 300
+azimuths = np.linspace(45, 405, num_frames)
+progress = np.linspace(0, np.pi, num_frames)
+# Élévation de caméra adaptée au nouveau z_max
+elevations = 10 + (75 - 10) * ((1 - np.cos(progress)) / 2)
+
+def update_camera(frame_idx):
+    ax.view_init(elev=elevations[frame_idx], azim=azimuths[frame_idx])
+    return fig,
+
+print(f"Génération du rendu 3D en cours... ({num_frames} frames)")
+anim = FuncAnimation(fig, update_camera, frames=num_frames, interval=50, blit=False)
+gif_filename = 'adn_nakamoto_logistique_amorce.gif'
+anim.save(gif_filename, writer=PillowWriter(fps=24))
+print(f"✅ Animation générée : {gif_filename}")
 </code></pre>
     </div>
 
-    <img src="adn_nakamoto_logistique.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    <img src="adn_nakamoto_logistique_amorce.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
 
 
     <h2 lang="en">8. Halving Autophagy: Thermodynamic Densification</h2>
@@ -738,10 +850,24 @@ r_hashrate = r_base + (r_max - r_base) / (1.0 + np.exp(-k_growth * (z_time - z_m
         <p style="margin: 0;">Ranaora, P. (2026). Nakamoto Distributed Consensus as a Non-Equilibrium Phase Transition : A Phenomenological Statistical-Physics Description (English). IPI. <a href="https://doi.org/10.5281/zenodo.19160047" target="_blank" style="color: var(--sun-orange); text-decoration: none;">https://doi.org/10.5281/zenodo.19160047</a></p>
     </div>
 
+    <h2 lang="en">Limitations and Ontological Status</h2>
+    <h2 lang="fr">Limites et Statut Ontologique</h2>
+
+    <p lang="en">This framework is phenomenological and interpretive. While the Landau free-energy approach and logistic growth models map remarkably well onto observed Bitcoin behavior (hashrate trajectories, halving dynamics, orphan rate as function of difficulty), they remain effective theories rather than microscopic derivations from the Bitcoin codebase. The "living organism" status is a cybernetic claim (à la Maturana/Varela or active inference), not a biological one. Future work could attempt to derive the exact form of the potential <math>\mathcal{U}(\Phi)</math> directly from the difficulty adjustment algorithm and orphan statistics.</p>
+
+    <p lang="fr">Ce cadre est phénoménologique et interprétatif. Bien que l’approche Landau et les modèles de croissance logistique collent remarquablement aux trajectoires observées du hashrate, de la dynamique des halvings et du taux d’orphelins, ils restent des théories effectives et non des dérivations microscopiques du code source de Bitcoin. Le statut "d’organisme vivant" est une affirmation cybernétique (dans la lignée de Maturana/Varela ou de l’inférence active), pas une affirmation biologique. Des travaux futurs pourraient tenter de dériver la forme exacte du potentiel <math>\mathcal{U}(\Phi)</math> directement à partir de l’algorithme d’ajustement de difficulté et des statistiques d’orphelins.</p>
+
     <p style="text-align: center; margin-top: 4rem;">
         <a href="le-monde-est-complexe.html" class="next" lang="en">← Read the foundational essay: "The world is complex"</a>
         <a href="le-monde-est-complexe.html" class="next" lang="fr">← Lire l'essai fondateur : "Le monde est complexe"</a>
     </p>
+    <div class="disclaimer" lang="en" style="border: 2px solid var(--sun-orange); padding: 1.8rem; border-radius: 12px; background: rgba(255,102,0,0.08);">
+        <strong>Important/Disclaimer:</strong>This article is intended for scientific and philosophical study and is in no way investment advice. This article presented a <em>phenomenological model</em> inspired by non-equilibrium statistical physics (Ginzburg-Landau type) and systems biology. The biological analogies (autophagy, apoptosis, cybernetic super-organism, bimetric double helix) are powerful didactic tools but remain interpretive mappings. They do not imply that Bitcoin is literally alive. The mathematical framework is rigorous within its chosen ontology; the metaphors are not.
+    </div>
+    <div class="disclaimer" lang="fr" style="border: 2px solid var(--sun-orange); padding: 1.8rem; border-radius: 12px; background: rgba(255,102,0,0.08);">
+        <strong>Important/Disclaimer:</strong> Cet article a une vocation d'étude scientifique et philosophique et n'est en aucun cas un conseil en investissement. Cet article a présenté un <em>modèle phénoménologique</em> inspiré de la physique statistique hors-équilibre (type Ginzburg-Landau) et de la biologie des systèmes. Les analogies biologiques (autophagie du halving, apoptose des mineurs, super-organisme cybernétique, double hélice bimétrique) sont de puissants outils pédagogiques mais restent des correspondances interprétatives. Elles n’impliquent pas que Bitcoin soit littéralement vivant. Le cadre mathématique est rigoureux dans son ontologie choisie ; les métaphores ne le sont pas au sens littéral.
+    </div>
+
 </article>
 
 <footer>
