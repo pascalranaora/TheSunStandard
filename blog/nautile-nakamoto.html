@@ -491,9 +491,9 @@
 
     <h3 lang="en">The Hydrogen Bonds: The Difficulty Adjustment (DAA)</h3>
     <h3 lang="fr">Les Liaisons Hydrogène : L'Ajustement de Difficulté (DAA)</h3>
-    <p lang="en">If these two strands evolved independently, the organism would tear itself apart. Just as base pairs maintain the structure of biological DNA, the Difficulty Adjustment Algorithm (DAA) acts as the chemical bridge connecting raw energy to pure information. It forces the expansive physical metabolism to perfectly align its rhythm with the contracting genetic code.</p>
-    <p lang="fr">Si ces deux brins évoluaient indépendamment, l'organisme se déchirerait. Tout comme les paires de bases maintiennent la structure de l'ADN, l'Algorithme d'Ajustement de la Difficulté (DAA) agit comme le pont chimique reliant l'énergie brute à l'information pure. Il force le métabolisme physique expansif à aligner parfaitement son rythme sur le code génétique contractant.</p>
-
+    <p lang="en">In our 3D projection, if these two strands evolved independently, the organism would tear itself apart. Just as base pairs maintain the structure of biological DNA, the Difficulty Adjustment Algorithm (DAA) acts as the chemical bridge connecting raw emergy to pure information across the temporal void. It forces the expansive physical metabolism to perfectly align its rhythm with the contracting genetic code.</p>
+    <p lang="fr">Dans notre projection 3D, si ces deux brins évoluaient indépendamment, l'organisme se déchirerait. Tout comme les paires de bases maintiennent la structure de l'ADN, l'Algorithme d'Ajustement de la Difficulté (DAA) agit comme le pont chimique reliant l'émergie brute à l'information pure à travers le vide temporel. Il force le métabolisme physique expansif à aligner parfaitement son rythme sur le code génétique contractant.</p>
+    
     <div class="analogy-box">
         <div class="analogy-title" lang="en">🏛️ The Blueprint and the Brick</div>
         <div class="analogy-title" lang="fr">🏛️ Le Plan et la Brique</div>
@@ -598,13 +598,13 @@
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation, PillowWriter
 
-print("Initialisation de la projection topologique Bimétrique...")
+print("Initialisation de la projection topologique Bimétrique (Émergie)...")
 
 # --- PARAMÈTRES DE L'ESPACE TEMPS ---
-# Projection réduite à 8.5 cycles pour se concentrer sur l'expansion 
-# et ne voir que l'amorce de la saturation cylindrique.
-halvings = 8.5
-theta = np.linspace(0, halvings * 2 * np.pi, 2500)
+# Projection étendue à 12 cycles pour bien observer la formation 
+# des spires régulières de la Spirale d'Archimède (régime permanent).
+halvings = 12.0
+theta = np.linspace(0, halvings * 2 * np.pi, 3500)
 
 # L'Axe Z représente la flèche du Temps (Progression des blocs)
 z_time = theta / (2 * np.pi)
@@ -613,27 +613,29 @@ z_time = theta / (2 * np.pi)
 
 # Axe 1 : L'Offre (Information/Code)
 # Hélice contractante (Division par 2 à chaque cycle)
-# On garde le "cœur" central incompressible de 1.5
+# On garde le "cœur" central incompressible (la rareté absolue)
 r_supply = 1.5 + 10.0 * (0.5) ** z_time 
 
-# Axe 2 : Le Hashrate (Thermodynamique/Énergie)
-# Modélisation par Saturation Logistique (La limite de la Biosphère)
-r_max = 16.0       # Rayon de saturation asymptotique
-r_base = 1.0       # Rayon énergétique initial 
-k_growth = 1.3     # Taux de croissance de l'adoption
-z_mid = 6.0        # Point d'inflexion repoussé au 6e Halving (~2032)
+# Axe 2 : L'Émergie Cumulative (L'intégrale du Hashrate)
+# Le Hashrate (Puissance) sature selon une logistique.
+# L'Émergie (Énergie Totale) est l'intégrale de cette logistique.
+P_max = 3.5        # Plafond de puissance d'exergie (détermine l'espacement final des spires)
+r_base = 0.5       # Émergie initiale (Genèse)
+k_growth = 1.5     # Taux d'accélération de l'adoption
+z_mid = 5.0        # Point d'inflexion où la puissance sature (~2028)
 
-# L'énergie s'évase longtemps (loi de puissance) puis amorce le Cylindre à la fin
-r_hashrate = r_base + (r_max - r_base) / (1.0 + np.exp(-k_growth * (z_time - z_mid)))
+# L'équation de la Spirale d'Archimède Logistique (Intégrale exacte)
+r_emergy = r_base + (P_max / k_growth) * np.log(1.0 + np.exp(k_growth * (z_time - z_mid)))
 
-# --- PROJECTION EN 3D (LE MIROIR D'EULER) ---
+# --- PROJECTION EN 3D (ESPACE BIMÉTRIQUE ORTHOGONAL) ---
 # L'information tourne sur son plan
 x_supply = r_supply * np.cos(theta)
 y_supply = r_supply * np.sin(theta)
 
-# L'énergie tourne à la même vitesse, déphasée de +pi (Miroir d'Euler)
-x_hashrate = r_hashrate * np.cos(theta + np.pi)
-y_hashrate = r_hashrate * np.sin(theta + np.pi)
+# L'Émergie tourne à la même vitesse (grâce au DAA), 
+# projetée avec un déphasage de +pi pour faire face à l'Information
+x_emergy = r_emergy * np.cos(theta + np.pi)
+y_emergy = r_emergy * np.sin(theta + np.pi)
 
 # --- VISUALISATION 3D ---
 fig = plt.figure(figsize=(11, 14))
@@ -645,22 +647,21 @@ ax.set_facecolor('#050505')
 ax.plot(x_supply, y_supply, z_time, color='#ffcc00', linewidth=3.5, 
         label="Axe Info : Code/Offre (Cœur de Néguentropie)")
 
-# 2. Le Bouclier d'Énergie (Feu)
-ax.plot(x_hashrate, y_hashrate, z_time, color='#ff4400', linewidth=3.5, linestyle='-',
-        label="Axe Physique : Hashrate (Amorce du Cylindre)")
+# 2. Le Bouclier d'Émergie (Feu)
+ax.plot(x_emergy, y_emergy, z_time, color='#ff4400', linewidth=3.5, linestyle='-',
+        label="Axe Physique : Émergie (Spirale d'Archimède)")
 
 # 3. Les Liaisons du DAA (Homéostasie)
-steps = int(halvings * 5) 
+steps = int(halvings * 6) 
 for i in range(steps + 1):
     idx = int((i / steps) * (len(theta) - 1))
     
     xs, ys, zs = x_supply[idx], y_supply[idx], z_time[idx]
-    xh, yh, zh = x_hashrate[idx], y_hashrate[idx], z_time[idx]
+    xe, ye, ze = x_emergy[idx], y_emergy[idx], z_time[idx]
     
-    # Trace la liaison hydrogène cybernétique (passe par le centre)
-    ax.plot([xs, xh], [ys, yh], [zs, zh], color='#ffffff', linewidth=1.0, linestyle=':', alpha=0.4)
-    # Les "nœuds" du réseau
-    ax.scatter([xs, xh], [ys, yh], [zs, zh], color='#ffffff', s=12, alpha=0.9)
+    # Trace la liaison hydrogène cybernétique (passe exactement par l'axe Z central)
+    ax.plot([xs, xe], [ys, ye], [zs, ze], color='#ffffff', linewidth=1.0, linestyle=':', alpha=0.4)
+    ax.scatter([xs, xe], [ys, ye], [zs, ze], color='#ffffff', s=12, alpha=0.9)
 
 ax.plot([], [], [], color='#ffffff', linewidth=1.0, linestyle=':', label='Homéostasie DAA (Synchronisation)')
 
@@ -674,18 +675,19 @@ ax.xaxis.pane.set_edgecolor('#050505'); ax.yaxis.pane.set_edgecolor('#050505'); 
 ax.tick_params(colors='#555555')
 ax.grid(color='#444444', alpha=0.15, linestyle=':')
 
-max_lim = r_max + 1
+# Limites dynamiques basées sur la croissance finale de l'émergie
+max_lim = np.max(r_emergy) + 1.0
 ax.set_xlim([-max_lim, max_lim]); ax.set_ylim([-max_lim, max_lim]); ax.set_zlim([0, halvings])
 
-plt.title("L'ADN de Nakamoto : Morphogenèse du Cylindre Thermodynamique", color='#e0e0e0', size=16, pad=30)
+plt.title("L'ADN de Nakamoto : Morphogenèse de la Spirale d'Archimède", color='#e0e0e0', size=16, pad=30)
 plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff4400', labelcolor='#e0e0e0', bbox_to_anchor=(1.15, 1.0))
 
 # --- ANIMATION FLUIDE ---
 num_frames = 300
 azimuths = np.linspace(45, 405, num_frames)
 progress = np.linspace(0, np.pi, num_frames)
-# Élévation de caméra adaptée au nouveau z_max
-elevations = 10 + (75 - 10) * ((1 - np.cos(progress)) / 2)
+# La caméra s'élève plus haut pour bien admirer les anneaux concentriques (façon vinyle)
+elevations = 10 + (82 - 10) * ((1 - np.cos(progress)) / 2)
 
 def update_camera(frame_idx):
     ax.view_init(elev=elevations[frame_idx], azim=azimuths[frame_idx])
@@ -693,13 +695,13 @@ def update_camera(frame_idx):
 
 print(f"Génération du rendu 3D en cours... ({num_frames} frames)")
 anim = FuncAnimation(fig, update_camera, frames=num_frames, interval=50, blit=False)
-gif_filename = 'adn_nakamoto_logistique_amorce.gif'
+gif_filename = 'adn_nakamoto_archimede.gif'
 anim.save(gif_filename, writer=PillowWriter(fps=24))
 print(f"✅ Animation générée : {gif_filename}")
 </code></pre>
     </div>
 
-    <img src="adn_nakamoto_logistique_amorce.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    <img src="adn_nakamoto_archimede.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
 
 
     <h2 lang="en">8. Halving Autophagy: Thermodynamic Densification</h2>
