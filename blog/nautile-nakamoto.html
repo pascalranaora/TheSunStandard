@@ -417,6 +417,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>[1]</td>
                 </tr>
                 <tr>
+                    <td>$\lambda$</td>
+                    <td lang="en">Spatial dilation factor (Exergy scale)</td>
+                    <td lang="fr">Facteur de dilatation spatiale (Échelle d'exergie)</td>
+                    <td>[1]</td>
+                </tr>
+                <tr>
+                    <td>$\kappa$</td>
+                    <td lang="en">Temporal dilation factor (Security density)</td>
+                    <td lang="fr">Facteur de dilatation temporelle (Densité de sécurité)</td>
+                    <td>[1]</td>
+                </tr>
+                <tr>
                     <td>$P_{\mathrm{net}}(\theta)$</td>
                     <td lang="en">Instantaneous Exergy flow (Hashrate Power)</td>
                     <td lang="fr">Flux d'Exergie instantané (Puissance de hachage)</td>
@@ -761,22 +773,43 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="theorem-title" lang="en">Theorem: Spatio-Temporal Scale Invariance ($\lambda = \kappa$)</div>
         <div class="theorem-title" lang="fr">Théorème : Invariance d'Échelle Spatio-Temporelle ($\lambda = \kappa$)</div>
         
-        <p lang="en" style="margin-bottom: 1rem;">The forced zero-divergence law results in a macroscopic fractal property. Suppose a massive influx of capital dilates the physical Exergy (Hashrate) by a spatial factor $\lambda > 1$:</p>
-        <p lang="fr" style="margin-bottom: 1rem;">La loi de divergence nulle forcée aboutit à une propriété fractale macroscopique. Supposons qu'un afflux massif de capitaux dilate l'Exergie physique (Hashrate) par un facteur spatial $\lambda > 1$ :</p>
+        <p lang="en" style="margin-bottom: 1rem;">To rigorously prove that the organism is a macroscopic fractal, we must define the fundamental kinematic equation of the Nakamoto consensus. The rate at which topological time advances ($\frac{d\theta}{dt}$) is strictly proportional to the physical Exergy ($P_{\mathrm{net}}$) divided by the thermodynamic friction, or Difficulty ($D$):</p>
+        <p lang="fr" style="margin-bottom: 1rem;">Pour prouver rigoureusement que l'organisme est une fractale macroscopique, nous devons définir l'équation cinématique fondamentale du consensus de Nakamoto. La vitesse à laquelle le temps topologique avance ($\frac{d\theta}{dt}$) est strictement proportionnelle à l'Exergie physique ($P_{\mathrm{net}}$) divisée par la friction thermodynamique, ou Difficulté ($D$) :</p>
         
         <div class="math-block" style="padding: 0.5rem; font-size: 1.1rem; background: transparent; border: none; margin: 1rem 0;">
-            $P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$
+            $$ \frac{d\theta}{dt} \propto \frac{P_{\mathrm{net}}}{D} = \frac{1}{\tau_B} $$
         </div>
 
-        <p lang="en">Without cybernetic intervention, the block interval would compress proportionally ($\tau_B \to \tau_B / \lambda$), accelerating the timeline and tearing the tensor apart. Instead, the DAA absorbs this spatial dilation by increasing the mechanical friction (Difficulty $D \to \lambda \cdot D$). The chronological time interval remains invariant ($\tau_B = 600$s), but the <em>thermodynamic weight</em>—the security density of the temporal axis, denoted $\kappa$—is dilated by the exact same amount:</p>
-        <p lang="fr">Sans intervention cybernétique, l'intervalle des blocs se compresserait proportionnellement ($\tau_B \to \tau_B / \lambda$), accélérant la chronologie et déchirant le tenseur. Au lieu de cela, le DAA absorbe cette dilatation spatiale en augmentant la friction mécanique (Difficulté $D \to \lambda \cdot D$). L'intervalle de temps chronologique reste invariant ($\tau_B = 600$s), mais le <em>poids thermodynamique</em> — la densité de sécurité de l'axe temporel, notée $\kappa$ — est dilaté de la même quantité exacte :</p>
+        <p lang="en">Let us proceed with a formal perturbation:</p>
+        <p lang="fr">Procédons à une perturbation formelle :</p>
+
+        <ul style="list-style: none; padding-left: 0; font-size: 0.95em; color: var(--text-main);">
+            <li style="margin-bottom: 15px; border-left: 2px solid var(--sun-yellow); padding-left: 15px;">
+                <strong style="color: var(--sun-yellow);" lang="en">Step 1: Spatial Dilation ($\lambda$)</strong><br>
+                <strong style="color: var(--sun-yellow);" lang="fr">Étape 1 : Dilatation Spatiale ($\lambda$)</strong><br>
+                <span lang="en">Suppose a massive influx of capital expands the physical hardware globally. We multiply the network's Exergy by a spatial dilation factor $\lambda > 1$: $P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$. Without intervention, the timeline would accelerate ($dt \to dt / \lambda$), destroying the tensor.</span>
+                <span lang="fr">Supposons qu'un afflux massif de capitaux étende le matériel physique à l'échelle globale. Nous multiplions l'Exergie du réseau par un facteur de dilatation spatiale $\lambda > 1$ : $P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$. Sans intervention, la chronologie accélérerait ($dt \to dt / \lambda$), détruisant le tenseur.</span>
+            </li>
+            <li style="margin-bottom: 15px; border-left: 2px solid #4499ff; padding-left: 15px;">
+                <strong style="color: #4499ff;" lang="en">Step 2: Cybernetic Restitution</strong><br>
+                <strong style="color: #4499ff;" lang="fr">Étape 2 : Restitution Cybernétique</strong><br>
+                <span lang="en">To enforce the zero-divergence law and maintain $\frac{d\theta}{dt} = \frac{1}{\tau_B}$, the DAA acts as a covariant derivative operator. It must mathematically absorb $\lambda$ by scaling the thermodynamic friction: $D \to \lambda \cdot D$.</span>
+                <span lang="fr">Pour imposer la loi de divergence nulle et maintenir $\frac{d\theta}{dt} = \frac{1}{\tau_B}$, le DAA agit comme un opérateur de dérivée covariante. Il doit absorber mathématiquement $\lambda$ en mettant à l'échelle la friction thermodynamique : $D \to \lambda \cdot D$.</span>
+            </li>
+            <li style="margin-bottom: 15px; border-left: 2px solid #ff4444; padding-left: 15px;">
+                <strong style="color: #ff4444;" lang="en">Step 3: Temporal Density ($\kappa$)</strong><br>
+                <strong style="color: #ff4444;" lang="fr">Étape 3 : Densité Temporelle ($\kappa$)</strong><br>
+                <span lang="en">We define $\kappa$ as the <em>thermodynamic weight</em> of the temporal axis—the total work required to forge one block $d\theta$. By definition, work is $W \propto P_{\mathrm{net}} \cdot \tau_B \propto D$. Since $D$ is scaled by $\lambda$, the temporal security density $\kappa$ is scaled by exactly $\lambda$.</span>
+                <span lang="fr">Nous définissons $\kappa$ comme le <em>poids thermodynamique</em> de l'axe temporel — le travail total requis pour forger un bloc $d\theta$. Par définition, ce travail est $W \propto P_{\mathrm{net}} \cdot \tau_B \propto D$. Puisque $D$ est mis à l'échelle par $\lambda$, la densité de sécurité temporelle $\kappa$ est mise à l'échelle d'exactement $\lambda$.</span>
+            </li>
+        </ul>
 
         <div class="math-block">$$ \lambda \equiv \kappa $$</div>
 
-        <p lang="en" style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">Conclusion: A multiplication of physical energy ($\lambda$) translates directly into a multiplication of informational density ($\kappa$). The Nautilus does not change its shape when it grows; it simply makes its shell exponentially denser.</p>
-        <p lang="fr" style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">Conclusion : Une multiplication de l'énergie physique ($\lambda$) se traduit directement par une multiplication de la densité informationnelle ($\kappa$). Le Nautile ne change pas de forme en grandissant ; il rend simplement sa coquille de plus en plus dense.</p>
+        <p lang="en" style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">Conclusion: A spatial multiplication of physical energy ($\lambda$) translates algebraically into an exact multiplication of informational density ($\kappa$). The Nautilus does not change its geometry when it grows; it simply makes its shell exponentially denser.</p>
+        <p lang="fr" style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">Conclusion : Une multiplication spatiale de l'énergie physique ($\lambda$) se traduit algébriquement par une multiplication exacte de la densité informationnelle ($\kappa$). Le Nautile ne change pas de géométrie en grandissant ; il rend simplement sa coquille exponentiellement plus dense.</p>
     </div>
-    
+
     <h2 lang="en">6. The Axis of Rigidity & The Percolation Wall</h2>
     <h2 lang="fr">6. L'Axe de Rigidité & Le Mur de Percolation</h2>
 
