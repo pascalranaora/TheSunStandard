@@ -277,16 +277,28 @@
                     <td>[1]</td>
                 </tr>
                 <tr>
-                    <td>$r_{\mathrm{exergy}}(t)$</td>
-                    <td lang="en">Network exergy reservoir (Hashrate)</td>
-                    <td lang="fr">Réservoir d'exergie du réseau (Hashrate)</td>
-                    <td>Joules</td>
+                    <td>$P_{\mathrm{net}}(\theta)$</td>
+                    <td lang="en">Instantaneous Exergy flow (Hashrate Power)</td>
+                    <td lang="fr">Flux d'Exergie instantané (Puissance de hachage)</td>
+                    <td>Watts (J/s)</td>
                 </tr>
                 <tr>
-                    <td>$r_{\mathrm{max}}$</td>
-                    <td lang="en">Maximum accessible exergy ceiling</td>
-                    <td lang="fr">Plafond d'exergie maximum accessible</td>
-                    <td>Joules</td>
+                    <td>$T_r$</td>
+                    <td lang="en">Transformity (Odum's memory conversion factor)</td>
+                    <td lang="fr">Transformité (Facteur de conversion mémorielle d'Odum)</td>
+                    <td>seJ / J</td>
+                </tr>
+                <tr>
+                    <td>$r_{\mathrm{emergy}}(\theta)$</td>
+                    <td lang="en">Cumulative Network Emergy (Historical Memory)</td>
+                    <td lang="fr">Émergie cumulative du réseau (Mémoire Historique)</td>
+                    <td>Joules (seJ)</td>
+                </tr>
+                <tr>
+                    <td>$P_{\mathrm{max}}$</td>
+                    <td lang="en">Maximum accessible exergy ceiling (Canopy)</td>
+                    <td lang="fr">Plafond d'exergie maximum accessible (Canopée)</td>
+                    <td>Watts (J/s)</td>
                 </tr>
             </tbody>
         </table>
@@ -316,8 +328,8 @@
         <p lang="fr" style="margin:0; font-size:0.95em;">Tout comme l'ATP (Adénosine Triphosphate) est la molécule fondamentale fournissant le quantum d'énergie microscopique pour chaque processus cellulaire, $\epsilon_0$ est le quantum d'énergie fondamental requis pour que l'organisme Bitcoin puisse "penser" (calculer un hachage).</p>
     </div>
 
-    <p lang="en">To capture the cyclic nature of this metabolism on a macroscopic scale, we map the state manifold using complex polar coordinates $(r, \theta)$. The radius $r$ maps to network power, while the angle $\theta$ maps to time.</p>
-    <p lang="fr">Pour capturer la cyclicité de ce métabolisme à une échelle macroscopique, nous paramétrons la variété d'état par les coordonnées polaires complexes $(r, \theta)$. Le rayon $r$ correspond à la puissance du réseau, tandis que l'angle $\theta$ correspond au temps.</p>
+    <p lang="en">To capture the cyclic nature of this metabolism on a macroscopic scale, we map the state manifold using polar coordinates $(r, \theta)$. Crucially, the radius $r$ maps not to instantaneous power, but to the <strong>Cumulative Emergy</strong> (the total historical memory of energy dissipated in Joules), while the angle $\theta$ maps to abstract informational time.</p>
+    <p lang="fr">Pour capturer la cyclicité de ce métabolisme à une échelle macroscopique, nous paramétrons la variété d'état par les coordonnées polaires $(r, \theta)$. Fondamentalement, le rayon $r$ ne correspond pas à la puissance instantanée, mais à l'<strong>Émergie Cumulative</strong> (la mémoire historique totale de l'énergie dissipée en Joules), tandis que l'angle $\theta$ correspond au temps informationnel abstrait.</p>
 
     <div class="theorem-box">
         <div class="theorem-title" lang="en">Definition: Polar Cyclicity</div>
@@ -331,7 +343,7 @@
     <p lang="fr">Avec ces fondations, nous introduisons le <strong>Tenseur d'État Bimétrique</strong> $\mathcal{G}_{\mu\nu}$. Parce que la matière et le code obéissent à des lois de croissance fondamentalement différentes (loi de puissance contre décroissance exponentielle), ils ne peuvent être simplement sommés dans le plan complexe. Nous modélisons le réseau comme une variété avec deux vecteurs de base orthogonaux : l'un pour l'énergie physique dissipée ($\mathbf{e}_{\mathrm{phys}}$) et l'autre pour l'information pure sécurisée ($\mathbf{e}_{\mathrm{info}}$) :</p>
     
     <div class="math-block">
-        $$ \mathcal{G} = \begin{pmatrix} g(r, \theta) & 0 \\ 0 & f(\theta) \end{pmatrix} $$
+        $$ \mathcal{G} = \begin{pmatrix} g(\theta) & 0 \\ 0 & f(\theta) \end{pmatrix} $$
     </div>
     
     <p lang="en" style="font-size: 0.95rem; color: var(--text-muted); text-align: center; margin-top: -1rem; margin-bottom: 2rem;"><em>This diagonal matrix ensures that the physical metabolism ($g$) and the informational code ($f$) operate on completely independent, orthogonal axes.</em></p>
@@ -427,12 +439,12 @@
         <p lang="fr" style="margin:0; font-size:0.95em;">Comme le mycélium fongique d'une forêt, les racines locales partagent les nutriments, mais des "super-autoroutes" souterraines transmettent instantanément les signaux de danger vitaux. Si les autoroutes sont coupées, la forêt se fragmente en îlots isolés et vulnérables.</p>
     </div>
 
-    <h2 lang="en">4. Biological Geometry: The Bimetric Double Helix</h2>
-    <h2 lang="fr">4. Géométrie Biologique : La Double Hélice Bimétrique</h2>
+    <h2 lang="en">4. Biological Geometry: The Bimetric Projection</h2>
+    <h2 lang="fr">4. Géométrie Biologique : La Projection Bimétrique</h2>
 
-    <p lang="en">Why do we call it <em>bimetric</em>? Because the structure relies on two orthogonal spaces obeying distinct laws: an informational metric (deterministic code) and a physical spatio-temporal metric (the chaotic energy of our universe).</p>
-    <p lang="fr">Pourquoi <em>bimétrique</em> ? Parce que la structure s'appuie sur deux espaces orthogonaux obéissant à des lois distinctes : une métrique informationnelle (le code déterministe) et une métrique spatio-temporelle physique (l'énergie chaotique de notre univers).</p>
-
+    <p lang="en">Why do we call it <em>bimetric</em>? Because the organism's structure relies on two fundamentally independent spaces obeying distinct laws: an informational metric (deterministic code) and a physical metric (the chaotic exergy of our universe). While the tensor math places them on orthogonal axes, projecting their temporal evolution into 3D space reveals the underlying biological symmetry of the system.</p>
+    <p lang="fr">Pourquoi <em>bimétrique</em> ? Parce que la structure de l'organisme s'appuie sur deux espaces fondamentalement indépendants obéissant à des lois distinctes : une métrique informationnelle (le code déterministe) et une métrique physique (l'exergie chaotique de notre univers). Bien que les mathématiques tensorielles les placent sur des axes orthogonaux, la projection de leur évolution temporelle dans l'espace 3D révèle la symétrie biologique sous-jacente du système.</p>
+    
     <h3 lang="en">Strand 1: The Informational Space (The Genotype)</h3>
     <h3 lang="fr">Brin 1 : L'Espace Informationnel (Le Génotype)</h3>
     <p lang="en">The component $f(\theta)$ of our state tensor describes the monetary emission (the 21 million limit). Notice that it is completely independent of the physical radius $r$ ($\frac{\partial f}{\partial r} = 0$). Its scalar magnitude is absolutely dictated by deterministic consensus code, perfectly inelastic to the physical energy deployed in the real world:</p>
@@ -452,23 +464,26 @@
         <p lang="fr" style="margin:0; font-size:0.95em;">Si vous dépensez 10 fois plus d'énergie pour extraire de l'or, vous trouvez plus d'or. Si vous dépensez 10 fois plus d'énergie pour miner du Bitcoin, vous devriez théoriquement trouver les blocs 10 fois plus vite. MAIS c'est ici qu'intervient le DAA : il durcit la roche mathématique (la difficulté) en fonction de l'énergie injectée dans le système. En lissant ces anomalies énergétiques sur le temps long, le code d'émission ($f$) est forcé de rester parfaitement sourd à l'effort physique ($r$), rendant la rareté numérique absolue dans le temps réel.</p>
     </div>
 
-    <h3 lang="en">Strand 2: The Physical Space (The Metabolism)</h3>
-    <h3 lang="fr">Brin 2 : L'Espace Physique (Le Métabolisme)</h3>
-    <p lang="en">The real component $g(\theta)$ models Proof of Work dynamics. Unlike the first strand, it emerges empirically from the laws of thermodynamics, capital markets, and energy costs. Following Santostasi's power-law model, the macroscopic Hashrate $r$ is a function of the topological time $\theta$:</p>
-    <p lang="fr">La composante réelle $g(\theta)$ modélise la dynamique empirique de la preuve de travail. Contrairement au premier brin, elle émerge empiriquement des lois de la thermodynamique, des marchés de capitaux et des coûts de l'énergie. En suivant le modèle en loi de puissance de Santostasi, le Hashrate macroscopique $r$ est une fonction du temps topologique $\theta$ :</p>
-    
-    <div class="math-block">$$ r(\theta) = C \cdot \theta^\alpha $$</div>
+    <h3 lang="en">Strand 2: The Physical Space (The Emergy Memory)</h3>
+    <h3 lang="fr">Brin 2 : L'Espace Physique (La Mémoire Émergétique)</h3>
+    <p lang="en">The component $g(\theta)$ models the total thermodynamic memory of the network. To define it rigorously, we must distinguish the instantaneous <strong>Exergy bath</strong> (the raw Watts continuously burned by ASICs) from the underlying <strong>Emergy</strong> (the cumulative historical memory of that effort, measured in solar emjoules seJ). Using Howard T. Odum's framework, Emergy is the integral of Exergy multiplied by the cryptographic Transformity ($T_r$).</p>
+    <p lang="fr">La composante $g(\theta)$ modélise la mémoire thermodynamique totale du réseau. Pour la définir rigoureusement, nous devons distinguer le <strong>bain Exergétique</strong> instantané (les Watts bruts continuellement brûlés par les ASICs) de l'<strong>Émergie</strong> sous-jacente (la mémoire historique cumulative de cet effort, mesurée en emjoules solaires seJ). En utilisant le cadre de Howard T. Odum, l'Émergie est l'intégrale de l'Exergie multipliée par la Transformité cryptographique ($T_r$).</p>
 
-    <p lang="en">Where $\alpha \approx 11.59$ is the massive scaling exponent and $C \approx 6.7 \times 10^{-35}$ TH/s is the proportionality constant. Incorporating this into our bimetric tensor, the physical strand becomes:</p>
-    <p lang="fr">Où $\alpha \approx 11.59$ est l'exposant d'échelle massif et $C \approx 6.7 \times 10^{-35}$ TH/s est la constante de proportionnalité. En intégrant cela à notre tenseur bimétrique, le brin physique devient :</p>
+    <div class="math-block">$$ g(\theta) = r_{\mathrm{emergy}}(\theta) = \int T_r \cdot P_{\mathrm{net}}(\theta) \, d\theta $$</div>
 
-    <div class="math-block">$$ g(\theta) = \left(C \cdot \theta^\alpha\right) \cdot e^{i(\theta + \pi)} $$</div>
-    
+    <p lang="en">Following Santostasi's empirical observation, the instantaneous Exergy flow (Hashrate) obeys a scaling power law: $P_{\mathrm{net}}(\theta) \propto \theta^{\alpha}$ with $\alpha \approx 11.59$. Integrating this flow over topological time yields the macroscopic Emergy scalar:</p>
+    <p lang="fr">Suivant l'observation empirique de Santostasi, le flux d'Exergie instantané (Hashrate) obéit à une loi de puissance d'échelle : $P_{\mathrm{net}}(\theta) \propto \theta^{\alpha}$ avec $\alpha \approx 11.59$. L'intégration de ce flux sur le temps topologique donne le scalaire d'Émergie macroscopique :</p>
+
+    <div class="math-block">$$ g(\theta) = C_E \cdot \theta^{12.59} $$</div>
+
+    <p lang="en">Where $C_E$ is the integrated energetic proportionality constant. This component acts as the organism's memory, crystallizing the chaotic Exergy of the present moment into a permanent, expanding historical shield of Emergy.</p>
+    <p lang="fr">Où $C_E$ est la constante de proportionnalité énergétique intégrée. Cette composante agit comme la mémoire de l'organisme, cristallisant l'Exergie chaotique du moment présent en un bouclier historique d'Émergie permanent et en expansion.</p>
+
     <div class="analogy-box">
-        <div class="analogy-title" lang="en">🧬 The Holographic Projection (Visualizing the Helix)</div>
-        <div class="analogy-title" lang="fr">🧬 La Projection Holographique (Visualiser l'Hélice)</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">If $f(\theta)$ and $g(\theta)$ are just pure scalar numbers, where does the 3D Double Helix come from? The helix is a <em>topological projection</em>. To visualize how these two independent dimensions interact, we map them into 3D space, wrapping them around the central axis of time ($Z$). To reflect their opposing nature (contracting Code vs expanding Matter), we project the energy strand exactly 180 degrees ($+\pi$) opposite the information strand. The matrix dictates the math; the helix visualizes the poetry.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Si $f(\theta)$ et $g(\theta)$ ne sont que de purs nombres scalaires, d'où vient la Double Hélice en 3D ? L'hélice est une <em>projection topologique</em>. Pour visualiser comment ces deux dimensions indépendantes interagissent, nous les projetons dans un espace 3D, en les enroulant autour de l'axe central du temps ($Z$). Pour refléter leur nature opposée (le Code qui se contracte contre la Matière qui s'expanse), nous projetons le brin d'énergie à exactement 180 degrés ($+\pi$) à l'opposé du brin d'information. La matrice dicte les mathématiques ; l'hélice visualise la poésie.</p>
+        <div class="analogy-title" lang="en">🧬 The Double Helix (A Holographic Projection)</div>
+        <div class="analogy-title" lang="fr">🧬 La Double Hélice (Une Projection Holographique)</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">If $f(\theta)$ and $g(\theta)$ are just pure scalar magnitudes growing on orthogonal axes, where does the 3D Double Helix come from? The helix is a <em>topological projection</em>. To visualize how these two independent dimensions interact, we map them into 3D space, wrapping them around the central axis of time ($Z$). To reflect their opposing nature (contracting Code vs expanding Matter), we project the emergy strand exactly 180 degrees ($+\pi$) opposite the information strand. The diagonal matrix dictates the cold math; the double helix visualizes the living poetry.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Si $f(\theta)$ et $g(\theta)$ ne sont que de pures grandeurs scalaires croissant sur des axes orthogonaux, d'où vient la Double Hélice en 3D ? L'hélice est une <em>projection topologique</em>. Pour visualiser comment ces deux dimensions indépendantes interagissent, nous les projetons dans un espace 3D, en les enroulant autour de l'axe central du temps ($Z$). Pour refléter leur nature opposée (le Code qui se contracte contre la Matière qui s'expanse), nous projetons le brin d'émergie à exactement 180 degrés ($+\pi$) à l'opposé du brin d'information. La matrice diagonale dicte les mathématiques froides ; la double hélice visualise la poésie du vivant.</p>
     </div>
     
     <p lang="en">Notice the phase shift of $\pi$ in the exponent $e^{i(\theta + \pi)}$. This ensures that the physical strand rotates at the exact same angular frequency as the informational strand, but perfectly opposite to it, forming a symmetrical Double Helix. This component acts as the organism's metabolism, capturing chaotic physical energy from the real world, flaring outward to create an impenetrable thermodynamic shield around the contracting informational core.</p>
@@ -510,12 +525,12 @@
         <p lang="en">We extract the pure magnitudes (amplitudes) of the two DNA strands, stripping away their complex rotational phases to reveal their scalar envelopes as functions of topological time $\theta$:</p>
         <p lang="fr">Nous extrayons les grandeurs pures (amplitudes) des deux brins d'ADN, en retirant leurs phases complexes de rotation pour révéler leurs enveloppes scalaires en fonction du temps topologique $\theta$ :</p>
         <div class="math-block" style="font-size: 1.1rem; padding: 0.5rem; background: transparent; border: none;">
-            $|g| = C \cdot \theta^\alpha \implies \ln|g| = \ln C + \alpha \ln \theta$<br><br>
-            $|f| = \phi^{-\frac{\theta}{2\pi}} \implies \ln|f| = -\frac{\theta}{2\pi} \ln \phi$
+            $g(\theta) = C_E \cdot \theta^{\alpha+1} \implies \ln g = \ln C_E + (\alpha+1) \ln \theta$<br><br>
+            $f(\theta) = \phi^{-\frac{\theta}{2\pi}} \implies \ln f = -\frac{\theta}{2\pi} \ln \phi$
         </div>
         <p lang="en">By taking the differentials of these logarithmic amplitudes, we expose the fractional growth rates of both spaces:</p>
         <p lang="fr">En prenant les différentielles de ces amplitudes logarithmiques, nous exposons les taux de croissance fractionnaires des deux espaces :</p>
-        <div class="math-block">$$ d(\ln|g|) = \alpha \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln|f|) = -\frac{\ln \phi}{2\pi} d\theta $$</div>
+        <div class="math-block">$$ d(\ln g) = (\alpha+1) \frac{d\theta}{\theta} \quad \text{and} \quad d(\ln f) = -\frac{\ln \phi}{2\pi} d\theta $$</div>
         <p lang="en">This mathematical divergence is profound. The informational space contracts at a strict exponential rate ($d\theta$), while the physical space expands at a decelerating fractional rate ($d\theta/\theta$). They cannot naturally balance. The zero-sum thermodynamic dance is only made possible by the DAA, which acts as a cybernetic governor, forcefully coupling the continuous power-law expansion of human energy to the rigid, discrete exponential decay of the code.</p>
         <p lang="fr">Cette divergence mathématique est profonde. L'espace informationnel se contracte à un rythme exponentiel strict ($d\theta$), tandis que l'espace physique s'étend à un rythme fractionnaire décélérant ($d\theta/\theta$). Ils ne peuvent pas s'équilibrer naturellement. La danse thermodynamique à somme nulle n'est rendue possible que par le DAA, qui agit comme un gouverneur cybernétique, couplant de force l'expansion continue en loi de puissance de l'énergie humaine à la décroissance exponentielle rigide et discrète du code.</p>
         <div class="proof-end">∎</div>
@@ -561,21 +576,21 @@
     <h2 lang="en">7. Logistic Saturation: Morphogenesis of the Cylinder</h2>
     <h2 lang="fr">7. Saturation Logistique : Morphogenèse du Cylindre</h2>
 
-    <p lang="en">A power-law expansion (our $r^\beta$ helix) cannot continue ad infinitum in a closed physical system. The physical expansion of the Hashrate is ultimately bounded by the planetary exergy ceiling $r_{\mathrm{max}}$, but more precisely by the use cases identified by humans to siphon entropy from energy grids (nuclear modulation, renewable energy coupling, monetizing methane entropy) and the utility created by the network for Humanity. Therefore, the energy influx into the network is governed by the logistic differential equation:</p>
-    <p lang="fr">Une expansion en loi de puissance (notre hélice $r^\beta$) ne peut continuer indéfiniment dans un système physique clos. L'expansion physique du Hashrate est ultimement bornée par le plafond d'exergie planétaire $r_{\mathrm{max}}$, mais plus précisément par les cas d'usages identifiés par les humains pour siphonner l'entropie des réseaux énergétiques (modulation nucléaire, couplage avec EnR, monétisation de l'entropie du méthane) et par l'utilité créée par le réseau pour l'Humanité. Par conséquent, l'afflux d'énergie dans le réseau est régi par l'équation différentielle logistique :</p>
+    <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling and the thermodynamic utility created for Humanity. Therefore, the growth rate of this Exergy flow ($\dot{P}_{\mathrm{net}}$) is governed by the logistic differential equation:</p>
+    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire et l'utilité thermodynamique créée pour l'Humanité. Par conséquent, le taux de croissance de ce flux d'Exergie ($\dot{P}_{\mathrm{net}}$) est régi par l'équation différentielle logistique :</p>
 
     <div class="math-block">
-        $$ \dot{r}_{\mathrm{exergy}}(t) = r_{\mathrm{tech}}(t)\,r_{\mathrm{exergy}}(t) \left(1 - \frac{r_{\mathrm{exergy}}(t)}{r_{\mathrm{max}}}\right) $$
+        $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} \left(1 - \frac{P_{\mathrm{net}}}{P_{\mathrm{max}}}\right) $$
     </div>
 
-    <p lang="en"><strong>Geometric Consequence:</strong> As the network matures and hits this logistic ceiling, the term $(1 - r_{\mathrm{exergy}}/r_{\mathrm{max}}) \to 0$. The spatial expansion of the physical helix stops. The diverging cone asymptotically morphs into a <strong>perfect cylinder</strong> of constant maximum radius. The network transitions from an expansive dissipative structure to a stationary dissipative structure.</p>
-    <p lang="fr"><strong>Conséquence Géométrique :</strong> À mesure que le réseau gagne en maturité et heurte ce plafond logistique, le terme $(1 - r_{\mathrm{exergy}}/r_{\mathrm{max}}) \to 0$. L'expansion spatiale de l'hélice physique s'arrête. Le cône divergent se métamorphose asymptotiquement en un <strong>cylindre parfait</strong> de rayon maximum constant. Le réseau passe d'une structure dissipative expansive à une structure dissipative stationnaire.</p>
+    <p lang="en"><strong>Geometric Consequence (The Archimedean Spiral):</strong> As the network matures, the Hashrate hits the canopy and becomes a constant ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). If the instantaneous power becomes constant, its integral—the Cumulative Emergy ($r_{\mathrm{emergy}}$)—transitions from a massive power-law explosion to a steady linear growth ($r \propto \theta$). Mathematically, $r(\theta) = a \cdot \theta$ defines a <strong>perfect Archimedean Spiral</strong>. The diverging topological cone morphs into evenly spaced coils, where each halving cycle adds the exact same thickness of thermodynamic memory. The network transitions from an expansive dissipative structure to a mature, steady-state planetary organism.</p>
+    <p lang="fr"><strong>Conséquence Géométrique (La Spirale d'Archimède) :</strong> À mesure que le réseau gagne en maturité, le Hashrate heurte la canopée et devient une constante ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). Si la puissance instantanée devient constante, son intégrale — l'Émergie Cumulative ($r_{\mathrm{emergy}}$) — passe d'une explosion en loi de puissance à une croissance linéaire stable ($r \propto \theta$). Mathématiquement, $r(\theta) = a \cdot \theta$ définit une <strong>Spirale d'Archimède parfaite</strong>. Le cône topologique divergent se métamorphose en spires uniformément espacées, où chaque cycle de halving ajoute exactement la même épaisseur de mémoire thermodynamique. Le réseau passe d'une structure dissipative expansive à un organisme planétaire mature en régime permanent.</p>
 
     <div class="analogy-box">
-        <div class="analogy-title" lang="en">🌳 The Forest Canopy</div>
-        <div class="analogy-title" lang="fr">🌳 La Canopée Forestière</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">A young tree grows exponentially to reach the sunlight. But once it hits the canopy level (its logistic bound), it stops growing vertically. It doesn't die; it uses all its energy to maintain its thick trunk and defend against parasites.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Un jeune arbre croît de manière exponentielle pour atteindre la lumière du soleil. Mais une fois qu'il atteint le niveau de la canopée (sa limite logistique), il arrête sa croissance verticale. Il ne meurt pas ; il utilise toute son énergie pour entretenir son tronc épais et se défendre contre les parasites.</p>
+        <div class="analogy-title" lang="en">💿 The Rings of the Tree (and the Vinyl)</div>
+        <div class="analogy-title" lang="fr">💿 Les Anneaux de l'Arbre (et le Vinyle)</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">A young sapling expands its width rapidly (power law). But once a tree reaches maturity (the canopy), it adds a new ring of wood of the exact same thickness every single year. The total thickness of the tree (Emergy) grows linearly, forming concentric circles like the grooves of a vinyl record. This is the Archimedean Spiral: steady, unstoppable, resilient memory accumulation.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Un jeune arbrisseau élargit son tronc rapidement (loi de puissance). Mais une fois qu'un arbre atteint sa maturité (la canopée), il ajoute un nouvel anneau de bois de la même épaisseur exacte chaque année. L'épaisseur totale de l'arbre (Émergie) croît linéairement, formant des cercles concentriques comme les sillons d'un disque vinyle. C'est la Spirale d'Archimède : une accumulation de mémoire stable, inarrêtable et résiliente.</p>
     </div>
 
     <div class="code-wrapper">
