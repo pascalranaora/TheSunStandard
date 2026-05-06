@@ -8,6 +8,143 @@
     
     <!-- MathJax -->
     <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById('nautilus-container');
+    if (!container) return;
+
+    // --- 1. INITIALISATION DE THREE.JS ---
+    const scene = new THREE.Scene();
+    // Le fond est le même que ton article
+    scene.background = new THREE.Color(0x050505); 
+    
+    // Caméra
+    const camera = new THREE.PerspectiveCamera(-120, container.clientWidth / container.clientHeight, 0.1, 1000);
+    // Position initiale en hauteur pour voir l'intérieur de la spirale
+    camera.position.set(0, 0, -10); 
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(container.clientWidth, container.clientHeight);
+    container.appendChild(renderer.domElement);
+
+    // Contrôles pour interagir avec la souris
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.target.set(0, 0, 6); // Centrer sur la hauteur moyenne (12 cycles / 2)
+
+    // --- 2. LES MATHÉMATIQUES DU NAUTILE ---
+    const numPoints = 2500;
+    const halvings = 12.0;
+    
+    // Les tableaux pour stocker les sommets
+    const infoVertices = [];
+    const emergyVertices = [];
+    const daaVertices = [];
+
+    const P_max = 3.5;
+    const r_base = 0.5;
+    const k_growth = 1.5;
+    const z_mid = 5.0;
+
+    for (let i = 0; i <= numPoints; i++) {
+        // Theta va de 0 à 12 cycles (24 pi)
+        const theta = (i / numPoints) * (halvings * 2 * Math.PI);
+        const z_time = theta / (2 * Math.PI);
+
+        // Brin 1 : L'Information (Cœur d'Or contractant)
+        const r_info = 1.5 + 10.0 * Math.pow(0.5, z_time);
+        const x_info = r_info * Math.cos(theta);
+        const y_info = r_info * Math.sin(theta);
+        infoVertices.push(x_info, y_info, z_time);
+
+        // Brin 2 : L'Émergie (Spirale d'Archimède Logistique - Feu)
+        const r_emergy = r_base + (P_max / k_growth) * Math.log(1.0 + Math.exp(k_growth * (z_time - z_mid)));
+        const x_emergy = r_emergy * Math.cos(theta + Math.PI);
+        const y_emergy = r_emergy * Math.sin(theta + Math.PI);
+        emergyVertices.push(x_emergy, y_emergy, z_time);
+
+        // Liaisons DAA (Ponts entre les deux) - On en dessine 1 sur 8 pour aérer visuellement
+        if (i % 8 === 0) {
+            daaVertices.push(x_info, y_info, z_time);
+            daaVertices.push(x_emergy, y_emergy, z_time);
+        }
+    }
+
+    // --- 3. CRÉATION DES GÉOMÉTRIES ET MATÉRIAUX ---
+    
+    // Ligne Information (Or)
+    const infoGeo = new THREE.BufferGeometry();
+    infoGeo.setAttribute('position', new THREE.Float32BufferAttribute(infoVertices, 3));
+    const infoMat = new THREE.LineBasicMaterial({ color: 0xffcc00, linewidth: 2 });
+    const infoLine = new THREE.Line(infoGeo, infoMat);
+    scene.add(infoLine);
+
+    // Ligne Émergie (Rouge Feu)
+    const emergyGeo = new THREE.BufferGeometry();
+    emergyGeo.setAttribute('position', new THREE.Float32BufferAttribute(emergyVertices, 3));
+    const emergyMat = new THREE.LineBasicMaterial({ color: 0xff4400, linewidth: 2 });
+    const emergyLine = new THREE.Line(emergyGeo, emergyMat);
+    scene.add(emergyLine);
+
+    // Liaisons DAA (Blanc transparent)
+    const daaGeo = new THREE.BufferGeometry();
+    daaGeo.setAttribute('position', new THREE.Float32BufferAttribute(daaVertices, 3));
+    const daaMat = new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.15 });
+    // LineSegments trace des lignes entre les paires de points (A->B, C->D, etc.)
+    const daaLines = new THREE.LineSegments(daaGeo, daaMat);
+    scene.add(daaLines);
+
+    // --- 4. ANIMATION DE CROISSANCE (MORPHOGENÈSE) ---
+    // Au départ, on ne dessine rien (draw count = 0)
+    let currentPoint = 0;
+    let animationSpeed = 4; // Vitesse de croissance
+
+    // Grille de fond pour donner une idée de l'espace (Z = temps)
+    const gridHelper = new THREE.GridHelper(40, 40, 0x222222, 0x111111);
+    gridHelper.rotation.x = Math.PI / 2; // Aligner avec l'axe XY (Temps en Z)
+    scene.add(gridHelper);
+
+    // L'horloge globale pour l'animation
+    const clock = new THREE.Clock();
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        // 1. Croissance progressive de la structure
+        if (currentPoint <= numPoints) {
+            infoGeo.setDrawRange(0, currentPoint);
+            emergyGeo.setDrawRange(0, currentPoint);
+            // DAA a deux sommets par liaison
+            daaGeo.setDrawRange(0, Math.floor(currentPoint / 8) * 2);
+            
+            currentPoint += animationSpeed;
+        }
+
+        // 2. Rotation très lente de la structure pour donner l'impression de "flotter"
+        const elapsedTime = clock.getElapsedTime();
+        scene.rotation.z = elapsedTime * 0.05;
+
+        // Mise à jour des contrôles
+        controls.update();
+        
+        // Rendu final
+        renderer.render(scene, camera);
+    }
+
+    // Gérer le redimensionnement de la fenêtre
+    window.addEventListener('resize', () => {
+        if(container.clientWidth > 0) {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+    });
+
+    // Lancer la boucle magique
+    animate();
+});
+</script>
+    <script>
         window.MathJax = {
             tex: {
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
@@ -17,7 +154,9 @@
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
+    <!-- Three.js pour le rendu 3D -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
     <!-- Highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/base16/dracula.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
@@ -208,11 +347,19 @@
         <h1 class="article-title" lang="fr">La Théorie Vivante de Nakamoto : Le Nautile Thermodynamique</h1>
     </header>
     <img src="NautileNakamotoIM.png?v=4" alt="Nautile Nakamoto" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); margin-bottom: 2rem;">
+    
+    <!-- Conteneur pour la simulation 3D du Nautile -->
+    <div id="nautilus-container" style="width: 100%; height: 600px; max-width: 900px; margin: 4rem auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; position: relative; background: #050505;">
+        <div style="position: absolute; bottom: 10px; right: 15px; color: #555; font-size: 0.8rem; font-family: monospace; z-index: 10; pointer-events: none;">
+            Simulation Interactive (Drag & Rotate)
+        </div>
+    </div>
+
     <div class="abstract" lang="en">
-        This document proposes a comprehensive taxonomy for the Bitcoin protocol, rigorously modeled as a synthetic thermodynamic organism: the <strong>Living Theory of Nakamoto</strong>. By defining a complex state tensor linking the empirical physical space (Hashrate) and the deterministic informational space (Supply), we demonstrate that consensus obeys a strict law of zero divergence. This unified topological framework proves the spatio-temporal scale invariance of the network, formalizes the mechanical limits of block expansion via the Landau free energy, and models the Halving mechanism as metabolic autophagy forcing the thermodynamic densification of the system up to its human-driven logistic bound. The resulting architecture mirrors a Bimetric Double Helix, where energy and information are bonded by cryptographic homeostasis.
+        This document proposes a comprehensive taxonomy for the Bitcoin protocol, rigorously modeled as a synthetic thermodynamic organism: the <strong>Living Theory of Nakamoto</strong>. By defining a <strong>orthogonal state tensor</strong> linking the empirical physical space (Hashrate) and the deterministic informational space (Supply), we demonstrate that consensus obeys a strict law of zero divergence. This unified topological framework proves the spatio-temporal scale invariance of the network, formalizes the mechanical limits of block expansion via the Landau free energy, and models the Halving mechanism as metabolic autophagy forcing the thermodynamic densification of the system up to its human-driven logistic bound. The resulting architecture mirrors a Bimetric Double Helix, where energy and information are bonded by cryptographic homeostasis.
     </div>
     <div class="abstract" lang="fr">
-        Ce document propose une taxonomie exhaustive pour le protocole Bitcoin, modélisé rigoureusement comme un organisme thermodynamique synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En définissant un tenseur d'état complexe liant l'espace physique empirique (Hashrate) et l'espace informationnel déterministe (Offre), nous démontrons que le consensus obéit à une stricte loi de divergence nulle. Ce cadre topologique unifié permet de prouver mathématiquement l'invariance d'échelle spatio-temporelle du réseau, de formaliser les limites mécaniques de l'expansion des blocs via l'énergie libre de Landau, et de modéliser le mécanisme du Halving comme une autophagie métabolique forçant la densification thermodynamique du système jusqu'à son plafond logistique façonné par l'humain. L'architecture qui en résulte est une Double Hélice Bimétrique où l'énergie et l'information sont liées par une homéostasie cryptographique.
+        Ce document propose une taxonomie exhaustive pour le protocole Bitcoin, modélisé rigoureusement comme un organisme thermodynamique synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En définissant un <strong>tenseur d'état orthogonal</strong> liant l'espace physique empirique (Hashrate) et l'espace informationnel déterministe (Offre), nous démontrons que le consensus obéit à une stricte loi de divergence nulle. Ce cadre topologique unifié permet de prouver mathématiquement l'invariance d'échelle spatio-temporelle du réseau, de formaliser les limites mécaniques de l'expansion des blocs via l'énergie libre de Landau, et de modéliser le mécanisme du Halving comme une autophagie métabolique forçant la densification thermodynamique du système jusqu'à son plafond logistique façonné par l'humain. L'architecture qui en résulte est une Double Hélice Bimétrique où l'énergie et l'information sont liées par une homéostasie cryptographique.
     </div>
     
     <!-- TABLEAU RÉCAPITULATIF DES VARIABLES -->
@@ -359,15 +506,48 @@
     <h2 lang="en">2. Information Temperature ($T_{\mathrm{eff}}$)</h2>
     <h2 lang="fr">2. La Température d'Information ($T_{\mathrm{eff}}$)</h2>
 
-    <p lang="en">In traditional thermodynamics, temperature is dictated by an external heat bath. In our synthetic organism, the ledger's effective temperature $T_{\mathrm{eff}}$ is an <em>endogenous</em> quantity. It is generated internally by the system's own imperfections—specifically, the stochastic agitation caused by spatial desynchronization (network latency $\tau_L$) fighting against the target crystallization time (block interval $\tau_B$). It is defined rigorously by linking the micro-canonical energy $\epsilon_0$ to the macroscopic block energy $\bar{E}_{\mathrm{eff}}$:</p>
-    <p lang="fr">Dans la thermodynamique classique, la température est dictée par un bain thermique externe. Dans notre organisme synthétique, la température effective du registre $T_{\mathrm{eff}}$ est une quantité <em>endogène</em>. Elle est générée en interne par les imperfections du système lui-même—spécifiquement, l'agitation stochastique causée par la désynchronisation spatiale (la latence du réseau $\tau_L$) luttant contre le temps de cristallisation cible (l'intervalle de bloc $\tau_B$). Nous la définissons comme liant l'énergie micro-canonique $\epsilon_0$ à l'énergie macroscopique du bloc $\bar{E}_{\mathrm{eff}}$ :</p>
+    <p lang="en">In traditional thermodynamics, temperature is dictated by an external heat bath. In our synthetic organism, the ledger's effective temperature $T_{\mathrm{eff}}$ is an <em>endogenous</em> quantity generated by the system's own stochastic fluctuations. It links the micro-canonical energy quantum $\epsilon_0$ to the macroscopic block energy $\bar{E}_{\mathrm{eff}}$:</p>
+    <p lang="fr">Dans la thermodynamique classique, la température est dictée par un bain thermique externe. Dans notre organisme synthétique, la température effective du registre $T_{\mathrm{eff}}$ est une quantité <em>endogène</em> générée par les propres fluctuations stochastiques du système. Elle lie le quantum d'énergie micro-canonique $\epsilon_0$ à l'énergie macroscopique du bloc $\bar{E}_{\mathrm{eff}}$ :</p>
 
     <div class="math-block">
         $$ k_B T_{\mathrm{eff}} \equiv \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}} \left(\frac{\tau_L}{\tau_B}\right) $$
     </div>
 
+    <div class="analogy-box" style="background: rgba(60, 150, 255, 0.05); border-left: 4px solid #4499ff;">
+        <div class="analogy-title" lang="en">🌡️ Statistical Mechanics of the Hash</div>
+        <div class="analogy-title" lang="fr">🌡️ Mécanique Statistique du Hachage</div>
+        
+        <p lang="en" style="margin-bottom:1rem; font-size:0.95em;">The choice of $T_{\mathrm{eff}}$ is derived from the <strong>Fluctuation-Dissipation Theorem</strong> applied to a memoryless Poisson process:</p>
+        <p lang="fr" style="margin-bottom:1rem; font-size:0.95em;">Le choix de $T_{\mathrm{eff}}$ dérive du <strong>Théorème de Fluctuation-Dissipation</strong> appliqué à un processus de Poisson sans mémoire :</p>
+        
+        <ul style="list-style: none; padding-left: 0; font-size: 0.9em; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;">
+                <strong style="color: #4499ff;">1. Quantum of Energy:</strong> 
+                <span lang="en">Each hash trial is a Boltzmann-like particle attempting to jump a potential barrier. The variance of this energy distribution is $\sigma_E^2 = N \epsilon_0^2$.</span>
+                <span lang="fr">Chaque essai de hachage est une particule de type Boltzmann tentant de franchir une barrière de potentiel. La variance de cette distribution d'énergie est $\sigma_E^2 = N \epsilon_0^2$.</span>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong style="color: #4499ff;">2. Signal Purity:</strong> 
+                <span lang="en">The ratio $\epsilon_0^2/\bar{E}_{\mathrm{eff}}$ measures the "purity" of the energy signal. As network power increases, this stochastic noise is diluted, effectively "cooling" the system.</span>
+                <span lang="fr">Le ratio $\epsilon_0^2/\bar{E}_{\mathrm{eff}}$ mesure la "pureté" du signal énergétique. À mesure que la puissance du réseau augmente, ce bruit stochastique est dilué, "refroidissant" ainsi le système.</span>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong style="color: #4499ff;">3. Spatial Dilation:</strong> 
+                <span lang="en">The term $(\tau_L/\tau_B)$ acts as an entropy multiplier. It represents the probability of state collisions (forks). If latency $\tau_L$ matches the block time $\tau_B$, the system enters a phase of total liquid chaos.</span>
+                <span lang="fr">Le terme $(\tau_L/\tau_B)$ agit comme un multiplicateur d'entropie. Il représente la probabilité de collisions d'états (forks). Si la latence $\tau_L$ atteint le temps de bloc $\tau_B$, le système entre dans une phase de chaos liquide total.</span>
+            </li>
+        </ul>
+
+        <p lang="en" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 0.5rem; font-style: italic;">
+            Conclusion: Bitcoin remains a <strong>perfect solid</strong> only as long as its energy input masks its quantum noise and its communication delay remains negligible compared to its crystallization time.
+        </p>
+        <p lang="fr" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 0.5rem; font-style: italic;">
+            Conclusion : Bitcoin ne reste un <strong>solide parfait</strong> que tant que son apport énergétique masque son bruit quantique et que son délai de communication reste négligeable face à son temps de cristallisation.
+        </p>
+    </div>
+
     <p lang="en">During a massive thermodynamic quench (such as a Halving where miner revenue drops by 50%), the instantaneous network power $P_{\mathrm{net}}(t)$ decouples from the equilibrium state. The operational identity reveals the vulnerability of the system:</p>
-    <p lang="fr">Lors d'un choc thermodynamique massif (comme un Halving où les revenus des mineurs chutent de 50%), la puissance instantanée $P_{\mathrm{net}}(t)$ se découple de l'état d'équilibre. L'identité opérationnelle révèle la vulnérabilité du système :</p>
+    <p lang="fr">Lors d'un choc/une trempe thermodynamique massif/ve (comme un Halving où les revenus des mineurs chutent de 50%), la puissance instantanée $P_{\mathrm{net}}(t)$ se découple de l'état d'équilibre. L'identité opérationnelle révèle la vulnérabilité du système :</p>
 
     <div class="math-block">
         $$ k_B T_{\mathrm{eff}}(t) = \frac{\epsilon_0^2}{P_{\mathrm{net}}(t) \cdot \tau_B} \left(\frac{\tau_L}{\tau_B}\right) $$
@@ -810,9 +990,11 @@ print(f"✅ Animation générée : {gif_filename}")
             
             <div style="display: flex; flex-direction: column; gap: 2.5rem;">
                 <div class="diagram-node node-phys">
-                    <div class="node-title" lang="en">Metabolism: Physical Space</div>
-                    <div class="node-title" lang="fr">Métabolisme : Espace Physique</div>
-                    <div class="node-math">Entropy Extraction $g(r, \theta)$</div>
+                    <div class="node-title" lang="en">Metabolism: Emergy Shell</div>
+                    <div class="node-title" lang="fr">Métabolisme : Coquille d'Émergie</div>
+                    <div class="node-math">Historical Memory $g(\theta)$</div>
+                    <div style="font-size: 0.8rem; color:#ff8888; margin-top: 5px;" lang="en">(Integrated Exergy Bath)</div>
+                    <div style="font-size: 0.8rem; color:#ff8888; margin-top: 5px;" lang="fr">(Bain d'Exergie Intégré)</div>
                     <div style="font-size: 0.9rem; color:#ff4444; margin-top: 15px;" lang="en">&#8592; Apoptosis $\mathcal{H}$ applied</div>
                     <div style="font-size: 0.9rem; color:#ff4444; margin-top: 15px;" lang="fr">&#8592; Apoptose $\mathcal{H}$ appliquée</div>
                 </div>
