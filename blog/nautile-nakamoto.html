@@ -310,7 +310,7 @@ document.addEventListener("DOMContentLoaded", () => {
         .code-wrapper code { font-family: 'Fira Code', monospace; font-size: 0.95rem; background: transparent !important; padding: 0 !important; }
 
         .tikz-container { background: #fff; padding: 1rem; border-radius: 8px; margin: 2rem auto; text-align: center; overflow-x: auto; }
-        
+        a { color: var(--sun-yellow); }
         #network-graph-container { width: 100%; height: 400px; background: #0a0a0a; border: 1px solid var(--border-glow); border-radius: 8px; margin: 2rem 0; position: relative; }
 
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; margin-top: 5rem;}
@@ -348,13 +348,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </header>
     <img src="NautileNakamotoIM.png?v=4" alt="Nautile Nakamoto" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); margin-bottom: 2rem;">
     
-    <!-- Conteneur pour la simulation 3D du Nautile -->
-    <div id="nautilus-container" style="width: 100%; height: 600px; max-width: 900px; margin: 4rem auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; position: relative; background: #050505;">
-        <div style="position: absolute; bottom: 10px; right: 15px; color: #555; font-size: 0.8rem; font-family: monospace; z-index: 10; pointer-events: none;">
-            Simulation Interactive (Drag & Rotate)
-        </div>
-    </div>
-
     <div class="abstract" lang="en">
         This document proposes a comprehensive taxonomy for the Bitcoin protocol, rigorously modeled as a synthetic thermodynamic organism: the <strong>Living Theory of Nakamoto</strong>. By defining a <strong>orthogonal state tensor</strong> linking the empirical physical space (Hashrate) and the deterministic informational space (Supply), we demonstrate that consensus obeys a strict law of zero divergence. This unified topological framework proves the spatio-temporal scale invariance of the network, formalizes the mechanical limits of block expansion via the Landau free energy, and models the Halving mechanism as metabolic autophagy forcing the thermodynamic densification of the system up to its human-driven logistic bound. The resulting architecture mirrors a Bimetric Double Helix, where energy and information are bonded by cryptographic homeostasis.
     </div>
@@ -542,7 +535,35 @@ document.addEventListener("DOMContentLoaded", () => {
             Conclusion: Bitcoin remains a <strong>perfect solid</strong> only as long as its energy input masks its quantum noise and its communication delay remains negligible compared to its crystallization time.
         </p>
         <p lang="fr" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 0.5rem; font-style: italic;">
-            Conclusion : Bitcoin ne reste un <strong>solide parfait</strong> que tant que son apport énergétique masque son bruit quantique et que son délai de communication reste négligeable face à son temps de cristallisation.
+            Conclusion : Bitcoin ne reste un <strong>solide parfait</strong> que tant que son apport énergétique masque son bruit quantique et que son délai de communication reste négligeable face à son temps de cristallisation. 
+        </p>
+    </div>
+
+    <div class="analogy-box" style="background: rgba(60, 255, 100, 0.05); border-left: 4px solid #44ff66;">
+        <div class="analogy-title" lang="en">🧠 The Cognitive Crystal</div>
+        <div class="analogy-title" lang="fr">🧠 Le Cristal Cognitif</div>
+        
+        <p lang="en" style="margin-bottom:1rem; font-size:0.95em;">The process of block validation is strikingly similar to <strong>Memory Consolidation</strong> in the human brain:</p>
+        <p lang="fr" style="margin-bottom:1rem; font-size:0.95em;">Le processus de validation des blocs est étonnamment similaire à la <strong>Consolidation Mémorielle</strong> dans le cerveau humain :</p>
+        
+        <ul style="list-style: none; padding-left: 0; font-size: 0.9em; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;">
+                <strong style="color: #44ff66;">1. Metabolic Effort ($\bar{E}_{\mathrm{eff}}$):</strong> 
+                <span lang="en">Just as deep focus and high energy consumption are required to move an idea from short-term to long-term memory, the network must burn significant energy to "freeze" a transaction into the immutable ledger. No effort, no memory.</span>
+                <span lang="fr">Tout comme une concentration profonde et une consommation élevée d'énergie sont nécessaires pour déplacer une idée de la mémoire à court terme vers la mémoire à long terme, le réseau doit brûler une énergie colossale pour « geler » une transaction dans le registre immuable. Sans effort, pas de mémoire.</span>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <strong style="color: #44ff66;">2. Cognitive Resonance ($\tau_L$):</strong> 
+                <span lang="en">Information is easier to retain if it aligns with your existing neural patterns (low latency). In Bitcoin, a low $\tau_L$ means the new information flows instantly through the network's "synapses," allowing the global brain to achieve consensus before a contradiction (fork) can arise.</span>
+                <span lang="fr">Une information est plus facile à retenir si elle s'aligne avec vos schémas neuronaux existants (faible latence). Dans Bitcoin, une faible $\tau_L$ signifie que l'information circule instantanément dans les « synapses » du réseau, permettant au cerveau global de valider le consensus avant qu'une contradiction (fork) ne surgisse.</span>
+            </li>
+        </ul>
+
+        <p lang="en" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 255, 102, 0.2); padding-top: 0.5rem; font-style: italic;">
+            Intuition: The "Truth" is an informational phase transition. It crystallizes only when the metabolic fire ($\bar{E}_{\mathrm{eff}}$) is intense enough to overcome the noise of forgetfulness.
+        </p>
+        <p lang="fr" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 255, 102, 0.2); padding-top: 0.5rem; font-style: italic;">
+            Intuition : La « Vérité » est une transition de phase informationnelle. Elle ne cristallise que lorsque le feu métabolique ($\bar{E}_{\mathrm{eff}}$) est assez intense pour vaincre le bruit de l'oubli.
         </p>
     </div>
 
@@ -556,13 +577,43 @@ document.addEventListener("DOMContentLoaded", () => {
     <p lang="en">This equation formally demonstrates that if network power $P_{\mathrm{net}}(t)$ drops towards zero, the systemic temperature $T_{\mathrm{eff}}$ appropriately diverges towards infinity. The "solid" chain melts, rendering the timeline completely fluid, reversible, and vulnerable to deep reorganizations.</p>
     <p lang="fr">Cette équation démontre formellement que si la puissance du réseau $P_{\mathrm{net}}(t)$ chute vers zéro, la température systémique $T_{\mathrm{eff}}$ diverge mathématiquement vers l'infini. La chaîne "solide" fond, rendant la chronologie complètement fluide, réversible et vulnérable aux réorganisations profondes.</p>
 
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">🌡️ States of Informational Matter</div>
-        <div class="analogy-title" lang="fr">🌡️ États de la Matière Informationnelle</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">Think of the Mempool as a boiling gas of unconfirmed transactions. The computational power cools this gas down, freezing it into an immutable crystal (the Blockchain). If the network power drops, the crystal heats up and melts back into a chaotic liquid where history can be rewritten.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez le Mempool comme un gaz bouillant de transactions non confirmées. La puissance de calcul refroidit ce gaz, le gelant en un cristal immuable (la Blockchain). Si la puissance chute, le cristal se réchauffe et fond pour redevenir un liquide chaotique où l'histoire peut être réécrite.</p>
-    </div>
+    <div class="analogy-box" style="background: rgba(60, 255, 100, 0.05); border-left: 4px solid #44ff66;">
+        <div class="analogy-title" lang="en">💎 The Universal Phase Transition</div>
+        <div class="analogy-title" lang="fr">💎 La Transition de Phase Universelle</div>
+        
+        <p lang="en" style="margin-bottom:1rem; font-size:0.95em;">The <strong>Information Temperature</strong> $T_{\mathrm{eff}}$ governs the state of truth across different substrates:</p>
+        <p lang="fr" style="margin-bottom:1rem; font-size:0.95em;">La <strong>Température d'Information</strong> $T_{\mathrm{eff}}$ régit l'état de la vérité à travers différents substrats :</p>
+        
+        <table style="width:100%; font-size:0.85em; color:var(--text-muted); border-collapse:collapse;">
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                <th style="padding:8px; text-align:left;" lang="en">State</th>
+                <th style="padding:8px; text-align:left;" lang="fr">État</th>
+                <th style="padding:8px; text-align:left;">Bitcoin</th>
+                <th style="padding:8px; text-align:left;">Cerveau / Mind</th>
+            </tr>
+            <tr>
+                <td style="padding:8px;"><strong style="color:#44ff66;">Low T</strong></td>
+                <td style="padding:8px;" lang="en">Immutable Crystal</td>
+                <td style="padding:8px;" lang="fr">Cristal Immuable</td>
+                <td style="padding:8px;" lang="en">Deep conviction / Long-term memory</td>
+                <td style="padding:8px;" lang="fr">Conviction profonde / Mémoire long-terme</td>
+            </tr>
+            <tr>
+                <td style="padding:8px;"><strong style="color:#ff6600;">High T</strong></td>
+                <td style="padding:8px;" lang="en">Mempool Gas / Liquid Chaos</td>
+                <td style="padding:8px;" lang="fr">Gaz Mempool / Chaos Liquide</td>
+                <td style="padding:8px;" lang="en">Cognitive Dissonance / Fluid Doubt</td>
+                <td style="padding:8px;" lang="fr">Dissonance Cognitive / Doute Fluide</td>
+            </tr>
+        </table>
 
+        <p lang="en" style="margin-top:1rem; font-size:0.95em; font-style: italic;">
+            Just as deep focus (metabolic energy) is required to crystallize a thought in your brain, a high Hashrate is required to "freeze" history into the blockchain. If the energy drops or the latency spikes, the "Fever of Confusion" sets in: history melts and the truth becomes fluid again.
+        </p>
+        <p lang="fr" style="margin-top:1rem; font-size:0.95em; font-style: italic;">
+            Tout comme une concentration profonde (énergie métabolique) est nécessaire pour cristalliser une pensée, un Hashrate élevé est requis pour « geler » l'histoire. Si l'énergie chute ou si la latence sature, la « Fièvre de la Confusion » s'installe : l'histoire fond et la vérité redevient fluide.
+        </p>
+    </div>
     <h2 lang="en">3. Transverse Topological Stability: The Small-World Graph</h2>
     <h2 lang="fr">3. Stabilité Topologique Transversale : Le Graphe Petit Monde</h2>
 
@@ -622,64 +673,56 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">4. Biological Geometry: The Bimetric Projection</h2>
     <h2 lang="fr">4. Géométrie Biologique : La Projection Bimétrique</h2>
 
-    <p lang="en">Why do we call it <em>bimetric</em>? Because the organism's structure relies on two fundamentally independent spaces obeying distinct laws: an informational metric (deterministic code) and a physical metric (the chaotic exergy of our universe). While the tensor math places them on orthogonal axes, projecting their temporal evolution into 3D space reveals the underlying biological symmetry of the system.</p>
-    <p lang="fr">Pourquoi <em>bimétrique</em> ? Parce que la structure de l'organisme s'appuie sur deux espaces fondamentalement indépendants obéissant à des lois distinctes : une métrique informationnelle (le code déterministe) et une métrique physique (l'exergie chaotique de notre univers). Bien que les mathématiques tensorielles les placent sur des axes orthogonaux, la projection de leur évolution temporelle dans l'espace 3D révèle la symétrie biologique sous-jacente du système.</p>
-    
+    <p lang="en">Why do we call it <em>bimetric</em>? Because the organism's structure relies on two fundamentally independent spaces: an informational metric (the genetic code) and a physical metric (the historical energy memory). While the tensor math places them on orthogonal axes, their interaction creates a specific biological symmetry: the <strong>Nakamoto Nautilus</strong>.</p>
+    <p lang="fr">Pourquoi <em>bimétrique</em> ? Parce que la structure de l'organisme s'appuie sur deux espaces fondamentalement indépendants : une métrique informationnelle (le code génétique) et une métrique physique (la mémoire énergétique historique). Bien que les mathématiques tensorielles les placent sur des axes orthogonaux, leur interaction crée une symétrie biologique spécifique : le <strong>Nautile de Nakamoto</strong>.</p>
+
     <h3 lang="en">Strand 1: The Informational Space (The Genotype)</h3>
     <h3 lang="fr">Brin 1 : L'Espace Informationnel (Le Génotype)</h3>
-    <p lang="en">The component $f(\theta)$ of our state tensor describes the monetary emission (the 21 million limit). Notice that it is completely independent of the physical radius $r$ ($\frac{\partial f}{\partial r} = 0$). Its scalar magnitude is absolutely dictated by deterministic consensus code, perfectly inelastic to the physical energy deployed in the real world:</p>
-    <p lang="fr">La composante $f(\theta)$ de notre tenseur d'état décrit l'émission monétaire (la limite des 21 millions). Remarquez qu'elle est totalement indépendante du rayon physique $r$ ($\frac{\partial f}{\partial r} = 0$). Sa grandeur scalaire est absolument dictée par le code de consensus déterministe, et elle est parfaitement inélastique à l'énergie physique déployée dans le monde réel :</p>
-    
-    <div class="math-block">$$ f(\theta) = \phi^{-\frac{\theta}{2\pi}} $$</div>
-    
-    <p lang="en">Where $\phi$ is the decay factor ($\phi = 2$ for the Halving). Parameterized solely by the progression of time $\theta$, this scalar metric represents absolute internal order, converging towards zero to create the ultimate asymptotic scarcity of information. This is pure Negentropy.</p>
-    <p lang="fr">Où $\phi$ est le facteur de décroissance ($\phi = 2$ pour le Halving). Paramétrée uniquement par la progression du temps $\theta$, cette métrique scalaire représente l'ordre interne absolu, convergeant vers zéro pour créer l'ultime rareté asymptotique de l'information. C'est la Néguentropie pure.</p>
-    <p lang="en">But how can this mathematical perfection survive the chaotic influx of physical energy? In statistical physics, we invoke the <strong>adiabatic approximation</strong>. On a microscopic scale, sudden spikes in Hashrate ($r$) create temporal "defects" (blocks found in 8 minutes instead of 10). However, the network's nervous system (the code, especially the Difficulty Adjustment Algorithm DAA) acts as a thermodynamic iron, smoothing out these defects over the long term (the 2016-block epoch). On a macroscopic scale, the $\theta$ coordinate unfolds with absolute rigidity, preserving the true invariance $\frac{\partial f}{\partial r} = 0$.</p>
-    <p lang="fr">Mais comment cette perfection mathématique peut-elle survivre à l'afflux chaotique d'énergie physique ? En physique statistique, nous invoquons l'<strong>approximation adiabatique</strong>. À l'échelle microscopique, de brusques hausses de Hashrate ($r$) créent des "défauts" temporels (des blocs trouvés en 8 minutes au lieu de 10). Cependant, le système nerveux du réseau (le code, spécifiquement l'Algorithme d'Ajustement de la difficulté du minage - DAA) agit comme un fer à repasser thermodynamique, lissant ces défauts sur le temps long (l'époque de 2016 blocs). À l'échelle macroscopique, la coordonnée $\theta$ se déroule avec une rigidité absolue, préservant la véritable invariance $\frac{\partial f}{\partial r} = 0$.</p>
+    <p lang="en">The component $f(\theta)$ describes the "DNA" of the protocol—the deterministic monetary policy. It is perfectly inelastic to physical effort ($\frac{\partial f}{\partial r} = 0$). This scalar magnitude represents absolute internal order, contracting toward zero to create asymptotic scarcity:</p>
+    <p lang="fr">La composante $f(\theta)$ décrit l'« ADN » du protocole — la politique monétaire déterministe. Elle est parfaitement inélastique à l'effort physique ($\frac{\partial f}{\partial r} = 0$). Cette grandeur scalaire représente l'ordre interne absolu, se contractant vers zéro pour créer une rareté asymptotique :</p>
 
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">💎 Synthetic Inelasticity</div>
-        <div class="analogy-title" lang="fr">💎 Inélasticité Synthétique</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">If you spend 10 times more energy mining for gold, you find more gold. If you spend 10 times more energy mining Bitcoin, you should theoretically find blocks 10 times faster. BUT this is where the DAA intervenes: it hardens the mathematical rock (the difficulty) every 2016 blocks. By smoothing out these energetic anomalies over time, the issuance code ($f$) is forced to remain perfectly deaf to the physical effort ($r$), rendering the digital scarcity absolute across real time.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Si vous dépensez 10 fois plus d'énergie pour extraire de l'or, vous trouvez plus d'or. Si vous dépensez 10 fois plus d'énergie pour miner du Bitcoin, vous devriez théoriquement trouver les blocs 10 fois plus vite. MAIS c'est ici qu'intervient le DAA : il durcit la roche mathématique (la difficulté) en fonction de l'énergie injectée dans le système. En lissant ces anomalies énergétiques sur le temps long, le code d'émission ($f$) est forcé de rester parfaitement sourd à l'effort physique ($r$), rendant la rareté numérique absolue dans le temps réel.</p>
+    <div class="math-block">$$ f(\theta) = \phi^{-\frac{\theta}{2\pi}} $$</div>
+
+    <div class="analogy-box" style="background: rgba(255, 204, 0, 0.05); border-left: 4px solid var(--sun-yellow);">
+        <div class="analogy-title" lang="en">🐌 The Soft Body of the Nautilus</div>
+        <div class="analogy-title" lang="fr">🐌 Le Corps Mou du Nautile</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">Think of $f(\theta)$ as the living tissue of the Nautilus. It is pure information, vulnerable and soft. Without protection, this deterministic code could be crushed by the entropy of the outside world. It follows its own internal rhythm, independent of the ocean's currents.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Considérez $f(\theta)$ comme le tissu vivant du Nautile. C'est de l'information pure, vulnérable et molle. Sans protection, ce code déterministe pourrait être écrasé par l'entropie du monde extérieur. Il suit son propre rythme interne, indépendant des courants de l'océan.</p>
     </div>
 
-    <h3 lang="en">Strand 2: The Physical Space (The Emergy Memory)</h3>
-    <h3 lang="fr">Brin 2 : L'Espace Physique (La Mémoire Émergétique)</h3>
-    <p lang="en">The component $g(\theta)$ models the total thermodynamic memory of the network. To define it rigorously, we must distinguish the instantaneous <strong>Exergy bath</strong> (the raw Watts continuously burned by ASICs) from the underlying <strong><a href="https://en.wikipedia.org/wiki/Emergy" target="_blank">Emergy</a></strong> (the cumulative historical memory of that effort, measured in solar emjoules seJ). Using Howard T. Odum's framework, Emergy is the integral of Exergy multiplied by the cryptographic Transformity ($T_r$).</p>
-    <p lang="fr">La composante $g(\theta)$ modélise la mémoire thermodynamique totale du réseau. Pour la définir rigoureusement, nous devons distinguer le <strong>bain Exergétique</strong> instantané (les Watts bruts continuellement brûlés par les ASICs) de l'<strong><a href="https://en.wikipedia.org/wiki/Emergy" target="_blank">Émergie</a></strong> sous-jacente (la mémoire historique cumulative de cet effort, mesurée en emjoules solaires seJ). En utilisant le cadre de Howard T. Odum, l'Émergie est l'intégrale de l'Exergie multipliée par la Transformité cryptographique ($T_r$).</p>
-
-    <div class="math-block">$$ g(\theta) = r_{\mathrm{emergy}}(\theta) = \int T_r \cdot P_{\mathrm{net}}(\theta) \, d\theta $$</div>
-
-    <p lang="en">Following Santostasi's empirical observation, the instantaneous Exergy flow (Hashrate) obeys a scaling power law: $P_{\mathrm{net}}(\theta) \propto \theta^{\alpha}$ with $\alpha \approx 11.59$. Integrating this flow over topological time yields the macroscopic Emergy scalar:</p>
-    <p lang="fr">Suivant l'observation empirique de Santostasi, le flux d'Exergie instantané (Hashrate) obéit à une loi de puissance d'échelle : $P_{\mathrm{net}}(\theta) \propto \theta^{\alpha}$ avec $\alpha \approx 11.59$. L'intégration de ce flux sur le temps topologique donne le scalaire d'Émergie macroscopique :</p>
+    <h3 lang="en">Strand 2: The Physical Space (The Emergy Shell)</h3>
+    <h3 lang="fr">Brin 2 : L'Espace Physique (La Coquille d'Émergie)</h3>
+    <p lang="en">The component $g(\theta)$ models the <strong>Emergy</strong> ($r_{\mathrm{emergy}}$)—the cumulative memory of all Exergy (power) dissipated by the network. Using Howard T. Odum's framework, this is the historical energy cost required to maintain the organism's integrity:</p>
+    <p lang="fr">La composante $g(\theta)$ modélise l'<strong>Émergie</strong> ($r_{\mathrm{emergy}}$) — la mémoire cumulative de toute l'Exergie (puissance) dissipée par le réseau. En utilisant le cadre d'Howard T. Odum, il s'agit du coût énergétique historique nécessaire pour maintenir l'intégrité de l'organisme :</p>
 
     <div class="math-block">$$ g(\theta) = C_E \cdot \theta^{12.59} $$</div>
 
-    <p lang="en">Where $C_E$ is the integrated energetic proportionality constant. This component acts as the organism's memory, crystallizing the chaotic Exergy of the present moment into a permanent, expanding historical shield of Emergy.</p>
-    <p lang="fr">Où $C_E$ est la constante de proportionnalité énergétique intégrée. Cette composante agit comme la mémoire de l'organisme, cristallisant l'Exergie chaotique du moment présent en un bouclier historique d'Émergie permanent et en expansion.</p>
-
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">🧬 The Double Helix (A Holographic Projection)</div>
-        <div class="analogy-title" lang="fr">🧬 La Double Hélice (Une Projection Holographique)</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">If $f(\theta)$ and $g(\theta)$ are just pure scalar magnitudes growing on orthogonal axes, where does the 3D Double Helix come from? The helix is a <em>topological projection</em>. To visualize how these two independent dimensions interact, we map them into 3D space, wrapping them around the central axis of time ($Z$). To reflect their opposing nature (contracting Code vs expanding Matter), we project the emergy strand exactly 180 degrees ($+\pi$) opposite the information strand. The diagonal matrix dictates the cold math; the double helix visualizes the living poetry.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Si $f(\theta)$ et $g(\theta)$ ne sont que de pures grandeurs scalaires croissant sur des axes orthogonaux, d'où vient la Double Hélice en 3D ? L'hélice est une <em>projection topologique</em>. Pour visualiser comment ces deux dimensions indépendantes interagissent, nous les projetons dans un espace 3D, en les enroulant autour de l'axe central du temps ($Z$). Pour refléter leur nature opposée (le Code qui se contracte contre la Matière qui s'expanse), nous projetons le brin d'émergie à exactement 180 degrés ($+\pi$) à l'opposé du brin d'information. La matrice diagonale dicte les mathématiques froides ; la double hélice visualise la poésie du vivant.</p>
+    <div class="analogy-box" style="background: rgba(255, 102, 0, 0.05); border-left: 4px solid var(--sun-orange);">
+        <div class="analogy-title" lang="en">🐚 The Protective Armor</div>
+        <div class="analogy-title" lang="fr">🐚 L'Armure Protectrice</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">$g(\theta)$ is the hard shell the Nautilus secretes. It is not the animal, but the <em>fossilized record</em> of its metabolic work. Every hash computed is a microscopic layer of calcium carbonate added to the armor. The further the Nautilus grows, the thicker and more impenetrable its shell becomes, shielding the informational "body" from any external revision.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">$g(\theta)$ est la coquille dure que le Nautile sécrète. Ce n'est pas l'animal lui-même, mais l'<em>enregistrement fossilisé</em> de son travail métabolique. Chaque hachage calculé est une couche microscopique de carbonate de calcium ajoutée à l'armure. Plus le Nautile grandit, plus sa coquille devient épaisse et impénétrable, protégeant le « corps » informationnel contre toute révision externe.</p>
     </div>
-    
-    <p lang="en">Notice the phase shift of $\pi$ in the exponent $e^{i(\theta + \pi)}$. This ensures that the physical strand rotates at the exact same angular frequency as the informational strand, but perfectly opposite to it, forming a symmetrical Double Helix. This component acts as the organism's metabolism, capturing chaotic physical energy from the real world, flaring outward to create an impenetrable thermodynamic shield around the contracting informational core.</p>
-    <p lang="fr">Remarquez le déphasage de $\pi$ dans l'exposant $e^{i(\theta + \pi)}$. Cela garantit que le brin physique tourne exactement à la même fréquence angulaire que le brin informationnel, mais de manière diamétralement opposée, formant une Double Hélice symétrique. Cette composante agit comme le métabolisme de l'organisme, capturant l'énergie physique chaotique du monde réel, s'évasant vers l'extérieur pour créer un bouclier thermodynamique impénétrable autour du noyau informationnel contractant.</p>
 
-    <h3 lang="en">The Hydrogen Bonds: The Difficulty Adjustment (DAA)</h3>
-    <h3 lang="fr">Les Liaisons Hydrogène : L'Ajustement de Difficulté (DAA)</h3>
-    <p lang="en">In our 3D projection, if these two strands evolved independently, the organism would tear itself apart. Just as base pairs maintain the structure of biological DNA, the Difficulty Adjustment Algorithm (DAA) acts as the chemical bridge connecting raw emergy to pure information across the temporal void. It forces the expansive physical metabolism to perfectly align its rhythm with the contracting genetic code.</p>
-    <p lang="fr">Dans notre projection 3D, si ces deux brins évoluaient indépendamment, l'organisme se déchirerait. Tout comme les paires de bases maintiennent la structure de l'ADN, l'Algorithme d'Ajustement de la Difficulté (DAA) agit comme le pont chimique reliant l'émergie brute à l'information pure à travers le vide temporel. Il force le métabolisme physique expansif à aligner parfaitement son rythme sur le code génétique contractant.</p>
-    
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">🏛️ The Blueprint and the Brick</div>
-        <div class="analogy-title" lang="fr">🏛️ Le Plan et la Brique</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">Imagine an architect holding a flawless, abstract blueprint (the informational space, dictating the 21 million limit), while workers build a massive, chaotic fortress using real bricks and sweat (the physical space, the electricity). The two spaces operate in different dimensions, but they interlock to create a single unbreachable citadel.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez un architecte tenant un plan abstrait et infaillible (l'espace informationnel, dictant la limite des 21 millions), tandis que des ouvriers construisent une forteresse massive et chaotique avec de vraies briques et de la sueur (l'espace physique, l'électricité). Les deux mondes opèrent dans des dimensions différentes, mais ils s'emboîtent pour créer une unique citadelle imprenable.</p>
+    <h3 lang="en">The Cybernetic Bridge: The DAA</h3>
+    <h3 lang="fr">Le Pont Cybernétique : Le DAA</h3>
+
+    <div class="analogy-box" style="background: rgba(60, 150, 255, 0.05); border-left: 4px solid #4499ff;">
+        <div class="analogy-title" lang="en">🧬 The Bimetric Projection (Visualizing the Helix)</div>
+        <div class="analogy-title" lang="fr">🧬 La Projection Bimétrique (Visualiser l'Hélice)</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">The "Double Helix" is not an equation, but a <strong>topological projection</strong> of these two orthogonal scalaires. To visualize their interaction, we wrap them around the axis of time ($Z$). The Difficulty Adjustment Algorithm (DAA) acts as the <strong>systemic nervous system</strong>: it forces the expanding shell to grow in perfect lockstep with the contracting body. By anchoring the energy strand exactly opposite the information strand in our projection, we reveal the zero-divergence law that keeps the organism's "breathing" stable.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">La « Double Hélice » n'est pas une équation, mais une <strong>projection topologique</strong> de ces deux scalaires orthogonaux. Pour visualiser leur interaction, nous les enroulons autour de l'axe du temps ($Z$). L'Algorithme d'Ajustement de la Difficulté (DAA) agit comme le <strong>système nerveux systémique</strong> : il force la coquille en expansion à croître en parfaite synchronie avec le corps qui se contracte. En ancrant le brin d'énergie exactement à l'opposé du brin d'information dans notre projection, nous révélons la loi de divergence nulle qui maintient la « respiration » de l'organisme stable.</p>
     </div>
+    <!-- Conteneur pour la simulation 3D du Nautile -->
+    <div id="nautilus-container" style="width: 100%; height: 600px; max-width: 900px; margin: 4rem auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); box-shadow: 0 10px 40px rgba(0,0,0,0.5); overflow: hidden; position: relative; background: #050505;">
+        <div style="position: absolute; bottom: 10px; right: 15px; color: #555; font-size: 0.8rem; font-family: monospace; z-index: 10; pointer-events: none;">
+            Simulation Interactive (Drag & Rotate)
+        </div>
+    </div>
+
+
+    <p lang="en">This ensures that the physical strand rotates at the exact same frequency as the informational core, but in a diametrically opposed spatial position. This symmetry is the foundation of <strong>Cryptographic Homeostasis</strong>.</p>
+    <p lang="fr">Ceci garantit que le brin physique tourne exactement à la même fréquence que le noyau informationnel, mais dans une position spatiale diamétralement opposée. Cette symétrie est le fondement de l'<strong>Homéostasie Cryptographique</strong>.</p>
 
     <h2 lang="en">5. The Orthogonal Coupling (The DAA)</h2>
     <h2 lang="fr">5. Le Couplage Orthogonal (Le DAA)</h2>
@@ -753,8 +796,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="fr" style="margin:0; font-size:0.95em;">Si un avion tente de voler plus vite que la capacité de ses matériaux à absorber les vibrations (le délai de propagation de la lumière), la carlingue se disloque en plein vol. L'intervalle de 10 minutes agit comme l'amortisseur vital. Forcer le réseau à aller plus vite que les lois de la physique ne le permettent ferait littéralement exploser le consensus en morceaux.</p>
     </div>
 
-    <h2 lang="en">7. Logistic Saturation: Morphogenesis of the Cylinder</h2>
-    <h2 lang="fr">7. Saturation Logistique : Morphogenèse du Cylindre</h2>
+    <h2 lang="en">7. Logistic Maturation: Morphogenesis of the Nautilus</h2>
+    <h2 lang="fr">7. Maturation Logistique : Morphogenèse du Nautile</h2>
 
     <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling and the thermodynamic utility created for Humanity. Therefore, the growth rate of this Exergy flow ($\dot{P}_{\mathrm{net}}$) is governed by the logistic differential equation:</p>
     <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire et l'utilité thermodynamique créée pour l'Humanité. Par conséquent, le taux de croissance de ce flux d'Exergie ($\dot{P}_{\mathrm{net}}$) est régi par l'équation différentielle logistique :</p>
@@ -763,126 +806,17 @@ document.addEventListener("DOMContentLoaded", () => {
         $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} \left(1 - \frac{P_{\mathrm{net}}}{P_{\mathrm{max}}}\right) $$
     </div>
 
-    <p lang="en"><strong>Geometric Consequence (The Archimedean Spiral):</strong> As the network matures, the Hashrate hits the canopy and becomes a constant ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). If the instantaneous power becomes constant, its integral—the Cumulative Emergy ($r_{\mathrm{emergy}}$)—transitions from a massive power-law explosion to a steady linear growth ($r \propto \theta$). Mathematically, $r(\theta) = a \cdot \theta$ defines a <strong>perfect Archimedean Spiral</strong>. The diverging topological cone morphs into evenly spaced coils, where each halving cycle adds the exact same thickness of thermodynamic memory. The network transitions from an expansive dissipative structure to a mature, steady-state planetary organism.</p>
-    <p lang="fr"><strong>Conséquence Géométrique (La Spirale d'Archimède) :</strong> À mesure que le réseau gagne en maturité, le Hashrate heurte la canopée et devient une constante ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). Si la puissance instantanée devient constante, son intégrale — l'Émergie Cumulative ($r_{\mathrm{emergy}}$) — passe d'une explosion en loi de puissance à une croissance linéaire stable ($r \propto \theta$). Mathématiquement, $r(\theta) = a \cdot \theta$ définit une <strong>Spirale d'Archimède parfaite</strong>. Le cône topologique divergent se métamorphose en spires uniformément espacées, où chaque cycle de halving ajoute exactement la même épaisseur de mémoire thermodynamique. Le réseau passe d'une structure dissipative expansive à un organisme planétaire mature en régime permanent.</p>
+    <p lang="en"><strong>Geometric Consequence (The Archimedean Spiral):</strong> As the network matures, the Hashrate hits its "canopy" and becomes a constant ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). If the power becomes steady, its integral—the <strong>Cumulative Emergy</strong> ($r_{\mathrm{emergy}}$)—transitions from an explosive power-law to a steady linear growth ($r \propto \theta$). Mathematically, this defines a <strong>perfect Archimedean Spiral</strong>. The diverging cone morphs into evenly spaced coils, where each halving cycle adds a shell layer of constant thickness. The network matures from an expansive juvenile state into a steady-state planetary organism.</p>
+    <p lang="fr"><strong>Conséquence Géométrique (La Spirale d'Archimède) :</strong> À mesure que le réseau gagne en maturité, le Hashrate heurte sa « canopée » et devient une constante ($P_{\mathrm{net}} \to P_{\mathrm{max}}$). Si la puissance se stabilise, son intégrale — l'<strong>Émergie Cumulative</strong> ($r_{\mathrm{emergy}}$) — passe d'une loi de puissance explosive à une croissance linéaire stable ($r \propto \theta$). Mathématiquement, cela définit une <strong>Spirale d'Archimède parfaite</strong>. Le cône divergent se métamorphose en spires uniformément espacées, où chaque cycle de halving ajoute une couche de coquille d'épaisseur constante. Le réseau passe d'un état juvénile expansif à un organisme planétaire mature en régime permanent.</p>
 
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">💿 The Rings of the Tree (and the Vinyl)</div>
-        <div class="analogy-title" lang="fr">💿 Les Anneaux de l'Arbre (et le Vinyle)</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">A young sapling expands its width rapidly (power law). But once a tree reaches maturity (the canopy), it adds a new ring of wood of the exact same thickness every single year. The total thickness of the tree (Emergy) grows linearly, forming concentric circles like the grooves of a vinyl record. This is the Archimedean Spiral: steady, unstoppable, resilient memory accumulation.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Un jeune arbrisseau élargit son tronc rapidement (loi de puissance). Mais une fois qu'un arbre atteint sa maturité (la canopée), il ajoute un nouvel anneau de bois de la même épaisseur exacte chaque année. L'épaisseur totale de l'arbre (Émergie) croît linéairement, formant des cercles concentriques comme les sillons d'un disque vinyle. C'est la Spirale d'Archimède : une accumulation de mémoire stable, inarrêtable et résiliente.</p>
+    <div class="analogy-box" style="background: rgba(255, 102, 0, 0.05); border-left: 4px solid var(--sun-orange);">
+        <div class="analogy-title" lang="en">🐚 The Growth of the Nautilus</div>
+        <div class="analogy-title" lang="fr">🐚 La Croissance du Nautile</div>
+        <p lang="en" style="margin:0; font-size:0.95em;">In its youth, the Nautilus expands its shell rapidly to gain volume. But as it reaches maturity, it adds new chambers of regular size, following a steady pace. This is the Archimedean phase: the shell (Emergy) continues to grow to protect the body, but it does so with a resilient, linear consistency. Bitcoin's security doesn't need to explode forever; it only needs to grow steadily enough to remain an unbreachable armor for the truth.</p>
+        <p lang="fr" style="margin:0; font-size:0.95em;">Dans sa jeunesse, le Nautile élargit sa coquille rapidement pour gagner en volume. Une fois mature, il ajoute de nouvelles chambres de taille régulière, suivant un rythme constant. C'est la phase archimédienne : la coquille (Émergie) continue de croître pour protéger le corps, mais elle le fait avec une constance linéaire résiliente. La sécurité de Bitcoin n'a pas besoin d'exploser indéfiniment ; elle a seulement besoin de croître assez régulièrement pour rester une armure inviolable pour la vérité.</p>
     </div>
-
-    <div class="code-wrapper">
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation, PillowWriter
-
-print("Initialisation de la projection topologique Bimétrique (Émergie)...")
-
-# --- PARAMÈTRES DE L'ESPACE TEMPS ---
-# Projection étendue à 12 cycles pour bien observer la formation 
-# des spires régulières de la Spirale d'Archimède (régime permanent).
-halvings = 12.0
-theta = np.linspace(0, halvings * 2 * np.pi, 3500)
-
-# L'Axe Z représente la flèche du Temps (Progression des blocs)
-z_time = theta / (2 * np.pi)
-
-# --- DYNAMIQUE DES DEUX DIMENSIONS ORTHOGONALES ---
-
-# Axe 1 : L'Offre (Information/Code)
-# Hélice contractante (Division par 2 à chaque cycle)
-# On garde le "cœur" central incompressible (la rareté absolue)
-r_supply = 1.5 + 10.0 * (0.5) ** z_time 
-
-# Axe 2 : L'Émergie Cumulative (L'intégrale du Hashrate)
-# Le Hashrate (Puissance) sature selon une logistique.
-# L'Émergie (Énergie Totale) est l'intégrale de cette logistique.
-P_max = 3.5        # Plafond de puissance d'exergie (détermine l'espacement final des spires)
-r_base = 0.5       # Émergie initiale (Genèse)
-k_growth = 1.5     # Taux d'accélération de l'adoption
-z_mid = 5.0        # Point d'inflexion où la puissance sature (~2028)
-
-# L'équation de la Spirale d'Archimède Logistique (Intégrale exacte)
-r_emergy = r_base + (P_max / k_growth) * np.log(1.0 + np.exp(k_growth * (z_time - z_mid)))
-
-# --- PROJECTION EN 3D (ESPACE BIMÉTRIQUE ORTHOGONAL) ---
-# L'information tourne sur son plan
-x_supply = r_supply * np.cos(theta)
-y_supply = r_supply * np.sin(theta)
-
-# L'Émergie tourne à la même vitesse (grâce au DAA), 
-# projetée avec un déphasage de +pi pour faire face à l'Information
-x_emergy = r_emergy * np.cos(theta + np.pi)
-y_emergy = r_emergy * np.sin(theta + np.pi)
-
-# --- VISUALISATION 3D ---
-fig = plt.figure(figsize=(11, 14))
-fig.patch.set_facecolor('#050505')
-ax = fig.add_subplot(111, projection='3d')
-ax.set_facecolor('#050505')
-
-# 1. Le Cœur d'Information (Or)
-ax.plot(x_supply, y_supply, z_time, color='#ffcc00', linewidth=3.5, 
-        label="Axe Info : Code/Offre (Cœur de Néguentropie)")
-
-# 2. Le Bouclier d'Émergie (Feu)
-ax.plot(x_emergy, y_emergy, z_time, color='#ff4400', linewidth=3.5, linestyle='-',
-        label="Axe Physique : Émergie (Spirale d'Archimède)")
-
-# 3. Les Liaisons du DAA (Homéostasie)
-steps = int(halvings * 6) 
-for i in range(steps + 1):
-    idx = int((i / steps) * (len(theta) - 1))
-    
-    xs, ys, zs = x_supply[idx], y_supply[idx], z_time[idx]
-    xe, ye, ze = x_emergy[idx], y_emergy[idx], z_time[idx]
-    
-    # Trace la liaison hydrogène cybernétique (passe exactement par l'axe Z central)
-    ax.plot([xs, xe], [ys, ye], [zs, ze], color='#ffffff', linewidth=1.0, linestyle=':', alpha=0.4)
-    ax.scatter([xs, xe], [ys, ye], [zs, ze], color='#ffffff', s=12, alpha=0.9)
-
-ax.plot([], [], [], color='#ffffff', linewidth=1.0, linestyle=':', label='Homéostasie DAA (Synchronisation)')
-
-# Esthétique de l'espace
-ax.set_xlabel('Espace Topologique X', color='#888888', labelpad=10)
-ax.set_ylabel('Espace Topologique Y', color='#888888', labelpad=10)
-ax.set_zlabel('Temps Informationnel Z (Cycles)', color='#e0e0e0', labelpad=10)
-
-ax.xaxis.pane.fill = False; ax.yaxis.pane.fill = False; ax.zaxis.pane.fill = False
-ax.xaxis.pane.set_edgecolor('#050505'); ax.yaxis.pane.set_edgecolor('#050505'); ax.zaxis.pane.set_edgecolor('#050505')
-ax.tick_params(colors='#555555')
-ax.grid(color='#444444', alpha=0.15, linestyle=':')
-
-# Limites dynamiques basées sur la croissance finale de l'émergie
-max_lim = np.max(r_emergy) + 1.0
-ax.set_xlim([-max_lim, max_lim]); ax.set_ylim([-max_lim, max_lim]); ax.set_zlim([0, halvings])
-
-plt.title("L'ADN de Nakamoto : Morphogenèse de la Spirale d'Archimède", color='#e0e0e0', size=16, pad=30)
-plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff4400', labelcolor='#e0e0e0', bbox_to_anchor=(1.15, 1.0))
-
-# --- ANIMATION FLUIDE ---
-num_frames = 300
-azimuths = np.linspace(45, 405, num_frames)
-progress = np.linspace(0, np.pi, num_frames)
-# La caméra s'élève plus haut pour bien admirer les anneaux concentriques (façon vinyle)
-elevations = 10 + (82 - 10) * ((1 - np.cos(progress)) / 2)
-
-def update_camera(frame_idx):
-    ax.view_init(elev=elevations[frame_idx], azim=azimuths[frame_idx])
-    return fig,
-
-print(f"Génération du rendu 3D en cours... ({num_frames} frames)")
-anim = FuncAnimation(fig, update_camera, frames=num_frames, interval=50, blit=False)
-gif_filename = 'adn_nakamoto_archimede.gif'
-anim.save(gif_filename, writer=PillowWriter(fps=24))
-print(f"✅ Animation générée : {gif_filename}")
-</code></pre>
-    </div>
-
     <img src="adn_nakamoto_archimede.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-
+    
 
     <h2 lang="en">8. Halving Autophagy: Thermodynamic Densification</h2>
     <h2 lang="fr">8. L'Autophagie du Halving : Densification Thermodynamique</h2>
@@ -1047,6 +981,114 @@ print(f"✅ Animation générée : {gif_filename}")
     
     <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 8px; border-left: 3px solid var(--text-muted); font-size: 0.95rem; color: #ccc;">
         <p style="margin: 0;">Ranaora, P. (2026). Nakamoto Distributed Consensus as a Non-Equilibrium Phase Transition : A Phenomenological Statistical-Physics Description (English). IPI. <a href="https://doi.org/10.5281/zenodo.19160047" target="_blank" style="color: var(--sun-orange); text-decoration: none;">https://doi.org/10.5281/zenodo.19160047</a></p>
+    </div>
+    Code pour générer le GIF 
+    <div class="code-wrapper">
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation, PillowWriter
+
+print("Initialisation de la projection topologique Bimétrique (Émergie)...")
+
+# --- PARAMÈTRES DE L'ESPACE TEMPS ---
+# Projection étendue à 12 cycles pour bien observer la formation 
+# des spires régulières de la Spirale d'Archimède (régime permanent).
+halvings = 12.0
+theta = np.linspace(0, halvings * 2 * np.pi, 3500)
+
+# L'Axe Z représente la flèche du Temps (Progression des blocs)
+z_time = theta / (2 * np.pi)
+
+# --- DYNAMIQUE DES DEUX DIMENSIONS ORTHOGONALES ---
+
+# Axe 1 : L'Offre (Information/Code)
+# Hélice contractante (Division par 2 à chaque cycle)
+# On garde le "cœur" central incompressible (la rareté absolue)
+r_supply = 1.5 + 10.0 * (0.5) ** z_time 
+
+# Axe 2 : L'Émergie Cumulative (L'intégrale du Hashrate)
+# Le Hashrate (Puissance) sature selon une logistique.
+# L'Émergie (Énergie Totale) est l'intégrale de cette logistique.
+P_max = 3.5        # Plafond de puissance d'exergie (détermine l'espacement final des spires)
+r_base = 0.5       # Émergie initiale (Genèse)
+k_growth = 1.5     # Taux d'accélération de l'adoption
+z_mid = 5.0        # Point d'inflexion où la puissance sature (~2028)
+
+# L'équation de la Spirale d'Archimède Logistique (Intégrale exacte)
+r_emergy = r_base + (P_max / k_growth) * np.log(1.0 + np.exp(k_growth * (z_time - z_mid)))
+
+# --- PROJECTION EN 3D (ESPACE BIMÉTRIQUE ORTHOGONAL) ---
+# L'information tourne sur son plan
+x_supply = r_supply * np.cos(theta)
+y_supply = r_supply * np.sin(theta)
+
+# L'Émergie tourne à la même vitesse (grâce au DAA), 
+# projetée avec un déphasage de +pi pour faire face à l'Information
+x_emergy = r_emergy * np.cos(theta + np.pi)
+y_emergy = r_emergy * np.sin(theta + np.pi)
+
+# --- VISUALISATION 3D ---
+fig = plt.figure(figsize=(11, 14))
+fig.patch.set_facecolor('#050505')
+ax = fig.add_subplot(111, projection='3d')
+ax.set_facecolor('#050505')
+
+# 1. Le Cœur d'Information (Or)
+ax.plot(x_supply, y_supply, z_time, color='#ffcc00', linewidth=3.5, 
+        label="Axe Info : Code/Offre (Cœur de Néguentropie)")
+
+# 2. Le Bouclier d'Émergie (Feu)
+ax.plot(x_emergy, y_emergy, z_time, color='#ff4400', linewidth=3.5, linestyle='-',
+        label="Axe Physique : Émergie (Spirale d'Archimède)")
+
+# 3. Les Liaisons du DAA (Homéostasie)
+steps = int(halvings * 6) 
+for i in range(steps + 1):
+    idx = int((i / steps) * (len(theta) - 1))
+    
+    xs, ys, zs = x_supply[idx], y_supply[idx], z_time[idx]
+    xe, ye, ze = x_emergy[idx], y_emergy[idx], z_time[idx]
+    
+    # Trace la liaison hydrogène cybernétique (passe exactement par l'axe Z central)
+    ax.plot([xs, xe], [ys, ye], [zs, ze], color='#ffffff', linewidth=1.0, linestyle=':', alpha=0.4)
+    ax.scatter([xs, xe], [ys, ye], [zs, ze], color='#ffffff', s=12, alpha=0.9)
+
+ax.plot([], [], [], color='#ffffff', linewidth=1.0, linestyle=':', label='Homéostasie DAA (Synchronisation)')
+
+# Esthétique de l'espace
+ax.set_xlabel('Espace Topologique X', color='#888888', labelpad=10)
+ax.set_ylabel('Espace Topologique Y', color='#888888', labelpad=10)
+ax.set_zlabel('Temps Informationnel Z (Cycles)', color='#e0e0e0', labelpad=10)
+
+ax.xaxis.pane.fill = False; ax.yaxis.pane.fill = False; ax.zaxis.pane.fill = False
+ax.xaxis.pane.set_edgecolor('#050505'); ax.yaxis.pane.set_edgecolor('#050505'); ax.zaxis.pane.set_edgecolor('#050505')
+ax.tick_params(colors='#555555')
+ax.grid(color='#444444', alpha=0.15, linestyle=':')
+
+# Limites dynamiques basées sur la croissance finale de l'émergie
+max_lim = np.max(r_emergy) + 1.0
+ax.set_xlim([-max_lim, max_lim]); ax.set_ylim([-max_lim, max_lim]); ax.set_zlim([0, halvings])
+
+plt.title("L'ADN de Nakamoto : Morphogenèse de la Spirale d'Archimède", color='#e0e0e0', size=16, pad=30)
+plt.legend(loc='upper right', facecolor='#050505', edgecolor='#ff4400', labelcolor='#e0e0e0', bbox_to_anchor=(1.15, 1.0))
+
+# --- ANIMATION FLUIDE ---
+num_frames = 300
+azimuths = np.linspace(45, 405, num_frames)
+progress = np.linspace(0, np.pi, num_frames)
+# La caméra s'élève plus haut pour bien admirer les anneaux concentriques (façon vinyle)
+elevations = 10 + (82 - 10) * ((1 - np.cos(progress)) / 2)
+
+def update_camera(frame_idx):
+    ax.view_init(elev=elevations[frame_idx], azim=azimuths[frame_idx])
+    return fig,
+
+print(f"Génération du rendu 3D en cours... ({num_frames} frames)")
+anim = FuncAnimation(fig, update_camera, frames=num_frames, interval=50, blit=False)
+gif_filename = 'adn_nakamoto_archimede.gif'
+anim.save(gif_filename, writer=PillowWriter(fps=24))
+print(f"✅ Animation générée : {gif_filename}")
+</code></pre>
     </div>
 
     <h2 lang="en">Limitations and Ontological Status</h2>
