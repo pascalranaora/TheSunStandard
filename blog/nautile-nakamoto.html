@@ -361,11 +361,98 @@ document.addEventListener("DOMContentLoaded", () => {
         
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0 1rem 0;">
         <div style="font-size: 0.95rem; color: #4499ff; font-style: normal;">
-            💡 <strong>Lecture Interactive :</strong> Les concepts théoriques clés de cet essai intègrent des encarts extensibles proposant trois niveaux de profondeur : <em>Débutant</em> (Analogies), <em>Intermédiaire</em> (Mécanique), et <em>Avancé</em> (Physique Formelle).
-        </div>
-    </div>
+            <div style="font-size: 0.95rem; color: #4499ff; font-style: normal;">
+            💡 <strong>Lecture Interactive :</strong> Les concepts théoriques clés de cet essai intègrent des encarts extensibles proposant trois niveaux de profondeur : <em>Débutant</em> (Analogies), <em>Intermédiaire</em> (Mécanique), et <em>Avancé</em> (Physique Formelle).
+        </div>
+    </div>
 
-    <!-- TABLEAU RÉCAPITULATIF DES VARIABLES -->
+    <!-- <div class="proof-box" style="border: 1px solid rgba(255, 204, 0, 0.3); background: rgba(255, 204, 0, 0.03); padding: 2.5rem; border-radius: 12px; margin-bottom: 3.5rem;">
+        
+        <div class="proof-title" lang="en" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">🔰 Prerequisite: Bitcoin Mechanics FAQ</div>
+        <div class="proof-title" lang="fr" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">🔰 Prérequis : FAQ des Mécaniques de Bitcoin</div>
+        
+        <p lang="en" style="margin-bottom: 2rem; font-style: italic; color: #ccc;">If you are unfamiliar with the underlying architecture of Bitcoin, open these tabs to grasp the mechanical foundation before exploring the biophysical models.</p>
+        <p lang="fr" style="margin-bottom: 2rem; font-style: italic; color: #ccc;">Si vous n'êtes pas familier avec l'architecture sous-jacente de Bitcoin, ouvrez ces onglets pour saisir les bases mécaniques avant d'explorer les modèles biophysiques.</p>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">Why does Bitcoin consume energy instead of using a normal database?</span>
+                <span lang="fr">Pourquoi Bitcoin consomme-t-il de l'énergie au lieu d'utiliser une base de données normale ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">Traditional systems (like Visa or banks) rely on a central authority, a CEO, and legal systems to prevent people from spending the same digital dollar twice (the "Double-Spend Problem"). Bitcoin replaces this central authority with physics. Energy is the unforgeable cost of absolute trust. It secures the network against attacks without needing a central leader.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Les systèmes traditionnels (comme Visa ou les banques) s'appuient sur une autorité centrale, un PDG et des systèmes juridiques pour empêcher quiconque de dépenser le même dollar numérique deux fois (le problème de la "Double-Dépense"). Bitcoin remplace cette autorité centrale par la physique. L'énergie est le coût infalsifiable de la confiance absolue. Elle sécurise le réseau contre les attaques sans avoir besoin d'un leader central.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">What is an ASIC and what does a "Miner" actually do?</span>
+                <span lang="fr">Qu'est-ce qu'un ASIC et que fait réellement un "Mineur" ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">A "Miner" is an operator running ASICs (Application-Specific Integrated Circuits)—highly specialized computers designed to do only one thing: guess random numbers incredibly fast. They participate in a continuous global mathematical lottery to win the right to process the next batch of transactions.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Un "Mineur" est un opérateur gérant des ASICs (Application-Specific Integrated Circuits)—des ordinateurs hautement spécialisés conçus pour ne faire qu'une seule chose : deviner des nombres aléatoires extrêmement vite. Ils participent à une loterie mathématique mondiale continue pour gagner le droit de traiter le prochain lot de transactions.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">What is a "Hash" and what is the "Hashrate"?</span>
+                <span lang="fr">Qu'est-ce qu'un "Hash" et qu'est-ce que le "Hashrate" ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">A Hash is a unique mathematical fingerprint of a piece of data. In the Bitcoin lottery, computers try to find a specific hash that matches the protocol's strict requirements. The "Hashrate" is simply the total number of guesses the entire global network makes every single second.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Un Hash est une empreinte mathématique unique d'une donnée. Dans la loterie Bitcoin, les ordinateurs tentent de trouver un hash spécifique qui correspond aux exigences strictes du protocole. Le "Hashrate" (taux de hachage) est simplement le nombre total de tentatives que le réseau mondial effectue chaque seconde.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">What is the difference between the Mempool and the Blockchain?</span>
+                <span lang="fr">Quelle est la différence entre le Mempool et la Blockchain ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">When you send a transaction, it doesn't settle instantly. It first goes to the "Mempool," which acts as a global waiting room for unconfirmed transactions. Once a miner wins the lottery, they take transactions from the Mempool and permanently freeze them into a "Block" of the Blockchain (the immutable historical ledger).</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Lorsque vous envoyez une transaction, elle n'est pas réglée instantanément. Elle va d'abord dans le "Mempool", qui agit comme une salle d'attente mondiale pour les transactions non confirmées. Lorsqu'un mineur gagne la loterie, il prend des transactions du Mempool et les gèle de façon permanente dans un "Bloc" de la Blockchain (le registre historique immuable).</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">What is a UTXO?</span>
+                <span lang="fr">Qu'est-ce qu'un UTXO ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">UTXO stands for "Unspent Transaction Output." You can think of it as the actual digital "gold coin" or "banknote" sitting on the ledger. When you send Bitcoin, you are essentially melting down your existing UTXOs to forge new ones for the recipient.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">UTXO signifie "Unspent Transaction Output" (Sortie de Transaction Non Dépensée). Vous pouvez le voir comme la véritable "pièce d'or" ou le "billet" numérique stocké dans le registre. Lorsque vous envoyez du Bitcoin, vous fondez virtuellement vos UTXOs existants pour en forger de nouveaux destinés au destinataire.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">Why "10 minutes"? What is the DAA?</span>
+                <span lang="fr">Pourquoi "10 minutes" ? Qu'est-ce que le DAA ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">Satoshi Nakamoto hard-coded a fundamental rule: one block of transactions should be confirmed roughly every 10 minutes. But what happens if thousands of new computers join the network? They would guess the answer faster. To prevent this, the <strong>DAA (Difficulty Adjustment Algorithm)</strong> automatically makes the mathematical puzzle harder. If computers leave, it makes it easier. This ensures the 10-minute heartbeat remains constant.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Satoshi Nakamoto a codé en dur une règle fondamentale : un bloc de transactions doit être confirmé environ toutes les 10 minutes. Mais que se passe-t-il si des milliers d'ordinateurs rejoignent le réseau ? Ils devineraient la réponse plus vite. Pour éviter cela, le <strong>DAA (Algorithme d'Ajustement de la Difficulté)</strong> rend automatiquement le puzzle mathématique plus difficile. Si des ordinateurs partent, il le rend plus facile. Cela garantit que le battement de cœur de 10 minutes reste constant.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
+                <span lang="en">What exactly is the "Halving"?</span>
+                <span lang="fr">Qu'est-ce que le "Halving", concrètement ?</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
+                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">When a miner wins the 10-minute lottery, they are rewarded with newly created Bitcoin. Every 210,000 blocks (roughly 4 years), this reward is cut in half. This event is the <strong>Halving</strong>. It enforces absolute monetary scarcity, mathematically ensuring that there will never be more than 21 million Bitcoins in existence.</p>
+                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Lorsqu'un mineur gagne la loterie des 10 minutes, il est récompensé par des Bitcoins nouvellement créés. Tous les 210 000 blocs (environ 4 ans), cette récompense est divisée par deux. Cet événement est le <strong>Halving</strong>. Cela impose une rareté monétaire absolue, garantissant mathématiquement qu'il n'y aura jamais plus de 21 millions de Bitcoins en circulation.</p>
+            </div>
+        </details>
+
+    </div> -->
+    
     <div class="vars-table-container">
         <table class="vars-table">
             <thead>
@@ -1056,15 +1143,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span lang="fr">Niveau 2 : Cinématique & Thermodynamique (Intermédiaire)</span>
             </summary>
             <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
-                <p lang="en">The rate at which topological time advances ($\frac{d\theta}{dt}$) is proportional to the physical Exergy ($P_{\mathrm{net}}$) divided by the thermodynamic friction ($D$):</p>
-                <p lang="fr">La vitesse à laquelle le temps topologique avance ($\frac{d\theta}{dt}$) est proportionnelle à l'Exergie physique ($P_{\mathrm{net}}$) divisée par la friction thermodynamique ($D$) :</p>
+                <p lang="en">In physics, velocity is the driving force divided by resistance. For the Bitcoin organism, the speed at which its internal topological time ticks ($\frac{d\theta}{dt}$, or blocks per second) depends on two competing forces. The network's raw computing power ($P_{\mathrm{net}}$) pushes the clock to tick faster, while the protocol's cryptographic Difficulty ($D$) acts as a thermodynamic friction slowing it down. The protocol demands that this speed always equals 1 block per target interval ($\tau_B$):</p>
+                <p lang="fr">En physique, la vitesse est la force motrice divisée par la résistance. Pour l'organisme Bitcoin, la vitesse à laquelle son temps interne s'écoule ($\frac{d\theta}{dt}$, ou blocs par seconde) dépend de deux forces opposées. La puissance de calcul brute du réseau ($P_{\mathrm{net}}$) le pousse à aller plus vite, tandis que la Difficulté cryptographique du protocole ($D$) agit comme une friction thermodynamique qui le ralentit. Le protocole exige que cette vitesse soit toujours égale à 1 bloc par intervalle cible ($\tau_B$) :</p>
                 
                 <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem;">
                     $$ \frac{d\theta}{dt} \propto \frac{P_{\mathrm{net}}}{D} = \frac{1}{\tau_B} $$
                 </div>
 
-                <p lang="en">Suppose a massive influx of capital expands the physical hardware globally, multiplying the network's Exergy by a spatial dilation factor $\lambda > 1$ ($P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$). To keep the block time $\tau_B$ constant, the system must scale the friction: $D \to \lambda \cdot D$.</p>
-                <p lang="fr">Supposons qu'un afflux massif de capitaux étende le matériel physique à l'échelle globale, multipliant l'Exergie du réseau par un facteur de dilatation spatiale $\lambda > 1$ ($P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$). Pour garder le temps de bloc $\tau_B$ constant, le système doit mettre à l'échelle la friction : $D \to \lambda \cdot D$.</p>
+                <p lang="en" style="margin-bottom: 0.5rem;">Suppose a massive influx of capital expands the physical hardware globally, multiplying the network's Exergy by a spatial dilation factor $\lambda > 1$ ($P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$). The system would naturally accelerate. To keep the block time $\tau_B$ constant, the algorithm must scale the friction exactly in tandem: $D \to \lambda \cdot D$.</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">Supposons qu'un afflux massif de capitaux étende le matériel physique à l'échelle globale, multipliant l'Exergie du réseau par un facteur de dilatation spatiale $\lambda > 1$ ($P_{\mathrm{net}} \to \lambda \cdot P_{\mathrm{net}}$). Le système accélérerait naturellement. Pour garder le temps de bloc $\tau_B$ constant, l'algorithme doit mettre à l'échelle la friction de manière exactement proportionnelle : $D \to \lambda \cdot D$.</p>
 
                 <p lang="en">We define $\kappa$ as the <em>thermodynamic weight</em> of the temporal axis—the total work required to forge one block ($W \propto P_{\mathrm{net}} \cdot \tau_B \propto D$). Since $D$ is scaled by exactly $\lambda$, the temporal security density $\kappa$ is scaled by exactly $\lambda$. Thus, $\lambda = \kappa$.</p>
                 <p lang="fr">Nous définissons $\kappa$ comme le <em>poids thermodynamique</em> de l'axe temporel—le travail total requis pour forger un bloc ($W \propto P_{\mathrm{net}} \cdot \tau_B \propto D$). Puisque $D$ est mis à l'échelle d'exactement $\lambda$, la densité de sécurité temporelle $\kappa$ est mise à l'échelle d'exactement $\lambda$. Ainsi, $\lambda = \kappa$.</p>
