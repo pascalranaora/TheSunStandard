@@ -793,10 +793,39 @@ document.addEventListener("DOMContentLoaded", () => {
     <p lang="en">While temperature and latency dictate the temporal (longitudinal) stability of the chain, robustness against network partitions requires analyzing transverse stability—the phase order across the spatial peer-to-peer network. We model this using the XY Model on a "small-world" graph architecture.</p>
     <p lang="fr">Si la température et la latence dictent la stabilité temporelle (longitudinale) de la chaîne, la robustesse contre les partitions du réseau nécessite d'analyser la stabilité transversale — l'ordre de phase à travers le réseau spatial pair-à-pair. Nous modélisons cela en utilisant le Modèle XY sur une architecture de graphe "petit monde" (Small-World).</p>
 
-    <div id="network-graph-container"></div>
+    <!-- <div id="network-graph-container"></div> -->
+    <div class="tikz-center">
+<script type="text/tikz">
+\usetikzlibrary{decorations.pathmorphing}
+\begin{tikzpicture}[
+    scale=0.8,
+    node distance=2cm,
+    main node/.style={circle, draw=blue!80, fill=blue!10, thick, minimum size=0.6cm},
+    local edge/.style={draw=gray!70, thick},
+    long edge/.style={draw=red!80, thick, dashed}
+]
+    \foreach \i in {1,...,12} {
+        \node[main node] (\i) at (\i*30:2.5cm) {};
+    }
+    \foreach \i in {1,...,12} {
+        \pgfmathsetmacro{\nextA}{int(mod(\i,12)+1)}
+        \pgfmathsetmacro{\nextB}{int(mod(\i+1,12)+1)}
+        \draw[local edge] (\i) -- (\nextA);
+        \draw[local edge] (\i) -- (\nextB);
+    }
+    \draw[long edge] (1) -- (6);
+    \draw[long edge] (3) -- (9);
+    \draw[long edge] (5) -- (11);
+    \draw[long edge] (2) -- (8);
+    \draw[long edge] (4) -- (12);
+    \node[align=center, font=\footnotesize, text=red!80] at (0, 0)
+        {\textbf{Global Shortcuts}\\(Fast Propagation)};
+\end{tikzpicture}
+</script>
+</div>
     <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;" lang="en"><em>Interactive: The "Small-World" topology. Red dashed lines represent crucial global shortcuts minimizing propagation delay $D_{\mathrm{hop}}$.</em></p>
     <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;" lang="fr"><em>Interactif : La topologie "Petit Monde". Les lignes pointillées rouges représentent les raccourcis mondiaux cruciaux minimisant le délai de propagation $D_{\mathrm{hop}}$.</em></p>
-
+<!-- 
     <script>
         const width = document.getElementById('network-graph-container').clientWidth;
         const height = 400;
@@ -831,7 +860,7 @@ document.addEventListener("DOMContentLoaded", () => {
             link.attr("x1", d => d.source.x).attr("y1", d => d.source.y).attr("x2", d => d.target.x).attr("y2", d => d.target.y);
             node.attr("cx", d => d.x).attr("cy", d => d.y);
         });
-    </script>
+    </script> -->
 
     <div class="proof-box" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
         <div class="proof-title" lang="en">The Architecture of Consensus: Small-World Networks</div>
@@ -1350,7 +1379,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="tikz-center">
 <script type="text/tikz">
 \usetikzlibrary{decorations.pathmorphing}
-
 \begin{tikzpicture}[>=stealth]
     % Mempool (High Entropy)
     \draw[thick, fill=gray!10, rounded corners] (-4, 0) rectangle (-1, 4);
