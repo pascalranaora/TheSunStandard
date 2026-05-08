@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Caméra (FOV de 75 pour mieux voir l'ensemble de la structure)
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     // Position reculée pour embrasser les 33 cycles
-    camera.position.set(0, -130, -160); 
+    camera.position.set(0, -100, -140); 
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -191,13 +191,28 @@ document.addEventListener("DOMContentLoaded", () => {
         .tooltip {
             position: relative;
             display: inline-block;
-            border-bottom: 1px dotted var(--sun-orange);
+            border-bottom: 2px solid #1a66cc; /* Soulignement continu gras bleu profond */
             cursor: help;
             color: var(--text-main);
-            transition: color 0.2s;
+            transition: all 0.2s ease;
         }
+        /* Le petit point d'interrogation généré automatiquement */
+        .tooltip::after {
+            content: '?';
+            font-size: 0.7em;
+            vertical-align: super; /* Met le texte en exposant */
+            color: #1a66cc;
+            margin-left: 3px;
+            font-weight: 800;
+            transition: color 0.2s ease;
+        }
+        /* Effet au survol (Bleu plus clair / électrique) */
         .tooltip:hover {
-            color: var(--sun-orange);
+            color: #4499ff;
+            border-bottom-color: #4499ff;
+        }
+        .tooltip:hover::after {
+            color: #4499ff;
         }
         .tooltip .tooltiptext {
             visibility: hidden;
@@ -218,9 +233,32 @@ document.addEventListener("DOMContentLoaded", () => {
             font-family: 'Helvetica Neue', sans-serif;
             font-style: normal;
             line-height: 1.5;
-            border: 1px solid var(--border-glow);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+            border: 1px solid #1a66cc; /* Harmonisation de la bordure en bleu */
+            box-shadow: 0 5px 25px rgba(0, 30, 80, 0.6); /* Reflet bleuté subtil */
             backdrop-filter: blur(5px);
+        }
+        .tooltip .tooltiptext strong {
+            color: #4499ff; /* Titre de l'infobulle en bleu clair */
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* Petite flèche en bas de l'infobulle */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: #1a66cc transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
         }
         /* --- Planetary Brain 3D Overlay --- */
         .planetary-container {
@@ -719,7 +757,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <p lang="en">To capture the cyclic nature of this metabolism on a macroscopic scale, we map the state manifold using polar coordinates $(r, \theta)$. Crucially, the radius $r$ maps not to instantaneous power, but to the <strong style="color: var(--sun-orange);"><span class="tooltip" style="border-bottom-color: var(--sun-orange);">Cumulative Emergy<span class="tooltiptext"><strong>Cumulative Emergy</strong>A concept defined by ecologist H.T. Odum as "embodied energy." It is the total historical sum of all available energy (exergy) that was previously consumed and dissipated to build and maintain a system's current macroscopic state.</span></span></strong> (the total historical memory of energy dissipated in Joules), while the angle $\theta$ maps to abstract informational time.</p>
     
-    <p lang="fr">Pour capturer la cyclicité de ce métabolisme à une échelle macroscopique, nous paramétrons la variété d'état par les coordonnées polaires $(r, \theta)$. Fondamentalement, le rayon $r$ ne correspond pas à la puissance instantanée, mais à l'<strong style="color: var(--sun-orange);"><span class="tooltip" style="border-bottom-color: var(--sun-orange);">Émergie Cumulative<span class="tooltiptext"><strong>Émergie Cumulative</strong>Concept de l'écologue H.T. Odum désignant l'"énergie incorporée". C'est la somme historique de toute l'énergie utile (exergie) préalablement dissipée et métabolisée pour construire et maintenir l'état macroscopique actuel d'un système.</span></span></strong> (la mémoire historique totale de l'énergie dissipée en Joules), tandis que l'angle $\theta$ correspond au temps informationnel abstrait.</p>
+    <p lang="fr">Pour capturer la cyclicité de ce métabolisme à une échelle macroscopique, nous paramétrons la variété d'état par les coordonnées polaires $(r, \theta)$. Fondamentalement, le rayon $r$ ne correspond pas à la puissance instantanée, mais à l'<strong style="color: var(--sun-orange);"><span class="tooltip">Émergie Cumulative<span class="tooltiptext"><strong>Émergie Cumulative</strong>Concept de l'écologue H.T. Odum désignant l'"énergie incorporée". C'est la somme historique de toute l'énergie utile (exergie) préalablement dissipée et métabolisée pour construire et maintenir l'état macroscopique actuel d'un système.</span></span></strong> (la mémoire historique totale de l'énergie dissipée en Joules), tandis que l'angle $\theta$ correspond au temps informationnel abstrait.</p>
 
     <div class="theorem-box">
         <div class="theorem-title" lang="en">Definition: Polar Cyclicity</div>
@@ -1470,8 +1508,17 @@ document.addEventListener("DOMContentLoaded", () => {
         </details>
         <div class="proof-end">∎</div>
     </div>
-
-    <img src="adn_nakamoto_archimede.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+    <div style="text-align: center;"><iframe 
+    width="315" 
+    height="560" 
+    src="https://www.youtube.com/embed/3AkfjoGMZw4" 
+    title="YouTube Short" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    allowfullscreen>
+    </iframe></div>
+    
+    <!-- <img src="adn_nakamoto_archimede.gif?v=3" alt="Morphogenèse du Cylindre Thermodynamique" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2); display: block; margin: 4rem auto; box-shadow: 0 10px 40px rgba(0,0,0,0.5);"> -->
 
     <h2 lang="en">8. Halving Autophagy: Thermodynamic Densification</h2>
     <h2 lang="fr">8. L'Autophagie du Halving : Densification Thermodynamique</h2>
