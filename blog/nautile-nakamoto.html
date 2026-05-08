@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Caméra
     const camera = new THREE.PerspectiveCamera(-120, container.clientWidth / container.clientHeight, 0.1, 1000);
     // Position initiale en hauteur pour voir l'intérieur de la spirale
-    camera.position.set(0, 0, -10); 
+    camera.position.set(0, 0, -24); 
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(container.clientWidth, container.clientHeight);
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         // 2. Rotation très lente de la structure pour donner l'impression de "flotter"
         const elapsedTime = clock.getElapsedTime();
         scene.rotation.z = elapsedTime * 0.05;
-
+        scene.rotation.y = Math.PI;
         // Mise à jour des contrôles
         controls.update();
         
