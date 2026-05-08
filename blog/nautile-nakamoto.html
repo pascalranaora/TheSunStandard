@@ -190,7 +190,64 @@ document.addEventListener("DOMContentLoaded", () => {
             line-height: 1.8;
             overflow-x: hidden;
         }
-        
+        /* --- Tooltips (Infobulles) --- */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted var(--sun-orange);
+            cursor: help;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+        .tooltip:hover {
+            color: var(--sun-orange);
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 260px;
+            background-color: rgba(10, 10, 10, 0.95);
+            color: #d4d4d4;
+            text-align: left;
+            border-radius: 8px;
+            padding: 12px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -130px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-style: normal;
+            line-height: 1.5;
+            border: 1px solid var(--border-glow);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        .tooltip .tooltiptext strong {
+            color: var(--sun-yellow);
+            display: block;
+            margin-bottom: 4px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* Petite flèche en bas de l'infobulle */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -6px;
+            border-width: 6px;
+            border-style: solid;
+            border-color: var(--border-glow) transparent transparent transparent;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
         .tikz-center {
             display: flex;
             justify-content: center; /* Centers horizontally */
@@ -580,15 +637,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">1. The Nakamoto Action and State Topology</h2>
     <h2 lang="fr">1. L'Action de Nakamoto et la Topologie de l'État</h2>
 
-    <p lang="en">Following Erwin Schrödinger's famous definition of life—a system that maintains its internal negentropy by continuously dissipating energy into its environment—the Nakamoto protocol emerges as a massive open thermodynamic system. It is not merely a static ledger, but an active, energy-consuming entity fighting against the decay of information. To ground its macroscopic state in a fundamental physical substrate, we isolate the <strong>Nakamoto Action</strong> $h_N$ ($\mathrm{J \cdot s}$), defined kinematically at the ASIC hardware level:</p>
-    <p lang="fr">En suivant la célèbre définition de la vie d'Erwin Schrödinger — un système qui maintient sa néguentropie interne en dissipant continuellement de l'énergie dans son environnement —, le protocole Nakamoto émerge comme un système thermodynamique ouvert massif. Il ne s'agit pas d'un simple registre statique, mais d'une entité active et consommatrice d'énergie qui lutte contre la dégradation de l'information. Pour ancrer son état macroscopique dans un substrat physique fondamental, nous isolons l'<strong>Action de Nakamoto</strong> $h_N$ ($\mathrm{J \cdot s}$), définie cinématiquement au niveau matériel des puces ASIC :</p>
+    <p lang="en">Following Erwin Schrödinger's famous definition of life—a system that maintains its internal <span class="tooltip">negentropy<span class="tooltiptext"><strong>Negentropy</strong>Negative entropy. It is the measure of a system's order, structure, and information. Living things survive by extracting order (negentropy) from their chaotic environment.</span></span> by continuously dissipating energy into its environment—the Nakamoto protocol emerges as a massive open thermodynamic system. It is not merely a static ledger, but an active, energy-consuming entity fighting against the decay of information. To ground its macroscopic state in a fundamental physical substrate, we isolate the <strong>Nakamoto Action</strong> $h_N$ ($\mathrm{J \cdot s}$), defined kinematically at the ASIC hardware level:</p>
+    <p lang="fr">En suivant la célèbre définition de la vie d'Erwin Schrödinger — un système qui maintient sa <span class="tooltip">néguentropie<span class="tooltiptext"><strong>Néguentropie</strong>L'entropie négative. C'est la mesure de l'ordre, de la structure et de l'information d'un système. Le vivant survit en extrayant de l'ordre (néguentropie) du chaos environnant.</span></span> interne en dissipant continuellement de l'énergie dans son environnement —, le protocole Nakamoto émerge comme un système thermodynamique ouvert massif. Il ne s'agit pas d'un simple registre statique, mais d'une entité active et consommatrice d'énergie qui lutte contre la dégradation de l'information. Pour ancrer son état macroscopique dans un substrat physique fondamental, nous isolons l'<strong>Action de Nakamoto</strong> $h_N$ ($\mathrm{J \cdot s}$), définie cinématiquement au niveau matériel des puces ASIC :</p>
 
     <div class="math-block">
         $$ h_N(t) = e_{\mathrm{hash}}(t) \cdot \tau_{\mathrm{hash}} $$
     </div>
 
-    <p lang="en">Unlike Planck's universal constant $h$, the Nakamoto Action $h_N(t)$ is a non-stationary quantity. It is a dissipative technological parameter that dynamically revises downward with algorithmic implementation and semiconductor efficiency (ASICs), asymptoting toward Landauer's limit. From this micro-canonical action, we extract the absolute minimum energy threshold required to perform a thermodynamic operation in the network, $\epsilon_0$:</p>
-    <p lang="fr">Contrairement à la constante universelle de Planck $h$, l'Action de Nakamoto $h_N(t)$ est une grandeur non-stationnaire. C'est un paramètre technologique dissipatif qui évolue à la baisse en fonction de l'implémentation algorithmique et de l'efficacité énergétique des ASICs, s'approchant asymptotiquement de la limite de Landauer. À partir de cette action micro-canonique, nous extrayons le seuil d'énergie minimal absolu requis pour effectuer une opération thermodynamique dans le réseau, $\epsilon_0$ :</p>
+    <p lang="en">Unlike Planck's universal constant $h$, the Nakamoto Action $h_N(t)$ is a non-stationary quantity. It is a dissipative technological parameter that dynamically revises downward with algorithmic implementation and semiconductor efficiency (ASICs), asymptoting toward <span class="tooltip">Landauer's limit<span class="tooltiptext"><strong>Landauer's Limit</strong><span style="color: var(--sun-orange); font-family: monospace; display: block; margin: 4px 0;">E &ge; k_B T ln(2)</span>The absolute physical minimum of energy required to compute. It exists because erasing one bit of information (an irreversible action) reduces the computer's internal entropy. Per the second law of thermodynamics, this lost entropy must be expelled into the environment as heat.</span></span>. From this micro-canonical action, we extract the absolute minimum energy threshold required to perform a thermodynamic operation in the network, $\epsilon_0$:</p>
+    
+    <p lang="fr">Contrairement à la constante universelle de Planck $h$, l'Action de Nakamoto $h_N(t)$ est une grandeur non-stationnaire. C'est un paramètre technologique dissipatif qui évolue à la baisse en fonction de l'implémentation algorithmique et de l'efficacité énergétique des ASICs, s'approchant asymptotiquement de la <span class="tooltip">limite de Landauer<span class="tooltiptext"><strong>Limite de Landauer</strong><span style="color: var(--sun-orange); font-family: monospace; display: block; margin: 4px 0;">E &ge; k_B T ln(2)</span>La limite physique absolue de consommation d'énergie pour le calcul. Elle existe car effacer un bit d'information (action irréversible) réduit l'entropie interne de la puce. Selon le 2nd principe de la thermodynamique, cette baisse d'entropie doit obligatoirement être rejetée sous forme de chaleur dans l'environnement.</span></span>. À partir de cette action micro-canonique, nous extrayons le seuil d'énergie minimal absolu requis pour effectuer une opération thermodynamique dans le réseau, $\epsilon_0$ :</p>
 
     <div class="math-block">
         $$ \epsilon_0 \equiv e_{\mathrm{hash}}(t) = \frac{h_N(t)}{\tau_{\mathrm{hash}}} $$
@@ -668,8 +726,8 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">2. Information Temperature ($T_{\mathrm{eff}}$)</h2>
     <h2 lang="fr">2. La Température d'Information ($T_{\mathrm{eff}}$)</h2>
 
-    <p lang="en">In traditional thermodynamics, temperature is dictated entirely by an external heat bath. In our synthetic organism, the ledger's effective temperature $T_{\mathrm{eff}}$ is an <strong>emergent hybrid property</strong>. It acts as a thermodynamic bridge: it absorbs the <em>exogenous</em> physical power from the terrestrial exergy bath (the global energy grid) and translates it through the system's <em>endogenous</em> stochastic rules (the hashing algorithm). It links the fundamental micro-canonical energy quantum $\epsilon_0$ to the macroscopic exogenous block energy $\bar{E}_{\mathrm{eff}}$:</p>
-    <p lang="fr">Dans la thermodynamique classique, la température est entièrement dictée par un bain thermique externe. Dans notre organisme synthétique, la température effective du registre $T_{\mathrm{eff}}$ est une <strong>propriété hybride émergente</strong>. Elle agit comme un pont thermodynamique : elle absorbe la puissance physique <em>exogène</em> du bain exergétique terrestre (le réseau électrique mondial) et la traduit à travers les règles stochastiques <em>endogènes</em> du système (l'algorithme de hachage). Elle lie le quantum d'énergie micro-canonique fondamental $\epsilon_0$ à cette énergie macroscopique exogène du bloc $\bar{E}_{\mathrm{eff}}$ :</p>
+    <p lang="en">In traditional thermodynamics, temperature is dictated entirely by an external heat bath. In our synthetic organism, the ledger's effective temperature $T_{\mathrm{eff}}$ is an <strong>emergent hybrid property</strong>. It acts as a thermodynamic bridge: it absorbs the <em>exogenous</em> physical power from the terrestrial <span class="tooltip">exergy bath<span class="tooltiptext"><strong>Exergy Bath</strong>A vast reservoir of available, useful energy. In thermodynamics, 'exergy' is the fraction of energy that can actually do physical work (like running ASICs), the rest being lost as waste heat.</span></span> (the global energy grid) and translates it through the system's <em>endogenous</em> stochastic rules (the hashing algorithm). It links the fundamental micro-canonical energy quantum $\epsilon_0$ to the macroscopic exogenous block energy $\bar{E}_{\mathrm{eff}}$:</p>
+    <p lang="fr">Dans la thermodynamique classique, la température est entièrement dictée par un bain thermique externe. Dans notre organisme synthétique, la température effective du registre $T_{\mathrm{eff}}$ est une <strong>propriété hybride émergente</strong>. Elle agit comme un pont thermodynamique : elle absorbe la puissance physique <em>exogène</em> du <span class="tooltip">bain exergétique<span class="tooltiptext"><strong>Bain Exergétique</strong>Un immense réservoir d'énergie utile. En thermodynamique, l'exergie est la fraction d'énergie qui peut réellement fournir un travail (comme faire tourner des ASIC), le reste étant perdu en chaleur.</span></span> terrestre (le réseau électrique mondial) et la traduit à travers les règles stochastiques <em>endogènes</em> du système (l'algorithme de hachage). Elle lie le quantum d'énergie micro-canonique fondamental $\epsilon_0$ à cette énergie macroscopique exogène du bloc $\bar{E}_{\mathrm{eff}}$ :</p>
 
     <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0 2rem 0; font-size: 1.4rem;">
             $$ k_B T_{\mathrm{eff}} \equiv \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}} \left(\frac{\tau_L}{\tau_B}\right) $$
