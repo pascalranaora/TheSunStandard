@@ -618,7 +618,77 @@ document.addEventListener("DOMContentLoaded", () => {
         </details>
 
     </div> -->
-    
+    <h2 lang="en">Introduction: The Thermodynamics of Distributed Consensus</h2>
+    <h2 lang="fr">Introduction : La Thermodynamique du Consensus Distribué</h2>
+
+    <p lang="en">The essential concern in distributed consensus is the inability to define a canonical order for events in the absence of a global clock. Classical Byzantine Fault Tolerance (BFT) protocols typically rely on authenticated voting and logical ordering rather than an explicit thermodynamic cost; in open-membership settings, such schemes require separate Sybil-resistance assumptions. Physically, the double-spending problem represents a failure of time-ordering invariance: lacking an irreversible thermodynamic cost, $t \to -t$ symmetry makes history $\mathbf{h}_A = \{E_1, E_2\}$ indistinguishable from $\mathbf{h}_B = \{E_2, E_1\}$. Extracting a unique, immutable history from the stochastic noise of a peer-to-peer network requires a symmetry-breaking process driven by the energy dissipation of its internal structure.</p>
+    <p lang="fr">La préoccupation essentielle du consensus distribué dans un réseau pair-à-pair est l'incapacité de définir un ordre canonique pour les événements en l'absence d'une horloge globale. Les protocoles classiques de Tolérance aux Pannes Byzantines (BFT) s'appuient généralement sur des votes authentifiés et un ordonnancement logique plutôt que sur un coût thermodynamique explicite ; dans des environnements à adhésion ouverte, de tels schémas nécessitent des hypothèses distinctes de résistance aux attaques Sybil. Physiquement, le problème de la double dépense représente une défaillance de l'invariance de l'ordre temporel : en l'absence d'un coût thermodynamique irréversible, la symétrie $t \to -t$ rend l'histoire $\mathbf{h}_A = \{E_1, E_2\}$ indiscernable de $\mathbf{h}_B = \{E_2, E_1\}$. Extraire une histoire unique et immuable du bruit stochastique d'un réseau pair-à-pair exige un processus de brisure de symétrie mû par la dissipation d'énergie de sa structure interne.</p>
+
+    <div class="tikz-center">
+<div style="width: 100%; max-width: 650px; margin: 3rem auto; display: block;">
+        <svg viewBox="0 0 650 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; font-family: 'Helvetica Neue', sans-serif;">
+            <defs>
+                <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#888888" />
+                </marker>
+                <marker id="arrow-gold" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ffcc00" />
+                </marker>
+                <marker id="arrow-red" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+                    <path d="M 0 0 L 10 5 L 0 10 z" fill="#ff4444" />
+                </marker>
+            </defs>
+
+            <text x="480" y="30" fill="white" font-size="14" text-anchor="middle"><tspan font-weight="bold">A. Symmetric Phase</tspan> (Reversible Time)</text>
+            
+            <path d="M 40 100 C 200 160 350 30 520 100" fill="none" stroke="#888888" stroke-width="2" marker-end="url(#arrow-gray)" />
+            <text x="540" y="105" fill="#888888" font-size="14" font-style="italic">t (No Global Clock)</text>
+
+            <circle cx="120" cy="115" r="5" fill="#4499ff" />
+            <text x="120" y="95" fill="white" font-size="15" text-anchor="middle">E<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+
+            <circle cx="280" cy="98" r="5" fill="#4499ff" />
+            <text x="280" y="78" fill="white" font-size="15" text-anchor="middle">E<tspan baseline-shift="sub" font-size="11">2</tspan></text>
+
+            <circle cx="440" cy="95" r="5" fill="#4499ff" />
+            <text x="440" y="75" fill="white" font-size="15" text-anchor="middle">E<tspan baseline-shift="sub" font-size="11">3</tspan></text>
+
+            <path d="M 300 120 L 420 120" fill="none" stroke="#ff4444" stroke-width="2" stroke-dasharray="6,4" marker-start="url(#arrow-red)" marker-end="url(#arrow-red)" />
+            <rect x="310" y="130" width="100" height="40" fill="#050505" />
+            <text x="360" y="145" fill="#ff4444" font-size="13" text-anchor="middle">t ↔ -t</text>
+            <text x="360" y="163" fill="#ff4444" font-size="12" text-anchor="middle">(Mutable Order)</text>
+
+            <text x="480" y="210" fill="white" font-size="14" text-anchor="middle"><tspan font-weight="bold">B. Broken Symmetry</tspan> (Irreversible Time)</text>
+            
+            <line x1="40" y1="260" x2="520" y2="260" stroke="#ffcc00" stroke-width="2.5" marker-end="url(#arrow-gold)" />
+            <text x="540" y="265" fill="#ffcc00" font-size="14" font-style="italic">N (Macroscopic Clock)</text>
+
+            <rect x="100" y="245" width="30" height="30" fill="#cccccc" stroke="white" stroke-width="1.5" rx="4" />
+            <circle cx="115" cy="260" r="3" fill="#050505" />
+            <text x="115" y="295" fill="white" font-size="15" text-anchor="middle">B<tspan baseline-shift="sub" font-size="11">1</tspan></text>
+
+            <rect x="220" y="245" width="30" height="30" fill="#cccccc" stroke="white" stroke-width="1.5" rx="4" />
+            <circle cx="235" cy="260" r="3" fill="#050505" />
+
+            <rect x="340" y="245" width="30" height="30" fill="#cccccc" stroke="white" stroke-width="1.5" rx="4" />
+            <circle cx="355" cy="260" r="3" fill="#050505" />
+
+            <rect x="460" y="245" width="30" height="30" fill="#cccccc" stroke="white" stroke-width="1.5" rx="4" />
+            <circle cx="475" cy="260" r="3" fill="#050505" />
+            <text x="475" y="295" fill="white" font-size="15" text-anchor="middle">B<tspan baseline-shift="sub" font-size="11">4</tspan></text>
+
+        </svg>
+    </div>
+    </div>
+    <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="en"><em><strong>Figure 1: Arrow of time in the effective description.</strong> Top: without substantial dissipation, event ordering remains effectively time-symmetric and fluid. Bottom: sustained Proof-of-Work dissipation selects a stable macroscopic sequence of blocks.</em></p>
+    <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="fr"><em><strong>Figure 1 : Flèche du temps dans la description effective.</strong> En haut : sans dissipation substantielle, l'ordonnancement des événements reste symétrique dans le temps et fluide. En bas : la dissipation thermodynamique (Preuve de Travail) sélectionne une séquence macroscopique stable de blocs.</em></p>
+
+    <p lang="en">In our effective description, the distributed ledger is conceptualized as a one-dimensional growing network $\mathcal{L}$ evolving under dissipative forcing. The development of consensus is described as a continuous phase transition between a high-entropy ("disordered") phase, the mempool, and a low-entropy ("ordered") phase, the blockchain, analogous to a liquid-crystallization process. In this view, the blockchain is a dissipative structure whose low entropy is preserved far from equilibrium only through the continuous consumption of work.</p>
+    <p lang="fr">Dans notre description effective, le registre distribué est conceptualisé comme un réseau unidimensionnel en croissance $\mathcal{L}$ évoluant sous un forçage dissipatif. Le développement du consensus est décrit comme une transition de phase continue entre une phase à haute entropie ("désordonnée"), le mempool, et une phase à basse entropie ("ordonnée"), la blockchain, analogue à un processus de cristallisation liquide. Dans cette optique, la blockchain est une structure dissipative dont la basse entropie n'est préservée loin de l'équilibre que par la consommation continue de travail.</p>
+
+    <p lang="en">Before proceeding, the table below establishes the effective dictionary of correspondences used throughout this study.</p>
+    <p lang="fr">Le tableau ci-dessous établit le dictionnaire effectif des correspondances utilisées tout au long de cette étude.</p>
+
     <div class="vars-table-container">
         <table class="vars-table">
             <thead>
@@ -1465,7 +1535,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling ($P_{\mathrm{max}}$). Therefore, the growth rate of this Exergy flow is governed by the logistic differential equation:</p>
     <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique : </p>
-    
     <div class="math-block">
         $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}}) $$
     </div>
