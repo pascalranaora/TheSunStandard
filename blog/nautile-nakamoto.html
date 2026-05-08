@@ -1233,7 +1233,7 @@ document.addEventListener("DOMContentLoaded", () => {
     <p lang="fr">Lors d'un choc/une trempe thermodynamique massif/ve (comme un Halving où les revenus des mineurs chutent de 50%), la puissance instantanée $P_{\mathrm{net}}(t)$ se découple de l'état d'équilibre. L'identité opérationnelle révèle la vulnérabilité du système :</p>
 
     <div class="math-block">
-        $$ k_B T_{\mathrm{eff}}(t) = \frac{\epsilon_0^2}{P_{\mathrm{net}}(t) \cdot \tau_B} \left(\frac{\tau_L}{\tau_B}\right) $$
+        $$ k_B T_{\mathrm{eff}}(t) = \frac{\epsilon_0^2}{P_{\mathrm{net}}(t) \cdot \tau_B} \left(\frac{\tau_B - \tau_L}{\tau_B}\right) $$
     </div>
     
     <p lang="en">This equation formally demonstrates that if network power $P_{\mathrm{net}}(t)$ drops towards zero, the systemic temperature $T_{\mathrm{eff}}$ appropriately diverges towards infinity. The "solid" chain melts, rendering the timeline completely fluid, reversible, and vulnerable to deep reorganizations.</p>
