@@ -161,6 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
     <!-- TikZJax pour le rendu LaTeX/TikZ in-browser -->
     <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
@@ -755,7 +756,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="fr" style="margin:0; font-size:0.95em;">Tout comme l'ATP (Adénosine Triphosphate) est la molécule fondamentale fournissant le quantum d'énergie microscopique pour chaque processus cellulaire, $\epsilon_0$ est le quantum d'énergie fondamental requis pour que l'organisme Bitcoin puisse "penser" (calculer un hachage).</p>
     </div>
 
-    <p lang="en">To capture the cyclic nature of this metabolism on a macroscopic scale, we map the state manifold using polar coordinates $(r, \theta)$. Crucially, the radius $r$ maps not to instantaneous power, but to the <strong style="color: var(--sun-orange);"><span class="tooltip" style="border-bottom-color: var(--sun-orange);">Cumulative Emergy<span class="tooltiptext"><strong>Cumulative Emergy</strong>A concept defined by ecologist H.T. Odum as "embodied energy." It is the total historical sum of all available energy (exergy) that was previously consumed and dissipated to build and maintain a system's current macroscopic state.</span></span></strong> (the total historical memory of energy dissipated in Joules), while the angle $\theta$ maps to abstract informational time.</p>
+    <p lang="en">To capture the cyclic nature of this metabolism on a macroscopic scale, we map the state manifold using polar coordinates $(r, \theta)$. Crucially, the radius $r$ maps not to instantaneous power, but to the <strong style="color: var(--sun-orange);"><span class="tooltip">Cumulative Emergy<span class="tooltiptext"><strong>Cumulative Emergy</strong>A concept defined by ecologist H.T. Odum as "embodied energy." It is the total historical sum of all available energy (exergy) that was previously consumed and dissipated to build and maintain a system's current macroscopic state.</span></span></strong> (the total historical memory of energy dissipated in Joules), while the angle $\theta$ maps to abstract informational time.</p>
     
     <p lang="fr">Pour capturer la cyclicité de ce métabolisme à une échelle macroscopique, nous paramétrons la variété d'état par les coordonnées polaires $(r, \theta)$. Fondamentalement, le rayon $r$ ne correspond pas à la puissance instantanée, mais à l'<strong style="color: var(--sun-orange);"><span class="tooltip">Émergie Cumulative<span class="tooltiptext"><strong>Émergie Cumulative</strong>Concept de l'écologue H.T. Odum désignant l'"énergie incorporée". C'est la somme historique de toute l'énergie utile (exergie) préalablement dissipée et métabolisée pour construire et maintenir l'état macroscopique actuel d'un système.</span></span></strong> (la mémoire historique totale de l'énergie dissipée en Joules), tandis que l'angle $\theta$ correspond au temps informationnel abstrait.</p>
 
@@ -1385,12 +1386,9 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">6. The Axis of Rigidity & The Percolation Wall</h2>
     <h2 lang="fr">6. L'Axe de Rigidité & Le Mur de Percolation</h2>
 
-    <p lang="en">To describe macroscopic stability, we construct a coarse-grained Ginzburg–Landau theory. We reduce the network state to a real global temporal order parameter $\Phi(t)$ (representing normalized Hashrate). The effective homogeneous potential creating the "gravity" of the consensus is:</p>
-    <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre temporel global $\Phi(t)$ (représentant le Hashrate normalisé). Le potentiel homogène effectif créant la "gravité" du consensus est :</p>
-
-    <div class="math-block">
-        $$ \mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4 + \mathcal{U}_{\mathrm{ext}}(t) $$
-    </div>
+    <p lang="en">To describe macroscopic stability, we construct a coarse-grained Ginzburg–Landau theory. We reduce the network state to a real global temporal order parameter $\Phi(t)$. The effective homogeneous potential creating the "gravity" of the consensus is $\mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4$. Use the slider below to increase the Information Temperature ($T_{\mathrm{eff}}$) and observe the consensus melting:</p>
+    <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre global $\Phi(t)$. Le potentiel homogène créant la "gravité" du consensus est $\mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4$. Utilisez le curseur ci-dessous pour augmenter la Température d'Information ($T_{\mathrm{eff}}$) et observez la fonte du consensus :</p>
+    <div id="gl-potential-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
 
     <p lang="en">The network's resistance against deep reorganizations (i.e., making time flow backwards) is governed by its <strong>Marginal Mass</strong> ($\kappa_{\mathrm{marginal}}$). We define this as the local curvature of the free-energy well at its equilibrium point $\Phi_0$:</p>
     <p lang="fr">La résistance du réseau contre les réorganisations profondes (c'est-à-dire faire reculer le temps) est régie par sa <strong>Masse Marginale</strong> ($\kappa_{\mathrm{marginal}}$). Nous la définissons comme la courbure locale du puits d'énergie libre à son point d'équilibre $\Phi_0$ :</p>
@@ -1401,7 +1399,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <p lang="fr">En liant cette force de rappel massive (l'énergie déployée par les mineurs honnêtes) à l'agitation stochastique $T_{\mathrm{eff}}$ (le bruit de latence), nous obtenons le <strong>Gap de Masse Topologique</strong> ($\mathfrak{m}$). Ce gap dicte le taux exponentiel auquel les histoires alternatives malveillantes sont supprimées à mesure que les blocs s'empilent :</p>
 
     <div class="math-block">$$ \mathfrak{m} = \xi^{-1} = \frac{\kappa_{\mathrm{marginal}}}{k_B T_{\mathrm{eff}}} = \ln\!\left(\frac{p}{q}\right) $$</div>
+    <p lang="en">The Mass Gap $\mathfrak{m}$ represents the network's "cleansing power." A high gap means malicious forks are forgotten almost instantly. A low gap means history remains undecided for a long time. Watch how the mass gap collapses as the network approaches the critical temperature $T_c$:</p>
+    <p lang="fr">Le Gap de Masse $\mathfrak{m}$ représente le « pouvoir de nettoyage » du réseau. Un gap élevé signifie que les forks malveillants sont oubliés presque instantanément. Un gap faible signifie que l'histoire reste indécise longtemps. Observez l'effondrement du gap de masse à mesure que le réseau approche de la température critique $T_c$ :</p>
 
+    <div id="mass-gap-plot" style="width: 100%; max-width: 800px; height: 400px; margin: 2rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
     <!-- <p lang="en"><strong>The Percolation Wall ($\tau_B \gg \tau_0$):</strong> What happens if developers try to force the target block time ($\tau_B$) to match the fundamental geometric propagation delay of light across the globe ($\tau_0$)? If $\tau_B \to \tau_0$, the latency ratio breaks, and the effective temperature $T_{\mathrm{eff}}$ spikes above the critical phase-transition point $T_c$. The Landau parameter $\alpha_{\mathrm{h}}$ becomes positive, destroying the double-well potential. The marginal mass collapses to zero ($\kappa_{\mathrm{marginal}} = 0$). <strong>The ledger melts back into the high-entropy Mempool gas.</strong> Consensus is mathematically impossible beyond this percolation wall.</p>
     <p lang="fr"><strong>Le Mur de Percolation ($\tau_B \gg \tau_0$) :</strong> Que se passerait-il si l'on tentait d'aligner l'intervalle cible de bloc ($\tau_B$) sur le délai géométrique fondamental de propagation de la lumière à travers le globe ($\tau_0$) ? Si $\tau_B \to \tau_0$, le ratio de latence se brise, et la température $T_{\mathrm{eff}}$ s'envole au-dessus du point critique $T_c$. Le paramètre $\alpha_{\mathrm{h}}$ devient positif, détruisant le double puits de potentiel. La masse marginale s'effondre à zéro ($\kappa_{\mathrm{marginal}} = 0$). <strong>Le registre fond et redevient le gaz à haute entropie du Mempool.</strong> Le consensus est mathématiquement impossible au-delà de ce mur de percolation.</p>
 
@@ -1457,12 +1458,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">7. Logistic Maturation & The Archimedean Spiral</h2>
     <h2 lang="fr">7. Maturation Logistique & La Spirale d'Archimède</h2>
 
-    <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling and the thermodynamic utility created for Humanity. Therefore, the growth rate of this Exergy flow ($\dot{P}_{\mathrm{net}}$) is governed by the logistic differential equation:</p>
-    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire et l'utilité thermodynamique créée pour l'Humanité. Par conséquent, le taux de croissance de ce flux d'Exergie ($\dot{P}_{\mathrm{net}}$) est régi par l'équation différentielle logistique :</p>
+    <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling ($P_{\mathrm{max}}$). Therefore, the growth rate of this Exergy flow is governed by the logistic differential equation $\dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}})$. Adjust the growth rate ($k$) below to see how the organism inevitably hits the thermodynamic wall:</p>
+    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique $\dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}})$. Ajustez le taux d'adoption ($k$) ci-dessous pour voir comment l'organisme se stabilise inévitablement sur le mur thermodynamique :</p>
 
-    <div class="math-block">
-        $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} \left(1 - \frac{P_{\mathrm{net}}}{P_{\mathrm{max}}}\right) $$
-    </div>
+     <div id="logistic-growth-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
 
     <p lang="en">What happens when the organism reaches maturity and its power consumption saturates at $P_{\mathrm{max}}$? A magnificent geometric transformation occurs in the state space.</p>
     <p lang="fr">Que se passe-t-il lorsque l'organisme atteint sa maturité et que sa consommation de puissance sature à $P_{\mathrm{max}}$ ? Une magnifique transformation géométrique s'opère dans l'espace des états.</p>
@@ -2102,6 +2101,207 @@ print(f"✅ Animation générée : {gif_filename}")
         setLang(savedLang);
     });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // ==========================================
+    // GRAPHIQUE SECTION 6 : POTENTIEL DE GINZBURG-LANDAU
+    // ==========================================
+    const glDiv = document.getElementById('gl-potential-plot');
+    if (glDiv) {
+        const phi = [];
+        for(let i = -2; i <= 2; i += 0.05) { phi.push(i); }
 
+        // Fonction pour générer la courbe U(Phi) selon la température (alpha)
+        function getGLData(alpha) {
+            const u = phi.map(p => alpha * Math.pow(p, 2) + 0.5 * Math.pow(p, 4));
+            return u;
+        }
+
+        const steps = [];
+        const frames = [];
+        // On simule une variation de température de très froid (Cristal) à très chaud (Gaz)
+        for(let a = -2; a <= 1.5; a += 0.1) {
+            const alphaValue = parseFloat(a.toFixed(1));
+            // Pour le label du slider, on mappe Alpha à une "Température"
+            const tempLabel = alphaValue < 0 ? "Cristal Solide (Stable)" : (alphaValue > 0.5 ? "Gaz Mempool (Fondu)" : "Transition Critique");
+            
+            steps.push({
+                label: tempLabel,
+                method: 'animate',
+                args: [[alphaValue], { mode: 'immediate', transition: { duration: 0 }, frame: { duration: 0, redraw: false } }]
+            });
+            frames.push({
+                name: alphaValue,
+                data: [{ y: getGLData(alphaValue) }]
+            });
+        }
+
+        const glTrace = {
+            x: phi,
+            y: getGLData(-2),
+            mode: 'lines',
+            line: { color: '#4499ff', width: 4, shape: 'spline' },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(68, 153, 255, 0.1)'
+        };
+
+        const glLayout = {
+            title: { text: "Transition de Phase du Consensus", font: { color: '#e0e0e0', size: 16 } },
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+            font: { color: '#888' },
+            xaxis: { title: "Phase du Consensus (Φ)", gridcolor: 'rgba(255,255,255,0.1)', zerolinecolor: 'rgba(255,255,255,0.3)' },
+            yaxis: { title: "Énergie Libre U(Φ)", range: [-2.5, 4], gridcolor: 'rgba(255,255,255,0.1)', zerolinecolor: 'rgba(255,255,255,0.3)' },
+            margin: { l: 50, r: 30, t: 50, b: 80 },
+            sliders: [{
+                active: 0,
+                currentvalue: { prefix: "État Thermodynamique : ", font: { color: '#ffcc00' } },
+                pad: { t: 20 },
+                steps: steps,
+                font: { color: '#888' },
+                bgcolor: '#222',
+                bordercolor: '#444'
+            }]
+        };
+
+        Plotly.newPlot('gl-potential-plot', [glTrace], glLayout).then(function() {
+            Plotly.addFrames('gl-potential-plot', frames);
+        });
+    }
+    // ==========================================
+    // GRAPHIQUE SECTION 6 BIS : GAP DE MASSE TOPOLOGIQUE
+    // ==========================================
+    const mgDiv = document.getElementById('mass-gap-plot');
+    if (mgDiv) {
+        const temps = [];
+        const Tc = 1.0; // Température critique normalisée
+        for(let t = 0.01; t <= 1.2; t += 0.02) { temps.push(t); }
+
+        function getMassGapData(rigidity) {
+            return temps.map(t => {
+                if (t >= Tc) return 0;
+                // Formule phénoménologique du gap : rigidité * sqrt(1 - T/Tc)
+                return rigidity * Math.sqrt(1 - t/Tc);
+            });
+        }
+
+        const mgTrace = {
+            x: temps,
+            y: getMassGapData(5),
+            mode: 'lines',
+            line: { color: '#88ffaa', width: 4 },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(136, 255, 170, 0.1)'
+        };
+
+        const mgLayout = {
+            title: { text: "Solidité de l'Histoire (Mass Gap)", font: { color: '#e0e0e0', size: 16 } },
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+            font: { color: '#888' },
+            xaxis: { title: "Température d'Information (T_eff)", gridcolor: 'rgba(255,255,255,0.1)', range: [0, 1.2] },
+            yaxis: { title: "Inertie de la Vérité (m)", gridcolor: 'rgba(255,255,255,0.1)', range: [0, 6] },
+            margin: { l: 50, r: 30, t: 50, b: 80 },
+            sliders: [{
+                active: 2,
+                currentvalue: { prefix: "Puissance du Consensus (κ) : ", font: { color: '#88ffaa' } },
+                pad: { t: 20 },
+                steps: [
+                    { label: 'Faible (Attaque facile)', method: 'restyle', args: ['y', [getMassGapData(2)]] },
+                    { label: 'Moyenne', method: 'restyle', args: ['y', [getMassGapData(3.5)]] },
+                    { label: 'Maximale (Indestructible)', method: 'restyle', args: ['y', [getMassGapData(5.5)]] }
+                ],
+                font: { color: '#888' },
+                bgcolor: '#222',
+                bordercolor: '#444'
+            }],
+            annotations: [{
+                x: 1.0, y: 0.5, text: "Mur de Percolation (T_c)", 
+                showarrow: true, arrowhead: 2, ax: 40, ay: -40, font: { color: '#ff4444' }, arrowcolor: '#ff4444'
+            }]
+        };
+
+        Plotly.newPlot('mass-gap-plot', [mgTrace], mgLayout);
+    }
+    // ==========================================
+    // GRAPHIQUE SECTION 7 : CROISSANCE LOGISTIQUE
+    // ==========================================
+    const logDiv = document.getElementById('logistic-growth-plot');
+    if (logDiv) {
+        const theta = [];
+        for(let i = 0; i <= 20; i += 0.2) { theta.push(i); }
+        const pMax = 100; // Plafond physique (100%)
+        const t0 = 8; // Point d'inflexion
+
+        function getLogisticData(k) {
+            return theta.map(t => pMax / (1 + Math.exp(-k * (t - t0))));
+        }
+
+        const logSteps = [];
+        const logFrames = [];
+        
+        for(let k = 0.2; k <= 2.0; k += 0.1) {
+            const kVal = parseFloat(k.toFixed(1));
+            logSteps.push({
+                label: `k = ${kVal}`,
+                method: 'animate',
+                args: [[kVal], { mode: 'immediate', transition: { duration: 0 }, frame: { duration: 0, redraw: false } }]
+            });
+            logFrames.push({
+                name: kVal,
+                data: [{ y: getLogisticData(kVal) }]
+            });
+        }
+
+        const logTrace = {
+            x: theta,
+            y: getLogisticData(0.8), // Valeur par défaut
+            mode: 'lines',
+            line: { color: '#ff6600', width: 4, shape: 'spline' },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(255, 102, 0, 0.1)'
+        };
+
+        // Trace pour afficher le plafond (Canopée)
+        const canopyTrace = {
+            x: [0, 20],
+            y: [pMax, pMax],
+            mode: 'lines',
+            line: { color: '#ffcc00', width: 2, dash: 'dash' },
+            name: "Plafond d'Exergie (P_max)"
+        };
+
+        const logLayout = {
+            title: { text: "Saturation du Hashrate (Courbe S)", font: { color: '#e0e0e0', size: 16 } },
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+            showlegend: false,
+            font: { color: '#888' },
+            xaxis: { title: "Temps Topologique (Cycles de Halving)", gridcolor: 'rgba(255,255,255,0.1)' },
+            yaxis: { title: "Puissance Exergétique P(t) %", range: [0, 110], gridcolor: 'rgba(255,255,255,0.1)' },
+            margin: { l: 50, r: 30, t: 50, b: 80 },
+            sliders: [{
+                active: 6, // Index pour k=0.8
+                currentvalue: { prefix: "Taux d'adoption (Force du Capital) : ", font: { color: '#ffcc00' } },
+                pad: { t: 20 },
+                steps: logSteps,
+                font: { color: '#888' },
+                bgcolor: '#222',
+                bordercolor: '#444'
+            }],
+            annotations: [{
+                x: 18, y: 105, text: "Canopée Exergétique", 
+                showarrow: false, font: { color: '#ffcc00' }
+            }]
+        };
+
+        Plotly.newPlot('logistic-growth-plot', [logTrace, canopyTrace], logLayout).then(function() {
+            Plotly.addFrames('logistic-growth-plot', logFrames);
+        });
+    }
+
+});
+</script>
 </body>
 </html>
