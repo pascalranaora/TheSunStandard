@@ -512,7 +512,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </blockquote>
     <blockquote lang="fr">
         « It from bit. Autrement dit, chaque « chose » — chaque particule, chaque champ de force, même le continuum espace-temps lui-même — tire sa fonction, sa signification, son existence même entièrement de choix binaires, de bits. »<br>
-        <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— John Archibald Wheeler, physicist</span>
+        <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— John Archibald Wheeler, physicien</span>
     </blockquote>    
     
 <div class="abstract" lang="en">
@@ -1386,8 +1386,13 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">6. The Axis of Rigidity & The Percolation Wall</h2>
     <h2 lang="fr">6. L'Axe de Rigidité & Le Mur de Percolation</h2>
 
-    <p lang="en">To describe macroscopic stability, we construct a coarse-grained Ginzburg–Landau theory. We reduce the network state to a real global temporal order parameter $\Phi(t)$. The effective homogeneous potential creating the "gravity" of the consensus is $\mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4$. Use the slider below to increase the Information Temperature ($T_{\mathrm{eff}}$) and observe the consensus melting:</p>
-    <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre global $\Phi(t)$. Le potentiel homogène créant la "gravité" du consensus est $\mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4$. Utilisez le curseur ci-dessous pour augmenter la Température d'Information ($T_{\mathrm{eff}}$) et observez la fonte du consensus :</p>
+    <p lang="en">To describe macroscopic stability, we construct a coarse-grained Ginzburg–Landau theory. We reduce the network state to a real global temporal order parameter $\Phi(t)$. The effective homogeneous potential creating the "gravity" of the consensus is: </p>
+    <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre global $\Phi(t)$. Le potentiel homogène créant la "gravité" du consensus est :</p>
+    <div class="math-block">
+        $$ \mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4 $$
+    </div>
+    <p lang="en">Use the slider below to increase the Information Temperature ($T_{\mathrm{eff}}$) and observe the consensus melting:</p>
+    <p lang="fr">Utilisez le curseur ci-dessous pour augmenter la Température d'Information ($T_{\mathrm{eff}}$) et observez la fonte du consensus :</p>
     <div id="gl-potential-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
 
     <p lang="en">The network's resistance against deep reorganizations (i.e., making time flow backwards) is governed by its <strong>Marginal Mass</strong> ($\kappa_{\mathrm{marginal}}$). We define this as the local curvature of the free-energy well at its equilibrium point $\Phi_0$:</p>
@@ -1458,10 +1463,16 @@ document.addEventListener("DOMContentLoaded", () => {
     <h2 lang="en">7. Logistic Maturation & The Archimedean Spiral</h2>
     <h2 lang="fr">7. Maturation Logistique & La Spirale d'Archimède</h2>
 
-    <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling ($P_{\mathrm{max}}$). Therefore, the growth rate of this Exergy flow is governed by the logistic differential equation $\dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}})$. Adjust the growth rate ($k$) below to see how the organism inevitably hits the thermodynamic wall:</p>
-    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique $\dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}})$. Ajustez le taux d'adoption ($k$) ci-dessous pour voir comment l'organisme se stabilise inévitablement sur le mur thermodynamique :</p>
-
-     <div id="logistic-growth-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
+    <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling ($P_{\mathrm{max}}$). Therefore, the growth rate of this Exergy flow is governed by the logistic differential equation:</p>
+    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique : </p>
+    
+    <div class="math-block">
+        $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}}) $$
+    </div>
+    <p lang="en">Adjust the growth rate ($k$) below to see how the organism inevitably hits the thermodynamic wall:</p>
+    <p lang="fr">Ajustez le taux d'adoption ($k$) ci-dessous pour voir comment l'organisme se stabilise inévitablement sur le mur thermodynamique :</p> 
+    
+    <div id="logistic-growth-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
 
     <p lang="en">What happens when the organism reaches maturity and its power consumption saturates at $P_{\mathrm{max}}$? A magnificent geometric transformation occurs in the state space.</p>
     <p lang="fr">Que se passe-t-il lorsque l'organisme atteint sa maturité et que sa consommation de puissance sature à $P_{\mathrm{max}}$ ? Une magnifique transformation géométrique s'opère dans l'espace des états.</p>
