@@ -623,10 +623,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <p lang="en">The essential concern in distributed consensus is the inability to define a canonical order for events in the absence of a global clock. Classical Byzantine Fault Tolerance (BFT) protocols typically rely on authenticated voting and logical ordering rather than an explicit thermodynamic cost; in open-membership settings, such schemes require separate Sybil-resistance assumptions. Physically, the double-spending problem represents a failure of time-ordering invariance: lacking an irreversible thermodynamic cost, $t \to -t$ symmetry makes history $\mathbf{h}_A = \{E_1, E_2\}$ indistinguishable from $\mathbf{h}_B = \{E_2, E_1\}$. Extracting a unique, immutable history from the stochastic noise of a peer-to-peer network requires a symmetry-breaking process driven by the energy dissipation of its internal structure.</p>
     <p lang="fr">La préoccupation essentielle du consensus distribué dans un réseau pair-à-pair est l'incapacité de définir un ordre canonique pour les événements en l'absence d'une horloge globale. Les protocoles classiques de Tolérance aux Pannes Byzantines (BFT) s'appuient généralement sur des votes authentifiés et un ordonnancement logique plutôt que sur un coût thermodynamique explicite ; dans des environnements à adhésion ouverte, de tels schémas nécessitent des hypothèses distinctes de résistance aux attaques Sybil. Physiquement, le problème de la double dépense représente une défaillance de l'invariance de l'ordre temporel : en l'absence d'un coût thermodynamique irréversible, la symétrie $t \to -t$ rend l'histoire $\mathbf{h}_A = \{E_1, E_2\}$ indiscernable de $\mathbf{h}_B = \{E_2, E_1\}$. Extraire une histoire unique et immuable du bruit stochastique d'un réseau pair-à-pair exige un processus de brisure de symétrie mû par la dissipation d'énergie de sa structure interne.</p>
-
-    <div class="tikz-center">
 <div style="width: 100%; max-width: 650px; margin: 3rem auto; display: block;">
-        <svg viewBox="0 0 650 320" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; font-family: 'Helvetica Neue', sans-serif;">
+        <svg viewBox="0 0 750 420" xmlns="http://www.w3.org/2000/svg" style="width: 100%; height: auto; font-family: 'Helvetica Neue', sans-serif;">
             <defs>
                 <marker id="arrow-gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
                     <path d="M 0 0 L 10 5 L 0 10 z" fill="#888888" />
@@ -679,7 +677,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         </svg>
     </div>
-    </div>
+
     <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="en"><em><strong>Figure 1: Arrow of time in the effective description.</strong> Top: without substantial dissipation, event ordering remains effectively time-symmetric and fluid. Bottom: sustained Proof-of-Work dissipation selects a stable macroscopic sequence of blocks.</em></p>
     <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="fr"><em><strong>Figure 1 : Flèche du temps dans la description effective.</strong> En haut : sans dissipation substantielle, l'ordonnancement des événements reste symétrique dans le temps et fluide. En bas : la dissipation thermodynamique (Preuve de Travail) sélectionne une séquence macroscopique stable de blocs.</em></p>
 
