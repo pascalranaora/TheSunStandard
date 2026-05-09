@@ -225,9 +225,9 @@ document.addEventListener("DOMContentLoaded", () => {
             padding: 12px;
             position: absolute;
             z-index: 1000;
-            bottom: 125%;
-            left: 50%;
-            margin-left: -130px;
+            top: 130%;         /* Positionne l'infobulle sous le mot */
+            left: 50%;         /* Démarre vers le milieu du mot */
+            margin-left: -15px; /* Décale pour s'étendre majoritairement vers la droite */
             opacity: 0;
             transition: opacity 0.3s;
             font-size: 0.9rem;
@@ -246,16 +246,16 @@ document.addEventListener("DOMContentLoaded", () => {
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        /* Petite flèche en bas de l'infobulle */
+        /* Petite flèche en HAUT à GAUCHE de l'infobulle */
         .tooltip .tooltiptext::after {
             content: "";
             position: absolute;
-            top: 100%;
-            left: 50%;
+            bottom: 100%; /* Déplace la flèche au sommet de l'infobulle */
+            left: 20px;   /* Aligne la flèche avec le mot ciblé */
             margin-left: -6px;
             border-width: 6px;
             border-style: solid;
-            border-color: #1a66cc transparent transparent transparent;
+            border-color: transparent transparent #1a66cc transparent; /* Pointe la flèche vers le haut */
         }
         .tooltip:hover .tooltiptext {
             visibility: visible;
