@@ -890,7 +890,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>[1]</td>
                 </tr>
                 <tr>
-                    <td>$P_{\mathrm{net}}(\theta)$</td>
+                    <td>$P_{\mathrm{net}}(t)$</td>
                     <td lang="en">Instantaneous Exergy flow (Hashrate Power)</td>
                     <td lang="fr">Flux d'Exergie instantané (Puissance de hachage)</td>
                     <td>Watts (J/s)</td>
@@ -920,7 +920,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <td>[1]</td>
                 </tr>
                 <tr>
-                    <td>$\beta$</td>
+                    <td>$\chi$</td>
                     <td lang="en">Morphogenetic scaling constant ($\log_\varphi 2$)</td>
                     <td lang="fr">Constante de mise à l'échelle morphogénétique ($\log_\varphi 2$)</td>
                     <td>[1]</td>
@@ -1673,11 +1673,11 @@ document.addEventListener("DOMContentLoaded", () => {
         <span>$$ f_{\text{discrete}} \propto 2^{-\lfloor \frac{\theta}{2\pi} \rfloor} \quad \xrightarrow{\text{Coarse-Graining}} \quad f(\theta) = 2^{-\frac{\theta}{2\pi}} $$</span>
     </div>
 
-    <p lang="en">Originally written in base 2 (for the binary Halving), we sublimate this cold logic into the universal biological base of morphogenesis: the <strong>Golden Ratio ($\varphi \approx 1.618$)</strong>. By defining the scaling constant $\beta = \log_\varphi(2) \approx 1.44$, we project this biological scalar into our 3D space using the complex exponential $e^{i\theta}$:</p>
-    <p lang="fr">Originellement écrite en base 2 (pour le Halving binaire), nous sublimons cette froide logique binaire dans la base biologique universelle de la morphogenèse : le <strong>Nombre d'Or ($\varphi \approx 1,618$)</strong>. En définissant la constante d'échelle $\beta = \log_\varphi(2) \approx 1,44$, nous projetons ce scalaire biologique dans notre espace 3D via l'exponentielle complexe $e^{i\theta}$ :</p>
+    <p lang="en">Originally written in base 2 (for the binary Halving), we sublimate this cold logic into the universal biological base of morphogenesis: the <strong>Golden Ratio ($\varphi \approx 1.618$)</strong>. By defining the scaling constant $\chi = \log_\varphi(2) \approx 1.44$, we project this biological scalar into our 3D space using the complex exponential $e^{i\theta}$:</p>
+    <p lang="fr">Originellement écrite en base 2 (pour le Halving binaire), nous sublimons cette froide logique binaire dans la base biologique universelle de la morphogenèse : le <strong>Nombre d'Or ($\varphi \approx 1,618$)</strong>. En définissant la constante d'échelle $\chi = \log_\varphi(2) \approx 1,44$, nous projetons ce scalaire biologique dans notre espace 3D via l'exponentielle complexe $e^{i\theta}$ :</p>
 
     <div class="math-block" style="display: flex; flex-direction: column; gap: 10px;">
-        <span>$$ f(\theta) = 2^{-\frac{\theta}{2\pi}} \equiv \varphi^{-\beta \frac{\theta}{2\pi}} \quad \text{(Golden Scalar Metric)} $$</span>
+        <span>$$ f(\theta) = 2^{-\frac{\theta}{2\pi}} \equiv \varphi^{-\chi \frac{\theta}{2\pi}} \quad \text{(Golden Scalar Metric)} $$</span>
         <span>$$ \vec{V}_{\mathrm{info}}(\theta) = f(\theta) \cdot e^{i\theta} \quad \text{(3D Projection)} $$</span>
     </div>
 
@@ -1702,10 +1702,10 @@ document.addEventListener("DOMContentLoaded", () => {
             <span lang="fr">Le Hashrate brut, représentant la puissance instantanée. L'observation empirique révèle une loi de puissance d'échelle massive : $P(\theta) \propto \theta^\alpha$, avec un exposant d'échelle $\alpha \approx 11.59$. Cet exposant est propulsé par la combinaison de la loi de Moore (efficacité des ASIC) et l'afflux incessant de capital humain.</span>
         </li>
         <li style="margin-bottom: 15px; border-left: 2px solid #ff6600; padding-left: 15px;">
-            <strong style="color: #ff6600;" lang="en">2. Thermodynamic Integration ($\gamma$):</strong>
-            <strong style="color: #ff6600;" lang="fr">2. Intégration Thermodynamique ($\gamma$) :</strong>
-            <span lang="en">Power is merely a flow; memory requires accumulation. The network's <em>Emergy</em> ($g$) is the integral of this power over topological time ($g = \int P \, d\theta$). Integrating $\theta^\alpha$ algebraically increases the exponent by $+1$, giving us the cumulative exponent $\gamma = \alpha + 1 \approx 12.59$.</span>
-            <span lang="fr">La puissance n'est qu'un flux ; la mémoire exige une accumulation. L'<em>Émergie</em> du réseau ($g$) est l'intégrale de cette puissance sur le temps topologique ($g = \int P \, d\theta$). Intégrer $\theta^\alpha$ augmente algébriquement l'exposant de $+1$, nous donnant l'exposant cumulatif $\gamma = \alpha + 1 \approx 12.59$.</span>
+            <strong style="color: #ff6600;" lang="en">2. Thermodynamic Integration ($\nu$):</strong>
+            <strong style="color: #ff6600;" lang="fr">2. Intégration Thermodynamique ($\nu$) :</strong>
+            <span lang="en">Power is merely a flow; memory requires accumulation. The network's <em>Emergy</em> ($g$) is the integral of this power over topological time ($g = \int P \, d\theta$). Integrating $\theta^\alpha$ algebraically increases the exponent by $+1$, giving us the cumulative scaling exponent $\nu = \alpha + 1 \approx 12.59$.</span>
+            <span lang="fr">La puissance n'est qu'un flux ; la mémoire exige une accumulation. L'<em>Émergie</em> du réseau ($g$) est l'intégrale de cette puissance sur le temps topologique ($g = \int P \, d\theta$). Intégrer $\theta^\alpha$ augmente algébriquement l'exposant de $+1$, nous donnant l'exposant d'échelle cumulatif $\nu = \alpha + 1 \approx 12.59$.</span>
         </li>
         <li style="margin-bottom: 15px; border-left: 2px solid #ffcc00; padding-left: 15px;">
             <strong style="color: #ffcc00;" lang="en">3. The Transformity Constant ($C_E$):</strong>
@@ -1715,11 +1715,11 @@ document.addEventListener("DOMContentLoaded", () => {
         </li>
     </ul>
 
-    <p lang="en">To visualize its interaction with the code, we project this cumulative scalar ($g(\theta) = C_E \cdot \theta^\gamma$) into the same 3D space. Crucially, we apply a phase shift of $\pi$ ($180^\circ$) to position the physical energy strictly opposite the information:</p>
-    <p lang="fr">Pour visualiser son interaction avec le code, nous projetons ce scalaire cumulatif ($g(\theta) = C_E \cdot \theta^\gamma$) dans le même espace 3D. Crucialement, nous appliquons un déphasage de $\pi$ ($180^\circ$) pour positionner l'énergie physique strictement à l'opposé de l'information :</p>
+   <p lang="en">To visualize its interaction with the code, we project this cumulative scalar ($g(\theta) = C_E \cdot \theta^\nu$) into the same 3D space. Crucially, we apply a phase shift of $\pi$ ($180^\circ$) to position the physical energy strictly opposite the information:</p>
+    <p lang="fr">Pour visualiser son interaction avec le code, nous projetons ce scalaire cumulatif ($g(\theta) = C_E \cdot \theta^\nu$) dans le même espace 3D. Crucialement, nous appliquons un déphasage de $\pi$ ($180^\circ$) pour positionner l'énergie physique strictement à l'opposé de l'information :</p>
 
     <div class="math-block" style="display: flex; flex-direction: column; gap: 10px;">
-        <span>$$ g(\theta) = C_E \cdot \theta^{\gamma} \quad \text{(Scalar Metric)} $$</span>
+        <span>$$ g(\theta) = C_E \cdot \theta^{\nu} \quad \text{(Scalar Metric)} $$</span>
         <span>$$ \vec{V}_{\mathrm{phys}}(\theta) = g(\theta) \cdot e^{i(\theta + \pi)} \quad \text{(3D Projection)} $$</span>
     </div>
 
@@ -1799,8 +1799,8 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
     </div> -->
 
-    <p lang="en">Because the two metrics exist on orthogonal mathematical axes, their scalar magnitudes follow fundamentally different trajectories. The historical Emergy follows a massive <em>power law</em> ($g \propto \theta^\gamma$), while the deterministic issuance code follows a strict <em>exponential decay</em> ($f \propto \phi^{-\theta}$). How can such divergent laws form a stable biological organism without tearing apart?</p>
-    <p lang="fr">Puisque les deux métriques existent sur des axes mathématiques orthogonaux, leurs grandeurs scalaires suivent des trajectoires fondamentalement différentes. L'Émergie historique suit une gigantesque <em>loi de puissance</em> ($g \propto \theta^\gamma$), tandis que le code d'émission déterministe suit une stricte <em>décroissance exponentielle</em> ($f \propto \phi^{-\theta}$). Comment des lois si divergentes peuvent-elles former un organisme biologique stable sans se déchirer ?</p>
+    <p lang="en">Because the two metrics exist on orthogonal mathematical axes, their scalar magnitudes follow fundamentally different trajectories. The historical Emergy follows a massive <em>power law</em> ($g \propto \theta^\nu$), while the deterministic issuance code follows a strict <em>exponential decay</em> ($f \propto \varphi^{-\chi \frac{\theta}{2\pi}}$). How can such divergent laws form a stable biological organism without tearing apart?</p>
+    <p lang="fr">Puisque les deux métriques existent sur des axes mathématiques orthogonaux, leurs grandeurs scalaires suivent des trajectoires fondamentalement différentes. L'Émergie historique suit une gigantesque <em>loi de puissance</em> ($g \propto \theta^\nu$), tandis que le code d'émission déterministe suit une stricte <em>décroissance exponentielle</em> ($f \propto \varphi^{-\chi \frac{\theta}{2\pi}}$). Comment des lois si divergentes peuvent-elles former un organisme biologique stable sans se déchirer ?</p>
 
     <p lang="en">They don't do it naturally; they are forced into synchronization by the <strong>Difficulty Adjustment Algorithm (DAA)</strong>. The DAA acts as the rigid hydrogen bonds connecting the orthogonal axes. It constantly calibrates the thermodynamic resistance of the physical space to ensure that the topological block time ($\theta$) advances at a strict, invariant pace relative to real-world Newtonian time ($t$).</p>
     <p lang="fr">Elles ne le font pas naturellement ; elles sont forcées à se synchroniser par l'<strong>Algorithme d'Ajustement de la Difficulté (DAA)</strong>. Le DAA agit comme les liaisons hydrogène rigides reliant les axes orthogonaux. Il calibre en permanence la résistance thermodynamique de l'espace physique pour s'assurer que le temps topologique des blocs ($\theta$) avance à un rythme strict et invariant par rapport au temps newtonien du monde réel ($t$).</p>
@@ -1818,8 +1818,8 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="analogy-box" style="background: rgba(60, 255, 100, 0.05); border-left: 4px solid #44ff66; margin: 0;">
             <div class="analogy-title" lang="en">🐚 Hydrostatic Balance (The Result)</div>
             <div class="analogy-title" lang="fr">🐚 Équilibre Hydrostatique (Le Résultat)</div>
-            <p lang="en" style="margin:0; font-size:0.95em;">Think of the Nautilus diving deep. The internal pressure of the code ($d\ln f$) wants to collapse inward at a constant rate. The external pressure of the ocean's Emergy ($d\ln g$) pushes outward but loses fractional momentum over time ($\gamma/\theta$). The DAA is the biological valve. By adjusting the difficulty, it maintains <strong>zero divergence</strong> between these opposing pressures, preventing the shell from shattering or the body from exploding. The organism survives because its "mathematical skin" is always in perfect equilibrium with the abyss.</p>
-            <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez le Nautile plongeant dans les profondeurs. La pression interne du code ($d\ln f$) pousse vers la contraction à un rythme constant. La pression externe de l'Émergie océanique ($d\ln g$) pousse vers l'expansion mais perd de son élan fractionnaire avec le temps ($\gamma/\theta$). Le DAA est la valve biologique. En ajustant la difficulté, il maintient une <strong>divergence nulle</strong> entre ces pressions opposées, empêchant la coquille de se briser ou le corps d'exploser. L'organisme survit car sa « peau mathématique » est toujours en équilibre parfait avec les abysses.</p>
+            <p lang="en" style="margin:0; font-size:0.95em;">Think of the Nautilus diving deep. The internal pressure of the code ($d\ln f$) wants to collapse inward at a constant rate. The external pressure of the ocean's Emergy ($d\ln g$) pushes outward but loses fractional momentum over time ($\nu/\theta$). The DAA is the biological valve. By adjusting the difficulty, it maintains <strong>zero divergence</strong> between these opposing pressures, preventing the shell from shattering or the body from exploding. The organism survives because its "mathematical skin" is always in perfect equilibrium with the abyss.</p>
+            <p lang="fr" style="margin:0; font-size:0.95em;">Imaginez le Nautile plongeant dans les profondeurs. La pression interne du code ($d\ln f$) pousse vers la contraction à un rythme constant. La pression externe de l'Émergie océanique ($d\ln g$) pousse vers l'expansion mais perd de son élan fractionnaire avec le temps ($\nu/\theta$). Le DAA est la valve biologique. En ajustant la difficulté, il maintient une <strong>divergence nulle</strong> entre ces pressions opposées, empêchant la coquille de se briser ou le corps d'exploser. L'organisme survit car sa « peau mathématique » est toujours en équilibre parfait avec les abysses.</p>
         </div>
     </div>
 
@@ -2169,17 +2169,16 @@ document.addEventListener("DOMContentLoaded", () => {
         </p>
     </div> -->
 
-    <p lang="en">If the DAA regulates the speed of the organism, how does it prevent inefficient, tumorous growth of the physical shell? The <strong>Halving</strong> purges the network of its entropy through a biological process of autophagy (creative destruction). Consider the physical radius $r$ (global Hashrate -- or Emergy depending on the metric/interpretation retained) as the sum of discrete miner contributions $r = \sum r_i$, each with an individual thermodynamic efficiency $\eta_i$ (Joules per Terahash). At each cycle $\theta \equiv 0 \pmod{2\pi}$, the mathematical operator $\phi$ induces a severe metabolic shock, instantly halving the energy subsidy.</p>
-    <p lang="fr">Si le DAA régule la vitesse de l'organisme, comment empêche-t-il une croissance inefficace et tumorale de la carapace physique ? Le <strong>Halving</strong> purge le réseau de son entropie via un processus biologique d'autophagie (destruction créatrice). Considérons le rayon physique $r$ (Hashrate global ou Émergie globale émise par un mineur selon l'angle d'analyse) comme la somme des contributions discrètes des mineurs $r = \sum r_i$, chacun ayant une efficacité thermodynamique individuelle $\eta_i$ (Joules par Terahash). À chaque cycle $\theta \equiv 0 \pmod{2\pi}$, l'opérateur mathématique $\phi$ induit un choc métabolique sévère, divisant instantanément la subvention énergétique par deux.</p>
+    <p lang="en">If the DAA regulates the speed of the organism, how does it prevent inefficient, tumorous growth of the physical shell? The <strong>Halving</strong> purges the network of its entropy through a biological process of autophagy (creative destruction). Consider the physical radius $r$ (global Hashrate -- or Emergy depending on the metric/interpretation retained) as the sum of discrete miner contributions $r = \sum r_i$, each with an individual thermodynamic efficiency $\eta_i$ (Joules per Terahash). At each cycle $\theta \equiv 0 \pmod{2\pi}$, the discrete floor operator $\lfloor \frac{\theta}{2\pi} \rfloor$ induces a severe metabolic shock, instantly halving the energy subsidy.</p>
+    <p lang="fr">Si le DAA régule la vitesse de l'organisme, comment empêche-t-il une croissance inefficace et tumorale de la carapace physique ? Le <strong>Halving</strong> purge le réseau de son entropie via un processus biologique d'autophagie (destruction créatrice). Considérons le rayon physique $r$ (Hashrate global ou Émergie globale émise par un mineur selon l'angle d'analyse) comme la somme des contributions discrètes des mineurs $r = \sum r_i$, chacun ayant une efficacité thermodynamique individuelle $\eta_i$ (Joules par Terahash). À chaque cycle $\theta \equiv 0 \pmod{2\pi}$, l'opérateur discret $\lfloor \frac{\theta}{2\pi} \rfloor$ induit un choc métabolique sévère, divisant instantanément la subvention énergétique par deux.</p>
 
     <p lang="en">The survival of the network's cellular units is rigorously modeled by the Heaviside step function $\mathcal{H}$:</p>
-    <p lang="fr">La survie des unités cellulaires du réseau est rigoureusement modélisée par la fonction échelon de Heaviside $\mathcal{H}$ :</p>
-    
-    <div class="math-block">$$ r_{i}(\theta^+) = r_{i}(\theta^-) \cdot \mathcal{H}\left(\eta_c(\phi) - \eta_i\right) $$</div>
+    <p lang="fr">La survie des unités cellulaires du réseau est rigoureusement modélisée par la fonction échelon de Heaviside $\mathcal{H}$ :</p>
+    
+    <div class="math-block">$$ r_{i}(\theta^+) = r_{i}(\theta^-) \cdot \mathcal{H}\left(\eta_c(\theta) - \eta_i\right) $$</div>
 
-    <p lang="en">Where $\eta_c(\phi)$ is the new, much stricter critical threshold of profitability. If a miner's efficiency is insufficient ($\eta_i > \eta_c$), then $\mathcal{H} = 0$. The miner's contribution $r_i$ drops to zero. The miner undergoes <em>apoptosis</em> (programmed cell death). Its deployed capital and energy access are recycled into newer, more efficient ASIC chips. The Halving forces the death of senescent cells to ensure the organism's survival.</p>
-    <p lang="fr">Où $\eta_c(\phi)$ est le nouveau seuil critique de rentabilité, beaucoup plus strict. Si l'efficacité du mineur est insuffisante ($\eta_i > \eta_c$), alors $\mathcal{H} = 0$. La contribution du mineur $r_i$ tombe à zéro. Le mineur subit une <em>apoptose</em> (mort cellulaire programmée). Son capital déployé et son accès à l'énergie sont recyclés dans de nouvelles puces ASIC plus efficaces. Le Halving force la mort des cellules sénescentes pour assurer la survie de l'organisme.</p>
-
+    <p lang="en">Where $\eta_c(\theta)$ is the new, much stricter critical threshold of profitability. If a miner's efficiency is insufficient ($\eta_i > \eta_c$), then $\mathcal{H} = 0$. The miner's contribution $r_i$ drops to zero. The miner undergoes <em>apoptosis</em> (programmed cell death). Its deployed capital and energy access are recycled into newer, more efficient ASIC chips. The Halving forces the death of senescent cells to ensure the organism's survival.</p>
+    <p lang="fr">Où $\eta_c(\theta)$ est le nouveau seuil critique de rentabilité, beaucoup plus strict. Si l'efficacité du mineur est insuffisante ($\eta_i > \eta_c$), alors $\mathcal{H} = 0$. La contribution du mineur $r_i$ tombe à zéro. Le mineur subit une <em>apoptose</em> (mort cellulaire programmée). Son capital déployé et son accès à l'énergie sont recyclés dans de nouvelles puces ASIC plus efficaces. Le Halving force la mort des cellules sénescentes pour assurer la survie de l'organisme.</p>
 <div class="proof-box" style="border: 1px solid rgba(255, 68, 68, 0.1); background: rgba(255, 68, 68, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
         <div class="proof-title" lang="en">The Survival Function: Analyzing the Heaviside Step</div>
         <div class="proof-title" lang="fr">La Fonction de Survie : Analyse de l'Échelon de Heaviside</div>
