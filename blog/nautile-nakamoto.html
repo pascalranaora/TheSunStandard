@@ -498,11 +498,76 @@ document.addEventListener("DOMContentLoaded", () => {
 
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; margin-top: 5rem;}
         
+        /* --- Formspree Feedback Form --- */
+        .feedback-container {
+            margin: 6rem auto 4rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 170, 0, 0.2);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            max-width: 700px;
+            text-align: center;
+        }
+        .feedback-title {
+            color: var(--sun-yellow);
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .feedback-desc {
+            color: #aaa;
+            font-style: italic;
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+        /* --- Feedback Extras (Anon & Popup) --- */
+        .feedback-anon {
+            font-size: 0.85rem;
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .feedback-label {
+            display: block;
+            color: #d4d4d4;
+            margin-bottom: 0.8rem;
+            font-size: 1.05rem;
+        }
+        .feedback-popup {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(68, 255, 102, 0.1);
+            border: 1px solid #44ff66;
+            color: #44ff66;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(68, 255, 102, 0.2);
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+            align-items: center;
+            gap: 10px;
+            font-family: 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            letter-spacing: 1px;
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
         @media (max-width: 768px) {
             .nav-center { display: none; }
             .diagram-node { min-width: 100%; }
             .node-homeo { width: 100%; height: auto; border-radius: 8px; }
         }
+
     </style>
 </head>
 <body class="lang-en">
@@ -2179,6 +2244,68 @@ document.addEventListener("DOMContentLoaded", () => {
         </details>
         <div class="proof-end">∎</div>
     </div>
+    <div class="proof-box" style="border: 1px solid rgba(255, 102, 0, 0.2); background: rgba(255, 102, 0, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem;">
+        <div class="proof-title" lang="en" style="color: #ff6600;">Theorem: The Thermodynamic Block Size Limit ($V_{\mathrm{B,crit}}$)</div>
+        <div class="proof-title" lang="fr" style="color: #ff6600;">Théorème : La Limite Thermodynamique de la Taille des Blocs ($V_{\mathrm{B,crit}}$)</div>
+        
+        <p lang="en" style="margin-bottom: 1.5rem;">The "Blocksize War" divided the network for years. Should blocks be 1 Megabyte or 1 Gigabyte? Physics provides an absolute answer. Choose your depth of explanation:</p>
+        <p lang="fr" style="margin-bottom: 1.5rem;">La "Guerre de la Taille des Blocs" a divisé le réseau pendant des années. Les blocs doivent-ils faire 1 Mégaoctet ou 1 Gigaoctet ? La physique apporte une réponse absolue. Choisissez votre niveau :</p>
+
+        <details style="margin-bottom: 1rem; background: rgba(255, 102, 0, 0.05); border-left: 3px solid var(--sun-orange); border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: var(--sun-orange); outline: none; list-style-type: '▶ ';">
+                <span lang="en">Level 1: The Heavy Cargo (Beginner)</span>
+                <span lang="fr">Niveau 1 : La Cargaison Trop Lourde (Débutant)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0;">If you send a small letter in the mail, it travels fast. If you send a massive 1-ton cargo container, it takes much longer to process, load, and deliver. In Bitcoin, if a block is too large, it takes too long to propagate through the global internet. If it takes too long, miners on the other side of the planet will start working on competing blocks because they haven't received the heavy cargo yet. This causes the network to constantly split (fork). To keep the network unified, the cargo must remain small enough to be delivered almost instantly.</p>
+                <p lang="fr" style="margin-bottom: 0;">Si vous envoyez une petite lettre par la poste, elle voyage vite. Si vous envoyez un énorme conteneur d'une tonne, son traitement et sa livraison prennent beaucoup plus de temps. Dans Bitcoin, si un bloc est trop volumineux, il met trop de temps à se propager sur l'internet mondial. S'il met trop de temps, les mineurs à l'autre bout de la planète commenceront à travailler sur des blocs concurrents car ils n'auront pas encore reçu la lourde cargaison. Le réseau se diviserait (fork) constamment. Pour rester unifié, la cargaison doit rester assez petite pour être livrée presque instantanément.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(68, 153, 255, 0.05); border-left: 3px solid #4499ff; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #4499ff; outline: none; list-style-type: '▶ ';">
+                <span lang="en">Level 2: Latency and Network Kinematics (Intermediate)</span>
+                <span lang="fr">Niveau 2 : Latence et Cinématique du Réseau (Intermédiaire)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;">Network latency ($\tau_L$) is not a fixed number; it grows as the volume of the block ($V_B$) increases. The time it takes for a block to traverse the globe depends on an incompressible geometric delay (the speed of light through fiber optics, $\tau_0$) plus the time required to transmit and cryptographically validate the data across the network's Effective Global Channel Capacity ($C_{\mathrm{eff}}$):</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">La latence du réseau ($\tau_L$) n'est pas un nombre fixe ; elle croît avec le volume du bloc ($V_B$). Le temps nécessaire à un bloc pour traverser le globe dépend d'un délai géométrique incompressible (la vitesse de la lumière dans les fibres optiques, $\tau_0$) plus le temps requis pour transmettre et valider cryptographiquement les données à travers la Capacité Effective Globale du réseau ($C_{\mathrm{eff}}$) :</p>
+                
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #4499ff;">
+                    $$ \tau_L(V_B) = \tau_0 + \frac{V_B}{C_{\mathrm{eff}}} $$
+                </div>
+
+                <p lang="en" style="margin-bottom: 0;">Because the Effective Temperature ($T_{\mathrm{eff}}$) diverges when latency approaches the 10-minute block time, increasing the block size effectively "heats up" the network. Pushing block sizes to gigabytes would mechanically raise $T_{\mathrm{eff}}$ past the critical threshold, melting the crystalline consensus back into a liquid state of permanent orphan blocks.</p>
+                <p lang="fr" style="margin-bottom: 0;">Parce que la Température d'Information ($T_{\mathrm{eff}}$) diverge lorsque la latence approche les 10 minutes du temps de bloc, augmenter la taille des blocs "réchauffe" mécaniquement le réseau. Pousser la taille des blocs à des gigaoctets ferait mécaniquement franchir le seuil critique à $T_{\mathrm{eff}}$, faisant fondre le consensus cristallin pour le ramener à un état liquide de blocs orphelins permanents.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(136, 255, 170, 0.05); border-left: 3px solid #88ffaa; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #88ffaa; outline: none; list-style-type: '▶ ';">
+                <span lang="en">Level 3: The Formal Bound Evaluation (Advanced)</span>
+                <span lang="fr">Niveau 3 : L'Évaluation Formelle de la Limite (Avancé)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;">We can mathematically determine the absolute maximum block size $V_{\mathrm{B,crit}}$ before the phase transition occurs. Setting the network to its critical correlation threshold $\Gamma_c = \tau_B / \tau_L$ (where the orphan rate reaches unacceptable levels, typically $\Gamma_c \approx 10$ for a ${\sim}10\%$ orphan rate), we solve for $V_B$:</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">Nous pouvons déterminer mathématiquement la taille maximale absolue des blocs $V_{\mathrm{B,crit}}$ avant que la transition de phase ne se produise. En fixant le réseau à son seuil de corrélation critique $\Gamma_c = \tau_B / \tau_L$ (où le taux d'orphelins atteint un niveau inacceptable, typiquement $\Gamma_c \approx 10$ pour un taux de ${\sim}10\%$), nous isolons $V_B$ :</p>
+                
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #88ffaa;">
+                    $$ V_{\mathrm{B,crit}} = C_{\mathrm{eff}} \left( \frac{\tau_B}{\Gamma_c} - \tau_0 \right) $$
+                </div>
+
+                <p lang="en" style="margin-bottom: 0.5rem;">Using standard network parameters: a target time $\tau_B = 600\,\mathrm{s}$, a base propagation floor $\tau_0 \approx 0.5\,\mathrm{s}$, and an effective global processing throughput $C_{\mathrm{eff}} \approx 10\,\mathrm{MB/s}$, we obtain:</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">En utilisant les paramètres standards du réseau : un temps cible $\tau_B = 600\,\mathrm{s}$, un plancher de propagation de base $\tau_0 \approx 0,5\,\mathrm{s}$, et un débit de traitement global effectif $C_{\mathrm{eff}} \approx 10\,\mathrm{MB/s}$, nous obtenons :</p>
+
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #88ffaa;">
+                    $$ V_{\mathrm{B,crit}} \approx 10\,\mathrm{MB/s} \times \left( \frac{600\,\mathrm{s}}{10} - 0.5\,\mathrm{s} \right) \approx 595\,\mathrm{MB} $$
+                </div>
+
+                <p lang="en" style="margin-bottom: 0;">This calculation proves that the block size limit is not arbitrary politics; it is a rigid thermodynamic constraint. While the exact numerical value depends on global infrastructure quality, pushing block volumes into the gigabyte range guarantees $V_B > V_{\mathrm{B,crit}}$. The Landau coefficient $\alpha_{\mathrm{h}}$ flips sign, the topological mass gap collapses, and the ledger permanently shatters.</p>
+                <p lang="fr" style="margin-bottom: 0;">Ce calcul prouve que la limite de la taille des blocs n'est pas une question politique arbitraire ; c'est une contrainte thermodynamique rigide. Bien que la valeur numérique exacte dépende de la qualité de l'infrastructure mondiale, forcer des volumes de blocs de l'ordre du gigaoctet garantit $V_B > V_{\mathrm{B,crit}}$. Le coefficient de Landau $\alpha_{\mathrm{h}}$ change de signe, le gap de masse topologique s'effondre, et le registre se fracture de façon permanente.</p>
+            </div>
+        </details>
+        <div class="proof-end">∎</div>
+    </div>
     <div id="sec9"></div>
     <h2 lang="en">9. Logistic Maturation & The Archimedean Spiral</h2>
     <h2 lang="fr">9. Maturation Logistique & La Spirale d'Archimède</h2>
@@ -2833,7 +2960,47 @@ document.addEventListener("DOMContentLoaded", () => {
             Nous ne nous contentons plus d'observer l'univers. Nous forgeons de nouveaux espaces-temps.
         </p>
     </div>
+    <div class="feedback-container">
+        <h3 lang="en" class="feedback-title">Help Improve This Theory</h3>
+        <h3 lang="fr" class="feedback-title">Aidez à améliorer cette théorie</h3>
+        
+        <p lang="en" class="feedback-desc">This is an ongoing phenomenological research effort. Your feedback is vital to clarify the mechanics and correct potential flaws.</p>
+        <p lang="fr" class="feedback-desc">Il s'agit d'un effort de recherche phénoménologique en cours. Vos retours sont vitaux pour clarifier la mécanique et corriger d'éventuelles failles.</p>
 
+        <form id="feedback-form" action="TON_ENDPOINT_FORMSPREE_ICI" method="POST">
+            
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required />
+                <label for="star5" title="Excellent">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="Very Good">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="Average">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="Poor">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="Bad">&#9733;</label>
+            </div>
+
+            <label lang="en" class="feedback-label">Which concepts seem obscure? What could be improved?</label>
+            <label lang="fr" class="feedback-label">Quels concepts vous semblent obscurs ? Qu'est-ce qui pourrait être amélioré ?</label>
+            
+            <textarea name="feedback" class="feedback-textarea" required></textarea>
+
+            <p lang="en" class="feedback-anon">🔒 This survey is 100% anonymous unless you specify your name in the comment.</p>
+            <p lang="fr" class="feedback-anon">🔒 Ce retour est 100 % anonyme, à moins que vous n'indiquiez explicitement votre nom dans le commentaire.</p>
+            
+            <button type="submit" class="feedback-submit" id="feedback-btn">
+                <span lang="en">Submit Feedback</span>
+                <span lang="fr">Envoyer le retour</span>
+            </button>
+        </form>
+    </div>
+
+    <div id="success-popup" class="feedback-popup">
+        <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
+        <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
+    </div>
     <h2 lang="en" style="margin-top: 5rem;">References</h2>
     <h2 lang="fr" style="margin-top: 5rem;">Références</h2>
     
