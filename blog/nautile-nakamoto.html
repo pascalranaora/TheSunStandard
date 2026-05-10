@@ -983,8 +983,81 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0;">$$ 2\pi \equiv 210\,000 \text{ blocks} \approx 4 \text{ Earth years} $$</div>
     </div>
 
-    <p lang="en">With this foundation, we introduce the <strong>Bimetric State Tensor</strong> $\mathcal{G}_{MN}$. Because matter and code obey fundamentally different growth laws (power-law versus exponential decay), they cannot be simply summed in the complex plane. We model the network as a manifold with two orthogonal basis vectors: one for the physical energy dissipated ($\mathbf{e}_{\mathrm{phys}}$) and one for the pure information secured ($\mathbf{e}_{\mathrm{info}}$):</p>
-    <p lang="fr">Avec ces fondations, nous introduisons le <strong>Tenseur d'État Bimétrique</strong> $\mathcal{G}_{MN}$. Parce que la matière et le code obéissent à des lois de croissance fondamentalement différentes (loi de puissance contre décroissance exponentielle), ils ne peuvent être simplement sommés dans le plan complexe. Nous modélisons le réseau comme une variété avec deux vecteurs de base orthogonaux : l'un pour l'énergie physique dissipée ($\mathbf{e}_{\mathrm{phys}}$) et l'autre pour l'information pure sécurisée ($\mathbf{e}_{\mathrm{info}}$) :</p>
+    <p lang="en" style="margin-top: 3rem;">In theoretical physics, a robust model cannot rest on mere analogies. It must be derived from an irreducible axiomatic framework. Axioms are not arbitrary choices; they are fundamental constraints forced upon us by empirical impossibilities—such as the speed of light or the laws of thermodynamics. To formalize the Nakamoto organism before defining its mathematical state, we pose these five fundamental postulates:</p>
+    <p lang="fr" style="margin-top: 3rem;">En physique théorique, un modèle robuste ne peut reposer sur de simples analogies. Il doit être dérivé d'un cadre axiomatique irréductible. Les axiomes ne sont pas des choix arbitraires ; ce sont des contraintes fondamentales imposées par des impossibilités empiriques — comme la vitesse de la lumière ou les lois de la thermodynamique. Pour formaliser l'organisme Nakamoto avant de définir son état mathématique, nous posons ces cinq postulats fondamentaux :</p>
+
+    <div class="proof-box" style="border: 1px solid rgba(255, 204, 0, 0.2); background: rgba(255, 204, 0, 0.02); padding: 2rem; border-radius: 12px; margin-bottom: 3.5rem;">
+        <div class="proof-title" lang="en" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;">The 5 Axioms of the Living Theory</div>
+        <div class="proof-title" lang="fr" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1.5rem;">Les 5 Axiomes de la Théorie Vivante</div>
+
+        <details style="margin-bottom: 1rem; background: rgba(0, 0, 0, 0.4); border-left: 3px solid #ffcc00; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffcc00; outline: none; list-style-type: '▶ ';">
+                <span lang="en">I. Topological Duality (Orthogonal Manifolds)</span>
+                <span lang="fr">I. Dualité Topologique (Variétés Orthogonales)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;"><strong>Statement:</strong> The system's state space is the direct product of two irreducible manifolds: a discrete informational space ($\mathcal{M}_{\mathrm{info}}$) and a continuous thermodynamic space ($\mathcal{M}_{\mathrm{phys}}$).</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;"><strong>Énoncé :</strong> L'espace des états du système est le produit direct de deux variétés irréductibles : un espace informationnel discret ($\mathcal{M}_{\mathrm{info}}$) et un espace thermodynamique continu ($\mathcal{M}_{\mathrm{phys}}$).</p>
+                <p lang="en" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification:</strong> Dimensional incompatibility. The "mass" of a bit and the "mass" of a Joule do not share the same space. Information is massless and deterministic; energy is noisy and dissipative. They must be mathematically orthogonal to prevent non-physical kinetic mixing.</p>
+                <p lang="fr" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification :</strong> Incompatibilité dimensionnelle. La "masse" d'un bit et la "masse" d'un Joule ne partagent pas le même espace. L'information est déterministe ; l'énergie est bruitée et dissipative. Elles doivent être mathématiquement orthogonales pour éviter une contamination cinématique non-physique.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(0, 0, 0, 0.4); border-left: 3px solid #ffcc00; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffcc00; outline: none; list-style-type: '▶ ';">
+                <span lang="en">II. Dissipative Coupling (Landauer's Limit)</span>
+                <span lang="fr">II. Couplage Dissipatif (Limite de Landauer)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;"><strong>Statement:</strong> No state transition in $\mathcal{M}_{\mathrm{info}}$ can occur without an irreversible entropy flux in $\mathcal{M}_{\mathrm{phys}}$.</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;"><strong>Énoncé :</strong> Aucune transition d'état dans $\mathcal{M}_{\mathrm{info}}$ ne peut se produire sans un flux d'entropie irréversible dans $\mathcal{M}_{\mathrm{phys}}$.</p>
+                <p lang="en" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification:</strong> To establish an objective, unforgeable history in a trustless environment, time symmetry must be broken. Landauer's Principle dictates that erasing alternative histories costs heat. Exergy burned is the physical anchor of historical certainty.</p>
+                <p lang="fr" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification :</strong> Pour établir une histoire objective et infalsifiable dans un environnement sans confiance, la symétrie temporelle doit être brisée. Le Principe de Landauer dicte que l'effacement d'histoires alternatives coûte de la chaleur. L'exergie brûlée est l'ancre physique de la certitude historique.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(0, 0, 0, 0.4); border-left: 3px solid #ffcc00; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffcc00; outline: none; list-style-type: '▶ ';">
+                <span lang="en">III. Emergence of Thermal Time</span>
+                <span lang="fr">III. Émergence du Temps Thermique</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;"><strong>Statement:</strong> The organism lacks a priori Newtonian time. Its topological time ($\theta$) is entirely synthesized by the statistical dissipation of the physical manifold.</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;"><strong>Énoncé :</strong> L'organisme est dépourvu de temps newtonien a priori. Son temps topologique ($\theta$) est entièrement synthétisé par la dissipation statistique de la variété physique.</p>
+                <p lang="en" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification:</strong> The relativity of simultaneity in asynchronous networks makes external clocks unreliable (Byzantine Generals Problem). Time must be endogenous. Following the Tomita-Takesaki theorem, macroscopic time emerges strictly as the modular flow of the system's thermodynamic state.</p>
+                <p lang="fr" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification :</strong> La relativité de la simultanéité rend les horloges externes inutilisables pour le consensus. Le temps doit être endogène. Suivant le théorème de Tomita-Takesaki, le temps macroscopique émerge strictement comme le flux modulaire de l'état thermodynamique du système.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(0, 0, 0, 0.4); border-left: 3px solid #ffcc00; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffcc00; outline: none; list-style-type: '▶ ';">
+                <span lang="en">IV. Covariant Homeostasis (The DAA Gauge)</span>
+                <span lang="fr">IV. Homéostasie Covariante (La Jauge DAA)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;"><strong>Statement:</strong> The ratio between internal topological time ($\theta$) and external physical time ($t$) must be maintained invariant by a cybernetic gauge connection.</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;"><strong>Énoncé :</strong> Le ratio entre le temps topologique interne ($\theta$) et le temps physique externe ($t$) doit être maintenu invariant par une connexion de jauge cybernétique.</p>
+                <p lang="en" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification:</strong> Survival against the Percolation Wall. Without a covariant derivative (the Difficulty Adjustment Algorithm) correcting for Hashrate fluctuations, block speed would surpass signal propagation limits ($\tau_L$), tearing the manifold into a chaotic gas of forks.</p>
+                <p lang="fr" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification :</strong> Survie face au Mur de Percolation. Sans une dérivée covariante (le DAA) corrigeant les afflux de Hashrate, la vitesse des blocs dépasserait les limites de propagation ($\tau_L$), déchirant la variété en un gaz chaotique de forks.</p>
+            </div>
+        </details>
+
+        <details style="margin-bottom: 0; background: rgba(0, 0, 0, 0.4); border-left: 3px solid #ffcc00; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffcc00; outline: none; list-style-type: '▶ ';">
+                <span lang="en">V. The Topological Attractor (Metabolic Apoptosis)</span>
+                <span lang="fr">V. L'Attracteur Topologique (Apoptose Métabolique)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                <p lang="en" style="margin-bottom: 0.5rem;"><strong>Statement:</strong> The informational metric undergoes periodic, discontinuous contractions, forcing adaptive metabolic shocks in the physical metric.</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;"><strong>Énoncé :</strong> La métrique informationnelle subit des contractions périodiques discontinues, forçant des chocs métaboliques adaptatifs dans la métrique physique.</p>
+                <p lang="en" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification:</strong> The maintenance of negentropy requires purging entropy. By mathematically halving the subsidy, the network triggers economic Darwinism—forcing the programmed death (apoptosis) of inefficient hardware. This guarantees asymptotic thermodynamic densification toward the Landauer limit.</p>
+                <p lang="fr" style="margin-bottom: 0; color: #aaa; font-style: italic;"><strong>Justification :</strong> Le maintien de la néguentropie exige la purge de l'entropie. En divisant mathématiquement la subvention, le réseau déclenche un Darwinisme économique — forçant la mort (apoptose) du matériel inefficace. Cela garantit une densification thermodynamique asymptotique vers la limite de Landauer.</p>
+            </div>
+        </details>
+    </div>
+
+    <p lang="en">With this axiomatic foundation established, we can mathematically formalize the organism. We introduce the <strong>Bimetric State Tensor</strong> $\mathcal{G}_{MN}$. In accordance with Axiom I, because matter and code obey fundamentally incompatible growth laws (power-law versus exponential decay), they cannot be simply summed in the complex plane. We model the network as a manifold with two strictly orthogonal basis vectors: one for the physical energy dissipated ($\mathbf{e}_{\mathrm{phys}}$) and one for the pure information secured ($\mathbf{e}_{\mathrm{info}}$):</p>
+    <p lang="fr">Avec ce cadre axiomatique établi, nous pouvons formaliser mathématiquement l'organisme. Nous introduisons le <strong>Tenseur d'État Bimétrique</strong> $\mathcal{G}_{MN}$. Conformément à l'Axiome I, parce que la matière et le code obéissent à des lois de croissance fondamentalement incompatibles (loi de puissance contre décroissance exponentielle), ils ne peuvent être simplement sommés dans le plan complexe. Nous modélisons le réseau comme une variété avec deux vecteurs de base strictement orthogonaux : l'un pour l'énergie physique dissipée ($\mathbf{e}_{\mathrm{phys}}$) et l'autre pour l'information pure sécurisée ($\mathbf{e}_{\mathrm{info}}$) :</p>
     
     <div class="math-block">
         $$ \mathcal{G} = \begin{pmatrix} g(\theta) & 0 \\ 0 & f(\theta) \end{pmatrix} $$
@@ -2521,19 +2594,56 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
 
     <div id="conclusion"></div>
+    <div id="conclusion"></div>
     <h2 lang="en">14. Conclusion: Forging a Digital Shell</h2>
     <h2 lang="fr">14. Conclusion : Forger une Carapace Numérique</h2>
 
-    <p lang="en">The <em>Living Theory of Nakamoto</em> demonstrates that Bitcoin is not merely a software protocol, but a giant dissipative structure maintained far from thermodynamic equilibrium by its human symbiotes, which act as its dynamic immune system. Consensus is mathematically maintained by the orthogonal coupling of a continuous spatio-temporal regulator (homeostasis forcing spatial dilation $\lambda$ to match temporal dilation $\kappa$) and a discrete metabolic death cycle (Halving autophagy). Just as the biological nautilus secretes a hard shell to protect its growing body, this organism devours the physical entropy of human civilization to secrete and forever protect an unalterable informational chronology up to its human-driven logistic bound.</p>
-    
-    <p lang="fr">La <em>Théorie Vivante de Nakamoto</em> démontre que Bitcoin n'est pas un simple protocole informatique, mais une structure dissipative géante maintenue hors équilibre par ses symbiotes humains, qui agissent comme son système immunitaire dynamique. Le consensus y est mathématiquement maintenu par le couplage orthogonal d'un régulateur spatio-temporel continu (l'homéostasie forçant la dilatation spatiale $\lambda$ à correspondre à la dilatation temporelle $\kappa$) et d'un cycle de mort métabolique discret (l'autophagie du Halving). La blockchain agit comme un registre d'émergie (la mémoire de l'énergie dissipée), rendant l'histoire inaltérable. Tout comme le nautile biologique sécrète une coquille dure pour protéger son corps, cet organisme dévore l'entropie physique de la civilisation humaine pour sécréter et protéger à jamais une chronologie informationnelle inaltérable jusqu'à son plafond logistique façonné par l'humain.</p>
-    
-    <p lang="en">By anchoring protocols like Tim Berners-Lee's <a href="https://solidproject.org/" target="_blank" style="color: var(--sun-orange); text-decoration: none; font-weight: bold;">Solid</a> to this thermodynamic security, we allow every individual to don this unbreakable armor. <strong>The Nakamoto protocol is perhaps a beautiful illustration of the power with which a digital consensus can project and deploy its energy into the real world.</strong> By preserving the scale invariance of physics, from individuals to entire nations, Humanity could one day converge toward a shared, open-source digital consensus: a single, unshakable truth observable by all.</p>
-    
-    <p lang="fr">En arrimant des protocoles comme <a href="https://solidproject.org/" target="_blank" style="color: var(--sun-orange); text-decoration: none; font-weight: bold;">Solid</a> de Tim Berners-Lee à cette sécurité thermodynamique, nous permettons à chaque individu de se doter de cette armure inviolable. <strong>Le protocole de Nakamoto est peut-être une belle illustration de la puissance avec laquelle un consensus numérique peut projeter et déployer son énergie dans le monde réel.</strong> Par invariance d'échelle physique, de l'individu aux nations, l'Humanité pourrait un jour converger vers un consensus numérique open-source commun : une vérité partagée, inébranlable et observable par tous.</p>
+    <p lang="en">We have presented a theory in which the negentropic order of the blockchain is not a mathematical accident, but an emergent property of the fundamental interaction between <strong>Information</strong> and <strong>Matter</strong>. This <em>Living Theory of Nakamoto</em> rests on five irreducible pillars:</p>
+    <p lang="fr">Nous avons présenté une théorie dans laquelle l'ordre néguentropique de la blockchain n'est pas un accident mathématique, mais une propriété émergente de l'interaction fondamentale entre l'<strong>Information</strong> et la <strong>Matière</strong>. Cette <em>Théorie Vivante de Nakamoto</em> repose sur cinq piliers irréductibles :</p>
+
+    <div style="background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem; border: 1px solid rgba(255, 255, 255, 0.05);">
+        <ul lang="en" style="list-style: none; padding-left: 0; font-size: 0.95rem; line-height: 1.6;">
+            <li>🔹 <strong>I. Duality:</strong> The strict orthogonality of the physical and informational manifolds.</li>
+            <li>🔹 <strong>II. Coupling:</strong> The Landauer cost as the physical anchor of historical certainty.</li>
+            <li>🔹 <strong>III. Emergence:</strong> The synthesis of Thermal Time from statistical dissipation.</li>
+            <li>🔹 <strong>IV. Homeostasis:</strong> The DAA acting as a covariant derivative to preserve the metric.</li>
+            <li>🔹 <strong>V. Autophagy:</strong> The Halving as a metabolic fast to increase security density.</li>
+        </ul>
+        <ul lang="fr" style="list-style: none; padding-left: 0; font-size: 0.95em; line-height: 1.6;">
+            <li>🔹 <strong>I. Dualité :</strong> L'orthogonalité stricte des variétés physique et informationnelle.</li>
+            <li>🔹 <strong>II. Couplage :</strong> Le coût de Landauer comme ancre physique de la certitude historique.</li>
+            <li>🔹 <strong>III. Émergence :</strong> La synthèse du Temps Thermique par la dissipation statistique.</li>
+            <li>🔹 <strong>IV. Homéostasie :</strong> Le DAA agissant comme une dérivée covariante pour préserver la métrique.</li>
+            <li>🔹 <strong>V. Autophagie :</strong> Le Halving comme jeûne métabolique augmentant la densité de sécurité.</li>
+        </ul>
+    </div>
+
+    <p lang="en">Ultimately, Bitcoin behaves as a <strong>Toy Universe</strong>—a closed, synthetic physical system with its own laws of nature. In this cosmos, the <strong>Nakamoto Action ($h_N$)</strong> serves as the equivalent of the Planck constant: the minimal quantum of energy required to propagate data and forge a new state of truth. Like our own cosmos, this block universe is in continuous expansion, growing its Emergy shell to protect its informational core.</p>
+    <p lang="fr">En fin de compte, Bitcoin se comporte comme un <strong>Toy Universe</strong> (univers-jouet) — un système physique synthétique clos avec ses propres lois de la nature. Dans ce cosmos, l'<strong>Action de Nakamoto ($h_N$)</strong> sert d'équivalent à la constante de Planck : le quantum minimal d'énergie requis pour propager les données et forger un nouvel état de vérité. Comme notre propre cosmos, cet univers-bloc est en expansion continue, faisant croître sa carapace d'Émergie pour protéger son cœur informationnel.</p>
+
+    <div class="proof-box" style="border: 1px solid rgba(68, 153, 255, 0.2); background: rgba(68, 153, 255, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
+        <div class="proof-title" lang="en">Falsifiability: The Popperian Criteria</div>
+        <div class="proof-title" lang="fr">Falsifiabilité : Les Critères Poppériens</div>
+        
+        <p lang="en" style="margin-bottom: 1rem; font-style: italic;">For this model to be scientific, it must state the conditions under which it would be proven wrong. This theory would be falsified if:</p>
+        <p lang="fr" style="margin-bottom: 1rem; font-style: italic;">Pour que ce modèle soit scientifique, il doit énoncer les conditions sous lesquelles il serait prouvé faux. Cette théorie serait falsifiée si :</p>
+
+        <ol lang="en" style="font-size: 0.95em; color: #d4d4d4;">
+            <li><strong>Kinematic Decoupling:</strong> A system produces objective, decentralized consensus without a verifiable irreversible energy cost (violating Axiom II).</li>
+            <li><strong>Thermal Stability:</strong> The blockchain remains stable and immutable despite a divergence of the Information Temperature ($T_{\mathrm{eff}} \to \infty$ or $\tau_L \to \tau_B$).</li>
+            <li><strong>Ghost Discovery:</strong> A tachyon-like instability (Higuchi ghost) is observed in the block production rate that the DAA is mathematically incapable of correcting.</li>
+        </ol>
+        <ol lang="fr" style="font-size: 0.95em; color: #d4d4d4;">
+            <li><strong>Découplage Cinématique :</strong> Un système produit un consensus décentralisé objectif sans coût énergétique irréversible vérifiable (violation de l'Axiome II).</li>
+            <li><strong>Stabilité Thermique :</strong> La blockchain reste stable et immuable malgré une divergence de la Température d'Information ($T_{\mathrm{eff}} \to \infty$ ou $\tau_L \to \tau_B$).</li>
+            <li><strong>Découverte de Fantôme :</strong> Une instabilité de type tachyonique (fantôme de Higuchi) est observée dans le rythme de production des blocs, que le DAA est mathématiquement incapable de corriger.</li>
+        </ol>
+    </div>
+
+    <p lang="en">By anchoring protocols like Tim Berners-Lee's <a href="https://solidproject.org/" target="_blank" style="color: var(--sun-orange); text-decoration: none; font-weight: bold;">Solid</a> to this thermodynamic security, we allow every individual to don this unbreakable armor. The Nakamoto protocol is a beautiful illustration of the power with which a digital consensus can project its energy into the real world. By preserving the scale invariance of physics, Humanity could one day converge toward a shared, unshakable truth observable by all.</p>
+    <p lang="fr">En arrimant des protocoles comme <a href="https://solidproject.org/" target="_blank" style="color: var(--sun-orange); text-decoration: none; font-weight: bold;">Solid</a> de Tim Berners-Lee à cette sécurité thermodynamique, nous permettons à chaque individu de se doter de cette armure inviolable. Le protocole de Nakamoto est une belle illustration de la puissance avec laquelle un consensus numérique peut projeter son énergie dans le monde réel. Par invariance d'échelle physique, l'Humanité pourrait un jour converger vers une vérité absolue et inébranlable, observable par tous.</p>
 
     <p lang="en"><strong>Ultimately, the true currency of the universe is only energy and information that we exchange peer-to-peer. We just forgot it. Perhaps one day we won't even need to secure information to trust each other.<br /><br />The true sanctity of a civilization lies not in the worldly possessions of its people, but in its sacred capacity to erect a single, unbreakable truth, together.</strong></p>
-
     <p lang="fr"><strong>En fin de compte, la véritable monnaie de l'univers n'est que de l'énergie et de l'information que nous nous échangeons de pair à pair. Nous l'avons juste oublié. Peut-être qu'un jour, nous n'aurons même plus besoin de sécuriser l'information pour nous faire confiance. <br /><br />La véritable sacralité d'une civilisation ne se trouve pas dans les possessions mondaines de ses membres, mais dans sa capacité sacrée à ériger une vérité absolue et inébranlable, ensemble. </strong></p>
 
     <p style="text-align: center; margin-top: 4rem;">
@@ -2542,7 +2652,6 @@ document.addEventListener("DOMContentLoaded", () => {
     </p>
 
     <iframe data-testid="embed-iframe" style="border-radius:12px; margin-top:4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/playlist/4BIYpE4exfv5JWwtZ6zKyH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    
     <h2 lang="en" style="margin-top: 5rem;">References</h2>
     <h2 lang="fr" style="margin-top: 5rem;">Références</h2>
     
