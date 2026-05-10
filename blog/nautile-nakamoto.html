@@ -498,7 +498,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; margin-top: 5rem;}
         
-        /* --- Formspree Feedback Form --- */
+        /* ========================================== */
+        /* SECTION FEEDBACK (FORMSPREE & POPUP)       */
+        /* ========================================== */
         .feedback-container {
             margin: 6rem auto 4rem;
             padding: 2.5rem;
@@ -510,51 +512,73 @@ document.addEventListener("DOMContentLoaded", () => {
             text-align: center;
         }
         .feedback-title {
+            color: var(--sun-yellow); font-size: 1.5rem; text-transform: uppercase; 
+            letter-spacing: 2px; margin-bottom: 0.5rem; font-weight: 800; 
+            font-family: 'Helvetica Neue', sans-serif;
+        }
+        .feedback-desc { color: #aaa; font-style: italic; font-size: 0.95rem; margin-bottom: 2rem; }
+        .feedback-label { display: block; color: #d4d4d4; margin-bottom: 0.8rem; font-size: 1.05rem; }
+        .feedback-anon { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
+        
+        /* CSS Magic pour les étoiles (Zéro JS) */
+        .star-rating {
+            display: flex; flex-direction: row-reverse; justify-content: center; 
+            gap: 0.5rem; margin-bottom: 1.5rem;
+        }
+        .star-rating input { display: none; }
+        .star-rating label {
+            color: #333; font-size: 2.5rem; cursor: pointer; 
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
             color: var(--sun-yellow);
-            font-size: 1.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
-            font-weight: 800;
-            font-family: 'Helvetica Neue', sans-serif;
+            text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
         }
-        .feedback-desc {
-            color: #aaa;
-            font-style: italic;
-            font-size: 0.95rem;
-            margin-bottom: 2rem;
-        }
-        /* --- Feedback Extras (Anon & Popup) --- */
-        .feedback-anon {
-            font-size: 0.85rem;
-            color: #888;
-            font-style: italic;
-            margin-bottom: 1.5rem;
-        }
-        .feedback-label {
-            display: block;
-            color: #d4d4d4;
-            margin-bottom: 0.8rem;
-            font-size: 1.05rem;
-        }
-        .feedback-popup {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: rgba(68, 255, 102, 0.1);
-            border: 1px solid #44ff66;
-            color: #44ff66;
-            padding: 15px 25px;
+        .star-rating label:hover { transform: scale(1.1); }
+        
+        /* Zone de texte cyberpunk/académique */
+        .feedback-textarea {
+            width: 100%;
+            background: #050505; /* Fond noir profond */
+            border: 1px solid rgba(255, 204, 0, 0.2); /* Bordure subtile jaune */
             border-radius: 8px;
-            box-shadow: 0 5px 20px rgba(68, 255, 102, 0.2);
-            z-index: 1000;
-            backdrop-filter: blur(5px);
-            align-items: center;
-            gap: 10px;
-            font-family: 'Helvetica Neue', sans-serif;
-            font-weight: bold;
-            letter-spacing: 1px;
+            color: #fff;
+            padding: 1.2rem;
+            font-family: 'Georgia', serif;
+            font-size: 1.1rem;
+            min-height: 180px; /* Plus grand */
+            resize: vertical;
+            margin-bottom: 1.5rem;
+            outline: none;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .feedback-textarea:focus { 
+            border-color: var(--sun-yellow); 
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.15); 
+        }
+        
+        /* Bouton d'envoi */
+        .feedback-submit {
+            background: rgba(255, 170, 0, 0.1); border: 1px solid var(--sun-yellow);
+            color: var(--sun-yellow); padding: 12px 35px; border-radius: 30px; cursor: pointer;
+            font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: 2px;
+            text-transform: uppercase; transition: all 0.3s ease; backdrop-filter: blur(4px);
+        }
+        .feedback-submit:hover:not(:disabled) {
+            background: rgba(255, 170, 0, 0.3); box-shadow: 0 0 25px rgba(255, 170, 0, 0.5);
+            transform: scale(1.05);
+        }
+        .feedback-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        /* Le Pop-up de Succès */
+        .feedback-popup {
+            display: none; position: fixed; bottom: 30px; right: 30px; 
+            background: rgba(68, 255, 102, 0.1); border: 1px solid #44ff66; color: #44ff66; 
+            padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 20px rgba(68, 255, 102, 0.2); 
+            z-index: 1000; backdrop-filter: blur(5px); align-items: center; gap: 10px; 
+            font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: 1px; 
             animation: slideIn 0.3s ease-out forwards;
         }
         @keyframes slideIn {
@@ -745,7 +769,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="#sec8" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">8. L'Axe de Rigidité & Le Mur de Percolation</a></li>
             <li><a href="#sec9" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">9. Maturation Logistique & La Spirale d'Archimède</a></li>
             <li><a href="#sec10" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">10. L'Autophagie du Halving : Densification Thermodynamique</a></li>
-            <li><a href="#sec11" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">11. Le Démon de Maxwell et le Filtre UTXO</a></li>
+            <li><a href="#sec11" style="color: #600303; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">11. Le Démon de Maxwell et le Filtre UTXO</a></li>
             <li><a href="#sec12" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">12. Inférence Active & Le Principe d'Énergie Libre</a></li>
             <li><a href="#sec13" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">13. L'Éveil Planétaire : Topologie Intégrale</a></li>
             <li><a href="#conclusion" style="color: #d4d4d4; text-decoration: none; border-bottom: 1px solid transparent; transition: all 0.2s;">14. Conclusion : Forger une Carapace Numérique</a></li>
@@ -2968,7 +2992,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="fr" class="feedback-desc">Il s'agit d'un effort de recherche phénoménologique en cours. Vos retours sont vitaux pour clarifier la mécanique et corriger d'éventuelles failles.</p>
 
         <form id="feedback-form" action="https://formspree.io/f/xrejrzrz" method="POST">
-            
+            <input type="hidden" name="article_title" value="La Théorie Vivante de Nakamoto">
             <div class="star-rating">
                 <input type="radio" id="star5" name="rating" value="5" required />
                 <label for="star5" title="Excellent">&#9733;</label>
@@ -2995,6 +3019,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 <span lang="fr">Envoyer le retour</span>
             </button>
         </form>
+    </div>
+
+    <div id="success-popup" class="feedback-popup">
+        <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
+        <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
     </div>
 
     <div id="success-popup" class="feedback-popup">
@@ -3359,6 +3388,60 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("feedback-form");
+    const popup = document.getElementById("success-popup");
+    const btn = document.getElementById("feedback-btn");
+
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            // 1. Empêche le navigateur de rediriger vers Formspree
+            event.preventDefault(); 
+            
+            // 2. Change l'état du bouton (Loading)
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = "⏳ ...";
+            btn.disabled = true;
+
+            // 3. Récupère les données du formulaire
+            const formData = new FormData(form);
+
+            try {
+                // 4. Envoi silencieux via Fetch API (AJAX)
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Succès : On vide le formulaire
+                    form.reset();
+                    
+                    // On affiche le joli pop-up vert
+                    popup.style.display = "flex";
+                    
+                    // On cache le pop-up après 4 secondes
+                    setTimeout(() => {
+                        popup.style.display = "none";
+                    }, 4000);
+                } else {
+                    alert("Erreur lors de l'envoi. / Error during submission.");
+                }
+            } catch (error) {
+                alert("Erreur réseau. / Network error.");
+            } finally {
+                // 5. Restaure le bouton dans son état normal
+                btn.innerHTML = originalHtml;
+                btn.disabled = false;
+            }
+        });
+    }
 });
 </script>
 </body>
