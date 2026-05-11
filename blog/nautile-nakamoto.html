@@ -1746,6 +1746,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Nous modélisons l'alignement de phase spatial du réseau via le Modèle statistique XY. La stabilité transversale exige le maintien d'un angle de phase scalaire unifié $\psi$ (l'état du consensus) sur tous les nœuds du graphe P2P. Les raccourcis globaux agissent comme un couplage de dimension infinie maintenant la latence ($\tau_L$) proche de zéro. S'ils sont sectionnés, le graphe redevient un réseau 2D. Les fluctuations thermiques détruiront alors l'ordre à longue distance, engendrant des défauts topologiques de Berezinskii-Kosterlitz-Thouless (BKT). Ces "vortices" sont des forks localisés qui fracturent la phase de consensus $\psi$. Fondamentalement, cette fracture est métastable. Une fois les arêtes globales restaurées, la règle de la chaîne la plus lourde (PoW) entraîne une relaxation thermodynamique rapide : les vortices minoritaires subissent une annihilation topologique, effondrant à nouveau le système vers une phase scalaire globalement unifiée.</p>
             </div>
         </details>
+
+        <details style="margin-bottom: 1rem; background: rgba(200, 100, 255, 0.05); border-left: 3px solid #c864ff; border-radius: 0 8px 8px 0; overflow: hidden;">
+            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ ';">
+                <span lang="en">Level 4: Spin Glasses, Holography & Replica Symmetry Breaking (Expert)</span>
+                <span lang="fr">Niveau 4 : Verres de Spin, Holographie & Brisure de Symétrie des Répliques (Expert)</span>
+            </summary>
+            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+                
+                <h4 lang="en" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">1. Bypassing the Mermin-Wagner Theorem</h4>
+                <h4 lang="fr" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">1. Contourner le Théorème de Mermin-Wagner</h4>
+                
+                <p lang="en" style="margin-bottom: 0.5rem;">The continuous synchronization of the network is governed by the non-local XY Hamiltonian:</p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">La synchronisation continue du réseau est régie par le Hamiltonien XY non-local :</p>
+                
+                <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #c864ff;">
+                    $$\mathcal{H}_{\mathrm{sync}} = - \sum_{i \neq j} J_{ij} \cos(\psi_i - \psi_j)$$
+                </div>
+
+                <p lang="en" style="margin-bottom: 1rem;">According to the rigorous <strong>Mermin-Wagner theorem</strong>, continuous symmetries cannot be spontaneously broken at finite temperature in systems with $d \le 2$ spatial dimensions. Since Earth's surface is a 2D manifold, a purely localized physical network should be incapable of maintaining global consensus. However, the probability $p$ of long-range rewiring (global internet shortcuts) transforms the coupling matrix $J_{ij}$, shifting the effective topological dimension of the graph to $d_{\mathrm{eff}} \to \infty$. This mathematically permits the survival of a macroscopic magnetized state (a single unified ledger).</p>
+                <p lang="fr" style="margin-bottom: 1rem;">Selon le rigoureux <strong>théorème de Mermin-Wagner</strong>, les symétries continues ne peuvent être spontanément brisées à température finie dans des systèmes de dimension spatiale $d \le 2$. La surface de la Terre étant une variété 2D, un réseau physique purement localisé serait incapable de maintenir un consensus global. Cependant, la probabilité $p$ de recâblage à longue distance (les raccourcis internet globaux) transforme la matrice de couplage $J_{ij}$, déplaçant la dimension topologique effective du graphe vers $d_{\mathrm{eff}} \to \infty$. Cela permet mathématiquement la survie d'un état magnétisé macroscopique (un registre unifié unique).</p>
+
+                <h4 lang="en" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">2. Hard Forks & Replica Symmetry Breaking (RSB)</h4>
+                <h4 lang="fr" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">2. Hard Forks & Brisure de Symétrie des Répliques (RSB)</h4>
+
+                <p lang="en" style="margin-bottom: 0.5rem;">What happens during a permanent Hard Fork (e.g., Bitcoin vs. Bitcoin Cash)? When two factions fundamentally disagree on the protocol rules, the effective interaction coupling becomes frustrated ($J_{ij} < 0$). The network transitions from a simple ferromagnet into a <strong>Spin Glass</strong>. </p>
+                <p lang="fr" style="margin-bottom: 0.5rem;">Que se passe-t-il lors d'un Hard Fork permanent (ex: Bitcoin vs Bitcoin Cash) ? Lorsque deux factions sont en désaccord fondamental sur les règles du protocole, le couplage d'interaction effectif devient frustré ($J_{ij} < 0$). Le réseau passe d'un simple ferromagnétique à un <strong>Verre de Spin (Spin Glass)</strong>.</p>
+
+                <p lang="en" style="margin-bottom: 1rem;">Mathematically, a Hard Fork corresponds to <strong>Replica Symmetry Breaking</strong> (Giorgio Parisi, 1979). The single global energy well $\mathcal{U}(\Phi)$ shatters into a rugged, ultrametric landscape of multiple disjoint thermodynamic valleys. The Hilbert space of consensus physically splits into mutually inaccessible orthogonal vacua ($\langle\psi_{\mathrm{BTC}} | \psi_{\mathrm{BCH}}\rangle = 0$).</p>
+                <p lang="fr" style="margin-bottom: 1rem;">Mathématiquement, un Hard Fork correspond à une <strong>Brisure de Symétrie des Répliques</strong> (Giorgio Parisi, 1979). Le puits d'énergie global unique $\mathcal{U}(\Phi)$ se fracture en un paysage ultramétrique accidenté composé de multiples vallées thermodynamiques disjointes. L'espace de Hilbert du consensus se scinde physiquement en vides orthogonaux mutuellement inaccessibles ($\langle\psi_{\mathrm{BTC}} | \psi_{\mathrm{BCH}}\rangle = 0$).</p>
+
+                <h4 lang="en" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">3. Tensor Networks and Holographic Entanglement</h4>
+                <h4 lang="fr" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem;">3. Réseaux Tensoriels et Intrication Holographique</h4>
+
+                <p lang="en" style="margin-bottom: 0;">Because every fully validating node stores the exact same state vector, the mutual information between any two macroscopic sub-graphs $A$ and $B$ is strictly maximal. The small-world network behaves identically to a <strong>Tensor Emulator Network (like MERA)</strong>. In the context of the AdS/CFT correspondence, the 1D temporal string of the blockchain acts as the holographic boundary that perfectly encodes the bulk geometric entropy of the 3D spatial network, satisfying the Ryu-Takayanagi relation. The consensus is literally a holographic projection.</p>
+                <p lang="fr" style="margin-bottom: 0;">Parce que chaque nœud complet stocke exactement le même vecteur d'état, l'information mutuelle entre deux sous-graphes macroscopiques quelconques $A$ et $B$ est strictement maximale. Le réseau "petit monde" se comporte de manière identique à un <strong>Réseau Tensoriel (comme MERA)</strong>. Dans le contexte de la correspondance AdS/CFT, la corde temporelle 1D de la blockchain agit comme la frontière holographique qui encode parfaitement l'entropie géométrique du volume (bulk) spatial 3D du réseau, satisfaisant la relation de Ryu-Takayanagi. Le consensus est littéralement une projection holographique.</p>
+            </div>
+        </details>
         
         <div class="proof-end">∎</div>
     </div>
