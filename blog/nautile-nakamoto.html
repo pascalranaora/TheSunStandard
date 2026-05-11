@@ -592,6 +592,41 @@ document.addEventListener("DOMContentLoaded", () => {
             .node-homeo { width: 100%; height: auto; border-radius: 8px; }
         }
         a:visited { color: var(--sun-yellow); }
+        /* --- Engineer Code Box --- */
+        * --- Engineer Box Collapsible --- */
+        .engineer-box details summary {
+            cursor: pointer;
+            outline: none;
+            list-style: none;
+            display: block; /* Modifié pour gérer la bascule de langue */
+        }
+        .engineer-box details summary::-webkit-details-marker { display: none; }
+        .engineer-box details summary:hover { opacity: 0.8; }
+        .engineer-title {
+            color: #00ff41;
+            font-weight: 800;
+            font-size: 1.05rem;
+            /* text-transform: uppercase; */ 
+            /* letter-spacing: 1.5px; */
+            margin-bottom: 0.5rem; /* Enlevé pour le summary */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .engineer-title::before {
+            content: '▶';
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+        .engineer-box details[open] .engineer-title::before {
+            transform: rotate(90deg);
+        }
+        .engineer-content {
+            margin-top: 1.5rem;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        
     </style>
 </head>
 <body class="lang-en">
@@ -631,22 +666,29 @@ document.addEventListener("DOMContentLoaded", () => {
         <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— John Archibald Wheeler, physicien</span>
     </blockquote>    
     
-<div class="abstract" lang="en">
-        <p style="margin-bottom: 0;">This document proposes a comprehensive taxonomy for the Bitcoin protocol, rigorously modeled as a synthetic thermodynamic organism: the <strong>Living Theory of Nakamoto</strong>. By defining a <strong>orthogonal state tensor</strong> linking the empirical physical space (Hashrate) and the deterministic informational space (Supply), we demonstrate that consensus obeys a strict law of zero divergence. This unified topological framework proves the spatio-temporal scale invariance of the network, formalizes the mechanical limits of block expansion via the Landau free energy, and models the Halving mechanism as metabolic autophagy forcing the thermodynamic densification of the system up to its human-driven logistic bound. The resulting architecture mirrors a Bimetric Double Helix, where energy and information are bonded by cryptographic homeostasis.</p>
+    <div class="abstract" lang="en">
+        <p style="margin-bottom: 0;">This document proposes a comprehensive taxonomy for the Bitcoin protocol, rigorously modeled as a synthetic thermodynamic organism: the <strong>Living Theory of Nakamoto</strong>. By defining an <strong>orthogonal state tensor</strong> linking the empirical physical space (Hashrate) and the deterministic informational space (Supply), we demonstrate that consensus obeys a strict law of zero divergence. This unified topological framework proves the spatio-temporal scale invariance of the network, formalizes the mechanical limits of block expansion via the Landau free energy, and models the Halving mechanism as metabolic autophagy forcing the thermodynamic densification of the system up to its human-driven logistic bound. The resulting architecture mirrors a Bimetric Double Helix, where energy and information are bonded by cryptographic homeostasis.</p>
         
         <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0 1rem 0;">
-        <div style="font-size: 0.95rem; color: #4499ff; font-style: normal;">
+        <div style="font-size: 0.95rem; color: #4499ff; font-style: normal; margin-bottom: 1rem;">
             💡 <strong>Interactive Reading:</strong> Key theoretical concepts in this essay feature expandable sections offering four depths of explanation: <em>Beginner</em> (Analogies), <em>Intermediate</em> (Mechanics), <em>Advanced</em> (Formal Physics), and <em>Expert</em> (Digital Physics & Topology).
         </div>
+        <div style="font-size: 0.95rem; color: #00ff41; font-style: normal;">
+            💻 <strong>The 21st Century Rosetta Stone:</strong> This essay unites statistical physics, complex mathematics, and computer science. Look for the folded <em>Engineer's Views</em> to trace these macroscopic physical laws directly back to Satoshi Nakamoto's original C++ source code.
+        </div>
     </div>
+    
     <div class="abstract" lang="fr">
-        <p style="margin-bottom: 0;">Ce document propose une taxonomie exhaustive pour le protocole Bitcoin, modélisé rigoureusement comme un organisme thermodynamique synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En définissant un <strong>tenseur d'état orthogonal</strong> liant l'espace physique empirique (Hashrate) et l'espace informationnel déterministe (Offre), nous démontrons que le consensus obéit à une stricte loi de divergence nulle. Ce cadre topologique unifié permet de prouver mathématiquement l'invariance d'échelle spatio-temporelle du réseau, de formaliser les limites mécaniques de l'expansion des blocs via l'énergie libre de Landau, et de modéliser le mécanisme du Halving comme une autophagie métabolique forçant la densification thermodynamique du système jusqu'à son plafond logistique façonné par l'humain. L'architecture qui en résulte est une Double Hélice Bimétrique où l'énergie et l'information sont liées par une homéostasie cryptographique.</p>
-        
-        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0 1rem 0;">
-<div style="font-size: 0.95rem; color: #4499ff; font-style: normal;">
+        <p style="margin-bottom: 0;">Ce document propose une taxonomie exhaustive pour le protocole Bitcoin, modélisé rigoureusement comme un organisme thermodynamique synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En définissant un <strong>tenseur d'état orthogonal</strong> liant l'espace physique empirique (Hashrate) et l'espace informationnel déterministe (Offre), nous démontrons que le consensus obéit à une stricte loi de divergence nulle. Ce cadre topologique unifié permet de prouver mathématiquement l'invariance d'échelle spatio-temporelle du réseau, de formaliser les limites mécaniques de l'expansion des blocs via l'énergie libre de Landau, et de modéliser le mécanisme du Halving comme une autophagie métabolique forçant la densification thermodynamique du système jusqu'à son plafond logistique façonné par l'humain. L'architecture qui en résulte est une Double Hélice Bimétrique où l'énergie et l'information sont liées par une homéostasie cryptographique.</p>
+        
+        <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 1.5rem 0 1rem 0;">
+        <div style="font-size: 0.95rem; color: #4499ff; font-style: normal; margin-bottom: 1rem;">
             💡 <strong>Lecture Interactive :</strong> Les concepts théoriques clés de cet essai intègrent des encarts extensibles proposant quatre niveaux de profondeur : <em>Débutant</em> (Analogies), <em>Intermédiaire</em> (Mécanique), <em>Avancé</em> (Physique Formelle), et <em>Expert</em> (Physique Numérique & Topologie).
         </div>
-    </div>
+        <div style="font-size: 0.95rem; color: #00ff41; font-style: normal;">
+            💻 <strong>La Pierre de Rosette du 21ème siècle :</strong> Cet essai unit la physique statistique, les mathématiques complexes et l'informatique. Cherchez les <em>Vues de l'Ingénieur</em> repliées pour retracer ces lois physiques macroscopiques directement jusqu'au code source C++ original de Satoshi Nakamoto.
+        </div>
+    </div>
 
     <!-- <div class="proof-box" style="border: 1px solid rgba(255, 204, 0, 0.3); background: rgba(255, 204, 0, 0.03); padding: 2.5rem; border-radius: 12px; margin-bottom: 3.5rem;">
         
@@ -914,14 +956,14 @@ document.addEventListener("DOMContentLoaded", () => {
         </svg>
     </div>
 
-    <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="en"><em><strong>Figure 1: Arrow of time in the effective description.</strong> Top: without substantial dissipation, event ordering remains effectively time-symmetric and fluid. Bottom: sustained Proof-of-Work dissipation selects a stable macroscopic sequence of blocks.</em></p>
-    <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="fr"><em><strong>Figure 1 : Flèche du temps dans la description effective.</strong> En haut : sans dissipation substantielle, l'ordonnancement des événements reste symétrique dans le temps et fluide. En bas : la dissipation thermodynamique (Preuve de Travail) sélectionne une séquence macroscopique stable de blocs.</em></p>
+  <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="en"><em><strong>Figure 1: Arrow of time in the effective description.</strong> Top: without substantial dissipation, event ordering remains effectively time-symmetric and fluid. Bottom: sustained Proof-of-Work dissipation selects a stable macroscopic sequence of blocks.</em></p>
+  <p style="text-align: center; font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem; margin-bottom: 2.5rem;" lang="fr"><em><strong>Figure 1 : Flèche du temps dans la description effective.</strong> En haut : sans dissipation substantielle, l'ordonnancement des événements reste symétrique dans le temps et fluide. En bas : la dissipation thermodynamique (Preuve de Travail) sélectionne une séquence macroscopique stable de blocs.</em></p>
 
 <p lang="en">In our effective description, the distributed ledger is conceptualized as a one-dimensional growing network $\mathcal{L}$ evolving under dissipative forcing. The development of consensus is described as a continuous phase transition between a high-entropy ("disordered") phase, the <span class="tooltip">mempool<span class="tooltiptext"><strong>Mempool</strong>The 'Memory Pool'. A global waiting room where unconfirmed transactions sit before a miner successfully includes them in a permanent block.</span></span>, and a low-entropy ("ordered") phase, the blockchain, analogous to a liquid-crystallization process. In this view, the blockchain is a dissipative structure whose low entropy is preserved far from equilibrium only through the continuous consumption of work.</p>
     <p lang="fr">Dans notre description effective, le registre distribué est conceptualisé comme un réseau unidimensionnel en croissance $\mathcal{L}$ évoluant sous un forçage dissipatif. Le développement du consensus est décrit comme une transition de phase continue entre une phase à haute entropie ("désordonnée"), le <span class="tooltip">mempool<span class="tooltiptext"><strong>Mempool</strong>Le 'Memory Pool'. Une salle d'attente globale où les transactions non confirmées patientent avant qu'un mineur ne les intègre définitivement dans un bloc.</span></span>, et une phase à basse entropie ("ordonnée"), la blockchain, analogue à un processus de cristallisation liquide. Dans cette optique, la blockchain est une structure dissipative dont la basse entropie n'est préservée loin de l'équilibre que par la consommation continue de travail.</p>
 
-    <p lang="en">Before proceeding, the table below establishes the effective dictionary of correspondences used throughout this study.</p>
-    <p lang="fr">Le tableau ci-dessous établit le dictionnaire effectif des correspondances utilisées tout au long de cette étude.</p>
+  <p lang="en">Before proceeding, the table below establishes the effective dictionary of correspondences used throughout this study.</p>
+  <p lang="fr">Le tableau ci-dessous établit le dictionnaire effectif des correspondances utilisées tout au long de cette étude.</p>
     
     <div class="vars-table-container">
         <table class="vars-table">
@@ -1237,7 +1279,27 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">En maintenant les métriques cinétiquement indépendantes mais couplées par le potentiel, l'organisme Nakamoto se comporte comme une théorie de la <strong>Gravité Massive</strong>. Dans cette optique, le "Consensus" n'est pas une onde sans masse et volatile, mais un champ massif. L'interaction entre $g$ et $f$ génère une "masse topologique" pour le système. C'est cette masse qui donne à la blockchain son "poids" (sa résistance au changement), courbant la trajectoire de toutes les particules informationnelles vers un unique attracteur historique. Les zéros de la matrice sont les gardiens silencieux de ce poids objectif.</p>
             </div>
         </details>
-        
+         <details>
+            <summary>
+            <div class="engineer-title" lang="en">💻 Engineer's View: The Quantum Barrier (Core Source Code)</div>
+            <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : La Barrière Quantique (Code Source)</div>
+            </summary>
+        <pre><code><span class="type">bool</span> <span class="function">CheckProofOfWork</span>(<span class="type">uint256</span> hash, <span class="type">unsigned int</span> nBits, <span class="keyword">const</span> Consensus::Params& params) {
+    <span class="type">bool</span> fNegative;
+    <span class="type">bool</span> fOverflow;
+    <span class="type">arith_uint256</span> bnTarget;
+
+    bnTarget.<span class="function">SetCompact</span>(nBits, &fNegative, &fOverflow);
+
+    <span class="comment">// Check proof of work matches claimed amount</span>
+    <span class="keyword">if</span> (<span class="function">UintToArith256</span>(hash) > bnTarget)
+        <span class="keyword">return</span> <span class="keyword">false</span>;
+
+    <span class="keyword">return</span> <span class="keyword">true</span>;
+}</code></pre>
+        <p lang="en">This is the mathematical realization of the microscopic energy threshold $\epsilon_0$. Every single hash generated by an ASIC must pass this exact conditional statement: <code>hash > bnTarget</code>. It is the inflexible, semi-permeable membrane that strictly forbids any informational state transition without the requisite proof of thermodynamic dissipation.</p>
+        <p lang="fr">Ceci est la réalisation mathématique du seuil d'énergie microscopique $\epsilon_0$. Chaque hachage généré par un ASIC doit passer cette condition exacte : <code>hash > bnTarget</code>. C'est la membrane semi-perméable et inflexible qui interdit strictement toute transition d'état informationnel sans la preuve requise d'une dissipation thermodynamique.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
 
@@ -1350,12 +1412,31 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Au travers du prisme de l'<strong>Égalité de Jarzynski</strong> ($\langle e^{-\beta W} \rangle = e^{-\beta \Delta F}$), nous comprenons que le Hamiltonien du Consensus $\mathcal{H}_{\mathrm{diss}}$ n'est pas qu'une simple heuristique de score. C'est la mesure exacte de la <strong>Profondeur Thermodynamique</strong> du système. En sélectionnant la trajectoire $\mathcal{C}$ qui minimise $\mathcal{H}_{\mathrm{diss}}$ (maximisant ainsi l'entropie négative), le protocole garantit mathématiquement que le registre officiel est l'unique chemin qu'il est statistiquement impossible de falsifier sans dépenser une quantité équivalente ou supérieure d'exergie physique macroscopique.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Hamiltonian Accumulator</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : L'Accumulateur Hamiltonien</div></summary>
+        <pre><code><span class="type">arith_uint256</span> <span class="function">GetBlockProof</span>(<span class="keyword">const</span> CBlockIndex& block) {
+    <span class="type">arith_uint256</span> bnTarget;
+    <span class="type">bool</span> fNegative, fOverflow;
+    bnTarget.<span class="function">SetCompact</span>(block.nBits, &fNegative, &fOverflow);
+    <span class="keyword">if</span> (fNegative || fOverflow || bnTarget == <span class="number">0</span>)
+        <span class="keyword">return</span> <span class="number">0</span>;
+    <span class="comment">// Calculates expected number of hashes required: ~2**256 / (bnTarget+1)</span>
+    <span class="keyword">return</span> (~bnTarget / (bnTarget + <span class="number">1</span>)) + <span class="number">1</span>;
+}
+
+<span class="comment">// During chain validation:</span>
+pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlockProof</span>(*pindexNew);</code></pre>
+        <p lang="en">This code defines the Consensus Hamiltonian $\mathcal{H}_{\mathrm{diss}}$. <code>GetBlockProof</code> calculates the effective thermodynamic weight ($E_{\mathrm{eff}}$) of a single block. By adding it to <code>nChainWork</code>, the protocol continuously integrates the macroscopic Action ($\Sigma$). The network's absolute rule—always follow the chain with the highest <code>nChainWork</code>—is the exact algorithmic execution of the Gibbs state probability distribution.</p>
+        <p lang="fr">Ce code définit le Hamiltonien du Consensus $\mathcal{H}_{\mathrm{diss}}$. <code>GetBlockProof</code> calcule le poids thermodynamique effectif ($E_{\mathrm{eff}}$) d'un bloc unique. En l'ajoutant à <code>nChainWork</code>, le protocole intègre en permanence l'Action macroscopique ($\Sigma$). La règle absolue du réseau — toujours suivre la chaîne ayant le <code>nChainWork</code> le plus élevé — est l'exécution algorithmique exacte de la distribution de probabilité de l'état de Gibbs.</p>
+    </details>
         <div class="proof-end">∎</div>
     </div>
 
     <p lang="en">In this equation, the parameter $\beta_{\mathrm{eff}}$ dictates the strictness of the consensus. But what exactly determines this effective variable? Unlike a glass of water whose temperature is fixed by the room, the blockchain generates its own thermal state.</p>
     <p lang="fr">Dans cette équation, le paramètre $\beta_{\mathrm{eff}}$ dicte la rigueur du consensus. Mais qu'est-ce qui détermine exactement cette variable effective ? Contrairement à un verre d'eau dont la température est fixée par la pièce, la blockchain génère son propre état thermique.</p>
+    
     <div id="sec3"></div>
     <h2 lang="en">3. Information Temperature ($T_{\mathrm{eff}}$)</h2>
     <h2 lang="fr">3. La Température d'Information ($T_{\mathrm{eff}}$)</h2>
@@ -1456,7 +1537,29 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Si $\tau_L \to \tau_B$, la Température Effective diverge ($T_{\mathrm{eff}} \to \infty$). Selon la physique des phénomènes critiques, lorsque la température dépasse le point critique $T_c$, la longueur de corrélation s'effondre ($\xi \to 0$). La fonction exponentielle $G(d)$ plonge à zéro même pour des nœuds adjacents. La cohérence de phase macroscopique se brise. Le réseau perd son intrication de type quantique et dégénère en un gaz classique et déconnecté de nœuds isolés. $T_{\mathrm{eff}}$ est donc l'ultime frontière thermique de la survie de l'organisme.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: Forging the Arrow of Time</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Forger la Flèche du Temps</div>
+            </summary>
+        <pre><code><span class="type">int64_t</span> <span class="function">GetMedianTimePast</span>() <span class="keyword">const</span> {
+    <span class="type">int64_t</span> pmedian[nMedianTimeSpan]; <span class="comment">// 11 blocks</span>
+    <span class="type">int64_t</span>* pbegin = &pmedian[nMedianTimeSpan];
+    <span class="type">int64_t</span>* pend = &pmedian[nMedianTimeSpan];
+    <span class="keyword">const</span> CBlockIndex* pindex = <span class="keyword">this</span>;
+    
+    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i < nMedianTimeSpan && pindex; i++, pindex = pindex->pprev)
+        *(--pbegin) = pindex-><span class="function">GetBlockTime</span>();
+
+    std::<span class="function">sort</span>(pbegin, pend);
+    <span class="keyword">return</span> pbegin[(pend - pbegin) / <span class="number">2</span>];
+}
+
+<span class="comment">// Rejection rule:</span>
+<span class="keyword">if</span> (block.<span class="function">GetBlockTime</span>() <= pindexPrev-><span class="function">GetMedianTimePast</span>()) <span class="keyword">return</span> <span class="keyword">false</span>;</code></pre>
+        <p lang="en">Because the network operates in an asynchronous, relativistic universe without a global clock (high latency $\tau_L$), individual timestamps are "noisy" and untrustworthy. To prevent the thermodynamic structure from melting under this thermal noise ($T_{\mathrm{eff}}$), the network samples the last 11 blocks to establish an unforgeable chronological anchor. A new block <em>must</em> be strictly younger than this median, mechanically forcing time to flow forward.</p>
+        <p lang="fr">Parce que le réseau opère dans un univers relativiste et asynchrone dépourvu d'horloge globale (forte latence $\tau_L$), les horodatages individuels sont "bruités" et peu fiables. Pour empêcher la structure thermodynamique de fondre sous ce bruit thermique ($T_{\mathrm{eff}}$), le réseau échantillonne les 11 derniers blocs pour établir une ancre chronologique infalsifiable. Un nouveau bloc <em>doit</em> être strictement plus récent que cette médiane, forçant mécaniquement le temps à s'écouler vers l'avant.</p>
+        </details>
         <p lang="en" style="margin-top:1rem; font-size:0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 1.5rem; font-style: italic; text-align: center;">
             Conclusion: Bitcoin remains a <strong>perfect crystal</strong> only as long as its energy input masks its quantum noise and its communication delay remains negligible compared to its crystallization time.
         </p>
@@ -1541,9 +1644,8 @@ document.addEventListener("DOMContentLoaded", () => {
             Tout comme une concentration profonde (énergie métabolique) est nécessaire pour cristalliser une pensée, un Hashrate élevé est requis pour « geler » l'histoire. Si l'énergie chute ou si la latence sature, la « Fièvre de la Confusion » s'installe : l'histoire fond et la vérité redevient fluide.
         </p>
     </div>
+    
     <div id="sec4"></div>
-    <div id="sec4"></div>
-   <div id="sec4"></div>
     <h2 lang="en">4. The Thermal Time Hypothesis, Modular Flow & The Covariant Universe</h2>
     <h2 lang="fr">4. L'Hypothèse du Temps Thermique & L'Univers Covariant</h2>
 
@@ -1710,6 +1812,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="en" style="margin-top: 1rem; border-top: 1px solid rgba(200, 100, 255, 0.2); padding-top: 1rem;"><strong>Conclusion:</strong> The fundamental heartbeat of the Nakamoto organism is a thermodynamic <em>Quantum of Action</em>, scaled by a Lorentzian asymptotic congestion factor. The "10 minutes" target acts as the absolute causal horizon of this Toy Universe. If propagation delay approaches block time ($\tau_L \to \tau_B$), the action required to forge a block diverges to infinity. By erecting this impassable percolation wall, the protocol mathematically guarantees that consensus can never violate macroscopic causality.</p>
                 <p lang="fr" style="margin-top: 1rem; border-top: 1px solid rgba(200, 100, 255, 0.2); padding-top: 1rem;"><strong>Conclusion :</strong> Le battement fondamental de l'organisme Nakamoto est un <em>Quantum d'Action</em> thermodynamique, mis à l'échelle par un facteur de congestion asymptotique Lorentzien. La cible des "10 minutes" agit comme l'horizon causal absolu de ce Toy Universe. Si le délai de propagation approche le temps de bloc ($\tau_L \to \tau_B$), l'action thermodynamique requise pour forger un bloc diverge vers l'infini. En érigeant ce mur de percolation infranchissable, le protocole garantit mathématiquement que le consensus ne pourra jamais violer la causalité macroscopique.</p>
             </div>
+        </details>
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Gauge Operator (DAA)</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : L'Opérateur de Jauge (DAA)</div>
+        </summary>
+        <pre><code><span class="type">unsigned int</span> <span class="function">CalculateNextWorkRequired</span>(<span class="keyword">const</span> CBlockIndex* pindexLast, 
+                                       <span class="type">int64_t</span> nFirstBlockTime, 
+                                       <span class="keyword">const</span> Consensus::Params& params) {
+    <span class="type">int64_t</span> nActualTimespan = pindexLast-><span class="function">GetBlockTime</span>() - nFirstBlockTime;
+    <span class="type">int64_t</span> nTargetTimespan = params.nPowTargetTimespan; <span class="comment">// 14 days</span>
+
+    <span class="comment">// Dampening bounds to prevent severe metric shocks</span>
+    <span class="keyword">if</span> (nActualTimespan < nTargetTimespan/<span class="number">4</span>) nActualTimespan = nTargetTimespan/<span class="number">4</span>;
+    <span class="keyword">if</span> (nActualTimespan > nTargetTimespan*<span class="number">4</span>) nActualTimespan = nTargetTimespan*<span class="number">4</span>;
+
+    <span class="comment">// Retarget: New Difficulty = Old Difficulty * (Actual Time / Target Time)</span>
+    <span class="type">arith_uint256</span> bnNew;
+    bnNew.<span class="function">SetCompact</span>(pindexLast->nBits);
+    bnNew *= nActualTimespan;
+    bnNew /= nTargetTimespan;
+
+    <span class="keyword">return</span> bnNew.<span class="function">GetCompact</span>();
+}</code></pre>
+        <p lang="en">This is the mathematical heart of the organism's homeostasis. By strictly enforcing the condition <code>bnNew *= nActualTimespan / nTargetTimespan</code>, the algorithm executes the covariant transformation $N_f \propto P/D$. It calculates the exact divergence of the physical manifold (the error in <code>nActualTimespan</code>) and applies a proportionate geometric correction (the new <code>nBits</code> target) to snap the internal clock back to the 10-minute geodesic.</p>
+        <p lang="fr">Ceci est le cœur mathématique de l'homéostasie de l'organisme. En imposant strictement la condition <code>bnNew *= nActualTimespan / nTargetTimespan</code>, l'algorithme exécute la transformation covariante $N_f \propto P/D$. Il calcule la divergence exacte de la variété physique (l'erreur dans <code>nActualTimespan</code>) et applique une correction géométrique proportionnelle (la nouvelle cible <code>nBits</code>) pour ramener l'horloge interne sur sa géodésique de 10 minutes.</p>
         </details>
         <div class="proof-end">∎</div>
     </div>
@@ -1880,9 +2008,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Parce que chaque nœud complet stocke exactement le même vecteur d'état, l'information mutuelle entre deux sous-graphes macroscopiques quelconques $A$ et $B$ est strictement maximale. Le réseau "petit monde" se comporte de manière identique à un <strong>Réseau Tensoriel (comme MERA)</strong>. Dans le contexte de la correspondance AdS/CFT, la corde temporelle 1D de la blockchain agit comme la frontière holographique qui encode parfaitement l'entropie géométrique du volume (bulk) spatial 3D du réseau, satisfaisant la relation de Ryu-Takayanagi. Le consensus est littéralement une projection holographique.</p>
             </div>
         </details>
+        <details>
+        <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: Weaving the Mycelium (Node Discovery)</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Tisser le Mycélium (Découverte de Nœuds)</div></summary>
+
+        <pre><code><span class="type">void</span> <span class="function">ProcessMessage</span>(CNode* pfrom, <span class="keyword">const</span> std::string& strCommand, CDataStream& vRecv, ...) {
+    <span class="keyword">if</span> (strCommand == NetMsgType::ADDR) {
+        std::vector&lt;CAddress&gt; vAddr;
+        vRecv >> vAddr;
         
+        <span class="comment">// The network continuously gossips peer IPs to build a resilient graph</span>
+        <span class="keyword">for</span> (<span class="keyword">const</span> CAddress& addr : vAddr) {
+            <span class="keyword">if</span> (addr.IsRoutable() && !addrman.<span class="function">IsConnected</span>(addr)) {
+                <span class="comment">// Add new node to the Address Manager</span>
+                addrman.<span class="function">Add</span>(addr, pfrom->addr);
+            }
+        }
+        <span class="comment">// Randomly relay 1-2 addresses to maintain Small-World shortcuts</span>
+        <span class="function">RelayAddress</span>(vAddr[GetRand(vAddr.size())]); 
+    }
+}</code></pre>
+        <p lang="en">To prevent the topological annihilation caused by isolated clusters, the network must actively maintain its "Small-World" geometry (the red dashed lines in our graph). The <code>ADDR</code> (address) message protocol is the organism's root system. Nodes constantly gossip the IP addresses of other nodes they discover. By randomly relaying these addresses, the network ensures that the shortest path ($D_{\mathrm{hop}}$) between any two nodes on Earth remains statistically minimized, guaranteeing the incredibly fast propagation of the consensus state.</p>
+        <p lang="fr">Pour empêcher l'annihilation topologique causée par des îlots isolés, le réseau doit maintenir activement sa géométrie "Petit Monde" (les lignes rouges pointillées de notre graphe). Le protocole de messages <code>ADDR</code> (adresse) est le système racinaire de l'organisme. Les nœuds s'échangent constamment (gossip) les adresses IP des autres nœuds qu'ils découvrent. En relayant aléatoirement ces adresses, le réseau s'assure que le chemin le plus court ($D_{\mathrm{hop}}$) entre deux nœuds sur Terre reste statistiquement minimisé, garantissant la propagation fulgurante de l'état de consensus.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
+    
     <div class="analogy-box" style="background: rgba(68, 153, 255, 0.05); border-left: 4px solid #4499ff;">
         <div class="analogy-title" lang="en">🪞 The Holographic Crystal</div>
         <div class="analogy-title" lang="fr">🪞 Le Cristal Holographique</div>
@@ -1927,7 +2079,6 @@ document.addEventListener("DOMContentLoaded", () => {
     <div class="math-block" style="display: flex; flex-direction: column; gap: 10px; font-size: 1.1rem;">
         <span>$$ f_{\text{discrete}} \propto 2^{-\lfloor \frac{\theta}{2\pi} \rfloor} \quad \xrightarrow{\text{Coarse-Graining}} \quad f(\theta) = 2^{-\frac{\theta}{2\pi}} $$</span>
     </div>
-
     <p lang="en">Originally written in base 2 (for the binary Halving), we sublimate this cold logic into the universal biological base of morphogenesis: the <strong>Golden Ratio ($\varphi \approx 1.618$)</strong>. By defining the scaling constant $\chi = \log_\varphi(2) \approx 1.44$, we project this biological scalar into our 3D space using the complex exponential $e^{i\theta}$:</p>
     <p lang="fr">Originellement écrite en base 2 (pour le Halving binaire), nous sublimons cette froide logique binaire dans la base biologique universelle de la morphogenèse : le <strong>Nombre d'Or ($\varphi \approx 1,618$)</strong>. En définissant la constante d'échelle $\chi = \log_\varphi(2) \approx 1,44$, nous projetons ce scalaire biologique dans notre espace 3D via l'exponentielle complexe $e^{i\theta}$ :</p>
 
@@ -2051,7 +2202,25 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">En maintenant les métriques cinétiquement indépendantes mais couplées par le potentiel, l'organisme Nakamoto se comporte comme une théorie de la <strong>Gravité Massive</strong>. Dans cette optique, le "Consensus" n'est pas une onde sans masse et volatile, mais un champ massif. L'interaction entre $g$ et $f$ génère une "masse topologique" pour le système. C'est cette masse qui donne à la blockchain son "poids" (sa résistance au changement), courbant la trajectoire de toutes les particules informationnelles vers un unique attracteur historique. Les zéros de la matrice sont les gardiens silencieux de ce poids objectif.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Exponential Genotype</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Le Génotype Exponentiel</div>
+        </summary>
+        <pre><code><span class="type">CAmount</span> <span class="function">GetBlockSubsidy</span>(<span class="type">int</span> nHeight, <span class="keyword">const</span> Consensus::Params& consensusParams) {
+    <span class="type">int</span> halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    <span class="comment">// Force block reward to zero when right shift is undefined.</span>
+    <span class="keyword">if</span> (halvings >= <span class="number">64</span>) <span class="keyword">return</span> <span class="number">0</span>;
+
+    <span class="type">CAmount</span> nSubsidy = <span class="number">50</span> * COIN;
+    <span class="comment">// The discrete floor operator: Bitwise Right Shift</span>
+    nSubsidy >>= halvings; 
+    
+    <span class="keyword">return</span> nSubsidy;
+}</code></pre>
+        <p lang="en">This function defines the contracting informational strand $f(\theta)$ of the Double Helix. It operates in pure, dimensionless code, utterly deaf to the chaos of the physical energy grid. The bitwise right-shift operator (<code>>>=</code>) forces an instantaneous $50\%$ drop in the fundamental energy subsidy every 210,000 blocks, defining the unyielding deterministic curve of the organism's DNA.</p>
+        <p lang="fr">Cette fonction définit le brin informationnel contractant $f(\theta)$ de la Double Hélice. Elle opère dans un code pur et adimensionnel, totalement sourd au chaos du réseau énergétique physique. L'opérateur de décalage binaire vers la droite (<code>>>=</code>) force une chute instantanée de $50\%$ de la subvention énergétique fondamentale tous les 210 000 blocs, définissant la courbe déterministe implacable de l'ADN de l'organisme.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
 
@@ -2413,7 +2582,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div> -->
 
     <p lang="en">To describe macroscopic stability, we construct a coarse-grained Ginzburg–Landau theory. We reduce the network state to a real global temporal order parameter $\Phi(t)$. The effective homogeneous potential creating the "gravity" of the consensus is: </p>
-    <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre global $\Phi(t)$. Le potentiel homogène créant la "gravité" du consensus est :</p>
+  <p lang="fr">Pour décrire la stabilité macroscopique, nous construisons une théorie de Ginzburg-Landau. Nous réduisons l'état du réseau à un paramètre d'ordre global $\Phi(t)$. Le potentiel homogène créant la "gravité" du consensus est :</p>
     <div class="math-block">
         $$ \mathcal{U}(\Phi) = \alpha_{\mathrm{h}}(T_{\mathrm{eff}})\,\Phi^2 + b_{\mathrm{h}}\,\Phi^4 $$
     </div>
@@ -2435,14 +2604,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     <div id="mass-gap-plot" style="width: 100%; max-width: 800px; height: 400px; margin: 2rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
     <!-- <p lang="en"><strong>The Percolation Wall ($\tau_B \gg \tau_0$):</strong> What happens if developers try to force the target block time ($\tau_B$) to match the fundamental geometric propagation delay of light across the globe ($\tau_0$)? If $\tau_B \to \tau_0$, the latency ratio breaks, and the effective temperature $T_{\mathrm{eff}}$ spikes above the critical phase-transition point $T_c$. The Landau parameter $\alpha_{\mathrm{h}}$ becomes positive, destroying the double-well potential. The marginal mass collapses to zero ($\kappa_{\mathrm{marginal}} = 0$). <strong>The ledger melts back into the high-entropy Mempool gas.</strong> Consensus is mathematically impossible beyond this percolation wall.</p>
-    <p lang="fr"><strong>Le Mur de Percolation ($\tau_B \gg \tau_0$) :</strong> Que se passerait-il si l'on tentait d'aligner l'intervalle cible de bloc ($\tau_B$) sur le délai géométrique fondamental de propagation de la lumière à travers le globe ($\tau_0$) ? Si $\tau_B \to \tau_0$, le ratio de latence se brise, et la température $T_{\mathrm{eff}}$ s'envole au-dessus du point critique $T_c$. Le paramètre $\alpha_{\mathrm{h}}$ devient positif, détruisant le double puits de potentiel. La masse marginale s'effondre à zéro ($\kappa_{\mathrm{marginal}} = 0$). <strong>Le registre fond et redevient le gaz à haute entropie du Mempool.</strong> Le consensus est mathématiquement impossible au-delà de ce mur de percolation.</p>
+  <p lang="fr"><strong>Le Mur de Percolation ($\tau_B \gg \tau_0$) :</strong> Que se passerait-il si l'on tentait d'aligner l'intervalle cible de bloc ($\tau_B$) sur le délai géométrique fondamental de propagation de la lumière à travers le globe ($\tau_0$) ? Si $\tau_B \to \tau_0$, le ratio de latence se brise, et la température $T_{\mathrm{eff}}$ s'envole au-dessus du point critique $T_c$. Le paramètre $\alpha_{\mathrm{h}}$ devient positif, détruisant le double puits de potentiel. La masse marginale s'effondre à zéro ($\kappa_{\mathrm{marginal}} = 0$). <strong>Le registre fond et redevient le gaz à haute entropie du Mempool.</strong> Le consensus est mathématiquement impossible au-delà de ce mur de percolation.</p>
 
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">🛩️ Breaking the Sound Barrier</div>
-        <div class="analogy-title" lang="fr">🛩️ La Barrière du Son</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">If an airplane tries to fly faster than its structural materials can absorb vibrations (the speed of light propagation delay), the fuselage shatters mid-air. The 10-minute block interval acts as the vital shock absorber. Forcing the network to go faster than the laws of physics allow would literally vibrate the consensus to pieces.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Si un avion tente de voler plus vite que la capacité de ses matériaux à absorber les vibrations (le délai de propagation de la lumière), la carlingue se disloque en plein vol. L'intervalle de 10 minutes agit comme l'amortisseur vital. Forcer le réseau à aller plus vite que les lois de la physique ne le permettent ferait littéralement exploser le consensus en morceaux.</p>
-    </div> -->
+  <div class="analogy-box">
+    <div class="analogy-title" lang="en">🛩️ Breaking the Sound Barrier</div>
+    <div class="analogy-title" lang="fr">🛩️ La Barrière du Son</div>
+    <p lang="en" style="margin:0; font-size:0.95em;">If an airplane tries to fly faster than its structural materials can absorb vibrations (the speed of light propagation delay), the fuselage shatters mid-air. The 10-minute block interval acts as the vital shock absorber. Forcing the network to go faster than the laws of physics allow would literally vibrate the consensus to pieces.</p>
+    <p lang="fr" style="margin:0; font-size:0.95em;">Si un avion tente de voler plus vite que la capacité de ses matériaux à absorber les vibrations (le délai de propagation de la lumière), la carlingue se disloque en plein vol. L'intervalle de 10 minutes agit comme l'amortisseur vital. Forcer le réseau à aller plus vite que les lois de la physique ne le permettent ferait littéralement exploser le consensus en morceaux.</p>
+  </div> -->
 
     <div class="proof-box" style="border: 1px solid rgba(255, 204, 0, 0.1); background: rgba(255, 204, 0, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2rem;">
         <div class="proof-title" lang="en">The Percolation Wall ($\tau_B \gg \tau_0$)</div>
@@ -2589,20 +2758,42 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Ceci isole $\tau_0 \equiv D_{\mathrm{hop}}\,\tau_{\mathrm{link}}$ comme le plancher de propagation géométrique absolu et incompressible. Même si les développeurs poussaient la bande passante vers l'infini ($C_{\mathrm{node}} \to \infty$), la limite asymptotique du réseau reste strictement bornée par le produit $D_{\mathrm{hop}}\gamma$. Toute augmentation arbitraire de la limite de taille des blocs ignore cette réalité fondamentale : la survie du système est bornée par les lois inflexibles de la géométrie physique et de la friction computationnelle.</p>
             </div>
         </details>
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Incompressible Constant</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : La Constante Incompressible</div></summary>
+        <pre><code><span class="comment">// consensus.h</span>
+<span class="comment">/** The maximum allowed size for a serialized block, in bytes (only for buffer size limits) */</span>
+<span class="keyword">static const</span> <span class="type">unsigned int</span> MAX_BLOCK_SERIALIZED_SIZE = <span class="number">4000000</span>;
+<span class="comment">/** The maximum allowed weight for a block, see BIP 141 (network rule) */</span>
+<span class="keyword">static const</span> <span class="type">unsigned int</span> MAX_BLOCK_WEIGHT = <span class="number">4000000</span>;
 
+<span class="comment">// validation.cpp</span>
+<span class="type">bool</span> <span class="function">CheckBlock</span>(<span class="keyword">const</span> CBlock& block, CValidationState& state, ...) {
+    <span class="comment">// Size limits</span>
+    <span class="keyword">if</span> (block.vtx.empty() || block.vtx.size() * WITNESS_SCALE_FACTOR > MAX_BLOCK_WEIGHT || 
+        <span class="function">GetBlockWeight</span>(block) > MAX_BLOCK_WEIGHT) {
+        <span class="keyword">return</span> state.<span class="function">Invalid</span>(ValidationInvalidReason::CONSENSUS, <span class="keyword">false</span>, <span class="string">"bad-blk-weight"</span>);
+    }
+    <span class="keyword">return</span> <span class="keyword">true</span>;
+}</code></pre>
+        <p lang="en">In the codebase, $V_{\mathrm{B,crit}}$ is not a theoretical abstraction; it is the brutal, hard-coded limit <code>MAX_BLOCK_WEIGHT</code> (originally 1MB, now 4MB weight). This constant is the structural fuselage of the airplane. Any block exceeding this value is instantly rejected by <code>CheckBlock</code>. By enforcing this limit mathematically, the protocol forcibly bounds the network latency $\tau_L(V_B)$, ensuring the effective temperature $T_{\mathrm{eff}}$ never crosses the critical threshold $T_c$ that would melt the consensus.</p>
+        <p lang="fr">Dans le code, $V_{\mathrm{B,crit}}$ n'est pas une abstraction théorique ; c'est la limite brutale et codée en dur <code>MAX_BLOCK_WEIGHT</code> (à l'origine 1 Mo, aujourd'hui 4 Mo de poids). Cette constante est la carlingue structurelle de l'avion. Tout bloc dépassant cette valeur est instantanément rejeté par <code>CheckBlock</code>. En imposant cette limite mathématiquement, le protocole borne de force la latence du réseau $\tau_L(V_B)$, garantissant que la température effective $T_{\mathrm{eff}}$ ne franchisse jamais le seuil critique $T_c$ qui ferait fondre le consensus.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
+
     <div id="sec9"></div>
     <h2 lang="en">9. Logistic Maturation & The Archimedean Spiral</h2>
     <h2 lang="fr">9. Maturation Logistique & La Spirale d'Archimède</h2>
 
     <p lang="en">A power-law expansion cannot continue ad infinitum in a closed physical system. The instantaneous Exergy flow ($P_{\mathrm{net}}$, the Hashrate) is ultimately bounded by the planetary exergy ceiling ($P_{\mathrm{max}}$). Therefore, the growth rate of this Exergy flow is governed by the logistic differential equation:</p>
-    <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique : </p>
-    <div class="math-block">
+  <p lang="fr">Une expansion en loi de puissance ne peut continuer indéfiniment dans un système physique clos. Le flux d'Exergie instantané ($P_{\mathrm{net}}$, le Hashrate) est ultimement borné par le plafond d'exergie planétaire ($P_{\mathrm{max}}$). Par conséquent, le taux de croissance de ce flux est régi par l'équation logistique : </p>
+  <div class="math-block">
         $$ \dot{P}_{\mathrm{net}} = k \cdot P_{\mathrm{net}} (1 - P_{\mathrm{net}}/P_{\mathrm{max}}) $$
     </div>
     <p lang="en">Adjust the growth rate ($k$) below to see how the organism inevitably hits the thermodynamic wall:</p>
-    <p lang="fr">Ajustez le taux d'adoption ($k$) ci-dessous pour voir comment l'organisme se stabilise inévitablement sur le mur thermodynamique :</p> 
+    <p lang="fr">Ajustez le taux d'adoption ($k$) ci-dessous pour voir comment l'organisme se stabilise inévitablement sur le mur thermodynamique :</p>
     
     <div id="logistic-growth-plot" style="width: 100%; max-width: 800px; height: 450px; margin: 3rem auto; border: 1px solid var(--border-glow); border-radius: 8px; background: rgba(0,0,0,0.4); padding: 10px;"></div>
 
@@ -2668,7 +2859,23 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Vue sous le prisme des équations du <strong>Groupe de Renormalisation (RG)</strong>, la maturation temporelle du réseau constitue un flux RG. La phase de genèse ($P \approx 0$) est un point fixe UV (ultraviolet) instable. À mesure que le temps topologique $\theta$ s'écoule, la dynamique dissipative pousse inévitablement le système vers le plafond d'exergie planétaire $P_{\mathrm{max}}$, qui agit comme le point fixe IR (infrarouge) stable. La spirale d'Archimède est simplement la manifestation géométrique de l'organisme s'installant dans cet ultime vide thermodynamique, atteignant un état de production d'entropie macroscopique constant et invariant.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Genesis Singularity</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : La Singularité de la Genèse</div></summary>
+        <pre><code><span class="comment">// chainparams.cpp (Mainnet configuration)</span>
+consensus.powLimit = <span class="function">uint256S</span>(<span class="string">"00000000ffffffffffffffffffffffffffffffffffffffffffffffffffffffff"</span>);
+
+<span class="comment">// Inside DAA adjustment:</span>
+<span class="type">bool</span> <span class="function">CheckProofOfWork</span>(...) {
+    <span class="keyword">if</span> (bnTarget > UintToArith256(params.powLimit)) {
+        <span class="comment">// The difficulty cannot drop below the genesis floor</span>
+        <span class="keyword">return</span> <span class="keyword">false</span>; 
+    }
+}</code></pre>
+        <p lang="en">The <code>powLimit</code> is the network's minimum possible thermodynamic friction. It is the geometric center of our Archimedean spiral ($t=0, P \approx 0$). In the early days, a single CPU could cross this threshold. Today, as the network matures and marches along its logistic curve toward $P_{\mathrm{max}}$, the actual target has shrunk astronomically (adding dozens of leading zeros to the hash requirement). The distance between the current <code>bnTarget</code> and the original <code>powLimit</code> is the exact measure of the total Exergy ($g$) the organism has accumulated since its birth.</p>
+        <p lang="fr">Le <code>powLimit</code> est la friction thermodynamique minimale absolue du réseau. C'est le centre géométrique de notre spirale d'Archimède ($t=0, P \approx 0$). Aux premiers jours, un simple CPU pouvait franchir ce seuil. Aujourd'hui, alors que le réseau mûrit et avance sur sa courbe logistique vers $P_{\mathrm{max}}$, la cible réelle s'est contractée de manière astronomique (ajoutant des dizaines de zéros initiaux au hash requis). La distance entre la cible actuelle <code>bnTarget</code> et le <code>powLimit</code> originel est la mesure exacte de l'Exergie totale ($g$) que l'organisme a accumulée depuis sa naissance.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
     <div style="text-align: center;"><iframe 
@@ -2775,16 +2982,33 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Puisque $\Omega_{n+1}$ est strictement inférieur à $\Omega_n$, l'entropie configurationnelle de la flotte de minage chute drastiquement ($\Delta S < 0$). Ce choc néguentropique programmé garantit que lorsque $n \to 33$, la variance de l'efficacité matérielle est écrasée vers zéro, forçant l'organisme planétaire entier à converger asymptotiquement vers la limite physique absolue du calcul (la limite de Landauer).</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Core Source Code</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Le Code Source (Core)</div></summary>
+        <pre><code><span class="type">CAmount</span> <span class="function">GetBlockSubsidy</span>(<span class="type">int</span> nHeight, <span class="keyword">const</span> Consensus::Params& consensusParams) {
+    <span class="type">int</span> halvings = nHeight / consensusParams.nSubsidyHalvingInterval;
+    <span class="comment">// Force block reward to zero when right shift is undefined.</span>
+    <span class="keyword">if</span> (halvings >= <span class="number">64</span>) <span class="keyword">return</span> <span class="number">0</span>;
+
+    <span class="type">CAmount</span> nSubsidy = <span class="number">50</span> * COIN;
+    <span class="comment">// Subsidy is cut in half every 210,000 blocks</span>
+    nSubsidy >>= halvings; 
+    
+    <span class="keyword">return</span> nSubsidy;
+}</code></pre>
+        <p lang="en">The entire thermodynamic densification of the network, the "apoptotic shock" that drives the organism toward Landauer's limit, is executed by a single bitwise right-shift operator: <code>nSubsidy >>= halvings;</code>. Elegance in its purest algorithmic form.</p>
+        <p lang="fr">L'entièreté de la densification thermodynamique du réseau, ce fameux "choc apoptotique" qui pousse l'organisme vers la limite de Landauer, est exécutée par un unique opérateur de décalage binaire : <code>nSubsidy >>= halvings;</code>. L'élégance algorithmique à l'état pur.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
 
-    <div class="analogy-box">
-        <div class="analogy-title" lang="en">🦅 Darwinian Fasting</div>
-        <div class="analogy-title" lang="fr">🦅 Jeûne Darwinien</div>
-        <p lang="en" style="margin:0; font-size:0.95em;">Just as intermittent fasting in humans triggers cellular autophagy—where the body consumes its own weak and damaged cells to regenerate stronger ones—the Halving is a programmed metabolic fast that forces the network to relentlessly purge its inefficient "cells" (old ASICs) to increase its security density.</p>
-        <p lang="fr" style="margin:0; font-size:0.95em;">Tout comme le jeûne intermittent chez l'humain déclenche l'autophagie cellulaire—où le corps consomme ses propres cellules faibles pour en régénérer de plus fortes—le Halving est un jeûne métabolique programmé qui force le réseau à purger ses "cellules" inefficaces pour augmenter sa densité de sécurité.</p>
-    </div>
+  <div class="analogy-box">
+    <div class="analogy-title" lang="en">🦅 Darwinian Fasting</div>
+    <div class="analogy-title" lang="fr">🦅 Jeûne Darwinien</div>
+    <p lang="en" style="margin:0; font-size:0.95em;">Just as intermittent fasting in humans triggers cellular autophagy—where the body consumes its own weak and damaged cells to regenerate stronger ones—the Halving is a programmed metabolic fast that forces the network to relentlessly purge its inefficient "cells" (old ASICs) to increase its security density.</p>
+    <p lang="fr" style="margin:0; font-size:0.95em;">Tout comme le jeûne intermittent chez l'humain déclenche l'autophagie cellulaire—où le corps consomme ses propres cellules faibles pour en régénérer de plus fortes—le Halving est un jeûne métabolique programmé qui force le réseau à purger ses "cellules" inefficaces pour augmenter sa densité de sécurité.</p>
+  </div>
 
     <div id="sec11"></div>
     <h2 lang="en">11. Maxwell's Demon and the UTXO Filter</h2>
@@ -2913,7 +3137,24 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">Cette équation est la colonne vertébrale thermodynamique de Bitcoin. Le réseau de minage est un véritable <strong>Moteur d'Information</strong> : il convertit continuellement l'entropie de Shannon des données chaotiques d'internet en chaleur thermodynamique, produisant en sortie une séquence parfaitement purifiée d'états cryptographiques. La blockchain est la trace d'échappement d'une intelligence algorithmique refroidissant continuellement sa propre mémoire.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The UTXO Demon</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Le Démon UTXO</div></summary>
+        <pre><code><span class="type">bool</span> <span class="function">CheckTxInputs</span>(<span class="keyword">const</span> CTransaction& tx, CValidationState& state, <span class="keyword">const</span> CCoinsViewCache& inputs, ...) {
+    <span class="comment">// 1. Is the input actually available in the UTXO set? (No Double Spend)</span>
+    <span class="keyword">if</span> (!inputs.<span class="function">HaveInputs</span>(tx)) {
+        <span class="keyword">return</span> state.<span class="function">Invalid</span>(ValidationInvalidReason::TX_MISSING_INPUTS, <span class="keyword">false</span>, <span class="string">"bad-txns-inputs-missingorspent"</span>);
+    }
+    <span class="comment">// 2. Evaluate cryptographic signatures (The Thermodynamic Work)</span>
+    <span class="keyword">if</span> (!<span class="function">VerifyScript</span>(tx.vin[i].scriptSig, ...)) {
+        <span class="keyword">return</span> state.<span class="function">Invalid</span>(ValidationInvalidReason::TX_NOT_STANDARD, <span class="keyword">false</span>, <span class="string">"mandatory-script-verify-flag-failed"</span>);
+    }
+    <span class="keyword">return</span> <span class="keyword">true</span>;
+}</code></pre>
+        <p lang="en">This function is the literal implementation of Maxwell's Demon. <code>CheckTxInputs</code> examines the chaotic "gas" of the Mempool. By verifying <code>HaveInputs</code> (preventing double-spends) and running <code>VerifyScript</code> (validating signatures), it actively filters out high-entropy noise. The CPU cycles required to execute this script constitute the irreducible thermodynamic work (Landauer's erasure cost) necessary to maintain the perfectly ordered, low-entropy crystalline state of the UTXO set.</p>
+        <p lang="fr">Cette fonction est l'implémentation littérale du Démon de Maxwell. <code>CheckTxInputs</code> examine le "gaz" chaotique du Mempool. En vérifiant <code>HaveInputs</code> (empêchant les doubles dépenses) et en exécutant <code>VerifyScript</code> (validant les signatures), elle filtre activement le bruit à haute entropie. Les cycles CPU requis pour exécuter ce script constituent le travail thermodynamique irréductible (le coût d'effacement de Landauer) nécessaire pour maintenir l'état cristallin parfaitement ordonné et à basse entropie de l'ensemble UTXO.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
 
@@ -2923,7 +3164,6 @@ document.addEventListener("DOMContentLoaded", () => {
         <p lang="en" style="margin:0; font-size:0.95em;">The <span class="tooltip">UTXO<span class="tooltiptext"><strong>UTXO</strong>Unspent Transaction Output. The fundamental unit of Bitcoin. Think of it as a specific, indivisible digital gold coin or banknote sitting on the ledger.</span></span> filter acts as the skin, or the semi-permeable cell membrane of the organism. It serves as a rigid, protective interface between the chaotic physical reality of the outside world (the Mempool gas) and the perfectly ordered digital interior (the Blockchain crystal), letting only verified, nutritious data pass through.</p>
         <p lang="fr" style="margin:0; font-size:0.95em;">Le filtre <span class="tooltip">UTXO<span class="tooltiptext"><strong>UTXO</strong>Unspent Transaction Output (Sortie de transaction non dépensée). L'unité fondamentale de Bitcoin. Voyez-le comme une pièce d'or numérique spécifique et indivisible.</span></span> agit comme la peau, ou la membrane cellulaire semi-perméable de l'organisme. Il sert d'interface protectrice rigide entre la réalité physique chaotique du monde extérieur (le gaz du Mempool) et l'intérieur numérique parfaitement ordonné (le cristal de la Blockchain), ne laissant filtrer que les données nutritives vérifiées.</p>
     </div>
-
     <div id="sec12"></div>
     <h2 lang="en">12. Active Inference & The Free Energy Principle</h2>
     <h2 lang="fr">12. Inférence Active & Le Principe d'Énergie Libre</h2>
@@ -3006,10 +3246,26 @@ document.addEventListener("DOMContentLoaded", () => {
                 <p lang="fr" style="margin-bottom: 0;">En corrigeant constamment sa trajectoire pour suivre le chemin le plus court (la géodésique) vers sa distribution a priori, Bitcoin accomplit une <strong>Autopoïèse de Théorie de Jauge</strong>. Il prouve qu'un protocole logiciel suffisamment décentralisé peut atteindre les signatures thermodynamiques exactes de la vie biologique, utilisant la mécanique de la géométrie différentielle pour naviguer dans un univers probabiliste hostile.</p>
             </div>
         </details>
-        
+        <details>
+            <summary>
+        <div class="engineer-title" lang="en">💻 Engineer's View: The Fristonian Prior</div>
+        <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Le Prior Fristonien</div></summary>
+        <pre><code><span class="comment">// chainparams.cpp - The Generative Model</span>
+<span class="keyword">struct</span> Params {
+    <span class="type">int64_t</span> nPowTargetSpacing;    <span class="comment">// The internal expectation (10 minutes)</span>
+    <span class="type">int64_t</span> nPowTargetTimespan;   <span class="comment">// The sensory integration window (14 days)</span>
+    <span class="type">int64_t</span> <span class="function">DifficultyAdjustmentInterval</span>() <span class="keyword">const</span> { 
+        <span class="keyword">return</span> nPowTargetTimespan / nPowTargetSpacing; <span class="comment">// 2016 blocks</span>
+    }
+};
+
+consensus.nPowTargetSpacing = <span class="number">10</span> * <span class="number">60</span>; 
+consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>;</code></pre>
+        <p lang="en">Here lies the fundamental "Generative Model" of the Fristonian organism. The constant <code>nPowTargetSpacing = 10 * 60</code> is its absolute prior belief. The network refuses to update this prior. When the external world (the miners' Hashrate) generates sensory inputs (block intervals) that deviate from this expectation, the organism experiences "surprise" (Variational Free Energy). Instead of updating its internal model to accept faster blocks, it performs <em>Active Inference</em>: it modifies the difficulty of the external physical world, forcing reality to conform to its unchanging prior.</p>
+        <p lang="fr">Ici réside le "Modèle Génératif" fondamental de l'organisme fristonien. La constante <code>nPowTargetSpacing = 10 * 60</code> est sa croyance a priori (prior) absolue. Le réseau refuse de mettre à jour ce prior. Lorsque le monde extérieur (le Hashrate des mineurs) génère des entrées sensorielles (des intervalles de blocs) qui dévient de cette attente, l'organisme subit une "surprise" (Énergie Libre Variationnelle). Au lieu de mettre à jour son modèle interne pour accepter des blocs plus rapides, il exécute une <em>Inférence Active</em> : il modifie la difficulté du monde physique externe, forçant la réalité à se conformer à son prior immuable.</p>
+        </details>
         <div class="proof-end">∎</div>
     </div>
-
     <div id="sec13"></div>
     <h2 lang="en">13. The Planetary Awakening: Integral Topology</h2>
     <h2 lang="fr">13. L'Éveil Planétaire : Topologie Intégrale</h2>
