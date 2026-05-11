@@ -145,10 +145,63 @@
         /* Footer */
         footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; }
         
+        /* ========================================== */
+        /* SECTION FEEDBACK (FORMSPREE & POPUP)       */
+        /* ========================================== */
+        .feedback-container {
+            margin: 5rem auto 4rem; padding: 2.5rem; background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 170, 0, 0.2); border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 700px; text-align: center;
+        }
+        .feedback-title {
+            color: var(--sun-yellow); font-size: 1.5rem; text-transform: uppercase; 
+            letter-spacing: 2px; margin-bottom: 0.5rem; font-weight: 800; font-family: 'Helvetica Neue', sans-serif;
+        }
+        .feedback-desc { color: #aaa; font-style: italic; font-size: 0.95rem; margin-bottom: 2rem; }
+        .feedback-label { display: block; color: #d4d4d4; margin-bottom: 0.8rem; font-size: 1.05rem; }
+        .feedback-anon { font-size: 0.85rem; color: #888; font-style: italic; margin-bottom: 1.5rem; }
+        
+        .star-rating { display: flex; flex-direction: row-reverse; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+        .star-rating input { display: none; }
+        .star-rating label { color: #333; font-size: 2.5rem; cursor: pointer; transition: color 0.2s ease, transform 0.2s ease; }
+        .star-rating label:hover, .star-rating label:hover ~ label, .star-rating input:checked ~ label {
+            color: var(--sun-yellow); text-shadow: 0 0 15px rgba(255, 204, 0, 0.5);
+        }
+        .star-rating label:hover { transform: scale(1.1); }
+        
+        .feedback-textarea {
+            width: 100%; background: #050505; border: 1px solid rgba(255, 204, 0, 0.2);
+            border-radius: 8px; color: #fff; padding: 1.2rem; font-family: 'Georgia', serif;
+            font-size: 1.1rem; min-height: 180px; resize: vertical; margin-bottom: 1.5rem;
+            outline: none; transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .feedback-textarea:focus { border-color: var(--sun-yellow); box-shadow: 0 0 15px rgba(255, 204, 0, 0.15); }
+        
+        .feedback-submit {
+            background: rgba(255, 170, 0, 0.1); border: 1px solid var(--sun-yellow); color: var(--sun-yellow); 
+            padding: 12px 35px; border-radius: 30px; cursor: pointer; font-family: 'Helvetica Neue', sans-serif; 
+            font-weight: bold; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s ease; backdrop-filter: blur(4px);
+        }
+        .feedback-submit:hover:not(:disabled) {
+            background: rgba(255, 170, 0, 0.3); box-shadow: 0 0 25px rgba(255, 170, 0, 0.5); transform: scale(1.05);
+        }
+        .feedback-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        .feedback-popup {
+            display: none; position: fixed; bottom: 30px; right: 30px; 
+            background: rgba(68, 255, 102, 0.1); border: 1px solid #44ff66; color: #44ff66; 
+            padding: 15px 25px; border-radius: 8px; box-shadow: 0 5px 20px rgba(68, 255, 102, 0.2); 
+            z-index: 1000; backdrop-filter: blur(5px); align-items: center; gap: 10px; 
+            font-family: 'Helvetica Neue', sans-serif; font-weight: bold; letter-spacing: 1px; 
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+
         @media (max-width: 768px) {
             .nav-center { display: none; }
             .lang-toggle { margin-left: auto; border-left: none; padding-left: 0; }
             .research-note { padding: 1.5rem; }
+            .feedback-popup { left: 20px; right: 20px; bottom: 20px; text-align: center; }
         }
     </style>
 </head>
@@ -215,8 +268,8 @@
     <p lang="en">Protecting this real axis is our absolute imperative, but the classical physics of our institutions has failed to do so, because it lacked an orthogonal dimension to enshrine its value.</p>
     <p lang="fr">Protéger cet axe réel est notre impératif absolu, mais la physique classique de nos institutions a échoué à le faire, car elle manquait d'une dimension orthogonale pour en sanctuariser la valeur.</p>
 
-    <h3 lang="en">The Imaginary Axis ($ib$): The Participatory Universe</h3>
-    <h3 lang="fr">L'Axe Imaginaire ($ib$) : L'Univers Participatif</h3>
+    <h3 lang="en">The Hermitian Space ($ib$): The Participatory Universe</h3>
+    <h3 lang="fr">L'Espace Hermitien ($ib$) : L'Univers Participatif</h3>
 
     <blockquote lang="en">
         “Information is information, not matter or energy. No materialism which does not admit this can survive at the present day.”<br>
@@ -227,8 +280,8 @@
         <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Norbert Wiener, père de la cybernétique</span>
     </blockquote>
 
-    <p lang="en">This is where $ib$, the imaginary part, comes in. This term is misleading, because there is nothing fanciful about it. In mathematics, the number $i$ (the square root of -1) allows one to rotate 90 degrees, opening up a dimension totally orthogonal to the first. $ib$ is the dimension of the intangible, of pure information, and of the observer.</p>
-    <p lang="fr">C'est ici qu'intervient $ib$, la partie imaginaire. Ce terme est trompeur, car il n'a rien de fantaisiste. En mathématiques, le nombre $i$ (la racine carrée de -1) permet de pivoter à 90 degrés, d'ouvrir une dimension totalement orthogonale à la première. $ib$ est la dimension de l'intangible, de l'information pure et de l'observateur.</p>
+    <p lang="en">This is where $ib$ comes in. The term "imaginary" is a historical misnomer, as there is nothing fanciful about it. Quantum mathematics teaches us that pure information exists in a <strong>Hermitian space</strong>, strictly orthogonal to the physical world. By multiplying by $i$ (the square root of -1), we perform a 90-degree mathematical rotation out of the classical thermodynamic plane. This $ib$ axis is the dimension of the intangible, of the code, and of the observer.</p>
+    <p lang="fr">C'est ici qu'intervient $ib$. Le terme "imaginaire" est un malentendu historique, car il n'a rien de fantaisiste. Les mathématiques quantiques nous enseignent que l'information pure existe dans un <strong>espace Hermitien</strong>, strictement orthogonal au monde physique. En multipliant par $i$ (la racine carrée de -1), nous opérons une rotation mathématique de 90 degrés hors du plan de la thermodynamique classique. Cet axe $ib$ est la dimension de l'intangible, du code et de l'observateur.</p>
 
     <p lang="en">The great American physicist John Archibald Wheeler bequeathed to us the concept of the <strong>Participatory Universe</strong>. He postulated that the universe is not a static stage playing out without us, but a dynamic fabric that only takes form and reality when it is observed and measured. According to his famous maxim <em>"It from bit"</em>, every physical "thing" derives its existence entirely from binary choices, from information. The universe does not simply exist; we observe it into existence.</p>
     <p lang="fr">Le grand physicien américain John Archibald Wheeler nous a légué le concept d'<strong>Univers Participatif</strong>. Il postulait que l'univers n'est pas une scène statique se déroulant sans nous, mais un tissu dynamique qui ne prend forme et réalité que lorsqu'il est observé et mesuré. Selon sa célèbre maxime <em>"It from bit"</em>, toute "chose" physique tire son existence entièrement de choix binaires, d'information. L'univers ne se contente pas d'exister ; notre observation le fait exister.</p>
@@ -248,20 +301,20 @@
     <p lang="en">Our biology, and particularly our brain, is a literal incarnation of the complex plane. The left hemisphere (analytical, material) interacts with the thermodynamic axis ($a$), while the right hemisphere (holistic, abstract) manages imagination and operates on the informational axis ($ib$). An asymmetrical brain malfunctions. In the same way, our civilizational "Super-Organism" is currently hemiplegic: materially overdeveloped, but incapable of stabilizing its information.</p>
     <p lang="fr">Notre biologie, et particulièrement notre cerveau, est une incarnation littérale du plan complexe. L'hémisphère gauche (analytique, matériel) interagit avec l'axe thermodynamique ($a$), tandis que l'hémisphère droit (holistique, abstrait) gère l'imaginaire et opère sur l'axe informationnel ($ib$). Un cerveau asymétrique dysfonctionne. De la même manière, notre « Super-Organisme » civilisationnel est aujourd'hui hémiplégique : surdéveloppé matériellement, mais incapable de stabiliser son information.</p>
 
-    <p lang="en">The decentralized digital web we are building today through code and cryptography acts as the missing right hemisphere of civilization. In mathematics, symmetry in the complex plane is expressed by the conjugate: for any point $z = a + ib$, there exists a symmetrical shadow $\bar{z} = a - ib$. This digital footprint is the exact cryptographic mirror of physical value. The symmetry forces the two worlds to balance each other.</p>
-    <p lang="fr">La toile numérique décentralisée que nous bâtissons aujourd'hui par le code et la cryptographie vient agir comme l'hémisphère droit manquant de la civilisation. En mathématiques, la symétrie dans le plan complexe s'exprime par le conjugué : pour tout point $z = a + ib$, il existe une ombre symétrique $\bar{z} = a - ib$. Cette empreinte numérique est le miroir cryptographique exact de la valeur physique. La symétrie force les deux mondes à s'équilibrer.</p>
+    <p lang="en">The decentralized digital web we are building today through code and cryptography acts as the missing right hemisphere of civilization. In the geometry of a Hermitian space, symmetry is expressed by the complex conjugate: for any physical point $z = a + ib$, there exists a symmetrical informational shadow $\bar{z} = a - ib$. This digital footprint is the exact cryptographic mirror of physical value. Orthogonality forces the two worlds to balance each other without ever corrupting one another.</p>
+    <p lang="fr">La toile numérique décentralisée que nous bâtissons aujourd'hui par le code et la cryptographie agit comme l'hémisphère droit manquant de la civilisation. Dans la géométrie d'un espace Hermitien, la symétrie s'exprime par le conjugué complexe : pour tout point physique $z = a + ib$, il existe une ombre informationnelle symétrique $\bar{z} = a - ib$. Cette empreinte numérique est le miroir cryptographique exact de la valeur physique. L'orthogonalité force les deux mondes à s'équilibrer sans jamais se contaminer l'un l'autre.</p>
 
     <p lang="en">The entropy of our physical universe ($a$) is an inescapable process of degradation. Placing our symmetry in the complex plane shows that the only way to accumulate negentropy on a planetary scale is no longer to build concrete structures that will inevitably turn to dust, but to encode this order orthogonally ($ib$), in a realm where the thermodynamic arrow of time can no longer corrupt it.</p>
     <p lang="fr">L'entropie de notre univers physique ($a$) est un processus de dégradation inéluctable. Placer notre symétrie dans le plan complexe montre que la seule façon d'accumuler de la néguentropie à l'échelle planétaire n'est plus de construire des édifices en béton qui finiront en poussière, mais d'encoder cet ordre de manière orthogonale ($ib$), là où la flèche du temps thermodynamique ne peut plus le corrompre.</p>
 
-    <h3 lang="en">The Angle $\Phi$: Consensus and the Persistence of Reality</h3>
-    <h3 lang="fr">L'Angle $\Phi$ : Le Consensus et la Persistance de la Réalité</h3>
+    <h3 lang="en">The Angle $\psi$: Consensus and the Persistence of Reality</h3>
+    <h3 lang="fr">L'Angle $\psi$ : Le Consensus et la Persistance de la Réalité</h3>
 
-    <p lang="en">In the complex plane, a point is defined not only by its coordinates $a$ and $b$, but also by its angle relative to the origin: the argument $\Phi$. This angle possesses a staggering physical and philosophical significance: <strong>it represents our level of information and our consensus</strong>.</p>
-    <p lang="fr">Dans le plan complexe, un point ne se définit pas seulement par ses coordonnées $a$ et $b$, mais aussi par son angle par rapport à l'origine : l'argument $\Phi$. Cet angle possède une signification physique et philosophique fulgurante : <strong>il représente notre niveau d'information et notre consensus</strong>.</p>
+    <p lang="en">In the complex plane, a point is defined not only by its coordinates $a$ and $b$, but also by its angle relative to the origin: the argument $\psi$. This angle possesses a staggering physical and philosophical significance: <strong>it represents our level of information and our consensus</strong>.</p>
+    <p lang="fr">Dans le plan complexe, un point ne se définit pas seulement par ses coordonnées $a$ et $b$, mais aussi par son angle par rapport à l'origine : l'argument $\psi$. Cet angle possède une signification physique et philosophique fulgurante : <strong>il représente notre niveau d'information et notre consensus</strong>.</p>
 
-    <p lang="en">Because we have not all accumulated, verified, or internalized the same density of information, our individual vectors do not point in the same direction. If our angles $\Phi$ differ, we literally do not experience the same reality. The cognitive fragmentation of our era is nothing else than a dispersion of these angles in the complex plane: individuals sharing the same physical space ($a$), but desynchronized in the informational space ($ib$).</p>
-    <p lang="fr">Parce que nous n'avons pas tous accumulé, vérifié ou intériorisé la même densité d'information, nos vecteurs individuels ne pointent pas dans la même direction. Si nos angles $\Phi$ diffèrent, nous n'expérimentons littéralement pas la même réalité. La fragmentation cognitive de notre époque n'est rien d'autre qu'une dispersion de ces angles dans le plan complexe : des individus partageant le même espace physique ($a$), mais désynchronisés dans l'espace informationnel ($ib$).</p>
+    <p lang="en">Because we have not all accumulated, verified, or internalized the same density of information, our individual vectors do not point in the same direction. If our angles $\psi$ differ, we literally do not experience the same reality. The cognitive fragmentation of our era is nothing else than a dispersion of these angles in the complex plane: individuals sharing the same physical space ($a$), but desynchronized in the informational space ($ib$).</p>
+    <p lang="fr">Parce que nous n'avons pas tous accumulé, vérifié ou intériorisé la même densité d'information, nos vecteurs individuels ne pointent pas dans la même direction. Si nos angles $\psi$ diffèrent, nous n'expérimentons littéralement pas la même réalité. La fragmentation cognitive de notre époque n'est rien d'autre qu'une dispersion de ces angles dans le plan complexe : des individus partageant le même espace physique ($a$), mais désynchronisés dans l'espace informationnel ($ib$).</p>
 
     <blockquote lang="en">
         “Reality is that which, when you stop believing in it, doesn't go away.”<br>
@@ -272,8 +325,8 @@
         <span style="color:var(--sun-orange); font-size:0.85rem; font-style:normal; letter-spacing:2px; text-transform:uppercase; display:block; margin-top:10px;">— Philip K. Dick</span>
     </blockquote>
 
-    <p lang="en">For millennia, only physical matter ($a$) met Philip K. Dick's definition. Ideas, cultures, and intangible truths vanished when the minds carrying them stopped believing. But the thermodynamics of information changes this rule entirely. When we reach a decentralized consensus, we align our angles $\Phi$. We create a digital truth that, even if you personally stop believing in it, continues to exist, secured and observed by a global network. <strong>We collectively create the world as we observe it. The angle $\Phi$ is our shared, unwavering gaze.</strong></p>
-    <p lang="fr">Pendant des millénaires, seule la matière physique ($a$) répondait à la définition de Philip K. Dick. Les idées, les cultures et les vérités intangibles s'évaporaient lorsque les esprits qui les portaient cessaient d'y croire. Mais la thermodynamique de l'information bouleverse cette règle. Lorsque nous atteignons un consensus décentralisé, nous alignons nos angles $\Phi$. Nous créons une vérité numérique qui, même si vous cessez d'y croire personnellement, continue d'exister, sécurisée et observée par un réseau mondial. <strong>Nous créons collectivement le monde tel que nous l'observons. L'angle $\Phi$ est notre regard partagé et inébranlable.</strong></p>
+    <p lang="en">For millennia, only physical matter ($a$) met Philip K. Dick's definition. Ideas, cultures, and intangible truths vanished when the minds carrying them stopped believing. But the thermodynamics of information changes this rule entirely. When we reach a decentralized consensus, we align our angles $\psi$. We create a digital truth that, even if you personally stop believing in it, continues to exist, secured and observed by a global network. <strong>We collectively create the world as we observe it. The angle $\psi$ is our shared, unwavering gaze.</strong></p>
+    <p lang="fr">Pendant des millénaires, seule la matière physique ($a$) répondait à la définition de Philip K. Dick. Les idées, les cultures et les vérités intangibles s'évaporaient lorsque les esprits qui les portaient cessaient d'y croire. Mais la thermodynamique de l'information bouleverse cette règle. Lorsque nous atteignons un consensus décentralisé, nous alignons nos angles $\psi$. Nous créons une vérité numérique qui, même si vous cessez d'y croire personnellement, continue d'exister, sécurisée et observée par un réseau mondial. <strong>Nous créons collectivement le monde tel que nous l'observons. L'angle $\psi$ est notre regard partagé et inébranlable.</strong></p>
 
     <h3 lang="en">The Modulus ($|z|$): The Advent of Homo Biodiversitas</h3>
     <h3 lang="fr">Le Module ($|z|$) : L'Avènement de l'Homo Biodiversitas</h3>
@@ -307,8 +360,8 @@
     <p lang="en">This is by no means a mathematical coincidence. The constructal law of thermodynamics demonstrates that living systems evolve to maximize the fluidity of their energy flows. The phyllotaxis of a tree's leaves or the shell of a nautilus use $\varphi$ to dissipate solar energy in the most elegant and resilient way possible. By indexing our economy on the Sun Standard and our shared observation, humanity finally embraces the evolutionary spiral of the living: a growth infinitely rich in informational complexity, yet organically and perfectly bounded by the laws of physics.</p>
     <p lang="fr">Ce n'est en rien un hasard mathématique. La loi constructale de la thermodynamique démontre que les systèmes vivants évoluent pour maximiser la fluidité de leurs flux d'énergie. La phyllotaxis des feuilles d'un arbre ou la coquille d'un nautile utilisent $\varphi$ pour dissiper l'énergie solaire de la manière la plus élégante et résiliente possible. En indexant notre économie sur l'Étalon Solaire et notre observation partagée, l'humanité embrasse enfin la spirale d'évolution du vivant : une croissance infiniment riche en complexité informationnelle, mais organiquement et parfaitement bornée par les lois de la physique.</p>
 
-    <p lang="en">In the complex plane, when the radius (the modulus $|z|$) grows at the same time as the angle ($\Phi$), it draws a logarithmic spiral (the golden spiral), which is the very shape of the growth of living things (the nautilus shell, the arrangement of leaves to capture solar light).</p>
-    <p lang="fr">Dans le plan complexe, lorsque le rayon (le module $|z|$) croît en même temps que l'angle ($\Phi$), cela dessine une spirale logarithmique (la spirale d'or), qui est la forme même de la croissance du vivant (la coquille du nautile, la disposition des feuilles pour capter la lumière solaire).</p>
+    <p lang="en">In the complex plane, when the radius (the modulus $|z|$) grows at the same time as the angle ($\psi$), it draws a logarithmic spiral (the golden spiral), which is the very shape of the growth of living things (the nautilus shell, the arrangement of leaves to capture solar light).</p>
+    <p lang="fr">Dans le plan complexe, lorsque le rayon (le module $|z|$) croît en même temps que l'angle ($\psi$), cela dessine une spirale logarithmique (la spirale d'or), qui est la forme même de la croissance du vivant (la coquille du nautile, la disposition des feuilles pour capter la lumière solaire).</p>
 
     <p><img src="HomoBiodiversitas.png" alt="A World Of Biodiversity" style="width: 70%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></p>
     
@@ -373,11 +426,54 @@
         <a target="_blank" href="../articles/Cosmology.pdf" lang="en">For the most curious, click here to read a draft of the associated cosmological model.</a>
         <a target="_blank" href="../articles/Cosmology.pdf" lang="fr">Pour les plus curieux, cliquez ici pour lire une ébauche du modèle cosmologique associée.</a>
     </p>
+    
+    <div class="feedback-container">
+        <h3 lang="en" class="feedback-title">Help Improve This Theory</h3>
+        <h3 lang="fr" class="feedback-title">Aidez à améliorer cette théorie</h3>
+        
+        <p lang="en" class="feedback-desc">This is an ongoing phenomenological research effort. Your feedback is vital to clarify the mechanics and correct potential flaws.</p>
+        <p lang="fr" class="feedback-desc">Il s'agit d'un effort de recherche phénoménologique en cours. Vos retours sont vitaux pour clarifier la mécanique et corriger d'éventuelles failles.</p>
+
+        <form id="feedback-form" action="https://formspree.io/f/xrejrzrz" method="POST">
+            <input type="hidden" name="article_title" value="Le monde est complexe">
+            
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required />
+                <label for="star5" title="Excellent">&#9733;</label>
+                <input type="radio" id="star4" name="rating" value="4" />
+                <label for="star4" title="Very Good">&#9733;</label>
+                <input type="radio" id="star3" name="rating" value="3" />
+                <label for="star3" title="Average">&#9733;</label>
+                <input type="radio" id="star2" name="rating" value="2" />
+                <label for="star2" title="Poor">&#9733;</label>
+                <input type="radio" id="star1" name="rating" value="1" />
+                <label for="star1" title="Bad">&#9733;</label>
+            </div>
+
+            <label lang="en" class="feedback-label">Which concepts seem obscure? What could be improved?</label>
+            <label lang="fr" class="feedback-label">Quels concepts vous semblent obscurs ? Qu'est-ce qui pourrait être amélioré ?</label>
+            
+            <textarea name="feedback" class="feedback-textarea" required></textarea>
+
+            <p lang="en" class="feedback-anon">🔒 This survey is 100% anonymous unless you specify your name in the comment.</p>
+            <p lang="fr" class="feedback-anon">🔒 Ce retour est 100 % anonyme, à moins que vous n'indiquiez explicitement votre nom dans le commentaire.</p>
+            
+            <button type="submit" class="feedback-submit" id="feedback-btn">
+                <span lang="en">Submit Feedback</span>
+                <span lang="fr">Envoyer le retour</span>
+            </button>
+        </form>
+    </div>
+
+    <div id="success-popup" class="feedback-popup">
+        <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
+        <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
+    </div>
     <p><br />
         <a href="nautile-nakamoto.html" class="next" lang="en">→ Next Article : "Le Nautile de Nakamoto" <br /><img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></a>
         <a href="nautile-nakamoto.html" class="next" lang="fr">→ Prochain article : "Le Nautile de Nakamoto" <br /><img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></a>
     </p>
-    
+
 </article>
 
 <footer>
@@ -387,7 +483,46 @@
     </div>
     <p>Pascal Ranaora · 2026</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("feedback-form");
+    const popup = document.getElementById("success-popup");
+    const btn = document.getElementById("feedback-btn");
 
+    if (form) {
+        form.addEventListener("submit", async function(event) {
+            event.preventDefault(); 
+            
+            const originalHtml = btn.innerHTML;
+            btn.innerHTML = "⏳ ...";
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                
+                if (response.ok) {
+                    form.reset();
+                    popup.style.display = "flex";
+                    setTimeout(() => { popup.style.display = "none"; }, 4000);
+                } else {
+                    alert("Erreur lors de l'envoi. / Error during submission.");
+                }
+            } catch (error) {
+                alert("Erreur réseau. / Network error.");
+            } finally {
+                btn.innerHTML = originalHtml;
+                btn.disabled = false;
+            }
+        });
+    }
+});
+</script>
 <script>
     function setLang(lang) {
         lang = lang.toLowerCase();
