@@ -465,7 +465,75 @@ document.addEventListener("DOMContentLoaded", () => {
         .vars-table th { color: var(--sun-yellow); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; background: rgba(255,255,255,0.02); }
         .vars-table tr:hover { background: rgba(255,255,255,0.02); }
         .vars-table code { color: var(--sun-orange); background: transparent; padding: 0; font-family: 'Fira Code', monospace; font-size: 1.05rem; }
+        /* --- Article Navigation Cards --- */
+        .article-navigation {
+            display: flex;
+            gap: 2rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            justify-content: space-between;
+        }
+        .nav-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 170, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-card:hover {
+            background: rgba(255, 170, 0, 0.05);
+            border-color: var(--sun-yellow);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 204, 0, 0.1);
+        }
+        .nav-direction {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            transition: color 0.3s ease;
+        }
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--sun-orange);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        .nav-card:hover .nav-direction {
+            color: #fff;
+        }
+        .nav-card:hover .nav-title {
+            color: var(--sun-yellow);
+        }
+        .nav-card img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s ease;
+        }
+        .nav-card:hover img {
+            border-color: rgba(255, 204, 0, 0.4);
+        }
 
+        /* Responsive pour Mobile */
+        @media (max-width: 768px) {
+            .article-navigation {
+                flex-direction: column;
+            }
+        }
         /* --- Math & Proof Styles --- */
         .math-block { margin: 2.5rem 0; text-align: center; font-size: 1.4rem; overflow-x: auto; color: var(--sun-yellow); background: rgba(0,0,0,0.4); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,204,0,0.1); }
         
@@ -3554,7 +3622,7 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
 
     <p lang="en">Ultimately, Bitcoin behaves as a <strong>Toy Universe</strong>—a closed, synthetic physical system with its own laws of nature. In this cosmos, the <strong>Nakamoto Action ($h_N$)</strong> serves as the equivalent of the Planck constant: the minimal quantum of energy required to propagate data and forge a new state of truth. Like our own cosmos, this block universe is in continuous expansion, growing its Emergy shell to protect its informational core.</p>
-    <p lang="fr">En fin de compte, Bitcoin se comporte comme un <strong>Toy Universe</strong> (univers-jouet) — un système physique synthétique clos avec ses propres lois de la nature. Dans ce cosmos, l'<strong>Action de Nakamoto ($h_N$)</strong> sert d'équivalent à la constante de Planck : le quantum minimal d'énergie requis pour propager les données et forger un nouvel état de vérité. Comme notre propre cosmos, cet univers-bloc est en expansion continue, faisant croître sa carapace d'Émergie pour protéger son cœur informationnel.</p>
+    <p lang="fr">Le protocole Nakamoto "Bitcoin" se comporte comme un <strong>Toy Universe</strong> (univers-jouet) — un système physique synthétique clos avec ses propres lois de la nature. Dans ce cosmos, l'<strong>Action de Nakamoto ($h_N$)</strong> sert d'équivalent à la constante de Planck : le quantum minimal d'énergie requis pour propager les données et forger un nouvel état de vérité. Comme notre propre cosmos, cet univers-bloc est en expansion continue, faisant croître sa carapace d'Émergie pour protéger son cœur informationnel.</p>
 
     <div class="proof-box" style="border: 1px solid rgba(68, 153, 255, 0.2); background: rgba(68, 153, 255, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
         <div class="proof-title" lang="en">Falsifiability: The Popperian Criteria</div>
@@ -3591,10 +3659,10 @@ document.addEventListener("DOMContentLoaded", () => {
     <p lang="en"><strong>Ultimately, the true currency of the universe is only energy and information that we exchange peer-to-peer. We just forgot it. Perhaps one day we won't even need to secure information to trust each other.<br /><br />The true sanctity of a civilization lies not in the worldly possessions of its people, but in its sacred capacity to erect a single, unbreakable truth, together.<br /><br />Until that day comes, all that remains is to find Wisdom within the Source Code. Which is, after all, the literal translation of <em>Satoshi Nakamoto</em>.</strong></p>
     <p lang="fr"><strong>En fin de compte, la véritable monnaie de l'univers n'est que de l'énergie et de l'information que nous nous échangeons de pair à pair. Nous l'avons juste oublié. Peut-être qu'un jour, nous n'aurons même plus besoin de sécuriser l'information pour nous faire confiance.<br /><br />La véritable sacralité d'une civilisation ne se trouve pas dans les possessions mondaines de ses membres, mais dans sa capacité sacrée à ériger une vérité absolue et inébranlable, ensemble.<br /><br />Jusqu'à ce que ce jour arrive, il ne nous reste plus qu'à trouver la Sagesse au sein du Code Source. Ce qui est, après tout, la traduction littérale de <em>Satoshi Nakamoto</em>.</strong></p>
     
-    <p style="text-align: center; margin-top: 4rem;">
+    <!-- <p style="text-align: center; margin-top: 4rem;">
         <a href="le-monde-est-complexe.html" class="next" lang="en" target="_blank">← Read the foundational essay: "The world is complex"</a>
         <a href="le-monde-est-complexe.html" class="next" lang="fr" target="_blank">← Lire l'essai fondateur : "Le monde est complexe"</a>
-    </p>
+    </p> -->
 
     <iframe data-testid="embed-iframe" style="border-radius:12px; margin-top:4rem; box-shadow: 0 10px 30px rgba(0,0,0,0.5);" src="https://open.spotify.com/embed/playlist/4BIYpE4exfv5JWwtZ6zKyH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     
@@ -3696,6 +3764,29 @@ document.addEventListener("DOMContentLoaded", () => {
     <div id="success-popup" class="feedback-popup">
         <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
         <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
+    </div>
+    <div class="article-navigation">
+        <a href="l-univers-jumeau.html" class="nav-card" target="_blank">
+            <div style="width: 100%;">
+                <div class="nav-direction" lang="en">Read the foundational essay 1/2</div>
+                <div class="nav-direction" lang="fr">Lire l'essai fondateur 1/2</div>
+                
+                <div class="nav-title" lang="en">The Awakening of the Participatory Universe</div>
+                <div class="nav-title" lang="fr">L'Éveil de l'Univers Participatif</div>
+            </div>
+            <img src="UniversJumeau.png" alt="L'Univers Jumeau">
+        </a>
+
+        <a href="le-monde-est-complexe.html" class="nav-card">
+            <div style="width: 100%;">
+                <div class="nav-direction" lang="en">Read the foundational essay 2/2</div>
+                <div class="nav-direction" lang="fr">Lire l'essai fondateur 2/2</div>
+                
+                <div class="nav-title" lang="en">The World is Complex</div>
+                <div class="nav-title" lang="fr">Le monde est complexe</div>
+            </div>
+            <img src="ComplexWorld.png" alt="Complex World">
+        </a>
     </div>
     <h2 lang="en" style="margin-top: 5rem;">References</h2>
     <h2 lang="fr" style="margin-top: 5rem;">Références</h2>

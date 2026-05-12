@@ -71,7 +71,75 @@
             opacity: 1; filter: grayscale(0%); transform: scale(1.1);
             filter: drop-shadow(0 0 8px rgba(255,200,0,0.4));
         }
+        /* --- Article Navigation Cards --- */
+        .article-navigation {
+            display: flex;
+            gap: 2rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            justify-content: space-between;
+        }
+        .nav-card {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 170, 0, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .nav-card:hover {
+            background: rgba(255, 170, 0, 0.05);
+            border-color: var(--sun-yellow);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(255, 204, 0, 0.1);
+        }
+        .nav-direction {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-family: 'Helvetica Neue', sans-serif;
+            transition: color 0.3s ease;
+        }
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--sun-orange);
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+        .nav-card:hover .nav-direction {
+            color: #fff;
+        }
+        .nav-card:hover .nav-title {
+            color: var(--sun-yellow);
+        }
+        .nav-card img {
+            width: 100%;
+            max-width: 350px;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: border-color 0.3s ease;
+        }
+        .nav-card:hover img {
+            border-color: rgba(255, 204, 0, 0.4);
+        }
 
+        /* Responsive pour Mobile */
+        @media (max-width: 768px) {
+            .article-navigation {
+                flex-direction: column;
+            }
+        }
         /* Conteneur de l'Article */
         article {
             max-width: 760px; margin: 8rem auto 6rem; padding: 0 2rem;
@@ -469,13 +537,29 @@
         <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
         <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
     </div>
-    <p><br />
-        <a href="l-univers-jumeau.html" class="next" lang="en" target="_blank">← Read the foundational essay: "The Awakening of the Participatory Universe"</a>
-        <a href="l-univers-jumeau.html" class="next" lang="fr" target="_blank">← Lire l'essai fondateur : "L'Éveil de l'Univers Participatif"</a>
-        <br />
-        <a href="nautile-nakamoto.html" class="next" lang="en">→ Next Article : "Le Nautile de Nakamoto" <br /><img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></a>
-        <a href="nautile-nakamoto.html" class="next" lang="fr">→ Prochain article : "Le Nautile de Nakamoto" <br /><img src="NautileNakamotoIM.png" alt="Nautile Nakamoto Image" style="width: 100%; max-width: 900px; height: auto; border-radius: 8px; border: 1px solid rgba(255, 170, 0, 0.2);"></a>
-    </p>
+    <div class="article-navigation">
+        <a href="l-univers-jumeau.html" class="nav-card" target="_blank">
+            <div style="width: 100%;">
+                <div class="nav-direction" lang="en">← Previous Article</div>
+                <div class="nav-direction" lang="fr">← Article Précédent</div>
+                
+                <div class="nav-title" lang="en">The Awakening of the Participatory Universe</div>
+                <div class="nav-title" lang="fr">L'Éveil de l'Univers Participatif</div>
+            </div>
+            <img src="UniversJumeau.png" alt="L'Univers Jumeau">
+        </a>
+
+        <a href="nautile-nakamoto.html" class="nav-card">
+            <div style="width: 100%;">
+                <div class="nav-direction" lang="en">Next Article →</div>
+                <div class="nav-direction" lang="fr">Article Suivant →</div>
+                
+                <div class="nav-title" lang="en">The Nakamoto Nautilus</div>
+                <div class="nav-title" lang="fr">Le Nautile de Nakamoto</div>
+            </div>
+            <img src="NautileNakamotoIM.png" alt="Nautile Nakamoto">
+        </a>
+    </div>
 
 </article>
 
