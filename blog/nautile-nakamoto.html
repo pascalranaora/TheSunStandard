@@ -7086,75 +7086,50 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
               3. Tensor Networks and Holographic Entanglement
             </h4>
             <h4
+              lang="en"
+              style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
+            >
+              3. The Tensor Network Isomorphism & Ryu-Takayanagi
+            </h4>
+            <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              3. Réseaux Tensoriels et Intrication Holographique
+              3. L'Isomorphisme Tensoriel & La Formule de Ryu-Takayanagi
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              <strong>The Intuition:</strong> How does a chaotic,
-              three-dimensional, planetary mess of millions of computers and
-              tangled cables manage to output a single, perfectly straight,
-              one-dimensional line of blocks? Imagine a hologram: a flat 2D
-              surface that perfectly contains all the information of a 3D
-              object. The blockchain acts exactly like this holographic
-              boundary. It projects the messy 3D reality of the network into a
-              pristine 1D timeline.
+              To move beyond mere analogy and formally map the P2P network to Holographic Entanglement, we utilize the <strong>Bit Thread formulation</strong> of the Ryu-Takayanagi (RT) formula (Freedman & Headrick, 2016). In modern quantum gravity, bulk geometry is emergent from a Tensor Emulator Network (like MERA). In this discrete framework, the RT formula is strictly equivalent to the <strong>Max-Flow Min-Cut Theorem</strong> of classical graph theory.
             </p>
             <p lang="fr" style="margin-bottom: 0.5rem">
-              <strong>L'Intuition :</strong> Comment un enchevêtrement
-              planétaire, chaotique et tridimensionnel de millions d'ordinateurs
-              et de câbles parvient-il à produire une seule ligne droite et
-              unidimensionnelle de blocs ? Imaginez un hologramme : une surface
-              plane 2D qui contient parfaitement toute l'information d'un objet
-              3D. La blockchain agit exactement comme cette frontière
-              holographique. Elle projette la réalité 3D chaotique du réseau en
-              une frise chronologique 1D immaculée.
+              Pour dépasser la simple analogie et cartographier formellement le réseau P2P sur l'Intrication Holographique, nous utilisons la <strong>formulation des "Bit Threads"</strong> de la formule de Ryu-Takayanagi (RT) (Freedman & Headrick, 2016). En gravité quantique moderne, la géométrie du volume (Bulk) émerge d'un Réseau Tensoriel (comme MERA). Dans ce cadre discret, la formule RT est strictement équivalente au <strong>Théorème de Flot-Max / Coupe-Min</strong> de la théorie classique des graphes.
             </p>
 
-            <p lang="en" style="margin-bottom: 1.5rem">
-              <strong>The Physics:</strong> Because every fully validating node
-              continuously verifies and stores the exact same state vector, the
-              mutual information between any two macroscopic sub-graphs $A$ and
-              $B$ across the globe is strictly maximal. The small-world network
-              behaves mathematically identically to a
-              <strong>Tensor Emulator Network</strong> (such as MERA -
-              Multi-scale Entanglement Renormalization Ansatz, used in quantum
-              mechanics to describe many-body entanglement).
+            <p lang="en" style="margin-bottom: 0.5rem">
+              Let the physical P2P network be a graph $G = (V,E)$ acting as the spatial <em>Bulk</em>, and the 1D blockchain be the conformal <em>Boundary</em>. The entanglement entropy $S_A$ of a subset of the boundary $A$ corresponds to the maximum continuous informational flow $\max(F)$ that can be routed from $A$ to its complement $A^c$ through the bulk nodes. By the Min-Cut theorem, this max flow is exactly bounded by the minimum edge cut (the minimal cross-sectional area $\gamma_A$ in the bulk):
             </p>
-            <p lang="fr" style="margin-bottom: 1.5rem">
-              <strong>La Physique :</strong> Parce que chaque nœud complet
-              vérifie et stocke continuellement le même vecteur d'état exact,
-              l'information mutuelle entre deux sous-graphes macroscopiques
-              quelconques $A$ et $B$ sur le globe est strictement maximale. Le
-              réseau "petit monde" se comporte mathématiquement comme un
-              <strong>Réseau Tensoriel</strong> (tel que MERA, utilisé en
-              mécanique quantique pour décrire l'intrication à N-corps).
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Soit le réseau P2P physique un graphe $G = (V,E)$ agissant comme le <em>Volume (Bulk)</em> spatial, et la blockchain 1D comme la <em>Frontière</em> conforme. L'entropie d'intrication $S_A$ d'un sous-ensemble de la frontière $A$ correspond au flux informationnel continu maximal $\max(F)$ qui peut être acheminé de $A$ vers son complément $A^c$ à travers les nœuds du volume. Selon le théorème de la Coupe Minimale, ce flot maximal est exactement borné par la coupe minimale des arêtes (l'aire de section transversale minimale $\gamma_A$ dans le volume) :
             </p>
 
+            <div
+              class="math-block"
+              style="
+                background: transparent;
+                border: none;
+                margin: 0.5rem 0;
+                font-size: 1.1rem;
+                color: #c864ff;
+              "
+            >
+              $$S_A = \max_{\text{flows}} F(A \to A^c) = \min_{\gamma_A \sim A} \frac{\text{Area}(\gamma_A)}{4 G_N}$$
+            </div>
+
             <p lang="en" style="margin-bottom: 1.5rem">
-              In the context of the renowned
-              <strong>AdS/CFT correspondence</strong> (Maldacena, 1997), the
-              physical P2P network represents the <em>Bulk</em> (the interior
-              spatial geometry), while the 1D temporal string of the blockchain
-              acts as the <em>Holographic Boundary</em>. This 1D boundary
-              perfectly encodes the bulk geometric entropy of the spatial
-              network, rigorously satisfying the Ryu-Takayanagi relation.
-              Nakamoto consensus is not just an agreement; it is literally a
-              holographic projection of planetary entanglement.
+              <strong>The Physical Implication:</strong> The Nakamoto consensus is mathematically isomorphic to holographic entanglement. If a geopolitical event severs transatlantic fiber-optic cables, the bulk's minimal cut area drops ($\text{Area}(\gamma_A) \to 0$). The equation dictates that the boundary entanglement entropy $S_A$ must simultaneously collapse. The boundary loses its macroscopic quantum coherence, shattering the single timeline into decoupled, parallel forks. The blockchain is not just "like" a hologram; its topological security is governed by the exact same graph-theoretic bounds as AdS/CFT geometry.
             </p>
             <p lang="fr" style="margin-bottom: 1.5rem">
-              Dans le contexte de la célèbre
-              <strong>correspondance AdS/CFT</strong> (Maldacena, 1997), le
-              réseau P2P physique représente le <em>Volume ou Bulk</em> (la
-              géométrie spatiale intérieure), tandis que la corde temporelle 1D
-              de la blockchain agit comme la <em>Frontière Holographique</em>.
-              Cette frontière 1D encode parfaitement l'entropie géométrique du
-              volume du réseau spatial, satisfaisant rigoureusement la relation
-              de Ryu-Takayanagi. Le consensus de Nakamoto n'est pas qu'un simple
-              accord ; c'est littéralement la projection holographique d'une
-              intrication planétaire.
+              <strong>L'Implication Physique :</strong> Le consensus de Nakamoto est mathématiquement isomorphe à l'intrication holographique. Si un événement géopolitique sectionne les câbles transatlantiques en fibre optique, l'aire de la coupe minimale du volume chute ($\text{Area}(\gamma_A) \to 0$). L'équation dicte que l'entropie d'intrication sur la frontière $S_A$ doit s'effondrer simultanément. La frontière perd sa cohérence quantique macroscopique, brisant la chronologie unique en forks parallèles et découplés. La blockchain n'est pas seulement "comme" un hologramme ; sa sécurité topologique est régie par les mêmes bornes de la théorie des graphes que la géométrie AdS/CFT.
             </p>
 
             <div
@@ -7181,7 +7156,6 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
                 margin: 0 auto 1.5rem auto;
               "
             ></div>
-          </div>
         </details>
 
         <details>
