@@ -4487,7 +4487,19 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}} \left( \frac{\tau_L}{\tau_B
         - \tau_L} \right) $$
       </div>
-
+      <div
+        id="teff-surface-plot"
+        style="
+          background: rgba(0, 0, 0, 0.6);
+          padding: 1.5rem;
+          border-radius: 8px;
+          border: 1px solid rgba(255, 68, 68, 0.2);
+          max-width: 700px;
+          height: 500px;
+          margin: 2.5rem auto;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        "
+      ></div>
       <div
         class="proof-box"
         style="
@@ -4939,10 +4951,10 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              In General Relativity, mass-energy bends spacetime ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$). In our model, we establish the isomorphic equivalent: the <strong>Curvature of Consensus</strong> $\mathcal{G}_{\mu\nu}$ is strictly proportional to the density of the Hashrate (the activity of the miners), denoted $\mathcal{H}_{\mu\nu}$:
+              In General Relativity, mass-energy dictates how the spacetime metric curves via the Einstein field equations ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$). In our model, we establish the isomorphic equivalent: the <strong>Curvature of Consensus</strong> $G_{\mu\nu}$ (derived from our bimetric state tensor $\mathcal{G}_{MN}$) is strictly proportional to the density of the Hashrate (the thermodynamic activity of the miners), captured by the Hashrate-Energy Tensor $\mathcal{H}_{\mu\nu}$:
             </p>
             <p lang="fr" style="margin-bottom: 0.5rem">
-              En Relativité Générale, la masse-énergie courbe l'espace-temps ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$). Dans notre modèle, nous posons l'équivalent isomorphe : la <strong>Courbure du Consensus</strong> $\mathcal{G}_{\mu\nu}$ est strictement proportionnelle à la densité du Hashrate (l'activité des mineurs), notée $\mathcal{H}_{\mu\nu}$ :
+              En Relativité Générale, la masse-énergie dicte la courbure de la métrique de l'espace-temps via l'équation d'Einstein ($G_{\mu\nu} = 8\pi G T_{\mu\nu}$). Dans notre modèle, nous posons l'équivalent isomorphe : la <strong>Courbure du Consensus</strong> $G_{\mu\nu}$ (dérivée de notre tenseur d'état bimétrique $\mathcal{G}_{MN}$) est strictement proportionnelle à la densité du Hashrate (l'activité thermodynamique des mineurs), encapsulée dans le Tenseur Hashrate-Énergie $\mathcal{H}_{\mu\nu}$ :
             </p>
 
             <div
@@ -4955,14 +4967,14 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
                 color: #c864ff;
               "
             >
-              $$\mathcal{G}_{\mu\nu} = \kappa \cdot \mathcal{H}_{\mu\nu}$$
+              $$G_{\mu\nu} = \kappa \cdot \mathcal{H}_{\mu\nu}$$
             </div>
 
             <p lang="en" style="margin-bottom: 1.5rem">
-              This completely changes how we view nodes. Nodes do not simply "obey rules" out of altruism. The accumulation of physical energy (Hashpower) generates a literal "gravitational well." The longest, heaviest chain is the <strong>Geodesic of the network</strong>. Nodes naturally "fall" into this geodesic because it represents the path of maximal work. Forks are simply divergent geodesics that lack the mass to attract the network.
+              This completely changes how we view nodes. Nodes do not simply "obey rules" out of altruism. The accumulation of physical energy (Hashpower) bends the topology of the network, generating a literal "gravitational well." The longest, heaviest chain is the <strong>Geodesic of the network</strong>. Nodes naturally "fall" into this geodesic because it represents the path of maximal work. Forks are simply divergent geodesics that lack the mass to attract the consensus.
             </p>
             <p lang="fr" style="margin-bottom: 1.5rem">
-              Cela change totalement notre vision des nœuds. Les nœuds n'obéissent pas simplement aux "règles" par altruisme. L'accumulation d'énergie physique (Hashpower) génère un véritable "puits gravitationnel". La chaîne la plus longue et la plus lourde constitue la <strong>Géodésique du réseau</strong>. Les nœuds "tombent" naturellement dans cette géodésique car elle représente le chemin de travail maximal. Les forks ne sont que des géodésiques divergentes qui manquent de masse pour attirer le réseau.
+              Cela change totalement notre vision des nœuds. Les nœuds n'obéissent pas simplement aux "règles" par altruisme. L'accumulation d'énergie physique (Hashpower) déforme la topologie du réseau, générant un véritable "puits gravitationnel". La chaîne la plus longue et la plus lourde constitue la <strong>Géodésique du réseau</strong>. Les nœuds "tombent" naturellement dans cette géodésique car elle représente le chemin de travail maximal. Les forks ne sont que des géodésiques divergentes qui manquent de masse pour attirer le consensus.
             </p>
             
             <div
@@ -15582,6 +15594,99 @@ print(f"✅ Animation générée : {gif_filename}")
         drawBetaFunction("beta-function-en", "en");
         drawBetaFunction("beta-function-fr", "fr");
       });
+      // ==========================================
+        // SECTION 3 : Surface 3D de la Température d'Information (Plotly)
+        // ==========================================
+        function drawTemperatureSurface(containerId, lang) {
+          if (!document.getElementById(containerId)) return;
+
+          const t = lang === "fr"
+              ? { title: "Température d'Information (T_eff)", x_axis: "Latence τ_L (s)", y_axis: "Énergie E_eff", z_axis: "Température T_eff" }
+              : { title: "Information Temperature (T_eff)", x_axis: "Latency τ_L (s)", y_axis: "Energy E_eff", z_axis: "Temperature T_eff" };
+
+          const tau_B = 600; // Temps de bloc cible
+          const eps0_sq = 100; // Constante d'échelle pour l'affichage visuel
+
+          let z_data = [];
+          let x_data = []; // Latency
+          let y_data = []; // Energy
+
+          // Génération de l'axe X (Latence de 10s à 580s)
+          for (let tau_L = 10; tau_L <= 580; tau_L += 15) {
+            x_data.push(tau_L);
+          }
+
+          // Génération de l'axe Y (Énergie de 10 à 1000)
+          for (let E_eff = 10; E_eff <= 1000; E_eff += 25) {
+            y_data.push(E_eff);
+          }
+
+          // Calcul de la Température Z
+          for (let i = 0; i < y_data.length; i++) {
+            let z_row = [];
+            for (let j = 0; j < x_data.length; j++) {
+              let E = y_data[i];
+              let L = x_data[j];
+              
+              // T_eff = (eps0^2 / E_eff) * (tau_L / (tau_B - tau_L))
+              let T = (eps0_sq / E) * (L / (tau_B - L));
+              
+              // Plafond visuel pour éviter que l'asymptote infinie n'écrase le graphique
+              z_row.push(T > 5 ? 5 : T); 
+            }
+            z_data.push(z_row);
+          }
+
+          const surfaceTrace = {
+            z: z_data,
+            x: x_data,
+            y: y_data,
+            type: "surface",
+            colorscale: "Hot", // Du noir/rouge au jaune/blanc pour l'effet de chaleur
+            showscale: false,
+            contours: {
+              z: { show: true, usecolormap: true, highlightcolor: "white", project: { z: true } }
+            },
+            hovertemplate: "Latence: %{x}s<br>Énergie: %{y}<br>Température: %{z:.2f}<extra></extra>"
+          };
+
+          const layout = {
+            title: { text: t.title, font: { color: "#ff4444", size: 16 } },
+            paper_bgcolor: "transparent",
+            margin: { l: 0, r: 0, b: 0, t: 40 },
+            scene: {
+              xaxis: { 
+                title: t.x_axis, 
+                gridcolor: "rgba(255,255,255,0.1)", 
+                zerolinecolor: "rgba(255,255,255,0.3)",
+                titlefont: { color: "#888" }, 
+                tickfont: { color: "#888" } 
+              },
+              yaxis: { 
+                title: t.y_axis, 
+                gridcolor: "rgba(255,255,255,0.1)", 
+                zerolinecolor: "rgba(255,255,255,0.3)",
+                titlefont: { color: "#888" }, 
+                tickfont: { color: "#888" },
+                autorange: "reversed" // Met les basses énergies devant pour mieux voir la courbe
+              },
+              zaxis: { 
+                title: t.z_axis, 
+                gridcolor: "rgba(255,255,255,0.1)", 
+                zerolinecolor: "rgba(255,255,255,0.3)",
+                titlefont: { color: "#ff4444" }, 
+                tickfont: { color: "#ff4444" } 
+              },
+              camera: { eye: { x: -1.5, y: -1.5, z: 0.8 } }, // Angle de vue optimal
+              bgcolor: "transparent",
+            },
+          };
+
+          Plotly.newPlot(containerId, [surfaceTrace], layout, { responsive: true, displayModeBar: false });
+        }
+        
+        // Appel de la fonction
+        drawTemperatureSurface("teff-surface-plot", "fr"); // ou "en" selon ta gestion dynamique
 
       // ==========================================
       // GRAPHIQUE : Plotly.js - Cristallisation / Effet Meissner
