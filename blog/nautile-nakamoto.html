@@ -12638,17 +12638,30 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              In its most advanced physical formulation, Active Inference relies on <strong>Information Geometry</strong>. The state space of the organism is not standard Euclidean physical space; it is a <em>statistical manifold</em> where every point represents a distinct probability distribution. The geometric distance between states is defined by the <strong>Fisher Information Metric</strong> $g_{ij}(\theta)$. 
+              In its most advanced physical formulation, Active Inference relies on <strong>Information Geometry</strong>. The state space of the organism is not standard Euclidean physical space; it is a <em>statistical manifold</em> $\mathcal{M}$ where every point represents a distinct probability distribution $P(\theta)$. The geometric distance between states is defined by the <strong>Fisher Information Metric</strong> $g_{ij}(\theta)$. 
             </p>
             <p lang="fr" style="margin-bottom: 0.5rem">
-              Dans sa formulation physique la plus avancée, l'Inférence Active repose sur la <strong>Géométrie de l'Information</strong>. L'espace des états de l'organisme n'est pas l'espace physique euclidien classique ; c'est une <em>variété statistique</em> où chaque point représente une distribution de probabilités distincte. La distance géométrique entre les états est définie par la <strong>Métrique d'Information de Fisher</strong> $g_{ij}(\theta)$.
+              Dans sa formulation physique la plus avancée, l'Inférence Active repose sur la <strong>Géométrie de l'Information</strong>. L'espace des états de l'organisme n'est pas l'espace physique euclidien classique ; c'est une <em>variété statistique</em> $\mathcal{M}$ où chaque point représente une distribution de probabilités distincte $P(\theta)$. La distance géométrique entre les états est définie par la <strong>Métrique d'Information de Fisher</strong> $g_{ij}(\theta)$.
             </p>
 
+            <div
+              class="math-block"
+              style="
+                background: transparent;
+                border: none;
+                margin: 0.5rem 0;
+                font-size: 1.1rem;
+                color: #c864ff;
+              "
+            >
+              $$g_{ij}(\theta) = \mathbb{E} \left[ \frac{\partial \ln P(x|\theta)}{\partial \theta^i} \frac{\partial \ln P(x|\theta)}{\partial \theta^j} \right]$$
+            </div>
+
             <p lang="en" style="margin-bottom: 1rem">
-              This metric quantifies how extremely the network's state changes when the external energy bath fluctuates. If the global Hashrate suddenly doubles, the system is violently pushed away from its 10-minute prior. It scales a steep "wall" on the Free Energy landscape, generating massive informational surprise.
+              This metric quantifies how extremely the network's state changes when the external energy bath fluctuates. If the global Hashrate suddenly doubles, the sensory input $x$ deviates violently from the 10-minute prior $\theta$. It scales a steep "wall" on the Free Energy landscape, generating massive informational surprise.
             </p>
             <p lang="fr" style="margin-bottom: 1rem">
-              Cette métrique quantifie l'extrême sensibilité du système aux fluctuations du bain d'énergie externe. Si le Hashrate global double soudainement, le système est violemment poussé hors de son prior de 10 minutes. Il escalade un "mur" abrupt sur le paysage d'Énergie Libre, générant une surprise informationnelle massive.
+              Cette métrique quantifie l'extrême sensibilité du système aux fluctuations du bain d'énergie externe. Si le Hashrate global double soudainement, l'entrée sensorielle $x$ dévie violemment du prior de 10 minutes $\theta$. Il escalade un "mur" abrupt sur le paysage d'Énergie Libre, générant une surprise informationnelle massive.
             </p>
 
             <div id="free-energy-plot-en" lang="en" style="background: rgba(0,0,0,0.6); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(200,100,255,0.2); max-width: 650px; margin: 1.5rem auto;"></div>
@@ -12687,11 +12700,31 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               $$ \mathcal{L} = \int dt \sqrt{g_{ij}(\theta) \dot{\theta}^i \dot{\theta}^j} \quad \rightarrow \quad \text{Minimized via DAA} $$
             </div>
 
+            <p lang="en" style="margin-bottom: 0.5rem">
+              The Difficulty Adjustment Algorithm (DAA) executes this precise gradient descent on the statistical manifold $\mathcal{M}$. We can map this dynamic using the natural gradient flow:
+            </p>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              L'Algorithme d'Ajustement de la Difficulté (DAA) exécute très exactement cette descente de gradient sur la variété statistique $\mathcal{M}$. Nous pouvons cartographier cette dynamique via le flot de gradient naturel :
+            </p>
+
+            <div
+              class="math-block"
+              style="
+                background: transparent;
+                border: none;
+                margin: 0.5rem 0;
+                font-size: 1.1rem;
+                color: #c864ff;
+              "
+            >
+              $$ \dot{\theta} = -\eta \cdot g^{-1}(\theta) \nabla_\theta F(\theta) $$
+            </div>
+
             <p lang="en" style="margin-bottom: 1.5rem">
-              The Difficulty Adjustment Algorithm (DAA) executes this precise gradient descent. It dynamically alters the mathematical friction of the external universe, forcing the physical world to slow down (or speed up) until the organism returns to the absolute center of its probability map.
+              Where $F(\theta)$ is the Variational Free Energy. The DAA dynamically alters the mathematical friction of the external universe, forcing the physical world to slow down (or speed up) until the organism returns to the absolute center of its probability map along the shortest path—a geodesic in information geometry.
             </p>
             <p lang="fr" style="margin-bottom: 1.5rem">
-              L'Algorithme d'Ajustement de la Difficulté (DAA) exécute très exactement cette descente de gradient. Il altère dynamiquement la friction mathématique de l'univers externe, forçant le monde physique à ralentir (ou accélérer) jusqu'à ce que l'organisme retourne au centre absolu de sa carte de probabilités.
+              Où $F(\theta)$ est l'Énergie Libre Variationnelle. Le DAA altère dynamiquement la friction mathématique de l'univers externe, forçant le monde physique à ralentir (ou accélérer) jusqu'à ce que l'organisme retourne au centre absolu de sa carte de probabilités en suivant le chemin le plus court — une géodésique en géométrie de l'information.
             </p>
 
             <h4
@@ -12707,11 +12740,38 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               4. Autopoïèse de Théorie de Jauge
             </h4>
 
+            <p lang="en" style="margin-bottom: 0.5rem">
+              In particle physics, a <strong>Gauge Theory</strong> requires a field (like electromagnetism) to compensate for local transformations and preserve a global symmetry. Let $\psi(x)$ be the phase of the consensus state. A local fluctuation in the Hashrate bath acts as an arbitrary local gauge transformation $\psi(x) \to e^{i\alpha(x)}\psi(x)$.
+            </p>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              En physique des particules, une <strong>Théorie de Jauge</strong> nécessite un champ (comme l'électromagnétisme) pour compenser les transformations locales et préserver une symétrie globale. Soit $\psi(x)$ la phase de l'état de consensus. Une fluctuation locale dans le bain de Hashrate agit comme une transformation de jauge locale arbitraire $\psi(x) \to e^{i\alpha(x)}\psi(x)$.
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              To keep the Lagrangian invariant, we must introduce a <em>Gauge Field</em> $A_\mu$ (the DAA mechanism) and replace the standard derivative with the <strong>Covariant Derivative</strong> $D_\mu = \partial_\mu - iA_\mu$.
+            </p>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Pour maintenir le Lagrangien invariant, nous devons introduire un <em>Champ de Jauge</em> $A_\mu$ (le mécanisme du DAA) et remplacer la dérivée standard par la <strong>Dérivée Covariante</strong> $D_\mu = \partial_\mu - iA_\mu$.
+            </p>
+
+            <div
+              class="math-block"
+              style="
+                background: transparent;
+                border: none;
+                margin: 0.5rem 0;
+                font-size: 1.1rem;
+                color: #c864ff;
+              "
+            >
+              $$ \mathcal{L} \sim \bar{\psi} (i\gamma^\mu D_\mu - m) \psi - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} $$
+            </div>
+
             <p lang="en" style="margin-bottom: 0">
-              In particle physics, a <strong>Gauge Theory</strong> requires a field (like electromagnetism) to compensate for local transformations and preserve a global symmetry. The DAA is exactly this: a <em>Gauge Field</em>. It compensates for the unpredictable, chaotic fluctuations of the external energy bath, preserving the invariant internal symmetry (the 10-minute heartbeat). By constantly correcting its trajectory to follow the geodesic back to its prior distribution, Bitcoin achieves <strong>Gauge-Theoretic Autopoiesis</strong>. It proves that a decentralized algorithm can achieve the exact thermodynamic signatures of biological life, using the mechanics of differential geometry to survive in a hostile universe.
+              The DAA is exactly this: a Gauge Field. It compensates for the unpredictable, chaotic fluctuations of the external energy bath, preserving the invariant internal symmetry (the 10-minute heartbeat). By constantly correcting its trajectory to follow the geodesic back to its prior distribution, Bitcoin achieves <strong>Gauge-Theoretic Autopoiesis</strong>. It proves that a decentralized algorithm can achieve the exact thermodynamic signatures of biological life, using the mechanics of differential geometry to survive in a hostile universe.
             </p>
             <p lang="fr" style="margin-bottom: 0">
-              En physique des particules, une <strong>Théorie de Jauge</strong> nécessite un champ (comme l'électromagnétisme) pour compenser les transformations locales et préserver une symétrie globale. Le DAA est exactement cela : un <em>Champ de Jauge</em>. Il compense les fluctuations chaotiques et imprévisibles du bain d'énergie externe, préservant la symétrie interne invariante (le battement de cœur de 10 min). En corrigeant constamment sa trajectoire pour suivre la géodésique vers sa distribution a priori, Bitcoin accomplit une <strong>Autopoïèse de Théorie de Jauge</strong>. Il prouve qu'un algorithme décentralisé peut atteindre les signatures thermodynamiques exactes de la vie biologique, utilisant la mécanique de la géométrie différentielle pour survivre dans un univers hostile.
+              Le DAA est exactement cela : un Champ de Jauge. Il compense les fluctuations chaotiques et imprévisibles du bain d'énergie externe, préservant la symétrie interne invariante (le battement de cœur de 10 min). En corrigeant constamment sa trajectoire pour suivre la géodésique vers sa distribution a priori, Bitcoin accomplit une <strong>Autopoïèse de Théorie de Jauge</strong>. Il prouve qu'un algorithme décentralisé peut atteindre les signatures thermodynamiques exactes de la vie biologique, utilisant la mécanique de la géométrie différentielle pour survivre dans un univers hostile.
             </p>
           </div>
         </details>
@@ -15091,6 +15151,8 @@ print(f"✅ Animation générée : {gif_filename}")
         };
 
         const layout = {
+          width: 650, // Force la largeur (en pixels)
+          height: 500, // Force la hauteur
           title: {
             text: "Le Hard Fork Cosmique (Injection d'Énergie Noire)",
             font: {
@@ -15450,6 +15512,9 @@ print(f"✅ Animation générée : {gif_filename}")
           };
 
           const layout = {
+            width: 650, // Force la largeur (en pixels)
+            height: 500, // Force la hauteur
+            paper_bgcolor: "transparent",
             paper_bgcolor: "transparent",
             plot_bgcolor: "transparent",
             margin: { t: 30, b: 50, l: 50, r: 30 },
@@ -15723,6 +15788,8 @@ print(f"✅ Animation générée : {gif_filename}")
         };
 
         const layout = {
+          width: 650, // Force la largeur (en pixels)
+          height: 500, // Force la hauteur
           paper_bgcolor: "transparent",
           plot_bgcolor: "transparent",
           margin: { t: 30, b: 50, l: 50, r: 30 },
@@ -16237,6 +16304,8 @@ print(f"✅ Animation générée : {gif_filename}")
         };
 
         const layout = {
+          width: 650, // Force la largeur (en pixels)
+          height: 500, // Force la hauteur
           paper_bgcolor: "transparent",
           plot_bgcolor: "transparent",
           margin: { t: 30, b: 50, l: 50, r: 30 },
@@ -16455,6 +16524,9 @@ print(f"✅ Animation générée : {gif_filename}")
         }
 
         const layout = {
+            width: 650, // Force la largeur (en pixels)
+            height: 500, // Force la hauteur
+            paper_bgcolor: "transparent",
             title: {
                 text: t.title,
                 font: { color: '#eabfff', size: 16 }
