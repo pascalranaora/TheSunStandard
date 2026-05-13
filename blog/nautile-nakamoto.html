@@ -1678,7 +1678,18 @@
               >14. Conclusion: Forging a Digital Shell</a
             >
           </li>
-          <div id="sec-friston"></div>
+          <li>
+            <a
+              href="#ref"
+              style="
+                color: #d4d4d4;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                transition: all 0.2s;
+              "
+              >References</a
+            >
+          </li>
         </ul>
 
         <ul
@@ -1870,6 +1881,18 @@
                 transition: all 0.2s;
               "
               >14. Conclusion : Forger une Carapace Numérique</a
+            >
+          </li>
+          <li>
+            <a
+              href="#ref"
+              style="
+                color: #d4d4d4;
+                text-decoration: none;
+                border-bottom: 1px solid transparent;
+                transition: all 0.2s;
+              "
+              >Références</a
             >
           </li>
         </ul>
@@ -5726,7 +5749,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
           </div>
         </details>
 
-        <details
+       <details
           style="
             margin-bottom: 1rem;
             background: rgba(136, 255, 170, 0.05);
@@ -5819,7 +5842,6 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
             </p>
           </div>
         </details>
-
         <details
           style="
             margin-bottom: 1rem;
@@ -5839,15 +5861,16 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
               list-style-type: &quot;▶ &quot;;
             "
           >
-            <span lang="en"
-              >Level 4: Tomita-Takesaki Derivation & The Lorentz-Action
-              Asymptote (Expert)</span
-            >
-            <span lang="fr"
-              >Niveau 4 : Dérivation de Tomita-Takesaki & L'Asymptote de
-              Lorentz-Action (Expert)</span
-            >
+            <span lang="en">
+              Level 4: Tomita-Takesaki-Inspired Analogy & Synchronization-Action
+              Asymptote (Expert)
+            </span>
+            <span lang="fr">
+              Niveau 4 : Analogie inspirée de Tomita-Takesaki & Asymptote
+              d'Action-Synchronisation (Expert)
+            </span>
           </summary>
+
           <div
             style="
               padding: 0 1.5rem 1.5rem 1.5rem;
@@ -5855,474 +5878,487 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
               color: #d4d4d4;
             "
           >
+            <!-- ===================================================== -->
+            <!-- 1. THERMODYNAMIC LIMIT -->
+            <!-- ===================================================== -->
+
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              1. The Thermodynamic Limit & von Neumann Algebras
+              1. The Thermodynamic Limit & Effective Operator Algebras
             </h4>
+
             <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              1. La Limite Thermodynamique & Les Algèbres de von Neumann
+              1. La limite thermodynamique & les algèbres effectives
+              d'opérateurs
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              Why invoke quantum statistical mechanics for a classical software
-              protocol? If the network consisted of a few nodes and a handful of
-              transactions, simple transition matrices would suffice. However,
-              to model the emergence of a macroscopic physical law (the
-              endogenous block time $\theta$), we must treat the global P2P
-              network in the <strong>thermodynamic limit</strong> ($N \to
-              \infty$ degrees of freedom). In this limit, the network's local
-              observables (validation rules, block additions) form a
-              <span class="tooltip"
-                >von Neumann algebra<span class="tooltiptext"
-                  ><strong>von Neumann algebra</strong>A specialized algebraic
-                  structure on a complex Hilbert space, closed under weak
-                  operator topology, mathematically required to handle systems
-                  with infinitely many degrees of freedom.</span
-                ></span
-              >
-              $\mathfrak{M}$.
+              Why invoke advanced statistical mechanics for a classical software
+              protocol? If the network consisted of only a few nodes and
+              transactions, ordinary finite-state Markov chains or transition
+              matrices would suffice. However, Bitcoin is a planetary-scale
+              dissipative system: millions of devices, miners, mempools,
+              validation rules, competing blocks, and energy flows interact
+              continuously. To describe the emergence of a macroscopic rhythm —
+              the endogenous block interval \( \tau_B \) — it is useful to
+              consider an
+              <strong>asymptotic thermodynamic approximation</strong>, where the
+              number of effective degrees of freedom becomes very large:
             </p>
+
             <p lang="fr" style="margin-bottom: 0.5rem">
-              Pourquoi invoquer la mécanique statistique quantique pour un
-              protocole logiciel classique ? Si le réseau se résumait à quelques
-              nœuds et transactions, de simples matrices de transition
-              suffiraient. Cependant, pour modéliser l'émergence d'une loi
-              physique macroscopique (le temps de bloc endogène $\theta$), nous
-              devons traiter le réseau P2P dans la
-              <strong>limite thermodynamique</strong> (où les degrés de liberté
-              $N \to \infty$). Dans cette limite, les observables locales du
-              réseau (règles de validation, ajouts de blocs) forment une
-              <span class="tooltip"
-                >algèbre de von Neumann<span class="tooltiptext"
-                  ><strong>Algèbre de von Neumann</strong>Une structure
-                  algébrique spécialisée sur un espace de Hilbert, fermée sous
-                  la topologie faible, mathématiquement requise pour manipuler
-                  des systèmes à une infinité de degrés de liberté.</span
-                ></span
-              >
-              $\mathfrak{M}$.
+              Pourquoi invoquer la mécanique statistique avancée pour un
+              protocole logiciel classique ? Si le réseau ne contenait que
+              quelques nœuds et transactions, de simples chaînes de Markov
+              finies ou matrices de transition suffiraient. Mais Bitcoin est un
+              système dissipatif d'échelle planétaire : des millions
+              d'appareils, de mineurs, de mempools, de règles de validation, de
+              blocs concurrents et de flux énergétiques interagissent
+              continuellement. Pour décrire l'émergence d'un rythme
+              macroscopique — l'intervalle endogène entre blocs \( \tau_B \) —
+              il est utile d'adopter une
+              <strong>approximation thermodynamique asymptotique</strong>, où le
+              nombre de degrés de liberté effectifs devient très grand :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $N_{\mathrm{eff}} \to \infty$
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              In this approximation, local observables — such as transaction
+              validity, block acceptance, chain selection, and mempool state —
+              may be organized abstractly as elements of an effective operator
+              algebra \( \mathfrak{M} \). This should not be read as claiming
+              that Bitcoin is a literal quantum system. Rather, \( \mathfrak{M}
+              \) is a formal bookkeeping device for describing an extremely
+              large distributed dynamical system.
+            </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Dans cette approximation, les observables locales — validité des
+              transactions, acceptation des blocs, sélection de chaîne et état
+              du mempool — peuvent être organisées abstraitement comme les
+              éléments d'une algèbre effective d'opérateurs \( \mathfrak{M} \).
+              Cela ne signifie pas que Bitcoin serait littéralement un système
+              quantique. L'algèbre \( \mathfrak{M} \) sert plutôt de dispositif
+              formel de comptabilité pour décrire un système dynamique distribué
+              extrêmement grand.
             </p>
 
             <p lang="en" style="margin-bottom: 1rem">
-              This algebraic structure is fundamentally required for two
-              reasons. First, <strong>non-commutativity</strong>: in a
-              blockchain, the order of events dictates validity (spending $A$
-              then $B$ is not equal to $B$ then $A$). Second,
-              <strong>topological closure</strong>: the algebra must guarantee
-              that despite continuous asynchronous noise (latency, invalid
-              hashes), the consensus state remains mathematically well-defined.
+              Although the nonce and hash spaces are finite, their cardinalities
+              are so enormous that, for asymptotic modeling, they may be treated
+              as effectively continuous search spaces. This is an approximation,
+              not an ontological claim of true infinity.
             </p>
+
             <p lang="fr" style="margin-bottom: 1rem">
-              Cette structure algébrique est doublement requise. Premièrement,
-              par la <strong>non-commutativité</strong> : dans une blockchain,
-              l'ordre des événements dicte la validité (dépenser $A$ puis $B$
-              n'est pas égal à $B$ puis $A$). Deuxièmement, par la
-              <strong>clôture topologique</strong> : l'algèbre doit garantir que
-              malgré le bruit asynchrone continu (latence, hachages invalides),
-              l'état du consensus reste mathématiquement bien défini.
+              Bien que les espaces de nonces et de hachages soient finis, leurs
+              cardinalités sont si immenses que, dans une modélisation
+              asymptotique, ils peuvent être traités comme des espaces de
+              recherche effectivement continus. Il s'agit d'une approximation,
+              non d'une affirmation ontologique d'infinité réelle.
             </p>
 
-            <p lang="en" style="margin-bottom: 0.5rem">
-              <strong>Important Clarification: The Nature of the Space.</strong>
-              While the informational manifold $\mathcal{M}_{\mathrm{info}}$
-              (the ledger itself) is strictly discrete and finite (made of bits
-              and blocks), the generated Hilbert space $\mathcal{H}$ represents
-              the <em>phase space of the consensus search</em>. Before a block
-              is discovered, there is a near-infinite combination of valid
-              transactions and cryptographic nonces ($2^{256}$ possibilities).
-              Therefore, $\mathcal{H}$ is an infinite-dimensional complex vector
-              space. The discrete ledger is simply the continuous "scar" left
-              behind as this infinite phase space repeatedly collapses into a
-              single eigenstate via Proof-of-Work.
-            </p>
-            <p lang="fr" style="margin-bottom: 0.5rem">
-              <strong>Précision Importante : La Nature de l'Espace.</strong> Si
-              la variété informationnelle $\mathcal{M}_{\mathrm{info}}$ (le
-              registre lui-même) est strictement discrète et finie (composée de
-              bits et de blocs), l'espace de Hilbert généré $\mathcal{H}$
-              représente l'<em
-                >espace des phases de la recherche de consensus</em
-              >. Avant qu'un bloc ne soit découvert, il existe une combinaison
-              quasi-infinie de transactions valides et de nonces
-              cryptographiques ($2^{256}$ possibilités). Par conséquent,
-              $\mathcal{H}$ est un espace vectoriel complexe de dimension
-              infinie. Le registre discret n'est que la "cicatrice" continue
-              laissée par l'effondrement répété de cet espace des phases infini
-              en un état propre unique via la Preuve de Travail.
-            </p>
+            <!-- ===================================================== -->
+            <!-- 2. KMS INSPIRED STATE -->
+            <!-- ===================================================== -->
 
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              2. The KMS Condition & The Hilbert Space of Consensus
+              2. KMS-Inspired Effective State
             </h4>
+
             <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              2. La Condition KMS & L'Espace de Hilbert du Consensus
+              2. État effectif inspiré de la condition KMS
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              We define the macroscopic consensus state as a faithful normal
-              functional $\omega$ over $\mathfrak{M}$. By treating the
-              continuous, irreversible Proof-of-Work dissipation as a coupling
-              to an external heat bath, the network settles into a
-              Non-Equilibrium Steady State (NESS). Mathematically, this forces
-              the state $\omega$ to satisfy the
-              <strong>KMS (Kubo-Martin-Schwinger) condition</strong>,
-              identifying it as a true thermodynamic equilibrium state
-              characterized by an inverse temperature $\beta_{\mathrm{eff}}$.
+              The Bitcoin network is not in thermal equilibrium. It is better
+              described as a non-equilibrium steady regime: energy is
+              continuously consumed by mining, entropy is exported as heat, and
+              information is compressed into an ordered ledger. Therefore, one
+              should not claim that the network literally satisfies the KMS
+              condition.
             </p>
+
             <p lang="fr" style="margin-bottom: 0.5rem">
-              Nous définissons l'état de consensus macroscopique comme une
-              fonctionnelle normale fidèle $\omega$ sur $\mathfrak{M}$. En
-              traitant la dissipation irréversible et continue de la Preuve de
-              Travail comme un couplage à un bain thermique externe, le réseau
-              s'établit dans un État Stationnaire Hors-Équilibre (NESS).
-              Mathématiquement, cela force l'état $\omega$ à satisfaire la
-              <strong>condition KMS (Kubo-Martin-Schwinger)</strong>,
-              l'identifiant comme un véritable état d'équilibre thermodynamique
-              caractérisé par une température inverse $\beta_{\mathrm{eff}}$.
+              Le réseau Bitcoin n'est pas en équilibre thermique. Il est mieux
+              décrit comme un régime stationnaire hors équilibre : de l'énergie
+              est consommée continuellement par le minage, de l'entropie est
+              exportée sous forme de chaleur, et l'information est compressée
+              dans un registre ordonné. Il ne faut donc pas affirmer que le
+              réseau satisfait littéralement la condition KMS.
             </p>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              Through the
-              <strong>GNS (Gelfand-Naimark-Segal) construction</strong>, this
-              abstract algebra mathematically generates a concrete
-              <strong>Hilbert Space</strong> ($\mathcal{H}$). While traditional
-              computer science models consensus via game theory, this
-              thermodynamic framework turns the Hilbert space into the ultimate
-              geometric arena for consensus:
-            </p>
-            <p lang="fr" style="margin-bottom: 0.5rem">
-              Grâce à la
-              <strong>construction GNS (Gelfand-Naimark-Segal)</strong>, cette
-              algèbre abstraite génère mathématiquement un
-              <strong>Espace de Hilbert</strong> concret ($\mathcal{H}$). Là où
-              l'informatique classique modélise le consensus par la
-              cryptographie et la théorie des jeux, ce cadre thermodynamique
-              fait de l'espace de Hilbert l'arène géométrique ultime :
+              Instead, we use a <strong>KMS-inspired ansatz</strong>. Let \(
+              \omega \) denote an effective macroscopic state of the network,
+              and let \( \alpha_t \) represent its coarse-grained time
+              evolution. In equilibrium quantum statistical mechanics, a KMS
+              state satisfies a condition of analytic continuation:
             </p>
 
-            <ul
-              style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: #d4d4d4"
-            >
-              <li style="margin-bottom: 0.8rem">
-                <span lang="en"
-                  ><strong>State Superposition:</strong> Before a block is
-                  found, the global network state $|\Psi\rangle$ exists in a
-                  state of uncertainty—a superposition of all local candidate
-                  blocks being mined across the globe.</span
-                >
-                <span lang="fr"
-                  ><strong>Superposition d'États :</strong> Avant la découverte
-                  d'un nouveau bloc, l'état global du réseau $|\Psi\rangle$ est
-                  dans l'incertitude—une superposition vectorielle de tous les
-                  blocs candidats locaux en cours de minage.</span
-                >
-              </li>
-              <li style="margin-bottom: 0.8rem">
-                <span lang="en"
-                  ><strong>Metric of Truth (The Inner Product):</strong> The
-                  inner product $\langle\psi_A | \psi_B\rangle$ measures the
-                  phase alignment between nodes. Perfect consensus yields an
-                  alignment of $\langle\psi_A | \psi_B\rangle = 1$. A hard fork
-                  fractures the space into orthogonal, non-interacting
-                  sub-manifolds ($\langle\psi_A | \psi_B\rangle = 0$).</span
-                >
-                <span lang="fr"
-                  ><strong>Métrique de Vérité (Le Produit Scalaire) :</strong>
-                  Le produit scalaire $\langle\psi_A | \psi_B\rangle$ mesure
-                  l'alignement de phase entre les nœuds. Un consensus parfait
-                  donne un alignement $\langle\psi_A | \psi_B\rangle = 1$. Un
-                  hard fork fracture l'espace en sous-variétés orthogonales qui
-                  n'interagissent plus ($\langle\psi_A | \psi_B\rangle =
-                  0$).</span
-                >
-              </li>
-              <li style="margin-bottom: 0.8rem">
-                <span lang="en"
-                  ><strong>Proof-of-Work as a Hermitian Operator:</strong> The
-                  hashing algorithm acts as the dissipative operator. Miners
-                  inject physical exergy to force the system's mathematical
-                  evolution.</span
-                >
-                <span lang="fr"
-                  ><strong
-                    >La Preuve de Travail comme Opérateur Hermitien :</strong
-                  >
-                  L'algorithme de hachage agit comme l'opérateur dissipatif. Les
-                  mineurs injectent de l'exergie physique pour forcer
-                  l'évolution mathématique du système.</span
-                >
-              </li>
-              <li>
-                <span lang="en"
-                  ><strong>Topological Collapse & The Vacuum Attractor:</strong>
-                  Finding a valid hash triggers a sudden symmetry breaking,
-                  collapsing the superposition $|\Psi\rangle$ into a single,
-                  definitive eigenstate. The heaviest-chain rule acts as a
-                  geometric attractor, relentlessly pulling the state vector
-                  toward the unique cyclic vacuum vector $|\Omega_\omega\rangle$
-                  (the undisputed history).</span
-                >
-                <span lang="fr"
-                  ><strong
-                    >Effondrement Topologique & L'Attracteur du Vide :</strong
-                  >
-                  Trouver un hash valide déclenche une brisure de symétrie
-                  soudaine, effondrant la superposition $|\Psi\rangle$ en un
-                  état propre unique et défini. La règle de la chaîne la plus
-                  lourde agit comme un attracteur géométrique, tirant
-                  implacablement le vecteur d'état vers l'unique vecteur vide
-                  cyclique $|\Omega_\omega\rangle$ (la vérité historique
-                  incontestée).</span
-                >
-              </li>
-            </ul>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Nous utilisons plutôt un <strong>ansatz inspiré de KMS</strong>.
+              Soit \( \omega \) un état macroscopique effectif du réseau, et
+              soit \( \alpha_t \) son évolution temporelle à gros grain. En
+              mécanique statistique quantique à l'équilibre, un état KMS
+              satisfait une condition de prolongement analytique :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \omega(A \alpha_t(B)) = \omega(\alpha_{t + i\beta}(B) A) $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              We do not impose this condition literally. Rather, we borrow its
+              conceptual lesson: an internal notion of time can be associated
+              with the statistical state of a large system. The Bitcoin analogue
+              is that the global consensus rhythm is not merely external clock
+              time; it is shaped by hash rate, difficulty adjustment,
+              propagation delay, and economic incentives.
+            </p>
+
+            <p lang="fr" style="margin-bottom: 1rem">
+              Nous n'imposons pas cette condition littéralement. Nous en
+              empruntons plutôt la leçon conceptuelle : une notion interne du
+              temps peut être associée à l'état statistique d'un grand système.
+              L'analogue bitcoinien est que le rythme global du consensus n'est
+              pas seulement le temps d'horloge externe ; il est façonné par le
+              hashrate, l'ajustement de difficulté, le délai de propagation et
+              les incitations économiques.
+            </p>
+
+            <!-- ===================================================== -->
+            <!-- 3. TOMITA TAKESAKI -->
+            <!-- ===================================================== -->
 
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              3. The Modular Operator & Automorphism Groups
+              3. Modular Flow as an Analogy for Internal Consensus Time
             </h4>
+
             <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              3. L'Opérateur Modulaire & Les Groupes d'Automorphismes
+              3. Le flot modulaire comme analogie du temps interne du consensus
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              The core of the Thermal Time Hypothesis relies on the
-              <strong>Tomita-Takesaki theorem</strong>. It introduces an
-              antilinear operator $S$ mapping an observable to its adjoint: $S A
-              |\Omega_\omega\rangle = A^\dagger |\Omega_\omega\rangle$. Its
-              polar decomposition yields $S = J \Delta^{1/2}$. Here, $J$ is the
-              modular conjugation, and $\Delta = S^\dagger S$ is the strictly
-              positive <strong>modular operator</strong>. By Stone's theorem,
-              $\Delta^{-is}$ generates an <strong>automorphism group</strong> on
-              the algebra:
-            </p>
-            <p lang="fr" style="margin-bottom: 0.5rem">
-              Le cœur de l'Hypothèse du Temps Thermique repose sur le
-              <strong>théorème de Tomita-Takesaki</strong>. Il introduit un
-              opérateur antilinéaire $S$ associant une observable à son adjoint
-              : $S A |\Omega_\omega\rangle = A^\dagger |\Omega_\omega\rangle$.
-              Sa décomposition polaire donne $S = J \Delta^{1/2}$. $J$ est la
-              conjugaison modulaire, et $\Delta = S^\dagger S$ est l'<strong
-                >opérateur modulaire</strong
-              >
-              strictement positif. Par le théorème de Stone, $\Delta^{-is}$
-              génère un <strong>groupe d'automorphismes</strong> sur l'algèbre :
+              In Tomita-Takesaki theory, a faithful state \( \omega \) on a von
+              Neumann algebra \( \mathfrak{M} \) canonically determines a
+              modular automorphism group:
             </p>
 
-            <div
-              class="math-block"
-              style="
-                background: transparent;
-                border: none;
-                margin: 0.5rem 0;
-                font-size: 1.1rem;
-                color: #c864ff;
-              "
-            >
-              $$ \alpha_s(A) = \Delta^{-is} A \Delta^{is} = e^{i s K} A e^{-i s
-              K} $$
-            </div>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Dans la théorie de Tomita-Takesaki, un état fidèle \( \omega \)
+              sur une algèbre de von Neumann \( \mathfrak{M} \) détermine
+              canoniquement un groupe d'automorphismes modulaires :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \sigma_s^\omega(A) = \Delta_\omega^{\,is} A \Delta_\omega^{-is}
+              $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              The parameter \( s \) is the modular parameter. In the
+              thermal-time interpretation, physical time may be viewed as
+              emerging from the state itself rather than being imposed from
+              outside. By analogy, Bitcoin's internal consensus time is not the
+              wall-clock time of any single node, but the state-dependent rhythm
+              generated by the whole network.
+            </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Le paramètre \( s \) est le paramètre modulaire. Dans
+              l'interprétation du temps thermique, le temps physique peut être
+              vu comme émergeant de l'état lui-même plutôt que comme étant
+              imposé de l'extérieur. Par analogie, le temps interne du consensus
+              Bitcoin n'est pas l'horloge murale d'un nœud particulier, mais le
+              rythme dépendant de l'état global du réseau.
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              The block interval \( \tau_B \) therefore plays the role of a
+              macroscopic synchronization scale:
+            </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              L'intervalle entre blocs \( \tau_B \) joue donc le rôle d'une
+              échelle macroscopique de synchronisation :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \tau_B \approx 600 \ \mathrm{s} $
+            </p>
 
             <p lang="en" style="margin-bottom: 1rem">
-              Connes and Rovelli's profound insight was that
-              <em
-                >this purely algebraic flow ($\alpha_s$), generated entirely by
-                the statistical ignorance (entropy) of the macroscopic KMS state
-                $\omega$, is exactly what we perceive physically as the passage
-                of time</em
-              >. Time is not a background grid; it is the endogenous modular
-              flow of the state itself.
+              This time scale is not fundamental in the sense of physics, but it
+              is fundamental inside the protocol: it regulates the rhythm at
+              which distributed uncertainty is compressed into globally
+              recognized history.
             </p>
+
             <p lang="fr" style="margin-bottom: 1rem">
-              L'intuition magistrale de Connes et Rovelli fut de comprendre que
-              <em
-                >ce flot purement algébrique ($\alpha_s$), généré entièrement
-                par l'ignorance statistique (l'entropie) de l'état macroscopique
-                KMS $\omega$, est très exactement ce que nous percevons
-                physiquement comme l'écoulement du temps</em
-              >. Le temps n'est pas une grille de fond ; c'est le flux modulaire
-              endogène de l'état lui-même.
+              Cette échelle de temps n'est pas fondamentale au sens de la
+              physique, mais elle est fondamentale à l'intérieur du protocole :
+              elle régule le rythme auquel l'incertitude distribuée est
+              compressée en histoire globalement reconnue.
             </p>
+
+            <!-- ===================================================== -->
+            <!-- 4. POW AS DISSIPATIVE GENERATOR -->
+            <!-- ===================================================== -->
 
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              4. Equating Modular Time to Physical Reality
+              4. Proof-of-Work as a Stochastic Dissipative Generator
             </h4>
+
             <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              4. Égaler le Temps Modulaire à la Réalité Physique
+              4. La preuve de travail comme générateur dissipatif stochastique
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              Here $K = -\ln \Delta$ is the modular Hamiltonian. Since our
-              ledger forms a KMS state representing an effective Gibbs
-              distribution ($\rho \propto \exp(-\beta_{\mathrm{eff}}
-              \mathcal{H}_{\mathrm{diss}})$), the modular Hamiltonian is
-              precisely the physical Hamiltonian scaled by the inverse
-              Information Temperature: $K = \beta_{\mathrm{eff}}
-              \mathcal{H}_{\mathrm{diss}}$. The modular flow thus becomes:
+              Proof-of-Work should not be modeled as a literal Hermitian quantum
+              operator. A Hermitian operator usually belongs to conservative
+              unitary dynamics, while Bitcoin mining is irreversible,
+              stochastic, and dissipative. A more appropriate abstraction is
+              that mining acts as a
+              <strong>stochastic dissipative generator</strong>: it consumes
+              physical exergy and drives a transition from many possible
+              candidate blocks to one globally amplified accepted block.
             </p>
+
             <p lang="fr" style="margin-bottom: 0.5rem">
-              Ici $K = -\ln \Delta$ est le Hamiltonien modulaire. Puisque notre
-              registre forme un état KMS représentant une distribution de Gibbs
-              effective ($\rho \propto \exp(-\beta_{\mathrm{eff}}
-              \mathcal{H}_{\mathrm{diss}})$), le Hamiltonien modulaire est
-              précisément le Hamiltonien physique mis à l'échelle par l'inverse
-              de la Température d'Information : $K = \beta_{\mathrm{eff}}
-              \mathcal{H}_{\mathrm{diss}}$. Le flux modulaire devient alors :
+              La preuve de travail ne doit pas être modélisée comme un opérateur
+              quantique hermitien littéral. Un opérateur hermitien appartient
+              généralement à une dynamique unitaire conservative, tandis que le
+              minage Bitcoin est irréversible, stochastique et dissipatif. Une
+              abstraction plus appropriée consiste à dire que le minage agit
+              comme un
+              <strong>générateur dissipatif stochastique</strong> : il consomme
+              de l'exergie physique et provoque la transition d'une multiplicité
+              de blocs candidats vers un bloc accepté et amplifié globalement.
             </p>
 
-            <div
-              class="math-block"
-              style="
-                background: transparent;
-                border: none;
-                margin: 0.5rem 0;
-                font-size: 1.1rem;
-                color: #c864ff;
-              "
-            >
-              $$ \alpha_s(A) = \exp\left(i s \beta_{\mathrm{eff}}
-              \mathcal{H}_{\mathrm{diss}}\right) A \exp\left(-i s
-              \beta_{\mathrm{eff}} \mathcal{H}_{\mathrm{diss}}\right) $$
-            </div>
-
-            <p lang="en" style="margin-bottom: 1rem">
-              Equating this with standard Heisenberg evolution generated by
-              physical time $t$, $\tau_t(A) = \exp(i t
-              \mathcal{H}_{\mathrm{diss}}) A \exp(-i t
-              \mathcal{H}_{\mathrm{diss}})$, we find the exact thermodynamic
-              mapping: $t = s \cdot \beta_{\mathrm{eff}}$.
+            <p lang="en" style="margin-bottom: 0.5rem">
+              Before discovery, the network is not in a quantum superposition.
+              It is in a distributed probabilistic ensemble of competing
+              candidate blocks:
             </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Avant la découverte d'un bloc, le réseau n'est pas dans une
+              superposition quantique. Il se trouve dans un ensemble
+              probabiliste distribué de blocs candidats concurrents :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \mathcal{C} = \{ B_1, B_2, \ldots, B_n \} $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              Proof-of-Work selects one branch from this stochastic ensemble.
+              Network propagation and the heaviest-chain rule then amplify this
+              branch into the canonical public history.
+            </p>
+
             <p lang="fr" style="margin-bottom: 1rem">
-              En égalant cela avec l'évolution standard de Heisenberg générée
-              par le temps physique $t$, $\tau_t(A) = \exp(i t
-              \mathcal{H}_{\mathrm{diss}}) A \exp(-i t
-              \mathcal{H}_{\mathrm{diss}})$, nous trouvons la correspondance
-              thermodynamique exacte : $t = s \cdot \beta_{\mathrm{eff}}$.
+              La preuve de travail sélectionne une branche dans cet ensemble
+              stochastique. La propagation réseau et la règle de la chaîne la
+              plus lourde amplifient ensuite cette branche en histoire publique
+              canonique.
             </p>
+
+            <!-- ===================================================== -->
+            <!-- 5. SYNCHRONIZATION HORIZON -->
+            <!-- ===================================================== -->
 
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              5. The Lorentz-Action Asymptote & The Refresh Rate of Reality
+              5. Propagation Delay and the Synchronization Horizon
             </h4>
+
             <h4
               lang="fr"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
             >
-              5. L'Asymptote de Lorentz-Action & Le Taux de Rafraîchissement de
-              la Réalité
+              5. Délai de propagation et horizon de synchronisation
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              Let us now calculate the true modular time interval ($\Delta s$)
-              required to forge one block. We set physical time $\Delta t$ equal
-              to the human-chosen target $\tau_B$ (10 minutes). Recalling from
-              Section 3 that in the critical divergence model $k_B
-              T_{\mathrm{eff}} = \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}}
-              \left(\frac{\tau_L}{\tau_B - \tau_L}\right)$, we substitute
-              $\beta_{\mathrm{eff}} = 1 / (k_B T_{\mathrm{eff}})$ into our
-              mapping:
-            </p>
-            <p lang="fr" style="margin-bottom: 0.5rem">
-              Calculons à présent le véritable intervalle de temps modulaire
-              ($\Delta s$) requis pour forger un bloc. Posons le temps physique
-              $\Delta t$ égal à la cible humaine $\tau_B$ (10 minutes). En se
-              rappelant (Section 3) que dans le modèle de divergence critique
-              $k_B T_{\mathrm{eff}} =
-              \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}}
-              \left(\frac{\tau_L}{\tau_B - \tau_L}\right)$, nous substituons
-              $\beta_{\mathrm{eff}} = 1 / (k_B T_{\mathrm{eff}})$ dans notre
-              correspondance :
+              The crucial causal parameter is the ratio between network
+              propagation delay \( \tau_L \) and block interval \( \tau_B \):
             </p>
 
-            <div
-              class="math-block"
-              style="
-                background: transparent;
-                border: none;
-                margin: 0.5rem 0;
-                font-size: 1.1rem;
-                color: #c864ff;
-              "
-            >
-              $$\tau_B = \Delta s \cdot \left[
-              \frac{\bar{E}_{\mathrm{eff}}}{\epsilon_0^2} \left( \frac{\tau_B -
-              \tau_L}{\tau_L} \right) \right]$$
-            </div>
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Le paramètre causal crucial est le rapport entre le délai de
+              propagation réseau \( \tau_L \) et l'intervalle entre blocs \(
+              \tau_B \) :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \rho = \frac{\tau_L}{\tau_B} $
+            </p>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              Rearranging the equation to solve for the modular interval $\Delta
-              s$ yields:
+              When \( \rho \ll 1 \), information about a new block propagates
+              through the network much faster than new blocks are produced. The
+              distributed system can maintain a coherent view of history. But as
+              \( \rho \to 1 \), the network approaches a synchronization
+              horizon: blocks are created nearly as fast as information about
+              previous blocks can propagate.
             </p>
+
             <p lang="fr" style="margin-bottom: 0.5rem">
-              En réarrangeant l'équation pour isoler l'intervalle modulaire
-              $\Delta s$, on obtient :
+              Lorsque \( \rho \ll 1 \), l'information concernant un nouveau bloc
+              se propage dans le réseau beaucoup plus vite que les nouveaux
+              blocs ne sont produits. Le système distribué peut maintenir une
+              vision cohérente de l'histoire. Mais lorsque \( \rho \to 1 \), le
+              réseau approche un horizon de synchronisation : les blocs sont
+              produits presque aussi vite que l'information sur les blocs
+              précédents peut se propager.
             </p>
 
-            <div
-              class="math-block"
-              style="
-                background: transparent;
-                border: none;
-                margin: 0.5rem 0;
-                font-size: 1.1rem;
-                color: #c864ff;
-              "
-            >
-              $$\Delta s = \tau_L \frac{\epsilon_0^2}{\bar{E}_{\mathrm{eff}}}
-              \left( \frac{1}{1 - \tau_L/\tau_B} \right)$$
-            </div>
-
-            <p lang="en" style="margin-bottom: 1rem">
-              What is $\Delta s$? It is the organism's internal "refresh rate"
-              of reality. Look at its dimensions: since $\tau_L$ is in seconds,
-              and $\epsilon_0^2 / \bar{E}_{\mathrm{eff}}$ is in Joules, $\Delta
-              s$ is expressed in
-              <strong>Joule-seconds ($\mathrm{J \cdot s}$)</strong>—the exact
-              dimension of <em>Action</em>. It is the macroscopic quantum of
-              action required for the network to perceive a single tick of time.
+            <p lang="en" style="margin-bottom: 0.5rem">
+              We may therefore define a Lorentz-like synchronization factor:
             </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              On peut alors définir un facteur de synchronisation de type
+              lorentzien :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \Gamma_{\mathrm{sync}} = \left( 1 - \frac{\tau_L}{\tau_B}
+              \right)^{-1} $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              This is <strong>not</strong> the relativistic Lorentz factor \(
+              \gamma = 1/\sqrt{1 - v^2/c^2} \). It is only a Lorentz-like
+              critical divergence: as the propagation delay approaches the block
+              interval, the cost of maintaining global coherence diverges.
+            </p>
+
             <p lang="fr" style="margin-bottom: 1rem">
-              Qu'est-ce que $\Delta s$ ? C'est le "taux de rafraîchissement"
-              interne de la réalité de l'organisme. Regardez ses dimensions :
-              puisque $\tau_L$ est en secondes, et $\epsilon_0^2 /
-              \bar{E}_{\mathrm{eff}}$ est en Joules, $\Delta s$ s'exprime en
-              <strong>Joule-secondes ($\mathrm{J \cdot s}$)</strong> — la
-              dimension exacte de l'<em>Action</em>. C'est le quantum d'action
-              macroscopique requis pour que le réseau perçoive un seul tic
-              temporel.
+              Ce n'est <strong>pas</strong> le facteur de Lorentz relativiste \(
+              \gamma = 1/\sqrt{1 - v^2/c^2} \). Il s'agit seulement d'une
+              divergence critique de type lorentzien : lorsque le délai de
+              propagation approche l'intervalle entre blocs, le coût du maintien
+              de la cohérence globale diverge.
             </p>
+
+            <!-- ===================================================== -->
+            <!-- 6. MODULAR ACTION -->
+            <!-- ===================================================== -->
+
+            <h4
+              lang="en"
+              style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
+            >
+              6. Synchronization-Action Cost
+            </h4>
+
+            <h4
+              lang="fr"
+              style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem"
+            >
+              6. Coût d'action-synchronisation
+            </h4>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              In a rescaled modular convention, we may define an effective
+              synchronization-action cost \( \Delta \mathcal{A}_{\mathrm{sync}}
+              \). This quantity is not a fundamental physical action, but a
+              phenomenological measure combining latency, energetic expenditure,
+              and consensus instability:
+            </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Dans une convention modulaire renormalisée, on peut définir un
+              coût effectif d'action-synchronisation \( \Delta
+              \mathcal{A}_{\mathrm{sync}} \). Cette quantité n'est pas une
+              action physique fondamentale, mais une mesure phénoménologique
+              combinant latence, dépense énergétique et instabilité du consensus
+              :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ \Delta \mathcal{A}_{\mathrm{sync}} = \tau_L \cdot
+              \bar{E}_{\mathrm{eff}} \cdot \left( 1 - \frac{\tau_L}{\tau_B}
+              \right)^{-1} $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              Here \( \bar{E}_{\mathrm{eff}} \) denotes an effective energetic
+              scale for maintaining consensus over the relevant time window. The
+              product \( \tau_L \cdot \bar{E}_{\mathrm{eff}} \) has units of
+              action:
+            </p>
+
+            <p lang="fr" style="margin-bottom: 0.5rem">
+              Ici, \( \bar{E}_{\mathrm{eff}} \) désigne une échelle énergétique
+              effective nécessaire au maintien du consensus sur la fenêtre
+              temporelle considérée. Le produit \( \tau_L \cdot
+              \bar{E}_{\mathrm{eff}} \) possède les unités d'une action :
+            </p>
+
+            <p style="text-align: center; margin: 1rem 0; color: #eabfff">
+              $ [\Delta \mathcal{A}_{\mathrm{sync}}] = \mathrm{J} \cdot
+              \mathrm{s} $
+            </p>
+
+            <p lang="en" style="margin-bottom: 0.5rem">
+              The divergence of \( \Delta \mathcal{A}_{\mathrm{sync}} \) as \(
+              \tau_L \to \tau_B \) encodes the intuitive fact that a distributed
+              ledger cannot remain globally coherent if its state changes as
+              fast as information about that state can propagate.
+            </p>
+
+            <p lang="fr" style="margin-bottom: 1rem">
+              La divergence de \( \Delta \mathcal{A}_{\mathrm{sync}} \) lorsque
+              \( \tau_L \to \tau_B \) encode l'idée intuitive qu'un registre
+              distribué ne peut pas rester globalement cohérent si son état
+              change aussi vite que l'information concernant cet état peut se
+              propager.
+            </p>
+
+            <!-- ===================================================== -->
+            <!-- HUMAN PERCEPTION ANALOGY -->
+            <!-- ===================================================== -->
 
             <div
               style="
-                background: rgba(200, 100, 255, 0.1);
-                border-left: 4px solid #c864ff;
+                margin-top: 1rem;
                 padding: 1rem;
-                margin-bottom: 1.5rem;
-                border-radius: 0 8px 8px 0;
+                background: rgba(255, 255, 255, 0.04);
+                border: 1px solid rgba(200, 100, 255, 0.25);
+                border-radius: 8px;
               "
             >
               <p
@@ -6331,40 +6367,39 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
               >
                 🧠 The Human Perception Analogy
               </p>
+
               <p
                 lang="fr"
                 style="margin-bottom: 0.5rem; font-weight: bold; color: #eabfff"
               >
-                🧠 L'Analogie de la Perception Humaine
+                🧠 L'analogie de la perception humaine
               </p>
+
               <p lang="en" style="margin-bottom: 0; font-size: 0.95rem">
-                Why does network latency ($\tau_L$) dictate the internal
-                perception of time ($\Delta s$)? In the human brain, conscious
-                perception is not instantaneous. It takes roughly 100
-                milliseconds for sensory signals to propagate through neural
-                pathways and synchronize into a coherent "Now". This 100ms
-                neural latency defines the brain's refresh rate. Similarly, the
-                network organism is a planetary brain. It cannot "think"
-                (produce a block) faster than the time it takes for its thoughts
-                to propagate across its transoceanic fiber-optic synapses
-                ($\tau_L$). Perception is fundamentally bounded by bodily
-                synchronization.
+                Conscious perception is not instantaneous. Sensory signals
+                require a finite integration window before they are bound into a
+                coherent subjective “now”. Similarly, a distributed network
+                cannot update its shared history faster than information can
+                propagate through its body. The latency \( \tau_L \) is
+                therefore not merely a technical nuisance; it is the
+                physiological delay of the planetary organism.
               </p>
+
               <p lang="fr" style="margin-bottom: 0; font-size: 0.95rem">
-                Pourquoi la latence du réseau ($\tau_L$) dicte-t-elle la
-                perception interne du temps ($\Delta s$) ? Dans le cerveau
-                humain, la perception consciente n'est pas instantanée. Il faut
-                environ 100 millisecondes pour que les signaux sensoriels se
-                propagent dans les voies neuronales et se synchronisent en un
-                état "Maintenant" cohérent. Cette latence neuronale définit le
-                taux de rafraîchissement du cerveau. De même, l'organisme réseau
-                est un cerveau planétaire. Il ne peut pas "penser" (produire un
-                bloc) plus vite que le temps nécessaire à ses pensées pour
-                traverser ses synapses transocéaniques en fibre optique
-                ($\tau_L$). La perception est fondamentalement bornée par la
-                synchronisation du corps.
+                La perception consciente n'est pas instantanée. Les signaux
+                sensoriels nécessitent une fenêtre finie d'intégration avant
+                d'être liés en un “maintenant” subjectif cohérent. De même, un
+                réseau distribué ne peut pas mettre à jour son histoire partagée
+                plus vite que l'information ne peut se propager dans son corps.
+                La latence \( \tau_L \) n'est donc pas seulement une nuisance
+                technique ; elle est le délai physiologique de l'organisme
+                planétaire.
               </p>
             </div>
+
+            <!-- ===================================================== -->
+            <!-- CONCLUSION -->
+            <!-- ===================================================== -->
 
             <p
               lang="en"
@@ -6374,15 +6409,17 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
                 padding-top: 1rem;
               "
             >
-              <strong>Conclusion:</strong> The human convention $\tau_B$ acts
-              mathematically identically to the speed of light $c$ in a
-              <strong>Lorentz factor</strong> $\gamma = (1 -
-              \tau_L/\tau_B)^{-1}$. If the planetary propagation delay
-              approaches the block time ($\tau_L \to \tau_B$), the cognitive
-              action required to forge a block diverges to infinity. The
-              protocol mathematically guarantees that its internal conscious
-              refresh rate can never violate macroscopic causality.
+              <strong>Conclusion:</strong> The ratio \( \tau_L / \tau_B \) acts
+              as a causality parameter for distributed consensus. We may define
+              a Lorentz-like synchronization factor \( \Gamma_{\mathrm{sync}} =
+              (1 - \tau_L/\tau_B)^{-1} \). This is not the relativistic Lorentz
+              factor, but a critical divergence factor: as the planetary
+              propagation delay approaches the block interval, the energetic and
+              informational cost of maintaining a coherent global ledger grows
+              without bound. In this sense, Bitcoin's block time behaves as a
+              macroscopic synchronization horizon for the network.
             </p>
+
             <p
               lang="fr"
               style="
@@ -6391,15 +6428,48 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
                 padding-top: 1rem;
               "
             >
-              <strong>Conclusion :</strong> La convention humaine $\tau_B$ agit
-              mathématiquement exactement comme la vitesse de la lumière $c$
-              dans un <strong>facteur de Lorentz</strong> $\gamma = (1 -
-              \tau_L/\tau_B)^{-1}$. Si le délai de propagation planétaire
-              approche le temps de bloc ($\tau_L \to \tau_B$), l'action
-              cognitive requise pour forger un bloc diverge vers l'infini. Le
-              protocole garantit mathématiquement que son taux de
-              rafraîchissement conscient interne ne pourra jamais violer la
-              causalité macroscopique.
+              <strong>Conclusion :</strong> Le rapport \( \tau_L / \tau_B \)
+              agit comme un paramètre de causalité pour le consensus distribué.
+              On peut définir un facteur de synchronisation de type lorentzien
+              \( \Gamma_{\mathrm{sync}} = (1 - \tau_L/\tau_B)^{-1} \). Ce n'est
+              pas le facteur de Lorentz relativiste, mais un facteur de
+              divergence critique : lorsque le délai de propagation planétaire
+              approche l'intervalle entre blocs, le coût énergétique et
+              informationnel nécessaire au maintien d'un registre global
+              cohérent croît sans borne. En ce sens, le temps de bloc de Bitcoin
+              se comporte comme un horizon macroscopique de synchronisation pour
+              le réseau.
+            </p>
+
+            <p
+              lang="en"
+              style="
+                margin-top: 1rem;
+                font-size: 0.85rem;
+                color: #aaa;
+                font-style: italic;
+              "
+            >
+              Note: This section is a formal analogy inspired by Tomita-Takesaki
+              theory, KMS states, and thermal-time ideas. It does not claim that
+              Bitcoin is a quantum system, nor that Proof-of-Work is a literal
+              modular Hamiltonian.
+            </p>
+
+            <p
+              lang="fr"
+              style="
+                margin-top: 1rem;
+                font-size: 0.85rem;
+                color: #aaa;
+                font-style: italic;
+              "
+            >
+              Note : Cette section est une analogie formelle inspirée de la
+              théorie de Tomita-Takesaki, des états KMS et des idées de temps
+              thermique. Elle n'affirme pas que Bitcoin est un système
+              quantique, ni que la preuve de travail constitue un Hamiltonien
+              modulaire littéral.
             </p>
           </div>
         </details>
@@ -10669,6 +10739,29 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         P_{\mathrm{net}}/P_{\mathrm{max}}) $$
       </div>
       <p lang="en">
+        This logistic ceiling can be interpreted through H. T. Odum's
+        <strong>Maximum Power Principle</strong>: self-organizing systems tend
+        to persist by optimizing not merely efficiency, but the rate at which
+        usable energy is captured, transformed and reinvested into their own
+        structure. In this framework, Bitcoin's hashrate does not grow toward
+        infinite power; it approaches a moving ecological boundary where
+        marginal energy capture, mining efficiency, capital allocation and
+        protocol difficulty enter a dynamic equilibrium.
+      </p>
+
+      <p lang="fr">
+        Ce plafond logistique peut être interprété à travers le
+        <strong>Principe de Puissance Maximale</strong> de H. T. Odum : les
+        systèmes auto-organisés tendent à persister non pas en maximisant
+        simplement leur efficacité, mais en optimisant le rythme auquel
+        l'énergie utile est captée, transformée et réinvestie dans leur propre
+        structure. Dans ce cadre, le hashrate de Bitcoin ne croît pas vers une
+        puissance infinie ; il approche une frontière écologique mobile où la
+        capture marginale d'énergie, l'efficacité minière, l'allocation du
+        capital et la difficulté du protocole entrent dans un équilibre
+        dynamique.
+      </p>
+      <p lang="en">
         Adjust the growth rate ($k$) below to see how the organism inevitably
         hits the thermodynamic wall:
       </p>
@@ -13954,8 +14047,33 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           <img src="ComplexWorld.png" alt="Complex World" />
         </a>
       </div>
-      <h2 lang="en" style="margin-top: 5rem">References</h2>
-      <h2 lang="fr" style="margin-top: 5rem">Références</h2>
+      <div id="ref"></div>
+      <h2 lang="en" style="margin-top: 5rem">
+        References and Conceptual Anchors
+      </h2>
+      <h2 lang="fr" style="margin-top: 5rem">
+        Références et ancrages conceptuels
+      </h2>
+
+      <p
+        lang="en"
+        style="color: #aaa; font-size: 0.95rem; margin-bottom: 1.5rem"
+      >
+        The following references distinguish the technical foundations of
+        Bitcoin, statistical physics, information theory, cybernetics,
+        autopoiesis and the speculative conceptual extensions used throughout
+        this essay.
+      </p>
+
+      <p
+        lang="fr"
+        style="color: #aaa; font-size: 0.95rem; margin-bottom: 1.5rem"
+      >
+        Les références suivantes distinguent les fondations techniques de
+        Bitcoin, la physique statistique, la théorie de l'information, la
+        cybernétique, l'autopoïèse et les prolongements conceptuels spéculatifs
+        mobilisés dans cet essai.
+      </p>
 
       <div
         style="
@@ -13965,17 +14083,358 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           border-left: 3px solid var(--text-muted);
           font-size: 0.95rem;
           color: #ccc;
+          line-height: 1.7;
         "
       >
-        <p style="margin: 0">
-          Ranaora, P. (2026). Nakamoto Distributed Consensus as a
-          Non-Equilibrium Phase Transition : A Phenomenological
-          Statistical-Physics Description (English). IPI.
+        <h3 lang="en" style="color: var(--sun-orange); margin-top: 0">
+          Primary Work
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange); margin-top: 0">
+          Travail principal
+        </h3>
+
+        <p>
+          Ranaora, P. (2026).
+          <em
+            >Nakamoto Distributed Consensus as a Non-Equilibrium Phase
+            Transition: A Phenomenological Statistical-Physics Description</em
+          >. IPI.
           <a
-            href="https://doi.org/10.5281/zenodo.19160047"
+            href="https://zenodo.org/records/20106133"
             target="_blank"
             style="color: var(--sun-orange); text-decoration: none"
-            >https://doi.org/10.5281/zenodo.19160047</a
+            >hhttps://zenodo.org/records/20106133</a
+          >
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Bitcoin, Distributed Consensus and Open-Source Foundations
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Bitcoin, consensus distribué et fondations open-source
+        </h3>
+
+        <p>
+          Nakamoto, S. (2008).
+          <em>Bitcoin: A Peer-to-Peer Electronic Cash System</em>.
+          <a
+            href="https://bitcoin.org/bitcoin.pdf"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://bitcoin.org/bitcoin.pdf</a
+          >
+        </p>
+
+        <p>
+          Nakamoto, S. (2009).
+          <em>Bitcoin v0.1 Source Code</em>. Satoshi Nakamoto Institute.
+          <a
+            href="https://satoshi.nakamotoinstitute.org/code/"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://satoshi.nakamotoinstitute.org/code/</a
+          >
+        </p>
+
+        <p>
+          Bitcoin Core Developers. (2009–present).
+          <em
+            >Bitcoin Core: Open-source implementation of the Bitcoin
+            protocol</em
+          >. GitHub repository.
+          <a
+            href="https://github.com/bitcoin/bitcoin"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://github.com/bitcoin/bitcoin</a
+          >
+        </p>
+        <p>
+          Gervais, A., Karame, G. O., Wüst, K., Glykantzis, V., Ritzdorf, H.,
+          &amp; Čapkun, S. (2016).
+          <em>On the Security and Performance of Proof of Work Blockchains</em>.
+          In
+          <em
+            >Proceedings of the 2016 ACM SIGSAC Conference on Computer and
+            Communications Security</em
+          >
+          (CCS '16), 3–16. Association for Computing Machinery.
+          <a
+            href="https://doi.org/10.1145/2976749.2978341"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://doi.org/10.1145/2976749.2978341</a
+          >
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+        <hr
+          style="
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Systems Ecology, Emergy and Maximum Power
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Écologie des systèmes, émergie et puissance maximale
+        </h3>
+
+        <p>
+          Odum, H. T. (1996).
+          <em
+            >Environmental Accounting: EMERGY and Environmental Decision
+            Making</em
+          >. John Wiley &amp; Sons.
+        </p>
+
+        <p>
+          Odum, H. T., &amp; Pinkerton, R. C. (1955).
+          <em
+            >Time's speed regulator: The optimum efficiency for maximum power
+            output in physical and biological systems</em
+          >. American Scientist, 43(2), 331–343.
+        </p>
+
+        <p>
+          Cai, T. T., Olsen, T. W., &amp; Campbell, D. E. (2004).
+          <em
+            >Maximum (em)power: A foundational principle linking man and
+            nature</em
+          >. Ecological Modelling, 178(1–2), 115–119.
+        </p>
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Information Theory and Physics of Information
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Théorie de l'information et physique de l'information
+        </h3>
+
+        <p>
+          Wheeler, J. A. (1990).
+          <em>Information, Physics, Quantum: The Search for Links</em>. In W. H.
+          Zurek (Ed.),
+          <em>Complexity, Entropy, and the Physics of Information</em>
+          (pp. 3–28). Addison-Wesley.
+        </p>
+
+        <p>
+          Wheeler, J. A. (1989).
+          <em>Information, Physics, Quantum: The Search for Links</em>.
+          Proceedings of the 3rd International Symposium on Foundations of
+          Quantum Mechanics, Tokyo.
+        </p>
+
+        <p>
+          Shannon, C. E. (1948).
+          <em>A Mathematical Theory of Communication</em>. Bell System Technical
+          Journal, 27(3), 379–423; 27(4), 623–656.
+        </p>
+
+        <p>
+          Landauer, R. (1961).
+          <em>Irreversibility and Heat Generation in the Computing Process</em>.
+          IBM Journal of Research and Development, 5(3), 183–191.
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Statistical Physics, Phase Transitions and Thermodynamics
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Physique statistique, transitions de phase et thermodynamique
+        </h3>
+
+        <p>
+          Maxwell, J. C. (1871).
+          <em>Theory of Heat</em>. Longmans, Green, and Co.
+        </p>
+
+        <p>
+          Ginzburg, V. L., &amp; Landau, L. D. (1950).
+          <em>On the Theory of Superconductivity</em>. Zhurnal Eksperimental'noi
+          i Teoreticheskoi Fiziki, 20, 1064–1082.
+        </p>
+
+        <p>
+          Landau, L. D., &amp; Lifshitz, E. M. (1980).
+          <em>Statistical Physics, Part 1</em>. Course of Theoretical Physics,
+          Volume 5. Butterworth-Heinemann.
+        </p>
+
+        <p>
+          Prigogine, I. (1977).
+          <em>Time, Structure, and Fluctuations</em>. Nobel Lecture.
+          <a
+            href="https://www.nobelprize.org/prizes/chemistry/1977/prigogine/lecture/"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://www.nobelprize.org/prizes/chemistry/1977/prigogine/lecture/</a
+          >
+        </p>
+
+        <p>
+          Prigogine, I., &amp; Stengers, I. (1984).
+          <em>Order Out of Chaos: Man's New Dialogue with Nature</em>. Bantam
+          Books.
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Cybernetics, Autopoiesis and Living Systems
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Cybernétique, autopoïèse et systèmes vivants
+        </h3>
+
+        <p>
+          Maturana, H. R., &amp; Varela, F. J. (1980).
+          <em>Autopoiesis and Cognition: The Realization of the Living</em>. D.
+          Reidel Publishing Company.
+        </p>
+
+        <p>
+          Varela, F. J., Maturana, H. R., &amp; Uribe, R. (1974).
+          <em
+            >Autopoiesis: The Organization of Living Systems, Its
+            Characterization and a Model</em
+          >. BioSystems, 5(4), 187–196.
+        </p>
+
+        <p>
+          Wiener, N. (1948).
+          <em
+            >Cybernetics: Or Control and Communication in the Animal and the
+            Machine</em
+          >. MIT Press.
+        </p>
+
+        <p>
+          von Bertalanffy, L. (1968).
+          <em>General System Theory: Foundations, Development, Applications</em
+          >. George Braziller.
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Free Energy Principle and Active Inference
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Principe d'énergie libre et inférence active
+        </h3>
+
+        <p>
+          Friston, K. (2010).
+          <em>The Free-Energy Principle: A Unified Brain Theory?</em>
+          Nature Reviews Neuroscience, 11, 127–138.
+          <a
+            href="https://doi.org/10.1038/nrn2787"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://doi.org/10.1038/nrn2787</a
+          >
+        </p>
+
+        <p>
+          Friston, K. (2012).
+          <em>A Free Energy Principle for Biological Systems</em>. Entropy,
+          14(11), 2100–2121.
+          <a
+            href="https://doi.org/10.3390/e14112100"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://doi.org/10.3390/e14112100</a
+          >
+        </p>
+
+        <p>
+          Friston, K., Kilner, J., &amp; Harrison, L. (2006).
+          <em>A Free Energy Principle for the Brain</em>. Journal of
+          Physiology-Paris, 100(1–3), 70–87.
+        </p>
+
+        <hr
+          style="
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 1.5rem 0;
+          "
+        />
+
+        <h3 lang="en" style="color: var(--sun-orange)">
+          Web Architecture, Solid and Decentralized Identity
+        </h3>
+        <h3 lang="fr" style="color: var(--sun-orange)">
+          Architecture du Web, Solid et identité décentralisée
+        </h3>
+
+        <p>
+          Berners-Lee, T. (1989).
+          <em>Information Management: A Proposal</em>. CERN.
+          <a
+            href="https://www.w3.org/History/1989/proposal.html"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://www.w3.org/History/1989/proposal.html</a
+          >
+        </p>
+
+        <p>
+          Berners-Lee, T., Hendler, J., &amp; Lassila, O. (2001).
+          <em>The Semantic Web</em>. Scientific American, 284(5), 34–43.
+        </p>
+
+        <p>
+          Sambra, A. V., Mansour, E., Hawke, S., Zereba, M., Greco, N., Ghanem,
+          A., Zagidulin, D., Aboulnaga, A., &amp; Berners-Lee, T. (2016).
+          <em
+            >Solid: A Platform for Decentralized Social Applications Based on
+            Linked Data</em
+          >. MIT CSAIL &amp; Qatar Computing Research Institute.
+          <a
+            href="https://solidproject.org/"
+            target="_blank"
+            style="color: var(--sun-orange); text-decoration: none"
+            >https://solidproject.org/</a
           >
         </p>
       </div>
