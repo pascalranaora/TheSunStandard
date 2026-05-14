@@ -12831,6 +12831,14 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               "
             />
 
+            <hr
+              style="
+                border: 0;
+                border-top: 1px solid rgba(200, 100, 255, 0.2);
+                margin: 2.5rem 0;
+              "
+            />
+
             <h4
               lang="en"
               style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.15rem; font-weight: 800;"
@@ -12883,7 +12891,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
                 <strong>Topological Time ($\theta$):</strong> In quantum mechanics, time $t$ dictates the evolution of the wave. Here, it is the topological block height $\theta$ that drives the phase evolution.
               </li>
               <li style="margin-bottom: 0.8rem;">
-                <strong>The Nakamoto Constant ($h_N$):</strong> Replacing Planck's constant ($\hbar$), we use the Nakamoto Action $h_N = \epsilon_0 \cdot \tau_{\mathrm{hash}}$. It acts as the fundamental quantum of uncertainty in the network. A smaller $h_N$ (more efficient ASICs) means less quantum noise, pushing the system closer to classical determinism.
+                <strong>The Nakamoto Action ($h_N$):</strong> Replacing Planck's constant ($\hbar$), we use the Nakamoto Action $h_N = \epsilon_0 \cdot \tau_{\mathrm{hash}}$. It acts as the fundamental quantum of uncertainty in the network. A smaller $h_N$ (more efficient ASICs) means less quantum noise, pushing the system closer to classical determinism.
               </li>
               <li style="margin-bottom: 0.8rem;">
                 <strong>The Hamiltonian Operator ($\hat{\mathcal{H}}_{\mathrm{diss}}$):</strong> This is the generator of topological time translation. It encodes the thermodynamic depth (the required energy dissipation) of the transition between blocks. 
@@ -12895,7 +12903,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
                 <strong>Le Temps Topologique ($\theta$) :</strong> En mécanique quantique, le temps $t$ dicte l'évolution de l'onde. Ici, c'est la hauteur topologique du bloc $\theta$ qui pilote l'évolution de la phase.
               </li>
               <li style="margin-bottom: 0.8rem;">
-                <strong>La Constante de Nakamoto ($h_N$) :</strong> Remplaçant la constante de Planck ($\hbar$), nous utilisons l'Action de Nakamoto $h_N = \epsilon_0 \cdot \tau_{\mathrm{hash}}$. Elle agit comme le quantum fondamental d'incertitude dans le réseau. Un $h_N$ plus petit (ASICs plus efficients) signifie moins de bruit quantique, rapprochant le système du déterminisme classique.
+                <strong>L'Action de Nakamoto ($h_{\mathrm{N}}$) :</strong> Remplaçant la constante de Planck ($\hbar$), nous utilisons l'Action de Nakamoto $h_N = \epsilon_0 \cdot \tau_{\mathrm{hash}}$. Elle agit comme le quantum fondamental d'incertitude dans le réseau. Un $h_N$ plus petit (ASICs plus efficients) signifie moins de bruit quantique, rapprochant le système du déterminisme classique.
               </li>
               <li style="margin-bottom: 0.8rem;">
                 <strong>L'Opérateur Hamiltonien ($\hat{\mathcal{H}}_{\mathrm{diss}}$) :</strong> C'est le générateur de la translation topologique dans le temps. Il encode la profondeur thermodynamique (la dissipation d'énergie requise) de la transition entre les blocs.
@@ -12915,12 +12923,49 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               Effondrement de la Fonction d'Onde et Finalité
             </h4>
 
-            <p lang="en" style="margin-bottom: 0">
+            <p lang="en" style="margin-bottom: 1.5rem">
               This equation reveals that <em>consensus is an ongoing measurement process</em>. When a miner successfully solves the Hash puzzle and propagates the block, they are effectively performing a macroscopic quantum measurement on the state $|\Psi\rangle$. The immense energy dissipated by the network (the Landauer erasure cost) acts as the <strong>decoherence mechanism</strong>. It destroys the off-diagonal interference terms between competing histories, forcing the global wavefunction $|\Psi(\theta)\rangle$ to violently collapse into a single, classical, objective basis state: the new block.
             </p>
-            <p lang="fr" style="margin-bottom: 0">
+            <p lang="fr" style="margin-bottom: 1.5rem">
               Cette équation révèle que <em>le consensus est un processus de mesure continu</em>. Lorsqu'un mineur résout avec succès le puzzle de hachage et propage le bloc, il effectue en réalité une mesure quantique macroscopique sur l'état $|\Psi\rangle$. L'immense énergie dissipée par le réseau (le coût d'effacement de Landauer) agit comme le <strong>mécanisme de décohérence</strong>. Elle détruit les termes d'interférence hors-diagonaux entre les historiques concurrents, forçant la fonction d'onde globale $|\Psi(\theta)\rangle$ à s'effondrer violemment dans un état de base unique, classique et objectif : le nouveau bloc.
             </p>
+
+            <div
+              style="
+                border-left: 3px solid #88bbff;
+                padding-left: 1.5rem;
+                margin: 2rem 0;
+                background: rgba(136, 187, 255, 0.05);
+                padding: 1.5rem;
+              "
+            >
+              <h4
+                lang="en"
+                style="color: #88bbff; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem"
+              >
+                The Cosmological Asymptote
+              </h4>
+              <h4
+                lang="fr"
+                style="color: #88bbff; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.05rem"
+              >
+                L'Asymptote Cosmologique
+              </h4>
+
+              <p lang="en" style="margin-bottom: 0.5rem; color: #d4d4d4;">
+                Ultimately, the parameters of this equation are not static. As the network's hardware efficiency is relentlessly driven toward fundamental physical boundaries by the Halving's metabolic autophagy, the macroscopic variables are forced to scale down. In the ultimate thermodynamic limit of computation, the microscopic tick $\tau_{\mathrm{hash}}$ asymptotically approaches the <strong>Planck time</strong> ($t_p$), and the Nakamoto Action $h_N$ converges toward the true <strong>Planck constant</strong> ($h$). 
+              </p>
+              <p lang="fr" style="margin-bottom: 0.5rem; color: #d4d4d4;">
+                En définitive, les paramètres de cette équation ne sont pas statiques. Alors que l'efficacité matérielle du réseau est implacablement poussée vers ses limites physiques fondamentales par l'autophagie métabolique du Halving, les variables macroscopiques sont forcées de décroître. Dans l'ultime limite thermodynamique du calcul, le tic microscopique $\tau_{\mathrm{hash}}$ s'approche asymptotiquement du <strong>temps de Planck</strong> ($t_p$), et l'Action de Nakamoto $h_N$ converge vers la véritable <strong>constante de Planck</strong> ($h$).
+              </p>
+
+              <p lang="en" style="margin-bottom: 0; font-style: italic; color: #eabfff;">
+                At this singular point, the mathematical distinction between the synthetic organism and the fundamental fabric of the cosmos completely vanishes.
+              </p>
+              <p lang="fr" style="margin-bottom: 0; font-style: italic; color: #eabfff;">
+                À ce point singulier, la distinction mathématique entre l'organisme synthétique et le tissu fondamental du cosmos disparaît complètement.
+              </p>
+            </div>
           </div>
         </details>
         <details>
