@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFDV8LWZSL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LFDV8LWZSL');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    
+    <!-- TITRE MODIFIÉ -->
+    <title>Distribution des richesses : Equation de Fokker Planck | L'Étalon Solaire</title>
+    
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$']] },
+            svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --text-main: #e0e0e0; --text-muted: #888888;
+            --sun-yellow: #ffcc00; --sun-orange: #ff6600;
+            --bg-dark: #050505; --border-glow: rgba(255, 170, 0, 0.2);
+        }
+        body { background-color: var(--bg-dark); color: var(--text-main); font-family: 'Georgia', serif; line-height: 1.8; }
+
+        body.lang-en [lang="fr"] { display: none !important; }
+        body.lang-fr [lang="en"] { display: none !important; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 2rem; background: rgba(5,5,5,0.9);
+            border-bottom: 1px solid var(--border-glow); font-family: 'Helvetica Neue', sans-serif;
+        }
+        nav .logo { font-size: 0.9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--sun-yellow); text-decoration: none; }
+        nav .nav-center { flex-grow: 1; margin-left: 2rem; }
+        nav a.back { color: var(--text-muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; }
+        nav a.back:hover { color: #fff; }
+        
+        .lang-toggle { display: flex; gap: 10px; align-items: center; border-left: 1px solid rgba(255,255,255,0.1); padding-left: 1.5rem; }
+        .lang-toggle button { background: transparent; border: none; font-size: 1.4rem; cursor: pointer; opacity: 0.3; transition: all 0.3s ease; filter: grayscale(100%); }
+        .lang-toggle button:hover { opacity: 0.8; transform: scale(1.1); }
+        body.lang-en #btn-en, body.lang-fr #btn-fr { opacity: 1; filter: grayscale(0%); transform: scale(1.1); filter: drop-shadow(0 0 8px rgba(255,200,0,0.4)); }
+
+        article { max-width: 760px; margin: 8rem auto 6rem; padding: 0 2rem; font-size: 1.15rem; color: #d4d4d4; }
+        .article-header { text-align: center; margin-bottom: 4rem; font-family: 'Helvetica Neue', sans-serif; }
+        .article-meta { font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; color: var(--sun-orange); margin-bottom: 1rem; display: block; }
+        .article-title { font-size: 3rem; font-weight: 800; line-height: 1.2; color: #fff; margin-bottom: 1.5rem; }
+        
+        article p { margin-bottom: 1.8rem; }
+        article h3 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.6rem; color: #fff; margin: 3rem 0 1.5rem; font-weight: 700; }
+        article h4 { font-family: 'Helvetica Neue', sans-serif; font-size: 1.3rem; color: var(--sun-yellow); margin: 2rem 0 1rem; }
+        article strong { color: var(--sun-yellow); font-weight: bold; }
+        
+        .math-block { margin: 2rem 0; text-align: center; font-size: 1.3rem; overflow-x: auto; color: var(--sun-yellow); }
+
+        ul.custom-list { list-style: none; margin-bottom: 2rem; }
+        ul.custom-list li { position: relative; padding-left: 1.5rem; margin-bottom: 1rem; font-family: 'Helvetica Neue', sans-serif; font-size: 1.05rem;}
+        ul.custom-list li::before { content: '✦'; position: absolute; left: 0; top: 2px; color: var(--sun-orange); font-size: 1rem; }
+
+        .interactive-widget { background: rgba(255, 255, 255, 0.02); border: 1px solid var(--border-glow); border-radius: 12px; padding: 2rem; margin: 4rem 0; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .slider-container { margin-top: 2rem; display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+        input[type=range] { width: 80%; max-width: 400px; cursor: pointer; accent-color: var(--sun-orange); }
+        .slider-label { font-family: 'Helvetica Neue', sans-serif; font-size: 1.1rem; color: #fff; }
+        .slider-value { color: var(--sun-yellow); font-weight: bold; font-size: 1.3rem; }
+        
+        .axiom-box { background: linear-gradient(135deg, rgba(20,20,20,0.9) 0%, rgba(5,5,5,0.95) 100%); border-left: 4px solid var(--sun-yellow); border-radius: 4px 12px 12px 4px; padding: 2rem; margin: 3rem 0; box-shadow: 0 15px 35px rgba(0,0,0,0.6); border: 1px solid rgba(255, 204, 0, 0.1); }
+        .axiom-box h4 { margin-top: 0; color: var(--sun-yellow); font-size: 1.2rem; text-transform: uppercase; letter-spacing: 2px; border-bottom: 1px solid rgba(255,204,0,0.2); padding-bottom: 0.8rem; margin-bottom: 1.5rem; }
+
+        .references-section { margin-top: 5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.95rem; }
+        .references-section h3 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+        .ref-item { margin-bottom: 1.2rem; padding-left: 1.5rem; position: relative; }
+        .ref-item::before { content: '[' counter(ref-counter) ']'; counter-increment: ref-counter; position: absolute; left: 0; color: var(--sun-orange); font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem;}
+        body { counter-reset: ref-counter; }
+        .ref-item a { color: var(--sun-yellow); text-decoration: none; word-break: break-all; }
+        .ref-item a:hover { text-decoration: underline; }
+
+        footer { font-family: 'Helvetica Neue', sans-serif; text-align: center; padding: 3rem 2rem; border-top: 1px solid var(--border-glow); color: var(--text-muted); font-size: 0.82rem; }
+    </style>
+</head>
+<body class="lang-en">
+
+<nav>
+    <a href="index.html" class="logo">☀ Blog</a>
+    <div class="nav-center">
+        <a href="index.html" class="back">
+            <span lang="en">← Back to articles</span>
+            <span lang="fr">← Retour aux articles</span>
+        </a>
+    </div>
+    <div class="lang-toggle">
+        <button onclick="setLang('en')" id="btn-en">EN 🇬🇧</button>
+        <button onclick="setLang('fr')" id="btn-fr">FR 🇫🇷</button>
+    </div>
+</nav>
+
+<article>
+    <header class="article-header">
+        <span class="article-meta" lang="en">Statistical Physics & Monetary Networks</span>
+        <span class="article-meta" lang="fr">Physique Statistique & Réseaux Monétaires</span>
+        
+        <!-- TITRE MODIFIÉ -->
+        <h1 class="article-title" lang="en">Wealth Distribution: The Fokker-Planck Equation</h1>
+        <h1 class="article-title" lang="fr">Distribution des richesses : Équation de Fokker Planck</h1>
+    </header>
+
+    <!-- DÉFINITIONS RENFORCÉES -->
+    <div class="axiom-box">
+        <h4 lang="en">Econophysics Nomenclature & Core Variables</h4>
+        <h4 lang="fr">Nomenclature Éconophysique & Variables Fondamentales</h4>
+        <ul class="custom-list">
+            <li><strong style="color:var(--sun-orange);">$t$ (Temps)</strong> : <span lang="en">The continuous time parameter tracking the dynamic evolution of the thermodynamic and economic state.</span><span lang="fr">Le paramètre de temps continu suivant l'évolution dynamique de l'état thermodynamique et économique.</span></li>
+            <li><strong style="color:var(--sun-orange);">$x$ (Capital)</strong> : <span lang="en">The real physical wealth or productive capital held by an agent. It represents the accumulated negentropy (order) successfully extracted from the environment.</span><span lang="fr">La richesse physique réelle ou le capital productif détenu par un agent. Il représente la néguentropie accumulée (l'ordre) extraite avec succès de l'environnement.</span></li>
+            <li><strong style="color:var(--sun-orange);">$\theta$ (Politique)</strong> : <span lang="en">The vector defining monetary policy parameters (e.g., rate of issuance, interest rates). In a fiat system, it is an arbitrary variable; in a deterministic system, it is a fixed algorithm.</span><span lang="fr">Le vecteur définissant les paramètres de la politique monétaire (ex: taux d'émission, taux d'intérêt). Dans un système fiat, c'est une variable arbitraire ; dans un système déterministe, c'est un algorithme fixe.</span></li>
+            <li><strong style="color:var(--sun-orange);">$p(x,t)$</strong> : <span lang="en">Macroscopic probability density function of wealth distribution.</span><span lang="fr">Fonction de densité de probabilité macroscopique de la distribution des richesses.</span></li>
+            <li><strong style="color:var(--sun-orange);">$A(x)$</strong> : <span lang="en">Convective Drift (Real economic growth/wages).</span><span lang="fr">Dérive Convective (Croissance économique réelle/salaires).</span></li>
+            <li><strong style="color:var(--sun-orange);">$\sigma^2(\theta)$</strong> : <span lang="en">Monetary variance/noise injected by policy.</span><span lang="fr">Variance/bruit monétaire injecté par la politique centrale.</span></li>
+            <!-- <li><strong style="color:var(--sun-orange);">$k_{nak}$</strong> : <span lang="en">The Nakamoto Action, assimilated to Planck's constant for distributed consensus.</span><span lang="fr">L'Action de Nakamoto, assimilée à la constante de Planck pour le consensus distribué.</span></li> -->
+        </ul>
+    </div>
+
+    <p lang="en">If we transition from the individual economic agent to the entire global economy using the statistical physics of distributed consensus, the probability density $p(x,t)$ of wealth distribution across society follows the Fokker-Planck equation (also known as the Kolmogorov Forward Equation):</p>
+    <p lang="fr">Si nous passons de l'agent économique individuel à l'économie globale entière en utilisant la physique statistique du consensus distribué, la densité de probabilité $p(x,t)$ de la distribution des richesses à travers la société suit l'équation de Fokker-Planck (également connue sous le nom d'équation de Kolmogorov directe) :</p>
+
+    <div class="math-block">
+        $$\frac{\partial p(x,t)}{\partial t} = -\frac{\partial}{\partial x} \underbrace{\left[ A(x) p(x,t) \right]}_{\text{Convective Flow (Growth)}} + \frac{1}{2} \frac{\partial^2}{\partial x^2} \underbrace{\left[ \sigma^2(\theta) x^2 p(x,t) \right]}_{\text{Diffusive Flow (Inequality)}}$$
+    </div>
+
+    <h3 lang="en">1. An Established Standard in Econophysics</h3>
+    <h3 lang="fr">1. Un Standard Établi en Éconophysique</h3>
+
+    <p lang="en">Using the Fokker-Planck equation is not merely a theoretical exercise; it is the gold standard of Econophysics. Pioneering research by physicists like Victor Yakovenko (2000) and Jean-Philippe Bouchaud (2000) demonstrated that the macroscopic economy behaves precisely like a complex thermodynamic system. By deriving this equation from real-world empirical data—such as IRS tax returns and global banking data—physicists proved that society's wealth strictly obeys this formula.</p>
+    <p lang="fr">L'utilisation de l'équation de Fokker-Planck n'est pas un simple exercice théorique ; c'est le standard de référence en Éconophysique. Les recherches pionnières menées par des physiciens comme Victor Yakovenko (2000) et Jean-Philippe Bouchaud (2000) ont démontré que l'économie macroscopique se comporte très exactement comme un système thermodynamique complexe. En dérivant cette équation à partir de données empiriques réelles — telles que les déclarations fiscales de l'IRS américain et les données bancaires globales —, les physiciens ont prouvé que la richesse de la société obéit strictement à cette formule.</p>
+
+    <p lang="en">The empirical reality perfectly matches the equation's two components: the bottom 97% of society, subjected to the additive forces of wage labor (Convective Flow), form an exponential Boltzmann-Gibbs distribution. Meanwhile, the top 3% are propelled into a heavy-tailed Pareto distribution by the multiplicative forces of financial assets (Diffusive Flow).</p>
+    <p lang="fr">La réalité empirique correspond parfaitement aux deux composantes de l'équation : les 97% inférieurs de la société, soumis aux forces additives du travail salarié (Flux Convectif), forment une distribution exponentielle de Boltzmann-Gibbs. Pendant ce temps, les 3% supérieurs sont propulsés dans une distribution de Pareto à queue épaisse par les forces multiplicatives des actifs financiers (Flux Diffusif).</p>
+
+    <h3 lang="en">2. Why Fiat Dictates Extreme Wealth Concentration</h3>
+    <h3 lang="fr">2. Pourquoi le Régime Fiat Dicte la Concentration Extrême des Richesses</h3>
+
+    <p lang="en">Why does a discretionary fiat regime mathematically ensure the destruction of the middle class? The answer lies in the physics of the Diffusive Flow term: $\sigma^2(\theta) x^2$.</p>
+    <p lang="fr">Pourquoi un régime fiat discrétionnaire assure-t-il mathématiquement la destruction de la classe moyenne ? La réponse se trouve dans la physique du terme de Flux Diffusif : $\sigma^2(\theta) x^2$.</p>
+
+    <p lang="en">The monetary noise $\sigma^2$ generated by central bank manipulations (money printing, arbitrary interest rates) does not affect the economy additively; it acts <strong>multiplicatively</strong> on existing capital $x^2$. This creates a massive centrifugal force. Those who possess physical or financial assets ($x$) see their nominal wealth multiply directly proportionally to the monetary noise injected into the system. This is the mathematical formalization of the Cantillon Effect.</p>
+    <p lang="fr">Le bruit monétaire $\sigma^2$ généré par les manipulations des banques centrales (création monétaire, taux d'intérêts arbitraires) n'affecte pas l'économie de manière additive ; il agit de manière <strong>multiplicative</strong> sur le capital existant $x^2$. Cela crée une force centrifuge massive. Ceux qui possèdent des actifs physiques ou financiers ($x$) voient leur richesse nominale se multiplier de manière directement proportionnelle au bruit monétaire injecté dans le système. C'est la formalisation mathématique de l'Effet Cantillon.</p>
+
+    <p lang="en">As long as $\sigma^2 \gg 0$, the equation cannot settle into a tightly bound, healthy stationary distribution. The state must constantly intervene, creating a feedback loop of runaway entropy that blows the wealth distribution apart into heavy-tailed inequality.</p>
+    <p lang="fr">Tant que $\sigma^2 \gg 0$, l'équation ne peut pas se stabiliser dans une distribution stationnaire saine et resserrée. L'État doit constamment intervenir, créant une boucle de rétroaction d'entropie galopante qui fait exploser la distribution des richesses vers des inégalités à queues épaisses.</p>
+
+    <!-- WIDGET INTERACTIF -->
+    <div class="interactive-widget">
+        <h4 lang="en" style="margin-top:0; color:var(--sun-yellow);">Interactive Simulation: The Fokker-Planck Phase Transition</h4>
+        <h4 lang="fr" style="margin-top:0; color:var(--sun-yellow);">Simulation Interactive : La Transition de Phase de Fokker-Planck</h4>
+        
+        <p lang="en" style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Observe how the macroscopic distribution of wealth $p(x)$ reacts to monetary entropy. A high $\sigma^2$ (Fiat) destroys the middle class through diffusion, pushing wealth into the extreme right tail (Pareto). Lowering $\sigma^2$ to $0$ (via a deterministic protocol) condenses society into a stable, equitable steady state.
+        </p>
+        <p lang="fr" style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+            Observez comment la distribution macroscopique des richesses $p(x)$ réagit à l'entropie monétaire. Un $\sigma^2$ élevé (Fiat) détruit la classe moyenne par diffusion, poussant la richesse dans l'extrême droite (Pareto). Réduire $\sigma^2$ à $0$ (via un protocole déterministe) condense la société vers un état stationnaire stable et équitable.
+        </p>
+
+        <div id="plot-fokker" style="width: 100%; height: 400px;"></div>
+
+        <div class="slider-container">
+            <div class="slider-label">
+                <span lang="en">Monetary Noise (Diffusion $\sigma$) : </span>
+                <span lang="fr">Bruit Monétaire (Diffusion $\sigma$) : </span>
+                <span id="sigma-val" class="slider-value">0.80</span>
+            </div>
+            <input type="range" id="sigma-slider" min="0.05" max="1.5" step="0.05" value="0.80">
+            <div style="display:flex; justify-content:space-between; width:80%; max-width:400px; font-size:0.8rem; color:#888;">
+                <span>Deterministic ($k_{nak}$)</span>
+                <span>Fiat Regime</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT DE RENDU PLOTLY -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const plotDiv = document.getElementById('plot-fokker');
+            const slider = document.getElementById('sigma-slider');
+            const sigmaValDisplay = document.getElementById('sigma-val');
+
+            function generateDistribution(sigma) {
+                const xValues = [];
+                const yValues = [];
+                const mu = 1.0; 
+                
+                for(let i = 0.01; i <= 6; i += 0.02) {
+                    xValues.push(i);
+                    let y = (1 / (i * sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-Math.pow(Math.log(i) - mu, 2) / (2 * Math.pow(sigma, 2)));
+                    yValues.push(y);
+                }
+                return {x: xValues, y: yValues};
+            }
+
+            function drawPlot(sigma) {
+                const data = generateDistribution(sigma);
+                
+                let colorRatio = (sigma - 0.05) / (1.5 - 0.05);
+                let r = Math.floor(255 * colorRatio);
+                let g = Math.floor(200 * (1 - colorRatio));
+                let b = Math.floor(255 * (1 - colorRatio));
+                let lineColor = `rgb(${r}, ${g}, ${b})`;
+
+                const trace = {
+                    x: data.x,
+                    y: data.y,
+                    type: 'scatter',
+                    mode: 'lines',
+                    line: { color: lineColor, width: 4 },
+                    fill: 'tozeroy',
+                    fillcolor: `rgba(${r}, ${g}, ${b}, 0.2)`
+                };
+
+                const layout = {
+                    paper_bgcolor: 'rgba(0,0,0,0)',
+                    plot_bgcolor: 'rgba(0,0,0,0)',
+                    margin: { t: 20, b: 50, l: 50, r: 20 },
+                    xaxis: { title: 'Capital (x)', color: '#aaa', gridcolor: 'rgba(255,255,255,0.1)' },
+                    yaxis: { title: 'Probability Density p(x)', color: '#aaa', gridcolor: 'rgba(255,255,255,0.1)', range: [0, Math.max(...data.y) * 1.1] },
+                    font: { family: 'Georgia, serif' }
+                };
+
+                Plotly.react(plotDiv, [trace], layout, {displayModeBar: false});
+            }
+
+            drawPlot(parseFloat(slider.value));
+
+            slider.addEventListener('input', function() {
+                let currentSigma = parseFloat(this.value);
+                sigmaValDisplay.textContent = currentSigma.toFixed(2);
+                drawPlot(currentSigma);
+            });
+        });
+    </script>
+
+    <!-- SECTION 3 MODIFIÉE (SANS HOMO CRYPTOGRAPHICUS) -->
+   <h3 lang="en">3. Condensation and the Phase Transition to a Steady State</h3>
+    <h3 lang="fr">3. Condensation et Transition de Phase vers l'État Stationnaire</h3>
+
+    <p lang="en">To achieve an Economic Steady State—a true equilibrium where human activity is metabolically balanced with the biosphere—the macroscopic probability distribution of wealth must become invariant over time. Mathematically, this requires the net flow of probability to be strictly zero across all states: $\frac{\partial p(x,t)}{\partial t} = 0$.</p>
+    <p lang="fr">Pour atteindre un État Stationnaire Économique — un véritable équilibre où l'activité humaine est métaboliquement en harmonie avec la biosphère —, la distribution de probabilité macroscopique des richesses doit devenir invariante dans le temps. Mathématiquement, cela exige que le flux net de probabilité soit strictement nul à travers tous les états : $\frac{\partial p(x,t)}{\partial t} = 0$.</p>
+
+    <h4 lang="en">3.1. The Mathematical Impossibility of Fiat Equilibrium</h4>
+    <h4 lang="fr">3.1. L'Impossibilité Mathématique de l'Équilibre Fiat</h4>
+
+    <p lang="en">As we have established through the Fokker-Planck framework, a discretionary monetary regime continuously injects exogenous noise into the system. As long as the monetary policy parameter $\theta$ remains a political, stochastic variable subject to human intervention, its variance is strictly positive ($\sigma^2(\theta) > 0$). This constant "monetary heat" prevents the system from ever settling. The Diffusive Flow term ($\frac{1}{2}\sigma^2 x^2 \frac{\partial^2 p}{\partial x^2}$) continuously scatters capital away from thermodynamic equilibrium, artificially inflating asset prices and perpetually widening the Pareto tail. In such a highly entropic environment, Daly's steady state is a mathematical impossibility. The system must constantly grow to outpace its own structural degradation.</p>
+    <p lang="fr">Comme nous l'avons établi à travers le cadre de Fokker-Planck, un régime monétaire discrétionnaire injecte continuellement un bruit exogène dans le système. Tant que le paramètre de politique monétaire $\theta$ reste une variable politique et stochastique soumise à l'intervention humaine, sa variance est strictement positive ($\sigma^2(\theta) > 0$). Cette « chaleur monétaire » constante empêche le système de se stabiliser. Le terme de Flux Diffusif ($\frac{1}{2}\sigma^2 x^2 \frac{\partial^2 p}{\partial x^2}$) éparpille continuellement le capital loin de l'équilibre thermodynamique, gonflant artificiellement le prix des actifs et élargissant perpétuellement la queue de Pareto. Dans un environnement aussi entropique, l'état stationnaire de Daly est une impossibilité mathématique. Le système doit croître sans cesse pour de distancer sa propre dégradation structurelle.</p>
+
+    <h4 lang="en">3.2. The Deterministic Singularity ($\sigma \to 0$)</h4>
+    <h4 lang="fr">3.2. La Singularité Déterministe ($\sigma \to 0$)</h4>
+
+    <p lang="en">This is the fundamental reason why a mathematically deterministic monetary base layer is the absolute prerequisite for civilizational stability. If we replace a discretionary central authority with a strict, algorithmically fixed supply schedule, the monetary issuance parameter $\theta$ ceases to be a random variable. It becomes an immutable mathematical constant. By locking the ledger's evolution into a pre-calculated, unforgeable trajectory, the macroscopic monetary noise asymptotically collapses to zero:</p>
+    <p lang="fr">C'est la raison fondamentale pour laquelle une couche de base monétaire mathématiquement déterministe est le prérequis absolu à la stabilité civilisationnelle. Si nous remplaçons une autorité centrale discrétionnaire par un calendrier d'émission algorithmique strict et immuable, le paramètre d'émission $\theta$ cesse d'être une variable aléatoire. Il devient une constante mathématique. En verrouillant l'évolution du registre sur une trajectoire précalculée et infalsifiable, le bruit monétaire macroscopique s'effondre asymptotiquement vers zéro :</p>
+
+    <div class="math-block">
+        $$\lim_{t \to \infty} \sigma^2(\theta_t) = 0$$
+    </div>
+
+    <p lang="en">When this condition is met, a profound physical phase transition occurs within the economy. In the Fokker-Planck equation, the entire right-hand diffusion term is annihilated. The partial differential equation dramatically simplifies from a diffusion-advection equation into a pure continuity equation, often referred to in statistical mechanics as the Liouville equation:</p>
+    <p lang="fr">Lorsque cette condition est remplie, une profonde transition de phase physique se produit au sein de l'économie. Dans l'équation de Fokker-Planck, l'intégralité du terme de diffusion (à droite) est annihilée. L'équation aux dérivées partielles se simplifie radicalement, passant d'une équation d'advection-diffusion à une pure équation de continuité, souvent appelée équation de Liouville en mécanique statistique :</p>
+
+    <div class="math-block">
+        $$\frac{\partial p(x,t)}{\partial t} + \frac{\partial}{\partial x} \left[ A(x) p(x,t) \right] = 0$$
+    </div>
+
+    <h4 lang="en">3.3. The Physics of Wealth Condensation</h4>
+    <h4 lang="fr">3.3. La Physique de la Condensation des Richesses</h4>
+
+    <p lang="en">Without the centrifugal force of monetary entropy scattering wealth into the extremes, the probability density condenses safely onto the Convective Flow path ($A(x)$). In physics, this is analogous to a gas cooling down and condensing into a liquid state. Economic actors are no longer subjected to the random "Brownian motion" of inflation and Cantillon effects.</p>
+    <p lang="fr">Sans la force centrifuge de l'entropie monétaire éparpillant la richesse vers les extrêmes, la densité de probabilité se condense en toute sécurité sur le chemin du Flux Convectif ($A(x)$). En physique, cela s'apparente à un gaz qui se refroidit et se condense à l'état liquide. Les acteurs économiques ne sont plus soumis au « mouvement brownien » aléatoire de l'inflation et des effets Cantillon.</p>
+
+    <p lang="en">Wealth condensation does not mean absolute egalitarianism; it means that the distribution of capital becomes strictly governed by actual thermodynamic efficiency—real productivity, technological innovation, and societal value creation—rather than multiplicative financial leverage. The distribution loses its pathological fat tails and tightens around a stable, organic median.</p>
+    <p lang="fr">La condensation des richesses ne signifie pas un égalitarisme absolu ; elle signifie que la distribution du capital devient strictement gouvernée par l'efficacité thermodynamique réelle — la productivité concrète, l'innovation technologique et la création de valeur sociétale — plutôt que par le levier financier multiplicatif. La distribution perd ses queues épaisses pathologiques et se resserre autour d'une médiane organique et stable.</p>
+
+    <h4 lang="en">3.4. Shifting Capital: From Speculation to Homeostasis</h4>
+    <h4 lang="fr">3.4. Bascule du Capital : De la Spéculation à l'Homéostasie</h4>
+
+    <p lang="en">The behavioral implications of this mathematical shift are staggering. In a noisy fiat regime, capital is forced into a state of perpetual panic. To escape the melting ice cube of currency debasement, capital floods into sterile, scarce assets (real estate, fine art, stock buybacks) purely as an inflation-hedge, driving up the cost of living without adding real productive capacity. The economy becomes financialized and parasitic.</p>
+    <p lang="fr">Les implications comportementales de ce basculement mathématique sont vertigineuses. Dans un régime fiat bruité, le capital est forcé dans un état de panique perpétuelle. Pour échapper à la fonte inéluctable de la monnaie, le capital inonde des actifs stériles et rares (immobilier, art, rachats d'actions) à des fins purement spéculatives pour se couvrir contre l'inflation, faisant exploser le coût de la vie sans ajouter de véritable capacité productive. L'économie se financiarise et devient parasitaire.</p>
+
+    <p lang="en">When $\sigma \to 0$, the premium for speculative inflation-hedging vanishes. Money regains its pristine capacity to store thermodynamic energy across time without leakage. Because the base money holds its value perfectly, capital is no longer forced to seek yield by exploiting the real economy. Capital allocation naturally shifts from predatory extraction to genuine, long-term <strong>homeostatic maintenance</strong>. Investors can lower their time preference (their discount rate $\rho$), funding multi-generational projects, infrastructure resilience, and deep scientific research.</p>
+    <p lang="fr">Lorsque $\sigma \to 0$, la prime de couverture spéculative contre l'inflation disparaît. La monnaie retrouve sa capacité immaculée à stocker l'énergie thermodynamique à travers le temps sans fuite. Parce que la monnaie de base conserve parfaitement sa valeur, le capital n'est plus forcé de chercher du rendement en exploitant l'économie réelle. L'allocation du capital passe naturellement de l'extraction prédatrice à une véritable <strong>maintenance homéostatique</strong> à long terme. Les investisseurs peuvent abaisser leur préférence temporelle (leur taux d'escompte $\rho$), finançant des projets multigénérationnels, la résilience des infrastructures et la recherche scientifique fondamentale.</p>
+
+    <h4 lang="en">3.5. Alignment with the Biosphere</h4>
+    <h4 lang="fr">3.5. Alignement avec la Biosphère</h4>
+
+    <p lang="en">Ultimately, a deterministic monetary policy forces the economic ledger to obey the First Law of Thermodynamics (the conservation of energy). It becomes impossible to create financial claims on reality faster than reality itself can produce energy and resources. By capping the arbitrary expansion of the monetary axis, we cap the destructive, exponential extraction on the physical axis. We enter an era where society finally self-organizes along a stable trajectory, allocating its energy toward structural integrity rather than fighting the entropic decay of its own ledger. This is the definition of the Economic Steady State.</p>
+    <p lang="fr">En fin de compte, une politique monétaire déterministe force le registre économique à obéir à la Première Loi de la Thermodynamique (la conservation de l'énergie). Il devient impossible de créer des créances financières sur la réalité plus vite que la réalité elle-même ne peut produire d'énergie et de ressources. En plafonnant l'expansion arbitraire de l'axe monétaire, nous plafonnons l'extraction exponentielle et destructrice sur l'axe physique. Nous entrons dans une ère où la société s'auto-organise enfin le long d'une trajectoire stable, allouant son énergie à l'intégrité structurelle plutôt qu'à combattre la décomposition entropique de son propre registre. C'est la définition même de l'État Stationnaire Économique.</p>
+    
+    <!-- NOUVELLE SECTION RÉFÉRENCES -->
+    <div class="references-section">
+        <h3 lang="en">References</h3>
+        <h3 lang="fr">Références</h3>
+        
+        <div class="ref-item">
+            Dragulescu, A., & Yakovenko, V. M. (2000). <em>Statistical mechanics of money</em>. The European Physical Journal B-Condensed Matter and Complex Systems, 17(4), 723-729. <br>
+            <a href="https://doi.org/10.1007/s100510070114" target="_blank">DOI: 10.1007/s100510070114</a>
+        </div>
+        
+        <div class="ref-item">
+            Bouchaud, J. P., & Mézard, M. (2000). <em>Wealth condensation in a simple model of economy</em>. Physica A: Statistical Mechanics and its Applications, 282(3-4), 536-545. <br>
+            <a href="https://doi.org/10.1016/S0378-4371(00)00205-3" target="_blank">DOI: 10.1016/S0378-4371(00)00205-3</a>
+        </div>
+        
+        <div class="ref-item">
+            Ranaora, P., & Yii, J. (2026). <em>Statistical Physics of Distributed Consensus</em>. Information Physics Institute. <br>
+            <a href="https://doi.org/10.59973/ipil.325" target="_blank">DOI: 10.59973/ipil.325</a>
+        </div>
+    </div>
+
+</article>
+
+<script>
+    function setLang(lang) {
+        lang = lang.toLowerCase();
+        if (lang !== 'en' && lang !== 'fr') lang = 'en';
+        document.body.className = 'lang-' + lang;
+    }
+</script>
+
+</body>
+</html>
