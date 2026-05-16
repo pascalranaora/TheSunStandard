@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFDV8LWZSL"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
@@ -13,7 +12,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     
-    <!-- TITRE MODIFIÉ -->
     <title>Distribution des richesses : Equation de Fokker Planck | L'Étalon Solaire</title>
     
     <script>
@@ -24,7 +22,6 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
-    <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 
     <style>
@@ -112,12 +109,10 @@
         <span class="article-meta" lang="en">Statistical Physics & Monetary Networks</span>
         <span class="article-meta" lang="fr">Physique Statistique & Réseaux Monétaires</span>
         
-        <!-- TITRE MODIFIÉ -->
         <h1 class="article-title" lang="en">Wealth Distribution: The Fokker-Planck Equation</h1>
         <h1 class="article-title" lang="fr">Distribution des richesses : Équation de Fokker Planck</h1>
     </header>
 
-    <!-- DÉFINITIONS RENFORCÉES -->
     <div class="axiom-box">
         <h4 lang="en">Econophysics Nomenclature & Core Variables</h4>
         <h4 lang="fr">Nomenclature Éconophysique & Variables Fondamentales</h4>
@@ -128,7 +123,6 @@
             <li><strong style="color:var(--sun-orange);">$p(x,t)$</strong> : <span lang="en">Macroscopic probability density function of wealth distribution.</span><span lang="fr">Fonction de densité de probabilité macroscopique de la distribution des richesses.</span></li>
             <li><strong style="color:var(--sun-orange);">$A(x)$</strong> : <span lang="en">Convective Drift (Real economic growth/wages).</span><span lang="fr">Dérive Convective (Croissance économique réelle/salaires).</span></li>
             <li><strong style="color:var(--sun-orange);">$\sigma^2(\theta)$</strong> : <span lang="en">Monetary variance/noise injected by policy.</span><span lang="fr">Variance/bruit monétaire injecté par la politique centrale.</span></li>
-            <!-- <li><strong style="color:var(--sun-orange);">$k_{nak}$</strong> : <span lang="en">The Nakamoto Action, assimilated to Planck's constant for distributed consensus.</span><span lang="fr">L'Action de Nakamoto, assimilée à la constante de Planck pour le consensus distribué.</span></li> -->
         </ul>
     </div>
 
@@ -160,7 +154,6 @@
     <p lang="en">As long as $\sigma^2 \gg 0$, the equation cannot settle into a tightly bound, healthy stationary distribution. The state must constantly intervene, creating a feedback loop of runaway entropy that blows the wealth distribution apart into heavy-tailed inequality.</p>
     <p lang="fr">Tant que $\sigma^2 \gg 0$, l'équation ne peut pas se stabiliser dans une distribution stationnaire saine et resserrée. L'État doit constamment intervenir, créant une boucle de rétroaction d'entropie galopante qui fait exploser la distribution des richesses vers des inégalités à queues épaisses.</p>
 
-    <!-- WIDGET INTERACTIF -->
     <div class="interactive-widget">
         <h4 lang="en" style="margin-top:0; color:var(--sun-yellow);">Interactive Simulation: The Fokker-Planck Phase Transition</h4>
         <h4 lang="fr" style="margin-top:0; color:var(--sun-yellow);">Simulation Interactive : La Transition de Phase de Fokker-Planck</h4>
@@ -182,13 +175,12 @@
             </div>
             <input type="range" id="sigma-slider" min="0.05" max="1.5" step="0.05" value="0.80">
             <div style="display:flex; justify-content:space-between; width:80%; max-width:400px; font-size:0.8rem; color:#888;">
-                <span>Deterministic ($k_{nak}$)</span>
+                <span>Deterministic ($\sigma \to 0$)</span>
                 <span>Fiat Regime</span>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT DE RENDU PLOTLY -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const plotDiv = document.getElementById('plot-fokker');
@@ -249,7 +241,6 @@
         });
     </script>
 
-    <!-- SECTION 3 MODIFIÉE (SANS HOMO CRYPTOGRAPHICUS) -->
    <h3 lang="en">3. Condensation and the Phase Transition to a Steady State</h3>
     <h3 lang="fr">3. Condensation et Transition de Phase vers l'État Stationnaire</h3>
 
@@ -303,7 +294,6 @@
     <p lang="en">Ultimately, a deterministic monetary policy forces the economic ledger to obey the First Law of Thermodynamics (the conservation of energy). It becomes impossible to create financial claims on reality faster than reality itself can produce energy and resources. By capping the arbitrary expansion of the monetary axis, we cap the destructive, exponential extraction on the physical axis. We enter an era where society finally self-organizes along a stable trajectory, allocating its energy toward structural integrity rather than fighting the entropic decay of its own ledger. This is the definition of the Economic Steady State.</p>
     <p lang="fr">En fin de compte, une politique monétaire déterministe force le registre économique à obéir à la Première Loi de la Thermodynamique (la conservation de l'énergie). Il devient impossible de créer des créances financières sur la réalité plus vite que la réalité elle-même ne peut produire d'énergie et de ressources. En plafonnant l'expansion arbitraire de l'axe monétaire, nous plafonnons l'extraction exponentielle et destructrice sur l'axe physique. Nous entrons dans une ère où la société s'auto-organise enfin le long d'une trajectoire stable, allouant son énergie à l'intégrité structurelle plutôt qu'à combattre la décomposition entropique de son propre registre. C'est la définition même de l'État Stationnaire Économique.</p>
     
-    <!-- NOUVELLE SECTION RÉFÉRENCES -->
     <div class="references-section">
         <h3 lang="en">References</h3>
         <h3 lang="fr">Références</h3>
@@ -317,11 +307,6 @@
             Bouchaud, J. P., & Mézard, M. (2000). <em>Wealth condensation in a simple model of economy</em>. Physica A: Statistical Mechanics and its Applications, 282(3-4), 536-545. <br>
             <a href="https://doi.org/10.1016/S0378-4371(00)00205-3" target="_blank">DOI: 10.1016/S0378-4371(00)00205-3</a>
         </div>
-        
-        <!-- <div class="ref-item">
-            Ranaora, P., & Yii, J. (2026). <em>Statistical Physics of Distributed Consensus</em>. Information Physics Institute. <br>
-            <a href="https://doi.org/10.59973/ipil.325" target="_blank">DOI: 10.59973/ipil.325</a>
-        </div> -->
     </div>
 
 </article>
@@ -330,8 +315,25 @@
     function setLang(lang) {
         lang = lang.toLowerCase();
         if (lang !== 'en' && lang !== 'fr') lang = 'en';
+        
         document.body.className = 'lang-' + lang;
+        
+        // Mettre à jour l'URL sans recharger la page
+        const url = new URL(window.location);
+        url.searchParams.set('lg', lang.toUpperCase());
+        window.history.replaceState({}, '', url);
+        
+        // Sauvegarde dans le cache local
+        try { localStorage.setItem('sun-std-lang', lang); } catch (e) {}
     }
+
+    // Écouteur au chargement du DOM pour appliquer le paramètre URL
+    window.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const urlLang = urlParams.get('lg');
+        const savedLang = urlLang ? urlLang : (localStorage.getItem('sun-std-lang') || 'en');
+        setLang(savedLang);
+    });
 </script>
 
 </body>
