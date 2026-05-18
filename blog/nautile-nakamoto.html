@@ -2644,20 +2644,16 @@
         >
         :
       </p>
-
-      <div class="math-block">
+<div class="math-block">
         $$ h_N(t) = e_{\mathrm{hash}}(t) \cdot \tau_{\mathrm{hash}} $$
       </div>
 
       <p lang="en">
         Unlike Planck's universal constant $h$, the Nakamoto Action $h_N(t)$ is
-        a non-stationary quantity. It is a dissipative technological parameter
-        that dynamically revises downward with algorithmic implementation and
-        semiconductor efficiency (ASICs), asymptoting toward
+        a non-stationary quantity. It is defined as the product of $e_{\mathrm{hash}}(t)$, the average energy required to compute a single SHA-256 hash, and $\tau_{\mathrm{hash}}$, the average time taken by the network's hardware to execute this computation. This dissipative technological parameter dynamically revises downward with improvements in semiconductor efficiency (ASICs), asymptoting toward
         <span class="tooltip"
           >Landauer's limit<span class="tooltiptext"
-            ><strong>Landauer's Limit</strong
-            ><span
+            ><strong>Landauer's Limit</strong><span
               style="
                 color: var(--sun-orange);
                 font-family: monospace;
@@ -2678,14 +2674,10 @@
 
       <p lang="fr">
         Contrairement à la constante universelle de Planck $h$, l'Action de
-        Nakamoto $h_N(t)$ est une grandeur non-stationnaire. C'est un paramètre
-        technologique dissipatif qui évolue à la baisse en fonction de
-        l'implémentation algorithmique et de l'efficacité énergétique des ASICs,
-        s'approchant asymptotiquement de la
+        Nakamoto $h_N(t)$ est une grandeur non-stationnaire. Elle est définie par le produit de $e_{\mathrm{hash}}(t)$, l'énergie moyenne requise pour calculer un seul hachage SHA-256, et de $\tau_{\mathrm{hash}}$, le temps moyen d'exécution de ce calcul par le matériel du réseau. Ce paramètre technologique dissipatif évolue à la baisse grâce à l'amélioration de l'efficacité énergétique des puces (ASICs), s'approchant asymptotiquement de la
         <span class="tooltip"
           >limite de Landauer<span class="tooltiptext"
-            ><strong>Limite de Landauer</strong
-            ><span
+            ><strong>Limite de Landauer</strong><span
               style="
                 color: var(--sun-orange);
                 font-family: monospace;
