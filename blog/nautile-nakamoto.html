@@ -587,22 +587,27 @@
         border-left: 1px solid rgba(255, 255, 255, 0.1);
         padding-left: 1.5rem;
       }
+
       .lang-toggle button {
         background: transparent;
         border: none;
         font-size: 1.4rem;
+        color: white; /* <-- Ajout principal pour rendre le texte/icône blanc */
         cursor: pointer;
-        opacity: 0.3;
+        opacity: 0.5; /* J'ai légèrement augmenté l'opacité (de 0.3 à 0.5) pour qu'ils soient plus visibles même inactifs */
         transition: all 0.3s ease;
         filter: grayscale(100%);
       }
+
       .lang-toggle button:hover {
-        opacity: 0.8;
+        opacity: 0.9; /* Plus lumineux au survol */
         transform: scale(1.1);
       }
+
       body.lang-en #btn-en,
       body.lang-fr #btn-fr {
-        opacity: 1;
+        opacity: 1; /* Pleine visibilité pour la langue active */
+        color: white; /* Assure que la langue active reste bien blanche */
         filter: grayscale(0%);
         transform: scale(1.1);
         filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.4));
@@ -12785,158 +12790,203 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
   Cette équation révèle que <em>le consensus est un processus de mesure continu</em>. Lorsqu'un mineur résout avec succès le puzzle de hachage et propage le bloc, il effectue en réalité une mesure quantique macroscopique sur l'état $|\Psi\rangle$. L'immense énergie dissipée par le réseau (le coût d'effacement de Landauer) agit comme le <strong>mécanisme de décohérence</strong>. Elle détruit les termes d'interférence hors-diagonaux entre les historiques concurrents, forçant la fonction d'onde globale $|\Psi(\theta)\rangle$ à s'effondrer violemment dans un état de base unique, classique et objectif : le nouveau bloc.
 </p>
 
-<div id="wave-collapse-container" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid rgba(200, 100, 255, 0.3); background: rgba(5,5,5,0.8); margin: 2rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); overflow: hidden; position: relative;">
+<div id="wave-collapse-container-v2" style="width: 100%; height: 450px; border-radius: 8px; border: 1px solid rgba(200, 100, 255, 0.3); background: rgba(5,5,5,0.8); margin: 2rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); overflow: hidden; position: relative;">
     <div lang="en" style="position: absolute; top: 15px; left: 15px; color: #c864ff; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 10;">
-        MACROSCOPIC MEASUREMENT: WAVEFUNCTION COLLAPSE
+        MACROSCOPIC MEASUREMENT: WAVEFUNCTION COLLAPSE AND ARROW OF TIME
     </div>
     <div lang="fr" style="position: absolute; top: 15px; left: 15px; color: #c864ff; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 10;">
-        MESURE MACROSCOPIQUE : EFFONDREMENT DE LA FONCTION D'ONDE
+        MESURE MACROSCOPIQUE : EFFONDREMENT DE LA FONCTION D'ONDE ET FLÈCHE DU TEMPS
     </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+          const container = document.getElementById("wave-collapse-container-v2");
+          if (!container || typeof THREE === "undefined") return;
+      
+          const scene = new THREE.Scene();
+          scene.background = new THREE.Color(0x050505);
+      
+          const camera = new THREE.PerspectiveCamera(50, container.clientWidth / container.clientHeight, 0.1, 1000);
+          camera.position.set(2, 5, 12);
+      
+          const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+          renderer.setSize(container.clientWidth, container.clientHeight);
+          container.appendChild(renderer.domElement);
+      
+          const controls = new THREE.OrbitControls(camera, renderer.domElement);
+          controls.enableDamping = true;
+          controls.autoRotate = true;
+          controls.autoRotateSpeed = 0.5;
+          controls.enableZoom = false;
+          controls.target.set(-2, 0, 0);
+      
+          const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
+          scene.add(ambientLight);
+          const pointLight = new THREE.PointLight(0xc864ff, 2, 50);
+          scene.add(pointLight);
+      
+          const gridHelper = new THREE.GridHelper(20, 20, 0x222222, 0x111111);
+          gridHelper.position.y = -2;
+          scene.add(gridHelper);
+      
+          const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
+          const edgesGeo = new THREE.EdgesGeometry(geometry);
+          
+          // The established Blockchain (Past)
+          const chainGroup = new THREE.Group();
+          scene.add(chainGroup);
+          
+          const chainMat = new THREE.MeshPhysicalMaterial({ color: 0xffcc00, transparent: true, opacity: 0.9, roughness: 0.2, metalness: 0.8 });
+          for(let i = 1; i <= 4; i++) {
+              const block = new THREE.Mesh(geometry, chainMat);
+              const edges = new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: 0xffeedd, linewidth: 2 }));
+              block.add(edges);
+              block.position.set(-i * 2.5, 0, 0);
+              chainGroup.add(block);
+              
+              // Links
+              if (i < 4) {
+                  const linkGeo = new THREE.CylinderGeometry(0.1, 0.1, 2.5);
+                  const link = new THREE.Mesh(linkGeo, new THREE.MeshBasicMaterial({color: 0xffcc00, transparent:true, opacity:0.5}));
+                  link.rotation.z = Math.PI / 2;
+                  link.position.set(-i * 2.5 - 1.25, 0, 0);
+                  chainGroup.add(link);
+              }
+          }
+      
+          // The Quantum Mempool (Present)
+          const numOrphans = 5;
+          const orphans = [];
+          const colors = [0x4499ff, 0xff4444, 0x88ffaa, 0xc864ff, 0x00ffcc];
+          
+          const presentGroup = new THREE.Group();
+          presentGroup.position.set(0, 0, 0);
+          scene.add(presentGroup);
+      
+          // Winner block (starts as part of superposition)
+          const winnerMat = new THREE.MeshPhysicalMaterial({ color: 0xffcc00, transparent: true, opacity: 0.3, roughness: 0.1, metalness: 0.1 });
+          const winnerBlock = new THREE.Mesh(geometry, winnerMat);
+          winnerBlock.add(new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: 0xffcc00 })));
+          presentGroup.add(winnerBlock);
+      
+          for(let i=0; i<numOrphans; i++) {
+              const mat = new THREE.MeshPhysicalMaterial({ color: colors[i], transparent: true, opacity: 0.3, roughness: 0.1, metalness: 0.1 });
+              const mesh = new THREE.Mesh(geometry, mat);
+              mesh.add(new THREE.LineSegments(edgesGeo, new THREE.LineBasicMaterial({ color: colors[i] })));
+              
+              mesh.userData = {
+                  angleOffset: (i / numOrphans) * Math.PI * 2,
+                  speed: 1 + Math.random()
+              };
+              presentGroup.add(mesh);
+              orphans.push(mesh);
+          }
+      
+          // Link that forms upon collapse
+          const collapseLinkGeo = new THREE.CylinderGeometry(0.1, 0.1, 2.5);
+          const collapseLink = new THREE.Mesh(collapseLinkGeo, new THREE.MeshBasicMaterial({color: 0xffcc00, transparent:true, opacity:0}));
+          collapseLink.rotation.z = Math.PI / 2;
+          collapseLink.position.set(-1.25, 0, 0);
+          scene.add(collapseLink);
+      
+          const clock = new THREE.Clock();
+      
+          function animate() {
+              requestAnimationFrame(animate);
+              const time = clock.getElapsedTime();
+              const cycleLength = 8;
+              const t = time % cycleLength;
+              
+              pointLight.position.copy(presentGroup.position);
+              pointLight.position.y += 2;
+      
+              // Phase 1: Superposition (0 - 6s)
+              if (t < 6) {
+                  scene.position.x = THREE.MathUtils.lerp(scene.position.x, 0, 0.05); // Global shift reset
+                  collapseLink.material.opacity = 0;
+                  
+                  pointLight.intensity = 2 + Math.sin(time * 5) * 1.5; 
+                  pointLight.color.setHex(0xc864ff);
+                  
+                  winnerBlock.position.set(0, Math.sin(time * 1.5) * 0.8, 0);
+                  winnerBlock.rotation.x += 0.01;
+                  winnerBlock.rotation.y += 0.02;
+                  winnerBlock.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
+                  winnerBlock.material.opacity = THREE.MathUtils.lerp(winnerBlock.material.opacity, 0.3, 0.1);
+                  winnerBlock.material.roughness = 0.1;
+                  winnerBlock.material.metalness = 0.1;
+      
+                  orphans.forEach((block) => {
+                      const radius = 2.5;
+                      const angle = time * block.userData.speed + block.userData.angleOffset;
+                      block.position.set(Math.cos(angle) * radius, Math.sin(time * 2 + angle) * 1.5, Math.sin(angle) * radius);
+                      block.rotation.x += 0.02;
+                      block.rotation.y += 0.03;
+                      block.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
+                      block.material.opacity = THREE.MathUtils.lerp(block.material.opacity, 0.3, 0.1);
+                      block.children[0].material.opacity = THREE.MathUtils.lerp(block.children[0].material.opacity, 1, 0.1);
+                  });
+              } 
+              // Phase 2: Collapse & Solidification (6 - 8s)
+              else if (t < 8) {
+                  if (t > 4 && t < 4.2) {
+                      pointLight.intensity = 20; // Nakamoto PoW Flash
+                      pointLight.color.setHex(0xffffff);
+                  } else {
+                      pointLight.intensity = 5;
+                      pointLight.color.setHex(0xffcc00);
+                  }
+      
+                  // Winner solidifies and aligns
+                  winnerBlock.position.lerp(new THREE.Vector3(0, 0, 0), 0.1);
+                  winnerBlock.rotation.x = THREE.MathUtils.lerp(winnerBlock.rotation.x, 0, 0.1);
+                  winnerBlock.rotation.y = THREE.MathUtils.lerp(winnerBlock.rotation.y, 0, 0.1);
+                  winnerBlock.rotation.z = THREE.MathUtils.lerp(winnerBlock.rotation.z, 0, 0.1);
+                  winnerBlock.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
+                  winnerBlock.material.opacity = THREE.MathUtils.lerp(winnerBlock.material.opacity, 0.9, 0.1);
+                  winnerBlock.material.roughness = 0.2;
+                  winnerBlock.material.metalness = 0.8;
+      
+                  // Link appears
+                  collapseLink.material.opacity = THREE.MathUtils.lerp(collapseLink.material.opacity, 0.5, 0.05);
+      
+                  // Orphans vanish
+                  orphans.forEach((block) => {
+                      block.scale.lerp(new THREE.Vector3(0.1, 0.1, 0.1), 0.1);
+                      block.position.y -= 0.05;
+                      block.material.opacity = THREE.MathUtils.lerp(block.material.opacity, 0, 0.2);
+                      block.children[0].material.opacity = THREE.MathUtils.lerp(block.children[0].material.opacity, 0, 0.2);
+                  });
+              }
+              // Phase 3: Time Arrow Shift (8 - 10s)
+              else {
+                  // Shift the entire scene to the right (moves the chain left relative to camera)
+                  const targetShift = 2.5; 
+                  scene.position.x = THREE.MathUtils.lerp(scene.position.x, targetShift, 0.03);
+                  
+                  // Start fading out the oldest block in the chain so it doesn't clutter
+                  const oldestBlock = chainGroup.children[chainGroup.children.length - 2]; // block before the link
+                  if(oldestBlock) {
+                      oldestBlock.material.opacity = THREE.MathUtils.lerp(oldestBlock.material.opacity, 0, 0.05);
+                      oldestBlock.children[0].material.opacity = THREE.MathUtils.lerp(oldestBlock.children[0].material.opacity, 0, 0.05);
+                  }
+              }
+      
+              controls.update();
+              renderer.render(scene, camera);
+          }
+      
+          window.addEventListener("resize", () => {
+              if (container.clientWidth > 0) {
+                  camera.aspect = container.clientWidth / container.clientHeight;
+                  camera.updateProjectionMatrix();
+                  renderer.setSize(container.clientWidth, container.clientHeight);
+              }
+          });
+      
+          animate();
+      });
+      </script>    
 </div>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const container = document.getElementById("wave-collapse-container");
-    if (!container || typeof THREE === "undefined") return;
-
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x050505);
-
-    const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.set(0, 4, 10);
-
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.autoRotate = true;
-    controls.autoRotateSpeed = 1.5;
-    controls.enableZoom = false;
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.2);
-    scene.add(ambientLight);
-    const pointLight = new THREE.PointLight(0xc864ff, 2, 50);
-    pointLight.position.set(0, 2, 0);
-    scene.add(pointLight);
-
-    // Grid helper for visual reference
-    const gridHelper = new THREE.GridHelper(15, 15, 0x222222, 0x111111);
-    gridHelper.position.y = -2;
-    scene.add(gridHelper);
-
-    // Competing Histories (Cubes in Superposition)
-    const geometry = new THREE.BoxGeometry(1.2, 1.2, 1.2);
-    const edgesGeo = new THREE.EdgesGeometry(geometry);
-    
-    const numBlocks = 6;
-    const blocks = [];
-    const colors = [0x4499ff, 0xff4444, 0x88ffaa, 0xffcc00, 0xc864ff, 0x00ffcc];
-
-    for(let i=0; i<numBlocks; i++) {
-        const mat = new THREE.MeshPhysicalMaterial({
-            color: colors[i],
-            transparent: true,
-            opacity: 0.3,
-            roughness: 0.1,
-            metalness: 0.1
-        });
-        const mesh = new THREE.Mesh(geometry, mat);
-        
-        const edgeMat = new THREE.LineBasicMaterial({ color: colors[i], linewidth: 2 });
-        const edges = new THREE.LineSegments(edgesGeo, edgeMat);
-        mesh.add(edges);
-        
-        const angle = (i / numBlocks) * Math.PI * 2;
-        const radius = 3.5;
-        mesh.position.set(Math.cos(angle) * radius, 0, Math.sin(angle) * radius);
-        
-        mesh.userData = {
-            initX: mesh.position.x,
-            initY: (Math.random() - 0.5) * 2,
-            initZ: mesh.position.z,
-            speed: 1 + Math.random(),
-            winner: (i === 3) // Make the golden one the winner
-        };
-        
-        scene.add(mesh);
-        blocks.push(mesh);
-    }
-
-    const clock = new THREE.Clock();
-
-    function animate() {
-        requestAnimationFrame(animate);
-        const time = clock.getElapsedTime();
-        const cycle = time % 7; // 7 seconds loop
-        
-        // Phase 1: Quantum Superposition (0 to 4s)
-        if (cycle < 4) {
-            pointLight.intensity = 2 + Math.sin(time * 6) * 1.5; 
-            pointLight.color.setHex(0xc864ff);
-            
-            blocks.forEach((block) => {
-                // Return to floating state
-                block.position.x = THREE.MathUtils.lerp(block.position.x, block.userData.initX, 0.05);
-                block.position.z = THREE.MathUtils.lerp(block.position.z, block.userData.initZ, 0.05);
-                block.position.y = block.userData.initY + Math.sin(time * block.userData.speed) * 0.8;
-                
-                block.rotation.x += 0.01;
-                block.rotation.y += 0.02;
-                
-                block.scale.lerp(new THREE.Vector3(1, 1, 1), 0.1);
-                block.material.opacity = THREE.MathUtils.lerp(block.material.opacity, 0.3, 0.1);
-                block.children[0].material.opacity = THREE.MathUtils.lerp(block.children[0].material.opacity, 1, 0.1);
-            });
-        } 
-        // Phase 2: Decoherence & Measurement (4 to 7s)
-        else {
-            const collapseProgress = Math.min((cycle - 4) * 2, 1); 
-            
-            if (cycle > 4 && cycle < 4.3) {
-                pointLight.intensity = 20; // Massive Flash of PoW
-                pointLight.color.setHex(0xffffff);
-            } else {
-                pointLight.intensity = 5;
-                pointLight.color.setHex(0xffcc00); // Canonical Truth
-            }
-
-            blocks.forEach((block) => {
-                if (block.userData.winner) {
-                    // Winner converges to the center, solidifies
-                    block.position.lerp(new THREE.Vector3(0, 0, 0), 0.1);
-                    block.scale.lerp(new THREE.Vector3(1.5, 1.5, 1.5), 0.1);
-                    block.material.opacity = THREE.MathUtils.lerp(block.material.opacity, 0.9, 0.1);
-                    block.rotation.x = 0;
-                    block.rotation.y += 0.05;
-                } else {
-                    // Alternative histories collapse (orphans vanish)
-                    block.scale.lerp(new THREE.Vector3(0.1, 0.1, 0.1), 0.1);
-                    block.position.y -= 0.05;
-                    block.material.opacity = THREE.MathUtils.lerp(block.material.opacity, 0, 0.2);
-                    block.children[0].material.opacity = THREE.MathUtils.lerp(block.children[0].material.opacity, 0, 0.2);
-                }
-            });
-        }
-
-        controls.update();
-        renderer.render(scene, camera);
-    }
-
-    window.addEventListener("resize", () => {
-        if (container.clientWidth > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        }
-    });
-
-    animate();
-});
-</script>
-
 <div
   style="
     border-left: 3px solid #88bbff;
@@ -13614,7 +13664,153 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           <p lang="fr" style="margin-bottom: 1rem; font-size: 0.95em">
             En 1922, le paléontologue Teilhard de Chardin prophétisait l'émergence de la <strong>Noosphère</strong> : une sphère de pensée humaine enveloppant la Terre, superposée à la biosphère. Pendant des décennies, Internet n'a été qu'un système nerveux non coordonné — transmettant des signaux, mais dépourvu de mémoire unifiée et de cohérence. L'organisme Nakamoto est l'étape évolutive manquante : la synchronisation thermodynamique qui lie ce système nerveux chaotique en une structure mémorielle unique, cohérente et consciente d'elle-même. 
           </p>
-          
+          <div id="cortex-container" style="width: 100%; height: 500px; border-radius: 8px; border: 1px solid rgba(136, 187, 255, 0.3); background: rgba(2, 5, 15, 0.9); margin: 2rem 0; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); overflow: hidden; position: relative;">
+            <div lang="en" style="position: absolute; top: 15px; left: 15px; color: #88bbff; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 10;">
+                THE NOOSPHERE: NAKAMOTO'S PLANETARY CORTEX
+            </div>
+            <div lang="fr" style="position: absolute; top: 15px; left: 15px; color: #88bbff; font-family: 'Helvetica Neue', sans-serif; font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; z-index: 10;">
+                LA NOOSPHÈRE : LE CORTEX PLANÉTAIRE DE NAKAMOTO
+            </div>
+        </div>
+        
+        <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const container = document.getElementById("cortex-container");
+            if (!container || typeof THREE === "undefined") return;
+        
+            const scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x02050f); // Deep space blue
+        
+            const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.set(0, 2, 9);
+        
+            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+        
+            const controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 1.0;
+            controls.enableZoom = false;
+        
+            // The Globe (Holographic Earth)
+            const globeRadius = 3;
+            const globeGeo = new THREE.SphereGeometry(globeRadius, 32, 32);
+            const globeMat = new THREE.MeshBasicMaterial({ 
+                color: 0x113366, 
+                wireframe: true, 
+                transparent: true, 
+                opacity: 0.15 
+            });
+            const globe = new THREE.Mesh(globeGeo, globeMat);
+            scene.add(globe);
+        
+            // The Core (The Consensus Engine)
+            const coreGeo = new THREE.SphereGeometry(0.6, 16, 16);
+            const coreMat = new THREE.MeshBasicMaterial({ color: 0xff8800 });
+            const core = new THREE.Mesh(coreGeo, coreMat);
+            scene.add(core);
+        
+            const coreLight = new THREE.PointLight(0xffaa00, 3, 10);
+            scene.add(coreLight);
+        
+            // Nodes on the surface (Fibonacci sphere distribution)
+            const numNodes = 40;
+            const nodes = [];
+            const nodeGeo = new THREE.SphereGeometry(0.06, 8, 8);
+            const nodeMat = new THREE.MeshBasicMaterial({ color: 0x88bbff });
+        
+            for(let i=0; i<numNodes; i++) {
+                const phi = Math.acos(-1 + (2 * i) / numNodes);
+                const theta = Math.sqrt(numNodes * Math.PI) * phi;
+                
+                const node = new THREE.Mesh(nodeGeo, nodeMat);
+                node.position.setFromSphericalCoords(globeRadius, phi, theta);
+                globe.add(node);
+                nodes.push(node.position);
+            }
+        
+            // Information Packets (Transactions/Blocks)
+            const numPackets = 15;
+            const packets = [];
+            const packetGeo = new THREE.SphereGeometry(0.08, 8, 8);
+            
+            for(let i=0; i<numPackets; i++) {
+                // Start with a blue color (unconfirmed state)
+                const pMat = new THREE.MeshBasicMaterial({ color: 0x00ffff });
+                const packet = new THREE.Mesh(packetGeo, pMat);
+                
+                // Pick random start node
+                const startNode = nodes[Math.floor(Math.random() * numNodes)];
+                packet.position.copy(startNode);
+                
+                packet.userData = {
+                    phase: 'in', // 'in' = diving to core, 'out' = radiating to surface
+                    target: new THREE.Vector3(0,0,0), // The core
+                    speed: 0.015 + Math.random() * 0.015,
+                    progress: 0,
+                    startPos: startNode.clone()
+                };
+                
+                scene.add(packet);
+                packets.push(packet);
+            }
+        
+            function animate() {
+                requestAnimationFrame(animate);
+                
+                // Pulse the core
+                const time = Date.now() * 0.003;
+                core.scale.setScalar(1 + Math.sin(time * 2) * 0.1);
+                coreLight.intensity = 2 + Math.sin(time * 2);
+        
+                packets.forEach(p => {
+                    p.userData.progress += p.userData.speed;
+                    
+                    if (p.userData.phase === 'in') {
+                        // Lerp towards the core
+                        p.position.lerpVectors(p.userData.startPos, p.userData.target, p.userData.progress);
+                        
+                        if (p.userData.progress >= 1) {
+                            p.userData.phase = 'out';
+                            p.userData.progress = 0;
+                            p.userData.startPos = p.position.clone();
+                            // Pick a random surface node to shoot out to
+                            p.userData.target = nodes[Math.floor(Math.random() * numNodes)].clone();
+                            // Change color to gold (validated by the core)
+                            p.material.color.setHex(0xffaa00);
+                        }
+                    } else {
+                        // Lerp towards the surface
+                        p.position.lerpVectors(p.userData.startPos, p.userData.target, p.userData.progress);
+                        
+                        if (p.userData.progress >= 1) {
+                            p.userData.phase = 'in';
+                            p.userData.progress = 0;
+                            p.userData.startPos = p.position.clone();
+                            p.userData.target = new THREE.Vector3(0,0,0);
+                            // Revert to blue (new transaction)
+                            p.material.color.setHex(0x00ffff);
+                        }
+                    }
+                });
+        
+                controls.update();
+                renderer.render(scene, camera);
+            }
+        
+            window.addEventListener("resize", () => {
+                if (container.clientWidth > 0) {
+                    camera.aspect = container.clientWidth / container.clientHeight;
+                    camera.updateProjectionMatrix();
+                    renderer.setSize(container.clientWidth, container.clientHeight);
+                }
+            });
+        
+            animate();
+        });
+        </script>
           <p lang="en" style="margin: 0; font-size: 0.95em">
             The future is a vibration of information waiting for our consciousness to freeze it into reality. Satoshi Nakamoto simply provided humanity with the thermodynamic engine necessary to freeze this future together, synchronously, preventing our civilization from disintegrating into absolute informational relativism. This is the genesis of a planetary consciousness: a Humanity capable of navigating freely into the future, while leaving behind a wake of absolute, unbreakable truth. The Earth is no longer just transmitting data; it is remembering.
           </p>
