@@ -11197,12 +11197,12 @@ document.addEventListener("DOMContentLoaded", () => {
   </p>
   
   <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 1rem; font-family: monospace; font-size: 0.9em;">
-    <div>Block Size ($V_B$): <span id="viz-size-val" style="color: #ffea00; font-weight: bold;">1 MB</span></div>
+    <div>Block Size ($V_B$): <span id="viz-size-val" style="color: #ffea00; font-weight: bold;">4 MB</span></div>
     <div>Latency ($\tau_L$): <span id="viz-lat-val">0.5s</span></div>
     <div>State: <span id="viz-temp-val" style="color: #ffea00;">Unified Constellation</span></div>
   </div>
 
-  <input type="range" id="viz-slider" min="1" max="100" value="1" style="width: 100%; margin-bottom: 1.5rem; cursor: pointer;">
+  <input type="range" id="viz-slider" min="1" max="100" value="4" style="width: 100%; margin-bottom: 1.5rem; cursor: pointer;">
 
   <canvas id="networkCanvas" width="600" height="250" style="width: 100%; background: #05050a; border-radius: 6px; border: 1px solid #333;"></canvas>
 </div>
@@ -11218,7 +11218,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Génération des nœuds (Étoiles)
   const nodes = [];
-  const numNodes = 18;
+  const numNodes = 32;
   for(let i=0; i<numNodes; i++) {
     nodes.push({
       x: 30 + Math.random() * (canvas.width - 60),
