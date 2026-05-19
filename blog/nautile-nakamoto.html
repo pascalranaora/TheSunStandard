@@ -6231,9 +6231,14 @@ document.addEventListener("DOMContentLoaded", () => {
     scene.add(collapseLink);
 
     const clock = new THREE.Clock();
+    let isVisible = false;
+    let animationFrameId;
 
     function animate() {
-        requestAnimationFrame(animate);
+        // Si le conteneur n'est pas à l'écran, on coupe la boucle pour économiser le GPU
+        if (!isVisible) return; 
+        
+        animationFrameId = requestAnimationFrame(animate);
         const time = clock.getElapsedTime();
         const cycleLength = 8;
         const t = time % cycleLength;
@@ -6316,16 +6321,29 @@ document.addEventListener("DOMContentLoaded", () => {
         controls.update();
         renderer.render(scene, camera);
     }
-
-    window.addEventListener("resize", () => {
-        if (container.clientWidth > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        }
+    // --- OPTIMISATION DES PERFORMANCES : INTERSECTION OBSERVER ---
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // L'élément entre dans le viewport
+                if (!isVisible) {
+                    isVisible = true;
+                    animate(); // Relance la boucle d'animation
+                }
+            } else {
+                // L'élément sort du viewport
+                isVisible = false;
+                if (animationFrameId) {
+                    cancelAnimationFrame(animationFrameId); // Gèle complètement les calculs
+                }
+            }
+        });
+    }, { 
+        threshold: 0.05, // Se déclenche quand 5% de l'élément est visible
+        rootMargin: "100px" // Marge de 100px pour lancer l'animation juste avant qu'elle n'apparaisse à l'écran
     });
 
-    animate();
+    observer.observe(container); // Active l'observation sur ce conteneur 3D
 });
 </script>
 
@@ -6448,10 +6466,14 @@ document.addEventListener("DOMContentLoaded", () => {
       "
     >
       <p lang="en" style="margin-bottom: 0.5rem">
-        How do we go from a single computer guessing a number to a global consensus? By treating every single SHA-256 hash as a <strong>Boltzmann particle</strong>. Trillions of these particles are constantly exploring the cryptographic phase space. Each particle carries a tiny energy cost ($\epsilon_j$).
+        How do we go from a single computer guessing a number to a global consensus? By treating every single SHA-256 hash as a 
+        <span class="tooltip">Boltzmann particle<span class="tooltiptext"><strong>Boltzmann Particle</strong>. In statistical mechanics, a theoretical particle modeling the random microscopic states of a system (like gas molecules in a room). Here, it represents a single, random SHA-256 hash attempt, a "microstate" exploring the vast cryptographic phase space.</span></span>. 
+        Trillions of these particles are constantly exploring the cryptographic phase space. Each particle carries a tiny energy cost ($\epsilon_j$).
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
-        Comment passe-t-on d'un simple ordinateur devinant un nombre à un consensus mondial ? En traitant chaque hachage SHA-256 comme une <strong>particule de Boltzmann</strong>. Des billions de ces particules explorent constamment l'espace des phases cryptographique. Chaque particule a un coût énergétique infime ($\epsilon_j$).
+        Comment passe-t-on d'un simple ordinateur devinant un nombre à un consensus mondial ? En traitant chaque hachage SHA-256 comme une 
+        <span class="tooltip">particule de Boltzmann<span class="tooltiptext"><strong>Particule de Boltzmann</strong>. En mécanique statistique, une particule théorique modélisant les mouvements aléatoires microscopiques d'un système (comme les molécules d'un gaz). Dans notre analogie, elle représente une tentative unique de hachage SHA-256, un "micro-état" explorant l'immense espace des phases cryptographique.</span></span>. 
+        Des billions de ces particules explorent constamment l'espace des phases cryptographique. Chaque particule a un coût énergétique infime ($\epsilon_j$).
       </p>
       <p lang="en" style="margin-bottom: 0">
         This mirrors <strong>Feynman's Path Integral</strong> formulation. To get from Block $A$ to Block $B$, the network calculates <em>every possible computational trajectory</em>. Most of these paths (invalid hashes) destructively interfere and are discarded. The macroscopic consensus state $|\Psi\rangle$ emerges only from the constructive interference of the specific trajectory that successfully concentrated enough physical work to overcome the Hamiltonian barrier. The macro is literally the thermodynamic sum of the micro.
@@ -6827,9 +6849,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- ANIMATION LOOP ---
     const clock = new THREE.Clock();
+    let isVisible = false;
+    let animationFrameId;
 
     function animate() {
-        requestAnimationFrame(animate);
+        // Si le conteneur n'est pas à l'écran, on coupe la boucle pour économiser le GPU
+        if (!isVisible) return; 
+        
+        animationFrameId = requestAnimationFrame(animate);
         const time = clock.getElapsedTime();
 
         // Polytope breathing (Calculating the volume)
@@ -6861,15 +6888,37 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     window.addEventListener("resize", () => {
-        if (container.clientWidth > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-        }
-    });
+            if (container.clientWidth > 0) {
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            }
+        });
 
-    animate();
-});
+        // --- OPTIMISATION DES PERFORMANCES : INTERSECTION OBSERVER ---
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // L'élément entre dans le viewport
+                    if (!isVisible) {
+                        isVisible = true;
+                        animate(); // Relance la boucle d'animation
+                    }
+                } else {
+                    // L'élément sort du viewport
+                    isVisible = false;
+                    if (animationFrameId) {
+                        cancelAnimationFrame(animationFrameId); // Gèle complètement les calculs
+                    }
+                }
+            });
+        }, { 
+            threshold: 0.05, // Se déclenche quand 5% de l'élément est visible
+            rootMargin: "100px" // Marge de 100px pour lancer l'animation juste avant qu'elle n'apparaisse à l'écran
+        });
+
+        observer.observe(container); // Active l'observation sur ce conteneur 3D
+    });
 </script>
 
       <div style="border-left: 3px solid #88bbff; padding-left: 1.5rem; margin-bottom: 2rem; margin-top: 1.5rem;">
