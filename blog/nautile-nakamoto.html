@@ -371,6 +371,18 @@
         visibility: visible;
         opacity: 1;
       }
+      /* --- Variante : Infobulle au-dessus du mot --- */
+      .tooltip .tooltiptext.tooltip-top {
+        top: auto;
+        bottom: 140%; /* Remonte la boîte au-dessus du mot */
+      }
+
+      /* Inversion de la flèche pour qu'elle pointe vers le bas */
+      .tooltip .tooltiptext.tooltip-top::after {
+        top: 100%; /* Place la flèche en bas de l'infobulle */
+        bottom: auto; /* Annule l'ancienne position */
+        border-color: #1a66cc transparent transparent transparent; /* Pointe vers le bas */
+      }
       /* --- Planetary Brain 3D Overlay --- */
       .planetary-container {
         position: relative;
@@ -2674,8 +2686,7 @@
       <p lang="fr">
         Contrairement à la constante universelle de Planck $h$, l'Action de
         Nakamoto $h_N(t)$ est une grandeur non-stationnaire. Elle est définie par le produit de $e_{\mathrm{hash}}(t)$, l'énergie moyenne requise pour calculer un seul hachage SHA-256, et de $\tau_{\mathrm{hash}}$, le temps moyen d'exécution de ce calcul par le matériel du réseau. Ce paramètre technologique dissipatif évolue à la baisse grâce à l'amélioration de l'efficacité énergétique des puces (ASICs), s'approchant asymptotiquement de la
-        <span class="tooltip"
-          >limite de Landauer<span class="tooltiptext"
+        <span class="tooltip">limite de Landauer<span class="tooltiptext"
             ><strong>Limite de Landauer</strong><span
               style="
                 color: var(--sun-orange);
@@ -3080,7 +3091,7 @@
             "
           >
             <span lang="en">IV. Covariant Homeostasis (The DAA Gauge)</span>
-            <span lang="fr">IV. Homéostasie Covariante (La Jauge DAA)</span>
+            <span lang="fr">IV. Homéostasie Covariante (La Jauge de l'Algorithme d'Ajustement de Difficulté ou DAA)</span>
           </summary>
           <div
             style="
@@ -3104,8 +3115,7 @@
               style="margin-bottom: 0; color: #aaa; font-style: italic"
             >
               <strong>Justification:</strong> Survival against the Percolation
-              Wall. Without a covariant derivative (the Difficulty Adjustment
-              Algorithm) correcting for Hashrate fluctuations, block speed would
+              Wall. The Difficulty Adjustment Algorithm (DAA): Updates the mining puzzle complexity every 2016 blocks to guarantee a 10-minute block interval. Without this covariant derivative (the DAA) correcting for Hashrate fluctuations, block speed would
               surpass signal propagation limits ($\tau_L$), tearing the manifold
               into a chaotic gas of forks.
             </p>
@@ -3114,13 +3124,14 @@
               style="margin-bottom: 0; color: #aaa; font-style: italic"
             >
               <strong>Justification :</strong> Survie face au Mur de
-              Percolation. Sans une dérivée covariante (le DAA) corrigeant les
+              Percolation. L'Algorithme d'Ajustement de la Difficulté (ou DAA pour Difficulty Adjustment Algorithm): assure l'émission d'un bloc de transactions toutes les 10 minutes (en moyenne) en adaptant la cible cryptographique. Sans cette dérivée covariante corrigeant les
               afflux de Hashrate, la vitesse des blocs dépasserait les limites
               de propagation ($\tau_L$), déchirant la variété en un gaz
               chaotique de forks.
             </p>
           </div>
         </details>
+
 
         <details
           style="
