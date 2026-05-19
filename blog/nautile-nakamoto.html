@@ -6348,10 +6348,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <p lang="en" style="margin-bottom: 0.5rem">
-  Crucially, this macroscopic wavefunction is not a magical entity; it is the strict statistical sum of the microscopic reality. If we consider every single SHA-256 hash computed by an ASIC as a discrete <strong>Boltzmann particle</strong> exploring the cryptographic phase space, each representing a microstate $|\psi_j\rangle$, then the global consensus state can be rewritten as the superposition of all individual particles taking part in the consensus:
+  Crucially, this macroscopic wavefunction is not a magical entity; it is the strict statistical sum of the microscopic reality. If we consider every single SHA-256 hash computed by an ASIC as a discrete <span class="tooltip">Boltzmann particle<span class="tooltiptext"><strong>Boltzmann Particle</strong>In statistical mechanics, a theoretical particle modeling the random microscopic states of a system (like gas molecules in a room). Here, it represents a single, random SHA-256 hash attempt, a "microstate" exploring the vast cryptographic phase space.</span></span> exploring the cryptographic phase space, each representing a microstate $|\psi_j\rangle$, then the global consensus state can be rewritten as the superposition of all individual particles taking part in the consensus:
 </p>
 <p lang="fr" style="margin-bottom: 0.5rem">
-  Fondamentalement, cette fonction d'onde macroscopique n'est pas une entité magique ; elle est la somme statistique stricte de la réalité microscopique. Si l'on considère chaque hachage SHA-256 calculé par un ASIC comme une <strong>particule de Boltzmann</strong> discrète explorant l'espace des phases cryptographique, chacune représentant un micro-état $|\psi_j\rangle$, alors l'état de consensus global peut être réécrit comme la superposition de toutes les particules individuelles (les hachages) prenant part au consensus :
+  Fondamentalement, cette fonction d'onde macroscopique n'est pas une entité magique ; elle est la somme statistique stricte de la réalité microscopique. Si l'on considère chaque hachage SHA-256 calculé par un ASIC comme une <span class="tooltip">particule de Boltzmann<span class="tooltiptext"><strong>Particule de Boltzmann</strong>En mécanique statistique, une particule théorique modélisant les mouvements aléatoires microscopiques d'un système (comme les molécules d'un gaz). Dans notre analogie, elle représente une tentative unique de hachage SHA-256, un "micro-état" explorant l'immense espace des phases cryptographique.</span></span> 
+  discrète explorant l'espace des phases cryptographique, chacune représentant un micro-état $|\psi_j\rangle$, alors l'état de consensus global peut être réécrit comme la superposition de toutes les particules individuelles (les hachages) prenant part au consensus :
 </p>
 
 <div
@@ -6467,13 +6468,12 @@ document.addEventListener("DOMContentLoaded", () => {
     >
       <p lang="en" style="margin-bottom: 0.5rem">
         How do we go from a single computer guessing a number to a global consensus? By treating every single SHA-256 hash as a 
-        <span class="tooltip">Boltzmann particle<span class="tooltiptext"><strong>Boltzmann Particle</strong>. In statistical mechanics, a theoretical particle modeling the random microscopic states of a system (like gas molecules in a room). Here, it represents a single, random SHA-256 hash attempt, a "microstate" exploring the vast cryptographic phase space.</span></span>. 
+        <strong>Boltzmann particle</strong>. 
         Trillions of these particles are constantly exploring the cryptographic phase space. Each particle carries a tiny energy cost ($\epsilon_j$).
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
         Comment passe-t-on d'un simple ordinateur devinant un nombre à un consensus mondial ? En traitant chaque hachage SHA-256 comme une 
-        <span class="tooltip">particule de Boltzmann<span class="tooltiptext"><strong>Particule de Boltzmann</strong>. En mécanique statistique, une particule théorique modélisant les mouvements aléatoires microscopiques d'un système (comme les molécules d'un gaz). Dans notre analogie, elle représente une tentative unique de hachage SHA-256, un "micro-état" explorant l'immense espace des phases cryptographique.</span></span>. 
-        Des billions de ces particules explorent constamment l'espace des phases cryptographique. Chaque particule a un coût énergétique infime ($\epsilon_j$).
+        <strong>particule de Boltzmann</strong>. Des billions de ces particules explorent constamment l'espace des phases cryptographique. Chaque particule a un coût énergétique infime ($\epsilon_j$).
       </p>
       <p lang="en" style="margin-bottom: 0">
         This mirrors <strong>Feynman's Path Integral</strong> formulation. To get from Block $A$ to Block $B$, the network calculates <em>every possible computational trajectory</em>. Most of these paths (invalid hashes) destructively interfere and are discarded. The macroscopic consensus state $|\Psi\rangle$ emerges only from the constructive interference of the specific trajectory that successfully concentrated enough physical work to overcome the Hamiltonian barrier. The macro is literally the thermodynamic sum of the micro.
