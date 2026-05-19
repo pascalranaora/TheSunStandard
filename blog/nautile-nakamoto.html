@@ -12319,8 +12319,159 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               entier à converger asymptotiquement vers la limite physique
               absolue du calcul (la limite de Landauer).
             </p>
+
+            <!-- ENCART : LA CONVERGENCE 2140 -->
+            <div style="margin-top: 1.5rem; padding: 1rem; border-left: 3px solid #00ffcc; background: rgba(0, 255, 204, 0.05);">
+              <h5 lang="en" style="color: #00ffcc; margin-bottom: 0.5rem; font-size: 0.95rem;">⏱️ The 2140 Convergence</h5>
+              <h5 lang="fr" style="color: #00ffcc; margin-bottom: 0.5rem; font-size: 0.95rem;">⏱️ La Convergence de 2140</h5>
+              <p lang="en" style="margin-bottom: 0.5rem; font-size: 0.85rem; color: #ccc;">
+                In 2009, the action of a CPU hash ($h_N = e_{hash} \times \tau_{hash}$) was roughly $10^{-11} \text{ J}\cdot\text{s}$. By 2026, 3nm ASICs compressed this to $10^{-22} \text{ J}\cdot\text{s}$. The network crossed 11 orders of magnitude in 17 years. There are exactly 12 orders of magnitude left to hit the true Planck constant ($h \approx 10^{-34} \text{ J}\cdot\text{s}$). If we model the exponential physical friction required to breach Landauer's limit (necessitating reversible quantum computing), the asymptotic convergence of $h_N \to h$ points directly to the early 22nd century. Beautifully, it flattens exactly around the year <strong>2140</strong>—the mathematically hardcoded date for the 33rd and final halving.
+              </p>
+              <p lang="fr" style="margin-bottom: 0; font-size: 0.85rem; color: #ccc;">
+                En 2009, l'action d'un hachage CPU ($h_N = e_{hash} \times \tau_{hash}$) était d'environ $10^{-11} \text{ J}\cdot\text{s}$. En 2026, les ASICs 3nm l'ont compressée à $10^{-22} \text{ J}\cdot\text{s}$. Le réseau a franchi 11 ordres de grandeur en 17 ans. Il en reste exactement 12 à franchir pour heurter la véritable constante de Planck ($h \approx 10^{-34} \text{ J}\cdot\text{s}$). Si l'on modélise la résistance physique exponentielle pour briser la limite de Landauer (exigeant le calcul quantique réversible), la convergence asymptotique $h_N \to h$ pointe vers le début du XXIIe siècle. De façon troublante, la courbe s'aplatit totalement aux alentours de l'an <strong>2140</strong> — l'année codée en dur pour le 33ème et ultime halving.
+              </p>
+              <!-- SECTION ÉQUATION DE CONVERGENCE -->
+              <div style="margin: 2rem 0; padding: 2rem; background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(0, 255, 204, 0.3); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #e0e0e0;">
+                  
+                  <h3 style="color: #00ffcc; text-align: center; margin-top: 0; text-transform: uppercase; letter-spacing: 1px;">
+                      <span lang="fr">L’Équation de Convergence de Nakamoto-Planck</span>
+                      <span lang="en">The Nakamoto-Planck Convergence Equation</span>
+                  </h3>
+
+                  <!-- L'ÉQUATION (Format Large) -->
+                  <div style="padding: 1.5rem 0; text-align: center; overflow-x: auto;">
+                      <div style="font-size: 1.4rem; color: #fff; background: rgba(255,255,255,0.05); padding: 1.5rem; border-radius: 8px; display: inline-block; border: 1px inset rgba(255,255,255,0.1);">
+                          $$h_N(t) = 10^{\left[ \log_{10}(h) + \left( \log_{10}(h_{2009}) - \log_{10}(h) \right) \cdot e^{-\lambda(t - 2009)^\alpha} \right]}$$
+                      </div>
+                  </div>
+
+                  <!-- EXPLICATION DES VARIABLES -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5;">
+                      
+                      <!-- Colonne Française -->
+                      <div lang="fr" style="border-right: 1px solid rgba(255,255,255,0.1); padding-right: 15px;">
+                          <p><strong style="color: #00ffcc;">$h_N(t)$ :</strong> L'Action du réseau au temps $t$ (Joules-secondes par hachage).</p>
+                          <p><strong style="color: #00ffcc;">$h$ :</strong> Constante de Planck ($\approx 6.62 \times 10^{-34} \text{ J}\cdot\text{s}$), limite absolue de l'univers.</p>
+                          <p><strong style="color: #00ffcc;">$h_{2009}$ :</strong> Action initiale au bloc Genesis ($\approx 10^{-11} \text{ J}\cdot\text{s}$).</p>
+                          <p><strong style="color: #00ffcc;">$\alpha$ :</strong> Coefficient de friction physique ($\approx 0.75$), simulant la résistance thermodynamique à l'approche de la limite de Landauer.</p>
+                      </div>
+
+                      <!-- English Column -->
+                      <div lang="en" style="padding-left: 5px;">
+                          <p><strong style="color: #00ffcc;">$h_N(t)$ :</strong> Network Action at time $t$ (Joules-seconds per hash).</p>
+                          <p><strong style="color: #00ffcc;">$h$ :</strong> Planck Constant ($\approx 6.62 \times 10^{-34} \text{ J}\cdot\text{s}$), the universe's final resolution.</p>
+                          <p><strong style="color: #00ffcc;">$h_{2009}$ :</strong> Genesis block action ($\approx 10^{-11} \text{ J}\cdot\text{s}$).</p>
+                          <p><strong style="color: #00ffcc;">$\alpha$ :</strong> Physical friction coefficient ($\approx 0.75$), modeling thermodynamic resistance near the Landauer limit.</p>
+                      </div>
+                  </div>
+
+                  <!-- NOTE FINALE -->
+                  <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-style: italic; text-align: center; color: #aaa;">
+                      <span lang="fr">Cette courbe prédit que le réseau Bitcoin percutera le "mur de Planck" aux alentours de l'an <strong>2140</strong>, liant mathématiquement la fin de l'émission monétaire à la limite de résolution de la réalité physique.</span>
+                      <span lang="en">This curve predicts that the Bitcoin network will hit the "Planck Wall" around the year <strong>2140</strong>, mathematically linking the end of monetary issuance to the resolution limit of physical reality.</span>
+                  </p>
+              </div>
+              <!-- Section Visualisation de la Convergence de Planck -->
+              <div style="margin: 3rem 0; padding: 1.5rem; background: #0a0a0a; border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 12px;">
+                  <h3 lang="fr" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">La Convergence de Planck (2009 - 2140)</h3>
+                  <h3 lang="en" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">The Planck Convergence (2009 - 2140)</h3>
+                  
+                  <div id="planck-convergence-plot" style="width: 100%; height: 450px;"></div>
+                  
+                  <p style="font-size: 0.85rem; color: #888; font-style: italic; text-align: center; margin-top: 1rem;">
+                      Modélisation de l'Action de Nakamoto ($h_N$) en Joules-secondes. <br>
+                      L'asymptote finale rencontre la constante de Planck ($h$) lors du dernier halving (2140).
+                  </p>
+              </div>
+
+              <script>
+              document.addEventListener("DOMContentLoaded", () => {
+                  const plotDiv = document.getElementById('planck-convergence-plot');
+                  if (!plotDiv) return;
+
+                  const years = [];
+                  const hN_values = [];
+                  const planck_limit = [];
+
+                  // Paramètres du modèle
+                  const startYear = 2009;
+                  const endYear = 2140;
+                  const E_start = -11;   // 2009: 10^-11 J.s
+                  const E_limit = -33.18; // Planck: ~10^-33.18 J.s
+                  const alpha = 0.75;    // Coefficient de friction physique (étirement)
+                  const lambda = 0.078;  // Calibrage pour 2026 ~ 10^-22
+
+                  for (let t = startYear; t <= endYear; t++) {
+                      years.push(t);
+                      // Formule de l'exposant avec friction asymptotique
+                      const exponent = E_limit + (E_start - E_limit) * Math.exp(-lambda * Math.pow(t - startYear, alpha));
+                      hN_values.push(Math.pow(10, exponent));
+                      planck_limit.push(6.626e-34);
+                  }
+
+                  const trace1 = {
+                      x: years,
+                      y: hN_values,
+                      mode: 'lines',
+                      name: 'Action de Nakamoto (hN)',
+                      line: { color: '#00ffcc', width: 3 },
+                      fill: 'tozeroy',
+                      fillcolor: 'rgba(0, 255, 204, 0.05)'
+                  };
+
+                  const trace2 = {
+                      x: years,
+                      y: planck_limit,
+                      mode: 'lines',
+                      name: 'Constante de Planck (h)',
+                      line: { color: '#ff3300', width: 2, dash: 'dash' }
+                  };
+
+                  const layout = {
+                      paper_bgcolor: 'rgba(0,0,0,0)',
+                      plot_bgcolor: 'rgba(0,0,0,0)',
+                      font: { color: '#aaa', family: 'monospace' },
+                      showlegend: true,
+                      legend: { x: 0.5, y: 1.1, orientation: 'h', xanchor: 'center' },
+                      margin: { l: 60, r: 30, t: 40, b: 60 },
+                      xaxis: {
+                          gridcolor: 'rgba(255,255,255,0.05)',
+                          linecolor: '#444',
+                          title: 'Année / Year'
+                      },
+                      yaxis: {
+                          type: 'log',
+                          autorange: true,
+                          gridcolor: 'rgba(255,255,255,0.05)',
+                          linecolor: '#444',
+                          title: 'Action (Joules · s)',
+                          tickformat: '.1e'
+                      },
+                      annotations: [
+                          {
+                              x: 2009, y: -11, xref: 'x', yref: 'y',
+                              text: 'Ère CPU', showarrow: true, arrowhead: 2, ax: 40, ay: -20, font: {color: '#00ffcc'}
+                          },
+                          {
+                              x: 2026, y: -22, xref: 'x', yref: 'y',
+                              text: 'Ère ASIC (3nm)', showarrow: true, arrowhead: 2, ax: 50, ay: -40, font: {color: '#00ffcc'}
+                          },
+                          {
+                              x: 2140, y: -33.18, xref: 'x', yref: 'y',
+                              text: 'Convergence Finale', showarrow: true, arrowhead: 2, ax: -60, ay: -40, font: {color: '#ff3300'}
+                          }
+                      ]
+                  };
+
+                  Plotly.newPlot('planck-convergence-plot', [trace1, trace2], layout, {responsive: true});
+              });
+              </script>
+
+            </div>
+
           </div>
         </details>
+
         <details>
           <summary>
             <div class="engineer-title" lang="en">
