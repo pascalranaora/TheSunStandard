@@ -33,15 +33,14 @@
         const scene = new THREE.Scene();
         scene.background = new THREE.Color(0x050505);
 
-        // Caméra (FOV de 75 pour mieux voir l'ensemble de la structure)
         const camera = new THREE.PerspectiveCamera(
-          75,
+          70, // FOV légèrement réduit pour moins de distorsion
           container.clientWidth / container.clientHeight,
           0.1,
-          1000,
+          800, // réduire la far plane
         );
-        // Position reculée pour embrasser les 33 cycles
-        camera.position.set(0, -100, -140);
+        camera.position.set(0, -85, -125);
+        camera.lookAt(0, 0, 0);
 
         const renderer = new THREE.WebGLRenderer({
           antialias: true,
@@ -11174,6 +11173,146 @@ document.addEventListener("DOMContentLoaded", () => {
         </details>
         <div class="proof-end">∎</div>
       </div>
+      <!-- DÉBUT DE L'ILLUSTRATION INTERACTIVE -->
+<div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid rgba(255, 102, 0, 0.4);">
+  <h4 lang="en" style="color: #fff; margin-bottom: 1rem; text-align: center;">Interactive Model: Block Size vs Latency</h4>
+  <h4 lang="fr" style="color: #fff; margin-bottom: 1rem; text-align: center;">Modèle Interactif : Taille du Bloc vs Latence</h4>
+  
+  <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 1rem; font-family: monospace;">
+    <div>Block Size ($V_B$): <span id="viz-size-val" style="color: #4499ff; font-weight: bold;">1 MB</span></div>
+    <div>Latency ($\tau_L$): <span id="viz-lat-val">0.5s</span></div>
+    <div>Temp ($T_{\mathrm{eff}}$): <span id="viz-temp-val" style="color: #4499ff;">Cold (Stable)</span></div>
+  </div>
+
+  <input type="range" id="viz-slider" min="1" max="100" value="1" style="width: 100%; margin-bottom: 1.5rem; cursor: pointer;">
+
+  <canvas id="networkCanvas" width="600" height="250" style="width: 100%; background: #0a0a0a; border-radius: 6px; border: 1px solid #333;"></canvas>
+</div>
+
+<script>
+  const canvas = document.getElementById('networkCanvas');
+  const ctx = canvas.getContext('2d');
+  const slider = document.getElementById('viz-slider');
+  
+  const sizeVal = document.getElementById('viz-size-val');
+  const latVal = document.getElementById('viz-lat-val');
+  const tempVal = document.getElementById('viz-temp-val');
+
+  // Génération des nœuds du réseau P2P
+  const nodes = [];
+  const numNodes = 15;
+  for(let i=0; i<numNodes; i++) {
+    nodes.push({
+      x: 30 + Math.random() * (canvas.width - 60),
+      y: 30 + Math.random() * (canvas.height - 60),
+      hasBlock: false,
+      progress: 0
+    });
+  }
+  nodes[0].hasBlock = true; // Le nœud 0 trouve le bloc
+
+  let animationFrame;
+  let propagationTimer = 0;
+
+  function drawNetwork() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    const vb = parseInt(slider.value);
+    
+    // Calculs simulés
+    const latency = 0.5 + (vb * 0.15); // τL = τ0 + VB/Ceff
+    const tempLevel = vb / 100; // 0 = Froid, 1 = Chaud/Fusion
+    
+    // Couleurs dynamiques
+    let mainColor = `rgb(${tempLevel * 255}, ${150 - tempLevel*100}, ${255 - tempLevel*255})`;
+    
+    // Mise à jour de l'UI
+    sizeVal.textContent = vb + " MB";
+    sizeVal.style.color = mainColor;
+    latVal.textContent = latency.toFixed(1) + "s";
+    
+    if (vb < 30) {
+      tempVal.textContent = "Crystalline (Stable)";
+      tempVal.style.color = "#4499ff";
+    } else if (vb < 75) {
+      tempVal.textContent = "Warming (Risky)";
+      tempVal.style.color = "#ffaa00";
+    } else {
+      tempVal.textContent = "Melting (Orphans!)";
+      tempVal.style.color = "#ff4444";
+    }
+
+    // Vitesse de propagation inversement proportionnelle à la taille
+    const speed = 0.05 / (vb * 0.1);
+    propagationTimer += speed;
+    
+    if (propagationTimer > 1) {
+      propagationTimer = 0;
+      // Propager au nœud suivant
+      let unconfirmed = nodes.filter(n => !n.hasBlock);
+      if(unconfirmed.length > 0) {
+        unconfirmed[Math.floor(Math.random() * unconfirmed.length)].hasBlock = true;
+      } else {
+        // Reset de l'animation une fois que tout le monde a le bloc
+        nodes.forEach((n, idx) => n.hasBlock = (idx === 0));
+      }
+    }
+
+    // Dessin des liens
+    ctx.lineWidth = 1;
+    for(let i=0; i<nodes.length; i++) {
+      for(let j=i+1; j<nodes.length; j++) {
+        // Lien "Petit Monde"
+        if(Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y) < 150) {
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          
+          if(nodes[i].hasBlock && nodes[j].hasBlock) {
+             ctx.strokeStyle = mainColor; // Lien confirmé
+             ctx.globalAlpha = 0.6;
+          } else {
+             ctx.strokeStyle = '#333'; // Lien inactif
+             ctx.globalAlpha = 1.0;
+          }
+          ctx.stroke();
+          ctx.globalAlpha = 1.0;
+        }
+      }
+    }
+
+    // Dessin des nœuds
+    nodes.forEach(node => {
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, 6, 0, Math.PI * 2);
+      if(node.hasBlock) {
+        ctx.fillStyle = mainColor;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = mainColor;
+      } else {
+        ctx.fillStyle = '#444';
+        ctx.shadowBlur = 0;
+      }
+      ctx.fill();
+      ctx.shadowBlur = 0; // reset
+    });
+
+    // Dessin d'un bloc orphelin si réseau "fondu" (T_eff élevé)
+    if(vb > 75 && Math.random() < 0.05) {
+       ctx.beginPath();
+       ctx.arc(nodes[nodes.length-1].x, nodes[nodes.length-1].y, 15, 0, Math.PI * 2);
+       ctx.strokeStyle = "#ff4444";
+       ctx.lineWidth = 2;
+       ctx.stroke();
+    }
+
+    animationFrame = requestAnimationFrame(drawNetwork);
+  }
+
+  // Lancement de l'animation
+  drawNetwork();
+</script>
+<!-- FIN DE L'ILLUSTRATION INTERACTIVE -->
 
       <div id="sec10"></div>
       <h2 lang="en">10. Logistic Maturation & The Archimedean Spiral</h2>
