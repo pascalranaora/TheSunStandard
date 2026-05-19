@@ -11173,20 +11173,27 @@ document.addEventListener("DOMContentLoaded", () => {
         </details>
         <div class="proof-end">∎</div>
       </div>
-      <!-- DÉBUT DE L'ILLUSTRATION INTERACTIVE -->
-<div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid rgba(255, 102, 0, 0.4);">
-  <h4 lang="en" style="color: #fff; margin-bottom: 1rem; text-align: center;">Interactive Model: Block Size vs Latency</h4>
-  <h4 lang="fr" style="color: #fff; margin-bottom: 1rem; text-align: center;">Modèle Interactif : Taille du Bloc vs Latence</h4>
+      <!-- DÉBUT DE L'ILLUSTRATION INTERACTIVE (VERSION ÉTOILES SOLEIL) -->
+<div style="margin-top: 2rem; padding: 1.5rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px solid rgba(255, 204, 0, 0.4);">
+  <h4 lang="en" style="color: #fff; margin-bottom: 0.5rem; text-align: center;">Interactive Model: The Constellation of Consensus</h4>
+  <h4 lang="fr" style="color: #fff; margin-bottom: 0.5rem; text-align: center;">Modèle Interactif : La Constellation du Consensus</h4>
   
-  <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 1rem; font-family: monospace;">
-    <div>Block Size ($V_B$): <span id="viz-size-val" style="color: #4499ff; font-weight: bold;">1 MB</span></div>
+  <p lang="en" style="text-align: center; font-style: italic; color: #aaa; margin-bottom: 1.5rem; font-size: 0.9em;">
+    "We are all stars, nodes in the vast network of humanity. If the burden is too heavy, the starlight takes too long to reach the others, and our shared reality fractures."
+  </p>
+  <p lang="fr" style="text-align: center; font-style: italic; color: #aaa; margin-bottom: 1.5rem; font-size: 0.9em;">
+    "Nous sommes tous des étoiles, des nœuds dans le vaste réseau de l'humanité. Si le fardeau est trop lourd, la lumière met trop de temps à nous atteindre, et notre réalité commune se fracture."
+  </p>
+  
+  <div style="display: flex; justify-content: space-between; color: #aaa; margin-bottom: 1rem; font-family: monospace; font-size: 0.9em;">
+    <div>Block Size ($V_B$): <span id="viz-size-val" style="color: #ffea00; font-weight: bold;">1 MB</span></div>
     <div>Latency ($\tau_L$): <span id="viz-lat-val">0.5s</span></div>
-    <div>Temp ($T_{\mathrm{eff}}$): <span id="viz-temp-val" style="color: #4499ff;">Cold (Stable)</span></div>
+    <div>State: <span id="viz-temp-val" style="color: #ffea00;">Unified Constellation</span></div>
   </div>
 
   <input type="range" id="viz-slider" min="1" max="100" value="1" style="width: 100%; margin-bottom: 1.5rem; cursor: pointer;">
 
-  <canvas id="networkCanvas" width="600" height="250" style="width: 100%; background: #0a0a0a; border-radius: 6px; border: 1px solid #333;"></canvas>
+  <canvas id="networkCanvas" width="600" height="250" style="width: 100%; background: #05050a; border-radius: 6px; border: 1px solid #333;"></canvas>
 </div>
 
 <script>
@@ -11198,21 +11205,57 @@ document.addEventListener("DOMContentLoaded", () => {
   const latVal = document.getElementById('viz-lat-val');
   const tempVal = document.getElementById('viz-temp-val');
 
-  // Génération des nœuds du réseau P2P
+  // Génération des nœuds (Étoiles)
   const nodes = [];
-  const numNodes = 15;
+  const numNodes = 18;
   for(let i=0; i<numNodes; i++) {
     nodes.push({
       x: 30 + Math.random() * (canvas.width - 60),
       y: 30 + Math.random() * (canvas.height - 60),
       hasBlock: false,
-      progress: 0
+      progress: 0,
+      size: 4 + Math.random() * 3
     });
   }
-  nodes[0].hasBlock = true; // Le nœud 0 trouve le bloc
+  nodes[0].hasBlock = true;
 
   let animationFrame;
   let propagationTimer = 0;
+
+  // Fonction pour dessiner une étoile
+  function drawStar(cx, cy, spikes, outerRadius, innerRadius, color, glow) {
+    let rot = Math.PI / 2 * 3;
+    let x = cx;
+    let y = cy;
+    let step = Math.PI / spikes;
+
+    ctx.beginPath();
+    ctx.moveTo(cx, cy - outerRadius);
+    for (let i = 0; i < spikes; i++) {
+      x = cx + Math.cos(rot) * outerRadius;
+      y = cy + Math.sin(rot) * outerRadius;
+      ctx.lineTo(x, y);
+      rot += step;
+
+      x = cx + Math.cos(rot) * innerRadius;
+      y = cy + Math.sin(rot) * innerRadius;
+      ctx.lineTo(x, y);
+      rot += step;
+    }
+    ctx.lineTo(cx, cy - outerRadius);
+    ctx.closePath();
+    
+    if (glow) {
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = color;
+    } else {
+      ctx.shadowBlur = 0;
+    }
+    
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.shadowBlur = 0; // reset
+  }
 
   function drawNetwork() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -11220,11 +11263,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const vb = parseInt(slider.value);
     
     // Calculs simulés
-    const latency = 0.5 + (vb * 0.15); // τL = τ0 + VB/Ceff
-    const tempLevel = vb / 100; // 0 = Froid, 1 = Chaud/Fusion
+    const latency = 0.5 + (vb * 0.15); 
+    const tempLevel = vb / 100; // Va de ~0 à 1
     
-    // Couleurs dynamiques
-    let mainColor = `rgb(${tempLevel * 255}, ${150 - tempLevel*100}, ${255 - tempLevel*255})`;
+    // NOUVELLES COULEURS : Du Jaune éclatant (255, 230, 0) au Rouge (255, 50, 0)
+    let greenValue = Math.floor(230 - (tempLevel * 180));
+    let mainColor = `rgb(255, ${greenValue}, 0)`;
     
     // Mise à jour de l'UI
     sizeVal.textContent = vb + " MB";
@@ -11232,14 +11276,14 @@ document.addEventListener("DOMContentLoaded", () => {
     latVal.textContent = latency.toFixed(1) + "s";
     
     if (vb < 30) {
-      tempVal.textContent = "Crystalline (Stable)";
-      tempVal.style.color = "#4499ff";
+      tempVal.textContent = "Unified Constellation";
+      tempVal.style.color = "#ffea00"; // Jaune
     } else if (vb < 75) {
-      tempVal.textContent = "Warming (Risky)";
-      tempVal.style.color = "#ffaa00";
+      tempVal.textContent = "Delayed Starlight";
+      tempVal.style.color = "#ff8800"; // Orange
     } else {
-      tempVal.textContent = "Melting (Orphans!)";
-      tempVal.style.color = "#ff4444";
+      tempVal.textContent = "Fractured Reality (Orphans)";
+      tempVal.style.color = "#ff3300"; // Rouge
     }
 
     // Vitesse de propagation inversement proportionnelle à la taille
@@ -11248,32 +11292,29 @@ document.addEventListener("DOMContentLoaded", () => {
     
     if (propagationTimer > 1) {
       propagationTimer = 0;
-      // Propager au nœud suivant
       let unconfirmed = nodes.filter(n => !n.hasBlock);
       if(unconfirmed.length > 0) {
         unconfirmed[Math.floor(Math.random() * unconfirmed.length)].hasBlock = true;
       } else {
-        // Reset de l'animation une fois que tout le monde a le bloc
-        nodes.forEach((n, idx) => n.hasBlock = (idx === 0));
+        nodes.forEach((n, idx) => n.hasBlock = (idx === 0)); // Reset
       }
     }
 
-    // Dessin des liens
+    // Dessin des liens cosmiques
     ctx.lineWidth = 1;
     for(let i=0; i<nodes.length; i++) {
       for(let j=i+1; j<nodes.length; j++) {
-        // Lien "Petit Monde"
-        if(Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y) < 150) {
+        if(Math.hypot(nodes[i].x - nodes[j].x, nodes[i].y - nodes[j].y) < 140) {
           ctx.beginPath();
           ctx.moveTo(nodes[i].x, nodes[i].y);
           ctx.lineTo(nodes[j].x, nodes[j].y);
           
           if(nodes[i].hasBlock && nodes[j].hasBlock) {
-             ctx.strokeStyle = mainColor; // Lien confirmé
-             ctx.globalAlpha = 0.6;
+             ctx.strokeStyle = mainColor; 
+             ctx.globalAlpha = 0.5;
           } else {
-             ctx.strokeStyle = '#333'; // Lien inactif
-             ctx.globalAlpha = 1.0;
+             ctx.strokeStyle = '#334'; 
+             ctx.globalAlpha = 0.8;
           }
           ctx.stroke();
           ctx.globalAlpha = 1.0;
@@ -11281,38 +11322,39 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    // Dessin des nœuds
+    // Dessin des étoiles
     nodes.forEach(node => {
-      ctx.beginPath();
-      ctx.arc(node.x, node.y, 6, 0, Math.PI * 2);
       if(node.hasBlock) {
-        ctx.fillStyle = mainColor;
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = mainColor;
+        drawStar(node.x, node.y, 5, node.size * 1.5, node.size * 0.6, mainColor, true);
       } else {
-        ctx.fillStyle = '#444';
-        ctx.shadowBlur = 0;
+        drawStar(node.x, node.y, 5, node.size, node.size * 0.4, '#445', false);
       }
-      ctx.fill();
-      ctx.shadowBlur = 0; // reset
     });
 
-    // Dessin d'un bloc orphelin si réseau "fondu" (T_eff élevé)
-    if(vb > 75 && Math.random() < 0.05) {
+    // Dessin d'une "supernova" / bloc orphelin si réseau désynchronisé
+    if(vb > 75 && Math.random() < 0.06) {
+       let orphanNode = nodes[Math.floor(Math.random() * nodes.length)];
        ctx.beginPath();
-       ctx.arc(nodes[nodes.length-1].x, nodes[nodes.length-1].y, 15, 0, Math.PI * 2);
-       ctx.strokeStyle = "#ff4444";
+       ctx.arc(orphanNode.x, orphanNode.y, 20, 0, Math.PI * 2);
+       ctx.strokeStyle = "rgba(255, 50, 0, 0.6)";
        ctx.lineWidth = 2;
+       ctx.stroke();
+       
+       ctx.beginPath();
+       ctx.arc(orphanNode.x, orphanNode.y, 25, 0, Math.PI * 2);
+       ctx.strokeStyle = "rgba(255, 50, 0, 0.2)";
+       ctx.lineWidth = 4;
        ctx.stroke();
     }
 
     animationFrame = requestAnimationFrame(drawNetwork);
   }
 
-  // Lancement de l'animation
   drawNetwork();
 </script>
-<!-- FIN DE L'ILLUSTRATION INTERACTIVE -->
+<!-- FIN DE L'ILLUSTRATION INTERACTIVE (VERSION ÉTOILES SOLEIL) -->
+
+
 
       <div id="sec10"></div>
       <h2 lang="en">10. Logistic Maturation & The Archimedean Spiral</h2>
