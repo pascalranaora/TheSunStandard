@@ -12771,22 +12771,21 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
       </script>
 
       <!-- GRAPH EXPLANATION -->
-      <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-left: 3px solid var(--sun-yellow, #ffcc00); margin-bottom: 2rem;">
-        <p lang="en" style="margin-bottom: 0.5rem;">
-          <strong>Understanding the Mechanics:</strong> Notice how adjusting the metabolic growth rate ($k$) changes the initial trajectory, but the ultimate destiny remains identical. The yellow curve represents the instantaneous Hashrate (Exergy), which must inevitably flatten as it hits the physical limits of planetary energy capture ($P_{\mathrm{max}}$). 
-        </p>
-        <p lang="en" style="margin-bottom: 0;">
-          However, the green curve represents Emergy—the strict mathematical <em>integral</em> of that power over time. Even when the network stops physically growing and the yellow line plateaus, the green line continues its relentless upward march. This illustrates the core evolutionary mechanic of the Nakamoto organism: once it reaches physical maturity, it stops expanding outward and begins <strong>densifying inward</strong>, accumulating thermodynamic memory at a constant, linear rate. This ever-growing wedge of history is what forms its impenetrable digital shell.
-        </p>
+      
+      <p lang="en">
+        <strong>Understanding the Mechanics:</strong> Notice how adjusting the metabolic growth rate ($k$) changes the initial trajectory, but the ultimate destiny remains identical. The yellow curve represents the instantaneous Hashrate (Exergy), which must inevitably flatten as it hits the physical limits of planetary energy capture ($P_{\mathrm{max}}$). 
+      </p>
+      <p lang="en">
+        However, the green curve represents Emergy—the strict mathematical <em>integral</em> of that power over time. Even when the network stops physically growing and the yellow line plateaus, the green line continues its relentless upward march. This illustrates the core evolutionary mechanic of the Nakamoto organism: once it reaches physical maturity, it stops expanding outward and begins <strong>densifying inward</strong>, accumulating thermodynamic memory at a constant, linear rate. This ever-growing wedge of history is what forms its impenetrable digital shell.
+      </p>
 
-        <p lang="fr" style="margin-bottom: 0.5rem; display: none;">
-          <strong>Comprendre la Mécanique :</strong> Remarquez comment l'ajustement du taux de croissance métabolique ($k$) modifie la trajectoire initiale, mais le destin final reste identique. La courbe jaune représente le Hashrate instantané (Exergie), qui doit inévitablement s'aplatir en atteignant les limites physiques de capture d'énergie planétaire ($P_{\mathrm{max}}$).
-        </p>
-        <p lang="fr" style="margin-bottom: 0; display: none;">
-          Cependant, la courbe verte représente l'Émergie — l'<em>intégrale</em> mathématique stricte de cette puissance dans le temps. Même lorsque le réseau cesse de croître physiquement et que la ligne jaune plafonne, la ligne verte poursuit son inlassable ascension. Cela illustre la mécanique évolutive fondamentale de l'organisme Nakamoto : une fois la maturité physique atteinte, il cesse de s'étendre vers l'extérieur pour entamer une <strong>densification intérieure</strong>, accumulant de la mémoire thermodynamique à un rythme constant et linéaire. Ce prisme historique en croissance perpétuelle est ce qui forme son impénétrable carapace numérique.
-        </p>
-      </div>
-
+      <p lang="fr">
+        <strong>Comprendre la Mécanique :</strong> Remarquez comment l'ajustement du taux de croissance métabolique ($k$) modifie la trajectoire initiale, mais le destin final reste identique. La courbe jaune représente le Hashrate instantané (Exergie), qui doit inévitablement s'aplatir en atteignant les limites physiques de capture d'énergie planétaire ($P_{\mathrm{max}}$).
+      </p>
+      <p lang="fr">
+        Cependant, la courbe verte représente l'Émergie — l'<em>intégrale</em> mathématique stricte de cette puissance dans le temps. Même lorsque le réseau cesse de croître physiquement et que la ligne jaune plafonne, la ligne verte poursuit son inlassable ascension. Cela illustre la mécanique évolutive fondamentale de l'organisme Nakamoto : une fois la maturité physique atteinte, il cesse de s'étendre vers l'extérieur pour entamer une <strong>densification intérieure</strong>, accumulant de la mémoire thermodynamique à un rythme constant et linéaire. Ce prisme historique en croissance perpétuelle est ce qui forme son impénétrable carapace numérique.
+      </p>
+    
       <p lang="en">
         This mathematical divergence is the essence of the organism's digital shell. Let us break down the topology of this embodied work.
       </p>
@@ -13067,14 +13066,14 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
         <!-- ENGINEER'S VIEW -->
         <details>
           <summary>
-            <div class="engineer-title" lang="en" style="font-family: monospace; color: #a6e22e; cursor: pointer; padding: 1rem 0;">
-              💻 Engineer's View: `nChainWork`
+            <div class="engineer-title" lang="en">
+              💻 Engineer's View: `CnhainWork`
             </div>
-            <div class="engineer-title" lang="fr" style="font-family: monospace; color: #a6e22e; cursor: pointer; padding: 1rem 0; display: none;">
+            <div class="engineer-title" lang="fr">
               💻 Vue de l'Ingénieur : `nChainWork`
             </div>
           </summary>
-          <pre style="background: #1e1e1e; padding: 1rem; border-radius: 6px; overflow-x: auto;"><code style="color: #f8f8f2;"><span style="color: #75715e;">// chain.h - Definition of the Block Index</span>
+          <pre><code><span style="color: #75715e;">// chain.h - Definition of the Block Index</span>
 <span style="color: #66d9ef;">class</span> <span style="color: #a6e22e;">CBlockIndex</span> {
 <span style="color: #66d9ef;">public:</span>
     <span style="color: #75715e;">// The total amount of work (expected number of hashes) </span>
