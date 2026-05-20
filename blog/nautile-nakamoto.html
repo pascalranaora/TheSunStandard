@@ -260,7 +260,7 @@
     <!-- D3.js -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
-
+    
     <!-- TikZJax pour le rendu LaTeX/TikZ in-browser -->
     <link
       rel="stylesheet"
@@ -1635,10 +1635,10 @@
   <li style="color: var(--sun-yellow); font-weight: 800; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">
     ACT I: Physics & Time
   </li>
-  <li><a href="#sec1" style="color: #d4d4d4; text-decoration: none;">1. The Nakamoto Action and State Topology</a></li>
-  <li><a href="#sec2" style="color: #d4d4d4; text-decoration: none;">2. The Consensus Hamiltonian and the Gibbs State</a></li>
+  <li><a href="#sec1" style="color: #d4d4d4; text-decoration: none;">1. The Nakamoto Action ($h_{\mathrm{N}}$) and State Topology</a></li>
+  <li><a href="#sec2" style="color: #d4d4d4; text-decoration: none;">2. The Consensus Hamiltonian ($\mathcal{H}_{\mathrm{diss}}$) and the Gibbs State</a></li>
   <li><a href="#sec3" style="color: #d4d4d4; text-decoration: none;">3. Information Temperature ($T_{\mathrm{eff}}$)</a></li>
-  <li><a href="#sec4" style="color: #d4d4d4; text-decoration: none;">4. The Thermal Time Hypothesis & The Covariant Universe</a></li>
+  <li><a href="#sec4" style="color: #d4d4d4; text-decoration: none;">4. The Thermal Time Hypothesis ($\tau$ / $\theta$) & The Covariant Universe</a></li>
   <li><a href="#sec5" style="color: #d4d4d4; text-decoration: none;">5. Nakamoto & The Quantum Frontier</a></li>
 
   <li style="color: var(--sun-yellow); font-weight: 800; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">
@@ -1678,10 +1678,10 @@
   <li style="color: var(--sun-yellow); font-weight: 800; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">
     ACTE I : Physique et Temps
   </li>
-  <li><a href="#sec1" style="color: #d4d4d4; text-decoration: none;">1. L'Action de Nakamoto et la Topologie de l'État</a></li>
-  <li><a href="#sec2" style="color: #d4d4d4; text-decoration: none;">2. Le Hamiltonien du Consensus et l'État de Gibbs</a></li>
+  <li><a href="#sec1" style="color: #d4d4d4; text-decoration: none;">1. L'Action de Nakamoto ($h_{\mathrm{N}}$) et la Topologie de l'État</a></li>
+  <li><a href="#sec2" style="color: #d4d4d4; text-decoration: none;">2. Le Hamiltonien du Consensus ($\mathcal{H}_{\mathrm{diss}}$) et l'État de Gibbs</a></li>
   <li><a href="#sec3" style="color: #d4d4d4; text-decoration: none;">3. La Température d'Information ($T_{\mathrm{eff}}$)</a></li>
-  <li><a href="#sec4" style="color: #d4d4d4; text-decoration: none;">4. L'Hypothèse du Temps Thermique & L'Univers Covariant</a></li>
+  <li><a href="#sec4" style="color: #d4d4d4; text-decoration: none;">4. L'Hypothèse du Temps Thermique ($\tau$ / $\theta$) & L'Univers Covariant</a></li>
   <li><a href="#sec5" style="color: #d4d4d4; text-decoration: none;">5. Nakamoto & La Frontière Quantique</a></li>
 
   <li style="color: var(--sun-yellow); font-weight: 800; margin-top: 1.5rem; text-transform: uppercase; letter-spacing: 1px;">
@@ -12600,24 +12600,191 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
         Observez ci-dessous le découplage entre la frontière physique (le Hashrate logistique) et l'accumulation métaphysique (l'Émergie) :
       </p>
 
-      <!-- JAVASCRIPT FIGURE PLACEHOLDER -->
-      <div
-        id="emergy-accumulation-plot"
-        style="
-          width: 100%;
-          max-width: 800px;
-          height: 450px;
-          margin: 3rem auto;
-          border: 1px solid var(--border-glow, rgba(255, 204, 0, 0.5));
-          border-radius: 8px;
-          background: rgba(0, 0, 0, 0.4);
-          padding: 10px;
-          position: relative;
-        "
-      >
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #666; font-family: monospace;">
-          [ Interactive Plot: Logistic Hashrate Curve vs Linear Emergy Accumulation ]
+      <!-- JAVASCRIPT FIGURE -->
+      <!-- Include Plotly if not already in the <head> -->
+      <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+      <div style="max-width: 800px; margin: 3rem auto; font-family: 'Helvetica Neue', sans-serif;">
+  
+        <!-- Contrôles interactifs -->
+        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); padding: 1.5rem; border-radius: 8px 8px 0 0; border-bottom: none; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+          <div style="flex: 1; min-width: 250px;">
+            <label for="growthRateSlider" style="color: #d4d4d4; font-size: 0.95rem; font-weight: bold; display: block; margin-bottom: 0.8rem;">
+              <span lang="en">Metabolic Growth Rate ($k$)</span>
+              <span lang="fr" style="display: none;">Taux de Croissance Métabolique ($k$)</span>
+            </label>
+            <input type="range" id="growthRateSlider" min="0.05" max="0.4" step="0.01" value="0.15" style="width: 100%; cursor: pointer;">
+          </div>
+          <div style="color: var(--sun-yellow, #ffcc00); font-weight: bold; font-family: monospace; font-size: 1.2rem; background: rgba(0,0,0,0.6); padding: 0.75rem 1.25rem; border-radius: 6px; border: 1px solid rgba(255, 204, 0, 0.3);">
+            k = <span id="kValueDisplay">0.15</span>
+          </div>
         </div>
+      
+        <!-- Conteneur du Graphique -->
+        <div
+          id="emergy-accumulation-plot"
+          style="
+            width: 100%;
+            height: 500px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 8px 8px;
+            background: rgba(0, 0, 0, 0.4);
+          "
+        ></div>
+      
+      </div>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const plotDiv = document.getElementById('emergy-accumulation-plot');
+          const slider = document.getElementById('growthRateSlider');
+          const display = document.getElementById('kValueDisplay');
+      
+          const P_max = 100; 
+          const t0 = 40;     
+          const timeSteps = 100;
+      
+          function safeLog1pExp(x) {
+            if (x > 20) return x; 
+            return Math.log(1 + Math.exp(x));
+          }
+      
+          function generateData(k) {
+            const t = [];
+            const Exergy = []; 
+            const Emergy = []; 
+            const Em_0 = (P_max / k) * safeLog1pExp(-k * t0);
+      
+            for (let i = 0; i <= timeSteps; i++) {
+              t.push(i);
+              const current_P = P_max / (1 + Math.exp(-k * (i - t0)));
+              Exergy.push(current_P);
+              const current_Em = (P_max / k) * safeLog1pExp(k * (i - t0)) - Em_0;
+              Emergy.push(current_Em / 2); 
+            }
+            return { t, Exergy, Emergy };
+          }
+      
+          // Déclaration globale des traces et du layout pour mise à jour fluide
+          let traceExergy = {
+            name: 'Exergy Flux (Hashrate)',
+            type: 'scatter',
+            mode: 'lines',
+            line: { color: '#ffcc00', width: 3, shape: 'spline' },
+            fill: 'tozeroy',
+            fillcolor: 'rgba(255, 204, 0, 0.05)'
+          };
+      
+          let traceEmergy = {
+            name: 'Emergy (Accumulated Memory)',
+            yaxis: 'y2',
+            type: 'scatter',
+            mode: 'lines',
+            line: { color: '#88ffaa', width: 4, dash: 'solid' }
+          };
+      
+          let layout = {
+            paper_bgcolor: 'transparent',
+            plot_bgcolor: 'transparent',
+            font: { color: '#d4d4d4', family: '"Helvetica Neue", sans-serif' },
+            margin: { t: 60, r: 80, b: 60, l: 60 },
+            hovermode: 'x unified',
+            legend: { orientation: 'h', y: 1.15, x: 0.5, xanchor: 'center' },
+            xaxis: {
+              title: 'Time / Epochs (\u03B8)',
+              showgrid: true,
+              gridcolor: 'rgba(255,255,255,0.05)',
+              zeroline: false
+            },
+            yaxis: {
+              title: 'Instantaneous Power (P)',
+              titlefont: { color: '#ffcc00' },
+              tickfont: { color: '#ffcc00' },
+              showgrid: true,
+              gridcolor: 'rgba(255,255,255,0.05)',
+              range: [0, 110]
+            },
+            yaxis2: {
+              title: 'Total Embodied Work (Em)',
+              titlefont: { color: '#88ffaa' },
+              tickfont: { color: '#88ffaa' },
+              overlaying: 'y',
+              side: 'right',
+              showgrid: false,
+              zeroline: false
+            },
+            annotations: [
+              {
+                x: 90,
+                y: 98,
+                xref: 'x',
+                yref: 'y',
+                text: 'Logistic Ceiling (P_max)',
+                showarrow: true,
+                arrowhead: 2,
+                ax: -40,
+                ay: 30,
+                font: { color: '#ffcc00', size: 11 }
+              },
+              {
+                x: 90,
+                y: 0, // Sera mis à jour dynamiquement
+                xref: 'x',
+                yref: 'y2',
+                text: 'Linear Densification',
+                showarrow: true,
+                arrowhead: 2,
+                ax: -40,
+                ay: -30,
+                font: { color: '#88ffaa', size: 11 }
+              }
+            ]
+          };
+      
+          const config = { responsive: true, displayModeBar: false };
+      
+          function updatePlot(k) {
+            const data = generateData(k);
+            
+            traceExergy.x = data.t;
+            traceExergy.y = data.Exergy;
+            
+            traceEmergy.x = data.t;
+            traceEmergy.y = data.Emergy;
+            
+            // Mise à jour dynamique de la hauteur de la légende verte
+            layout.annotations[1].y = data.Emergy[90];
+            
+            Plotly.react(plotDiv, [traceExergy, traceEmergy], layout, config);
+          }
+      
+          // Initialisation
+          updatePlot(parseFloat(slider.value));
+      
+          // Écouteur d'événement pour l'interactivité
+          slider.addEventListener('input', function() {
+            const k = parseFloat(this.value);
+            display.textContent = k.toFixed(2);
+            updatePlot(k);
+          });
+        });
+      </script>
+
+      <!-- GRAPH EXPLANATION -->
+      <div style="background: rgba(255, 255, 255, 0.02); padding: 1.5rem; border-left: 3px solid var(--sun-yellow, #ffcc00); margin-bottom: 2rem;">
+        <p lang="en" style="margin-bottom: 0.5rem;">
+          <strong>Understanding the Mechanics:</strong> Notice how adjusting the metabolic growth rate ($k$) changes the initial trajectory, but the ultimate destiny remains identical. The yellow curve represents the instantaneous Hashrate (Exergy), which must inevitably flatten as it hits the physical limits of planetary energy capture ($P_{\mathrm{max}}$). 
+        </p>
+        <p lang="en" style="margin-bottom: 0;">
+          However, the green curve represents Emergy—the strict mathematical <em>integral</em> of that power over time. Even when the network stops physically growing and the yellow line plateaus, the green line continues its relentless upward march. This illustrates the core evolutionary mechanic of the Nakamoto organism: once it reaches physical maturity, it stops expanding outward and begins <strong>densifying inward</strong>, accumulating thermodynamic memory at a constant, linear rate. This ever-growing wedge of history is what forms its impenetrable digital shell.
+        </p>
+
+        <p lang="fr" style="margin-bottom: 0.5rem; display: none;">
+          <strong>Comprendre la Mécanique :</strong> Remarquez comment l'ajustement du taux de croissance métabolique ($k$) modifie la trajectoire initiale, mais le destin final reste identique. La courbe jaune représente le Hashrate instantané (Exergie), qui doit inévitablement s'aplatir en atteignant les limites physiques de capture d'énergie planétaire ($P_{\mathrm{max}}$).
+        </p>
+        <p lang="fr" style="margin-bottom: 0; display: none;">
+          Cependant, la courbe verte représente l'Émergie — l'<em>intégrale</em> mathématique stricte de cette puissance dans le temps. Même lorsque le réseau cesse de croître physiquement et que la ligne jaune plafonne, la ligne verte poursuit son inlassable ascension. Cela illustre la mécanique évolutive fondamentale de l'organisme Nakamoto : une fois la maturité physique atteinte, il cesse de s'étendre vers l'extérieur pour entamer une <strong>densification intérieure</strong>, accumulant de la mémoire thermodynamique à un rythme constant et linéaire. Ce prisme historique en croissance perpétuelle est ce qui forme son impénétrable carapace numérique.
+        </p>
       </div>
 
       <p lang="en">
