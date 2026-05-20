@@ -2429,7 +2429,12 @@
               <td lang="fr">Métrique Physique (Émergie Cumulative)</td>
               <td>Joules (seJ)</td>
             </tr>
-
+            <tr>
+              <td>$T_r$</td>
+              <td lang="en">Transformity (Biospheric concentration effort)</td>
+              <td lang="fr">Transformité (Effort de concentration biosphérique)</td>
+              <td>seJ / J</td>
+            </tr>
             <tr>
               <td>$\bar{E}_{\mathrm{eff}}$</td>
               <td lang="en">Characteristic Block Energy</td>
@@ -7923,10 +7928,10 @@ document.addEventListener("DOMContentLoaded", () => {
           "
         >
           <strong style="color: #ffcc00" lang="en"
-            >3. The Transformity Constant ($C_E$):</strong
+            >3. The Transformity ($T_r$):</strong
           >
           <strong style="color: #ffcc00" lang="fr"
-            >3. La Constante de Transformité ($C_E$) :</strong
+            >3. La Transformité ($T_r$) :</strong
           >
           <span lang="en"
             >This acts as Odum's conversion factor, translating the raw chaotic
@@ -7943,13 +7948,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
       <p lang="en">
         To visualize its interaction with the code, we project this cumulative
-        scalar ($g(\theta) = C_E \cdot \theta^\nu$) into the same 3D space.
+        scalar ($g(\theta) = T_r \cdot \theta^\nu$) into the same 3D space.
         Crucially, we apply a phase shift of $\pi$ ($180^\circ$) to position the
         physical energy strictly opposite the information:
       </p>
       <p lang="fr">
         Pour visualiser son interaction avec le code, nous projetons ce scalaire
-        cumulatif ($g(\theta) = C_E \cdot \theta^\nu$) dans le même espace 3D.
+        cumulatif ($g(\theta) = T_r \cdot \theta^\nu$) dans le même espace 3D.
         Crucialement, nous appliquons un déphasage de $\pi$ ($180^\circ$) pour
         positionner l'énergie physique strictement à l'opposé de l'information :
       </p>
@@ -7959,7 +7964,7 @@ document.addEventListener("DOMContentLoaded", () => {
         style="display: flex; flex-direction: column; gap: 10px"
       >
         <span
-          >$$ g(\theta) = C_E \cdot \theta^{\nu} \quad \text{(Scalar Metric)}
+          >$$ g(\theta) = T_r \cdot \theta^{\nu} \quad \text{(Scalar Metric)}
           $$</span
         >
         <span
