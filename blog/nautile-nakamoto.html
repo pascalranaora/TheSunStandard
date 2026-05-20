@@ -1264,6 +1264,20 @@
     pointer-events: none;
     user-select: none;
   }
+  .model-note {
+    margin: 0.85rem 0 1.35rem 0;
+    padding: 0.9rem 1rem;
+    border-left: 3px solid rgba(255, 204, 0, 0.62);
+    background: rgba(255, 204, 0, 0.055);
+    color: #d6d6d6;
+    font-size: 0.93rem;
+    line-height: 1.62;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .model-note strong {
+    color: #fff1a6;
+  }
 
     </style>
   </head>
@@ -1498,92 +1512,6 @@
 </div>
       </div>
 
-      <!-- <div class="proof-box" style="border: 1px solid rgba(255, 204, 0, 0.3); background: rgba(255, 204, 0, 0.03); padding: 2.5rem; border-radius: 12px; margin-bottom: 3.5rem;">
-        
-        <div class="proof-title" lang="en" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">🔰 Prerequisite: Bitcoin Mechanics FAQ</div>
-        <div class="proof-title" lang="fr" style="color: var(--sun-yellow); font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">🔰 Prérequis : FAQ des Mécaniques de Bitcoin</div>
-        
-        <p lang="en" style="margin-bottom: 2rem; font-style: italic; color: #ccc;">If you are unfamiliar with the underlying architecture of Bitcoin, open these tabs to grasp the mechanical foundation before exploring the biophysical models.</p>
-        <p lang="fr" style="margin-bottom: 2rem; font-style: italic; color: #ccc;">Si vous n'êtes pas familier avec l'architecture sous-jacente de Bitcoin, ouvrez ces onglets pour saisir les bases mécaniques avant d'explorer les modèles biophysiques.</p>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">Why does Bitcoin consume energy instead of using a normal database?</span>
-                <span lang="fr">Pourquoi Bitcoin consomme-t-il de l'énergie au lieu d'utiliser une base de données normale ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">Traditional systems (like Visa or banks) rely on a central authority, a CEO, and legal systems to prevent people from spending the same digital dollar twice (the "Double-Spend Problem"). Bitcoin replaces this central authority with physics. Energy is the unforgeable cost of absolute trust. It secures the network against attacks without needing a central leader.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Les systèmes traditionnels (comme Visa ou les banques) s'appuient sur une autorité centrale, un PDG et des systèmes juridiques pour empêcher quiconque de dépenser le même dollar numérique deux fois (le problème de la "Double-Dépense"). Bitcoin remplace cette autorité centrale par la physique. L'énergie est le coût infalsifiable de la confiance absolue. Elle sécurise le réseau contre les attaques sans avoir besoin d'un leader central.</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">What is an ASIC and what does a "Miner" actually do?</span>
-                <span lang="fr">Qu'est-ce qu'un ASIC et que fait réellement un "Mineur" ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">A "Miner" is an operator running ASICs (Application-Specific Integrated Circuits)—highly specialized computers designed to do only one thing: guess random numbers incredibly fast. They participate in a continuous global mathematical lottery to win the right to process the next batch of transactions.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Un "Mineur" est un opérateur gérant des ASICs (Application-Specific Integrated Circuits)—des ordinateurs hautement spécialisés conçus pour ne faire qu'une seule chose : deviner des nombres aléatoires extrêmement vite. Ils participent à une loterie mathématique mondiale continue pour gagner le droit de traiter le prochain lot de transactions.</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">What is a "Hash" and what is the "Hashrate"?</span>
-                <span lang="fr">Qu'est-ce qu'un "Hash" et qu'est-ce que le "Hashrate" ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">A Hash is a unique mathematical fingerprint of a piece of data. In the Bitcoin lottery, computers try to find a specific hash that matches the protocol's strict requirements. The "Hashrate" is simply the total number of guesses the entire global network makes every single second.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Un Hash est une empreinte mathématique unique d'une donnée. Dans la loterie Bitcoin, les ordinateurs tentent de trouver un hash spécifique qui correspond aux exigences strictes du protocole. Le "Hashrate" (taux de hachage) est simplement le nombre total de tentatives que le réseau mondial effectue chaque seconde.</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">What is the difference between the Mempool and the Blockchain?</span>
-                <span lang="fr">Quelle est la différence entre le Mempool et la Blockchain ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">When you send a transaction, it doesn't settle instantly. It first goes to the "Mempool," which acts as a global waiting room for unconfirmed transactions. Once a miner wins the lottery, they take transactions from the Mempool and permanently freeze them into a "Block" of the Blockchain (the immutable historical ledger).</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Lorsque vous envoyez une transaction, elle n'est pas réglée instantanément. Elle va d'abord dans le "Mempool", qui agit comme une salle d'attente mondiale pour les transactions non confirmées. Lorsqu'un mineur gagne la loterie, il prend des transactions du Mempool et les gèle de façon permanente dans un "Bloc" de la Blockchain (le registre historique immuable).</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">What is a UTXO?</span>
-                <span lang="fr">Qu'est-ce qu'un UTXO ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">UTXO stands for "Unspent Transaction Output." You can think of it as the actual digital "gold coin" or "banknote" sitting on the ledger. When you send Bitcoin, you are essentially melting down your existing UTXOs to forge new ones for the recipient.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">UTXO signifie "Unspent Transaction Output" (Sortie de Transaction Non Dépensée). Vous pouvez le voir comme la véritable "pièce d'or" ou le "billet" numérique stocké dans le registre. Lorsque vous envoyez du Bitcoin, vous fondez virtuellement vos UTXOs existants pour en forger de nouveaux destinés au destinataire.</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0.8rem; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">Why "10 minutes"? What is the DAA?</span>
-                <span lang="fr">Pourquoi "10 minutes" ? Qu'est-ce que le DAA ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">Satoshi Nakamoto hard-coded a fundamental rule: one block of transactions should be confirmed roughly every 10 minutes. But what happens if thousands of new computers join the network? They would guess the answer faster. To prevent this, the <strong>DAA (Difficulty Adjustment Algorithm)</strong> automatically makes the mathematical puzzle harder. If computers leave, it makes it easier. This ensures the 10-minute heartbeat remains constant.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Satoshi Nakamoto a codé en dur une règle fondamentale : un bloc de transactions doit être confirmé environ toutes les 10 minutes. Mais que se passe-t-il si des milliers d'ordinateurs rejoignent le réseau ? Ils devineraient la réponse plus vite. Pour éviter cela, le <strong>DAA (Algorithme d'Ajustement de la Difficulté)</strong> rend automatiquement le puzzle mathématique plus difficile. Si des ordinateurs partent, il le rend plus facile. Cela garantit que le battement de cœur de 10 minutes reste constant.</p>
-            </div>
-        </details>
-
-        <details style="margin-bottom: 0; background: rgba(0, 0, 0, 0.4); border: 1px solid rgba(255,255,255,0.1); border-radius: 6px; overflow: hidden;">
-            <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #e0e0e0; outline: none; list-style-type: '▶ ';">
-                <span lang="en">What exactly is the "Halving"?</span>
-                <span lang="fr">Qu'est-ce que le "Halving", concrètement ?</span>
-            </summary>
-            <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #aaa;">
-                <p lang="en" style="margin-bottom: 0; margin-top: 0.5rem;">When a miner wins the 10-minute lottery, they are rewarded with newly created Bitcoin. Every 210,000 blocks (roughly 4 years), this reward is cut in half. This event is the <strong>Halving</strong>. It enforces absolute monetary scarcity, mathematically ensuring that there will never be more than 21 million Bitcoins in existence.</p>
-                <p lang="fr" style="margin-bottom: 0; margin-top: 0.5rem;">Lorsqu'un mineur gagne la loterie des 10 minutes, il est récompensé par des Bitcoins nouvellement créés. Tous les 210 000 blocs (environ 4 ans), cette récompense est divisée par deux. Cet événement est le <strong>Halving</strong>. Cela impose une rareté monétaire absolue, garantissant mathématiquement qu'il n'y aura jamais plus de 21 millions de Bitcoins en circulation.</p>
-            </div>
-        </details>
-
-    </div> -->
       <div
         style="
           background: rgba(255, 255, 255, 0.02);
@@ -2821,9 +2749,32 @@
           class="math-block"
           style="background: transparent; border: none; margin: 0.5rem 0"
         >
-          $$ 2\pi \equiv 210\,000 \text{ blocks} \approx 4 \text{ Earth years}
           $$
+N_H = 210\,000,
+\qquad
+q(n) = \left\lfloor \frac{n}{N_H} \right\rfloor,
+\qquad
+\theta(n) =
+2\pi \frac{n - q(n)N_H}{N_H}
+$$
+
+$$
+\Delta n_{\mathrm{halving}} = N_H \ \text{blocks}
+\approx 4 \ \text{Earth years}
+$$
         </div>
+        <p lang="fr" class="model-note">
+        Ici, \(\theta(n)\) est une coordonnée de phase normalisée. Le facteur \(2\pi\) n’est pas une constante physique
+du protocole : c’est une convention géométrique permettant de représenter un cycle de halving complet sur le
+cercle unité. Le protocole encode une période discrète de \(N_H = 210\,000\) blocs, et non une périodicité
+géométrique fondamentale.
+      </p>
+      <p lang="en" class="model-note">
+        Here, \(\theta(n)\) is a normalized phase coordinate. The factor \(2\pi\) is not a physical constant of the
+protocol: it is a geometric convention used to represent one complete halving cycle on the unit circle.
+The protocol encodes a discrete period of \(N_H = 210\,000\) blocks, not a fundamental geometric periodicity.
+      </p>
+
       </div>
 
       <p lang="en" style="margin-top: 3rem">
@@ -4551,7 +4502,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
               macroscopique massive, notée comme l'énergie caractéristique du
               bloc $\bar{E}_{\mathrm{eff}}$. Le ratio mathématique
               $\epsilon_0^2/\bar{E}_{\mathrm{eff}}$ isole la variance relative
-              (le bruit quantique) du système. Si le réseau s'étend et brûle une
+              (le bruit statistique) du système. Si le réseau s'étend et brûle une
               exergie massive ($\bar{E}_{\mathrm{eff}} \to \infty$), la
               fluctuation statistique relative de chaque hachage chute à zéro.
               Le bruit disparaît, et le système se comporte comme un cristal
@@ -5198,7 +5149,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
             individuels sont "bruités" et peu fiables. Pour empêcher la
             structure thermodynamique de fondre sous ce bruit thermique
             ($T_{\mathrm{eff}}$), le réseau échantillonne les 11 derniers blocs
-            pour établir une ancre chronologique infalsifiable. Un nouveau bloc
+            pour établir une ancre chronologique difficile à falsifier sans reproduire un coût de calcul comparable. Un nouveau bloc
             <em>doit</em> être strictement plus récent que cette médiane,
             forçant mécaniquement le temps à s'écouler vers l'avant.
           </p>
@@ -5231,7 +5182,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
           "
         >
           Conclusion : Bitcoin ne reste un <strong>cristal parfait</strong> que
-          tant que son apport énergétique masque son bruit quantique et que son
+          tant que son apport énergétique masque son bruit statistique et que son
           délai de communication reste négligeable face à son temps de
           cristallisation.
         </p>
@@ -5355,7 +5306,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
       </div>
 
       <p lang="en">
-        This equation formally demonstrates that if network power
+        This equation formally illustrates that if network power
         $P_{\mathrm{net}}(t)$ drops towards zero, the systemic temperature
         $T_{\mathrm{eff}}$ appropriately diverges towards infinity. The "solid"
         chain melts, rendering the timeline completely fluid, reversible, and
@@ -5594,10 +5545,10 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
 </ul>
 
 <p lang="en">
-  This equation is the defining ontological shift in the statistical physics of distributed consensus. It demonstrates that "time" within the blockchain does not simply tick; it is <em>burned</em> into existence. To guarantee the stability of this emergent timeline against the violent chaotic fluctuations of the physical energy bath, the protocol must operate analogously to a <strong>Covariant Universe</strong>, adjusting its gauge to preserve its internal modular flow.
+  This equation is the defining ontological shift in the statistical physics of distributed consensus. It illustrates that "time" within the blockchain does not simply tick; it is <em>burned</em> into existence. To guarantee the stability of this emergent timeline against the violent chaotic fluctuations of the physical energy bath, the protocol must operate analogously to a <strong>Covariant Universe</strong>, adjusting its gauge to preserve its internal modular flow.
 </p>
 <p lang="fr">
-  Cette équation marque le basculement ontologique fondamental de la physique statistique du consensus distribué. Elle démontre que le "temps" au sein de la blockchain ne s'écoule pas passivement ; il est <em>forgé</em> par la combustion. Pour garantir l'inaltérabilité de cette chronologie émergente face aux violentes fluctuations chaotiques du bain d'énergie physique, le protocole doit se comporter comme un <strong>Univers Covariant</strong>, ajustant sa jauge pour préserver son flux modulaire interne.
+  Cette équation marque le basculement ontologique fondamental de la physique statistique du consensus distribué. Elle illustre que le "temps" au sein de la blockchain ne s'écoule pas passivement ; il est <em>forgé</em> par la combustion. Pour garantir l'inaltérabilité de cette chronologie émergente face aux violentes fluctuations chaotiques du bain d'énergie physique, le protocole doit se comporter comme un <strong>Univers Covariant</strong>, ajustant sa jauge pour préserver son flux modulaire interne.
 </p>
 
 <div
@@ -5706,7 +5657,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
             problem detailing the impossibility of reaching consensus in decentralized systems when communication can be delayed or actors turn malicious.</span
           ></span
         >
-        demonstrates that relying on an external Newtonian clock is mathematically unsafe in adversarial networks, as latencies spoof causality. The organism bypasses this by rendering time <em>endogenous</em>. However, if uncorrected, a massive surge in global Hashrate would warp this internal timeline, accelerating block times to mere seconds. The Difficulty Adjustment Algorithm (DAA) functions as the network's covariant derivative. It actively absorbs the chaotic curvature of the physical grid and mathematically straightens the geodesic, ensuring the 10-minute heartbeat remains universally invariant.
+        illustrates that relying on an external Newtonian clock is mathematically unsafe in adversarial networks, as latencies spoof causality. The organism bypasses this by rendering time <em>endogenous</em>. However, if uncorrected, a massive surge in global Hashrate would warp this internal timeline, accelerating block times to mere seconds. The Difficulty Adjustment Algorithm (DAA) functions as the network's covariant derivative. It actively absorbs the chaotic curvature of the physical grid and mathematically straightens the geodesic, ensuring the 10-minute heartbeat remains universally invariant.
       </p>
       <p lang="fr" style="margin-bottom: 0">
         Le célèbre
@@ -5715,7 +5666,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
             ><strong>Problème des Généraux Byzantins</strong>Un dilemme de théorie des jeux démontrant l'impossibilité de garantir un consensus décentralisé lorsque les communications subissent des latences ou des manipulations.</span
           ></span
         >
-        démontre que s'en remettre à une horloge newtonienne externe est mathématiquement dangereux, la latence pouvant falsifier la causalité. L'organisme contourne le problème en rendant le temps <em>endogène</em>. Toutefois, sans correction, un afflux massif de Hashrate mondial tordrait cette chronologie interne, accélérant les blocs à quelques secondes. L'Algorithme d'Ajustement de la Difficulté (DAA) agit comme la dérivée covariante du réseau. Il absorbe activement la courbure chaotique du réseau physique et redresse mathématiquement la géodésique, garantissant que le battement de cœur de 10 minutes demeure universellement invariant.
+        illustre que s'en remettre à une horloge newtonienne externe est mathématiquement dangereux, la latence pouvant falsifier la causalité. L'organisme contourne le problème en rendant le temps <em>endogène</em>. Toutefois, sans correction, un afflux massif de Hashrate mondial tordrait cette chronologie interne, accélérant les blocs à quelques secondes. L'Algorithme d'Ajustement de la Difficulté (DAA) agit comme la dérivée covariante du réseau. Il absorbe activement la courbure chaotique du réseau physique et redresse mathématiquement la géodésique, garantissant que le battement de cœur de 10 minutes demeure universellement invariant.
       </p>
     </div>
   </details>
@@ -6077,10 +6028,10 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
 </p>
 
 <p lang="en" style="margin-bottom: 0.5rem">
-  To formalize this quantum-like behavior, we replace the classical state parameter with a macroscopic wavefunction <strong>$|\Psi(\theta)\rangle$</strong>. The dynamic evolution of this state across the planetary network is governed by the <strong>Schrödinger Equation of Consensus</strong>:
+  To formalize this quantum-like behavior, we replace the classical state parameter with a macroscopic statistical state vector <strong>$|\Psi(\theta)\rangle$</strong>. The dynamic evolution of this state across the planetary network is governed by the <strong>Schrödinger-Inspired Statistical Equation of Consensus</strong>:
 </p>
 <p lang="fr" style="margin-bottom: 0.5rem">
-  Pour formaliser ce comportement de type quantique, nous remplaçons le paramètre d'état classique par une fonction d'onde macroscopique <strong>$|\Psi(\theta)\rangle$</strong>. L'évolution dynamique de cet état à travers le réseau planétaire est régie par l'<strong>Équation de Schrödinger du Consensus</strong> :
+  Pour formaliser ce comportement de type quantique, nous remplaçons le paramètre d'état classique par une vecteur d’état statistique macroscopique <strong>$|\Psi(\theta)\rangle$</strong>. L'évolution dynamique de cet état à travers le réseau planétaire est régie par l'<strong>Équation statistique du consensus inspirée de Schrödinger</strong> :
 </p>
 
 <div
@@ -6093,7 +6044,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
     color: #c864ff;
   "
 >
-  $$ i \frac{h_N}{2\pi} \frac{\partial}{\partial \theta} |\Psi(\theta)\rangle = \hat{\mathcal{H}}_{\mathrm{diss}} |\Psi(\theta)\rangle $$
+  $$ i \frac{h_N}{2\pi} \frac{\partial}{\partial \theta} |\Psi(\theta)\rangle = \hat{\mathcal{H}}_{\mathrm{eff}} |\Psi(\theta)\rangle $$
 </div>
 
 <p lang="en" style="margin-bottom: 0.5rem">
@@ -6111,7 +6062,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
     <strong>The Nakamoto Action ($h_N$):</strong> Replacing Planck's constant ($\hbar$), we use the macroscopic Nakamoto Action. It acts as the fundamental quantum of uncertainty in the network. A smaller $h_N$ (more efficient ASICs) means less quantum noise, pushing the system closer to classical determinism.
   </li>
   <li style="margin-bottom: 0.8rem;">
-    <strong>The Hamiltonian Operator ($\hat{\mathcal{H}}_{\mathrm{diss}}$):</strong> This is the generator of topological time translation. It encodes the thermodynamic depth (the required energy dissipation) of the transition between blocks. It rigorously scrutinizes all competing histories in the Mempool (the superposition) and assigns them an energetic "weight." The more a transition demands exergy dissipation into the terrestrial environment, the higher the probability that this operator "validates" that reality.
+    <strong>The Hamiltonian Operator ($\hat{\mathcal{H}}_{\mathrm{eff}}$):</strong> This is the generator of topological time translation. It encodes the thermodynamic depth (the required energy dissipation) of the transition between blocks. It rigorously scrutinizes all competing histories in the Mempool (the superposition) and assigns them an energetic "weight." The more a transition demands exergy dissipation into the terrestrial environment, the higher the probability that this operator "validates" that reality.
   </li>
 </ul>
 
@@ -6120,10 +6071,10 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
     <strong>Le Temps Topologique ($\theta$) :</strong> En mécanique quantique, le temps $t$ dicte l'évolution de l'onde. Ici, c'est la hauteur topologique du bloc $\theta$ qui pilote l'évolution de la phase.
   </li>
   <li style="margin-bottom: 0.8rem;">
-    <strong>L'Action de Nakamoto ($h_{\mathrm{N}}$) :</strong> Remplaçant la constante de Planck ($\hbar$), nous utilisons l'Action macroscopique de Nakamoto. Elle agit comme le quantum fondamental d'incertitude dans le réseau. Un $h_N$ plus petit (ASICs plus efficients) signifie moins de bruit quantique, rapprochant le système du déterminisme classique.
+    <strong>L’Action de Nakamoto ($h_{\mathrm{N}}$) :</strong> Par analogie dimensionnelle et pédagogique avec une constante d’action, nous introduisons une grandeur macroscopique $h_{\mathrm{N}}$ associée au coût minimal moyen d’une tentative de hachage dans un contexte matériel donné. Elle ne remplace pas la constante de Planck ($\hbar$) et n’introduit aucun phénomène quantique réel dans Bitcoin. Elle sert seulement à représenter la granularité énergétique du processus de recherche de preuve de travail. Une baisse de $h_{\mathrm{N}}$ peut alors être interprétée comme une amélioration d’efficacité matérielle, non comme une réduction de bruit statistique.
   </li>
   <li style="margin-bottom: 0.8rem;">
-    <strong>L'Opérateur Hamiltonien ($\hat{\mathcal{H}}_{\mathrm{diss}}$) :</strong> C'est le générateur de la translation topologique dans le temps. Il encode la profondeur thermodynamique (la dissipation d'énergie requise) de la transition entre les blocs. Il scrute toutes les histoires concurrentes dans le Mempool (la superposition) et leur attribue un "poids" énergétique. Plus une transition exige de dissiper de l'exergie dans l'environnement terrestre, plus la probabilité que cet opérateur "valide" cette réalité est forte.
+    <strong>L’Opérateur effectif ($\hat{\mathcal{H}}_{\mathrm{eff}}$) :</strong> Dans ce modèle, nous utilisons un opérateur effectif comme notation compacte pour décrire la sélection probabiliste d’un prochain bloc valide parmi de nombreuses configurations candidates. Il ne s’agit pas d’un Hamiltonien physique au sens quantique. Il résume plutôt plusieurs contraintes : difficulté cible, propagation réseau, frais de transaction, politiques de mempool, puissance de hachage et règles de validation. La « superposition » des histoires concurrentes désigne ici l’ensemble des blocs candidats possibles avant qu’un bloc valide ne soit découvert et propagé.
   </li>
 </ul>
 
@@ -6365,11 +6316,11 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <p lang="en" style="margin-bottom: 0.5rem">
-  Crucially, this macroscopic wavefunction is not a magical entity; it is the strict statistical sum of the microscopic reality. If we consider every single SHA-256 hash computed by an ASIC as a discrete <span class="tooltip">Boltzmann particle<span class="tooltiptext"><strong>Boltzmann Particle</strong>In statistical mechanics, a theoretical particle modeling the random microscopic states of a system (like gas molecules in a room). Here, it represents a single, random SHA-256 hash attempt, a "microstate" exploring the vast cryptographic phase space.</span></span> exploring the cryptographic phase space, each representing a microstate $|\psi_j\rangle$, then the global consensus state can be rewritten as the superposition of all individual particles taking part in the consensus:
+  Crucially, this macroscopic statistical state vector is not a magical entity; it is the strict statistical sum of the microscopic reality. If we consider every single SHA-256 hash computed by an ASIC as a discrete <span class="tooltip">Boltzmann particle<span class="tooltiptext"><strong>Boltzmann Particle</strong>In statistical mechanics, a theoretical particle modeling the random microscopic states of a system (like gas molecules in a room). Here, it represents a single, random SHA-256 hash attempt, a "microstate" exploring the vast cryptographic phase space.</span></span> exploring the cryptographic phase space, each representing a microstate $|\psi_j\rangle$, then the global consensus state can be rewritten as the superposition of all individual particles taking part in the consensus:
 </p>
 <p lang="fr" style="margin-bottom: 0.5rem">
-  Fondamentalement, cette fonction d'onde macroscopique n'est pas une entité magique ; elle est la somme statistique stricte de la réalité microscopique. Si l'on considère chaque hachage SHA-256 calculé par un ASIC comme une <span class="tooltip">particule de Boltzmann<span class="tooltiptext"><strong>Particule de Boltzmann</strong>En mécanique statistique, une particule théorique modélisant les mouvements aléatoires microscopiques d'un système (comme les molécules d'un gaz). Dans notre analogie, elle représente une tentative unique de hachage SHA-256, un "micro-état" explorant l'immense espace des phases cryptographique.</span></span> 
-  discrète explorant l'espace des phases cryptographique, chacune représentant un micro-état $|\psi_j\rangle$, alors l'état de consensus global peut être réécrit comme la superposition de toutes les particules individuelles (les hachages) prenant part au consensus :
+  Fondamentalement, cette vecteur d’état statistique macroscopique n'est pas une entité magique ; elle est la somme statistique stricte de la réalité microscopique. Si l'on considère chaque hachage SHA-256 calculé par un ASIC comme une <span class="tooltip">particule de Boltzmann<span class="tooltiptext"><strong>Particule de Boltzmann</strong>En mécanique statistique, une particule théorique modélisant les mouvements aléatoires microscopiques d'un système (comme les molécules d'un gaz). Dans notre analogie, elle représente une tentative unique de hachage SHA-256, c’est-à-dire un échantillon discret de l’espace combinatoire des nonces et des en-têtes de blocs.</span></span>
+  discrète explorant l’espace combinatoire cryptographique. Par analogie avec la physique statistique, chaque tentative peut être notée comme un état candidat $s_j$, mais il ne s’agit pas d’un état quantique. L’état de consensus global peut alors être représenté comme une distribution statistique sur les candidats valides et invalides :
 </p>
 
 <div
@@ -6382,7 +6333,17 @@ document.addEventListener("DOMContentLoaded", () => {
     color: #88bbff;
   "
 >
-  $$ |\Psi(\theta)\rangle = \sum_{j=1}^{N_{\mathrm{hashes}}} e^{- \beta_{\mathrm{eff}} \epsilon_j} |\psi_j\rangle $$
+  $$
+P(s_j \mid \theta)
+=
+\frac{1}{Z(\theta)}
+\exp\left[-\beta_{\mathrm{eff}} \epsilon_j(\theta)\right],
+\qquad
+Z(\theta)
+=
+\sum_j
+\exp\left[-\beta_{\mathrm{eff}} \epsilon_j(\theta)\right]
+$$
 </div>
 
 <div
@@ -6397,10 +6358,10 @@ document.addEventListener("DOMContentLoaded", () => {
   "
 >
   <div class="proof-title" lang="en" style="color: #c864ff;">
-    The Quantum Mechanics of Consensus
+    A Statistical-Mechanical Analogy of Consensus
   </div>
   <div class="proof-title" lang="fr" style="color: #c864ff;">
-    La Mécanique Quantique du Consensus
+    Une analogie de physique statistique du Consensus
   </div>
 
   <p lang="en" style="margin-bottom: 1.5rem">
@@ -6640,14 +6601,14 @@ document.addEventListener("DOMContentLoaded", () => {
         How is this geometry constructed? The validity of a block is determined purely by mathematical inequalities representing the protocol rules—such as capacity limits, the 
         <span class="tooltip">DAG<span class="tooltiptext"><strong>Directed Acyclic Graph</strong>. A mathematical network structure moving in one direction without loops. In Bitcoin, a transaction cannot spend an output before it is created, forcing a strict chronological causality.</span></span> 
         topology of transactions, and the maximization of 
-        <span class="tooltip">MEV<span class="tooltiptext"><strong>Maximal Extractable Value</strong>. The maximum profit a miner can extract by strategically selecting, excluding, or reordering transactions within a block based on their fees.</span></span>. 
+        <span class="tooltip">MEV<span class="tooltiptext"><strong>Maximal Extractable Value</strong>. A concept mostly developed in expressive smart-contract environments. In Bitcoin, the closest analogue is more limited: miners select, exclude or order transactions mainly according to fees, size, dependencies and mempool policies. The term MEV should therefore be understood here in a restricted sense.</span></span>. 
         Each rule acts as a <strong>hyperplane</strong> ($H_i$) dividing the phase space of all possible Mempool permutations into valid and invalid half-spaces:
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
         Comment cette géométrie est-elle construite ? La validité d'un bloc est déterminée purement par des inéquations mathématiques représentant les règles du protocole — telles que les limites de capacité, la topologie 
-        <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure mathématique en réseau allant dans une seule direction sans boucles. Dans Bitcoin, une transaction ne peut pas dépenser une sortie avant sa création, forçant une stricte causalité chronologique.</span></span> 
+        <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span> 
         des transactions, et la maximisation de la 
-        <span class="tooltip">MEV<span class="tooltiptext"><strong>Valeur Extractible Maximale (Maximal Extractable Value)</strong>. Le profit maximum qu'un mineur peut extraire en sélectionnant, excluant ou réordonnant stratégiquement les transactions au sein d'un bloc en fonction de leurs frais (fees).</span></span>. 
+        <span class="tooltip">MEV<span class="tooltiptext"><strong>Valeur Extractible Maximale (Maximal Extractable Value)</strong>. Concept surtout développé dans les environnements à contrats intelligents expressifs. Dans Bitcoin, l’analogue le plus direct est plus limité : les mineurs sélectionnent, excluent ou ordonnent les transactions principalement selon les frais, la taille, les dépendances et les politiques de mempool. Le terme MEV doit donc être compris ici dans un sens restreint.</span></span>. 
         Chaque règle agit comme un <strong>hyperplan</strong> ($H_i$) divisant l'espace des phases de toutes les permutations possibles du Mempool en demi-espaces valides et invalides :
       </p>
 
@@ -6980,10 +6941,10 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
 
       <p lang="en" style="margin-bottom: 0">
-        The honest full nodes act as the topological stabilizing operators. Guided by the Hamiltonian of Accumulated Work ($\hat{\mathcal{H}}_{\mathrm{diss}}$), they constantly perform syndrome measurements (verifying signatures and UTXO validity). By rejecting invalid blocks, they absorb and annihilate the Byzantine anyon excitations before they can braid and alter the global logical state. This guarantees the statistical physics of distributed consensus remains absolutely resilient.
+        The honest full nodes act as the topological stabilizing operators. Guided by the Hamiltonian of Accumulated Work ($\hat{\mathcal{H}}_{\mathrm{eff}}$), they constantly perform syndrome measurements (verifying signatures and UTXO validity). By rejecting invalid blocks, they absorb and annihilate the Byzantine anyon excitations before they can braid and alter the global logical state. This guarantees the statistical physics of distributed consensus remains absolutely resilient.
       </p>
       <p lang="fr" style="margin-bottom: 0">
-        Les nœuds complets honnêtes agissent comme les opérateurs stabilisateurs topologiques. Guidés par le Hamiltonien du Travail Accumulé ($\hat{\mathcal{H}}_{\mathrm{diss}}$), ils effectuent constamment des mesures de syndrome (vérification des signatures et de la validité UTXO). En rejetant les blocs invalides, ils absorbent et annihilent les excitations byzantines avant qu'elles ne puissent s'entrelacer (braiding) et altérer l'état logique global. Cela garantit que la physique statistique du consensus distribué demeure absolument résiliente.
+        Les nœuds complets honnêtes agissent comme les opérateurs stabilisateurs topologiques. Guidés par le Hamiltonien du Travail Accumulé ($\hat{\mathcal{H}}_{\mathrm{eff}}$), ils effectuent constamment des mesures de syndrome (vérification des signatures et de la validité UTXO). En rejetant les blocs invalides, ils absorbent et annihilent les excitations byzantines avant qu'elles ne puissent s'entrelacer (braiding) et altérer l'état logique global. Cela garantit que la physique statistique du consensus distribué demeure absolument résiliente.
       </p>
     </div>
   </details>
@@ -7418,8 +7379,9 @@ document.addEventListener("DOMContentLoaded", () => {
               table plate (2D), le désordre va se propager de proche en proche
               et détruire inévitablement l'alignement global. Pour qu'elles
               résistent à la chaleur, il faut un bloc 3D d'aiguilles, voire 4D
-              ou 5D, où l'immense quantité de connexions étouffe le bruit. C'est
-              l'essence du Théorème de Mermin-Wagner.
+              ou 5D, où l'immense quantité de connexions étouffe le bruit. c'est
+              une analogie inspirée par l’intuition du théorème de Mermin-Wagner :
+              les systèmes de basse dimension sont plus vulnérables aux fluctuations.
             </p>
 
             <p lang="en" style="margin-bottom: 0.5rem">
@@ -7461,8 +7423,8 @@ document.addEventListener("DOMContentLoaded", () => {
               transoceanic fiber optics) transforms the coupling matrix
               $J_{ij}$. These "teleportation" links shift the effective
               topological dimension of the graph to $d_{\mathrm{eff}} \to
-              \infty$. Bitcoin literally "cheats" physics by using cyberspace to
-              fold Earth into infinite dimensions, permitting the survival of a
+              \infty$. Bitcoin exploits a non-local communication topology provided by the Internet, increasing the network’s
+              effective connectivity beyond purely geographic neighborhoods, permitting the survival of a
               macroscopic magnetized state (a single unified ledger).
             </p>
             <p lang="fr" style="margin-bottom: 1rem">
@@ -7477,9 +7439,8 @@ document.addEventListener("DOMContentLoaded", () => {
               raccourcis internet, comme les fibres transocéaniques) transforme
               la matrice de couplage $J_{ij}$. Ces liens de "téléportation"
               décalent la dimension topologique effective du graphe vers
-              $d_{\mathrm{eff}} \to \infty$. Bitcoin "triche" littéralement avec
-              la physique en utilisant le cyberespace pour plier la Terre en
-              d'infinies dimensions, permettant la survie d'un état magnétisé
+              $d_{\mathrm{eff}} \to \infty$. Bitcoin exploite une topologie de communication non locale, fournie par Internet,
+              qui augmente la connectivité effective du réseau au-delà d’un simple voisinage géographique, permettant la survie d'un état magnétisé
               macroscopique (un registre unifié unique).
             </p>
 
@@ -7824,8 +7785,8 @@ document.addEventListener("DOMContentLoaded", () => {
           Think of $\vec{V}_{\mathrm{info}}$ as the living tissue of the
           Nautilus. It is pure information, vulnerable and soft. By rewriting
           the code in base $\varphi$, we reveal that Nakamoto's protocol
-          breathes with the exact same mathematical proportions that dictate the
-          spirals of galaxies, DNA, and the shells of mollusks. It follows its
+          breathes with a family of logarithmic and rotational patterns that are often used to model
+          growth, scaling and spiral structures in nature. It follows its
           own golden rotational rhythm ($e^{i\theta}$), independent of the
           ocean's physical currents.
         </p>
@@ -7833,8 +7794,8 @@ document.addEventListener("DOMContentLoaded", () => {
           Considérez $\vec{V}_{\mathrm{info}}$ comme le tissu vivant du Nautile.
           C'est de l'information pure, vulnérable et molle. En réécrivant le
           code en base $\varphi$, nous révélons que le protocole de Nakamoto
-          respire avec les mêmes proportions mathématiques exactes qui dictent
-          les spirales des galaxies, l'ADN et les coquilles des mollusques. Il
+          respire avec une famille de motifs logarithmiques et rotationnels souvent utilisés pour modéliser
+          la croissance, l’échelle et certaines structures spiralées dans la nature. Il
           suit son propre rythme de rotation doré ($e^{i\theta}$), indépendant
           des courants physiques de l'océan.
         </p>
@@ -9002,10 +8963,11 @@ document.addEventListener("DOMContentLoaded", () => {
               the physical expansion $H_g$ to spike, but the informational flow
               $N_f$ fails to adjust, the equation breaks. In bimetric theory,
               deviating from this branch triggers a severe tachyonic instability
-              in the scalar sector known as the <strong>Higuchi Ghost</strong>.
-              In Bitcoin phenomenological terms: blocks are found in seconds,
-              the orphan rate explodes, and the chronology loses its
-              objectivity. The network dies.
+              in the scalar sector, known as the <strong>Higuchi Ghost</strong>. 
+              This reference is used here only as an analogy of stability: in the Bitcoin protocol, it does not denote a real physical field. 
+              In phenomenological terms, the analogous case would be a regime where blocks are found too quickly relative to network propagation time, 
+              increasing competing blocks and slowing convergence toward a common chronology. 
+              The network enters a regime of severe instability, where convergence toward a shared history becomes slower and more costly.
             </p>
             <p lang="fr" style="margin-bottom: 0.5rem">
               Cette équation stipule que le ratio des écoulements du temps (les
@@ -9016,10 +8978,13 @@ document.addEventListener("DOMContentLoaded", () => {
               se brise. En théorie bimétrique, s'écarter de cette branche
               déclenche une instabilité tachyonique sévère dans le secteur
               scalaire, connue sous le nom de
-              <strong>Fantôme de Higuchi</strong>. En termes phénoménologiques
-              pour Bitcoin : des blocs sont trouvés en quelques secondes, le
-              taux d'orphelins explose, et la chronologie perd son objectivité.
-              Le réseau meurt.
+              <strong>Fantôme de Higuchi</strong>. Cette référence est utilisée ici
+              uniquement comme analogie de stabilité : dans le protocole Bitcoin,
+              elle ne désigne pas un champ physique réel. En termes phénoménologiques,
+              le cas analogue serait un régime où les blocs sont trouvés trop rapidement
+              par rapport au temps de propagation du réseau, ce qui augmente fortement
+              les blocs concurrents et ralentit la convergence vers une chronologie commune.
+              Le réseau entre alors dans un régime de forte instabilité, où la convergence vers un historique commun devient plus lente et plus coûteuse.
             </p>
 
             <h4
@@ -9822,20 +9787,21 @@ document.addEventListener("DOMContentLoaded", () => {
               "
             >
               <p lang="en" style="margin-bottom: 0">
-                This discrete topological shock elegantly resolves the
-                <strong>Hubble Tension</strong>. The expansion rate measured in
+                As a speculative analogy, this discrete topological shock can be compared to the
+                <strong>Hubble Tension</strong>, but it does not resolve it physically. The expansion rate measured in
                 the early universe (CMB) is $\approx 67.4$ km/s/Mpc, while in
-                the late local universe it is $\approx 73.0$ km/s/Mpc. These
-                incompatible measurements are not human errors; they are the
-                empirical observation of two different protocol rulesets. The
+                the late local universe it is $\approx 73.0$ km/s/Mpc. 
+                These incompatible measurements are used here only as a metaphor 
+                for how different effective regimes can produce different inferred parameters. 
+                This is not an empirical claim about cosmology.
                 CMB measures the original "Genesis ruleset" (small block size).
                 The local supernovae measure the post-fork ruleset (expanded
                 block size via $\Delta \Lambda$). The tension is the signature
                 of the upgrade.
               </p>
               <p lang="fr" style="margin-bottom: 0">
-                Ce choc topologique discret résout élégamment la
-                <strong>Tension de Hubble</strong>. Le taux d'expansion mesuré
+                À titre d’analogie spéculative, ce choc topologique discret peut être comparé à la
+                <strong>Tension de Hubble</strong>, mais il ne la résout pas physiquement. Le taux d'expansion mesuré
                 dans l'univers primordial (CMB) est de $\approx 67,4$ km/s/Mpc,
                 contre $\approx 73,0$ km/s/Mpc dans l'univers local tardif. Ces
                 mesures incompatibles ne sont pas des erreurs humaines ; ce sont
@@ -10219,11 +10185,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 the anomalies of our cosmos (like the Hubble Tension) are not
                 measurement errors, but the necessary structural upgrades of an
                 information-processing universe fighting for its own
-                autopoiesis. This perspective strips away the magic of "Dark
-                Energy" and replaces it with a mechanical necessity, opening a
-                fertile frontier for future research at the intersection of
-                quantum gravity, distributed consensus, and theoretical computer
-                science.
+                autopoiesis. This perspective should not be read as a claim about physical dark energy.
+                It is a speculative analogy suggesting that distributed consensus may offer
+                useful metaphors for thinking about information, constraint and coordination.
+                Any connection to quantum gravity or cosmology remains conceptual and would require
+                independent mathematical and empirical justification.
               </p>
 
               <hr
@@ -10259,8 +10225,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 cosmos (comme la Tension de Hubble) ne sont pas des erreurs de
                 mesure, mais les mises à jour structurelles nécessaires d'un
                 univers traitant de l'information et luttant pour sa propre
-                autopoïèse. Cette perspective dépouille "l'Énergie Noire" de sa
-                magie pour la remplacer par une nécessité mécanique, ouvrant une
+                autopoïèse. Cette perspective ne doit pas être lue comme une affirmation sur l’énergie noire physique.
+                Elle propose seulement une analogie spéculative : le consensus distribué peut fournir
+                des métaphores utiles pour penser l’information, la contrainte et la coordination, ouvrant une
                 frontière fertile pour de futurs travaux à l'intersection de la
                 gravité quantique, du consensus distribué et de l'informatique
                 théorique.
@@ -10320,7 +10287,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <strong>💡 The Intuition:</strong> The illusion of the modern technological era is the belief in endless exponential progress. Yet, as our silicon chips approach the atomic scale, the universe pushes back. This fundamental thermodynamic friction is what gives the protocol its unforgeable absolute scarcity.
       </p>
       <p lang="fr" style="margin-bottom: 2rem; color: #d4d4d4; font-size: 0.95rem;">
-        <strong>💡 L'Intuition :</strong> L'illusion de l'ère technologique moderne est de croire en un progrès exponentiel infini. Pourtant, à mesure que nos puces de silicium s'approchent de l'échelle atomique, l'univers riposte. C'est cette friction thermodynamique fondamentale qui donne au protocole sa rareté absolue et infalsifiable.
+        <strong>💡 L'Intuition :</strong> L'illusion de l'ère technologique moderne est de croire en un progrès exponentiel infini. Pourtant, à mesure que nos puces de silicium s'approchent de l'échelle atomique, l'univers riposte. C'est cette friction thermodynamique fondamentale qui donne au protocole sa rareté absolue.
       </p>
       <!-- <div class="gedanken-box" lang="en">
         <div class="gedanken-title">
@@ -10931,7 +10898,7 @@ document.addEventListener("DOMContentLoaded", () => {
               permanently shatters.
             </p>
             <p lang="fr" style="margin-bottom: 0">
-              Ce calcul prouve que la limite de la taille des blocs n'est pas
+              Ce calcul suggère que la limite de la taille des blocs n'est pas
               une question politique arbitraire ; c'est une contrainte
               thermodynamique rigide. Bien que la valeur numérique exacte
               dépende de la qualité de l'infrastructure mondiale, forcer des
@@ -11190,16 +11157,16 @@ document.addEventListener("DOMContentLoaded", () => {
             critical threshold $T_c$ that would melt the consensus.
           </p>
           <p lang="fr">
-            Dans le code, $V_{\mathrm{B,crit}}$ n'est pas une abstraction
-            théorique ; c'est la limite brutale et codée en dur
-            <code>MAX_BLOCK_WEIGHT</code> (à l'origine 1 Mo, aujourd'hui 4 Mo de
-            poids). Cette constante est la carlingue structurelle de l'avion.
-            Tout bloc dépassant cette valeur est instantanément rejeté par
-            <code>CheckBlock</code>. En imposant cette limite mathématiquement,
-            le protocole borne de force la latence du réseau $\tau_L(V_B)$,
-            garantissant que la température effective $T_{\mathrm{eff}}$ ne
-            franchisse jamais le seuil critique $T_c$ qui ferait fondre le
-            consensus.
+            Dans le code, $V_{\mathrm{B,crit}}$ correspond à une contrainte de poids maximal,
+            représentée par <code>MAX_BLOCK_WEIGHT</code>. Historiquement, Bitcoin limitait
+            la taille sérialisée des blocs à environ 1&nbsp;Mo ; depuis SegWit, la contrainte
+            pertinente est un poids maximal d’environ 4&nbsp;millions d’unités de poids.
+            Tout bloc dépassant cette limite est rejeté par les règles de validation.
+            Cette borne ne « garantit » pas à elle seule la stabilité du consensus, mais elle
+            limite la charge de propagation et de vérification supportée par les nœuds.
+            Dans notre modèle phénoménologique, elle agit donc comme une contrainte supérieure
+            sur la latence $\tau_L(V_B)$ et réduit le risque que la propagation lente augmente
+            le taux de blocs concurrents.
           </p>
         </details>
         <div class="proof-end">∎</div>
@@ -11800,7 +11767,11 @@ document.addEventListener("DOMContentLoaded", () => {
           In 2009, the action of a CPU hash ($h_N = e_{hash} \times \tau_{hash}$) was roughly $10^{-11} \text{ J}\cdot\text{s}$. By 2026, 3nm ASICs compressed this to $10^{-22} \text{ J}\cdot\text{s}$. The network crossed 11 orders of magnitude in 17 years. There are exactly 12 orders of magnitude left to hit the true Planck constant ($h \approx 10^{-34} \text{ J}\cdot\text{s}$). If we model the exponential physical friction required to breach Landauer's limit (necessitating reversible quantum computing), the asymptotic convergence of $h_N \to h$ points directly to the early 22nd century. Beautifully, it flattens exactly around the year <strong>2140</strong>—the mathematically hardcoded date for the 33rd and final halving.
         </p>
         <p lang="fr" style="margin-bottom: 0; font-size: 0.85rem; color: #ccc;">
-          En 2009, l'action d'un hachage CPU ($h_N = e_{hash} \times \tau_{hash}$) était d'environ $10^{-11} \text{ J}\cdot\text{s}$. En 2026, les ASICs 3nm l'ont compressée à $10^{-22} \text{ J}\cdot\text{s}$. Le réseau a franchi 11 ordres de grandeur en 17 ans. Il en reste exactement 12 à franchir pour heurter la véritable constante de Planck ($h \approx 10^{-34} \text{ J}\cdot\text{s}$). Si l'on modélise la résistance physique exponentielle pour briser la limite de Landauer (exigeant le calcul quantique réversible), la convergence asymptotique $h_N \to h$ pointe vers le début du XXIIe siècle. De façon troublante, la courbe s'aplatit totalement aux alentours de l'an <strong>2140</strong> — l'année codée en dur pour le 33ème et ultime halving.
+          En 2009, l'action d'un hachage CPU ($h_N = e_{hash} \times \tau_{hash}$) était d'environ $10^{-11} \text{ J}\cdot\text{s}$. En 2026, les ASICs 3nm l'ont compressée à $10^{-22} \text{ J}\cdot\text{s}$. Le réseau a franchi 11 ordres de grandeur en 17 ans. 
+          La comparaison avec la constante de Planck ($h \approx 10^{-34} \text{ J}\cdot\text{s}$) doit être comprise comme une analogie d’échelle, non comme une trajectoire physique prédictive. 
+          Toute extrapolation vers des limites physiques fondamentales dépendrait de modèles matériels, économiques et thermodynamiques très incertains, et ne peut pas être déduite du protocole Bitcoin seul. 
+          La proximité symbolique avec l’horizon d’émission autour de <strong>2140</strong> 
+          peut être utilisée comme motif narratif, mais ne constitue pas une prédiction physique, juste une trajectoire possible.
         </p>
         <!-- SECTION ÉQUATION DE CONVERGENCE -->
         <div style="margin: 2rem 0; padding: 2rem; background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(0, 255, 204, 0.3); border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #e0e0e0;">
@@ -14404,10 +14375,13 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
       <h2 lang="fr">15. L'Éveil Planétaire : Topologie Intégrale</h2>
       <!-- INTUITION SECTION 14 -->
       <p lang="en" style="margin-bottom: 0.5rem; color: #d4d4d4; font-size: 0.95rem;">
-        <strong>💡 The Intuition:</strong> An equation, no matter how perfectly aligned with the laws of physics, is lifeless without a consciousness to sustain it through time. Reaching the 2140 horizon demands more than silicon; it requires a transcendental human pact. It is the challenge of cathedral builders: uniting generations who will never meet around a single architecture of truth.
+        <strong>💡 The Intuition:</strong> An equation, no matter how perfectly aligned with the laws of physics, is lifeless without a consciousness to sustain it through time. 
+        In other words, a protocol, no matter how elegant, persists only if actors continue to run it, verify it, improve it and use it through time.
+        Reaching the 2140 horizon will require more than silicon: it will depend on the persistence of users, nodes, miners, developers, energy infrastructure and economic incentives capable of sustaining the protocol across generations. It is the challenge of cathedral builders: uniting generations who will never meet around a single architecture of truth.
       </p>
       <p lang="fr" style="margin-bottom: 2rem; color: #d4d4d4; font-size: 0.95rem;">
-        <strong>💡 L'Intuition :</strong> Une équation, aussi parfaite soit-elle, est sans vie si aucune conscience n'est là pour la soutenir à travers le temps. Atteindre l'horizon 2140 exige bien plus que du silicium ; cela requiert un pacte humain transcendantal. C'est le défi des bâtisseurs de cathédrales : unir des générations qui ne se croiseront jamais autour d'une seule et même architecture de la vérité.
+        <strong>💡 L'Intuition :</strong> Une équation, aussi parfaite soit-elle, est sans vie si aucune conscience n'est là pour la soutenir à travers le temps. En d'autres termes, un protocole, aussi élégant soit-il, ne persiste que si des acteurs continuent à l’exécuter, le vérifier, l’améliorer et l’utiliser à travers le temps. 
+        Atteindre l’horizon 2140 ne dépendra pas seulement du silicium : cela exigera la persistance d’un réseau d’utilisateurs, de nœuds, de mineurs, de développeurs, d’infrastructures énergétiques et d’incitations économiques capables de maintenir le protocole sur plusieurs générations. C'est le défi des bâtisseurs de cathédrales : unir des générations qui ne se croiseront jamais autour d'une seule et même architecture de la vérité.
       </p>
       <p lang="en">
         The Nakamoto organism is not a static flowchart. It is a living, vibrant
