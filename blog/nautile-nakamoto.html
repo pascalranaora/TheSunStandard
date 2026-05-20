@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta name="description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck. Analyse mathématique de l'Action de Nakamoto et du Démon de Maxwell." />
-    <meta name="keywords" content="Bitcoin, Nakamoto, thermodynamique, topologie différentielle, MEV, halving, Planck, émergie, autopoïèse, hard science" />
+    <meta name="description" content="Une lecture Scientifique interactive du protocole Nakamoto : preuve de travail, coût énergétique, irréversibilité probabiliste, cycles de halving et analogies thermodynamiques explicitement bornées." />
+    <meta name="keywords" content="Bitcoin, Nakamoto, preuve de travail, thermodynamique, théorie de l'information, halving, consensus, latence réseau, modèle phénoménologique" />
     <meta name="author" content="Votre Nom" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="La Théorie Vivante de Nakamoto | L'Étalon Solaire" />
-    <meta property="og:description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck." />
+    <meta property="og:description" content="Une lecture phénoménologique du protocole Nakamoto reliant preuve de travail, temps discret, coût énergétique et analogies thermodynamiques, sans prétendre à une équivalence physique littérale." />
     <meta property="og:url" content="https://www.thesunstandard.net/nautile-nakamoto.html" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://www.thesunstandard.net/NautileNakamotoIM.png" />
@@ -17,7 +17,7 @@
     <meta property="og:locale:alternate" content="en_US" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="La Théorie Vivante de Nakamoto | L'Étalon Solaire" />
-    <meta name="twitter:description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto." />
+    <meta name="twitter:description" content="Une lecture Scientifique interactive du protocole Nakamoto." />
     <meta name="twitter:image" content="https://www.thesunstandard.net/NautileNakamotoIM.png" />
     <meta name="twitter:creator" content="@VotreHandle" />
     <link rel="canonical" href="https://www.thesunstandard.net/nautile-nakamoto.html" />
@@ -61,168 +61,98 @@
 
     <!-- MathJax -->
     <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const container = document.getElementById("nautilus-container");
-        if (!container) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.getElementById("nautilus-container");
+  if (!container || typeof THREE === 'undefined') return;
 
-        // --- 1. INITIALISATION DE THREE.JS ---
-        const scene = new THREE.Scene();
-        scene.background = new THREE.Color(0x050505);
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0x050505);
 
-        const camera = new THREE.PerspectiveCamera(
-          70, // FOV légèrement réduit pour moins de distorsion
-          container.clientWidth / container.clientHeight,
-          0.1,
-          800, // réduire la far plane
-        );
-        camera.position.set(0, -85, -125);
-        camera.lookAt(0, 0, 0);
+  const camera = new THREE.PerspectiveCamera(68, container.clientWidth / container.clientHeight, 0.1, 600);
+  camera.position.set(0, -85, -125);
+  camera.lookAt(0, 0, 0);
 
-        const renderer = new THREE.WebGLRenderer({
-          antialias: true,
-          alpha: true,
-        });
-        renderer.setSize(container.clientWidth, container.clientHeight);
-        container.appendChild(renderer.domElement);
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
 
-        // Contrôles pour interagir avec la souris
-        const controls = new THREE.OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
-        // On centre la caméra sur la moitié de l'axe temporel (33 / 2 = 16.5)
-        controls.target.set(0, 0, 16.5);
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.06;
+  controls.target.set(0, 0, 16.5);
 
-        // --- 2. LES MATHÉMATIQUES DU NAUTILE (Jusqu'en 2140) ---
-        const numPoints = 8000; // Augmenté pour garder la courbe lisse sur 33 tours
-        const halvings = 33.0; // 33 Halvings jusqu'à la fin de l'émission
+  // === Mathématiques du nautile (jusqu'en 2140) ===
+  const numPoints = 7200;
+  const halvings = 33.0;
+  const infoVertices = [], emergyVertices = [], daaVertices = [];
 
-        const infoVertices = [];
-        const emergyVertices = [];
-        const daaVertices = [];
+  const P_max = 3.5, r_base = 0.5, k_growth = 1.5, z_mid = 5.0;
 
-        const P_max = 3.5;
-        const r_base = 0.5;
-        const k_growth = 1.5;
-        const z_mid = 5.0;
+  for (let i = 0; i <= numPoints; i++) {
+    const theta = (i / numPoints) * (halvings * 2 * Math.PI);
+    const z_time = theta / (2 * Math.PI);
 
-        for (let i = 0; i <= numPoints; i++) {
-          // Theta va de 0 à 33 cycles (66 pi)
-          const theta = (i / numPoints) * (halvings * 2 * Math.PI);
-          const z_time = theta / (2 * Math.PI);
+    const r_info = 10.0 * Math.pow(0.5, z_time);
+    infoVertices.push(r_info * Math.cos(theta), r_info * Math.sin(theta), z_time);
 
-          // Brin 1 : L'Information (Cœur d'Or)
-          // Réduction STRICTE de moitié à chaque cycle (disparition du +1.5)
-          const r_info = 10.0 * Math.pow(0.5, z_time);
-          const x_info = r_info * Math.cos(theta);
-          const y_info = r_info * Math.sin(theta);
-          infoVertices.push(x_info, y_info, z_time);
+    const r_emergy = r_base + (P_max / k_growth) * Math.log(1 + Math.exp(k_growth * (z_time - z_mid)));
+    emergyVertices.push(r_emergy * Math.cos(theta + Math.PI), r_emergy * Math.sin(theta + Math.PI), z_time);
 
-          // Brin 2 : L'Émergie (Spirale d'Archimède Logistique - Feu)
-          const r_emergy =
-            r_base +
-            (P_max / k_growth) *
-              Math.log(1.0 + Math.exp(k_growth * (z_time - z_mid)));
-          const x_emergy = r_emergy * Math.cos(theta + Math.PI);
-          const y_emergy = r_emergy * Math.sin(theta + Math.PI);
-          emergyVertices.push(x_emergy, y_emergy, z_time);
+    if (i % 11 === 0) {
+      daaVertices.push(r_info * Math.cos(theta), r_info * Math.sin(theta), z_time);
+      daaVertices.push(r_emergy * Math.cos(theta + Math.PI), r_emergy * Math.sin(theta + Math.PI), z_time);
+    }
+  }
 
-          // Liaisons DAA (Ponts entre les deux) - On en dessine 1 sur 12 pour aérer
-          if (i % 12 === 0) {
-            daaVertices.push(x_info, y_info, z_time);
-            daaVertices.push(x_emergy, y_emergy, z_time);
-          }
-        }
+  // Géométries
+  const infoGeo = new THREE.BufferGeometry();
+  infoGeo.setAttribute('position', new THREE.Float32BufferAttribute(infoVertices, 3));
+  const infoLine = new THREE.Line(infoGeo, new THREE.LineBasicMaterial({ color: 0xffcc00, linewidth: 2.2 }));
+  scene.add(infoLine);
 
-        // --- 3. CRÉATION DES GÉOMÉTRIES ET MATÉRIAUX ---
+  const emergyGeo = new THREE.BufferGeometry();
+  emergyGeo.setAttribute('position', new THREE.Float32BufferAttribute(emergyVertices, 3));
+  const emergyLine = new THREE.Line(emergyGeo, new THREE.LineBasicMaterial({ color: 0xff5500, linewidth: 2.2 }));
+  scene.add(emergyLine);
 
-        // Ligne Information (Or)
-        const infoGeo = new THREE.BufferGeometry();
-        infoGeo.setAttribute(
-          "position",
-          new THREE.Float32BufferAttribute(infoVertices, 3),
-        );
-        const infoMat = new THREE.LineBasicMaterial({
-          color: 0xffcc00,
-          linewidth: 2,
-        });
-        const infoLine = new THREE.Line(infoGeo, infoMat);
-        scene.add(infoLine);
+  const daaGeo = new THREE.BufferGeometry();
+  daaGeo.setAttribute('position', new THREE.Float32BufferAttribute(daaVertices, 3));
+  scene.add(new THREE.LineSegments(daaGeo, new THREE.LineBasicMaterial({ color: 0xffffff, transparent: true, opacity: 0.12 })));
 
-        // Ligne Émergie (Rouge Feu)
-        const emergyGeo = new THREE.BufferGeometry();
-        emergyGeo.setAttribute(
-          "position",
-          new THREE.Float32BufferAttribute(emergyVertices, 3),
-        );
-        const emergyMat = new THREE.LineBasicMaterial({
-          color: 0xff4400,
-          linewidth: 2,
-        });
-        const emergyLine = new THREE.Line(emergyGeo, emergyMat);
-        scene.add(emergyLine);
+  // Grille
+  const grid = new THREE.GridHelper(38, 38, 0x222222, 0x111111);
+  grid.rotation.x = Math.PI / 2;
+  grid.position.z = 16.5;
+  scene.add(grid);
 
-        // Liaisons DAA (Blanc transparent)
-        const daaGeo = new THREE.BufferGeometry();
-        daaGeo.setAttribute(
-          "position",
-          new THREE.Float32BufferAttribute(daaVertices, 3),
-        );
-        const daaMat = new THREE.LineBasicMaterial({
-          color: 0xffffff,
-          transparent: true,
-          opacity: 0.15,
-        });
-        const daaLines = new THREE.LineSegments(daaGeo, daaMat);
-        scene.add(daaLines);
+  let currentPoint = 0;
+  const clock = new THREE.Clock();
 
-        // --- 4. ANIMATION DE CROISSANCE (MORPHOGENÈSE) ---
-        let currentPoint = 0;
-        let animationSpeed = 12; // Accéléré pour dessiner 8000 points de manière fluide
+  function animate() {
+    requestAnimationFrame(animate);
+    if (currentPoint <= numPoints) {
+      infoGeo.setDrawRange(0, currentPoint);
+      emergyGeo.setDrawRange(0, currentPoint);
+      currentPoint += 14;
+    }
+    const t = clock.getElapsedTime();
+    scene.rotation.z = Math.PI + t * 0.048;
+    controls.update();
+    renderer.render(scene, camera);
+  }
 
-        // Grille de fond ajustée pour couvrir la longueur
-        const gridHelper = new THREE.GridHelper(40, 40, 0x222222, 0x111111);
-        gridHelper.rotation.x = Math.PI / 2;
-        gridHelper.position.z = 16.5; // Centrée sur la structure
-        scene.add(gridHelper);
+  window.addEventListener("resize", () => {
+    if (container.clientWidth > 0) {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+  });
 
-        const clock = new THREE.Clock();
-
-        function animate() {
-          requestAnimationFrame(animate);
-
-          // 1. Croissance progressive de la structure
-          if (currentPoint <= numPoints) {
-            infoGeo.setDrawRange(0, currentPoint);
-            emergyGeo.setDrawRange(0, currentPoint);
-            daaGeo.setDrawRange(0, Math.floor(currentPoint / 12) * 2);
-
-            currentPoint += animationSpeed;
-          }
-
-          // 2. Rotation très lente de la structure
-          const elapsedTime = clock.getElapsedTime();
-          // Le Math.PI initial expose la belle face "brillante" au chargement
-          scene.rotation.z = Math.PI + elapsedTime * 0.05;
-          scene.rotation.y = Math.PI;
-          // Mise à jour des contrôles
-          controls.update();
-
-          // Rendu final
-          renderer.render(scene, camera);
-        }
-
-        // Gérer le redimensionnement de la fenêtre
-        window.addEventListener("resize", () => {
-          if (container.clientWidth > 0) {
-            camera.aspect = container.clientWidth / container.clientHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(container.clientWidth, container.clientHeight);
-          }
-        });
-
-        animate();
-      });
-    </script>
+  animate();
+});
+</script>
     <script>window.addEventListener("scroll", () => {
   const scrollTop = window.scrollY;
   const docHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -280,9 +210,9 @@
       async
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
     ></script>
-    <!-- Three.js pour le rendu 3D -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- Three.js + OrbitControls (version cohérente) -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
     <!-- Highlight.js -->
     <link
       rel="stylesheet"
@@ -1366,10 +1296,10 @@
         >
 
         <h1 class="article-title" lang="en" style="margin-bottom: 0.5rem">
-          An Interactive Scientific Study of the Nakamoto Protocol
+          An Interactive Scientific Reading of the Nakamoto Protocol
         </h1>
         <h1 class="article-title" lang="fr" style="margin-bottom: 0.5rem">
-          Une Étude Scientifique Interactive du Protocole Nakamoto
+          Une Lecture Scientifique Interactive du Protocole Nakamoto
         </h1>
 
         <p
@@ -1498,7 +1428,7 @@
           synthétique : la <strong>Théorie Vivante de Nakamoto</strong>. En
           définissant un <strong>tenseur d'état orthogonal</strong> liant
           l'espace physique empirique (Hashrate) et l'espace informationnel
-          déterministe (Offre), nous démontrons que le consensus obéit à une
+          déterministe (Offre), nous illustrons comment le consensus obéit à une
           stricte loi de divergence nulle. Ce cadre topologique unifié permet de
           prouver mathématiquement l'invariance d'échelle spatio-temporelle du
           réseau, de formaliser les limites mécaniques de l'expansion des blocs
@@ -6658,7 +6588,7 @@ $$
         Comment cette géométrie est-elle construite ? La validité d'un bloc est déterminée purement par des inéquations mathématiques représentant les règles du protocole — telles que les limites de capacité, la topologie 
         <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span> 
         des transactions, et la maximisation de la 
-        <span class="tooltip">MEV<span class="tooltiptext"><strong>Valeur Extractible Maximale (Maximal Extractable Value)</strong>. Concept surtout développé dans les environnements à contrats intelligents expressifs. Dans Bitcoin, l’analogue le plus direct est plus limité : les mineurs sélectionnent, excluent ou ordonnent les transactions principalement selon les frais, la taille, les dépendances et les politiques de mempool. Le terme MEV doit donc être compris ici dans un sens restreint.</span></span>. 
+        <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 par absence d'expressivité du script.</span></span>.
         Chaque règle agit comme un <strong>hyperplan</strong> ($H_i$) divisant l'espace des phases de toutes les permutations possibles du Mempool en demi-espaces valides et invalides :
       </p>
 
@@ -16134,12 +16064,6 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           </button>
         </form>
       </div>
-
-      <div id="success-popup" class="feedback-popup">
-        <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
-        <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
-      </div>
-
       <div id="success-popup" class="feedback-popup">
         <span lang="en">✅ Feedback successfully submitted! Thank you.</span>
         <span lang="fr">✅ Retour envoyé avec succès ! Merci.</span>
@@ -18695,8 +18619,8 @@ print(f"✅ Animation générée : {gif_filename}")
   "@context": "https://schema.org",
   "@type": "TechArticle",
   "headline": "La Théorie Vivante de Nakamoto | L'Étalon Solaire",
-  "alternativeHeadline": "An Interactive Scientific Study of the Nakamoto Protocol",
-  "description": "Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck.",
+  "alternativeHeadline": "An Interactive Scientific Reading of the Nakamoto Protocol",
+  "description": "Une lecture Scientifique interactive du protocole Nakamoto, liant l'émission monétaire à la limite de Planck.",
   "author": {
     "@type": "Person",
     "name": "Votre Nom"
