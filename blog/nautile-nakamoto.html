@@ -1,27 +1,63 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-LFDV8LWZSL"
-    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta name="description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck. Analyse mathématique de l'Action de Nakamoto et du Démon de Maxwell." />
+    <meta name="keywords" content="Bitcoin, Nakamoto, thermodynamique, topologie différentielle, MEV, halving, Planck, émergie, autopoïèse, hard science" />
+    <meta name="author" content="Votre Nom" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="La Théorie Vivante de Nakamoto | L'Étalon Solaire" />
+    <meta property="og:description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck." />
+    <meta property="og:url" content="https://www.thesunstandard.net/nautile-nakamoto.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.thesunstandard.net/NautileNakamotoIM.png" />
+    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="La Théorie Vivante de Nakamoto | L'Étalon Solaire" />
+    <meta name="twitter:description" content="Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto." />
+    <meta name="twitter:image" content="https://www.thesunstandard.net/NautileNakamotoIM.png" />
+    <meta name="twitter:creator" content="@VotreHandle" />
+    <link rel="canonical" href="https://www.thesunstandard.net/nautile-nakamoto.html" />
+    <title>La Théorie Vivante de Nakamoto | L'Étalon Solaire</title>
+    <!-- AJOUTEZ APRÈS LA BALISE <title> -->
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" as="script" crossorigin />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js" as="script" crossorigin />
+    
+    <!-- REMPLACEZ LES LIGNES 22-35 (script gtag inline) PAR CE BLOC -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
+      img-src 'self' data: https://www.googletagmanager.com https://www.thesunstandard.net;
+      font-src 'self' https://cdn.jsdelivr.net;
+      connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com;
+      frame-src 'none';
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      frame-ancestors 'none';
+      block-all-mixed-content;
+      upgrade-insecure-requests;
+    " />
+    <!-- AJOUTEZ APRÈS LA BALISE <meta http-equiv="Content-Security-Policy"> -->
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+
+    <!-- Puis ajoutez ce script externe (pas inline) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LFDV8LWZSL" integrity="sha384-..." crossorigin="anonymous"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-LFDV8LWZSL");
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LFDV8LWZSL');
     </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
-    <title>La Théorie Vivante de Nakamoto | L'Étalon Solaire</title>
 
     <!-- MathJax -->
     <script>
@@ -1278,7 +1314,17 @@
   .model-note strong {
     color: #fff1a6;
   }
-
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
     </style>
   </head>
   <body class="lang-en">
@@ -1288,19 +1334,23 @@
       ⌁ 0%
     </div>
 
-    <nav>
-      <a href="index.html" class="logo">☀ Blog</a>
+    <!-- REMPLACEZ LE BLOC <nav> (lignes 100-120) PAR CE BLOC -->
+    <nav aria-label="Navigation principale" role="navigation">
+      <a href="index.html" class="logo" aria-label="Accueil du blog">
+        <span class="logo-icon" aria-hidden="true">☀</span>
+        <span class="sr-only">L'Étalon Solaire - Blog</span>
+      </a>
       <div class="nav-center">
-        <a href="index.html" class="back">
+        <a href="index.html" class="back" aria-label="Retour aux articles">
           <span lang="en">← Back to articles</span>
           <span lang="fr">← Retour aux articles</span>
         </a>
       </div>
-      <div class="lang-toggle">
-        <button onclick="setLang('en')" id="btn-en" aria-label="English">
+      <div class="lang-toggle" role="group" aria-label="Changement de langue">
+        <button onclick="setLang('en')" id="btn-en" aria-label="Afficher en anglais" aria-current="false">
           EN 🇬🇧
         </button>
-        <button onclick="setLang('fr')" id="btn-fr" aria-label="Français">
+        <button onclick="setLang('fr')" id="btn-fr" aria-label="Afficher en français" aria-current="true">
           FR 🇫🇷
         </button>
       </div>
@@ -18640,5 +18690,37 @@ print(f"✅ Animation générée : {gif_filename}")
     drawFreeEnergyLandscape("free-energy-plot-en", "en");
     drawFreeEnergyLandscape("free-energy-plot-fr", "fr");
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "La Théorie Vivante de Nakamoto | L'Étalon Solaire",
+  "alternativeHeadline": "An Interactive Scientific Study of the Nakamoto Protocol",
+  "description": "Une étude interactive en topologie différentielle et thermodynamique du protocole Nakamoto, liant l'émission monétaire à la limite de Planck.",
+  "author": {
+    "@type": "Person",
+    "name": "Votre Nom"
+  },
+  "datePublished": "2026-05-05",
+  "dateModified": "2026-05-05",
+  "publisher": {
+    "@type": "Organization",
+    "name": "L'Étalon Solaire",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.thesunstandard.net/blog/NautileNakamotoIM.png"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.thesunstandard.net/nautile-nakamoto.html"
+  },
+  "image": "https://www.thesunstandard.net/blog/NautileNakamotoIM.png",
+  "keywords": ["Bitcoin", "Nakamoto", "thermodynamique", "topologie différentielle", "Planck"],
+  "articleBody": "Contenu complet de l'article...",
+  "wordCount": "12500",
+  "inLanguage": ["fr", "en"]
+}
+</script>
   </body>
 </html>
