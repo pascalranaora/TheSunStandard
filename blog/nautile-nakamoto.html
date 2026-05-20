@@ -1491,7 +1491,67 @@ document.addEventListener("DOMContentLoaded", () => {
   </p>
 </div>
       </div>
+<!-- ========================================== -->
+      <!-- SECTION PRÉREQUIS : VIDÉOS INTRODUCTIVES   -->
+      <!-- ========================================== -->
+      <div 
+        class="proof-box" 
+        style="
+          border: 1px solid rgba(68, 153, 255, 0.3); 
+          background: rgba(68, 153, 255, 0.03); 
+          padding: 2.5rem; 
+          border-radius: 12px; 
+          margin-bottom: 3.5rem;
+          box-shadow: inset 0 0 20px rgba(68, 153, 255, 0.05);
+        "
+      >
+        <div class="proof-title" lang="en" style="color: #4499ff; font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+          🔰 Prerequisite: Blockchain Basics
+        </div>
+        <div class="proof-title" lang="fr" style="color: #4499ff; font-style: normal; font-weight: 800; font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem;">
+          🔰 Prérequis : Les Bases de la Blockchain
+        </div>
+        
+        <p lang="en" style="margin-bottom: 2.5rem; color: #d4d4d4; font-size: 1.05rem; line-height: 1.6;">
+          To fully appreciate the theoretical depth of this document, a minimum understanding of how a blockchain operates is required. For our French-speaking audience, we highly recommend watching these two excellent introductory videos before proceeding.
+        </p>
+        <p lang="fr" style="margin-bottom: 2.5rem; color: #d4d4d4; font-size: 1.05rem; line-height: 1.6;">
+          Pour apprécier pleinement la profondeur théorique de ce document, une connaissance minimale du fonctionnement d'une blockchain est nécessaire. Si vous découvrez totalement cet univers, nous vous recommandons vivement de visionner ces deux excellentes vidéos introductives avant de poursuivre votre lecture.
+        </p>
 
+        <!-- Conteneur Flex pour les vidéos (Côte à côte sur PC, empilées sur mobile) -->
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+          
+          <!-- Vidéo 1 -->
+          <div style="flex: 1 1 300px; max-width: 500px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+              <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                src="https://www.youtube.com/embed/U4S-RGNyTJA" 
+                title="Le Bitcoin et la Blockchain" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <!-- Vidéo 2 -->
+          <div style="flex: 1 1 300px; max-width: 500px;">
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 8px 25px rgba(0,0,0,0.6); border: 1px solid rgba(255,255,255,0.1);">
+              <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" 
+                src="https://www.youtube.com/embed/Tmp4C9rnL98" 
+                title="La cryptographie derrière Bitcoin" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+        </div>
+      </div>
       <div
         style="
           background: rgba(255, 255, 255, 0.02);
