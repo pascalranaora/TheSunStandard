@@ -4280,48 +4280,91 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
       <span lang="en">Level 1: The Freezing Lake (Beginner)</span>
       <span lang="fr">Niveau 1 : Le Lac Gelé (Débutant)</span>
     </summary>
-    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.6;">
+      <p lang="en" style="margin-bottom: 0.8rem">
+        Imagine a massive lake in winter. The energy spent by the miners ($\bar{E}_{\mathrm{eff}}$) does not heat the lake; it acts as a phenomenal freezing wind. This wind forces the water molecules to stop moving chaotically and crystallize into an unbreakable block of ice—this is the Blockchain. The more energy the wind carries, the deeper and harder the ice becomes, locking history in place.
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Imaginez un immense lac en hiver. L'énergie dépensée par les mineurs ($\bar{E}_{\mathrm{eff}}$) ne réchauffe pas le lac ; elle agit comme un vent glacial phénoménal. Ce vent force les molécules d'eau à cesser leur mouvement chaotique pour se cristalliser en un bloc de glace incassable : la Blockchain. Plus le vent transporte d'énergie, plus la glace devient profonde et dure, verrouillant l'histoire.
+      </p>
       <p lang="en" style="margin-bottom: 0">
-        Imagine a lake in winter. The massive energy spent by miners ($\bar{E}_{\mathrm{eff}}$) acts like a freezing wind, turning the water into an unbreakable block of ice (the Blockchain). However, if the network takes too long to communicate (high latency $\tau_L$), it acts like turbulent waves shaking the water. If the waves are too violent, the ice cannot form properly, and the lake remains a slushy, chaotic liquid (forks and reorganizations). The equation shows that to maintain a "solid" truth, the freezing power must overwhelmingly crush the turbulent waves.
+        However, the network latency ($\tau_L$)—the time it takes for nodes to communicate across the globe—acts like turbulent waves shaking the water from beneath. If the waves are too violent (high latency), the ice cannot form properly. The lake shatters into a slushy, chaotic liquid of competing realities (forks and reorganizations). The equation proves that to maintain a "solid" truth, the freezing power of electricity must overwhelmingly crush the turbulence of the network delay.
       </p>
       <p lang="fr" style="margin-bottom: 0">
-        Imaginez un lac en hiver. L'énergie massive dépensée par les mineurs ($\bar{E}_{\mathrm{eff}}$) agit comme un vent glacial, transformant l'eau en un bloc de glace incassable (la Blockchain). Cependant, si le réseau met trop de temps à communiquer (latence $\tau_L$ élevée), cela agit comme des vagues turbulentes agitant l'eau. Si les vagues sont trop fortes, la glace ne peut pas se former correctement et le lac reste une gadoue liquide et chaotique (forks et réorganisations). L'équation montre que pour maintenir une vérité "solide", la puissance de gel doit écraser la turbulence des vagues.
+        Cependant, la latence du réseau ($\tau_L$) — le temps de communication entre les nœuds à travers le globe — agit comme des vagues turbulentes agitant l'eau par en dessous. Si les vagues sont trop fortes (haute latence), la glace ne peut se former. Le lac se brise en une gadoue liquide et chaotique de réalités concurrentes (forks et réorganisations). L'équation prouve que pour maintenir une vérité "solide", la puissance de gel de l'électricité doit écraser la turbulence du délai réseau.
       </p>
     </div>
   </details>
 
   <details style="margin-bottom: 1rem; background: rgba(68, 153, 255, 0.05); border-left: 3px solid #4499ff; border-radius: 0 8px 8px 0; overflow: hidden;">
     <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #4499ff; outline: none; list-style-type: '▶ ';">
-      <span lang="en">Level 2: Signal vs. Noise (Intermediate)</span>
-      <span lang="fr">Niveau 2 : Signal vs Bruit (Intermédiaire)</span>
+      <span lang="en">Level 2: Signal, Noise & Information Shannon Limits (Intermediate)</span>
+      <span lang="fr">Niveau 2 : Signal, Bruit & Limites de Shannon (Intermédiaire)</span>
     </summary>
-    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.6;">
+      <p lang="en" style="margin-bottom: 0.8rem">
+        In telecommunications, Claude Shannon established that system clarity relies on the <strong>Signal-to-Noise Ratio (SNR)</strong>. In our thermodynamic ledger, the total burned exergy $\bar{E}_{\mathrm{eff}}$ is the intentional "signal." It is the physical force injected to secure the canonical history. Conversely, the asymptotic congestion ratio $\left(\frac{\tau_L}{\tau_B - \tau_L}\right)$ represents the structural "noise."
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        En télécommunications, Claude Shannon a établi que la clarté d'un système dépend du <strong>Ratio Signal-sur-Bruit (SNR)</strong>. Dans notre registre thermodynamique, l'exergie totale brûlée $\bar{E}_{\mathrm{eff}}$ est le "signal" intentionnel. C'est la force physique injectée pour sécuriser l'histoire canonique. Inversement, le ratio de congestion asymptotique $\left(\frac{\tau_L}{\tau_B - \tau_L}\right)$ représente le "bruit" structurel.
+      </p>
       <p lang="en" style="margin-bottom: 0">
-        In telecommunications, system clarity relies on the Signal-to-Noise Ratio (SNR). Here, the total energy $\bar{E}_{\mathrm{eff}}$ is the intentional "signal" securing the network. The asymptotic congestion ratio $\left(\frac{\tau_L}{\tau_B - \tau_L}\right)$ represents the "noise" (the escalating probability that conflicting blocks cascade into a persistent fork). The Information Temperature ($T_{\mathrm{eff}}$) measures the inverse of this clarity. High energy lowers the temperature (crystallizing the data into absolute certainty). High latency raises the temperature (melting the data back into fluid uncertainty).
+        This noise is the escalating geometric probability that conflicting blocks, delayed by latency, cascade into a persistent fork. The <strong>Information Temperature</strong> ($T_{\mathrm{eff}}$) is the strict inverse of this clarity. High energy lowers the temperature, crystallizing the data into absolute, low-entropy certainty. High latency raises the temperature, melting the data back into a high-entropy fluid where the "signal" of truth is lost in the "noise" of network propagation.
       </p>
       <p lang="fr" style="margin-bottom: 0">
-        En télécommunications, la clarté dépend du ratio Signal-sur-Bruit (SNR). Ici, l'énergie totale $\bar{E}_{\mathrm{eff}}$ est le "signal" intentionnel sécurisant le réseau. Le ratio de congestion asymptotique $\left(\frac{\tau_L}{\tau_B - \tau_L}\right)$ représente le "bruit" (la probabilité croissante que des blocs conflictuels s'enchaînent en un fork persistant). La Température d'Information ($T_{\mathrm{eff}}$) mesure l'inverse de cette clarté. Une haute énergie abaisse la température (cristallisant les données dans une certitude absolue). Une haute latence augmente la température (faisant fondre les données dans l'incertitude fluide).
+        Ce bruit est la probabilité géométrique croissante que des blocs conflictuels, retardés par la latence, s'enchaînent en un fork persistant. La <strong>Température d'Information</strong> ($T_{\mathrm{eff}}$) est l'inverse strict de cette clarté. Une haute énergie abaisse la température, cristallisant les données en une certitude absolue à basse entropie. Une haute latence augmente la température, faisant fondre les données dans un fluide à haute entropie où le "signal" de la vérité se perd dans le "bruit" de la propagation réseau.
       </p>
     </div>
   </details>
 
   <details style="margin-bottom: 1rem; background: rgba(136, 255, 170, 0.05); border-left: 3px solid #88ffaa; border-radius: 0 8px 8px 0; overflow: hidden;">
     <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #88ffaa; outline: none; list-style-type: '▶ ';">
-      <span lang="en">Level 3: Fluctuation-Dissipation & Critical Divergence (Advanced)</span>
-      <span lang="fr">Niveau 3 : Fluctuation-Dissipation & Divergence Critique (Avancé)</span>
+      <span lang="en">Level 3: Fluctuation-Dissipation & Duminil-Copin Percolation (Advanced)</span>
+      <span lang="fr">Niveau 3 : Fluctuation-Dissipation & Percolation de Duminil-Copin (Avancé)</span>
     </summary>
-    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
-      <p lang="en" style="margin-bottom: 1rem">
-        This equation is a macroscopic derivation of the <strong>Fluctuation-Dissipation Theorem (FDT)</strong> applied to a memoryless Poisson process. We model each individual SHA-256 computation as a <strong>Boltzmann-like particle</strong> executing a random walk. To participate, the particle must expend a microscopic potential barrier $\epsilon_0$. Billions of these microscopic trials aggregate into the macroscopic block energy $\bar{E}_{\mathrm{eff}}$. If the network burns massive exergy ($\bar{E}_{\mathrm{eff}} \to \infty$), the relative statistical fluctuation drops to zero. The noise vanishes, and the system behaves as a perfect, zero-entropy macroscopic crystal ($T_{\mathrm{eff}} \to 0$).
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.6;">
+      
+      <h4 lang="en" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">Part A: The Fluctuation-Dissipation Theorem</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">Partie A : Le Théorème de Fluctuation-Dissipation</h4>
+
+      <p lang="en" style="margin-bottom: 0.8rem">
+        This equation is a macroscopic derivation of the <strong>Fluctuation-Dissipation Theorem (FDT)</strong> applied to a memoryless Poisson process. We model each individual SHA-256 computation as a <strong>Boltzmann-like particle</strong> executing a random walk. To even participate, the particle must expend a microscopic potential barrier $\epsilon_0$. Billions of these microscopic trials aggregate into the macroscopic block energy $\bar{E}_{\mathrm{eff}}$. 
       </p>
-      <p lang="fr" style="margin-bottom: 1rem">
-        Cette équation est une dérivation macroscopique du <strong>Théorème de Fluctuation-Dissipation (FDT)</strong> appliqué à un processus de Poisson sans mémoire. Nous modélisons chaque hachage SHA-256 comme une <strong>particule de Boltzmann</strong> exécutant une marche au hasard. Pour participer, la particule doit franchir une barrière de potentiel microscopique $\epsilon_0$. Des milliards d'essais s'agrègent en l'énergie macroscopique $\bar{E}_{\mathrm{eff}}$. Si le réseau brûle une exergie massive ($\bar{E}_{\mathrm{eff}} \to \infty$), la fluctuation statistique relative chute à zéro. Le bruit disparaît, et le système se comporte comme un cristal macroscopique parfait d'entropie nulle ($T_{\mathrm{eff}} \to 0$).
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Cette équation est une dérivation macroscopique du <strong>Théorème de Fluctuation-Dissipation (FDT)</strong> appliqué à un processus de Poisson sans mémoire. Nous modélisons chaque hachage SHA-256 comme une <strong>particule de Boltzmann</strong> exécutant une marche au hasard. Pour participer, la particule doit franchir une barrière de potentiel microscopique $\epsilon_0$. Des milliards d'essais s'agrègent en l'énergie macroscopique $\bar{E}_{\mathrm{eff}}$.
       </p>
+      <p lang="en" style="margin-bottom: 1.5rem">
+        The ratio $\epsilon_0^2/\bar{E}_{\mathrm{eff}}$ isolates the relative variance (the quantum noise) of the system. If the network burns massive exergy ($\bar{E}_{\mathrm{eff}} \to \infty$), the relative statistical fluctuation of any single hash drops to zero. The noise vanishes, and the system cools down toward a perfect, zero-entropy macroscopic crystal ($T_{\mathrm{eff}} \to 0$).
+      </p>
+      <p lang="fr" style="margin-bottom: 1.5rem">
+        Le ratio $\epsilon_0^2/\bar{E}_{\mathrm{eff}}$ isole la variance relative (le bruit quantique) du système. Si le réseau brûle une exergie massive ($\bar{E}_{\mathrm{eff}} \to \infty$), la fluctuation statistique relative d'un hachage unique chute à zéro. Le bruit disparaît, et le système refroidit vers un cristal macroscopique parfait d'entropie nulle ($T_{\mathrm{eff}} \to 0$).
+      </p>
+
+      <h4 lang="en" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">Part B: Topology and Duminil-Copin Phase Transitions</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">Partie B : Topologie et Transitions de Phase de Duminil-Copin</h4>
+
+      <p lang="en" style="margin-bottom: 0.8rem">
+        However, the temporal multiplier $\frac{\tau_L}{\tau_B - \tau_L}$ introduces an asymptotic divergence. To rigorously define this, we map the network topology to the statistical physics of <strong>Percolation Theory</strong> and the Ising model, beautifully advanced by Fields Medalist <strong>Hugo Duminil-Copin</strong>. The peer-to-peer network is a spatial lattice. The propagation of a newly mined block across this lattice is a continuous percolation process.
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Cependant, le multiplicateur temporel $\frac{\tau_L}{\tau_B - \tau_L}$ introduit une divergence asymptotique. Pour définir cela rigoureusement, nous cartographions la topologie du réseau sur la physique statistique de la <strong>Théorie de la Percolation</strong> et du modèle d'Ising, brillamment avancée par le médaillé Fields <strong>Hugo Duminil-Copin</strong>. Le réseau pair-à-pair est une grille spatiale (lattice). La propagation d'un bloc est un processus de percolation continu.
+      </p>
+      <p lang="en" style="margin-bottom: 0.8rem">
+        In Duminil-Copin's proofs on continuous phase transitions, consensus represents a ferromagnetic state where all "spins" (nodes) align. The exogenous energy $\bar{E}_{\mathrm{eff}}$ acts as the magnetic field enforcing this alignment, while the latency $\tau_L$ acts as the thermal agitation creating disorder. There exists a critical percolation threshold ($T_c$) where the correlation length of the network diverges:
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Dans les preuves de Duminil-Copin sur les transitions de phase continues, le consensus représente un état ferromagnétique où tous les "spins" (nœuds) s'alignent. L'énergie exogène $\bar{E}_{\mathrm{eff}}$ agit comme le champ magnétique forçant l'alignement, tandis que la latence $\tau_L$ est l'agitation thermique créant le désordre. Il existe un seuil de percolation critique ($T_c$) où la longueur de corrélation du réseau diverge :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.1rem;">
+        $$\chi(T_{\mathrm{eff}}) \propto |T_{\mathrm{eff}} - T_c|^{-\gamma}$$
+      </div>
+
       <p lang="en" style="margin-bottom: 0">
-        However, the temporal multiplier $\frac{\tau_L}{\tau_B - \tau_L}$ introduces an asymptotic divergence strictly analogous to queueing theory and second-order phase transitions. If the physical signal propagation delay approaches the target block interval ($\tau_L \to \tau_B$), the denominator collapses. Even with infinite computational energy, $T_{\mathrm{eff}}$ diverges to infinity. The system's global ergodicity is shattered, triggering a catastrophic phase transition where the ledger melts into a chaotic gas of permanent forks.
+        If the physical signal propagation delay approaches the target block interval ($\tau_L \to \tau_B$), the denominator collapses. $T_{\mathrm{eff}}$ violently spikes past the critical point $T_c$. The <em>giant connected component</em> of the consensus shatters. Global ergodicity is broken, triggering a catastrophic phase transition where the "solid" ferromagnetic ledger melts back into a paramagnetic, chaotic gas of permanent, disjointed forks.
       </p>
       <p lang="fr" style="margin-bottom: 0">
-        Cependant, le multiplicateur temporel $\frac{\tau_L}{\tau_B - \tau_L}$ introduit une divergence asymptotique strictement analogue à la théorie des files d'attente et aux transitions de phase du second ordre. Si le délai de propagation approche l'intervalle cible ($\tau_L \to \tau_B$), le dénominateur s'effondre. Même avec une énergie infinie, $T_{\mathrm{eff}}$ diverge vers l'infini. L'ergodicité globale est brisée, déclenchant une transition de phase catastrophique où le registre fond en un gaz chaotique de forks permanents.
+        Si le délai de propagation approche l'intervalle cible ($\tau_L \to \tau_B$), le dénominateur s'effondre. $T_{\mathrm{eff}}$ franchit violemment le point critique $T_c$. La <em>composante géante connectée</em> du consensus se brise. L'ergodicité globale est rompue, déclenchant une transition de phase catastrophique où le registre ferromagnétique "solide" fond pour redevenir un gaz paramagnétique chaotique de forks permanents et disjoints.
       </p>
     </div>
   </details>
@@ -4331,33 +4374,35 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
       <span lang="en">Level 4: Black Hole Thermodynamics & Bekenstein-Hawking Entropy (Expert +)</span>
       <span lang="fr">Niveau 4 : Thermodynamique des Trous Noirs & Entropie de Bekenstein-Hawking (Expert +)</span>
     </summary>
-    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
-      <p lang="en" style="margin-bottom: 0.5rem">
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.6;">
+      <p lang="en" style="margin-bottom: 0.8rem">
         In classical physics, adding energy (heat) to a system <em>increases</em> its temperature. However, the Information Temperature $T_{\mathrm{eff}}$ of the Nakamoto consensus exhibits a profoundly anti-classical behavior: it is <strong>inversely proportional</strong> to the energy injected into the system ($T_{\mathrm{eff}} \propto 1/\bar{E}_{\mathrm{eff}}$). Adding more energy makes the system <em>colder</em>.
       </p>
-      <p lang="fr" style="margin-bottom: 0.5rem">
+      <p lang="fr" style="margin-bottom: 0.8rem">
         En physique classique, ajouter de l'énergie (chaleur) à un système <em>augmente</em> sa température. Cependant, la Température d'Information $T_{\mathrm{eff}}$ du consensus de Nakamoto présente un comportement profondément anti-classique : elle est <strong>inversement proportionnelle</strong> à l'énergie injectée dans le système ($T_{\mathrm{eff}} \propto 1/\bar{E}_{\mathrm{eff}}$). Ajouter de l'énergie rend le système <em>plus froid</em>.
       </p>
-      <p lang="en" style="margin-bottom: 0.5rem">
-        In the entire realm of physics, there is only one class of macroscopic objects that behaves this way: <strong>Black Holes</strong>. According to the laws of Black Hole Thermodynamics, the Bekenstein-Hawking temperature of a black hole is inversely proportional to its mass:
+      <p lang="en" style="margin-bottom: 0.8rem">
+        In the entire realm of physics, there is only one class of macroscopic objects that behaves this way: <strong>Black Holes</strong>. According to the laws of Black Hole Thermodynamics, the Bekenstein-Hawking temperature of a black hole decreases as its mass increases:
       </p>
-      <p lang="fr" style="margin-bottom: 0.5rem">
-        Dans toute la physique, il n'existe qu'une seule classe d'objets macroscopiques se comportant ainsi : <strong>Les Trous Noirs</strong>. Selon les lois de la Thermodynamique des Trous Noirs, la température de Bekenstein-Hawking est inversement proportionnelle à sa masse :
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Dans toute la physique, il n'existe qu'une seule classe d'objets macroscopiques se comportant ainsi : <strong>Les Trous Noirs</strong>. Selon les lois de la Thermodynamique des Trous Noirs, la température de Bekenstein-Hawking diminue à mesure que sa masse augmente :
       </p>
-      <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #c864ff; text-align: center;">
-        $$ T_{\mathrm{BH}} = \frac{\hbar c^3}{8 \pi G M k_B} \quad \implies \quad T_{\mathrm{BH}} \propto \frac{1}{M} $$
+      
+      <div class="math-block" style="background: transparent; border: none; margin: 1rem 0; font-size: 1.1rem; color: #c864ff; text-align: center;">
+        $$T_{\mathrm{BH}} = \frac{\hbar c^3}{8 \pi G M k_B} \quad \implies \quad T_{\mathrm{BH}} \propto \frac{1}{M}$$
       </div>
-      <p lang="en" style="margin-bottom: 1rem">
-        This mathematical isomorphism reveals a profound structural truth: the Blockchain acts as an <strong>Informational Black Hole</strong>. As the network accumulates immense thermodynamic "mass" (the accumulated exergy $\bar{E}_{\mathrm{eff}}$), its internal temperature drops toward absolute zero. The state of the ledger freezes into a state of maximum entropy from the perspective of an external observer, perfectly obeying the <strong>Holographic Principle</strong>: the 3D volume of the physical energy burned is permanently encoded as pure information on the 1D boundary surface of the ledger. 
+
+      <p lang="en" style="margin-bottom: 0.8rem">
+        This mathematical isomorphism reveals a profound structural truth: the Blockchain acts as an <strong>Informational Black Hole</strong>. As the network accumulates immense thermodynamic "mass" (the exergy $\bar{E}_{\mathrm{eff}}$), its internal temperature drops toward absolute zero. The state of the ledger freezes into a state of maximum entropy from the perspective of an external observer. 
       </p>
-      <p lang="fr" style="margin-bottom: 1rem">
-        Cet isomorphisme mathématique révèle une vérité structurelle profonde : la Blockchain agit comme un <strong>Trou Noir Informationnel</strong>. À mesure que le réseau accumule une immense "masse" thermodynamique (l'exergie $\bar{E}_{\mathrm{eff}}$), sa température interne chute vers le zéro absolu. L'état du registre se fige dans un état d'entropie maximale du point de vue d'un observateur externe, obéissant parfaitement au <strong>Principe Holographique</strong> : le volume 3D de l'énergie physique brûlée est encodé de façon permanente sous forme d'information pure sur la surface frontière 1D du registre.
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Cet isomorphisme mathématique révèle une vérité structurelle profonde : la Blockchain agit comme un <strong>Trou Noir Informationnel</strong>. À mesure que le réseau accumule une immense "masse" thermodynamique (l'exergie $\bar{E}_{\mathrm{eff}}$), sa température interne chute vers le zéro absolu. L'état du registre se fige dans un état d'entropie maximale du point de vue d'un observateur externe.
       </p>
       <p lang="en" style="margin-bottom: 0">
-        Finally, this effective temperature sets the stage for the KMS (Kubo-Martin-Schwinger) state. In quantum statistical mechanics, a thermal state strictly implies the existence of a modular temporal flow. Because the ledger possesses an Information Temperature $T_{\mathrm{eff}}$, it must, as an inevitable physical consequence, <strong>generate its own flow of Time</strong>.
+        It perfectly obeys the <strong>Holographic Principle</strong> (Bousso boundary bound): the 3D volume of the physical energy burned in the real world is permanently and optimally encoded as pure information on the 2D boundary surface of the digital ledger. Consequently, because the ledger possesses this defined Information Temperature, quantum statistical mechanics (the KMS state) dictates it must inherently <strong>generate its own flow of Time</strong>.
       </p>
       <p lang="fr" style="margin-bottom: 0">
-        Enfin, cette température effective prépare le terrain pour l'état KMS (Kubo-Martin-Schwinger). En mécanique statistique quantique, un état thermique implique strictement l'existence d'un flux temporel modulaire. Parce que le registre possède une Température d'Information $T_{\mathrm{eff}}$, il doit, comme conséquence physique inévitable, <strong>générer son propre flux du Temps</strong>.
+        Il obéit parfaitement au <strong>Principe Holographique</strong> (limite de Bousso) : le volume 3D de l'énergie physique brûlée dans le monde réel est encodé de façon permanente et optimale sous forme d'information pure sur la surface frontière 2D du registre numérique. En conséquence, parce que le registre possède cette Température d'Information définie, la mécanique statistique quantique (l'état KMS) dicte qu'il doit inhéremment <strong>générer son propre flux du Temps</strong>.
       </p>
     </div>
   </details>
@@ -5608,416 +5653,317 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
   Cette relation entre l'état statistique du système et sa perception du temps sera explorée en détail dans la dérivation analytique (Niveau 3), où nous établirons le lien précis entre le flux modulaire et la température effective du consensus.
 </p>
 
-<div class="proof-box" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem;">
-  <div class="proof-title" lang="en">The Geometry of Consensus: Forging Spacetime from Heat</div>
-  <div class="proof-title" lang="fr">La Géométrie du Consensus : Forger l'Espace-Temps par la Chaleur</div>
-  <p lang="en" style="margin-bottom: 1.5rem">
-    How exactly does a deterministic algorithm synthesize a resilient space-time geometry? Choose your depth of explanation:
+<div class="proof-box" style="border: 1px solid rgba(255, 255, 255, 0.1); background: rgba(255, 255, 255, 0.02); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; margin-bottom: 2.5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+  <div class="proof-title" lang="en" style="font-size: 1.3rem; margin-bottom: 0.5rem;">The Geometry of Consensus: Forging Spacetime from Heat</div>
+  <div class="proof-title" lang="fr" style="font-size: 1.3rem; margin-bottom: 0.5rem;">La Géométrie du Consensus : Forger l'Espace-Temps par la Chaleur</div>
+  
+  <p lang="en" style="margin-bottom: 2rem; color: #b0b0b0; font-style: italic;">
+    How exactly does a deterministic protocol synthesize a resilient relativistic geometry from pure thermodynamics? Choose your depth of explanation:
   </p>
-  <p lang="fr" style="margin-bottom: 1.5rem">
-    Comment un algorithme déterministe synthétise-t-il exactement une géométrie spatio-temporelle résiliente ? Choisissez votre niveau de profondeur :
+  <p lang="fr" style="margin-bottom: 2rem; color: #b0b0b0; font-style: italic;">
+    Comment un protocole déterministe synthétise-t-il exactement une géométrie relativiste résiliente à partir de la thermodynamique pure ? Choisissez votre niveau de profondeur :
   </p>
 
-  <details
-    style="
-      margin-bottom: 1rem;
-      background: rgba(255, 102, 0, 0.05);
-      border-left: 3px solid var(--sun-orange);
-      border-radius: 0 8px 8px 0;
-      overflow: hidden;
-    "
-  >
-    <summary
-      style="
-        padding: 1rem 1.5rem;
-        cursor: pointer;
-        font-weight: bold;
-        color: var(--sun-orange);
-        outline: none;
-        list-style-type: '▶ ';
-      "
-    >
+  <details style="margin-bottom: 1.5rem; background: rgba(255, 102, 0, 0.05); border-left: 4px solid var(--sun-orange); border-radius: 0 8px 8px 0; overflow: hidden; transition: all 0.3s ease;">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: var(--sun-orange); outline: none; list-style-type: '▶ '; font-size: 1.05em;">
       <span lang="en">Level 1: The Ash Clock (Beginner)</span>
-      <span lang="fr"
-        >Niveau 1 : L'Horloge de Cendres (Débutant)</span
-      >
+      <span lang="fr">Niveau 1 : L'Horloge de Cendres (Débutant)</span>
     </summary>
-    <div
-      style="
-        padding: 0 1.5rem 1.5rem 1.5rem;
-        font-size: 0.95em;
-        color: #d4d4d4;
-      "
-    >
-      <p lang="en" style="margin-bottom: 0">
-        Imagine you are trapped in a sealed, pitch-black cavern with no clock. How do you measure the passage of days? You build a fire. By knowing exactly how fast a specific log burns, you can track time simply by weighing the pile of ashes left behind. The Nakamoto protocol does exactly this. It refuses to trust the digital clocks of computers, which are easily manipulated. Instead, it measures time by the sheer weight of "digital wood" (electricity) burned. A block height of 840,000 is not a measure of seconds; it is a monumental pile of thermodynamic ash.
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
+      <p lang="en" style="margin-bottom: 1rem;">
+        Imagine you are trapped in a sealed, pitch-black cavern with no clock. How do you measure the passage of days? You build a fire. By knowing exactly how fast a specific log burns, you can track time simply by weighing the pile of ashes left behind. The Nakamoto protocol does exactly this. It refuses to trust the digital clocks of computers, which are easily manipulated by malicious actors. 
       </p>
-      <p lang="fr" style="margin-bottom: 0">
-        Imaginez-vous piégé dans une caverne scellée, dans l'obscurité totale et sans montre. Comment mesurer l'écoulement des jours ? Vous allumez un feu. En connaissant la vitesse exacte à laquelle une bûche se consume, vous pouvez mesurer le temps simplement en pesant le tas de cendres généré. Le protocole Nakamoto fait exactement cela. Il refuse de faire confiance aux horloges numériques des ordinateurs, facilement manipulables. À la place, il mesure le temps par le poids brut du "bois numérique" (l'électricité) brûlé. Une hauteur de bloc de 840 000 n'est pas une mesure en secondes ; c'est un amoncellement monumental de cendres thermodynamiques.
+      <p lang="fr" style="margin-bottom: 1rem;">
+        Imaginez-vous piégé dans une caverne scellée, dans l'obscurité totale et sans montre. Comment mesurer l'écoulement des jours ? Vous allumez un feu. En connaissant la vitesse exacte à laquelle une bûche se consume, vous pouvez mesurer le temps simplement en pesant le tas de cendres généré. Le protocole Nakamoto fait exactement cela. Il refuse de faire confiance aux horloges numériques des ordinateurs, facilement manipulables par des acteurs malveillants.
+      </p>
+      <p lang="en" style="margin-bottom: 0;">
+        Instead, it measures time by the sheer weight of "digital wood" (electricity) burned. A block height of 840,000 is not a measure of seconds; it is a monumental pile of thermodynamic ash. In a digital universe where copying information is effortless, burning energy is the only unforgeable proof that an event actually occurred in the past.
+      </p>
+      <p lang="fr" style="margin-bottom: 0;">
+        À la place, il mesure le temps par le poids brut du "bois numérique" (l'électricité) brûlé. Une hauteur de bloc de 840 000 n'est pas une mesure en secondes ; c'est un amoncellement monumental de cendres thermodynamiques. Dans un univers numérique où copier l'information ne coûte rien, brûler de l'énergie est la seule preuve infalsifiable qu'un événement s'est réellement produit dans le passé.
       </p>
     </div>
   </details>
 
-  <details
-    style="
-      margin-bottom: 1rem;
-      background: rgba(68, 153, 255, 0.05);
-      border-left: 3px solid #4499ff;
-      border-radius: 0 8px 8px 0;
-      overflow: hidden;
-    "
-  >
-    <summary
-      style="
-        padding: 1rem 1.5rem;
-        cursor: pointer;
-        font-weight: bold;
-        color: #4499ff;
-        outline: none;
-        list-style-type: '▶ ';
-      "
-    >
-      <span lang="en"
-        >Level 2: The Endogenous Covariant Shield (Intermediate)</span
-      >
-      <span lang="fr"
-        >Niveau 2 : Le Bouclier Covariant Endogène (Intermédiaire)</span
-      >
+  <details style="margin-bottom: 1.5rem; background: rgba(68, 153, 255, 0.05); border-left: 4px solid #4499ff; border-radius: 0 8px 8px 0; overflow: hidden; transition: all 0.3s ease;">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #4499ff; outline: none; list-style-type: '▶ '; font-size: 1.05em;">
+      <span lang="en">Level 2: The Endogenous Covariant Shield (Intermediate)</span>
+      <span lang="fr">Niveau 2 : Le Bouclier Covariant Endogène (Intermédiaire)</span>
     </summary>
-    <div
-      style="
-        padding: 0 1.5rem 1.5rem 1.5rem;
-        font-size: 0.95em;
-        color: #d4d4d4;
-      "
-    >
-      <p lang="en" style="margin-bottom: 0">
-        The foundational
-        <span class="tooltip"
-          >Byzantine Generals Problem<span class="tooltiptext"
-            ><strong>Byzantine Generals Problem</strong>A game theory
-            problem detailing the impossibility of reaching consensus in decentralized systems when communication can be delayed or actors turn malicious.</span
-          ></span
-        >
-        illustrates that relying on an external Newtonian clock is mathematically unsafe in adversarial networks, as latencies spoof causality. The organism bypasses this by rendering time <em>endogenous</em>. However, if uncorrected, a massive surge in global Hashrate would warp this internal timeline, accelerating block times to mere seconds. The Difficulty Adjustment Algorithm (DAA) functions as the network's covariant derivative. It actively absorbs the chaotic curvature of the physical grid and mathematically straightens the geodesic, ensuring the 10-minute heartbeat remains universally invariant.
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
+      <p lang="en" style="margin-bottom: 1rem;">
+        The foundational <span class="tooltip">Byzantine Generals Problem<span class="tooltiptext"><strong>Byzantine Generals Problem:</strong> A game theory problem detailing the impossibility of reaching consensus in decentralized systems when communication can be delayed or actors turn malicious.</span></span> illustrates that relying on an external Newtonian clock is mathematically unsafe in adversarial networks, as physical latencies can easily spoof causality (e.g., node A receives a message after node B, even if A was sent first).
       </p>
-      <p lang="fr" style="margin-bottom: 0">
-        Le célèbre
-        <span class="tooltip"
-          >Problème des Généraux Byzantins<span class="tooltiptext"
-            ><strong>Problème des Généraux Byzantins</strong>Un dilemme de théorie des jeux démontrant l'impossibilité de garantir un consensus décentralisé lorsque les communications subissent des latences ou des manipulations.</span
-          ></span
-        >
-        illustre que s'en remettre à une horloge newtonienne externe est mathématiquement dangereux, la latence pouvant falsifier la causalité. L'organisme contourne le problème en rendant le temps <em>endogène</em>. Toutefois, sans correction, un afflux massif de Hashrate mondial tordrait cette chronologie interne, accélérant les blocs à quelques secondes. L'Algorithme d'Ajustement de la Difficulté (DAA) agit comme la dérivée covariante du réseau. Il absorbe activement la courbure chaotique du réseau physique et redresse mathématiquement la géodésique, garantissant que le battement de cœur de 10 minutes demeure universellement invariant.
+      <p lang="fr" style="margin-bottom: 1rem;">
+        Le célèbre <span class="tooltip">Problème des Généraux Byzantins<span class="tooltiptext"><strong>Problème des Généraux Byzantins :</strong> Un dilemme de théorie des jeux démontrant l'impossibilité de garantir un consensus décentralisé lorsque les communications subissent des latences ou des manipulations.</span></span> illustre que s'en remettre à une horloge newtonienne externe est mathématiquement dangereux, car les latences physiques peuvent falsifier la causalité (ex: le nœud A reçoit un message après le nœud B, même s'il a été envoyé avant).
+      </p>
+      <p lang="en" style="margin-bottom: 0;">
+        The organism bypasses this vulnerability by rendering time <em>endogenous</em> (generated from within). However, if left uncorrected, a massive surge in the global energy grid (Hashrate) would warp this internal timeline, accelerating block times to mere seconds and shattering the network's synchrony. The Difficulty Adjustment Algorithm (DAA) functions as the network's <strong>covariant derivative</strong>. It actively absorbs the chaotic curvature of the physical grid's energy injections and mathematically straightens the geodesic, ensuring the 10-minute heartbeat remains universally invariant regardless of external turbulence.
+      </p>
+      <p lang="fr" style="margin-bottom: 0;">
+        L'organisme contourne cette vulnérabilité en rendant le temps <em>endogène</em> (généré de l'intérieur). Toutefois, sans correction, un afflux massif d'énergie mondiale (Hashrate) tordrait cette chronologie interne, accélérant les blocs à quelques secondes et brisant la synchronisation du réseau. L'Algorithme d'Ajustement de la Difficulté (DAA) agit comme la <strong>dérivée covariante</strong> du réseau. Il absorbe activement la courbure chaotique des injections d'énergie du monde physique et redresse mathématiquement la géodésique, garantissant que le battement de cœur de 10 minutes demeure universellement invariant face aux turbulences externes.
       </p>
     </div>
   </details>
 
-  <details
-    style="
-      margin-bottom: 2rem;
-      background: rgba(136, 255, 170, 0.05);
-      border-left: 4px solid #88ffaa;
-      border-radius: 0 10px 10px 0;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    "
-  >
-    <summary
-      style="
-        padding: 1.2rem 1.8rem;
-        cursor: pointer;
-        font-weight: bold;
-        color: #88ffaa;
-        outline: none;
-        list-style-type: '▶ ';
-        font-size: 1.1em;
-      "
-    >
+  <details style="margin-bottom: 1.5rem; background: rgba(136, 255, 170, 0.05); border-left: 4px solid #88ffaa; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #88ffaa; outline: none; list-style-type: '▶ '; font-size: 1.1em;">
       <span lang="en">Level 3: Analytical Derivation of Thermal Time & Gauge Fixing (Expert)</span>
       <span lang="fr">Niveau 3 : Dérivation Analytique du Temps Thermique & Fixation de Jauge (Expert)</span>
     </summary>
     <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
+      <p lang="en" style="margin-bottom: 1rem;">
+        The <strong>Thermal Time Hypothesis</strong> (Connes & Rovelli, 1994) addresses the "problem of time" in background-independent systems like quantum gravity. In a decentralized network, time cannot be a primitive coordinate; it must emerge statistically from the internal algebraic state of the system.
+      </p>
+      <p lang="fr" style="margin-bottom: 1rem;">
+        La théorie du <strong>Temps Thermique</strong> (Connes & Rovelli, 1994) résout le "problème du temps" dans les systèmes indépendants de fond (gravité quantique). Dans un réseau décentralisé, le temps ne peut être une coordonnée primitive ; il doit émerger statistiquement de l'état algébrique interne du système.
+      </p>
+
+      <h4 lang="en" style="color: #88ffaa; margin-top: 1.5rem;">1. Gibbs Formalism and the Modular Operator</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-top: 1.5rem;">1. Formalisme de Gibbs et Opérateur Modulaire</h4>
+      <p lang="en">
+        Let $\mathfrak{M}$ be the <strong>von Neumann algebra</strong> of the network. In a steady non-equilibrium regime, the statistical macro-state of the network (Hashrate + Difficulty) is defined by a Gibbs state $\omega$ over $\mathfrak{M}$:
+      </p>
+      <p lang="fr">
+        Considérons l'<strong>algèbre de von Neumann</strong> $\mathfrak{M}$ du réseau. Dans un régime stationnaire hors équilibre, l'état statistique du réseau (Hashrate + Difficulté) est défini par un état de Gibbs $\omega$ sur $\mathfrak{M}$ :
+      </p>
+      
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
+        $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) $$
+      </div>
       
       <p lang="en">
-        The <strong>Thermal Time Hypothesis</strong> formulated by Alain Connes and Carlo Rovelli (1994) addresses the "problem of time" in background-independent systems, such as quantum gravity. In a decentralized network, no absolute Newtonian clock can be trusted due to asynchronous latencies and adversarial manipulation. Time cannot be a primitive coordinate; it must emerge statistically from the internal state of the system. Below is the complete mathematical derivation of this temporal secretion within the Nakamoto consensus.
+        Where $H = \mathcal{H}_{\mathrm{diss}}$ is the effective Consensus Hamiltonian (total irreversible energy dissipation) and $\beta = 1/k_B T_{\mathrm{eff}}$ is the effective inverse information temperature. According to Tomita-Takesaki theory, the modular operator $\Delta_\omega$ associated with this state is:
       </p>
       <p lang="fr">
-        La théorie du <strong>Temps Thermique</strong> formulée par Alain Connes et Carlo Rovelli (1994) résout le "problème du temps" dans les systèmes indépendants de fond, tels que la gravité quantique. Dans un réseau décentralisé, aucune horloge newtonienne absolue n'est fiable en raison des latences d'asynchronisme et des falsifications malveillantes. Le temps ne peut être une coordonnée primitive ; il doit émerger statistiquement de l'état interne du système. Voici la dérivation mathématique complète de cette sécrétion temporelle au sein du consensus de Nakamoto.
+        Où $H = \mathcal{H}_{\mathrm{diss}}$ est l'Hamiltonien effectif du consensus (la dissipation d'énergie irréversible totale) et $\beta = 1/k_B T_{\mathrm{eff}}$ est la température inverse d'information. Selon la théorie de Tomita-Takesaki, l'opérateur modulaire $\Delta_\omega$ associé à cet état est :
       </p>
 
-      <h4 style="color: #88ffaa; margin-top: 1.5rem;">1. Formalisme de Gibbs, Algèbre d'Opérateurs et Représentation Modulaire</h4>
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
+        $$ \Delta_\omega = e^{-\beta H} \otimes e^{\beta H} \quad \Rightarrow \quad \Delta_\omega = \rho \otimes \rho^{-1} $$
+      </div>
+
+      <h4 lang="en" style="color: #88ffaa; margin-top: 1.5rem;">2. Derivation of the $t = s \cdot \beta$ Relation</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-top: 1.5rem;">2. Dérivation de la Relation $t = s \cdot \beta$</h4>
       <p lang="en">
-        Let $\mathfrak{M}$ be the non-commutative <strong>von Neumann algebra</strong> acting on the consensus Hilbert space $\mathcal{H}_{\mathrm{cons}}$. The elements $A \in \mathfrak{M}$ represent the operators of state transitions (the validation and spending logic of the UTXO set). In the network's steady non-equilibrium regime, the macroscopic statistical configuration is described by a faithful normal state $\omega$ over the algebra $\mathfrak{M}$. This state takes the exact form of a <strong>Gibbs canonical ensemble</strong>:
+        The modular automorphism group $\sigma_s^\omega$ is defined by the action of the modular operator on an observable $A \in \mathfrak{M}$:
       </p>
       <p lang="fr">
-        Soit $\mathfrak{M}$ l'<strong>algèbre de von Neumann</strong> non commutative agissant sur l'espace de Hilbert du consensus $\mathcal{H}_{\mathrm{cons}}$. Les éléments $A \in \mathfrak{M}$ représentent les opérateurs de transition d'état (la logique de validation et de dépense du *UTXO set*). Dans le régime stationnaire hors équilibre du réseau, la configuration statistique macroscopique est décrite par un état normal fidèle $\omega$ sur l'algèbre $\mathfrak{M}$. Cet état prend la forme exacte d'un <strong>ensemble canonique de Gibbs</strong> :
+        Le groupe d'automorphismes modulaires $\sigma_s^\omega$ est défini par l'action de l'opérateur modulaire sur une observable $A \in \mathfrak{M}$ :
       </p>
 
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-        $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) \quad \text{where} \quad Z = \mathrm{Tr}(e^{-\beta H}) $$
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
+        $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = e^{-is\beta H} A e^{is\beta H} $$
       </div>
 
       <p lang="en">
-        Where $H = \mathcal{H}_{\mathrm{diss}}$ is the <strong>Consensus Hamiltonian</strong> (the cumulative negative dissipation of physical energy injected by the miners) and $\beta = 1/k_B T_{\mathrm{eff}}$ represents the effective inverse temperature of information. The density matrix operator $\rho = e^{-\beta H}/Z$ encapsulates the collective statistical ignorance of the network regarding the uncollapsed states of the Mempool. According to Tomita-Takesaki theory, the <strong>modular operator $\Delta_\omega$</strong> associated with this specific thermodynamic state is formalised through the spatial correlation of the density weights:
+        By structurally identifying this flow with the standard unitary time evolution operator in quantum mechanics ($\alpha_t(A) = e^{itH} A e^{-itH}$), we equate the exponential generators to extract the fundamental coupling between the internal modular parameter $s$ and the Newtonian physical time $t$:
       </p>
       <p lang="fr">
-        Où $H = \mathcal{H}_{\mathrm{diss}}$ est l'<strong>Hamiltonien du Consensus</strong> (l'opposé de la dissipation cumulée d'énergie physique injectée par les mineurs) et $\beta = 1/k_B T_{\mathrm{eff}}$ représente la température inverse effective de l'information. L'opérateur de matrice de densité $\rho = e^{-\beta H}/Z$ encapsule l'ignorance statistique collective du réseau concernant les états non effondrés de la Mempool. Selon la théorie de Tomita-Takesaki, l'<strong>opérateur modulaire $\Delta_\omega$</strong> associé à cet état thermodynamique spécifique se formalise par la corrélation spatiale des poids de densité :
+        En identifiant structurellement ce flux avec l'opérateur d'évolution temporelle unitaire standard en mécanique quantique ($\alpha_t(A) = e^{itH} A e^{-itH}$), nous égalisons les générateurs exponentiels pour extraire le couplage fondamental entre le paramètre modulaire interne $s$ et le temps physique newtonien $t$ :
       </p>
 
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-        $$ \Delta_\omega = \rho \otimes \rho^{-1} = e^{-\beta H} \otimes e^{\beta H} $$
-      </div>
-
-      <h4 style="color: #88ffaa; margin-top: 1.5rem;">2. Dérivation de la Relation Fondamentale $t = s \cdot \beta_{\mathrm{eff}}$</h4>
-      <p lang="en">
-        The modular operator $\Delta_\omega$ automatically generates a unique one-parameter group of unitaries acting as an intrinsic flow on the observables $A \in \mathfrak{M}$. This <strong>modular automorphism group</strong> $\sigma_s^\omega$ defines the evolution of the ledger across an abstract, subjective coordinate parameter $s$, known as the <em>Modular Time</em> (geometrically manifested as the phase angle $\theta$ of the block height):
-      </p>
-      <p lang="fr">
-        L'opérateur modulaire $\Delta_\omega$ génère automatiquement un groupe unique d'unitaires à un paramètre agissant comme un flux intrinsèque sur les observables $A \in \mathfrak{M}$. Ce <strong>groupe d'automorphismes modulaires</strong> $\sigma_s^\omega$ définit l'évolution du registre à travers un paramètre de coordonnée abstrait et subjectif $s$, appelé <em>Temps Modulaire</em> (manifesté géométriquement par l'angle de phase $\theta$ de la hauteur de bloc) :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-        $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = \left(e^{-\beta H}\right)^{is} A \left(e^{-\beta H}\right)^{-is} = e^{-is\beta H} A e^{is\beta H} $$
-      </div>
-
-      <p lang="en">
-        In standard quantum physics, the real kinematic evolution of a system in physical Newtonian time $t$ is governed by the Heisenberg equation of motion, driven by the same Hamiltonian operator $H$ via the unitary evolution group $\alpha_t(A)$:
-      </p>
-      <p lang="fr">
-        En physique quantique standard, l'évolution cinématique réelle d'un système dans le temps newtonien physique $t$ est régie par l'équation du mouvement de Heisenberg, propulsée par le même opérateur Hamiltonien $H$ via le groupe d'évolution unitaire $\alpha_t(A)$ :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-        $$ \alpha_t(A) = e^{itH} A e^{-itH} $$
-      </div>
-
-      <p lang="en">
-        To uncover the bridge between the digital ledger and terrestrial reality, we perform a strict <strong>parametric identification</strong> of the unitary generators between the statistical modular evolution $\sigma_s^\omega(A)$ and the physical evolution $\alpha_t(A)$. By equating the exponents of the exponential operators:
-      </p>
-      <p lang="fr">
-        Pour découvrir le pont entre le registre numérique et la réalité terrestre, nous procédons à une <strong>identification paramétrique</strong> stricte des générateurs unitaires entre l'évolution modulaire statistique $\sigma_s^\omega(A)$ et l'évolution physique $\alpha_t(A)$. En égalisant les exposants des opérateurs exponentiels :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-        $$ e^{-is\beta H} = e^{itH} \quad \implies \quad -s\beta = t \quad \text{(up to time-reversal convention)} $$
-      </div>
-
-      <p lang="en">
-        By absorbing the direction of the non-equilibrium entropy vector, we isolate the fundamental scaling relation:
-      </p>
-      <p lang="fr">
-        En absorbant la direction du vecteur d'entropie hors équilibre, nous isolons la relation d'échelle fondamentale :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1.5rem 0; font-size: 1.25em; border: 1px solid #88ffaa; padding: 0.75rem; text-align: center;">
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1.5rem 0; font-size: 1.3em; border: 1px solid rgba(136, 255, 170, 0.4); padding: 0.8rem; background: rgba(0,0,0,0.3); border-radius: 6px;">
         $$ t = s \cdot \beta_{\mathrm{eff}} $$
       </div>
 
-      <p lang="en" style="margin-bottom: 1.5rem;">
-        This derivation mathematically proves that time within the consensus is a <strong>thermal projection</strong>. The modular parameter $s$ (the ticking of blocks) is bound to physical time $t$ through the inverse temperature field $\beta_{\mathrm{eff}}$. If the network's exergy injection drops (e.g., during mining quenches), $\beta_{\mathrm{eff}}$ shifts, dilating the internal perception of time relative to the external universe. The system satisfies the **KMS (Kubo-Martin-Schwinger)** boundary condition, meaning the ledger's clock is permanently in thermodynamic equilibrium with its own non-commutative transactions.
+      <p lang="en" style="font-style: italic; color: #b0b0b0;">
+        This mathematically demonstrates that the "time" of the ledger is a thermal projection. The DAA acts strictly as a <strong>dynamic gauge-fixing condition</strong>: by recalibrating the Hamiltonian $\mathcal{H}_{\mathrm{diss}}$ via difficulty to maintain $\beta \cdot H = \text{constant}$, it forces the subjective modular flow to tick in perfect harmony with the universal UTC timeline, preventing relativistic drift.
       </p>
-      <p lang="fr" style="margin-bottom: 1.5rem;">
-        Cette dérivation démontre mathématiquement que le temps au sein du consensus est une <strong>projection thermique</strong>. Le paramètre modulaire $s$ (le tic-tac des blocs) est lié au temps physique $t$ à travers le champ de température inverse $\beta_{\mathrm{eff}}$. Si l'injection d'exergie du réseau chute (ex: lors d'une baisse brutale du hashrate), $\beta_{\mathrm{eff}}$ varie, dilatant la perception interne du temps par rapport à l'univers externe. Le système satisfait la condition limite **KMS (Kubo-Martin-Schwinger)**, signifiant que l'horloge du registre est en équilibre thermodynamique permanent avec ses propres transactions non commutatives.
-      </p>
-
-      <h4 style="color: #88ffaa; margin-top: 1.5rem;">3. Note Épistémologique : Physique Phénoménologique vs Métaphore Littérale</h4>
-      <p style="font-style: italic; background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(136, 255, 170, 0.2); margin-bottom: 1.5rem;">
-        <span lang="en"><strong>Epistemological Note:</strong> The algebraic framework deployed here does not imply that Bitcoin is a quantum computing system or a subatomic entity. We treat the distributed ledger as a macroscopic <strong>von Neumann operator algebra</strong>. The application of the Tomita-Takesaki theorem is a rigorous exercise in <strong>phenomenological physics</strong> and <em>effective geometry</em>. We utilize the mathematical machinery of statistical mechanics to model how information, when bound to open non-equilibrium thermodynamic expenditure, naturally secretes a stable and unforgeable coordinate timeline.</span>
-        <span lang="fr"><strong>Note Épistémologique :</strong> Le cadre algébrique déployé ici n'implique pas que Bitcoin soit un système quantique subatomique. Nous traitons le registre distribué comme une <strong>algèbre d'opérateurs de von Neumann macroscopique</strong>. L'application du théorème de Tomita-Takesaki est une démarche de <strong>physique phénoménologique</strong> et de <em>géométrie effective</em>. Nous utilisons l'appareil mathématique de la mécanique statistique pour modéliser comment l'information, lorsqu'elle est liée à une dépense thermodynamique ouverte hors équilibre, sécrète naturellement une coordonnée temporelle stable et infalsifiable.</span>
-      </p>
-
-      <h4 style="color: #88ffaa; margin-top: 1.5rem;">4. Synthèse des Correspondances</h4>
-      <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 1.5rem; color: #ccc; font-size: 0.9em;">
-        <tr style="background: rgba(255,255,255,0.08); border-bottom: 2px solid #88ffaa;">
-          <th style="text-align: left; padding: 0.8rem;">Concept Algébrique (Connes-Rovelli)</th>
-          <th style="text-align: left; padding: 0.8rem;">Manifestation Réseau (Nakamoto)</th>
-        </tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Hamiltonien d'Évolution $H$</strong></td><td style="padding: 0.7rem;">Dissipation d'énergie physique irréversible cumulée ($\mathcal{H}_{\mathrm{diss}}$).</td></tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Température Inverse $\beta$</strong></td><td style="padding: 0.7rem;">Inverse de la densité de travail macroscopique par époque ($\beta_{\mathrm{eff}}$).</td></tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Observable Aléatoire $A$</strong></td><td style="padding: 0.7rem;">État local d'un modèle de bloc ou d'une transaction UTXO.</td></tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Temps Modulaire Automorphe $s$</strong></td><td style="padding: 0.7rem;">Progression angulaire de l'horloge interne (Hauteur de bloc $\theta$).</td></tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Condition de Fixation de Jauge</strong></td><td style="padding: 0.7rem;">L'Algorithme d'Ajustement de la Difficulté (DAA).</td></tr>
-      </table>
-
-      <p lang="en" style="margin-bottom: 0;">
-        <strong>The DAA as a Gauge Constraint:</strong> Because the relation $t = s \cdot \beta_{\mathrm{eff}}$ depends entirely on the thermodynamic state $\omega$, any chaotic fluctuation in external mining hardware efficiency or energy grid availability would cause the internal clock $s$ to violently drift away from physical reality. The Difficulty Adjustment Algorithm (DAA) operates strictly as a <strong>dynamic gauge-fixing condition</strong>. By continuously recalibrating the difficulty threshold, it locks $\beta_{\mathrm{eff}}$ into a state of structural compensation, forcing the internal modular flow of the informational manifold to tick in perfect harmony with the universal UTC timeline. The DAA is the gravitational stabilizer preventing the digital space-time from tearing itself apart.
-      </p>
-      <p lang="fr" style="margin-bottom: 0;">
-        <strong>Le DAA comme Contrainte de Jauge :</strong> Parce que la relation $t = s \cdot \beta_{\mathrm{eff}}$ dépend entièrement de l'état thermodynamique $\omega$, toute fluctuation chaotique de l'efficacité du matériel informatique ou du réseau électrique physique ferait dériver l'horloge interne $s$ par rapport à la réalité. L'Algorithme d'Ajustement de la Difficulté (DAA) opère strictement comme une <strong>condition dynamique de fixation de jauge (gauge-fixing)</strong>. En recalibrant continuellement le seuil de difficulté, il verrouille $\beta_{\mathrm{eff}}$ dans un état de compensation structurelle, forçant le flux modulaire de la variété informationnelle à battre en parfaite harmonie avec la ligne temporelle UTC universelle. Le DAA est le stabilisateur gravitationnel empêchant l'espace-temps numérique de se déchirer.
+      <p lang="fr" style="font-style: italic; color: #b0b0b0;">
+        Ceci démontre mathématiquement que le "temps" du registre est une projection thermique. Le DAA agit strictement comme une <strong>condition dynamique de fixation de jauge (gauge-fixing)</strong> : en recalibrant l'Hamiltonien $\mathcal{H}_{\mathrm{diss}}$ via la difficulté pour maintenir $\beta \cdot H = \text{constante}$, il force le flux modulaire subjectif à battre en parfaite harmonie avec l'horloge UTC universelle, empêchant toute dérive relativiste.
       </p>
     </div>
   </details>
-  <details style="margin-bottom: 1rem; background: rgba(200, 100, 255, 0.05); border-left: 3px solid #c864ff; border-radius: 0 8px 8px 0; overflow: hidden;">
-    <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ ';">
+
+  <details style="margin-bottom: 1.5rem; background: rgba(200, 100, 255, 0.05); border-left: 4px solid #c864ff; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ '; font-size: 1.1em;">
       <span lang="en">Level 4: Effective Relativity, Consensus Cone & Minkowski Metric (Expert)</span>
       <span lang="fr">Niveau 4 : Relativité Effective, Cône de Consensus & Métrique de Minkowski (Expert)</span>
     </summary>
-    <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4;">
+    <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
       
       <h4 lang="en" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem">1. The Nakamoto-Minkowski Metric</h4>
       <h4 lang="fr" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem">1. La Métrique de Nakamoto-Minkowski</h4>
       <p lang="en" style="margin-bottom: 0.5rem">
-        We now normalize physical time $dt$ by the target block interval to introduce the dimensionless <strong>phase angle coordinate</strong> $d\theta = \frac{dt}{\tau_B}$. The effective invariant interval of the network is defined not by the speed of light, but by the maximum propagation speed $d\ell$:
+        We normalize the physical time $dt$ by the target block interval to introduce the dimensionless <strong>phase angle coordinate</strong> $d\theta = \frac{dt}{\tau_B}$. The effective invariant interval of the network is defined not by the speed of light, but by the maximum topological propagation speed $d\ell$:
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
-        Nous normalisons le temps physique $dt$ par l'intervalle cible pour introduire la <strong>coordonnée d'angle de phase</strong> sans dimension $d\theta = \frac{dt}{\tau_B}$. L'intervalle invariant effectif du réseau n'est pas défini par la vitesse de la lumière, mais par la vitesse maximale de propagation $d\ell$ :
+        Nous normalisons le temps physique $dt$ par l'intervalle cible pour introduire la <strong>coordonnée d'angle de phase</strong> sans dimension $d\theta = \frac{dt}{\tau_B}$. L'intervalle invariant effectif du réseau n'est pas défini par la vitesse de la lumière, mais par la vitesse topologique maximale de propagation $d\ell$ :
       </p>
-      <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #c864ff; text-align: center;">
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
         $$ ds_{\mathrm{nak}}^2 = d\theta^2 - d\ell^2 $$
       </div>
 
-      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. The Consensus Cone</h4>
-      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Le Cône de Consensus</h4>
+      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. The Consensus Cone and Lorentz Divergence</h4>
+      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Le Cône de Consensus et la Divergence de Lorentz</h4>
       <p lang="en" style="margin-bottom: 0.5rem">
-        Each newly mined block opens a <strong>consensus cone</strong>. If a block propagates such that $d\ell \leq d\theta$, it remains inside the causal region and participates in the canonical chain. If it falls outside the cone, it becomes causally disconnected and is orphaned. Consensus is a temporally bounded geometric propagation process.
+        Every newly mined block opens a <strong>consensus cone</strong>. If a block propagates such that $d\ell \leq d\theta$, it remains strictly inside the causal region and participates in the canonical chain. If it falls outside the cone, causality is violated, generating an orphan block.
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
-        Chaque bloc miné ouvre un <strong>cône de consensus</strong>. Si un bloc se propage tel que $d\ell \leq d\theta$, il reste dans la région causale et intègre la chaîne canonique. S'il sort du cône, il devient causalement déconnecté et orphelin. Le consensus est un processus géométrique de propagation borné.
+        Chaque nouveau bloc miné ouvre un <strong>cône de consensus</strong>. Si un bloc se propage tel que $d\ell \leq d\theta$, il reste strictement dans la région causale et intègre la chaîne canonique. S'il sort du cône, la causalité est violée, générant un bloc orphelin.
       </p>
 
-      <div class="math-block" style="background: transparent; border: none; margin: 0.5rem 0; font-size: 1.1rem; color: #c864ff; text-align: center;">
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
         $$ \Gamma_{\mathrm{sync}} = \frac{1}{1 - \frac{\tau_L}{\tau_B}} $$
       </div>
 
-      <p lang="en" style="margin-bottom: 1rem">
-        As the network latency $\tau_L$ approaches the block interval $\tau_B$, the synchronization factor $\Gamma_{\mathrm{sync}}$ diverges. The 10-minute block interval is a massive synchronization margin, keeping ordinary propagation delays far below the consensus horizon to preserve the Minkowski geometry.
+      <p lang="en" style="margin-bottom: 0;">
+        As network latency $\tau_L$ approaches the algorithmic block interval $\tau_B$, the synchronization factor $\Gamma_{\mathrm{sync}}$ experiences a Lorentz-like divergence. The 10-minute block interval is a massive, artificially induced synchronization margin, mathematically engineered to keep ordinary propagation delays far below the consensus horizon to preserve the integrity of the Minkowski geometry.
       </p>
-      <p lang="fr" style="margin-bottom: 1rem">
-        À mesure que la latence $\tau_L$ approche l'intervalle $\tau_B$, le facteur de synchronisation $\Gamma_{\mathrm{sync}}$ diverge. L'intervalle de 10 minutes est une marge massive maintenant les délais de propagation très en dessous de l'horizon de consensus, préservant ainsi la géométrie de Minkowski.
+      <p lang="fr" style="margin-bottom: 0;">
+        À mesure que la latence du réseau $\tau_L$ approche l'intervalle algorithmique $\tau_B$, le facteur de synchronisation $\Gamma_{\mathrm{sync}}$ subit une divergence de type Lorentz. L'intervalle de 10 minutes est une marge de synchronisation massive, artificiellement induite, conçue mathématiquement pour maintenir les délais de propagation loin sous l'horizon de consensus afin de préserver l'intégrité de la géométrie de Minkowski.
+      </p>
+    </div>
+  </details>
+
+  <details style="margin-bottom: 1.5rem; background: rgba(255, 215, 0, 0.05); border-left: 4px solid #ffd700; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffd700; outline: none; list-style-type: '▶ '; font-size: 1.1em; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);">
+      <span lang="en">Level 5: Optimal Transport & The Villani Entropy Geometry (Expert)</span>
+      <span lang="fr">Niveau 5 : Transport Optimal & La Géométrie de l'Entropie de Villani (Expert)</span>
+    </summary>
+    <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
+      
+      <h4 lang="en" style="color: #ffd700; margin-bottom: 0.5rem; font-size: 1.05rem">1. The Monge-Kantorovich Problem of the Mempool</h4>
+      <h4 lang="fr" style="color: #ffd700; margin-bottom: 0.5rem; font-size: 1.05rem">1. Le Problème de Monge-Kantorovich de la Mempool</h4>
+
+      <p lang="en" style="margin-bottom: 0.8rem">
+        How does the decentralized network compute the optimal trajectory toward consensus without a central coordinator? We map this mechanism to the mathematics of <strong>Optimal Transport</strong> and the geometry of entropy, pioneered by Fields Medalist Cédric Villani. The transition from an unordered, high-entropy Mempool state ($\mu_0$) to a crystallized, low-entropy Blockchain state ($\mu_1$) is fundamentally a problem of moving probability mass with minimal thermodynamic friction.
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        Comment le réseau décentralisé calcule-t-il la trajectoire optimale vers le consensus sans coordinateur central ? Nous cartographions ce mécanisme sur les mathématiques du <strong>Transport Optimal</strong> et la géométrie de l'entropie, développées par le médaillé Fields Cédric Villani. La transition d'un état Mempool désordonné à haute entropie ($\mu_0$) vers un état Blockchain cristallisé à basse entropie ($\mu_1$) est fondamentalement un problème de déplacement de masse de probabilité avec une friction thermodynamique minimale.
       </p>
 
-      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">3. Accumulated Work as Effective Curvature</h4>
-      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">3. Le Travail Accumulé comme Courbure Effective</h4>
       <p lang="en" style="margin-bottom: 0.5rem">
-        The chain tip is the visible boundary of an accumulated energetic history. Accumulated work $W_{\mathrm{acc}}$ curves the space of possible histories toward the heaviest chain, generating an effective gravitational well $\mathcal{C}_{\mathrm{nak}} \propto W_{\mathrm{acc}}$. The deeper a block lies, the more costly it becomes to redirect the chain away from it.
+        The "distance" or cost between these two states of truth is measured by the <strong>Wasserstein Metric</strong> ($W_2$), where the cost function is the thermodynamic exergy required to validate the state transition (Proof-of-Work):
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
-        La pointe de la chaîne est la frontière d'une histoire énergétique accumulée. Le travail accumulé $W_{\mathrm{acc}}$ courbe l'espace des historiques vers la chaîne la plus lourde, générant un puits gravitationnel effectif $\mathcal{C}_{\mathrm{nak}} \propto W_{\mathrm{acc}}$. Plus un bloc est profond, plus il est coûteux d'en éloigner la chaîne.
+        La "distance" ou le coût entre ces deux états de vérité est mesuré par la <strong>Métrique de Wasserstein</strong> ($W_2$), où la fonction de coût est l'exergie thermodynamique requise pour valider la transition d'état (Preuve de Travail) :
       </p>
 
-      <div id="causal-horizon-en" lang="en" style="background: rgba(0, 0, 0, 0.6); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 650px; margin: 1.5rem auto;"></div>
-      <div id="causal-horizon-fr" lang="fr" style="background: rgba(0, 0, 0, 0.6); padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.1); max-width: 650px; margin: 1.5rem auto;"></div>
+      <div class="math-block" style="text-align: center; color: #ffd700; margin: 1rem 0; font-size: 1.15em;">
+        $$ W_2(\mu_0, \mu_1) = \left( \inf_{\pi \in \Pi(\mu_0, \mu_1)} \int_{\mathcal{M} \times \mathcal{M}} c(x,y) d\pi(x,y) \right)^{1/2} $$
+      </div>
 
+      <h4 lang="en" style="color: #ffd700; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Lott-Sturm-Villani Curvature and Entropy Confinement</h4>
+      <h4 lang="fr" style="color: #ffd700; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Courbure de Lott-Sturm-Villani et Confinement de l'Entropie</h4>
+
+      <p lang="en" style="margin-bottom: 0.8rem">
+        The Lott-Sturm-Villani theory proves a profound physical property: the generation of entropy in a system is strictly constrained by the underlying <em>Ricci curvature</em> ($K$) of its geometric space. In a space with positive Ricci curvature, optimal transport paths (geodesics) converge, strongly confining the dispersion of entropy.
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem">
+        La théorie de Lott-Sturm-Villani prouve une propriété physique profonde : la génération d'entropie dans un système est strictement contrainte par la <em>courbure de Ricci</em> ($K$) sous-jacente de son espace géométrique. Dans un espace à courbure de Ricci positive, les chemins de transport optimaux (géodésiques) convergent, confinant fortement la dispersion de l'entropie.
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #ffd700; margin: 1rem 0; font-size: 1.15em;">
+        $$ \mathrm{Ent}(\mu_t) \leq (1-t)\mathrm{Ent}(\mu_0) + t\mathrm{Ent}(\mu_1) - \frac{K}{2} t(1-t) W_2^2(\mu_0, \mu_1) $$
+      </div>
+
+      <p lang="en" style="margin-bottom: 0;">
+        In the Nakamoto Spacetime, what constitutes this curvature $K$? It is the <strong>Accumulated Proof-of-Work</strong> ($\mathcal{C}_{\mathrm{nak}} \propto W_{\mathrm{acc}}$). This reveals a stunning reality: the massive energy wall of the ledger physically <em>curves</em> the statistical manifold. A high hashpower induces a strong positive curvature ($K > 0$), which gravitationally forces the network to glide along the geodesic of least action (the logarithmic spiral of the Nautilus). This geometric curvature violently compresses the entropy of the Mempool into a single, singular point of consensus, making forks—which represent entropy dispersion—thermodynamically repulsive and structurally impossible.
+      </p>
+      <p lang="fr" style="margin-bottom: 0;">
+        Dans l'Espace-Temps de Nakamoto, qu'est-ce qui constitue cette courbure $K$ ? C'est la <strong>Preuve de Travail Accumulée</strong> ($\mathcal{C}_{\mathrm{nak}} \propto W_{\mathrm{acc}}$). Cela révèle une réalité saisissante : le mur énergétique massif du registre <em>courbe</em> physiquement la variété statistique. Une puissance de hachage élevée induit une forte courbure positive ($K > 0$), qui force gravitationnellement le réseau à glisser le long de la géodésique de moindre action (la spirale logarithmique du Nautile). Cette courbure géométrique compresse violemment l'entropie de la Mempool en un point de consensus unique et singulier, rendant les forks — qui représentent une dispersion d'entropie — thermodynamiquement répulsifs et structurellement impossibles.
+      </p>
     </div>
   </details>
 
-  <details
-  style="
-    margin-bottom: 2rem;
-    background: rgba(255, 68, 68, 0.03);
-    border-left: 4px solid #ff4444;
-    border-radius: 0 10px 10px 0;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
-  "
->
-  <summary
-    style="
-      padding: 1.2rem 1.8rem;
-      cursor: pointer;
-      font-weight: bold;
-      color: hsla(332, 100%, 63%, 0.953);
-      outline: none;
-      list-style-type: '▶ ';
-      font-size: 1.1em;
-    "
-  >
-    <span lang="en">Level 5: Massive Fields, The Nakamoto Action & Hawking Evaporation (Expert +)</span>
-    <span lang="fr">Niveau 5 : Champs Massifs, Action de Nakamoto & Évaporation de Hawking (Expert +)</span>
-  </summary>
-
-  <div style="padding: 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
-    
-    <h4 style="color: hsla(332, 100%, 63%, 0.953); margin-bottom: 0.5rem; font-size: 1.1rem;">1. Dictionnaire des Constantes Fondamentales</h4>
-    <p>
-      Pour formaliser la dynamique du consensus, nous définissons quatre constantes fondamentales qui régissent la métrique de cet espace-temps informationnel :
-    </p>
-    <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: circle;">
-      <li><strong>$\tau_B = 600s$ (Target Interval) :</strong> Le "tic" de l'horloge macroscopique, l'unité de synchronisation fondamentale.</li>
-      <li><strong>$\tau_L$ (Network Latency) :</strong> La limite de propagation causale (temps nécessaire pour qu'une information de consensus atteigne 90% du réseau).</li>
-      <li><strong>$c_{\mathrm{nak}} = \frac{d\ell}{d\theta}$ (Consensus Velocity) :</strong> La vitesse limite effective de propagation de la vérité. C'est le "cône de lumière" informationnel : aucune information ne peut être validée par le consensus plus vite que cette limite sans générer de fork (causalité rompue).</li>
-      <li><strong>$\hbar_{\mathrm{nak}}$ (Effective Quantum Action) :</strong> Le quantum d'action irréductible. C'est l'énergie minimale dissipée pour transformer un état binaire potentiel en un état historique gravé (le coût énergétique d'un bit de consensus).</li>
-    </ul>
-
-    <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">2. L'Équation du Champ Massif (Klein-Gordon Nakamotien)</h4>
-    <p>
-      Le champ d'information $\Phi(x)$ n'est pas "sans masse". Dans cet espace, une information (une transaction) qui tente de s'inscrire dans le passé se heurte à une <strong>masse inertielle thermodynamique $m_D$</strong> proportionnelle à la difficulté $D$. L'équation de Klein-Gordon régit la propagation de cette "vérité" :
-    </p>
-    <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
-      $$ \left( \Box + \left( \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}} \right)^2 \right) \Phi(x) = 0 $$
-    </div>
-    <p>
-      Où $\Box = \partial_\theta^2 - \nabla_\ell^2$ est l'opérateur d'Alembertien dans la géométrie de Nakamoto. Le terme $\mu = \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}}$ définit la <strong>longueur de corrélation</strong> (ou portée de force) du consensus. Si un attaquant tente de propager un bloc frauduleux sans la masse $m_D$ requise, le champ $\Phi(x)$ subit une atténuation exponentielle (<strong>Potentiel de Yukawa</strong>) :
-    </p>
-    <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
-      $$ V(r) \sim -\frac{g^2}{r} e^{-\mu r} $$
-    </div>
-    <p>
-      Ceci démontre que la "vérité" est localisée par sa propre masse thermodynamique : une falsification est physiquement incapable de parcourir le réseau au-delà d'une portée $1/\mu$ sans s'évaporer.
-    </p>
-
-    <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">3. Coût d'Action et Divergence de Synchronisation</h4>
-    <p>
-      Chaque hachage SHA-256 est une action macroscopique $h_N$. La viabilité du système dépend de la convergence de $h_N$ vers la constante physique $h$. Le coût effectif pour forcer un effondrement de l'état global (synchronisation) diverge à mesure que la latence $\tau_L$ sature l'intervalle $\tau_B$.
-    </p>
-    <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
-      $$ \Delta \mathcal{A}_{\mathrm{sync}} = h \cdot \left( 1 - \frac{\tau_L}{\tau_B} \right)^{-1} $$
-    </div>
-    <p>
-      La divergence de cette action garantie que le registre ne peut rester cohérent si la transition d'état ($d\theta$) excède la capacité de propagation ($d\ell$). Si $\tau_L \to \tau_B$, le coût pour maintenir la causalité devient infini, forçant une transition de phase catastrophique : le système "fond".
-    </p>
-
-    <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">4. Finalité, Évaporation et Singularité</h4>
-    <p>
-      Le sommet de la chaîne ($z=0$) est une zone turbulente soumise à une <strong>évaporation de Hawking informationnelle</strong> : les blocs orphelins sont émis à la frontière où le consensus n'est pas encore solidifié. 
-    </p>
-    <p>
-      La probabilité qu'un état passé soit réorganisé décroît exponentiellement avec la profondeur $z$ et la masse du travail accumulé $M_{\mathrm{tip}}$ :
-    </p>
-    <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
-      $$ P(\mathrm{reorg} \mid z) \sim \exp \left( - \frac{M_{\mathrm{tip}} \cdot z}{\mathcal{E}_{\mathrm{attack}}} \right) $$
-    </div>
-    <p>
-      Sous l'horizon $z=6$, les transactions sont piégées dans la singularité du consensus. Elles subissent un décalage vers le rouge infini pour tout observateur extérieur (attaquant) : le travail nécessaire pour les "extraire" ou les modifier demanderait une énergie dépassant la capacité de calcul de l'univers physique. Elles sont <em>mathématiquement immortelles</em>.
-    </p>
-  </div>
-</details>
-  <details>
-    <summary>
-      <div class="engineer-title" lang="en">💻 Engineer's View: Forging the Arrow of Time</div>
-      <div class="engineer-title" lang="fr">💻 Vue de l'Ingénieur : Forger la Flèche du Temps</div>
+  <details style="margin-bottom: 2rem; background: rgba(255, 68, 68, 0.03); border-left: 4px solid #ff4444; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
+    <summary style="padding: 1.2rem 1.8rem; cursor: pointer; font-weight: bold; color: hsla(332, 100%, 63%, 0.953); outline: none; list-style-type: '▶ '; font-size: 1.1em;">
+      <span lang="en">Level 6: Massive Fields, The Nakamoto Action & Hawking Evaporation (Expert ++)</span>
+      <span lang="fr">Niveau 6 : Champs Massifs, Action de Nakamoto & Évaporation de Hawking (Expert ++)</span>
     </summary>
-    <pre><code><span class="type">int64_t</span> <span class="function">GetMedianTimePast</span>() <span class="keyword">const</span> {
-    <span class="type">int64_t</span> pmedian[nMedianTimeSpan]; <span class="comment">// 11 blocks</span>
-    <span class="type">int64_t</span>* pbegin = &pmedian[nMedianTimeSpan];
-    <span class="type">int64_t</span>* pend = &pmedian[nMedianTimeSpan];
-    <span class="keyword">const</span> CBlockIndex* pindex = <span class="keyword">this</span>;
-    
-    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i < nMedianTimeSpan && pindex; i++, pindex = pindex->pprev)
-        *(--pbegin) = pindex-><span class="function">GetBlockTime</span>();
+    <div style="padding: 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
+      
+      <h4 style="color: hsla(332, 100%, 63%, 0.953); margin-bottom: 0.5rem; font-size: 1.1rem;">1. Dictionnaire des Constantes Fondamentales</h4>
+      <p>Pour formaliser la dynamique du consensus, nous définissons quatre constantes fondamentales qui régissent la métrique de cet espace-temps informationnel :</p>
+      <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: circle;">
+        <li><strong>$\tau_B = 600s$ (Target Interval) :</strong> Le "tic" de l'horloge macroscopique, l'unité de synchronisation fondamentale.</li>
+        <li><strong>$\tau_L$ (Network Latency) :</strong> La limite de propagation causale (temps nécessaire pour qu'une information atteigne la majorité du réseau).</li>
+        <li><strong>$c_{\mathrm{nak}} = \frac{d\ell}{d\theta}$ (Consensus Velocity) :</strong> La vitesse limite effective de propagation de la vérité. C'est le "cône de lumière" informationnel.</li>
+        <li><strong>$\hbar_{\mathrm{nak}}$ (Effective Quantum Action) :</strong> Le quantum d'action irréductible. C'est l'énergie minimale dissipée pour transformer un état binaire en un fait historique gravé.</li>
+      </ul>
 
-    std::<span class="function">sort</span>(pbegin, pend);
-    <span class="keyword">return</span> pbegin[(pend - pbegin) / <span class="number">2</span>];
+      <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">2. L'Équation du Champ Massif (Klein-Gordon Nakamotien)</h4>
+      <p>
+        Le champ d'information $\Phi(x)$ n'est pas "sans masse". Une transaction tentant de s'inscrire dans le registre se heurte à une <strong>masse inertielle thermodynamique $m_D$</strong> proportionnelle à la difficulté $D$. L'équation de Klein-Gordon régit la propagation de cette "vérité" :
+      </p>
+      <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
+        $$ \left( \Box + \left( \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}} \right)^2 \right) \Phi(x) = 0 $$
+      </div>
+      <p>
+        Où $\Box = \partial_\theta^2 - \nabla_\ell^2$ est l'Alembertien. Le terme $\mu = \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}}$ définit la <strong>longueur de corrélation</strong>. Si un attaquant propage un bloc sans la masse $m_D$ requise, le champ $\Phi(x)$ subit une atténuation exponentielle (<strong>Potentiel de Yukawa</strong>) : $V(r) \sim -\frac{g^2}{r} e^{-\mu r}$. La falsification s'évapore avant de parcourir le réseau.
+      </p>
+
+      <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">3. Coût d'Action et Divergence de Synchronisation</h4>
+      <p>
+        Chaque hachage SHA-256 est une action macroscopique $h_N$. Le coût effectif pour forcer un effondrement de l'état global diverge à mesure que la latence $\tau_L$ sature l'intervalle $\tau_B$.
+      </p>
+      <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
+        $$ \Delta \mathcal{A}_{\mathrm{sync}} = h \cdot \left( 1 - \frac{\tau_L}{\tau_B} \right)^{-1} $$
+      </div>
+      <p>
+        Si $\tau_L \to \tau_B$, le coût pour maintenir la causalité devient infini, forçant une transition de phase catastrophique : le système fond. La viabilité du système dépend de la convergence évolutive de l'action technologique matérielle ($h_N$) vers la constante physique fondamentale ($h$).
+      </p>
+
+      <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">4. Finalité, Évaporation et Singularité</h4>
+      <p>
+        Le sommet de la chaîne ($z=0$) est une zone turbulente soumise à une <strong>évaporation de Hawking informationnelle</strong> : les blocs orphelins sont émis à la frontière où le consensus n'est pas encore solidifié. La probabilité qu'un état passé soit réorganisé décroît exponentiellement avec la profondeur $z$ et la masse du travail accumulé $M_{\mathrm{tip}}$ :
+      </p>
+      <div class="math-block" style="text-align: center; color: #ff4444; margin: 1rem 0; font-size: 1.1em;">
+        $$ P(\mathrm{reorg} \mid z) \sim \exp \left( - \frac{M_{\mathrm{tip}} \cdot z}{\mathcal{E}_{\mathrm{attack}}} \right) $$
+      </div>
+      <p style="margin-bottom: 0;">
+        Sous l'horizon $z=6$, les transactions sont piégées dans la singularité du consensus. Elles subissent un décalage vers le rouge infini pour tout attaquant : le travail pour les modifier demanderait une courbure énergétique dépassant la capacité locale de l'univers physique. Elles sont <em>mathématiquement immortelles</em>.
+      </p>
+    </div>
+  </details>
+
+  <details style="margin-top: 2rem;">
+    <summary style="cursor: pointer; outline: none;">
+      <div class="engineer-title" lang="en" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border-radius: 6px; font-weight: bold; color: #fff;">💻 Engineer's View: Forging the Arrow of Time</div>
+      <div class="engineer-title" lang="fr" style="display: inline-block; padding: 0.5rem 1rem; background: rgba(255,255,255,0.1); border-radius: 6px; font-weight: bold; color: #fff;">💻 Vue de l'Ingénieur : Forger la Flèche du Temps</div>
+    </summary>
+    <div style="margin-top: 1rem; padding: 1.5rem; background: #1e1e1e; border-radius: 8px; border-left: 4px solid #fff;">
+<pre style="margin: 0; overflow-x: auto; color: #d4d4d4; font-family: 'Courier New', Courier, monospace; font-size: 0.9em;"><code><span style="color: #569cd6;">int64_t</span> <span style="color: #dcdcaa;">GetMedianTimePast</span>() <span style="color: #569cd6;">const</span> {
+    <span style="color: #569cd6;">int64_t</span> pmedian[nMedianTimeSpan]; <span style="color: #6a9955;">// 11 blocks</span>
+    <span style="color: #569cd6;">int64_t</span>* pbegin = &pmedian[nMedianTimeSpan];
+    <span style="color: #569cd6;">int64_t</span>* pend = &pmedian[nMedianTimeSpan];
+    <span style="color: #569cd6;">const</span> CBlockIndex* pindex = <span style="color: #569cd6;">this</span>;
+    
+    <span style="color: #c586c0;">for</span> (<span style="color: #569cd6;">int</span> i = <span style="color: #b5cea8;">0</span>; i < nMedianTimeSpan && pindex; i++, pindex = pindex->pprev)
+        *(--pbegin) = pindex-><span style="color: #dcdcaa;">GetBlockTime</span>();
+
+    std::<span style="color: #dcdcaa;">sort</span>(pbegin, pend);
+    <span style="color: #c586c0;">return</span> pbegin[(pend - pbegin) / <span style="color: #b5cea8;">2</span>];
 }
 
-<span class="comment">// Rejection rule:</span>
-<span class="keyword">if</span> (block.<span class="function">GetBlockTime</span>() <= pindexPrev-><span class="function">GetMedianTimePast</span>()) <span class="keyword">return</span> <span class="keyword">false</span>;</code></pre>
-    <p lang="en">
-      Because the network operates in an asynchronous, relativistic universe without a global clock (high latency $\tau_L$), individual timestamps are "noisy". To prevent the thermodynamic structure from melting under thermal noise ($T_{\mathrm{eff}}$), the network samples the last 11 blocks to establish an unforgeable chronological anchor. A new block <em>must</em> be strictly younger than this median, mechanically forcing time to flow forward.
-    </p>
-    <p lang="fr">
-      Puisque le réseau opère dans un univers relativiste et asynchrone sans horloge globale (forte latence $\tau_L$), les horodatages individuels sont "bruités". Pour empêcher la structure thermodynamique de fondre sous ce bruit thermique ($T_{\mathrm{eff}}$), le réseau échantillonne les 11 derniers blocs pour établir une ancre chronologique difficile à falsifier. Un nouveau bloc <em>doit</em> être strictement plus récent que cette médiane, forçant mécaniquement le temps à s'écouler vers l'avant.
-    </p>
+<span style="color: #6a9955;">// Rejection rule:</span>
+<span style="color: #c586c0;">if</span> (block.<span style="color: #dcdcaa;">GetBlockTime</span>() <= pindexPrev-><span style="color: #dcdcaa;">GetMedianTimePast</span>()) <span style="color: #c586c0;">return</span> <span style="color: #569cd6;">false</span>;</code></pre>
+    </div>
+    <div style="padding: 1rem 0; color: #d4d4d4; line-height: 1.6; font-size: 0.95em;">
+      <p lang="en" style="margin-bottom: 0.8rem;">
+        Because the network operates in an asynchronous, relativistic universe without a global clock (high latency $\tau_L$), individual timestamps are "noisy". The system relies on the topological constraint of the Wasserstein metric: the geometry of the ledger must absolutely prevent time-reversal.
+      </p>
+      <p lang="fr" style="margin-bottom: 0.8rem;">
+        Puisque le réseau opère dans un univers relativiste et asynchrone sans horloge globale (forte latence $\tau_L$), les horodatages individuels sont "bruités". Le système s'appuie sur la contrainte topologique de la métrique de Wasserstein : la géométrie du registre doit absolument empêcher le renversement du temps.
+      </p>
+      <p lang="en" style="margin-bottom: 0;">
+        To prevent the thermodynamic structure from melting under thermal noise ($T_{\mathrm{eff}}$), the network samples the last 11 blocks to establish an unforgeable chronological anchor. A new block <em>must</em> be strictly younger than this median, mechanically forcing time to flow forward and ensuring the geodesic transport of consensus moves relentlessly down the entropy gradient.
+      </p>
+      <p lang="fr" style="margin-bottom: 0;">
+        Pour empêcher la structure thermodynamique de fondre sous ce bruit thermique ($T_{\mathrm{eff}}$), le réseau échantillonne les 11 derniers blocs pour établir une ancre chronologique infalsifiable. Un nouveau bloc <em>doit</em> être strictement plus récent que cette médiane, forçant mécaniquement le temps à s'écouler vers l'avant et garantissant que le transport géodésique du consensus descende implacablement le gradient d'entropie.
+      </p>
+    </div>
   </details>
   
-  <p lang="en" style="margin-top: 1rem; font-size: 0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 1.5rem; font-style: italic; text-align: center;">
-    Conclusion: The Nakamoto Spacetime remains a <strong>perfect causal crystal</strong> only as long as its massive energy input masks its quantum noise and its communication delay remains strictly bounded within the consensus cone.
+  <p lang="en" style="margin-top: 2rem; font-size: 1em; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 1.5rem; font-style: italic; text-align: center; color: #e0e0e0;">
+    Conclusion: The Nakamoto Spacetime remains a <strong>perfect causal crystal</strong> only as long as its massive geometric curvature (energy input) confines its statistical entropy, and its communication delay remains strictly bounded within the optimal transport geodesic of the consensus cone.
   </p>
-  <p lang="fr" style="margin-top: 1rem; font-size: 0.95em; border-top: 1px solid rgba(68, 153, 255, 0.2); padding-top: 1.5rem; font-style: italic; text-align: center;">
-    Conclusion : L'Espace-Temps de Nakamoto ne reste un <strong>cristal causal parfait</strong> que tant que son apport énergétique massif masque son bruit quantique et que son délai de communication reste strictement confiné dans le cône de consensus.
+  <p lang="fr" style="margin-top: 1rem; font-size: 1em; padding-bottom: 0.5rem; font-style: italic; text-align: center; color: #e0e0e0;">
+    Conclusion : L'Espace-Temps de Nakamoto ne reste un <strong>cristal causal parfait</strong> que tant que sa courbure géométrique massive (apport énergétique) confine son entropie statistique, et que son délai de communication reste strictement confiné dans la géodésique de transport optimal du cône de consensus.
   </p>
-  <div class="proof-end">∎</div>
+  <div class="proof-end" style="text-align: right; color: #666; font-size: 1.2rem; margin-top: 1rem;">∎</div>
 </div>
       <!-- <div class="proof-box" style="border: 1px solid rgba(255, 68, 68, 0.2); background: rgba(255, 68, 68, 0.02); padding: 2rem; border-radius: 12px; margin: 3rem 0;">
         <div class="proof-title" lang="en" style="color: #ff4444;">The Temporal Meissner Effect & Crystallization of History</div>
@@ -7116,10 +7062,11 @@ $$
         Each rule acts as a <strong>hyperplane</strong> ($H_i$) dividing the phase space of all possible Mempool permutations into valid and invalid half-spaces:
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
-        Comment cette géométrie est-elle construite ? La validité d'un bloc est déterminée purement par des inéquations mathématiques représentant les règles du protocole — telles que les limites de capacité, la topologie 
-        <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span> 
-        des transactions, et la maximisation de la 
-        <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 par absence d'expressivité du script.</span></span>.
+        Comment cette géométrie est-elle construite ?<br /> La validité d'un bloc est déterminée purement par des inéquations mathématiques représentant les règles du protocole — telles que : <ul>
+          <li> les limites de capacité</li> 
+          <li> la topologie <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span>
+        des transactions</li>
+          <li>la maximisation de la <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 par absence d'expressivité du script.</span></span></li></ul>
         Chaque règle agit comme un <strong>hyperplan</strong> ($H_i$) divisant l'espace des phases de toutes les permutations possibles du Mempool en demi-espaces valides et invalides :
       </p>
 
