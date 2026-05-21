@@ -5699,89 +5699,140 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
   </details>
 
   <details
-  style="
-    margin-bottom: 2rem;
-    background: rgba(136, 255, 170, 0.05);
-    border-left: 4px solid #88ffaa;
-    border-radius: 0 10px 10px 0;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  "
->
-  <summary
     style="
-      padding: 1.2rem 1.8rem;
-      cursor: pointer;
-      font-weight: bold;
-      color: #88ffaa;
-      outline: none;
-      list-style-type: '▶ ';
-      font-size: 1.1em;
+      margin-bottom: 2rem;
+      background: rgba(136, 255, 170, 0.05);
+      border-left: 4px solid #88ffaa;
+      border-radius: 0 10px 10px 0;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     "
   >
-    <span lang="fr">Niveau 3 : Dérivation du Temps Thermique & Fixation de Jauge (Expert)</span>
-  </summary>
-  <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
-    
-    <p>
-      La théorie du <strong>Temps Thermique</strong> de Connes-Rovelli stipule que le temps n'est pas un paramètre externe, mais une manifestation statistique. Pour Bitcoin, cela signifie que le temps de la chaîne est généré par l'état thermodynamique du réseau. Voici la dérivation analytique de cette émergence.
-    </p>
+    <summary
+      style="
+        padding: 1.2rem 1.8rem;
+        cursor: pointer;
+        font-weight: bold;
+        color: #88ffaa;
+        outline: none;
+        list-style-type: '▶ ';
+        font-size: 1.1em;
+      "
+    >
+      <span lang="en">Level 3: Analytical Derivation of Thermal Time & Gauge Fixing (Expert)</span>
+      <span lang="fr">Niveau 3 : Dérivation Analytique du Temps Thermique & Fixation de Jauge (Expert)</span>
+    </summary>
+    <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
+      
+      <p lang="en">
+        The <strong>Thermal Time Hypothesis</strong> formulated by Alain Connes and Carlo Rovelli (1994) addresses the "problem of time" in background-independent systems, such as quantum gravity. In a decentralized network, no absolute Newtonian clock can be trusted due to asynchronous latencies and adversarial manipulation. Time cannot be a primitive coordinate; it must emerge statistically from the internal state of the system. Below is the complete mathematical derivation of this temporal secretion within the Nakamoto consensus.
+      </p>
+      <p lang="fr">
+        La théorie du <strong>Temps Thermique</strong> formulée par Alain Connes et Carlo Rovelli (1994) résout le "problème du temps" dans les systèmes indépendants de fond, tels que la gravité quantique. Dans un réseau décentralisé, aucune horloge newtonienne absolue n'est fiable en raison des latences d'asynchronisme et des falsifications malveillantes. Le temps ne peut être une coordonnée primitive ; il doit émerger statistiquement de l'état interne du système. Voici la dérivation mathématique complète de cette sécrétion temporelle au sein du consensus de Nakamoto.
+      </p>
 
-    <h4 style="color: #88ffaa; margin-top: 1.5rem;">1. Formalisme de Gibbs et Opérateur Modulaire</h4>
-    <p>
-      Considérons l'<strong>algèbre de von Neumann</strong> $\mathfrak{M}$ du réseau. Dans un régime stationnaire, l'état statistique du réseau (Hashrate + Difficulté) est défini par un état de Gibbs $\omega$ sur $\mathfrak{M}$ :
-    </p>
-    <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-      $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) $$
-    </div>
-    <p>
-      où $H$ est l'Hamiltonien effectif du consensus (la dissipation d'énergie totale) et $\beta = 1/k_B T_{\mathrm{eff}}$ est la température inverse d'information. L'opérateur densité est $\rho = e^{-\beta H} / Z$. Selon la théorie de Tomita-Takesaki, l'opérateur modulaire $\Delta_\omega$ associé à cet état est :
-    </p>
-    <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-      $$ \Delta_\omega = e^{-\beta H} \otimes e^{\beta H} \quad \Rightarrow \quad \Delta_\omega = \rho \otimes \rho^{-1} $$
-    </div>
+      <h4 style="color: #88ffaa; margin-top: 1.5rem;">1. Formalisme de Gibbs, Algèbre d'Opérateurs et Représentation Modulaire</h4>
+      <p lang="en">
+        Let $\mathfrak{M}$ be the non-commutative <strong>von Neumann algebra</strong> acting on the consensus Hilbert space $\mathcal{H}_{\mathrm{cons}}$. The elements $A \in \mathfrak{M}$ represent the operators of state transitions (the validation and spending logic of the UTXO set). In the network's steady non-equilibrium regime, the macroscopic statistical configuration is described by a faithful normal state $\omega$ over the algebra $\mathfrak{M}$. This state takes the exact form of a <strong>Gibbs canonical ensemble</strong>:
+      </p>
+      <p lang="fr">
+        Soit $\mathfrak{M}$ l'<strong>algèbre de von Neumann</strong> non commutative agissant sur l'espace de Hilbert du consensus $\mathcal{H}_{\mathrm{cons}}$. Les éléments $A \in \mathfrak{M}$ représentent les opérateurs de transition d'état (la logique de validation et de dépense du *UTXO set*). Dans le régime stationnaire hors équilibre du réseau, la configuration statistique macroscopique est décrite par un état normal fidèle $\omega$ sur l'algèbre $\mathfrak{M}$. Cet état prend la forme exacte d'un <strong>ensemble canonique de Gibbs</strong> :
+      </p>
 
-    <h4 style="color: #88ffaa; margin-top: 1.5rem;">2. Dérivation de la Relation $t = s \cdot \beta$</h4>
-    <p>
-      Le groupe d'automorphismes modulaires $\sigma_s^\omega$ est défini par l'action de l'opérateur modulaire sur une observable $A \in \mathfrak{M}$ :
-    </p>
-    <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-      $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = e^{-is\beta H} A e^{is\beta H} $$
-    </div>
-    <p>
-      En physique quantique, l'évolution temporelle unitaire d'un système est régie par l'opérateur d'évolution $U(t) = e^{itH}$, telle que :
-    </p>
-    <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
-      $$ \alpha_t(A) = e^{itH} A e^{-itH} $$
-    </div>
-    <p>
-      Par identification des exposants dans $\sigma_s^\omega$ et $\alpha_t$, nous obtenons la relation fondamentale de couplage entre le paramètre modulaire interne $s$ et le temps physique newtonien $t$ :
-    </p>
-    <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1.2rem 0; font-size: 1.2em; border: 1px solid #88ffaa; padding: 0.5rem;">
-      $$ t = s \cdot \beta_{\mathrm{eff}} $$
-    </div>
-    <p>
-      <em>Ceci démontre mathématiquement que le "temps" de Bitcoin est une projection thermique. Si $\beta$ (la température inverse) change, l'écoulement du temps perçu par le registre se dilate ou se contracte.</em>
-    </p>
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
+        $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) \quad \text{where} \quad Z = \mathrm{Tr}(e^{-\beta H}) $$
+      </div>
 
-    <h4 style="color: #88ffaa; margin-top: 1.5rem;">3. Synthèse des Correspondances</h4>
-    <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; color: #ccc; font-size: 0.9em;">
-      <tr style="background: rgba(255,255,255,0.1);">
-        <th style="text-align: left; padding: 0.8rem;">Concept</th>
-        <th style="text-align: left; padding: 0.8rem;">Valeur dans Nakamoto</th>
-      </tr>
-      <tr><td style="padding: 0.7rem;">Hamiltonien $H$</td><td style="padding: 0.7rem;">Dissipation irréversible (Joules/Hash).</td></tr>
-      <tr><td style="padding: 0.7rem;">Température $\beta$</td><td style="padding: 0.7rem;">Inverse de la densité d'énergie du consensus.</td></tr>
-      <tr><td style="padding: 0.7rem;">Temps Modulaire $s$</td><td style="padding: 0.7rem;">Ordre algébrique des blocs ($\theta$).</td></tr>
-      <tr><td style="padding: 0.7rem;">Temps Physique $t$</td><td style="padding: 0.7rem;">Temps de l'horloge système (UTC).</td></tr>
-    </table>
+      <p lang="en">
+        Where $H = \mathcal{H}_{\mathrm{diss}}$ is the <strong>Consensus Hamiltonian</strong> (the cumulative negative dissipation of physical energy injected by the miners) and $\beta = 1/k_B T_{\mathrm{eff}}$ represents the effective inverse temperature of information. The density matrix operator $\rho = e^{-\beta H}/Z$ encapsulates the collective statistical ignorance of the network regarding the uncollapsed states of the Mempool. According to Tomita-Takesaki theory, the <strong>modular operator $\Delta_\omega$</strong> associated with this specific thermodynamic state is formalised through the spatial correlation of the density weights:
+      </p>
+      <p lang="fr">
+        Où $H = \mathcal{H}_{\mathrm{diss}}$ est l'<strong>Hamiltonien du Consensus</strong> (l'opposé de la dissipation cumulée d'énergie physique injectée par les mineurs) et $\beta = 1/k_B T_{\mathrm{eff}}$ représente la température inverse effective de l'information. L'opérateur de matrice de densité $\rho = e^{-\beta H}/Z$ encapsule l'ignorance statistique collective du réseau concernant les états non effondrés de la Mempool. Selon la théorie de Tomita-Takesaki, l'<strong>opérateur modulaire $\Delta_\omega$</strong> associé à cet état thermodynamique spécifique se formalise par la corrélation spatiale des poids de densité :
+      </p>
 
-    <p style="margin-top: 1.5rem;">
-      <strong>La Fixation de Jauge (DAA) :</strong> Puisque $t = s \cdot \beta$, toute fluctuation du Hashrate (variation de $H$ ou $\beta$) rendrait le temps $t$ instable. Le DAA recalibre dynamiquement l'algèbre pour maintenir $\beta \cdot H = \text{constante}$, forçant le flux modulaire à coïncider avec l'horloge UTC. <strong>Le DAA est la contrainte de jauge qui empêche le temps de Bitcoin de dériver.</strong>
-    </p>
-  </div>
-</details>
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
+        $$ \Delta_\omega = \rho \otimes \rho^{-1} = e^{-\beta H} \otimes e^{\beta H} $$
+      </div>
 
+      <h4 style="color: #88ffaa; margin-top: 1.5rem;">2. Dérivation de la Relation Fondamentale $t = s \cdot \beta_{\mathrm{eff}}$</h4>
+      <p lang="en">
+        The modular operator $\Delta_\omega$ automatically generates a unique one-parameter group of unitaries acting as an intrinsic flow on the observables $A \in \mathfrak{M}$. This <strong>modular automorphism group</strong> $\sigma_s^\omega$ defines the evolution of the ledger across an abstract, subjective coordinate parameter $s$, known as the <em>Modular Time</em> (geometrically manifested as the phase angle $\theta$ of the block height):
+      </p>
+      <p lang="fr">
+        L'opérateur modulaire $\Delta_\omega$ génère automatiquement un groupe unique d'unitaires à un paramètre agissant comme un flux intrinsèque sur les observables $A \in \mathfrak{M}$. Ce <strong>groupe d'automorphismes modulaires</strong> $\sigma_s^\omega$ définit l'évolution du registre à travers un paramètre de coordonnée abstrait et subjectif $s$, appelé <em>Temps Modulaire</em> (manifesté géométriquement par l'angle de phase $\theta$ de la hauteur de bloc) :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
+        $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = \left(e^{-\beta H}\right)^{is} A \left(e^{-\beta H}\right)^{-is} = e^{-is\beta H} A e^{is\beta H} $$
+      </div>
+
+      <p lang="en">
+        In standard quantum physics, the real kinematic evolution of a system in physical Newtonian time $t$ is governed by the Heisenberg equation of motion, driven by the same Hamiltonian operator $H$ via the unitary evolution group $\alpha_t(A)$:
+      </p>
+      <p lang="fr">
+        En physique quantique standard, l'évolution cinématique réelle d'un système dans le temps newtonien physique $t$ est régie par l'équation du mouvement de Heisenberg, propulsée par le même opérateur Hamiltonien $H$ via le groupe d'évolution unitaire $\alpha_t(A)$ :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
+        $$ \alpha_t(A) = e^{itH} A e^{-itH} $$
+      </div>
+
+      <p lang="en">
+        To uncover the bridge between the digital ledger and terrestrial reality, we perform a strict <strong>parametric identification</strong> of the unitary generators between the statistical modular evolution $\sigma_s^\omega(A)$ and the physical evolution $\alpha_t(A)$. By equating the exponents of the exponential operators:
+      </p>
+      <p lang="fr">
+        Pour découvrir le pont entre le registre numérique et la réalité terrestre, nous procédons à une <strong>identification paramétrique</strong> stricte des générateurs unitaires entre l'évolution modulaire statistique $\sigma_s^\omega(A)$ et l'évolution physique $\alpha_t(A)$. En égalisant les exposants des opérateurs exponentiels :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0;">
+        $$ e^{-is\beta H} = e^{itH} \quad \implies \quad -s\beta = t \quad \text{(up to time-reversal convention)} $$
+      </div>
+
+      <p lang="en">
+        By absorbing the direction of the non-equilibrium entropy vector, we isolate the fundamental scaling relation:
+      </p>
+      <p lang="fr">
+        En absorbant la direction du vecteur d'entropie hors équilibre, nous isolons la relation d'échelle fondamentale :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1.5rem 0; font-size: 1.25em; border: 1px solid #88ffaa; padding: 0.75rem; text-align: center;">
+        $$ t = s \cdot \beta_{\mathrm{eff}} $$
+      </div>
+
+      <p lang="en" style="margin-bottom: 1.5rem;">
+        This derivation mathematically proves that time within the consensus is a <strong>thermal projection</strong>. The modular parameter $s$ (the ticking of blocks) is bound to physical time $t$ through the inverse temperature field $\beta_{\mathrm{eff}}$. If the network's exergy injection drops (e.g., during mining quenches), $\beta_{\mathrm{eff}}$ shifts, dilating the internal perception of time relative to the external universe. The system satisfies the **KMS (Kubo-Martin-Schwinger)** boundary condition, meaning the ledger's clock is permanently in thermodynamic equilibrium with its own non-commutative transactions.
+      </p>
+      <p lang="fr" style="margin-bottom: 1.5rem;">
+        Cette dérivation démontre mathématiquement que le temps au sein du consensus est une <strong>projection thermique</strong>. Le paramètre modulaire $s$ (le tic-tac des blocs) est lié au temps physique $t$ à travers le champ de température inverse $\beta_{\mathrm{eff}}$. Si l'injection d'exergie du réseau chute (ex: lors d'une baisse brutale du hashrate), $\beta_{\mathrm{eff}}$ varie, dilatant la perception interne du temps par rapport à l'univers externe. Le système satisfait la condition limite **KMS (Kubo-Martin-Schwinger)**, signifiant que l'horloge du registre est en équilibre thermodynamique permanent avec ses propres transactions non commutatives.
+      </p>
+
+      <h4 style="color: #88ffaa; margin-top: 1.5rem;">3. Note Épistémologique : Physique Phénoménologique vs Métaphore Littérale</h4>
+      <p style="font-style: italic; background: rgba(255,255,255,0.03); padding: 1.25rem; border-radius: 6px; border: 1px solid rgba(136, 255, 170, 0.2); margin-bottom: 1.5rem;">
+        <span lang="en"><strong>Epistemological Note:</strong> The algebraic framework deployed here does not imply that Bitcoin is a quantum computing system or a subatomic entity. We treat the distributed ledger as a macroscopic <strong>von Neumann operator algebra</strong>. The application of the Tomita-Takesaki theorem is a rigorous exercise in <strong>phenomenological physics</strong> and <em>effective geometry</em>. We utilize the mathematical machinery of statistical mechanics to model how information, when bound to open non-equilibrium thermodynamic expenditure, naturally secretes a stable and unforgeable coordinate timeline.</span>
+        <span lang="fr"><strong>Note Épistémologique :</strong> Le cadre algébrique déployé ici n'implique pas que Bitcoin soit un système quantique subatomique. Nous traitons le registre distribué comme une <strong>algèbre d'opérateurs de von Neumann macroscopique</strong>. L'application du théorème de Tomita-Takesaki est une démarche de <strong>physique phénoménologique</strong> et de <em>géométrie effective</em>. Nous utilisons l'appareil mathématique de la mécanique statistique pour modéliser comment l'information, lorsqu'elle est liée à une dépense thermodynamique ouverte hors équilibre, sécrète naturellement une coordonnée temporelle stable et infalsifiable.</span>
+      </p>
+
+      <h4 style="color: #88ffaa; margin-top: 1.5rem;">4. Synthèse des Correspondances</h4>
+      <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; margin-bottom: 1.5rem; color: #ccc; font-size: 0.9em;">
+        <tr style="background: rgba(255,255,255,0.08); border-bottom: 2px solid #88ffaa;">
+          <th style="text-align: left; padding: 0.8rem;">Concept Algébrique (Connes-Rovelli)</th>
+          <th style="text-align: left; padding: 0.8rem;">Manifestation Réseau (Nakamoto)</th>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Hamiltonien d'Évolution $H$</strong></td><td style="padding: 0.7rem;">Dissipation d'énergie physique irréversible cumulée ($\mathcal{H}_{\mathrm{diss}}$).</td></tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Température Inverse $\beta$</strong></td><td style="padding: 0.7rem;">Inverse de la densité de travail macroscopique par époque ($\beta_{\mathrm{eff}}$).</td></tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Observable Aléatoire $A$</strong></td><td style="padding: 0.7rem;">État local d'un modèle de bloc ou d'une transaction UTXO.</td></tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Temps Modulaire Automorphe $s$</strong></td><td style="padding: 0.7rem;">Progression angulaire de l'horloge interne (Hauteur de bloc $\theta$).</td></tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);"><td style="padding: 0.7rem;"><strong>Condition de Fixation de Jauge</strong></td><td style="padding: 0.7rem;">L'Algorithme d'Ajustement de la Difficulté (DAA).</td></tr>
+      </table>
+
+      <p lang="en" style="margin-bottom: 0;">
+        <strong>The DAA as a Gauge Constraint:</strong> Because the relation $t = s \cdot \beta_{\mathrm{eff}}$ depends entirely on the thermodynamic state $\omega$, any chaotic fluctuation in external mining hardware efficiency or energy grid availability would cause the internal clock $s$ to violently drift away from physical reality. The Difficulty Adjustment Algorithm (DAA) operates strictly as a <strong>dynamic gauge-fixing condition</strong>. By continuously recalibrating the difficulty threshold, it locks $\beta_{\mathrm{eff}}$ into a state of structural compensation, forcing the internal modular flow of the informational manifold to tick in perfect harmony with the universal UTC timeline. The DAA is the gravitational stabilizer preventing the digital space-time from tearing itself apart.
+      </p>
+      <p lang="fr" style="margin-bottom: 0;">
+        <strong>Le DAA comme Contrainte de Jauge :</strong> Parce que la relation $t = s \cdot \beta_{\mathrm{eff}}$ dépend entièrement de l'état thermodynamique $\omega$, toute fluctuation chaotique de l'efficacité du matériel informatique ou du réseau électrique physique ferait dériver l'horloge interne $s$ par rapport à la réalité. L'Algorithme d'Ajustement de la Difficulté (DAA) opère strictement comme une <strong>condition dynamique de fixation de jauge (gauge-fixing)</strong>. En recalibrant continuellement le seuil de difficulté, il verrouille $\beta_{\mathrm{eff}}$ dans un état de compensation structurelle, forçant le flux modulaire de la variété informationnelle à battre en parfaite harmonie avec la ligne temporelle UTC universelle. Le DAA est le stabilisateur gravitationnel empêchant l'espace-temps numérique de se déchirer.
+      </p>
+    </div>
+  </details>
   <details style="margin-bottom: 1rem; background: rgba(200, 100, 255, 0.05); border-left: 3px solid #c864ff; border-radius: 0 8px 8px 0; overflow: hidden;">
     <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ ';">
       <span lang="en">Level 4: Effective Relativity, Consensus Cone & Minkowski Metric (Expert)</span>
