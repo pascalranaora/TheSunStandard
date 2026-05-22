@@ -5958,7 +5958,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         $$ \left( \Box + \left( \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}} \right)^2 \right) \Phi(x) = 0 $$
       </div>
       <p>
-        Où $\Box = \partial_\theta^2 - \nabla_\ell^2$ est l'Alembertien. Le terme $\mu = \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}}$ définit la <strong>longueur de corrélation</strong>. Si un attaquant propage un bloc sans la masse $m_D$ requise, le champ $\Phi(x)$ subit une atténuation exponentielle (<strong>Potentiel de Yukawa</strong>) : $V(r) \sim -\frac{g^2}{r} e^{-\mu r}$. La falsification s'évapore avant de parcourir le réseau.
+        Où $\Box = \partial_\theta^2 - \nabla_\ell^2$ est l'Alembertien et $\Phi(x)$ représente <strong>l'amplitude de probabilité d'intégration au consensus</strong> du bloc candidat à la coordonnée réseau $x$. Le terme $\mu = \frac{m_D \cdot c_{\mathrm{nak}}}{\hbar_{\mathrm{nak}}}$ définit la <strong>longueur de corrélation informationnelle</strong>. Si un attaquant propage un bloc sans la masse $m_D$ requise, le champ $\Phi(x)$ subit une atténuation exponentielle analogue au <strong>Potentiel de Yukawa</strong> : $V(r) \sim -\frac{g^2}{r} e^{-\mu r}$. La probabilité de validation de la falsification s'évapore avant de parcourir la topologie du réseau.
       </p>
 
       <h4 style="color: #ff4444; margin-top: 1.5rem; font-size: 1.1rem;">3. Coût d'Action et Divergence de Synchronisation</h4>
