@@ -4410,22 +4410,22 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
       <p lang="fr" style="margin-bottom: 0">
         Si le délai de propagation approche l'intervalle cible ($\tau_L \to \tau_B$), le dénominateur s'effondre. $T_{\mathrm{eff}}$ franchit violemment le point critique $T_c$. La <em>composante géante connectée</em> du consensus se brise. L'ergodicité globale est rompue, déclenchant une transition de phase catastrophique où le registre ferromagnétique "solide" fond pour redevenir un gaz paramagnétique chaotique de forks permanents et disjoints.
       </p>
+    
+      <p lang="en" style="margin-bottom: 0.5rem">
+        The following diagram represents this transition as an informational
+        crystallization process: near the tip, the ledger is still liquid and exposed
+        to reorganization; with increasing depth, accumulated work gives the
+        transaction an effective mass, until finality is approached asymptotically.
+      </p>
+
+      <p lang="fr" style="margin-bottom: 0.5rem">
+        Le diagramme suivant représente cette transition comme un processus de
+        cristallisation informationnelle : près de la pointe, le registre demeure
+        liquide et exposé aux réorganisations ; avec la profondeur, le travail
+        accumulé confère à la transaction une masse effective, jusqu’à ce que la
+        finalité soit approchée asymptotiquement.
+      </p>
     </div>
-    <p lang="en" style="margin-bottom: 0.5rem">
-      The following diagram represents this transition as an informational
-      crystallization process: near the tip, the ledger is still liquid and exposed
-      to reorganization; with increasing depth, accumulated work gives the
-      transaction an effective mass, until finality is approached asymptotically.
-    </p>
-
-    <p lang="fr" style="margin-bottom: 0.5rem">
-      Le diagramme suivant représente cette transition comme un processus de
-      cristallisation informationnelle : près de la pointe, le registre demeure
-      liquide et exposé aux réorganisations ; avec la profondeur, le travail
-      accumulé confère à la transaction une masse effective, jusqu’à ce que la
-      finalité soit approchée asymptotiquement.
-    </p>
-
     <div
       id="crystallization-plot-en"
       lang="en"
@@ -6006,7 +6006,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         Elles ne sont pas "immortelles" au sens métaphysique, mais <strong>computationnellement et physiquement inaccessibles</strong>, 
         piégées dans un état de confinement asymptotique dont la réversibilité est proscrite par la thermodynamique même du réseau.
       </p>
-    </div>
+    
     <div
         id="causal-horizon-en"
         lang="en"
@@ -6071,6 +6071,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         cristallisé. La métaphore est utile parce qu’elle localise l’incertitude à
         la bordure du système, et non dans son intérieur historique profond.
       </p>
+    </div>
   </details>
 
   <details style="margin-top: 2rem;">
