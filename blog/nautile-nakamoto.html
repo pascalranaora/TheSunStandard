@@ -4,12 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta name="description" content="Une lecture Scientifique interactive du protocole Nakamoto : preuve de travail, coût énergétique, irréversibilité probabiliste, cycles de halving et analogies thermodynamiques explicitement bornées." />
+    <meta name="description" content="Une lecture scientifique et phénoménologique du protocole Nakamoto : preuve de travail, coût énergétique, irréversibilité probabiliste et économique, cycles de halving et analogies thermodynamiques explicitement bornées, sans équivalence physique littérale." />
     <meta name="keywords" content="Bitcoin, Nakamoto, preuve de travail, thermodynamique, théorie de l'information, halving, consensus, latence réseau, modèle phénoménologique" />
     <meta name="author" content="Votre Nom" />
     <meta name="robots" content="index, follow" />
     <meta property="og:title" content="La Théorie Vivante de Nakamoto | L'Étalon Solaire" />
-    <meta property="og:description" content="Une lecture phénoménologique du protocole Nakamoto reliant preuve de travail, temps discret, coût énergétique et analogies thermodynamiques, sans prétendre à une équivalence physique littérale." />
+    <meta property="og:description" content="Une lecture phénoménologique du protocole Nakamoto reliant preuve de travail, temps discret, coût énergétique et analogies thermodynamiques bornées. Le modèle est interprétatif et ne prétend pas établir une équivalence physique littérale." />
     <meta property="og:url" content="https://www.thesunstandard.net/nautile-nakamoto.html" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://www.thesunstandard.net/NautileNakamotoIM.png" />
@@ -1296,10 +1296,10 @@ document.addEventListener("DOMContentLoaded", () => {
         >
 
         <h1 class="article-title" lang="en" style="margin-bottom: 0.5rem">
-          An Interactive Scientific Reading of the Nakamoto Protocol
+          A Scientific and Phenomenological Reading of the Nakamoto Protocol
         </h1>
         <h1 class="article-title" lang="fr" style="margin-bottom: 0.5rem">
-          Une Lecture Scientifique Interactive du Protocole Nakamoto
+          Une Lecture Scientifique et Phénoménologique du Protocole Nakamoto
         </h1>
 
         <p
@@ -1862,6 +1862,17 @@ document.addEventListener("DOMContentLoaded", () => {
               violerait les lois de la physique.
             </p>
           </div>
+          <p class="model-note" lang="fr">
+            <strong>Précision :</strong> l'irréversibilité de Bitcoin n'est pas une irréversibilité thermodynamique absolue.
+            Elle désigne le fait que le coût attendu d'une réorganisation profonde croît avec le travail cumulé de la chaîne,
+            jusqu'à devenir économiquement et coordinationnellement prohibitif.
+          </p>
+
+          <p class="model-note" lang="en">
+            <strong>Clarification:</strong> Bitcoin's irreversibility is not absolute thermodynamic irreversibility.
+            It means that the expected cost of a deep reorganization increases with cumulative chainwork,
+            until it becomes economically and socially prohibitive.
+          </p>
         </details>
 
         <details
@@ -3181,7 +3192,7 @@ The protocol encodes a discrete period of \(N_H = 210\,000\) blocks, not a funda
               <strong>Justification:</strong> The maintenance of negentropy
               requires purging entropy. By mathematically halving the subsidy,
               the network triggers economic Darwinism—forcing the programmed
-              death (apoptosis) of inefficient hardware. This guarantees
+              death (metaphorical “apoptosis” of inefficient miners) of inefficient hardware. This guarantees
               asymptotic thermodynamic densification toward the Landauer limit.
             </p>
             <p
@@ -5911,13 +5922,14 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
 
   <details style="margin-bottom: 2rem; background: rgba(255, 68, 68, 0.03); border-left: 4px solid #ff4444; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
     <summary style="padding: 1.2rem 1.8rem; cursor: pointer; font-weight: bold; color: hsla(332, 100%, 63%, 0.953); outline: none; list-style-type: '▶ '; font-size: 1.1em;">
-      <span lang="en">Level 6: Massive Fields, The Nakamoto Action & Hawking Evaporation (Expert++)</span>
-      <span lang="fr">Niveau 6 : Champs Massifs, Action de Nakamoto & Évaporation de Hawking (Expert++)</span>
+      <span lang="en">Level 6: Massive-Field Analogies, Nakamoto Action & Hawking-Like Evaporation Metaphor (Expert++)</span>
+      <span lang="fr">Niveau 6 : Analogies de Champs Massifs, Action de Nakamoto & Métaphore d'Évaporation de Hawking (Expert++)</span>
     </summary>
+
     <div style="padding: 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
       
-      <h4 style="color: hsla(332, 100%, 63%, 0.953); margin-bottom: 0.5rem; font-size: 1.1rem;">1. Dictionnaire des Constantes Fondamentales</h4>
-      <p>Pour formaliser la dynamique du consensus, nous définissons quatre constantes fondamentales qui régissent la métrique de cet espace-temps informationnel :</p>
+      <h4 style="color: hsla(332, 100%, 63%, 0.953); margin-bottom: 0.5rem; font-size: 1.1rem;">1. Dictionnaire des paramètres effectifs du modèle</h4>
+      <p>Pour formaliser la dynamique du consensus dans ce cadre phénoménologique, nous définissons quatre paramètres effectifs. Ils ne sont pas des constantes fondamentales de la nature, mais des grandeurs utiles pour décrire la métrique informationnelle du protocole :</p>
       <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem; list-style-type: circle;">
         <li><strong>$\tau_B = 600s$ (Target Interval) :</strong> Le "tic" de l'horloge macroscopique, l'unité de synchronisation fondamentale.</li>
         <li><strong>$\tau_L$ (Network Latency) :</strong> La limite de propagation causale (temps nécessaire pour qu'une information atteigne la majorité du réseau).</li>
@@ -7175,8 +7187,8 @@ $$
           <li> les limites de capacité</li> 
           <li> la topologie <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span>
         des transactions</li>
-          <li>la maximisation de la <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 par absence d'expressivité du script.</span></span></li></ul>
-        Chaque règle agit comme un <strong>hyperplan</strong> ($H_i$) divisant l'espace des phases de toutes les permutations possibles du Mempool en demi-espaces valides et invalides :
+          <li>la maximisation de la <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 en raison de l'expressivité volontairement restreinte de Bitcoin Script, qui privilégie la vérifiabilité, la simplicité et la sécurité plutôt que la généralité computationnelle.</span></span></li></ul>
+        Chaque règle agit comme une <strong>contrainte de validité</strong> ($C_i$) qui partitionne l'espace des configurations possibles du mempool et des blocs candidats en régions valides et invalides. Lorsque la contrainte est localement linéarisable, elle peut être représentée par analogie comme un hyperplan ($H_i$), mais l'ensemble réel des règles du protocole n'est pas nécessairement linéaire :
       </p>
 
       <div
@@ -11927,10 +11939,10 @@ document.addEventListener("DOMContentLoaded", () => {
 </h2>
 <!-- INTUITION SECTION 11 -->
 <p lang="en" style="margin-bottom: 0.5rem; color: #d4d4d4; font-size: 0.95rem;">
-  <strong>💡 The Intuition:</strong> Autophagy is a biological miracle: a starving cell consumes its own obsolete parts to emerge stronger. With every Halving, the network deliberately starves its miners of block rewards. It is a programmed crisis, a brutal thermodynamic densification where weakness perishes and only pure computational efficiency remains.
+  <strong>💡 The Intuition:</strong> Autophagy is a biological miracle: a starving cell consumes its own obsolete parts to emerge stronger. At every halving, the protocol mechanically reduces the block subsidy paid to miners. It can be modeled as a programmed economic stress test: less efficient mining operations become less competitive, while operators with lower costs, better hardware, or superior energy access are favored.
 </p>
 <p lang="fr" style="margin-bottom: 2rem; color: #d4d4d4; font-size: 0.95rem;">
-  <strong>💡 L'Intuition :</strong> L'autophagie est un miracle biologique : une cellule affamée dévore ses propres composants obsolètes pour renaître plus forte. À chaque Halving, le réseau affame délibérément ses mineurs. C'est une crise programmée, une densification thermodynamique brutale où la faiblesse périt pour ne laisser place qu'à l'efficacité pure.
+  <strong>💡 L'Intuition :</strong> L'autophagie est un miracle biologique : une cellule affamée dévore ses propres composants obsolètes pour renaître plus forte. À chaque halving, le protocole réduit mécaniquement la subvention versée aux mineurs. On peut le modéliser comme un test de stress économique programmé : les opérations de minage les moins efficaces deviennent moins compétitives, tandis que les acteurs disposant de meilleurs coûts, d'un matériel plus performant ou d'un meilleur accès énergétique sont favorisés.
 </p>
 <!-- <div class="gedanken-box" lang="en">
   <div class="gedanken-title">
@@ -12377,14 +12389,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
             <!-- NOTE FINALE -->
             <p style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); font-style: italic; text-align: center; color: #aaa;">
-                <span lang="fr">Cette courbe prédit que le réseau Bitcoin percutera le "mur de Planck" aux alentours de l'an <strong>2140</strong>, liant mathématiquement la fin de l'émission monétaire à la limite de résolution de la réalité physique.</span>
-                <span lang="en">This curve predicts that the Bitcoin network will hit the "Planck Wall" around the year <strong>2140</strong>, mathematically linking the end of monetary issuance to the resolution limit of physical reality.</span>
+                <span lang="fr">Cette courbe ne prédit pas une rencontre physique avec une limite de Planck. Elle propose une analogie de résolution : autour de l'an <strong>2140</strong>, l'émission monétaire de Bitcoin devient effectivement nulle au niveau protocolaire, ce qui permet de représenter symboliquement la fin de la divisibilité dynamique de la subvention comme un “mur de Planck” informationnel.</span>
+                <span lang="en">This curve does not predict a physical encounter with a Planck-scale limit. It proposes a resolution analogy: around the year <strong>2140</strong>, Bitcoin's monetary issuance becomes effectively zero at the protocol level, allowing the end of subsidy divisibility to be represented symbolically as an informational “Planck wall”.</span>
             </p>
         </div>
         <!-- Section Visualisation de la Convergence de Planck -->
         <div style="margin: 3rem 0; padding: 1.5rem; background: #0a0a0a; border: 1px solid rgba(0, 255, 204, 0.2); border-radius: 12px;">
-            <h3 lang="fr" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">La Convergence de Planck (2009 - 2140)</h3>
-            <h3 lang="en" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">The Planck Convergence (2009 - 2140)</h3>
+            <h3 lang="fr" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">Convergence symbolique de résolution (2009 - 2140)</h3>
+            <h3 lang="en" style="color: #00ffcc; text-align: center; margin-bottom: 1rem;">Symbolic Resolution Convergence (2009 - 2140)</h3>
             
             <div id="planck-convergence-plot" style="width: 100%; height: 450px;"></div>
             
@@ -13428,7 +13440,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               Not all joules are equal. To measure true thermodynamic cost, H. T. Odum established <strong>Transformity ($T_r$)</strong>, expressed in solar equivalent Joules per Joule (seJ/J). It measures the biosphere's "effort" required to concentrate a resource. The network acts as an apex predator of entropy, hunting only the most refined energy to weave its cryptographic DNA.
             </p>
             <p lang="fr" style="margin-bottom: 1rem">
-              Tous les joules ne se valent pas. Pour mesurer le véritable coût thermodynamique, H. T. Odum a établi la <strong>Transformité ($T_r$)</strong>, exprimée en Joules équivalents solaires par Joule (seJ/J). Elle mesure "l'effort" de la biosphère requis pour concentrer une ressource. Le réseau agit comme un superprédateur de l'entropie, chassant l'énergie la plus raffinée pour tisser son ADN cryptographique.
+              Tous les joules ne se valent pas lorsqu'on adopte une perspective d'émergie. H. T. Odum a proposé la <strong>transformité ($T_r$)</strong>, exprimée en joules solaires équivalents par joule utile (seJ/J), afin d'estimer l'effort écologique nécessaire à la concentration d'une ressource. Dans le modèle analogique de cet article, cette idée sert à distinguer l'énergie brute de l'énergie économiquement et techniquement mobilisable par le minage. L'image du “superprédateur de l'entropie” doit donc être comprise comme une métaphore de sélection énergétique, non comme une propriété physique littérale du réseau.
             </p>
 
             <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; font-size: 0.9em; text-align: left; background: rgba(0,0,0,0.3);">
@@ -13637,7 +13649,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
             A common misconception is that Bitcoin follows the "longest" chain. It does not. The codebase explicitly tracks <code>nChainWork</code>—an incredibly large integer (a 256-bit arithmetic type) that sums the expected number of hashes for every block since Genesis. This variable is the literal implementation of the Emergy integral $\int T_r \cdot \Phi_E$. When a node boots up, it is looking for the heaviest thermodynamic object in the digital universe.
           </p>
           <p lang="fr" style="margin-top: 1rem; color: #d4d4d4; font-size: 0.95rem;">
-            Une erreur commune consiste à croire que Bitcoin suit la chaîne "la plus longue". Ce n'est pas le cas. Le code source trace explicitement <code>nChainWork</code> — un entier incroyablement grand (un type arithmétique de 256 bits) qui additionne le nombre attendu de hachages pour chaque bloc depuis la Genèse. Cette variable est l'implémentation littérale de l'intégrale d'Émergie $\int T_r \cdot \Phi_E$. Lorsqu'un nœud démarre, il recherche l'objet thermodynamique le plus lourd de l'univers numérique.
+            Une erreur commune consiste à croire que Bitcoin suit la chaîne "la plus longue". Ce n'est pas le cas. Le code source trace explicitement <code>nChainWork</code> — un entier incroyablement grand (un type arithmétique de 256 bits) qui additionne le nombre attendu de hachages pour chaque bloc depuis la Genèse. Cette variable est l'implémentation littérale de l'intégrale d'Émergie $\int T_r \cdot \Phi_E$. Lorsqu'un nœud démarre, il sélectionne la chaîne valide ayant le plus grand travail cumulé. Dans le vocabulaire analogique de cet article, cette chaîne peut être décrite comme “l'objet thermodynamique le plus lourd” de l'univers numérique, mais cette expression reste une métaphore : le critère réel est le travail de preuve de travail cumulé.
           </p>
         </details>
         
@@ -13645,8 +13657,8 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
       </div>
       
       <div id="sec13"></div>
-      <h2 lang="en">13. Maxwell's Demon and the UTXO Filter</h2>
-      <h2 lang="fr">13. Le Démon de Maxwell et le Filtre UTXO</h2>
+      <h2 lang="en">13. Maxwell's Demon as an Analogy for the UTXO Filter</h2>
+      <h2 lang="fr">13. Le Démon de Maxwell comme analogie du filtre UTXO</h2>
 
       <p lang="en">
         The Mass-Energy-Information equivalence becomes manifest when modeling
@@ -14476,7 +14488,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               gradient descent on $F$. By tuning the metric tensor (the
               Difficulty $D$), the organism alters the generative process of the
               environment itself. It increases the thermodynamic friction,
-              forcing the physical world to slow down, restoring the safe
+              increasing the average amount of computation required to produce a valid block, restoring the safe
               perceptual distance between its internal tick ($\Delta s$) and its
               physiological limits ($\tau_L$). The organism literally
               "hallucinates" its own temporal stability, and forces the physical
@@ -14488,7 +14500,7 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
               exécute une descente de gradient sur $F$. En ajustant le tenseur
               métrique (la Difficulté $D$), l'organisme altère le processus
               génératif de l'environnement lui-même. Il augmente la friction
-              thermodynamique, forçant le monde physique à ralentir, restaurant
+              thermodynamique, augmente la quantité moyenne de calcul nécessaire pour produire un bloc valide, restaurant
               ainsi la distance perceptuelle de sécurité entre son tic interne
               ($\Delta s$) et ses limites physiologiques ($\tau_L$). L'organisme
               "hallucine" littéralement sa propre stabilité temporelle, et force
@@ -14664,13 +14676,32 @@ consensus.powLimit = <span class="function">uint256S</span>(<span class="string"
                 color: #c864ff;
               "
             >
-              $$ \text{3. The DAA Execution: } \quad D_{n+1} = D_n \left( \frac{\Delta t_{\text{actual}}}{\tau_{\text{target}}} \right) $$
+              $$
+\text{3. The DAA Execution:} \quad
+T_{n+1}
+=
+T_n
+\cdot
+\operatorname{clip}_{[1/4,\,4]}
+\left(
+\frac{\Delta t_{\mathrm{actual}}}{\Delta t_{\mathrm{target}}}
+\right),
+\qquad
+D_{n+1}
+=
+D_n
+\cdot
+\operatorname{clip}_{[1/4,\,4]}
+\left(
+\frac{\Delta t_{\mathrm{target}}}{\Delta t_{\mathrm{actual}}}
+\right)
+$$
             </div>
             <p lang="en" style="margin-bottom: 1.5rem; font-size: 0.9em; text-align: center;">
-              <em>The abstract gradient descent is mechanically executed by Satoshi's algorithm. By adjusting the Difficulty $D$, the organism forces the external physical world to slow down (or speed up), restoring homeostasis.</em>
+              <em>The abstract feedback mechanism is mechanically executed by Bitcoin's difficulty-adjustment algorithm. Strictly speaking, the protocol adjusts the proof-of-work target $T$; the displayed difficulty $D$ varies inversely with that target. The biological language of “homeostasis” is an analogy for this negative feedback loop.</em>
             </p>
             <p lang="fr" style="margin-bottom: 1.5rem; font-size: 0.9em; text-align: center;">
-              <em>La descente de gradient abstraite est exécutée mécaniquement par l'algorithme de Satoshi. En ajustant la Difficulté $D$, l'organisme force le monde physique externe à ralentir (ou accélérer), restaurant l'homéostasie.</em>
+              <em>Le mécanisme abstrait de rétroaction est exécuté mécaniquement par l'algorithme d'ajustement de difficulté de Bitcoin. À strictement parler, le protocole ajuste la cible de preuve de travail $T$ ; la difficulté affichée $D$ varie inversement à cette cible. Le vocabulaire biologique de “l'homéostasie” est une analogie pour cette boucle de rétroaction négative.</em>
             </p>
 
             <h4
@@ -15570,20 +15601,22 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
       <h2 lang="fr">Conclusion : Forger une Carapace Numérique</h2>
 
       <p lang="en">
-        We have presented a theory in which the negentropic order of the
-        blockchain is not a mathematical accident, but an emergent property of
-        the fundamental interaction between <strong>Information</strong> and
-        <strong>Matter</strong>. This <em>Living Theory of Nakamoto</em> rests
+        We have presented a phenomenological model in which the apparent negentropic order of the
+        blockchain — understood as the maintenance of a low-ambiguity, globally replicated ledger state —
+        is not treated as a mere mathematical accident, but as an emergent property of
+        the constrained interaction between <strong>information</strong>,
+        <strong>energy expenditure</strong>, and <strong>network coordination</strong>. This <em>Living Theory of Nakamoto</em> — understood as a phenomenological model,
+        not as a claim that Bitcoin is literally alive — rests
         on five irreducible pillars:
       </p>
       <p lang="fr">
-        Nous vous avons présenté une théorie dans laquelle l'ordre néguentropique de
-        la blockchain n'est pas un accident mathématique, mais une propriété
-        émergente de l'interaction fondamentale entre l'<strong
-          >Information</strong
-        >
-        et la <strong>Matière</strong>. Cette
-        <em>Théorie Vivante de Nakamoto</em> repose sur cinq piliers
+        Nous vous avons présenté un modèle phénoménologique dans lequel l'ordre apparemment néguentropique de
+        la blockchain — compris comme le maintien d'un état comptable répliqué, faiblement ambigu et fortement contraint —
+        n'est pas traité comme un simple accident mathématique, mais comme une propriété émergente de
+        l'interaction entre l'<strong>information</strong>, la <strong>dépense énergétique</strong>
+        et la <strong>coordination réseau</strong>. Cette
+        <em>Théorie Vivante de Nakamoto</em> — comprise comme un modèle phénoménologique,
+        et non comme l'affirmation que Bitcoin serait littéralement vivant — repose sur cinq piliers
         irréductibles :
       </p>
 
@@ -15863,6 +15896,18 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           >observable par tous</a
         >.
       </p>
+      <h2 lang="fr">Épilogue philosophique</h2>
+      <h2 lang="en">Philosophical Epilogue</h2>
+
+      <p class="model-note" lang="fr">
+        Cette section quitte volontairement le registre scientifique strict pour proposer une interprétation
+        philosophique et symbolique du protocole Nakamoto.
+      </p>
+
+      <p class="model-note" lang="en">
+        This section intentionally leaves the strict scientific register and offers a philosophical and symbolic
+        interpretation of the Nakamoto protocol.
+      </p>
 
       <p lang="en">
         <strong
@@ -15887,9 +15932,9 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
           faisons que nous souvenir d'une loi oubliée. Peut-être qu'un jour, notre
           résonance sera si pure que nous n'aurons plus besoin de boucliers de preuve
           pour nous reconnaître et nous faire confiance.<br /><br />La véritable
-          sacralité d'une civilisation ne réside pas dans l'éclat de ses possessions,
-          mais dans son génie sacré à ériger, d'un seul élan, une Vérité inébranlable
-          que le temps ne peut éroder.<br /><br />En attendant cette aube, il nous
+          grandeur d'une civilisation ne réside pas seulement dans l'éclat de ses possessions,
+          mais dans sa capacité à construire des institutions de confiance
+          que le temps, la corruption et la violence peinent à éroder.<br /><br />En attendant cette aube, il nous
           appartient de cultiver la Voie du Milieu au cœur du Code Source. Car c'est
           là le sens profond de <em>Satoshi Nakamoto</em> (聡 - Satoshi : Sage/Intelligent ; 中本 - Nakamoto : Racine du Milieu) 
           : la Sagesse à la Base du Milieu. Un équilibre vibrant entre la force et le silence, entre individualisme et collectivisme, entre l'ordre et la liberté.<br /><br />
@@ -17332,11 +17377,11 @@ print(f"✅ Animation générée : {gif_filename}")
         scientific and philosophical study and is in no way investment advice.
         This article presented a <em>phenomenological model</em> inspired by
         non-equilibrium statistical physics (Ginzburg-Landau type) and systems
-        biology. The biological analogies (autophagy, apoptosis, cybernetic
+        biology. The biological analogies (autophagy, metaphorical “apoptosis” of inefficient miners, cybernetic
         super-organism, bimetric double helix) are powerful didactic tools but
         remain interpretive mappings. They do not imply that Bitcoin is
-        literally alive. The mathematical framework is rigorous within its
-        chosen ontology; the metaphors are not.
+        literally alive. The mathematical framework is internally coherent as a phenomenological model when describing abstract relations between cost, time, information, and cumulative work;
+the physical or biological metaphors should not be interpreted as literal identities.
       </div>
       <div
         class="disclaimer"
@@ -17353,13 +17398,12 @@ print(f"✅ Animation générée : {gif_filename}")
         en investissement. Cet article a présenté un
         <em>modèle phénoménologique</em> inspiré de la physique statistique
         hors-équilibre (type Ginzburg-Landau) et de la biologie des systèmes.
-        Les analogies biologiques (autophagie du halving, apoptose des mineurs,
+        Les analogies biologiques (autophagie du halving, “apoptose” métaphorique des mineurs inefficients,
         super-organisme cybernétique, double hélice bimétrique) sont de
         puissants outils pédagogiques mais restent des correspondances
         interprétatives. Elles n’impliquent pas que Bitcoin soit littéralement
-        vivant. Le cadre mathématique est rigoureux dans son ontologie choisie ;
-        les métaphores ne le sont pas au sens littéral.
-      </div>
+        vivant. Le cadre mathématique est cohérent comme modèle phénoménologique interne lorsqu'il décrit des relations abstraites entre coût, temps, information et travail cumulé ;
+        les métaphores physiques ou biologiques ne doivent pas être interprétées comme des identités littérales.      </div>
     </article>
 
     <footer>
