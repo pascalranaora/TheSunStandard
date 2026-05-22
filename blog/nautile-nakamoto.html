@@ -1255,6 +1255,19 @@ document.addEventListener("DOMContentLoaded", () => {
     white-space: nowrap;
     border-width: 0;
   }
+  .replication-box {
+  border: 1px solid rgba(0, 255, 204, 0.28);
+  background:
+    radial-gradient(circle at top left, rgba(0, 255, 204, 0.08), transparent 38%),
+    rgba(255, 255, 255, 0.025);
+  box-shadow:
+    inset 0 0 24px rgba(0, 255, 204, 0.035),
+    0 8px 28px rgba(0, 0, 0, 0.35);
+}
+
+.replication-box .proof-title {
+  color: #00ffcc;
+}
     </style>
   </head>
   <body class="lang-en">
@@ -7572,6 +7585,66 @@ document.addEventListener("DOMContentLoaded", () => {
           <p lang="en" style="color: var(--sun-yellow); font-style: italic; margin-top: 1rem; margin-bottom: 0;">The geometry of survival in a hostile environment.</p>
           <p lang="fr" style="color: var(--sun-yellow); font-style: italic; margin-top: 1rem; margin-bottom: 0;">La géométrie de la survie dans un environnement hostile.</p>
       </div>
+
+      <div class="proof-box replication-box">
+  <div class="proof-title" lang="fr">
+    Holographie protocolaire : chaque nœud porte la forme entière
+  </div>
+  <div class="proof-title" lang="en">
+    Protocol Holography: Each Node Carries the Whole Form
+  </div>
+
+  <p lang="fr">
+    La géométrie de survie du protocole Nakamoto repose sur une propriété quasi holographique :
+    chaque nœud complet contient les règles qui définissent la totalité de l'organisme logique.
+    Il n'a pas besoin de faire confiance à un centre pour savoir ce qui est valide. Il peut
+    rejouer localement l'histoire, vérifier chaque bloc, chaque transaction et chaque transition
+    d'état, puis rejoindre le consensus en ne suivant que la chaîne valide au plus grand travail
+    cumulé.
+  </p>
+
+  <p lang="en">
+    The survival geometry of the Nakamoto protocol rests on a quasi-holographic property:
+    each full node contains the rules that define the whole logical organism. It does not
+    need to trust a center to know what is valid. It can locally replay history, verify each
+    block, each transaction, and each state transition, then join consensus by following only
+    the valid chain with the greatest cumulative work.
+  </p>
+
+  <p lang="fr">
+    Ainsi, Bitcoin n'est pas sauvegardé dans un coffre central : il est disséminé comme une
+    forme mathématique capable de se reconstituer partout où ses règles sont exécutées.
+    Cette réplication n'est pas biologique au sens strict ; elle est volontaire, logicielle
+    et sociale. Mais son effet fonctionnel est comparable à une spore informationnelle :
+    tant qu'un ensemble suffisant de nœuds complets persiste, la forme du protocole peut
+    être reconstruite, vérifiée et propagée.
+  </p>
+
+  <p lang="en">
+    Bitcoin is therefore not stored in a central vault: it is disseminated as a mathematical
+    form capable of being reconstructed wherever its rules are executed. This replication is
+    not biological in the strict sense; it is voluntary, software-based, and social. Yet its
+    functional effect resembles an informational spore: as long as a sufficient set of full
+    nodes persists, the protocol's form can be reconstructed, verified, and propagated.
+  </p>
+
+  <p class="model-note" lang="fr">
+  <strong>Précision technique :</strong> un nœud complet vérifie les règles du protocole et peut conserver
+  l'historique complet de la chaîne. Un nœud élagué conserve seulement les données nécessaires à la validation
+  de son état courant après synchronisation, mais il applique les mêmes règles de consensus. La réplication
+  concerne donc d'abord les règles de validation et la capacité de vérification, puis l'historique complet selon
+  la configuration du nœud.
+</p>
+
+<p class="model-note" lang="en">
+  <strong>Technical clarification:</strong> a full node verifies the protocol rules and may store the complete
+  blockchain history. A pruned node keeps only the data needed to validate its current state after synchronization,
+  but it applies the same consensus rules. Replication therefore primarily concerns validation rules and verification
+  capacity, then complete historical storage depending on node configuration.
+</p>
+
+</div>
+
       <div id="sec6"></div>
       <h2 lang="en">
         6. Transverse Topological Stability: The Small-World Graph
