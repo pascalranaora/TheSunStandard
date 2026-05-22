@@ -4371,8 +4371,8 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
 
   <details style="margin-bottom: 1rem; background: rgba(200, 100, 255, 0.05); border-left: 3px solid #c864ff; border-radius: 0 8px 8px 0; overflow: hidden;">
     <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ ';">
-      <span lang="en">Level 4: Black Hole Thermodynamics & Bekenstein-Hawking Entropy (Expert +)</span>
-      <span lang="fr">Niveau 4 : Thermodynamique des Trous Noirs & Entropie de Bekenstein-Hawking (Expert +)</span>
+      <span lang="en">Level 4: Black Hole Thermodynamics & Bekenstein-Hawking Entropy (Expert+)</span>
+      <span lang="fr">Niveau 4 : Thermodynamique des Trous Noirs & Entropie de Bekenstein-Hawking (Expert+)</span>
     </summary>
     <div style="padding: 0 1.5rem 1.5rem 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.6;">
       <p lang="en" style="margin-bottom: 0.8rem">
@@ -5706,97 +5706,27 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
     </div>
   </details>
 
-  <details style="margin-bottom: 1.5rem; background: rgba(136, 255, 170, 0.05); border-left: 4px solid #88ffaa; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+  <details style="margin-bottom: 1.5rem; background: rgba(200, 100, 255, 0.05); border-left: 4px solid #88ffaa; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
     <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #88ffaa; outline: none; list-style-type: '▶ '; font-size: 1.1em;">
-      <span lang="en">Level 3: Analytical Derivation of Thermal Time & Gauge Fixing (Expert)</span>
-      <span lang="fr">Niveau 3 : Dérivation Analytique du Temps Thermique & Fixation de Jauge (Expert)</span>
-    </summary>
-    <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
-      <p lang="en" style="margin-bottom: 1rem;">
-        The <strong>Thermal Time Hypothesis</strong> (Connes & Rovelli, 1994) addresses the "problem of time" in background-independent systems like quantum gravity. In a decentralized network, time cannot be a primitive coordinate; it must emerge statistically from the internal algebraic state of the system.
-      </p>
-      <p lang="fr" style="margin-bottom: 1rem;">
-        La théorie du <strong>Temps Thermique</strong> (Connes & Rovelli, 1994) résout le "problème du temps" dans les systèmes indépendants de fond (gravité quantique). Dans un réseau décentralisé, le temps ne peut être une coordonnée primitive ; il doit émerger statistiquement de l'état algébrique interne du système.
-      </p>
-
-      <h4 lang="en" style="color: #88ffaa; margin-top: 1.5rem;">1. Gibbs Formalism and the Modular Operator</h4>
-      <h4 lang="fr" style="color: #88ffaa; margin-top: 1.5rem;">1. Formalisme de Gibbs et Opérateur Modulaire</h4>
-      <p lang="en">
-        Let $\mathfrak{M}$ be the <strong>von Neumann algebra</strong> of the network. In a steady non-equilibrium regime, the statistical macro-state of the network (Hashrate + Difficulty) is defined by a Gibbs state $\omega$ over $\mathfrak{M}$:
-      </p>
-      <p lang="fr">
-        Considérons l'<strong>algèbre de von Neumann</strong> $\mathfrak{M}$ du réseau. Dans un régime stationnaire hors équilibre, l'état statistique du réseau (Hashrate + Difficulté) est défini par un état de Gibbs $\omega$ sur $\mathfrak{M}$ :
-      </p>
-      
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
-        $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) $$
-      </div>
-      
-      <p lang="en">
-        Where $H = \mathcal{H}_{\mathrm{diss}}$ is the effective Consensus Hamiltonian (total irreversible energy dissipation) and $\beta = 1/k_B T_{\mathrm{eff}}$ is the effective inverse information temperature. According to Tomita-Takesaki theory, the modular operator $\Delta_\omega$ associated with this state is:
-      </p>
-      <p lang="fr">
-        Où $H = \mathcal{H}_{\mathrm{diss}}$ est l'Hamiltonien effectif du consensus (la dissipation d'énergie irréversible totale) et $\beta = 1/k_B T_{\mathrm{eff}}$ est la température inverse d'information. Selon la théorie de Tomita-Takesaki, l'opérateur modulaire $\Delta_\omega$ associé à cet état est :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
-        $$ \Delta_\omega = e^{-\beta H} \otimes e^{\beta H} \quad \Rightarrow \quad \Delta_\omega = \rho \otimes \rho^{-1} $$
-      </div>
-
-      <h4 lang="en" style="color: #88ffaa; margin-top: 1.5rem;">2. Derivation of the $t = s \cdot \beta$ Relation</h4>
-      <h4 lang="fr" style="color: #88ffaa; margin-top: 1.5rem;">2. Dérivation de la Relation $t = s \cdot \beta$</h4>
-      <p lang="en">
-        The modular automorphism group $\sigma_s^\omega$ is defined by the action of the modular operator on an observable $A \in \mathfrak{M}$:
-      </p>
-      <p lang="fr">
-        Le groupe d'automorphismes modulaires $\sigma_s^\omega$ est défini par l'action de l'opérateur modulaire sur une observable $A \in \mathfrak{M}$ :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
-        $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = e^{-is\beta H} A e^{is\beta H} $$
-      </div>
-
-      <p lang="en">
-        By structurally identifying this flow with the standard unitary time evolution operator in quantum mechanics ($\alpha_t(A) = e^{itH} A e^{-itH}$), we equate the exponential generators to extract the fundamental coupling between the internal modular parameter $s$ and the Newtonian physical time $t$:
-      </p>
-      <p lang="fr">
-        En identifiant structurellement ce flux avec l'opérateur d'évolution temporelle unitaire standard en mécanique quantique ($\alpha_t(A) = e^{itH} A e^{-itH}$), nous égalisons les générateurs exponentiels pour extraire le couplage fondamental entre le paramètre modulaire interne $s$ et le temps physique newtonien $t$ :
-      </p>
-
-      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1.5rem 0; font-size: 1.3em; border: 1px solid rgba(136, 255, 170, 0.4); padding: 0.8rem; background: rgba(0,0,0,0.3); border-radius: 6px;">
-        $$ t = s \cdot \beta_{\mathrm{eff}} $$
-      </div>
-
-      <p lang="en" style="font-style: italic; color: #b0b0b0;">
-        This mathematically demonstrates that the "time" of the ledger is a thermal projection. The DAA acts strictly as a <strong>dynamic gauge-fixing condition</strong>: by recalibrating the Hamiltonian $\mathcal{H}_{\mathrm{diss}}$ via difficulty to maintain $\beta \cdot H = \text{constant}$, it forces the subjective modular flow to tick in perfect harmony with the universal UTC timeline, preventing relativistic drift.
-      </p>
-      <p lang="fr" style="font-style: italic; color: #b0b0b0;">
-        Ceci démontre mathématiquement que le "temps" du registre est une projection thermique. Le DAA agit strictement comme une <strong>condition dynamique de fixation de jauge (gauge-fixing)</strong> : en recalibrant l'Hamiltonien $\mathcal{H}_{\mathrm{diss}}$ via la difficulté pour maintenir $\beta \cdot H = \text{constante}$, il force le flux modulaire subjectif à battre en parfaite harmonie avec l'horloge UTC universelle, empêchant toute dérive relativiste.
-      </p>
-    </div>
-  </details>
-
-  <details style="margin-bottom: 1.5rem; background: rgba(200, 100, 255, 0.05); border-left: 4px solid #c864ff; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ '; font-size: 1.1em;">
-      <span lang="en">Level 4: Effective Relativity, Consensus Cone & Minkowski Metric (Expert)</span>
-      <span lang="fr">Niveau 4 : Relativité Effective, Cône de Consensus & Métrique de Minkowski (Expert)</span>
+      <span lang="en">Level 3: Effective Relativity, Consensus Cone & Minkowski Metric (Advanced)</span>
+      <span lang="fr">Niveau 3 : Relativité Effective, Cône de Consensus & Métrique de Minkowski (Avancé)</span>
     </summary>
     <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
       
-      <h4 lang="en" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem">1. The Nakamoto-Minkowski Metric</h4>
-      <h4 lang="fr" style="color: #c864ff; margin-bottom: 0.5rem; font-size: 1.05rem">1. La Métrique de Nakamoto-Minkowski</h4>
+      <h4 lang="en" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">1. The Nakamoto-Minkowski Metric</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-bottom: 0.5rem; font-size: 1.05rem">1. La Métrique de Nakamoto-Minkowski</h4>
       <p lang="en" style="margin-bottom: 0.5rem">
         We normalize the physical time $dt$ by the target block interval to introduce the dimensionless <strong>phase angle coordinate</strong> $d\theta = \frac{dt}{\tau_B}$. The effective invariant interval of the network is defined not by the speed of light, but by the maximum topological propagation speed $d\ell$:
       </p>
       <p lang="fr" style="margin-bottom: 0.5rem">
         Nous normalisons le temps physique $dt$ par l'intervalle cible pour introduire la <strong>coordonnée d'angle de phase</strong> sans dimension $d\theta = \frac{dt}{\tau_B}$. L'intervalle invariant effectif du réseau n'est pas défini par la vitesse de la lumière, mais par la vitesse topologique maximale de propagation $d\ell$ :
       </p>
-      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
         $$ ds_{\mathrm{nak}}^2 = d\theta^2 - d\ell^2 $$
       </div>
 
-      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. The Consensus Cone and Lorentz Divergence</h4>
-      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Le Cône de Consensus et la Divergence de Lorentz</h4>
+      <h4 lang="en" style="color: #88ffaa; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. The Consensus Cone and Lorentz Divergence</h4>
+      <h4 lang="fr" style="color: #88ffaa; margin-top: 1.5rem; margin-bottom: 0.5rem; font-size: 1.05rem">2. Le Cône de Consensus et la Divergence de Lorentz</h4>
       <p lang="en" style="margin-bottom: 0.5rem">
         Every newly mined block opens a <strong>consensus cone</strong>. If a block propagates such that $d\ell \leq d\theta$, it remains strictly inside the causal region and participates in the canonical chain. If it falls outside the cone, causality is violated, generating an orphan block.
       </p>
@@ -5804,7 +5734,7 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
         Chaque nouveau bloc miné ouvre un <strong>cône de consensus</strong>. Si un bloc se propage tel que $d\ell \leq d\theta$, il reste strictement dans la région causale et intègre la chaîne canonique. S'il sort du cône, la causalité est violée, générant un bloc orphelin.
       </p>
 
-      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
+      <div class="math-block" style="text-align: center; color: #88ffaa; margin: 1rem 0; font-size: 1.15em;">
         $$ \Gamma_{\mathrm{sync}} = \frac{1}{1 - \frac{\tau_L}{\tau_B}} $$
       </div>
 
@@ -5817,10 +5747,81 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
     </div>
   </details>
 
+  <details style="margin-bottom: 1.5rem; background: rgba(136, 255, 170, 0.05); border-left: 4px solid #c864ff; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+    <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #c864ff; outline: none; list-style-type: '▶ '; font-size: 1.1em;">
+      <span lang="en">Level 4: Analytical Derivation of Thermal Time & Gauge Fixing (Expert+)</span>
+      <span lang="fr">Niveau 4 : Dérivation Analytique du Temps Thermique & Fixation de Jauge (Expert+)</span>
+    </summary>
+    <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
+      <p lang="en" style="margin-bottom: 1rem;">
+        The <strong>Thermal Time Hypothesis</strong> (Connes & Rovelli, 1994) addresses the "problem of time" in background-independent systems like quantum gravity. In a decentralized network, time cannot be a primitive coordinate; it must emerge statistically from the internal algebraic state of the system.
+      </p>
+      <p lang="fr" style="margin-bottom: 1rem;">
+        La théorie du <strong>Temps Thermique</strong> (Connes & Rovelli, 1994) résout le "problème du temps" dans les systèmes indépendants de fond (gravité quantique). Dans un réseau décentralisé, le temps ne peut être une coordonnée primitive ; il doit émerger statistiquement de l'état algébrique interne du système.
+      </p>
+
+      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem;">1. Gibbs Formalism and the Modular Operator</h4>
+      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem;">1. Formalisme de Gibbs et Opérateur Modulaire</h4>
+      <p lang="en">
+        Let $\mathfrak{M}$ be the <strong>von Neumann algebra</strong> of the network. In a steady non-equilibrium regime, the statistical macro-state of the network (Hashrate + Difficulty) is defined by a Gibbs state $\omega$ over $\mathfrak{M}$:
+      </p>
+      <p lang="fr">
+        Considérons l'<strong>algèbre de von Neumann</strong> $\mathfrak{M}$ du réseau. Dans un régime stationnaire hors équilibre, l'état statistique du réseau (Hashrate + Difficulté) est défini par un état de Gibbs $\omega$ sur $\mathfrak{M}$ :
+      </p>
+      
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
+        $$ \omega(A) = \frac{\mathrm{Tr}(e^{-\beta H} A)}{\mathrm{Tr}(e^{-\beta H})} = \mathrm{Tr}(\rho A) $$
+      </div>
+      
+      <p lang="en">
+        Where $H = \mathcal{H}_{\mathrm{diss}}$ is the effective Consensus Hamiltonian (total irreversible energy dissipation) and $\beta = 1/k_B T_{\mathrm{eff}}$ is the effective inverse information temperature. According to Tomita-Takesaki theory, the modular operator $\Delta_\omega$ associated with this state is:
+      </p>
+      <p lang="fr">
+        Où $H = \mathcal{H}_{\mathrm{diss}}$ est l'Hamiltonien effectif du consensus (la dissipation d'énergie irréversible totale) et $\beta = 1/k_B T_{\mathrm{eff}}$ est la température inverse d'information. Selon la théorie de Tomita-Takesaki, l'opérateur modulaire $\Delta_\omega$ associé à cet état est :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
+        $$ \Delta_\omega = e^{-\beta H} \otimes e^{\beta H} \quad \Rightarrow \quad \Delta_\omega = \rho \otimes \rho^{-1} $$
+      </div>
+
+      <h4 lang="en" style="color: #c864ff; margin-top: 1.5rem;">2. Derivation of the $t = s \cdot \beta$ Relation</h4>
+      <h4 lang="fr" style="color: #c864ff; margin-top: 1.5rem;">2. Dérivation de la Relation $t = s \cdot \beta$</h4>
+      <p lang="en">
+        The modular automorphism group $\sigma_s^\omega$ is defined by the action of the modular operator on an observable $A \in \mathfrak{M}$:
+      </p>
+      <p lang="fr">
+        Le groupe d'automorphismes modulaires $\sigma_s^\omega$ est défini par l'action de l'opérateur modulaire sur une observable $A \in \mathfrak{M}$ :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1rem 0; font-size: 1.15em;">
+        $$ \sigma_s^\omega(A) = \Delta_\omega^{is} A \Delta_\omega^{-is} = e^{-is\beta H} A e^{is\beta H} $$
+      </div>
+
+      <p lang="en">
+        By structurally identifying this flow with the standard unitary time evolution operator in quantum mechanics ($\alpha_t(A) = e^{itH} A e^{-itH}$), we equate the exponential generators to extract the fundamental coupling between the internal modular parameter $s$ and the Newtonian physical time $t$:
+      </p>
+      <p lang="fr">
+        En identifiant structurellement ce flux avec l'opérateur d'évolution temporelle unitaire standard en mécanique quantique ($\alpha_t(A) = e^{itH} A e^{-itH}$), nous égalisons les générateurs exponentiels pour extraire le couplage fondamental entre le paramètre modulaire interne $s$ et le temps physique newtonien $t$ :
+      </p>
+
+      <div class="math-block" style="text-align: center; color: #c864ff; margin: 1.5rem 0; font-size: 1.3em; border: 1px solid rgba(136, 255, 170, 0.4); padding: 0.8rem; background: rgba(0,0,0,0.3); border-radius: 6px;">
+        $$ t = s \cdot \beta_{\mathrm{eff}} $$
+      </div>
+
+      <p lang="en" style="font-style: italic; color: #b0b0b0;">
+        This mathematically demonstrates that the "time" of the ledger is a thermal projection. The DAA acts strictly as a <strong>dynamic gauge-fixing condition</strong>: by recalibrating the Hamiltonian $\mathcal{H}_{\mathrm{diss}}$ via difficulty to maintain $\beta \cdot H = \text{constant}$, it forces the subjective modular flow to tick in perfect harmony with the universal UTC timeline, preventing relativistic drift.
+      </p>
+      <p lang="fr" style="font-style: italic; color: #b0b0b0;">
+        Ceci démontre mathématiquement que le "temps" du registre est une projection thermique. Le DAA agit strictement comme une <strong>condition dynamique de fixation de jauge (gauge-fixing)</strong> : en recalibrant l'Hamiltonien $\mathcal{H}_{\mathrm{diss}}$ via la difficulté pour maintenir $\beta \cdot H = \text{constante}$, il force le flux modulaire subjectif à battre en parfaite harmonie avec l'horloge UTC universelle, empêchant toute dérive relativiste.
+      </p>
+    </div>
+  </details>
+
+
   <details style="margin-bottom: 1.5rem; background: rgba(255, 215, 0, 0.05); border-left: 4px solid #ffd700; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
     <summary style="padding: 1.2rem 1.5rem; cursor: pointer; font-weight: bold; color: #ffd700; outline: none; list-style-type: '▶ '; font-size: 1.1em; text-shadow: 0 0 5px rgba(255, 215, 0, 0.3);">
-      <span lang="en">Level 5: Optimal Transport & The Villani Entropy Geometry (Expert)</span>
-      <span lang="fr">Niveau 5 : Transport Optimal & La Géométrie de l'Entropie de Villani (Expert)</span>
+      <span lang="en">Level 5: Optimal Transport & The Villani Entropy Geometry (Expert+)</span>
+      <span lang="fr">Niveau 5 : Transport Optimal & La Géométrie de l'Entropie de Villani (Expert+)</span>
     </summary>
     <div style="padding: 1.5rem; font-size: 1em; color: #e0e0e0; line-height: 1.7;">
       
@@ -5870,8 +5871,8 @@ pindexNew->nChainWork = pindexPrev->nChainWork + <span class="function">GetBlock
 
   <details style="margin-bottom: 2rem; background: rgba(255, 68, 68, 0.03); border-left: 4px solid #ff4444; border-radius: 0 10px 10px 0; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.4);">
     <summary style="padding: 1.2rem 1.8rem; cursor: pointer; font-weight: bold; color: hsla(332, 100%, 63%, 0.953); outline: none; list-style-type: '▶ '; font-size: 1.1em;">
-      <span lang="en">Level 6: Massive Fields, The Nakamoto Action & Hawking Evaporation (Expert ++)</span>
-      <span lang="fr">Niveau 6 : Champs Massifs, Action de Nakamoto & Évaporation de Hawking (Expert ++)</span>
+      <span lang="en">Level 6: Massive Fields, The Nakamoto Action & Hawking Evaporation (Expert++)</span>
+      <span lang="fr">Niveau 6 : Champs Massifs, Action de Nakamoto & Évaporation de Hawking (Expert++)</span>
     </summary>
     <div style="padding: 1.5rem; font-size: 0.95em; color: #d4d4d4; line-height: 1.7;">
       
@@ -16655,7 +16656,7 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
             href="https://doi.org/10.5281/zenodo.20106133"
             target="_blank" rel="noopener noreferrer"
             style="color: var(--sun-orange); text-decoration: none"
-            >https://doi.org/10.5281/zenodo.20106133</a
+            >https://doi.org/10.5281/zenodo.20106133 </a
           >
         </p>
 
