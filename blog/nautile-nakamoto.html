@@ -7064,7 +7064,7 @@ $$
       <p lang="fr" style="margin-bottom: 0.5rem">
         Comment cette géométrie est-elle construite ?<br /> La validité d'un bloc est déterminée purement par des inéquations mathématiques représentant les règles du protocole — telles que : <ul>
           <li> les limites de capacité</li> 
-          <li> la topologie <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>. Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span>
+          <li> la topologie <span class="tooltip">DAG<span class="tooltiptext"><strong>Graphe Orienté Acyclique (Directed Acyclic Graph)</strong>Une structure orientée sans boucle. Dans Bitcoin, le graphe de dépendances entre transactions peut être représenté comme un DAG, car une transaction dépense des sorties créées antérieurement. Cela ne signifie pas que la blockchain Bitcoin elle-même soit un protocole DAG : l’ordre canonique des confirmations reste porté par une chaîne linéaire de blocs.</span></span>
         des transactions</li>
           <li>la maximisation de la <span class="tooltip">BEV<span class="tooltiptext"><strong>Bitcoin Extractable Value</strong> — analogue structurellement restreint de la MEV (Daian et al., 2020). Dans Bitcoin L1, l'extraction se limite à trois opérations formelles : (i) sélection par <em>fee-rate</em> $f_r = \mathrm{sat}/\mathrm{vWU}$, (ii) ordonnancement sous contrainte de dépendances CPFP/RBF, (iii) censure sélective. On pose : $\mathrm{BEV}(B) = \sum_{tx \in B} f(tx) - C_{\mathrm{opp}}(B)$. La MEV au sens strict (sandwich attacks, back-running EVM) est <strong>structurellement absente</strong> de Bitcoin L1 par absence d'expressivité du script.</span></span></li></ul>
         Chaque règle agit comme un <strong>hyperplan</strong> ($H_i$) divisant l'espace des phases de toutes les permutations possibles du Mempool en demi-espaces valides et invalides :
@@ -16652,10 +16652,10 @@ consensus.nPowTargetTimespan = <span class="number">14</span> * <span class="num
             Transition: A Phenomenological Statistical-Physics Description</em
           >. IPI.
           <a
-            href="https://zenodo.org/records/20106133"
+            href="https://doi.org/10.5281/zenodo.20106133"
             target="_blank" rel="noopener noreferrer"
             style="color: var(--sun-orange); text-decoration: none"
-            >https://zenodo.org/records/20106133</a
+            >https://doi.org/10.5281/zenodo.20106133</a
           >
         </p>
 
