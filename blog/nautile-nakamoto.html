@@ -14892,10 +14892,11 @@ $$
             </h4>
 
             <p lang="en" style="margin-bottom: 0.5rem">
-              To formalize this cybernetic feedback loop physically, we can map Bitcoin's consensus to the <strong>Lagrangian of Quantum Electrodynamics (QED)</strong>. In physics, this equation describes how a particle interacts with a force field to preserve the universe's laws despite local changes in perspective. Here is the exact translation of this master equation into Bitcoin mechanics:
+              To formalize this cybernetic feedback loop at the level of analogy, we can borrow the structure of a <strong>gauge theory</strong>, using Quantum Electrodynamics (QED) only as a mathematical template. In physics, gauge theory describes how a field remains consistently defined under local transformations. In Bitcoin, the Difficulty Adjustment Algorithm plays an analogous role: it compensates for external variations in hashrate so that the internal block-time coordinate remains statistically stable. Here is a controlled phenomenological mapping of this gauge-theoretic structure into Bitcoin mechanics:
             </p>
             <p lang="fr" style="margin-bottom: 0.5rem">
-              Pour formaliser physiquement cette boucle de rétroaction cybernétique, nous pouvons cartographier le consensus de Bitcoin sur le <strong>Lagrangien de l'Électrodynamique Quantique (QED)</strong>. En physique, cette équation décrit comment une particule interagit avec un champ de force pour préserver les lois de l'univers malgré les changements de perspective. Voici la traduction exacte de cette équation maîtresse vers la mécanique de Bitcoin :
+              Pour formaliser cette boucle de rétroaction cybernétique au niveau de l'analogie, nous pouvons emprunter la structure d'une <strong>théorie de jauge</strong>, en utilisant l'Électrodynamique Quantique (QED) uniquement comme gabarit mathématique. En physique, une théorie de jauge décrit la manière dont un champ reste défini de façon cohérente sous des transformations locales. Dans Bitcoin, l'Algorithme d'Ajustement de la Difficulté joue un rôle analogue : il compense les variations externes du hashrate afin que la coordonnée interne du temps de bloc demeure statistiquement stable. Voici une correspondance phénoménologique contrôlée entre cette structure de théorie de jauge et la mécanique de Bitcoin :
+
             </p>
 
             <div
@@ -14927,7 +14928,7 @@ $$
                 <br>• $A_\mu$ is the <strong>Gauge Field</strong> (the DAA mechanism itself). It actively subtracts the external perturbation, ensuring that from inside the blockchain, time always flows at a strictly invariant 10-minute pace.
               </li>
               <li style="margin-bottom: 0.8rem;">
-                <strong>$-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}$ (The Maxwell Tensor):</strong> This term describes the internal inertia of the gauge field itself. The DAA does not adjust instantly or infinitely; it updates only every 2016 blocks and is bounded by a factor of 4. This "structural stiffness" prevents the difficulty from oscillating wildly and destroying the network.
+                <strong>$-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}$ (Effective Gauge-Field Stiffness):</strong> In QED, this term measures the self-dynamics of the electromagnetic field. In the Bitcoin analogy, it corresponds to the finite stiffness of the DAA correction itself. The adjustment is neither continuous nor unbounded: it is sampled every 2016 blocks and its correction factor is clipped to the interval $[1/4, 4]$. This saturation behaves like a discrete field-strength penalty, preventing the protocol from overreacting to extreme timestamp or hashrate perturbations.
               </li>
             </ul>
 
@@ -14947,7 +14948,7 @@ $$
                 <br>• $A_\mu$ est le <strong>Champ de Jauge</strong> (le mécanisme du DAA lui-même). Il soustrait activement la perturbation externe, garantissant que de l'intérieur de la blockchain, le temps s'écoule toujours au rythme invariant de 10 minutes.
               </li>
               <li style="margin-bottom: 0.8rem;">
-                <strong>$-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}$ (Le Tenseur de Maxwell) :</strong> Ce terme décrit l'inertie interne du champ de jauge lui-même. Le DAA ne s'ajuste pas instantanément ou de manière infinie ; il se met à jour tous les 2016 blocs et est limité par un facteur 4. Cette "rigidité structurelle" empêche la difficulté d'osciller follement et de détruire le réseau.
+                <strong>$-\frac{1}{4} F_{\mu\nu}F^{\mu\nu}$ (Rigidité effective du champ de jauge) :</strong> En QED, ce terme mesure la dynamique propre du champ électromagnétique. Dans l'analogie Bitcoin, il correspond à la rigidité finie de la correction opérée par le DAA lui-même. L'ajustement n'est ni continu ni non borné : il est échantillonné tous les 2016 blocs et son facteur de correction est saturé dans l'intervalle $[1/4, 4]$. Cette saturation se comporte comme une pénalité discrète de courbure du champ, empêchant le protocole de sur-réagir à des perturbations extrêmes de timestamp ou de hashrate.
               </li>
             </ul>
 
