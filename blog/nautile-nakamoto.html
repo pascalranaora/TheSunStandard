@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   scene.background = new THREE.Color(0x050505);
 
   const camera = new THREE.PerspectiveCamera(68, container.clientWidth / container.clientHeight, 0.1, 600);
-  camera.position.set(0, -85, -125);
+  camera.position.set(-40, -175, 125);
   camera.lookAt(0, 0, 0);
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
